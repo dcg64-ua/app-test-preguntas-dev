@@ -627,12 +627,7 @@ function showHome(error) {
   }
   $('penLink').onclick = e => { e.preventDefault(); showSettings(); };
 
-  $('srsBtn').onclick = () => {
-    const p = srsPlan(qs);
-    const list = [...p.due, ...shuffle(p.fresh)].slice(0, Math.max(1, s.srsSize));
-    if (!p.due.length && !p.fresh.length) return alert(`¡Todo al día! 🎉 El próximo repaso es el ${new Date(p.next).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}.`);
-    if (confirmDiscard()) startRun(list, { mode: 'practica', kind: 'repaso' });
-  };
+  $('srsBtn').onclick = () => { if (confirmDiscard()) showSrsSetup(); };
   $('simBtn').onclick = () => {
     if (!confirmDiscard()) return;
     if (!simPool.length) return alert(`No hay preguntas del bloque «${s.simBloque}». Cámbialo en ⚙️ Ajustes → Simulacro.`);
@@ -669,6 +664,54 @@ function showHome(error) {
       shuffleOpts: $('sho').checked, mode, minutes: mode === 'examen' ? +$('minutes').value || 0 : 0,
       label: [bloque, tema, refRaw && `ref. «${refRaw}»`].filter(Boolean).join(' · ')
     });
+  };
+}
+
+// ---------- Repaso inteligente: elegir bloque y tema ----------
+const fmtNextDay = t => new Date(t).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+
+function showSrsSetup() {
+  stopTimer();
+  onKey = null;
+  const s = getSettings(), qs = set?.preguntas || [], last = load(K.settings, {}).study_srs || {};
+  const bloques = uniq(qs.map(q => q.bloque)).sort(natCmp);
+  app.innerHTML = `
+    <div class="row between"><h1>🧠 Repaso inteligente</h1><button id="home">← Inicio</button></div>
+    <div class="card">
+      <p class="help" style="margin-top:0">Primero salen las preguntas que te tocan hoy (las falladas y las que hace tiempo que no ves) y después algunas nuevas.</p>
+      ${bloques.length ? `<div class="set-row"><span>Bloque</span><select id="bloque"><option value="">Todos</option>${bloques.map(b => `<option ${b === last.bloque ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select></div>` : ''}
+      <div class="set-row" id="temaRow"><span>Tema</span><select id="tema"></select></div>
+      <div class="set-row"><span>Cuántas</span><input type="number" id="count" min="1" value="${last.count || s.srsSize}"></div>
+      <div class="ghstatus" id="srsInfo" style="margin:8px 0 12px"></div>
+      <button class="primary" id="go" style="width:100%">Empezar</button>
+    </div>`;
+  $('home').onclick = () => showHome();
+  const pool = () => {
+    const b = $('bloque')?.value || '', t = $('tema').value;
+    return qs.filter(q => (!b || q.bloque === b) && (!t || q.tema === t));
+  };
+  const info = () => {
+    const p = srsPlan(pool());
+    $('srsInfo').innerHTML = p.due.length || p.fresh.length
+      ? `<b>${p.due.length}</b> para repasar hoy · <b>${p.fresh.length}</b> nuevas`
+      : `¡Todo al día en esta selección! 🎉${isFinite(p.next) ? ` Próximo repaso: ${fmtNextDay(p.next)}.` : ''}`;
+    $('go').disabled = !p.due.length && !p.fresh.length;
+  };
+  const fillTemas = (keep) => {
+    const b = $('bloque')?.value || '';
+    const temas = uniq(qs.filter(q => !b || q.bloque === b).map(q => q.tema)).sort(natCmp);
+    $('tema').innerHTML = `<option value="">Todos</option>${temas.map(t => `<option ${t === keep ? 'selected' : ''}>${esc(t)}</option>`).join('')}`;
+    $('temaRow').hidden = !temas.length;
+    info();
+  };
+  fillTemas(last.tema);
+  if ($('bloque')) $('bloque').onchange = () => fillTemas();
+  $('tema').onchange = info;
+  $('go').onclick = () => {
+    const b = $('bloque')?.value || '', t = $('tema').value, count = Math.max(1, +$('count').value || s.srsSize);
+    saveSettings({ study_srs: { bloque: b, tema: t, count } });
+    const p = srsPlan(pool());
+    startRun([...p.due, ...shuffle(p.fresh)].slice(0, count), { mode: 'practica', kind: 'repaso', label: t || b });
   };
 }
 
