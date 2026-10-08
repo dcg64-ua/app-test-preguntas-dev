@@ -10101,6 +10101,1934 @@
                           "bloque":  "Temario específico UMH",
                           "tema":  "Examen oficial UMH 2023 (1ª parte)",
                           "truco":  "biMESTRAL = cada 2 meses · biMENSUAL = 2 veces al mes"
+                      },
+                      {
+                          "pregunta":  "Etimológicamente, el término «biblioteca» procede de:",
+                          "opciones":  [
+                                           "El latín liber (libro) y theca (armario)",
+                                           "El griego biblion (libro) y theke (caja)",
+                                           "El griego biblos (papiro) y logos (tratado)",
+                                           "El griego biblion (rollo) y oikos (casa)"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Procede de dos palabras griegas: biblion (libro) y theke (caja), y aludía a los estuches donde se guardaban los rollos manuscritos. No tiene origen latino.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En la etapa histórica de la «biblioteca/archivo», en la que apenas se distinguían ambas instituciones, los ejemplos más destacados se dieron en:",
+                          "opciones":  [
+                                           "Grecia y Roma",
+                                           "Alejandría y Pérgamo",
+                                           "Los monasterios medievales",
+                                           "Mesopotamia y Egipto"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "En esa fase la función común era almacenar y conservar documentos, con Mesopotamia y Egipto como ejemplos principales. Alejandría y Pérgamo son la excepción de grandes colecciones en la etapa manuscrita.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Los pinakes, técnica de clasificación documental de la Antigüedad, se asocian a:",
+                          "opciones":  [
+                                           "Calímaco, en la Biblioteca de Alejandría",
+                                           "Gabriel Naudé, en la biblioteca de Mazarino",
+                                           "Paul Otlet, en el Institut International de Bibliographie",
+                                           "Los scriptoria de los monasterios medievales"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La Biblioteca de Alejandría se convirtió en instrumento de investigación y empleó los pinakes de Calímaco para clasificar sus fondos.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre las etapas históricas del concepto de biblioteca:",
+                          "opciones":  [
+                                           "Los scriptoria suponen en parte una vuelta a la concepción de la biblioteca como archivo de libros",
+                                           "La biblioteca renacentista marca los inicios del libre acceso a los fondos",
+                                           "Entre las primeras bibliotecas universitarias figuran las de Bolonia, París y, en España, Alcalá",
+                                           "La Biblioteca de Alejandría ya funcionaba como instrumento para la investigación"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El ejemplo español de primera biblioteca universitaria que se cita es el de la Universidad de Salamanca, no el de Alcalá.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Qué biblioteca de la Edad Moderna se cita como ejemplo de biblioteca renacentista, con salas rodeadas de estanterías con libros impresos a la vista?",
+                          "opciones":  [
+                                           "La de la Universidad de Salamanca",
+                                           "La de Pérgamo",
+                                           "La de El Escorial",
+                                           "La de la Universidad de Bolonia"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El Escorial es el ejemplo de biblioteca renacentista, donde el libro y la biblioteca se convierten en valores culturales. Salamanca y Bolonia ilustran las primeras bibliotecas universitarias.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El nacimiento de la biblioteca actual se sitúa en:",
+                          "opciones":  [
+                                           "El desarrollo de la democracia y de la industria",
+                                           "La invención de la imprenta y el Renacimiento",
+                                           "La creación de las primeras universidades europeas",
+                                           "La convergencia de la informática y las telecomunicaciones"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La biblioteca actual nace del desarrollo democrático (Revolución francesa, democracia de EE UU) y de la industrialización, que impulsó la Free Public Library.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "truco":  "Biblioteca actual = Democracia + Industria (D+I).",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El nacimiento de la Free Public Library se vincula principalmente con:",
+                          "opciones":  [
+                                           "La Revolución francesa",
+                                           "La democracia de los Estados Unidos",
+                                           "El Manifiesto de la UNESCO sobre la biblioteca pública",
+                                           "La industrialización producida en Inglaterra"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Fue la industrialización inglesa la que impulsó la Free Public Library. La Revolución francesa y la democracia estadounidense reconocieron el derecho a la lectura.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Atendiendo al soporte documental, el periodo del libro impreso abarca:",
+                          "opciones":  [
+                                           "Desde la Antigüedad hasta el siglo XV",
+                                           "Desde el siglo XV hasta finales del siglo XX",
+                                           "Desde el siglo XIX hasta la actualidad",
+                                           "Desde el siglo XV hasta finales del siglo XVIII"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Se distinguen tres periodos: manuscritos (Antigüedad–siglo XV), libro impreso (siglo XV–finales del XX) e información digital en red (desde finales del XX).",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En la etapa de los manuscritos, las bibliotecas eran escasas y sus colecciones pequeñas, con la excepción de las bibliotecas de:",
+                          "opciones":  [
+                                           "El Escorial y Salamanca",
+                                           "Alejandría y Pérgamo",
+                                           "Bolonia y París",
+                                           "Celso en Éfeso y Nínive"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Las únicas colecciones manuscritas de grandes proporciones fueron las de Alejandría y Pérgamo.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La noción de hipertexto, anterior a la creación del hiperdocumento, se atribuye a:",
+                          "opciones":  [
+                                           "Ted Nelson, en 1965",
+                                           "Tim Berners-Lee, en 1991",
+                                           "Paul Otlet, en 1895",
+                                           "Vannevar Bush, en 1945"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "El hipertexto se debe a Vannevar Bush (1945); Ted Nelson (1965) aportó la idea de documento universal (Xanadú) y Berners-Lee creó la World Wide Web en 1991.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "truco":  "Orden cronológico B-N-B: Bush 1945 (hipertexto), Nelson 1965 (Xanadú), Berners-Lee 1991 (Web).",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La idea de documento universal conocida como Xanadú pertenece a:",
+                          "opciones":  [
+                                           "Ted Nelson (1965)",
+                                           "Vannevar Bush (1945)",
+                                           "Tim Berners-Lee (1991)",
+                                           "Lluís Codina (1991)"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Xanadú es la propuesta de documento universal de Ted Nelson (1965). Bush formuló la noción de hipertexto en 1945.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La World Wide Web fue creada por:",
+                          "opciones":  [
+                                           "Vannevar Bush en 1945",
+                                           "Ted Nelson en 1965",
+                                           "Tim Berners-Lee en 1991",
+                                           "Tim Berners-Lee en 1981"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Berners-Lee hizo realidad las ideas de hipertexto y documento universal al crear la Web en 1991.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En la etapa de la información digital en red, el hiperdocumento se define como:",
+                          "opciones":  [
+                                           "Un documento impreso reproducido mediante microfotografía",
+                                           "Un archivo multimedia almacenado en disco óptico",
+                                           "Un documento en red o documento de documentos enlazados",
+                                           "Un códice manuscrito digitalizado para su consulta"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El hecho más sobresaliente de esta etapa es el uso de las redes como soporte documental, del que nace el hiperdocumento: documento en red o de documentos enlazados.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Durante la etapa del libro impreso, la microfotografía aparece en:",
+                          "opciones":  [
+                                           "El siglo XIX, junto a la fotografía",
+                                           "El siglo XX",
+                                           "El siglo XV, con la imprenta",
+                                           "El siglo XVIII, con las publicaciones periódicas"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "En la etapa del libro impreso surgen las publicaciones periódicas y la fotografía y, más tarde, en el siglo XX, la microfotografía.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La definición de biblioteca como «colección de material de información organizada para que pueda acceder a ella un grupo de usuarios», con personal encargado de servicios y programas, es la adoptada por:",
+                          "opciones":  [
+                                           "La UNESCO",
+                                           "La IFLA",
+                                           "La norma ISO 2789",
+                                           "La ALA (American Library Association)"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Es la definición de la American Library Association, considerada una de las más sencillas y completas.",
+                          "referencia":  "American Library Association (ALA)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de los siguientes términos NO figura entre los términos esenciales que recoge la definición de biblioteca de la ALA?",
+                          "opciones":  [
+                                           "Conservación",
+                                           "Acceso",
+                                           "Programas",
+                                           "Profesionales"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Los términos esenciales son colección, información, acceso, usuarios, servicios, programas y profesionales. La conservación no se menciona.",
+                          "referencia":  "American Library Association (ALA)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA. Dentro del concepto de unidades de información se incluyen:",
+                          "opciones":  [
+                                           "Los archivos administrativos",
+                                           "Los archivos históricos",
+                                           "Las editoriales y librerías comerciales",
+                                           "Los centros de documentación"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Junto a las bibliotecas, las unidades de información comprenden archivos administrativos, archivos históricos y centros de documentación; no las editoriales.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El conjunto de las unidades de información de un país, que garantizaría el derecho a la información, formaría:",
+                          "opciones":  [
+                                           "El Sistema Español de Bibliotecas",
+                                           "El Sistema Nacional de Información",
+                                           "La Red de Información Documental",
+                                           "El Consejo de Cooperación Bibliotecaria"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Bibliotecas, archivos y centros de documentación forman en conjunto el Sistema Nacional de Información de un país.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La noción de sistema de información documental (SID) encuentra su fundamento en:",
+                          "opciones":  [
+                                           "La teoría matemática de la comunicación",
+                                           "Las leyes de la Biblioteconomía de Ranganathan",
+                                           "La clasificación de las Ciencias de la Documentación de Currás",
+                                           "La teoría general de sistemas"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "El SID se fundamenta en la teoría general de sistemas, que define el sistema como una entidad compleja formada por diversas entidades y por sus funciones y relaciones.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Según Lluís Codina, un sistema de información documental genera como salida:",
+                          "opciones":  [
+                                           "Personas informadas",
+                                           "Documentos cognitivos",
+                                           "Necesidades de información",
+                                           "Registros bibliográficos normalizados"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Para Codina la entrada son documentos cognitivos y necesidades de información, y la salida son personas informadas.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "truco":  "Entra «documentos + necesidades», sale «personas informadas».",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Según Lluís Codina, un SID acepta como entrada:",
+                          "opciones":  [
+                                           "Personas informadas y documentos primarios",
+                                           "Usuarios y registros bibliográficos",
+                                           "Documentos cognitivos y necesidades de información",
+                                           "Documentos probabilísticos y consultas"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La entrada la forman documentos cognitivos y necesidades de información; los documentos probabilísticos relevantes son el resultado del subsistema de recuperación.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Qué autor caracteriza el sistema de información documental por su entrada, un subsistema de recuperación de información y su salida?",
+                          "opciones":  [
+                                           "Luisa Orera",
+                                           "Miguel Ángel Magán Wals",
+                                           "Emilia Currás",
+                                           "Lluís Codina"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La caracterización del SID corresponde a Lluís Codina. Orera clasificó los campos de investigación, Magán las corrientes y Currás el carácter científico de la disciplina.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre las bibliotecas híbridas:",
+                          "opciones":  [
+                                           "Han automatizado sus procesos de gestión",
+                                           "Ofrecen servicios de información digital como complemento a los tradicionales",
+                                           "En ellas coexisten una biblioteca presencial y otra digital",
+                                           "Ofrecen exclusivamente servicios de información digital"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Ofrecer exclusivamente servicios digitales es lo propio de las bibliotecas virtuales; la híbrida combina servicios tradicionales y digitales.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Las entidades o redes de entidades que ofrecen exclusivamente servicios de información digital se denominan:",
+                          "opciones":  [
+                                           "Bibliotecas híbridas",
+                                           "Bibliotecas virtuales",
+                                           "Bibliotecas automatizadas",
+                                           "Sistemas de información documental"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Son las bibliotecas virtuales. Las híbridas mantienen también la biblioteca presencial con documentos impresos.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA. Entre las áreas de actuación propuestas para la sostenibilidad del modelo de biblioteca en el siglo XXI figura:",
+                          "opciones":  [
+                                           "La biblioteca como centro de la comunidad",
+                                           "Obtener un rendimiento de la tecnología y de la creatividad",
+                                           "Dotar de conocimientos adecuados a los bibliotecarios y demás profesionales",
+                                           "Externalizar la totalidad de los servicios a empresas privadas"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Las áreas citadas son: centro de la comunidad, rendimiento de la tecnología y la creatividad, asegurar la sostenibilidad y formar a los profesionales. La externalización se presenta como un problema, no como objetivo.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La principal misión de las bibliotecas es:",
+                          "opciones":  [
+                                           "Conservar el patrimonio bibliográfico nacional",
+                                           "Fomentar el hábito lector en la infancia",
+                                           "Satisfacer las necesidades de información de sus usuarios",
+                                           "Custodiar los documentos producidos por la Administración"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La misión principal es satisfacer las necesidades de información de los usuarios, mediante servicios dirigidos a difundir la información.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál se considera la primera función del bibliotecario?",
+                          "opciones":  [
+                                           "La creación y mantenimiento de la colección",
+                                           "La organización de la colección",
+                                           "La difusión de la información",
+                                           "Convertirse en foro de intercambio de conocimiento"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La creación y mantenimiento de la colección es la primera función y se logra mediante la selección y adquisición de materiales, sea cual sea su soporte.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El expurgo, la prevención y la conservación de los materiales forman parte de la función de:",
+                          "opciones":  [
+                                           "Organización de la colección",
+                                           "Mantenimiento de la colección",
+                                           "Difusión de la información",
+                                           "Extensión bibliotecaria"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Dentro de la creación y mantenimiento de la colección se incluyen el expurgo, la prevención y la conservación.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La organización de la colección supone un análisis documental realizado en dos niveles, que son:",
+                          "opciones":  [
+                                           "Análisis descriptivo y análisis bibliográfico",
+                                           "Catalogación y préstamo",
+                                           "Análisis cuantitativo y análisis cualitativo",
+                                           "Análisis documental de la forma y análisis de contenido"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La organización exige el análisis de la forma y el análisis de contenido, con el apoyo de un sistema integrado de gestión bibliotecaria.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La IFLA ha recogido, a través de la Declaración de Lyon y de la versión de 2014 de su Manifiesto sobre Internet, la función de la biblioteca consistente en:",
+                          "opciones":  [
+                                           "Difundir la información con eficacia",
+                                           "Convertirse en un foro de intercambio de conocimiento",
+                                           "Ser agentes activos del desarrollo de la sociedad",
+                                           "Organizar la colección sea cual sea su soporte"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La función de ser agentes activos del desarrollo de la sociedad es la que la IFLA ha incluido en esos dos documentos.",
+                          "referencia":  "Declaración de Lyon (IFLA, 2014)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La función de la biblioteca como foro de intercambio de conocimiento cobra mayor importancia con los servicios digitales porque estos:",
+                          "opciones":  [
+                                           "No contemplan el factor humano como elemento esencial",
+                                           "Exigen mayor espacio físico en la biblioteca",
+                                           "Eliminan la necesidad de organizar la colección",
+                                           "Sustituyen la difusión selectiva de la información"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La biblioteca debe ser un espacio común, físico o virtual, de transmisión de conocimiento entre personas, algo que los servicios digitales no contemplan.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuántos servicios bibliotecarios diferentes llega a mencionar Giappiconi?",
+                          "opciones":  [
+                                           "Más de una veintena",
+                                           "Más de una treintena",
+                                           "Exactamente diez",
+                                           "Más de un centenar"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Giappiconi llega a citar más de una treintena de servicios, lo que muestra que su denominación aún no está fijada.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Los servicios de información y formación resuelven necesidades de información recurriendo a:",
+                          "opciones":  [
+                                           "El documento primario o su reproducción",
+                                           "Las colecciones de otras bibliotecas",
+                                           "Las actividades de extensión cultural",
+                                           "Fuentes de información secundarias"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Facilitar el documento primario es propio de los servicios de acceso al documento; los de información y formación usan fuentes secundarias.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál se considera el servicio bibliotecario más tradicional?",
+                          "opciones":  [
+                                           "La lectura en sala",
+                                           "El préstamo a domicilio",
+                                           "El servicio de referencia",
+                                           "El préstamo interbibliotecario"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "El servicio más tradicional es la lectura en sala; el préstamo a domicilio no fue habitual hasta el siglo XIX.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El préstamo a domicilio no se convirtió en un servicio habitual hasta:",
+                          "opciones":  [
+                                           "El siglo XVII",
+                                           "El siglo XVIII",
+                                           "El siglo XIX",
+                                           "El primer tercio del siglo XX"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El préstamo a domicilio se generaliza en el siglo XIX; en el primer tercio del XX se sitúa el préstamo interbibliotecario estable en EE UU.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En España, el préstamo a domicilio es un servicio obligatorio en las bibliotecas públicas en virtud del reglamento de:",
+                          "opciones":  [
+                                           "1983",
+                                           "1989",
+                                           "1999",
+                                           "1978"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "El reglamento vigente de 1989 convierte el préstamo en servicio obligatorio de las bibliotecas públicas.",
+                          "referencia":  "Reglamento de 1989 (bibliotecas públicas)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El préstamo a domicilio presenta dos modalidades:",
+                          "opciones":  [
+                                           "Presencial y en línea",
+                                           "Ordinario y extraordinario",
+                                           "Local e interbibliotecario",
+                                           "Individual o colectiva"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "El préstamo puede ser individual o colectivo. El interbibliotecario es un servicio distinto dentro del acceso al documento.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El servicio que tiene por objeto resolver consultas muy concretas mediante fuentes de información generales es:",
+                          "opciones":  [
+                                           "La información bibliográfica",
+                                           "La difusión selectiva de la información",
+                                           "La referencia",
+                                           "El asesoramiento sobre la gestión de la información"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La referencia resuelve consultas concretas con fuentes generales; la información bibliográfica trata temas complejos con fuentes especializadas.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "truco":  "Referencia: consulta concreta + fuente general. Información bibliográfica: tema complejo + fuente especializada.",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El servicio de información bibliográfica se caracteriza por:",
+                          "opciones":  [
+                                           "Buscar información sobre un tema complejo en fuentes especializadas",
+                                           "Resolver consultas puntuales con obras de referencia generales",
+                                           "Enviar periódicamente al usuario novedades según su perfil",
+                                           "Ayudar al usuario a evaluar la información ya obtenida"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La información bibliográfica aborda temas complejos en fuentes especializadas, y se ha visto muy reforzada por las fuentes accesibles en internet.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El Manifiesto sobre Internet de la IFLA es de:",
+                          "opciones":  [
+                                           "1994, actualizado en 2014",
+                                           "2002, actualizado en 2014",
+                                           "2002, actualizado en 2004",
+                                           "2014, actualizado en 2019"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "El Manifiesto sobre Internet de la IFLA data de 2002 y fue actualizado en 2014.",
+                          "referencia":  "Manifiesto de la IFLA sobre Internet (2002, act. 2014)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Según el Manifiesto sobre Internet de la IFLA, las libertades de acceso a la información y de expresión son esenciales para:",
+                          "opciones":  [
+                                           "El desarrollo económico, la educación y la cultura",
+                                           "La alfabetización, la ciencia y el progreso",
+                                           "La democracia, la tolerancia y la lectura",
+                                           "La igualdad, el entendimiento global y la paz"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "El Manifiesto declara esas libertades esenciales para la igualdad, el entendimiento global y la paz, y atribuye a las bibliotecas la responsabilidad de ofrecer acceso público a internet.",
+                          "referencia":  "Manifiesto de la IFLA sobre Internet (2002, act. 2014)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El servicio por el que el usuario recibe periódicamente información actualizada sobre su perfil, procedente de fuentes seleccionadas previamente, es:",
+                          "opciones":  [
+                                           "El servicio de referencia",
+                                           "La alfabetización informacional",
+                                           "La difusión selectiva de la información (DSI)",
+                                           "La edición electrónica de recursos"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Es la DSI, servicio que se crea ante el aumento acelerado de la información.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál se considera el servicio más novedoso de las bibliotecas, cuyo desarrollo permite hablar ya de biblioteca virtual?",
+                          "opciones":  [
+                                           "La edición y gestión electrónica de recursos de información",
+                                           "La alfabetización informacional",
+                                           "La difusión selectiva de la información",
+                                           "El acceso público a Internet"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La edición y gestión electrónica de recursos mediante páginas web es el servicio más novedoso. La alfabetización informacional es de los que más interés despiertan, pero no el más novedoso.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La alfabetización informacional tiene por objeto:",
+                          "opciones":  [
+                                           "Llevar los servicios bibliotecarios a quienes no pueden acudir a la biblioteca",
+                                           "Desarrollar competencias en el uso y gestión de la información para aprender a lo largo de la vida",
+                                           "Fomentar los valores culturales relacionados con la lectura",
+                                           "Elaborar bases de datos, índices y resúmenes"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Busca que el ciudadano acceda, organice y evalúe la información para aprender a lo largo de toda la vida. Las otras opciones describen la extensión bibliotecaria, la extensión cultural y los productos documentales.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre los servicios de acceso al documento:",
+                          "opciones":  [
+                                           "Incluyen la consulta en sala",
+                                           "Incluyen la reproducción de documentos respetando los derechos de autor",
+                                           "Incluyen el préstamo interbibliotecario y la obtención de documentos",
+                                           "Incluyen la difusión selectiva de la información"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La DSI pertenece a los servicios de información y formación. Los de acceso al documento son consulta en sala, préstamo a domicilio, préstamo interbibliotecario y reproducción.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre los servicios de fomento de la educación y la cultura:",
+                          "opciones":  [
+                                           "La extensión cultural fomenta especialmente los valores relacionados con la lectura",
+                                           "Las bibliotecas públicas deben contemplar el desarrollo de los derechos humanos",
+                                           "La extensión bibliotecaria consiste en formar a los usuarios dentro de la sala",
+                                           "La extensión bibliotecaria se realiza mediante sucursales y bibliobuses"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La extensión bibliotecaria se realiza mediante sucursales y bibliobuses. Las actividades culturales corresponden a la extensión cultural.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Atendiendo al método en que se prestan, un servicio de formación de usuarios que permite asistir a sesiones en la biblioteca o seguir tutoriales en línea es un servicio:",
+                          "opciones":  [
+                                           "Mixto",
+                                           "Presencial",
+                                           "En línea",
+                                           "De extensión"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Cuando el usuario puede optar por ambos medios, el servicio es mixto. El préstamo es ejemplo de servicio presencial y la consulta de bases de datos, de servicio en línea.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál es el ejemplo de servicio en línea que se cita al clasificar los servicios por el método en que se prestan?",
+                          "opciones":  [
+                                           "El préstamo de documentos",
+                                           "La consulta de bases de datos documentales",
+                                           "Las sesiones de formación de usuarios",
+                                           "La lectura en sala"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La consulta de bases de datos documentales es el ejemplo de servicio en línea; el préstamo lo es de servicio presencial.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La desintermediación en los servicios bibliotecarios tiene como consecuencia inmediata:",
+                          "opciones":  [
+                                           "Un uso cuantitativamente menor pero cualitativamente superior",
+                                           "La desaparición del servicio de referencia",
+                                           "Un aumento del cobro por los servicios",
+                                           "Un uso cuantitativamente mayor, que puede ser cualitativamente inferior"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "El usuario accede directamente a los recursos sin el profesional, de modo que los usa más, pero puede usarlos peor al faltarle asesoramiento.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Como ejemplo de reintermediación mediante servicios distribuidos, se cita el servicio de referencia mundial atendido por cientos de bibliotecas colaboradoras que fomenta:",
+                          "opciones":  [
+                                           "La British Library",
+                                           "La IFLA",
+                                           "La Library of Congress",
+                                           "LIBER"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La reintermediación ofrece servicios virtuales 24/7 y servicios distribuidos en red, como el de referencia mundial de la Library of Congress.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Respecto al debate entre cobro y gratuidad de los servicios bibliotecarios, la tendencia actual se dirige hacia:",
+                          "opciones":  [
+                                           "El cobro de aquellos servicios que suponen gastos extra",
+                                           "La gratuidad absoluta de todos los servicios",
+                                           "El cobro de todos los servicios a usuarios no residentes",
+                                           "La supresión de los servicios no financiados con impuestos"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La tendencia es cobrar solo los servicios que generan gastos extra.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Qué problema genera la externalización de servicios bibliotecarios costosos a empresas privadas?",
+                          "opciones":  [
+                                           "Impide cobrar por los servicios",
+                                           "Dificulta la interacción y la planificación coherente de todos los servicios",
+                                           "Obliga a suprimir el préstamo interbibliotecario",
+                                           "Elimina la desintermediación"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Externalizar servicios costosos dificulta la interacción y la planificación coherente del conjunto de servicios.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El término «biblioteconomía» aparece por primera vez:",
+                          "opciones":  [
+                                           "En Estados Unidos, utilizado por Melvil Dewey en 1887",
+                                           "En la India, utilizado por Ranganathan en 1931",
+                                           "En Inglaterra, utilizado por Emerson en 1870",
+                                           "En Francia, utilizado por Gabriel Naudé en 1633"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Lo utiliza por primera vez Gabriel Naudé, bibliotecario de Mazarino, en Francia en 1633.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Gabriel Naudé, primero en utilizar el término «biblioteconomía», era bibliotecario de:",
+                          "opciones":  [
+                                           "Richelieu",
+                                           "Luis XIV",
+                                           "Mazarino",
+                                           "Colbert"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Naudé era el bibliotecario del cardenal Mazarino.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En el siglo XIX la palabra «biblioteconomía» vuelve a utilizarse para diferenciar esta disciplina de:",
+                          "opciones":  [
+                                           "La Bibliografía",
+                                           "La Archivística",
+                                           "La Documentación",
+                                           "La Museología"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "En el siglo XIX se recupera el término para distinguir la Biblioteconomía de la Bibliografía.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Quién publicó en 1870 un ensayo sobre la necesidad de crear «profesores de libros» que ayudaran a los lectores a seleccionar los libros de interés?",
+                          "opciones":  [
+                                           "Melvil Dewey",
+                                           "Ralph W. Emerson",
+                                           "Gabriel Naudé",
+                                           "José Ortega y Gasset"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Fue Ralph W. Emerson. Su visión del bibliotecario como difusor activo de información sienta las bases de la Biblioteconomía moderna.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA. Contribuyeron a que la Biblioteconomía alcanzara un estatus científico:",
+                          "opciones":  [
+                                           "El nacimiento de la biblioteca pública",
+                                           "La creación de la ALA en EE UU y de la LA en Gran Bretaña",
+                                           "La institucionalización de la enseñanza en escuelas de bibliotecarios",
+                                           "La creación de la FID en 1938"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Los factores citados son la biblioteca pública, las primeras asociaciones (ALA y LA) y las escuelas de bibliotecarios. La FID se relaciona con la Documentación.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Ranganathan formuló su primera ley de la Biblioteconomía, «Los libros están para usarse», en:",
+                          "opciones":  [
+                                           "1921",
+                                           "1945",
+                                           "1931",
+                                           "1933"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La primera ley es de 1931. Ranganathan cambió la orientación del trabajo bibliotecario desde los años treinta del siglo XX.",
+                          "referencia":  "Cinco leyes de la Biblioteconomía (S.R. Ranganathan)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La tercera de las cinco leyes de Ranganathan establece:",
+                          "opciones":  [
+                                           "Cada libro su lector",
+                                           "Cada lector su libro",
+                                           "El tiempo del lector debe economizarse",
+                                           "La biblioteca es un organismo en crecimiento"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Orden: 1) los libros están para usarse; 2) cada lector su libro; 3) cada libro su lector; 4) ahorrar el tiempo del lector; 5) la biblioteca es un organismo en crecimiento.",
+                          "referencia":  "Cinco leyes de la Biblioteconomía (S.R. Ranganathan)",
+                          "truco":  "La 2.ª empieza por el lector y la 3.ª por el libro: «lector-libro» y luego «libro-lector».",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre las cinco leyes de Ranganathan:",
+                          "opciones":  [
+                                           "La primera dice que los libros están para usarse",
+                                           "La quinta dice que la biblioteca debe conservar todos sus fondos",
+                                           "La cuarta dice que el tiempo del lector debe economizarse",
+                                           "La segunda dice: cada lector su libro"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La quinta ley afirma que la biblioteca es un organismo en crecimiento. Ranganathan desplazó el foco de la conservación al uso.",
+                          "referencia":  "Cinco leyes de la Biblioteconomía (S.R. Ranganathan)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Ranganathan orientó la función de la biblioteca hacia:",
+                          "opciones":  [
+                                           "La conservación de los fondos",
+                                           "La gestión administrativa",
+                                           "La investigación científica",
+                                           "El usuario"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "En lugar de la conservación y la gestión, puso el énfasis en el uso y en el usuario.",
+                          "referencia":  "Cinco leyes de la Biblioteconomía (S.R. Ranganathan)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Según el Manual de normas ISO 1: Documentación e Información, la «ciencia de la Información aplicada a la organización, administración y servicios de biblioteca» es:",
+                          "opciones":  [
+                                           "La Documentación",
+                                           "La Ciencia de la Información",
+                                           "La Biblioteconomía",
+                                           "La Bibliografía"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Es la definición de Biblioteconomía. La Documentación es la recogida y tratamiento de información registrada; la Ciencia de la Información estudia funciones, estructura y transmisión de la información.",
+                          "referencia":  "Manual de normas ISO 1: Documentación e Información",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En el Manual de normas ISO 1, la «recogida y tratamiento permanente y sistemático de información registrada, que permite su almacenamiento, recuperación, utilización o transmisión» define:",
+                          "opciones":  [
+                                           "La Documentación",
+                                           "La Biblioteconomía",
+                                           "La Ciencia de la Información",
+                                           "La Archivística"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Así se define la Documentación en las definiciones oficiales del Manual de normas ISO 1.",
+                          "referencia":  "Manual de normas ISO 1: Documentación e Información",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Siguiendo a qué autor se distinguen las corrientes tradicional, moderna y de nuevos conceptos de las ciencias de la documentación?",
+                          "opciones":  [
+                                           "Emilia Currás",
+                                           "Magán Wals",
+                                           "Luisa Orera",
+                                           "Lluís Codina"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Las corrientes que llevaron al concepto actual de Biblioteconomía en el siglo XX se exponen siguiendo a Magán Wals.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La biblioteconomía tradicional se caracteriza por:",
+                          "opciones":  [
+                                           "El libre acceso y la cooperación bibliotecaria",
+                                           "La participación de la informática, la publicidad y la pedagogía",
+                                           "El servicio al usuario y la extensión bibliotecaria",
+                                           "La conservación, la bibliofilia y el prestigio de la biblioteca de investigación"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La corriente tradicional se centra en la conservación y la bibliofilia. El libre acceso y la cooperación definen la biblioteconomía moderna.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El concepto de biblioteconomía moderna es fruto sobre todo del trabajo de los bibliotecarios:",
+                          "opciones":  [
+                                           "Franceses e italianos",
+                                           "Españoles y portugueses",
+                                           "Anglosajones, junto con alemanes y escandinavos",
+                                           "Rusos y centroeuropeos"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La biblioteconomía moderna, basada en el libre acceso, la cooperación y la extensión bibliotecaria, la impulsaron los anglosajones junto con alemanes y escandinavos.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Para Emilia Currás, el carácter científico de la Biblioteconomía se fundamenta en:",
+                          "opciones":  [
+                                           "La existencia de estudios teóricos basados en la investigación y la aplicación del método científico",
+                                           "La creación de asociaciones profesionales y de escuelas universitarias",
+                                           "Las cinco leyes de Ranganathan y las normas ISO",
+                                           "La normalización internacional promovida por la IFLA"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Currás la sitúa en las Ciencias de la Documentación y apoya su carácter científico en los estudios teóricos y en el método científico.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En la clasificación de Luisa Orera de los campos de investigación, la biblioteconomía especializada se ocupa de:",
+                          "opciones":  [
+                                           "El estudio global de la colección, la organización y la difusión",
+                                           "El estudio de la tipología bibliotecaria",
+                                           "Los aspectos internacionales de la cooperación interbibliotecaria",
+                                           "La formación de los profesionales"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La especializada estudia la tipología bibliotecaria; la general, la biblioteca en conjunto; la internacional, la cooperación entre países.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La IFLA se estableció en:",
+                          "opciones":  [
+                                           "1927, en La Haya",
+                                           "1938, en Bruselas",
+                                           "1945, en París",
+                                           "1927, en Edimburgo"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La IFLA se fundó en Edimburgo en 1927. La Haya es la sede de su secretaría central y París, la de la UNESCO.",
+                          "referencia":  "IFLA",
+                          "truco":  "IFLA: nace en Edimburgo, vive en La Haya.",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La secretaría central de la IFLA se encuentra en:",
+                          "opciones":  [
+                                           "Edimburgo",
+                                           "París",
+                                           "La Haya",
+                                           "Copenhague"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La secretaría central está en La Haya. Edimburgo es la ciudad de su fundación y Copenhague, la sede de FAIFE.",
+                          "referencia":  "IFLA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El periodo de 1958 a 1963, especialmente importante para la IFLA, tuvo como presidente a:",
+                          "opciones":  [
+                                           "Gustav Hoffman",
+                                           "Glòria Pérez-Salmerón",
+                                           "Ellen Tise",
+                                           "Paul Otlet"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Con Gustav Hoffman se celebró la Conferencia de Catalogación de París (1961), se logró el máximo estatuto consultivo con la UNESCO y se publicó un programa a largo plazo en 1963.",
+                          "referencia":  "IFLA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La Conferencia sobre Catalogación celebrada en París en 1961 bajo el impulso de la IFLA es antecedente de:",
+                          "opciones":  [
+                                           "El formato MARC",
+                                           "Las ISBD",
+                                           "La Clasificación Decimal Universal",
+                                           "Las normas ISO del TC46"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La Conferencia de París de 1961 es el antecedente de las ISBD.",
+                          "referencia":  "IFLA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Qué bibliotecaria española, que también dirigió la Biblioteca Nacional, presidió la IFLA?",
+                          "opciones":  [
+                                           "Emilia Currás",
+                                           "Luisa Orera",
+                                           "Mercedes de la Moneda",
+                                           "Glòria Pérez-Salmerón"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Glòria Pérez-Salmerón, antigua directora de la Biblioteca Nacional, presidió la IFLA.",
+                          "referencia":  "IFLA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El boletín oficial de la IFLA se titula:",
+                          "opciones":  [
+                                           "IFLA Directory",
+                                           "IFLA Professional Reports",
+                                           "IFLA Journal",
+                                           "LIBER Quarterly"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El boletín oficial es IFLA Journal. IFLA Directory es el directorio internacional de bibliotecas y Professional Reports son informes.",
+                          "referencia":  "IFLA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre la IFLA:",
+                          "opciones":  [
+                                           "Nació en 1938 a partir del Institut International de Bibliographie",
+                                           "Organiza cada año el World Library and Information Congress",
+                                           "Está constituida en secciones y comités",
+                                           "Sus objetivos son fomentar la cooperación, la investigación y el desarrollo bibliotecario"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La IFLA se fundó en 1927 en Edimburgo. El Institut International de Bibliographie y el año 1938 corresponden a la historia de la FID.",
+                          "referencia":  "IFLA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale cuál de los siguientes programas de la IFLA NO fue suprimido en 2003:",
+                          "opciones":  [
+                                           "UBCIM (Universal Bibliographic Control and International MARC)",
+                                           "FAIFE (Freedom of Access to Information and Freedom of Expression)",
+                                           "UAP (Disponibilidad Universal de Publicaciones)",
+                                           "UDT (Universal Dataflow and Telecommunications)"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "En 2003 se suprimieron UBCIM, UAP y UDT. FAIFE sigue siendo uno de los programas estratégicos.",
+                          "referencia":  "IFLA",
+                          "truco":  "Suprimidos 2003 = los tres que empiezan por U (UBCIM, UAP, UDT).",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre los programas estratégicos de la IFLA:",
+                          "opciones":  [
+                                           "FAIFE tiene su sede en Copenhague desde 1998",
+                                           "CLM tiene su sede en la BLDSC desde 1997",
+                                           "LDP fomenta el asociacionismo y la defensa del valor de las bibliotecas",
+                                           "PAC tiene su sede en La Haya, junto a la secretaría central"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "PAC tiene sede en la Library of Congress; CLM en la BLDSC y FAIFE en Copenhague.",
+                          "referencia":  "IFLA – Programa PAC",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El programa de la IFLA Copyright and other Legal Matters (CLM) tiene su sede en:",
+                          "opciones":  [
+                                           "La Library of Congress, desde 1998",
+                                           "Copenhague, desde 1997",
+                                           "La BLDSC, desde 1997",
+                                           "La Haya, desde 2003"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "CLM tiene sede en la BLDSC desde 1997 y busca que se oiga a usuarios y profesionales donde se legisla sobre derechos de autor.",
+                          "referencia":  "IFLA – Programa CLM",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Qué programa de la IFLA, con sede en Copenhague desde 1998, defiende los derechos del artículo 19 de la Declaración Universal de los Derechos Humanos?",
+                          "opciones":  [
+                                           "FAIFE",
+                                           "CLM",
+                                           "LDP",
+                                           "PAC"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "FAIFE (libertad de acceso a la información y de expresión) vigila la libertad intelectual en la comunidad bibliotecaria mundial.",
+                          "referencia":  "IFLA – Programa FAIFE",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El programa estratégico de la IFLA que colabora con bibliotecas, asociaciones y profesionales para fomentar el asociacionismo y defender el valor de las bibliotecas es:",
+                          "opciones":  [
+                                           "PAC",
+                                           "LDP (Library Development Programme)",
+                                           "CLM",
+                                           "UAP"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Es el LDP o Programa de Desarrollo de la Biblioteca.",
+                          "referencia":  "IFLA – Programa LDP",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Antes de ser FID, la organización funcionó como Institut International de Bibliographie en el periodo:",
+                          "opciones":  [
+                                           "1927–1938",
+                                           "1938–1959",
+                                           "1945–1963",
+                                           "1895–1914"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "El periodo del Institut International de Bibliographie va de 1895 a 1914, y de él surgió el Répertoire bibliographique universel.",
+                          "referencia":  "FID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El periodo del Institut International de Bibliographie estuvo marcado por:",
+                          "opciones":  [
+                                           "Melvil Dewey y Charles Cutter",
+                                           "Gabriel Naudé y Mazarino",
+                                           "Henri La Fontaine y Paul Otlet",
+                                           "Vannevar Bush y Ted Nelson"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La Fontaine y Otlet impulsaron el instituto y el Répertoire bibliographique universel.",
+                          "referencia":  "FID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La FID nació como Federación Internacional de Documentación en:",
+                          "opciones":  [
+                                           "1938",
+                                           "1927",
+                                           "1959",
+                                           "1895"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La FID nace en 1938 y obtiene en 1959 la categoría de organización internacional no gubernamental. 1927 es el año de la IFLA.",
+                          "referencia":  "FID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre la FID:",
+                          "opciones":  [
+                                           "Influyó durante el siglo XX en el desarrollo de la Documentación",
+                                           "Obtuvo en 1959 la categoría de organización internacional no gubernamental",
+                                           "Fue fundada en Edimburgo en 1927",
+                                           "Tuvo un periodo previo como Institut International de Bibliographie"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Edimburgo y 1927 corresponden a la fundación de la IFLA; la FID nace en 1938.",
+                          "referencia":  "FID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre la UNESCO:",
+                          "opciones":  [
+                                           "Fue creada por la ONU en 1945",
+                                           "Tiene su sede en París",
+                                           "Su misión incluye contribuir a la paz y al desarrollo humano",
+                                           "Fue fundada en Edimburgo en 1927"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Edimburgo y 1927 corresponden a la fundación de la IFLA. La UNESCO se creó en 1945 con sede en París.",
+                          "referencia":  "UNESCO",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Dentro de la Agenda 2030, el Objetivo de Desarrollo Sostenible 16 en el que las bibliotecas tienen un papel fundamental se refiere a:",
+                          "opciones":  [
+                                           "Garantizar una educación inclusiva y de calidad",
+                                           "Reducir la desigualdad entre países",
+                                           "Garantizar el acceso público a la información y proteger las libertades fundamentales",
+                                           "Revitalizar la alianza mundial para el desarrollo"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El ODS 16 incluye garantizar el acceso público a la información y proteger las libertades fundamentales, conforme a las leyes nacionales y los acuerdos internacionales.",
+                          "referencia":  "Agenda 2030 de la ONU (ODS 16)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Entre las actividades de la UNESCO sobre comunicación, el plurilingüismo en Internet se encuadra en:",
+                          "opciones":  [
+                                           "El desarrollo de contenidos",
+                                           "El acceso a la información",
+                                           "La preservación",
+                                           "La libertad de expresión"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Pares: acceso a la información (dominio público), capacidades (alfabetización informacional), contenidos (plurilingüismo), libertad de expresión (ética), medios (servicios públicos de difusión), preservación (E-Heritage).",
+                          "referencia":  "UNESCO",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Entre las actividades de la UNESCO sobre comunicación, la alfabetización informacional se cita como ejemplo de:",
+                          "opciones":  [
+                                           "Desarrollo de los medios de comunicación",
+                                           "Construcción de capacidades para fomentar el pensamiento crítico",
+                                           "Libertad de expresión",
+                                           "Preservación"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La alfabetización informacional ilustra la construcción de capacidades para el pensamiento crítico. E-Heritage corresponde a preservación.",
+                          "referencia":  "UNESCO",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre LIBER (Ligue des Bibliothèques Européennes de Recherche):",
+                          "opciones":  [
+                                           "Ayuda a las bibliotecas europeas de investigación, nacionales y universitarias",
+                                           "Busca crear una red funcional más allá de las fronteras nacionales",
+                                           "Se orienta a la ciencia abierta y a la innovación en la investigación",
+                                           "Representa a las bibliotecas públicas municipales europeas"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "LIBER trabaja con bibliotecas de investigación, nacionales y universitarias, y se orienta hoy a la ciencia abierta y la innovación en investigación.",
+                          "referencia":  "LIBER",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La principal publicación de LIBER es:",
+                          "opciones":  [
+                                           "IFLA Journal",
+                                           "Anuario ThinkEPI",
+                                           "LIBER Quarterly",
+                                           "IFLA Professional Reports"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "LIBER publica LIBER Quarterly; en 2018 contaba con más de 400 socios.",
+                          "referencia":  "LIBER",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El comité técnico de ISO encargado de la Información y Documentación es el:",
+                          "opciones":  [
+                                           "TC46",
+                                           "TC37",
+                                           "TC211",
+                                           "TC176"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "El TC46 de ISO se ocupa de la Información y Documentación.",
+                          "referencia":  "ISO – Comité técnico TC46",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Desde 2017, en España la creación y gestión de las Normas UNE corresponde a:",
+                          "opciones":  [
+                                           "AENOR",
+                                           "La Asociación Española de Normalización (UNE)",
+                                           "La ANECA",
+                                           "FESABID"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Tras la separación de 2017, UNE gestiona las normas y AENOR se queda con la certificación.",
+                          "referencia":  "Asociación Española de Normalización (UNE) / AENOR",
+                          "truco":  "UNE hace las normas UNE; AENOR certifica.",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La sigla IASA corresponde a:",
+                          "opciones":  [
+                                           "La Federación Internacional de Archivos Fílmicos",
+                                           "La International Society for Knowledge Organization",
+                                           "La International Association of School Librarianship",
+                                           "La International Association of Sound and Audiovisual Archives"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "IASA reúne a los archivos sonoros y audiovisuales. Los archivos fílmicos son FIAF, la organización del conocimiento ISKO y las bibliotecas escolares IASL.",
+                          "referencia":  "IASA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La Asociación Internacional de Bibliotecas Metropolitanas se conoce por la sigla:",
+                          "opciones":  [
+                                           "ABINIA",
+                                           "EAHL",
+                                           "INTAMEL",
+                                           "IALL"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "INTAMEL agrupa bibliotecas metropolitanas. ABINIA es de bibliotecas nacionales de Iberoamérica, EAHL de información sanitaria e IALL de bibliotecas jurídicas.",
+                          "referencia":  "INTAMEL",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "ABINIA es la sigla de:",
+                          "opciones":  [
+                                           "La Asociación de Bibliotecas Nacionales de Iberoamérica",
+                                           "La Asociación Internacional de Bibliotecas Metropolitanas",
+                                           "La Asociación de Bibliotecarios Iberoamericanos de Investigación",
+                                           "La Agrupación de Bibliotecas Nacionales de Europa"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "ABINIA es la Asociación de Bibliotecas Nacionales de Iberoamérica, ejemplo de asociación especializada por zona geográfica y tipo de biblioteca.",
+                          "referencia":  "ABINIA",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre las siglas de organizaciones internacionales especializadas:",
+                          "opciones":  [
+                                           "EAHL: European Association for Health Information and Libraries",
+                                           "ELAG: European Library Automation Group",
+                                           "IALL: International Association of Law Libraries",
+                                           "IASL: International Association of Special Libraries"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "IASL es la International Association of School Librarianship, es decir, de bibliotecas escolares, no especializadas.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "FESABID se fundó en:",
+                          "opciones":  [
+                                           "1975",
+                                           "1988",
+                                           "1927",
+                                           "1993"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "FESABID se fundó en 1988. 1975 es el año desde el que SEDIC tiene sede en Madrid.",
+                          "referencia":  "FESABID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Una de las actividades más reconocidas de FESABID es:",
+                          "opciones":  [
+                                           "Organizar anualmente el World Library and Information Congress",
+                                           "Gestionar la certificación de normas documentales",
+                                           "Publicar la revista LIBER Quarterly",
+                                           "Organizar cada dos años las Jornadas Españolas de Documentación"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "FESABID organiza cada dos años las Jornadas Españolas de Documentación.",
+                          "referencia":  "FESABID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El Caucus Hispánico de la IFLA, para el intercambio de experiencias en español, se creó a iniciativa de:",
+                          "opciones":  [
+                                           "SEDIC",
+                                           "REBIUN",
+                                           "FESABID",
+                                           "ANABAD"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Fue FESABID, portavoz de los profesionales españoles ante la Administración, la UE y organismos internacionales, quien impulsó el Caucus Hispánico.",
+                          "referencia":  "FESABID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre FESABID:",
+                          "opciones":  [
+                                           "Su grupo BPI trata sobre bibliotecas y propiedad intelectual",
+                                           "Tiene un grupo de trabajo de Identidad y posicionamiento profesional",
+                                           "Es la Federación Española de Sociedades de Archivística, Biblioteconomía, Documentación y Museística",
+                                           "Es una sociedad de documentalistas con sede en Madrid desde 1975"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La sociedad con sede en Madrid desde 1975 es SEDIC. FESABID es una federación de asociaciones creada en 1988.",
+                          "referencia":  "FESABID",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre SEDIC (Sociedad Española de Documentación e Información):",
+                          "opciones":  [
+                                           "Es una federación de asociaciones fundada en 1988",
+                                           "Es una asociación sin ánimo de lucro",
+                                           "Tiene su sede en Madrid desde 1975",
+                                           "Ofrece un catálogo de formación continuada"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "SEDIC agrupa documentalistas, bibliotecarios y gestores de información, sin ánimo de lucro, con sede en Madrid desde 1975.",
+                          "referencia":  "SEDIC",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA. Entre las vocalías a través de las que SEDIC desarrolla su actividad figura la de:",
+                          "opciones":  [
+                                           "Formación",
+                                           "Normalización y certificación",
+                                           "Publicaciones",
+                                           "Servicios al Socio"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Las vocalías son Comunicación, marketing y redes sociales; Formación; Publicaciones; Relaciones institucionales y Servicios al Socio.",
+                          "referencia":  "SEDIC",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En la evolución de las denominaciones profesionales, el término que surgió en el siglo XX es:",
+                          "opciones":  [
+                                           "Bibliotecario",
+                                           "Archivero",
+                                           "Profesional de la información",
+                                           "Documentalista"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Bibliotecario y archivero son las denominaciones tradicionales; documentalista surge en el siglo XX y últimamente se impone profesional de la información.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "REBIUN definió diez competencias profesionales para el ámbito de las bibliotecas universitarias en:",
+                          "opciones":  [
+                                           "2013",
+                                           "2007",
+                                           "2014",
+                                           "2004"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "REBIUN definió sus 10 competencias en 2014. En 2013 se elaboró el informe de perfiles del Consejo de Cooperación Bibliotecaria.",
+                          "referencia":  "REBIUN (2014)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El informe de 2013 con una amplia relación orientativa de perfiles profesionales para distintos tipos de bibliotecas fue elaborado por:",
+                          "opciones":  [
+                                           "El Grupo de Trabajo de Perfiles profesionales del Consejo de Cooperación Bibliotecaria",
+                                           "REBIUN",
+                                           "El Grupo de trabajo de Deontología profesional de SEDIC",
+                                           "El grupo BPI de FESABID"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Lo elaboró el Grupo de Trabajo de Perfiles profesionales del Consejo de Cooperación Bibliotecaria.",
+                          "referencia":  "Consejo de Cooperación Bibliotecaria – Perfiles profesionales (2013)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA. Entre las 10 competencias definidas por REBIUN en 2014 se encuentra:",
+                          "opciones":  [
+                                           "El análisis de la actividad científica",
+                                           "La dinamización sociocultural y la extensión cultural",
+                                           "La gestión de colecciones",
+                                           "La evaluación de la actividad investigadora"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La dinamización sociocultural figura entre los perfiles del Consejo de Cooperación Bibliotecaria, no entre las competencias de REBIUN.",
+                          "referencia":  "REBIUN (2014)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El Cuerpo de Facultativos de Archivos y Bibliotecas queda reflejado en:",
+                          "opciones":  [
+                                           "El Real Decreto de 17 de julio de 1858",
+                                           "La Real Orden de 1886",
+                                           "El Decreto de 1 de diciembre de 1978",
+                                           "La Ley de Instrucción Pública de 1857 (Ley Moyano)"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Aparece en la Ley Moyano de 1857 y se concreta en el Real Decreto de 17 de julio de 1858. La Real Orden de 1886 creó la Escuela de Diplomática.",
+                          "referencia":  "Ley de Instrucción Pública de 1857 (Ley Moyano)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La Escuela de Diplomática, creada por Real Orden de 1886, desapareció en:",
+                          "opciones":  [
+                                           "1857",
+                                           "1915",
+                                           "1900",
+                                           "1931"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La Escuela de Diplomática desapareció en 1900, dejando un vacío docente.",
+                          "referencia":  "Real Orden de 1886",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El Cuerpo de Auxiliares de Archivos y Bibliotecas existe desde:",
+                          "opciones":  [
+                                           "1933",
+                                           "1931",
+                                           "1973",
+                                           "1915"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "El nuevo Cuerpo de Auxiliares data de 1933. En 1931 se hizo la primera oposición separada de archiveros, bibliotecarios y museólogos, separación consumada en 1973.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "truco":  "31 se separa la oposición, 33 nacen los Auxiliares, 73 se consuma la separación.",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Dentro del Cuerpo de Facultativos, la primera oposición separada de Archiveros, Bibliotecarios y Museólogos se celebró en:",
+                          "opciones":  [
+                                           "1933",
+                                           "1931",
+                                           "1973",
+                                           "1886"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Fue en 1931, aunque la separación no se consumó hasta 1973.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La Escuela de Bibliotecarios de Barcelona se creó:",
+                          "opciones":  [
+                                           "En 1964, dependiente del Ministerio de Cultura",
+                                           "En 1982, adscrita a la Universidad Autónoma",
+                                           "En 1887, a imitación de la de Columbia",
+                                           "En 1915, bajo la paternidad de Eugenio D\u0027Ors"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Se creó en 1915 con Eugenio D\u0027Ors y la protección de la Diputación; en 1982 quedó adscrita a la Universidad Autónoma.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre la Escuela de Documentalistas de Madrid:",
+                          "opciones":  [
+                                           "Funcionó desde 1964",
+                                           "Ofreció cursos de tipo medio de un año para auxiliares",
+                                           "Fue creada en 1915 por la Diputación provincial",
+                                           "Se mantuvo hasta 1986, cuando se crearon las Escuelas Universitarias"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "1915 y la Diputación corresponden a la Escuela de Bibliotecarios de Barcelona. La de Madrid funcionó de 1964 a 1986.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La Escuela de Bibliotecas de la Universidad de Navarra:",
+                          "opciones":  [
+                                           "Apareció en los años 70 y desapareció tras 6 años de actividad",
+                                           "Se creó en 1915 y aún funciona",
+                                           "Fue la primera Escuela Universitaria de Biblioteconomía de España",
+                                           "Dependió del Ministerio de Cultura desde 1980"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Surgió en los años 70 y desapareció tras seis años de actividad.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La primera escuela de biblioteconomía del mundo, la School of Library Economy, se fundó en:",
+                          "opciones":  [
+                                           "1914, en Leipzig",
+                                           "1887, en la Universidad de Columbia, por Dewey",
+                                           "1870, en Boston, por Emerson",
+                                           "1909, por la Special Library Association"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La fundó Melvil Dewey, creador de la clasificación decimal, en 1887 en Columbia. Leipzig (1914) acogió la primera escuela europea.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La primera escuela europea de Biblioteconomía se fundó en:",
+                          "opciones":  [
+                                           "Barcelona, en 1915",
+                                           "Londres, en 1926",
+                                           "París, en 1938",
+                                           "Leipzig, en 1914"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Se fundó en Leipzig en 1914, un año antes que la Escuela de Bibliotecarios de Barcelona.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El surgimiento de la Special Library Association (1909) y de la ASLIB (1926) marca una etapa en la que se fomenta:",
+                          "opciones":  [
+                                           "La unificación de archiveros y bibliotecarios",
+                                           "La creación de los primeros cuerpos de funcionarios",
+                                           "El nacimiento de la Documentación frente a la Biblioteconomía",
+                                           "La adopción internacional de las ISBD"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Ambas fomentaron la Documentación frente a la Biblioteconomía, lo que produjo una escisión en la profesión y en la formación.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La norma que dejó abierta la posibilidad de crear Escuelas de Biblioteconomía y Documentación en las Universidades fue:",
+                          "opciones":  [
+                                           "El Decreto de 1 de diciembre de 1978",
+                                           "La Orden Ministerial de 24 de febrero de 1981",
+                                           "La Orden de 22 de diciembre de 1992",
+                                           "El Real Decreto 1393/2007"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "El Decreto de 1 de diciembre de 1978 abrió esa posibilidad; la Orden de 24 de febrero de 1981 presentó los planes de estudios.",
+                          "referencia":  "Decreto de 1 de diciembre de 1978",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Qué universidad fue la primera en crear una Escuela de Biblioteconomía y Documentación, en 1982, junto con Barcelona?",
+                          "opciones":  [
+                                           "Salamanca",
+                                           "Granada",
+                                           "Murcia",
+                                           "Complutense de Madrid"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Granada fue la primera, en 1982, junto con Barcelona. Salamanca se creó en 1982 pero no empezó hasta 1987 y Murcia data de 1988.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Las Escuelas Universitarias de Biblioteconomía y Documentación en España llegaron a ser:",
+                          "opciones":  [
+                                           "10, todas públicas",
+                                           "12, de ellas 2 privadas",
+                                           "18, con 28 másteres",
+                                           "14, de ellas 12 públicas y 2 privadas"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Se llegó a 14 escuelas: 12 públicas y 2 privadas. Las cifras de 18 universidades y 28 másteres corresponden al posgrado.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El acceso a la Licenciatura en Documentación se reguló mediante:",
+                          "opciones":  [
+                                           "El Decreto de 1 de diciembre de 1978",
+                                           "La Orden de 24 de febrero de 1981",
+                                           "La Orden de 22 de diciembre de 1992 (BOE de 13 de enero de 1993)",
+                                           "El Real Decreto 99/2011"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La Orden de 22 de diciembre de 1992 regula el acceso a la Licenciatura. El RD 99/2011 regula el doctorado.",
+                          "referencia":  "Orden de 22 de diciembre de 1992",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre la Licenciatura en Documentación:",
+                          "opciones":  [
+                                           "Ofrece una mayor especialización en Archivística que la diplomatura",
+                                           "Incluye conocimientos de informática y estadística",
+                                           "Incluye gestión y planificación y nuevas tecnologías",
+                                           "Sus estudios están en proceso de extinción"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "A diferencia de la diplomatura, la licenciatura no ofrece mayor especialización en Archivística.",
+                          "referencia":  "Orden de 22 de diciembre de 1992",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Los estudios de Documentación se adaptaron al Espacio Europeo de Educación Superior mediante el Real Decreto:",
+                          "opciones":  [
+                                           "99/2011",
+                                           "1393/2007, de 29 de octubre",
+                                           "1393/2004, de 29 de octubre",
+                                           "582/1989"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "El RD 1393/2007 ordena las enseñanzas universitarias oficiales y contempla los estudios de Grado y Máster.",
+                          "referencia":  "Real Decreto 1393/2007",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El Libro Blanco de la ANECA propuso para el nuevo Grado la titulación de Grado en Información y Documentación en:",
+                          "opciones":  [
+                                           "2007",
+                                           "2010",
+                                           "2002",
+                                           "2004"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La ANECA lo propuso en 2004; desde ese año también se redujo mucho la matrícula en las titulaciones antiguas.",
+                          "referencia":  "Libro Blanco de la ANECA (2004)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre el Grado en Información y Documentación:",
+                          "opciones":  [
+                                           "Lo propuso el Libro Blanco de la ANECA en 2004",
+                                           "Se enmarca en el RD 1393/2007",
+                                           "Cuenta con 180 créditos ECTS en 3 años",
+                                           "Forma gestores de información y de contenidos"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El Grado tiene 240 ECTS en 4 años; los 60 créditos en un año son lo habitual en el máster.",
+                          "referencia":  "Real Decreto 1393/2007",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "En universidades como la Carlos III o la de Barcelona, el Grado en Información y Documentación ha empezado a sustituirse por:",
+                          "opciones":  [
+                                           "El Grado en Gestión de la Información y Contenidos Digitales",
+                                           "La Licenciatura en Documentación",
+                                           "El Grado en Biblioteconomía y Archivística",
+                                           "El Máster en Ciencia de la Información"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Se ha sustituido por un grado similar: Gestión de la Información y Contenidos Digitales.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El Doctorado en el ámbito de la Información y Documentación está regulado por:",
+                          "opciones":  [
+                                           "El RD 1393/2007",
+                                           "El RD 99/2011",
+                                           "La Orden de 22 de diciembre de 1992",
+                                           "El Decreto de 1 de diciembre de 1978"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "El Doctorado está regulado por el RD 99/2011; el RD 1393/2007 ordena Grado y Máster.",
+                          "referencia":  "Real Decreto 99/2011",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de las siguientes afirmaciones sobre el Máster en el ámbito de la Documentación es correcta?",
+                          "opciones":  [
+                                           "Se ofrece en todas las universidades con Grado y siempre dura dos años",
+                                           "Lo regula el RD 99/2011 junto con el Doctorado",
+                                           "Los datos sobre su oferta los publica la ANECA en su Libro Blanco",
+                                           "La mayoría se cursa en 60 créditos en un año"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La mayoría tiene 60 créditos en un año; los datos (unas 18 universidades y 28 másteres) los publica Mercedes de la Moneda en el Anuario ThinkEPI.",
+                          "referencia":  "Anuario ThinkEPI",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA sobre la formación continua de los profesionales de la información:",
+                          "opciones":  [
+                                           "En algunos casos ha sido la única vía de formación de algunos profesionales",
+                                           "Incluye los planes de reciclaje de organismos públicos y empresas",
+                                           "Excluye las jornadas profesionales, que no se consideran formación",
+                                           "SEDIC ofrece en Madrid cursos especializados presenciales y en línea"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Las jornadas profesionales sí forman parte de la formación permanente, porque aportan experiencias y nuevas perspectivas.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La ponencia «Misión del bibliotecario», en la que el bibliotecario se concibe como un filtro entre el torrente de libros y el hombre, es de:",
+                          "opciones":  [
+                                           "José Ortega y Gasset, en 1935",
+                                           "Ralph W. Emerson, en 1870",
+                                           "S.R. Ranganathan, en 1931",
+                                           "R.O. Mason, en 1935"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "Ortega y Gasset la pronunció en 1935, y su visión del bibliotecario como filtro sigue vigente.",
+                          "referencia":  "Ortega y Gasset, «Misión del bibliotecario» (1935)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Según el informe de FESABID de 2013, el retorno de la inversión (ROI) de las bibliotecas españolas se sitúa entre:",
+                          "opciones":  [
+                                           "1,50 y 2,49 € por euro invertido",
+                                           "3,10 y 4,24 € por euro invertido",
+                                           "2,49 y 3,40 € por euro invertido",
+                                           "2,00 y 3,00 € por euro invertido"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El ROI mínimo es de 2,49 y el máximo de 3,40 € por euro invertido; el valor aportado va de 3.099,8 a 4.238,5 millones de euros al año.",
+                          "referencia":  "Informe FESABID (2013) sobre el valor económico de las bibliotecas",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Definió a los profesionales de la información como aquellos cuya misión común es conseguir la información adecuada, de la fuente adecuada, para el usuario adecuado y en el tiempo adecuado:",
+                          "opciones":  [
+                                           "José Ortega y Gasset",
+                                           "R.O. Mason",
+                                           "S.R. Ranganathan",
+                                           "Lluís Codina"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Es la definición de R.O. Mason, próxima a la segunda ley de Ranganathan.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "La Declaración de Lyon sobre el acceso a la información y el desarrollo, que pide a los Estados miembros de la ONU reconocer el acceso a la información como necesario para el desarrollo sostenible, es de:",
+                          "opciones":  [
+                                           "2002",
+                                           "2013",
+                                           "2030",
+                                           "2014"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La Declaración de Lyon es de 2014, el mismo año en que se actualizó el Manifiesto sobre Internet de la IFLA.",
+                          "referencia":  "Declaración de Lyon (IFLA, 2014)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "El Código ético nacional de los profesionales de la información en España:",
+                          "opciones":  [
+                                           "Lo aprobó la IFLA en 2014 a propuesta de REBIUN",
+                                           "Lo aprobó SEDIC en 1975",
+                                           "Lo aprobó FESABID en 2013, gracias al Grupo de trabajo de Deontología profesional de SEDIC",
+                                           "Lo aprobó el Consejo de Cooperación Bibliotecaria en 2013"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Lo redactó el Grupo de Deontología profesional de SEDIC y lo aprobó FESABID en 2013.",
+                          "referencia":  "Código ético para profesionales de la información (FESABID, 2013)",
+                          "truco":  "SEDIC redacta, FESABID aprueba (2013).",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "Señale la respuesta INCORRECTA. Son principios éticos del Código ético español de los profesionales de la información:",
+                          "opciones":  [
+                                           "Autonomía",
+                                           "Justicia",
+                                           "Lealtad a la organización",
+                                           "Confianza"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Los principios son autonomía, justicia, utilidad social, responsabilidad social y confianza. La lealtad a la organización es uno de los diez valores.",
+                          "referencia":  "Código ético para profesionales de la información (FESABID, 2013)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de los siguientes es un VALOR, y no un principio ético, del Código ético español aprobado por FESABID?",
+                          "opciones":  [
+                                           "La privacidad y la confidencialidad",
+                                           "La autonomía",
+                                           "La justicia",
+                                           "La confianza"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La privacidad y la confidencialidad es el segundo de los diez valores; autonomía, justicia y confianza son principios.",
+                          "referencia":  "Código ético para profesionales de la información (FESABID, 2013)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de las siguientes afirmaciones sobre la Biblioteconomía es correcta?",
+                          "opciones":  [
+                                           "Su primera escuela se fundó en Leipzig en 1887",
+                                           "La Biblioteconomía moderna se basa en el papel pasivo del bibliotecario conservador",
+                                           "Durante el siglo XX pasó a denominarse Information Science en el ámbito anglosajón",
+                                           "Ranganathan la orientó hacia la conservación y la bibliofilia"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "En el siglo XX la Biblioteconomía y Documentación cambiaron su denominación a Information Science en el ámbito anglosajón. La escuela de 1887 fue la de Columbia.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de las siguientes afirmaciones sobre los servicios bibliotecarios es correcta?",
+                          "opciones":  [
+                                           "Durante el siglo XX, la referencia tuvo más peso en la Europa continental que en las bibliotecas anglosajonas",
+                                           "En el entorno digital, los servicios de información y de acceso al documento se convierten en dos etapas de un mismo servicio",
+                                           "La formación de usuarios se generaliza en el siglo XIX",
+                                           "La DSI es el servicio más tradicional de la biblioteca"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "En el siglo XXI ambos servicios se interrelacionan hasta ser dos etapas de un mismo servicio. La referencia pesó más en el mundo anglosajón y la formación de usuarios surge en los años 60–70 del siglo XX.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
                       }
                   ],
     "fichas":  [
@@ -11806,6 +13734,344 @@
                        "bloque":  "Temario específico UMH",
                        "tema":  "E20. Propiedad intelectual, Creative Commons, dominio público y antiplagio",
                        "truco":  "Docencia no autoriza cualquier reproducción."
+                   },
+                   {
+                       "anverso":  "Etimología de «biblioteca»",
+                       "reverso":  "Del griego biblion (libro) + theke (caja): los estuches de los rollos manuscritos.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Etapas históricas del concepto de biblioteca (6)",
+                       "reverso":  "1) Biblioteca/archivo (Mesopotamia, Egipto); 2) Biblioteca de Alejandría (pinakes de Calímaco); 3) Scriptoria medievales; 4) Primeras bibliotecas universitarias (Bolonia, París, Salamanca); 5) Biblioteca renacentista (El Escorial, libre acceso); 6) Bibliotecas públicas (democracia + industria).",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Tres periodos según el soporte documental",
+                       "reverso":  "Manuscritos (Antigüedad–s. XV); libro impreso (s. XV–finales del XX); información digital en red o hiperdocumentos (desde finales del XX).",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Bush, Nelson y Berners-Lee: ¿qué aporta cada uno?",
+                       "reverso":  "Vannevar Bush (1945): hipertexto. Ted Nelson (1965): documento universal (Xanadú). Tim Berners-Lee (1991): World Wide Web.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Definición de biblioteca de la ALA: términos esenciales",
+                       "reverso":  "Colección, información, acceso, usuarios, servicios, programas y profesionales.",
+                       "referencia":  "American Library Association (ALA)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Unidades de información",
+                       "reverso":  "Bibliotecas, archivos administrativos, archivos históricos y centros de documentación; juntas forman el Sistema Nacional de Información.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "SID según Lluís Codina: entrada, proceso y salida",
+                       "reverso":  "Entrada: documentos cognitivos y necesidades de información. Proceso: subsistema de recuperación que genera documentos probabilísticos relevantes. Salida: personas informadas.",
+                       "explicacion":  "El SID se fundamenta en la teoría general de sistemas.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Biblioteca híbrida vs. biblioteca virtual",
+                       "reverso":  "Híbrida: procesos automatizados y servicios digitales como complemento de los tradicionales (coexisten presencial y digital). Virtual: ofrece exclusivamente servicios de información digital.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Las cinco funciones de la biblioteca",
+                       "reverso":  "1) Crear y mantener la colección; 2) organizarla; 3) difundirla con eficacia; 4) ser foro de intercambio de conocimiento; 5) ser agente activo del desarrollo de la sociedad.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Dos niveles del análisis documental en la organización de la colección",
+                       "reverso":  "Análisis documental de la forma y análisis de contenido.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Tres grupos de servicios bibliotecarios según su fin",
+                       "reverso":  "Acceso al documento (documento primario o reproducción); información y formación (fuentes secundarias); fomento de la educación y la cultura.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Servicios de acceso al documento",
+                       "reverso":  "Consulta en sala, préstamo a domicilio (individual o colectivo), préstamo interbibliotecario y obtención de documentos, y reproducción de documentos.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Referencia vs. información bibliográfica",
+                       "reverso":  "Referencia: consultas muy concretas con fuentes generales. Información bibliográfica: temas complejos con fuentes especializadas.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Manifiesto sobre Internet de la IFLA",
+                       "reverso":  "De 2002, actualizado en 2014. Las libertades de acceso a la información y de expresión son esenciales para la igualdad, el entendimiento global y la paz.",
+                       "referencia":  "Manifiesto de la IFLA sobre Internet (2002, act. 2014)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "DSI (difusión selectiva de la información)",
+                       "reverso":  "El usuario recibe periódicamente información actualizada sobre su perfil, de fuentes seleccionadas previamente.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Extensión bibliotecaria vs. extensión cultural",
+                       "reverso":  "Bibliotecaria: llevar servicios a quien no puede acudir (sucursales, bibliobuses). Cultural: actividades culturales, en especial relacionadas con la lectura.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Servicios según el método: ejemplos",
+                       "reverso":  "Presencial: préstamo. En línea: consulta de bases de datos documentales. Mixto: formación de usuarios presencial o con tutoriales en línea.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Cuatro retos de los servicios bibliotecarios",
+                       "reverso":  "Desintermediación, reintermediación (servicios 24/7 y servicios distribuidos, p. ej. referencia mundial de la Library of Congress), cobro frente a gratuidad y externalización.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Origen del término «biblioteconomía»",
+                       "reverso":  "Gabriel Naudé, bibliotecario de Mazarino, Francia, 1633. En el siglo XIX se recupera para diferenciarla de la Bibliografía.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Ralph W. Emerson (1870)",
+                       "reverso":  "Ensayo sobre los «profesores de libros»: el bibliotecario como difusor activo de información. Sienta las bases de la Biblioteconomía moderna.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Cinco leyes de Ranganathan",
+                       "reverso":  "1) Los libros están para usarse (1931). 2) Cada lector su libro. 3) Cada libro su lector. 4) El tiempo del lector debe economizarse. 5) La biblioteca es un organismo en crecimiento.",
+                       "referencia":  "Cinco leyes de la Biblioteconomía (S.R. Ranganathan)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Definiciones del Manual de normas ISO 1",
+                       "reverso":  "Biblioteconomía: ciencia de la información aplicada a la biblioteca. Documentación: recogida y tratamiento de información registrada. Ciencia de la Información: estudio de funciones, estructura y transmisión de la información.",
+                       "referencia":  "Manual de normas ISO 1: Documentación e Información",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Corrientes de la Biblioteconomía según Magán Wals",
+                       "reverso":  "Tradicional (conservación, bibliofilia); moderna (anglosajones, alemanes y escandinavos: libre acceso, cooperación); nuevos conceptos de las ciencias de la documentación (informática, publicidad, pedagogía, lingüística...).",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Campos de investigación de la Biblioteconomía según Luisa Orera",
+                       "reverso":  "General (estudio global: colección, organización, difusión); especializada (tipología bibliotecaria); internacional (cooperación interbibliotecaria internacional).",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "IFLA: fundación y sede",
+                       "reverso":  "Fundada en 1927 en Edimburgo; secretaría central en La Haya; conferencia anual: World Library and Information Congress.",
+                       "referencia":  "IFLA",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "IFLA 1958–1963 (presidencia de Gustav Hoffman)",
+                       "reverso":  "Conferencia de Catalogación de París (1961), antecedente de las ISBD; máximo estatuto consultivo con la UNESCO; programa a largo plazo (1963).",
+                       "referencia":  "IFLA",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Publicaciones de la IFLA",
+                       "reverso":  "IFLA Journal (boletín oficial), IFLA Publications Series (monografías), IFLA Professional Reports (informes) e IFLA Directory (directorio).",
+                       "referencia":  "IFLA",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Programas de la IFLA suprimidos en 2003",
+                       "reverso":  "UBCIM, UAP y UDT.",
+                       "referencia":  "IFLA",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Programas estratégicos de la IFLA y sedes",
+                       "reverso":  "PAC (Library of Congress); LDP (asociacionismo y valor de las bibliotecas); CLM (BLDSC, desde 1997); FAIFE (Copenhague, desde 1998; art. 19 DUDH).",
+                       "referencia":  "IFLA",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "FID: hitos",
+                       "reverso":  "Institut International de Bibliographie (1895–1914; La Fontaine y Otlet; Répertoire bibliographique universel) → FID en 1938 → ONG internacional en 1959.",
+                       "referencia":  "FID",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "UNESCO: creación, sede y misión",
+                       "reverso":  "Creada por la ONU en 1945, sede en París. Misión: contribuir a la paz y al desarrollo humano mediante la educación, las ciencias, la cultura y la comunicación.",
+                       "referencia":  "UNESCO",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "ODS 16 (Agenda 2030) y bibliotecas",
+                       "reverso":  "Garantizar el acceso público a la información y proteger las libertades fundamentales. La Agenda 2030 tiene 17 ODS.",
+                       "referencia":  "Agenda 2030 de la ONU (ODS 16)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "LIBER",
+                       "reverso":  "Ligue des Bibliothèques Européennes de Recherche: red de bibliotecas europeas de investigación, nacionales y universitarias. Más de 400 socios (2018). Publica LIBER Quarterly. Línea actual: ciencia abierta.",
+                       "referencia":  "LIBER",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "ISO y normalización en España",
+                       "reverso":  "ISO TC46: Información y Documentación. Desde 2017, UNE (Asociación Española de Normalización) gestiona las normas UNE y AENOR se ocupa de la certificación.",
+                       "referencia":  "ISO – Comité técnico TC46",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "FIAF, ISKO, IASA",
+                       "reverso":  "FIAF: Federación Internacional de Archivos Fílmicos. ISKO: International Society for Knowledge Organization. IASA: International Association of Sound and Audiovisual Archives.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "ABINIA, INTAMEL, EAHL, ELAG, IALL, IASL",
+                       "reverso":  "Bibliotecas Nacionales de Iberoamérica; Bibliotecas Metropolitanas; Información sanitaria y bibliotecas (Europa); Automatización de bibliotecas (Europa); Bibliotecas jurídicas; Bibliotecas escolares.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "FESABID",
+                       "reverso":  "Federación Española de Sociedades de Archivística, Biblioteconomía, Documentación y Museística (1988). Impulsó el Caucus Hispánico de la IFLA. Organiza las Jornadas Españolas de Documentación cada dos años. Grupos: BPI e Identidad y posicionamiento profesional.",
+                       "referencia":  "FESABID",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "SEDIC",
+                       "reverso":  "Sociedad Española de Documentación e Información: asociación sin ánimo de lucro, con sede en Madrid desde 1975, con vocalías y un catálogo de formación continuada (cursos presenciales y en línea).",
+                       "referencia":  "SEDIC",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Evolución de las denominaciones profesionales",
+                       "reverso":  "Tradicionales: bibliotecario, archivero. Siglo XX: documentalista. Actual: profesional de la información. En el ámbito anglosajón: Information Science.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "REBIUN 2014 vs. Consejo de Cooperación Bibliotecaria 2013",
+                       "reverso":  "REBIUN (2014): 10 competencias para bibliotecas universitarias. CCB (2013): informe orientativo de perfiles profesionales del Grupo de Trabajo de Perfiles.",
+                       "referencia":  "REBIUN (2014)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Cronología de la formación en España (s. XIX–XX)",
+                       "reverso":  "1857 Ley Moyano (Cuerpo de Facultativos); 1858 RD de 17 de julio; 1886 Escuela de Diplomática (hasta 1900); 1915 Escuela de Bibliotecarios de Barcelona; 1931 primera oposición separada; 1933 Cuerpo de Auxiliares; 1964–1986 Escuela de Documentalistas de Madrid; 1973 separación consumada.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Primeras escuelas de biblioteconomía en el mundo",
+                       "reverso":  "1887: School of Library Economy (Columbia), de Dewey. 1914: Leipzig, primera escuela europea. Después, la Special Library Association (1909) y la ASLIB (1926) impulsan la Documentación.",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Normas de la enseñanza universitaria de Documentación en España",
+                       "reverso":  "Decreto de 1/12/1978 (Escuelas); OM de 24/2/1981 (planes); Orden de 22/12/1992 (Licenciatura); RD 1393/2007 (Grado y Máster); RD 99/2011 (Doctorado).",
+                       "referencia":  "Manual MAD, Tema 7",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Grado en Información y Documentación",
+                       "reverso":  "Propuesto por el Libro Blanco de la ANECA (2004). 240 ECTS en 4 años. Sustituido en algunas universidades por el Grado en Gestión de la Información y Contenidos Digitales.",
+                       "referencia":  "Libro Blanco de la ANECA (2004)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Ortega y Gasset, «Misión del bibliotecario» (1935)",
+                       "reverso":  "El bibliotecario como filtro entre el torrente de libros y el hombre.",
+                       "referencia":  "Ortega y Gasset, «Misión del bibliotecario» (1935)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Informe FESABID 2013: valor de las bibliotecas",
+                       "reverso":  "Aportan entre 3.099,8 y 4.238,5 millones de euros al año; ROI entre 2,49 y 3,40 € por euro invertido.",
+                       "referencia":  "Informe FESABID (2013) sobre el valor económico de las bibliotecas",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Código ético español: principios éticos (5)",
+                       "reverso":  "Autonomía, justicia, utilidad social, responsabilidad social y confianza.",
+                       "explicacion":  "Elaborado por el Grupo de Deontología profesional de SEDIC y aprobado por FESABID en 2013.",
+                       "referencia":  "Código ético para profesionales de la información (FESABID, 2013)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                   },
+                   {
+                       "anverso":  "Código ético español: valores (10)",
+                       "reverso":  "Libertad intelectual; privacidad y confidencialidad; acceso a la información; derechos de autor y propiedad intelectual; profesionalidad; lealtad a la organización; conservación y preservación; respeto a la diversidad; responsabilidad social y medio ambiente; calidad del servicio.",
+                       "referencia":  "Código ético para profesionales de la información (FESABID, 2013)",
+                       "bloque":  "Temario específico UMH",
+                       "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
                    }
                ],
     "articulos":  [
@@ -12131,6 +14397,41 @@
                           "referencia":  "LPI",
                           "bloque":  "Temario específico UMH",
                           "tema":  "E20. Propiedad intelectual, Creative Commons, dominio público y antiplagio"
+                      },
+                      {
+                          "titulo":  "Definición de biblioteca de la ALA",
+                          "texto":  "Una {{colección}} de material de información {{organizada}} para que pueda acceder a ella un grupo de {{usuarios}}. Tiene {{personal}} encargado de los {{servicios}} y {{programas}} relacionados con las necesidades de información de los lectores.",
+                          "referencia":  "American Library Association (ALA)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "titulo":  "Manual de normas ISO 1: Biblioteconomía y Documentación",
+                          "texto":  "Biblioteconomía: {{ciencia de la Información}} aplicada a la organización, {{administración}} y servicios de biblioteca. Documentación: recogida y tratamiento {{permanente}} y {{sistemático}} de información {{registrada}}, que permite su almacenamiento, {{recuperación}}, utilización o transmisión.",
+                          "referencia":  "Manual de normas ISO 1: Documentación e Información",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "titulo":  "Manual de normas ISO 1: Ciencia de la Información",
+                          "texto":  "Ciencia de la Información: estudio de las {{funciones}}, de la {{estructura}} y de la {{transmisión}} de la información, así como la {{gestión}} de {{sistemas de información}}.",
+                          "referencia":  "Manual de normas ISO 1: Documentación e Información",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "titulo":  "Agenda 2030: Objetivo de Desarrollo Sostenible 16",
+                          "texto":  "Garantizar el {{acceso público}} a la {{información}} y proteger las {{libertades fundamentales}}, de conformidad con las {{leyes nacionales}} y los {{acuerdos internacionales}}.",
+                          "referencia":  "Agenda 2030 de la ONU (ODS 16)",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
+                      },
+                      {
+                          "titulo":  "Definición de profesional de la información (R.O. Mason)",
+                          "texto":  "Son todos aquellos que tienen como {{misión}} común conseguir la información {{adecuada}}, de la {{fuente}} adecuada, para el {{usuario}} adecuado, en {{tiempo}} adecuado.",
+                          "referencia":  "Manual MAD, Tema 7",
+                          "bloque":  "Temario específico UMH",
+                          "tema":  "Tema 7 (MAD). Concepto y función de la biblioteca, organizaciones bibliotecarias y formación"
                       }
                   ]
 }
