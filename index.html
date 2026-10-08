@@ -322,7 +322,15 @@
 <script>
 // Entorno: desarrollo (repositorio *-dev, o en local) o producción.
 // Ambos viven en el mismo dominio (github.io), así que cada uno guarda sus datos con un prefijo distinto.
-const ENV = /^\/[^/]+-dev\//.test(location.pathname) || ['localhost', '127.0.0.1'].includes(location.hostname) || location.protocol === 'file:' ? 'dev' : 'prod';
+const LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname) || location.protocol === 'file:';
+// En local se puede probar como producción con ?env=prod
+const ENV = LOCAL && new URLSearchParams(location.search).get('env') === 'prod' ? 'prod'
+  : /^\/[^/]+-dev\//.test(location.pathname) || LOCAL ? 'dev' : 'prod';
+// Funciones ya aprobadas para producción. En desarrollo están todas activas.
+// Para pasar una función a producción basta con añadirla aquí.
+const PROD_FEATURES = ['flash'];
+const ALL_FEATURES = ['flash', 'articulos', 'audio', 'vf', 'recall', 'notas', 'confusion'];
+const feat = name => ENV === 'dev' || PROD_FEATURES.includes(name);
 const P = ENV === 'dev' ? 'quizdev.' : 'quiz.';
 const K = Object.fromEntries(Object.entries({
   set: 'set', stats: 'stats', marks: 'marks', hist: 'history', run: 'run',
@@ -549,14 +557,14 @@ function showHome(error) {
           <span class="muted">${plan.due.length || plan.fresh.length ? `${plan.due.length} para repasar · ${plan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>
         <button class="quick-btn" id="simBtn"><span class="qi">🎯</span><b>${esc(s.simNombre)}</b>
           <span class="muted">${Math.min(s.simPreguntas, simPool.length)} preguntas${s.simBloque ? ` de «${esc(s.simBloque)}»` : ''} · ${s.simMinutos ? s.simMinutos + ' min' : 'sin tiempo'} · ${penTxt}</span></button>
-        <button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
-          <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>
-        <button class="quick-btn" id="artBtn"><span class="qi">📜</span><b>Artículos</b>
-          <span class="muted">${arts.length ? `${arts.length} para rellenar huecos` : 'Memoriza artículos de ley'}</span></button>
-        <button class="quick-btn" id="audioBtn"><span class="qi">🎧</span><b>Modo audio</b>
-          <span class="muted">Escucha preguntas y respuestas</span></button>
-        <button class="quick-btn" id="vfBtn"><span class="qi">⚡</span><b>Verdadero / Falso</b>
-          <span class="muted">Repaso rápido${load(K.vf, {}).best ? ` · récord racha ${load(K.vf, {}).best}` : ''}</span></button>
+        ${feat('flash') ? `<button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
+          <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>` : ''}
+        ${feat('articulos') ? `<button class="quick-btn" id="artBtn"><span class="qi">📜</span><b>Artículos</b>
+          <span class="muted">${arts.length ? `${arts.length} para rellenar huecos` : 'Memoriza artículos de ley'}</span></button>` : ''}
+        ${feat('audio') ? `<button class="quick-btn" id="audioBtn"><span class="qi">🎧</span><b>Modo audio</b>
+          <span class="muted">Escucha preguntas y respuestas</span></button>` : ''}
+        ${feat('vf') ? `<button class="quick-btn" id="vfBtn"><span class="qi">⚡</span><b>Verdadero / Falso</b>
+          <span class="muted">Repaso rápido${load(K.vf, {}).best ? ` · récord racha ${load(K.vf, {}).best}` : ''}</span></button>` : ''}
       </div>
     </div>` : ''}
     ${qs.length ? `
@@ -576,7 +584,7 @@ function showHome(error) {
       <label class="opt"><input id="sho" type="checkbox" checked> Barajar opciones</label>
       <label class="opt"><input id="onlyKo" type="checkbox"> Solo las que he fallado alguna vez (${failedCount})</label>
       <label class="opt"><input id="onlyMarked" type="checkbox"> Solo las marcadas ★ (${markedCount})</label>
-      <label class="opt"><input id="recall" type="checkbox" ${load(K.settings, {}).recall ? 'checked' : ''}> 🧠 Recuerdo activo: piensa la respuesta antes de ver las opciones</label>
+      ${feat('recall') ? `<label class="opt"><input id="recall" type="checkbox" ${load(K.settings, {}).recall ? 'checked' : ''}> 🧠 Recuerdo activo: piensa la respuesta antes de ver las opciones</label>` : ''}
       <p class="muted">Penalización: ${penTxt} · <a href="#" id="penLink">cambiar</a></p>
       <button class="primary" id="start">Empezar</button>
     </div>` : ''}
@@ -617,10 +625,10 @@ function showHome(error) {
 
   const confirmDiscard = () => !saved || confirm('Se descartará el test a medias. ¿Empezar uno nuevo?');
   const needQs = fn => () => qs.length ? fn() : alert('Primero añade preguntas tipo test en ✏️ Editor.');
-  $('flashBtn').onclick = () => showStudySetup('flash');
-  $('audioBtn').onclick = () => showStudySetup('audio');
-  $('vfBtn').onclick = needQs(() => showStudySetup('vf'));
-  $('artBtn').onclick = () => showArticles();
+  if ($('flashBtn')) $('flashBtn').onclick = () => showStudySetup('flash');
+  if ($('audioBtn')) $('audioBtn').onclick = () => showStudySetup('audio');
+  if ($('vfBtn')) $('vfBtn').onclick = needQs(() => showStudySetup('vf'));
+  if ($('artBtn')) $('artBtn').onclick = () => showArticles();
   if (!qs.length) {
     $('srsBtn').onclick = $('simBtn').onclick = needQs(() => {});
     return;
@@ -658,9 +666,10 @@ function showHome(error) {
     if ($('shq').checked) list = shuffle(list);
     list = list.slice(0, Math.max(1, +$('num').value || list.length));
     const mode = document.querySelector('input[name=mode]:checked').value;
-    saveSettings({ recall: $('recall').checked });
+    const recall = !!$('recall')?.checked;
+    if ($('recall')) saveSettings({ recall });
     startRun(list, {
-      recall: $('recall').checked,
+      recall,
       shuffleOpts: $('sho').checked, mode, minutes: mode === 'examen' ? +$('minutes').value || 0 : 0,
       label: [bloque, tema, refRaw && `ref. «${refRaw}»`].filter(Boolean).join(' · ')
     });
@@ -853,6 +862,7 @@ const refHTML = q => q.referencia ? `<div class="ref">📖 ${esc(q.referencia)}<
 // Truco compartido (del JSON) y nota personal (solo en este dispositivo)
 const myNote = key => load(K.notes, {})[key] || '';
 function notesHTML(item, key) {
+  if (!feat('notas')) return '';
   const n = myNote(key);
   return `${item.truco ? `<div class="truco">💡 <b>Truco:</b> ${esc(item.truco)}</div>` : ''}
     ${n ? `<div class="truco mine">📝 <b>Mi nota:</b> ${esc(n)}</div>` : ''}
@@ -873,7 +883,7 @@ function bindNoteBtns(root, redraw) {
 
 // "Sueles confundir…": cuántas veces se ha elegido esta misma opción incorrecta
 function confusionHTML(q, chosen) {
-  if (chosen === null || chosen === q.correcta) return '';
+  if (!feat('confusion') || chosen === null || chosen === q.correcta) return '';
   const n = load(K.stats, {})[keyOf(q)]?.wrong?.[q.opciones[chosen]] || 0;
   return n >= 2 ? `<div class="confusion">⚠️ Ya has elegido <b>«${esc(q.opciones[chosen])}»</b> ${n} veces en esta pregunta. Fíjate bien: la correcta es <b>«${esc(q.opciones[q.correcta])}»</b>.</div>` : '';
 }
@@ -1030,6 +1040,7 @@ function heatmapHTML(weeks = 18) {
 
 // Opciones incorrectas que se eligen una y otra vez en la misma pregunta
 function confusionsCardHTML() {
+  if (!feat('confusion')) return '';
   const stats = load(K.stats, {});
   const list = (set?.preguntas || []).flatMap(q => Object.entries(stats[keyOf(q)]?.wrong || {})
     .filter(([, n]) => n >= 2).map(([opt, n]) => ({ q, opt, n })))
@@ -1526,6 +1537,8 @@ const TABS = {
   f: { name: 'Fichas', one: 'ficha', icon: '🗂', list: () => (set.fichas ||= []), text: x => x.anverso, key: fichaKey, form: i => showFichaForm(i) },
   a: { name: 'Artículos', one: 'artículo', icon: '📜', list: () => (set.articulos ||= []), text: x => x.titulo, key: artKey, form: i => showArticleForm(i) },
 };
+const TAB_FEATURE = { f: 'flash', a: 'articulos' };
+const visibleTabs = () => Object.entries(TABS).filter(([id]) => !TAB_FEATURE[id] || feat(TAB_FEATURE[id]));
 
 function showEditor(filter = '') {
   stopTimer();
@@ -1553,14 +1566,14 @@ function showEditor(filter = '') {
       <div id="importPreview"></div>
       ${set.origen === 'editado' && !ghConnected() ? '<p class="muted">Los cambios se guardan solo en este dispositivo. Conecta GitHub (abajo) para que se guarden para todos.</p>' : ''}
     </div>
-    <div class="tabs">${Object.entries(TABS).map(([id, t]) =>
+    <div class="tabs" style="grid-template-columns:repeat(${visibleTabs().length}, 1fr)">${visibleTabs().map(([id, t]) =>
       `<button class="tab ${id === editorTab ? 'on' : ''}" data-tab="${id}">${t.icon} ${t.name} <span class="muted">${t.list().length}</span></button>`).join('')}</div>
     <div class="card">
       <div class="row" style="margin-bottom:12px">
         <button class="primary" id="add" ${busy ? 'disabled' : ''}>+ ${{ q: 'Nueva pregunta', f: 'Nueva ficha', a: 'Nuevo artículo' }[editorTab]}</button>
         ${all.length ? `<button id="newSet" class="danger small" ${busy ? 'disabled' : ''}>Vaciar ${tab.name.toLowerCase()}</button>` : ''}
       </div>
-      ${editorTab === 'f' ? '<p class="help">Para conceptos que no son tipo test: plazos, definiciones, órganos… Salen en 🃏 Flashcards y 🎧 Audio.</p>' : ''}
+      ${editorTab === 'f' ? '<p class="help">Para conceptos que no son tipo test: plazos, definiciones, órganos… Salen en 🃏 Flashcards' + (feat('audio') ? ' y 🎧 Audio' : '') + '.</p>' : ''}
       ${editorTab === 'a' ? '<p class="help">Pega el texto del artículo y pon entre {{dobles llaves}} lo que quieras que se tape. Se practica en 📜 Artículos.</p>' : ''}
       <input type="search" id="search" class="full" placeholder="🔍 Buscar${editorTab !== 'a' ? ' (★ = marcadas)' : ''}" value="${esc(filter)}">
       <p class="muted">${items.length} de ${all.length}</p>
@@ -1702,8 +1715,10 @@ function showEditForm(idx) {
       <button class="small" id="addOpt">+ Opción</button>
       <p class="muted" style="margin-bottom:0">Explicación</p>
       <textarea id="fExplicacion" rows="3">${esc(q.explicacion)}</textarea>
-      <p class="muted" style="margin-bottom:0">💡 Truco para recordarla (opcional, lo verán todos)</p>
-      <textarea id="fTruco" rows="2" placeholder="p. ej. alzada = 1 mes, reposición = 1 mes, extraordinario = 4 años">${esc(q.truco)}</textarea>
+      <div ${feat('notas') ? '' : 'hidden'}><!-- oculto si la función no está activa, pero conserva el truco al guardar -->
+        <p class="muted" style="margin-bottom:0">💡 Truco para recordarla (opcional, lo verán todos)</p>
+        <textarea id="fTruco" rows="2" placeholder="p. ej. alzada = 1 mes, reposición = 1 mes, extraordinario = 4 años">${esc(q.truco)}</textarea>
+      </div>
       ${metaFieldsHTML(q)}
       ${formButtonsHTML(idx)}
     </div>`;
@@ -1744,8 +1759,10 @@ function showFichaForm(idx) {
       <textarea id="fReverso" rows="3" placeholder="p. ej. 1 mes si el acto es expreso">${esc(f.reverso)}</textarea>
       <p class="muted" style="margin-bottom:0">Explicación (opcional)</p>
       <textarea id="fExplicacion" rows="2">${esc(f.explicacion)}</textarea>
-      <p class="muted" style="margin-bottom:0">💡 Truco (opcional)</p>
-      <textarea id="fTruco" rows="2">${esc(f.truco)}</textarea>
+      <div ${feat('notas') ? '' : 'hidden'}>
+        <p class="muted" style="margin-bottom:0">💡 Truco (opcional)</p>
+        <textarea id="fTruco" rows="2">${esc(f.truco)}</textarea>
+      </div>
       ${metaFieldsHTML(f)}
       ${formButtonsHTML(idx)}
     </div>`;

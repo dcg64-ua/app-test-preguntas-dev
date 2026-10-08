@@ -14,6 +14,13 @@
 - El editor conectado a GitHub guarda en el repositorio del entorno en el que estás
   (el token tiene que dar acceso a ese repositorio).
 
+## Funciones por entorno
+
+El código es el mismo en los dos entornos. En `index.html`, `PROD_FEATURES` lista las funciones aprobadas
+para producción (en desarrollo están todas activas). Valores posibles:
+`flash` (flashcards y fichas), `articulos`, `audio`, `vf`, `recall`, `notas` (trucos y notas), `confusion`.
+Para probar en local como producción: `http://localhost:8765/?env=prod`.
+
 ## Flujo de trabajo
 
 1. Las funciones nuevas se hacen en la rama `dev` y se suben a desarrollo:
