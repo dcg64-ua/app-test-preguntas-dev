@@ -17740,6 +17740,496 @@
                           "referencia":  "Test MAD nº 9, pregunta 35",
                           "bloque":  "Tema 9 (MAD). Bibliotecas públicas: concepto, funciones, servicios y clases",
                           "tema":  "Tema 9 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué rasgo caracteriza a un sistema de clasificación bibliotecaria?",
+                          "opciones":  [
+                                           "Ordena los términos por la posición de sus letras en el abecedario",
+                                           "Mezcla varios sistemas de notación distintos",
+                                           "Avanza desde lo general hacia lo particular",
+                                           "Emplea una notación exclusivamente alfabética"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Las clasificaciones bibliotecarias son sistemáticas: parten de las clases más generales y las subdividen progresivamente en materias más concretas. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 1",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué sistema de clasificación sirvió de base para elaborar la CDU?",
+                          "opciones":  [
+                                           "La clasificación Bliss",
+                                           "La clasificación decimal de Dewey",
+                                           "La clasificación de Vickery",
+                                           "La clasificación de Brunet"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Otlet y La Fontaine construyeron la CDU adaptando y ampliando la Clasificación Decimal de Dewey. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 2",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué entidad tiene en España la responsabilidad de revisar la CDU?",
+                          "opciones":  [
+                                           "FID",
+                                           "IFLA",
+                                           "CINDOC",
+                                           "AENOR"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "En España la CDU está vinculada a AENOR, que se ocupa de su versión española. (Respuesta oficial del test del manual.) Nota: el manual dice «AENOR»; AENOR (hoy UNE) edita la versión española, pero la revisión internacional de la CDU corresponde al UDC Consortium (antes a la FID).",
+                          "referencia":  "Test MAD nº 14, pregunta 3",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "En un catálogo sistemático ordenado por la CDU, ¿qué secuencia de materias aparece en el orden correcto?",
+                          "opciones":  [
+                                           "Religión-Farmacología-Derecho-Historia de España",
+                                           "Filosofía-Educación especial-Fisiología humana-Geografía de Europa",
+                                           "Biblioteconomía-Bioquímica-Psicología evolutiva-Literatura griega",
+                                           "Urbanismo-Historia antigua-Fisioterapia-Derecho administrativo"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Filosofía (1), Educación especial (37), Fisiología humana (612) y Geografía de Europa (91) siguen el orden ascendente de las notaciones CDU. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 4",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Cómo se clasifica, por su tipo, el sistema de la Biblioteca del Congreso de Washington?",
+                          "opciones":  [
+                                           "Es especializada",
+                                           "Es facetada",
+                                           "Es enciclopédica",
+                                           "Es asociativa"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La clasificación de la Library of Congress abarca todas las ramas del saber, por lo que es enciclopédica. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 5",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "En la CDU, ¿qué orden de números auxiliares es el correcto?",
+                          "opciones":  [
+                                           "Lugar-Tiempo-Forma-Idioma-Punto de vista",
+                                           "Punto de vista-Lugar-Tiempo-Forma-Idioma",
+                                           "Forma-Idioma-Lugar-Tiempo-Punto de vista",
+                                           "Punto de vista-Lugar-Tiempo-Idioma-Forma"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La secuencia dada es punto de vista (.00), lugar (1/9), tiempo \"...\", forma (0...) e idioma (=...). (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 6",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué es la CDU?",
+                          "opciones":  [
+                                           "Un catálogo colectivo de bibliotecas universitarias",
+                                           "Un programa informático para gestionar bibliotecas",
+                                           "Un sistema de clasificación bibliográfica",
+                                           "Un organismo encargado de tramitar pacientes"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La Clasificación Decimal Universal es un sistema de clasificación bibliográfica de alcance universal. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 7",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿En qué clase de las tablas principales de la CDU se sitúa la medicina?",
+                          "opciones":  [
+                                           "En la 1",
+                                           "En la 3",
+                                           "En la 6",
+                                           "En la 7"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La medicina (61) forma parte de la clase 6, Ciencias aplicadas. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 8",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Quién fue M. Dewey?",
+                          "opciones":  [
+                                           "Un bibliófilo que vivió en el siglo XVII",
+                                           "El bibliotecario que ideó la clasificación decimal con su nombre",
+                                           "Un conocido impresor veneciano del siglo XVII",
+                                           "Uno de los creadores de la WWW"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Melvil Dewey, bibliotecario estadounidense, creó la Clasificación Decimal de Dewey en 1876. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 9",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "Como sistema de clasificación, ¿de qué tipo es la CDU?",
+                          "opciones":  [
+                                           "Facetado",
+                                           "Especializado",
+                                           "Jerárquico",
+                                           "Alfabético"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La CDU organiza el conocimiento en clases que se subdividen decimalmente de lo general a lo particular, por lo que es jerárquica. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 10",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué signo no forma parte de la notación de la CDU?",
+                          "opciones":  [
+                                           "+",
+                                           ":",
+                                           "@",
+                                           "[ ]"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La CDU usa signos como + (adición), : (relación) y [ ] (agrupación), pero no la arroba. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 11",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué clase principal de la CDU está vacante?",
+                          "opciones":  [
+                                           "La 1",
+                                           "La 3",
+                                           "La 4",
+                                           "La 7"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La clase 4 quedó libre al trasladarse la lingüística a la clase 8. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 12",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "En la CDU, el número auxiliar de persona es un auxiliar de tipo:",
+                          "opciones":  [
+                                           "Especial",
+                                           "Independiente",
+                                           "Dependiente",
+                                           "Principal"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El auxiliar de persona (-05) no puede usarse solo, sino unido a un número principal, por lo que es dependiente. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 13",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué característica de la CDU no comparte la Clasificación Decimal de Dewey?",
+                          "opciones":  [
+                                           "Ser jerárquica",
+                                           "Ser universal",
+                                           "Ser decimal",
+                                           "Ser multidisciplinar"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Ambas son jerárquicas, universales y decimales; el carácter multidisciplinar se atribuye a la CDU. (Respuesta oficial del test del manual.) Nota: el manual dice «Multidisciplinar»; la CDD también cubre todas las disciplinas, así que se entiende referido a la capacidad de la CDU para relacionar materias mediante sus signos.",
+                          "referencia":  "Test MAD nº 14, pregunta 14",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿En qué año se origina la CDU?",
+                          "opciones":  [
+                                           "En 1497",
+                                           "En 1545",
+                                           "En 1895",
+                                           "En 1936"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La CDU surge en 1895, cuando Otlet y La Fontaine fundan en Bruselas el Instituto Internacional de Bibliografía. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 15",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué nombre recibe el sistema de clasificación creado por Ranganthan?",
+                          "opciones":  [
+                                           "Clasificación Brown",
+                                           "Clasificación Colonada",
+                                           "Clasificación Decimal Universal",
+                                           "Clasificación Especializada Internacional"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "El bibliotecario indio creó la Clasificación Colonada (Colon Classification), la primera clasificación facetada. (Respuesta oficial del test del manual.) Nota: el manual dice «Ranganthan»; el nombre correcto es S. R. Ranganathan.",
+                          "referencia":  "Test MAD nº 14, pregunta 16",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de estas clasificaciones es de tipo especializado?",
+                          "opciones":  [
+                                           "La Clasificación Bliss",
+                                           "La Clasificación de Brunet",
+                                           "La Clasificación Internacional de la UNESCO para Ciencia y Tecnología",
+                                           "La Clasificación Decimal Universal"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La clasificación de la UNESCO se limita a la ciencia y la tecnología, mientras que las otras abarcan todo el conocimiento. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 17",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Cuál es la finalidad de una clasificación bibliográfica?",
+                          "opciones":  [
+                                           "Ordenar los documentos según su soporte",
+                                           "Repartir los documentos en función de su contenido",
+                                           "Informatizar el fondo de una biblioteca",
+                                           "Ganar espacio en las estanterías"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Clasificar consiste en agrupar y distribuir los documentos según la materia de la que tratan. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 18",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué permite facilitar una clasificación bibliográfica?",
+                          "opciones":  [
+                                           "La limpieza de las estanterías",
+                                           "La colocación física de los documentos en la biblioteca",
+                                           "La realización de los expurgos",
+                                           "La adquisición de libros"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "La notación de clasificación sirve para ordenar físicamente los documentos en los estantes. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 19",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué clase de lenguaje emplean los sistemas de clasificación bibliográfica?",
+                          "opciones":  [
+                                           "Natural normalizado",
+                                           "Simbólico",
+                                           "Binario",
+                                           "Informático"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Representan las materias mediante símbolos (números, letras y signos), es decir, con un lenguaje simbólico. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 20",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué característica no resulta apropiada para un sistema de clasificación bibliográfica?",
+                          "opciones":  [
+                                           "Que sea sistemático",
+                                           "Que sea lógico",
+                                           "Que sea sencillo",
+                                           "Que sea rígido"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Un buen sistema debe ser flexible para admitir nuevas materias, por lo que la rigidez es un defecto. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 21",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿En qué clase de la CDU se incluiría una biografía de Luis Cernuda?",
+                          "opciones":  [
+                                           "En la 5",
+                                           "En la 6",
+                                           "En la 8",
+                                           "En la 9"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "Las biografías se clasifican en 929, dentro de la clase 9 (Geografía, Biografía, Historia). (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 22",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué tipo de clasificación no es la de Brunet?",
+                          "opciones":  [
+                                           "Facetada",
+                                           "Enciclopédica",
+                                           "Jerárquica",
+                                           "Bibliográfica"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La de Brunet es una clasificación bibliográfica, enciclopédica y jerárquica, anterior a los sistemas facetados. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 23",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿De qué sistema de clasificación procede la LCC?",
+                          "opciones":  [
+                                           "De la CDU",
+                                           "De la Clasificación Decimal de Dewey",
+                                           "De la Clasificación de Brown",
+                                           "De la Clasificación Expansiva de Cutter"
+                                       ],
+                          "correcta":  3,
+                          "explicacion":  "La clasificación de la Library of Congress (LCC) se inspiró en la Clasificación Expansiva de Charles A. Cutter. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 24",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "En la Clasificación de Bliss, ¿en cuántos puntos de vista se divide cada disciplina?",
+                          "opciones":  [
+                                           "En 4",
+                                           "En 7",
+                                           "En 10",
+                                           "En 25"
+                                       ],
+                          "correcta":  0,
+                          "explicacion":  "La Clasificación de Bliss contempla cada disciplina desde 4 puntos de vista. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 25",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿De qué clasificación derivan las clasificaciones facetadas?",
+                          "opciones":  [
+                                           "De la Clasificación Decimal de Dewey",
+                                           "De la Clasificación de Brunet",
+                                           "De la Clasificación Colonada de Ranganthan",
+                                           "De la CDU"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El análisis por facetas tiene su origen en la Clasificación Colonada. (Respuesta oficial del test del manual.) Nota: el manual dice «Ranganthan»; el nombre correcto es S. R. Ranganathan.",
+                          "referencia":  "Test MAD nº 14, pregunta 26",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Cuál es el signo fundamental de la Clasificación Colonada de Ranganathan?",
+                          "opciones":  [
+                                           "=",
+                                           "( )",
+                                           ":",
+                                           "+"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Los dos puntos (colon) separan las facetas y dan nombre a la clasificación. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 27",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿En qué año se adoptó en España la CDU como sistema de clasificación bibliográfica?",
+                          "opciones":  [
+                                           "En 1632",
+                                           "En 1875",
+                                           "En 1939",
+                                           "En 1985"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "Una orden ministerial de 1939 implantó la CDU en las bibliotecas públicas españolas. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 28",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de estos números auxiliares de la CDU no es independiente?",
+                          "opciones":  [
+                                           "El de lugar",
+                                           "El de persona",
+                                           "El de lengua",
+                                           "El de forma"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Lengua, lugar y forma pueden encabezar una notación, mientras que el de persona es dependiente. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 29",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Con qué elementos se construye la notación de la CDU?",
+                          "opciones":  [
+                                           "Con números romanos",
+                                           "Con letras minúsculas",
+                                           "Con cifras árabes",
+                                           "Con números romanos y letras mayúsculas"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La notación de la CDU es numérica y decimal, basada en cifras árabes. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 30",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué función cumple en la CDU el colon (los dos puntos)?",
+                          "opciones":  [
+                                           "Signo de adición",
+                                           "Signo de relación",
+                                           "Signo de extensión",
+                                           "Signo de síntesis"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "Los dos puntos (:) relacionan dos o más materias, por ejemplo 17:7. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 31",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Cuál de las siguientes notaciones no corresponde a un auxiliar especial de la CDU?",
+                          "opciones":  [
+                                           ".03",
+                                           "\u00279",
+                                           "-0",
+                                           "-1"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "El -0 introduce auxiliares comunes de características generales; .0, \u00271/\u00279 y -1/-9 son auxiliares especiales. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 32",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "La CDU se revisa y desarrolla de forma continua. ¿De qué año es su última edición?",
+                          "opciones":  [
+                                           "De 1992",
+                                           "De 2002",
+                                           "De 2015",
+                                           "De 2018"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La edición más reciente de la CDU que recoge el manual es la de 2015. (Respuesta oficial del test del manual.) Nota: el manual dice «2015»; corresponde a la edición española de AENOR, mientras que el UDC Consortium actualiza la tabla de referencia (MRF) periódicamente.",
+                          "referencia":  "Test MAD nº 14, pregunta 33",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Con qué criterio ordena la CDU los documentos?",
+                          "opciones":  [
+                                           "Por editorial",
+                                           "Por formato",
+                                           "Por materia",
+                                           "Por grupos de interés"
+                                       ],
+                          "correcta":  2,
+                          "explicacion":  "La CDU es una clasificación temática: asigna a cada documento una notación según su materia. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 34",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
+                      },
+                      {
+                          "pregunta":  "¿Qué organismo publica en España los manuales y ediciones de la CDU?",
+                          "opciones":  [
+                                           "BOE",
+                                           "AENOR",
+                                           "INFONOR",
+                                           "FESABID"
+                                       ],
+                          "correcta":  1,
+                          "explicacion":  "AENOR es la entidad que edita en España las tablas y manuales de la CDU. (Respuesta oficial del test del manual.)",
+                          "referencia":  "Test MAD nº 14, pregunta 35",
+                          "bloque":  "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
+                          "tema":  "Tema 14 · Test del manual (con soluciones)"
                       }
                   ],
     "fichas":  [
