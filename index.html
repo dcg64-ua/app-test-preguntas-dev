@@ -368,12 +368,14 @@ function downloadBlob(blob, name) {
 // Prioridad: valores por defecto < "ajustes" del preguntas.json (compartidos) < lo que cambie cada uno en su dispositivo
 const SETTINGS_DEFAULT = {
   penaltyOn: false, penalty: 1 / 3,
-  simNombre: 'Simulacro', simPreguntas: 100, simMinutos: 90, simCorte: 5,
+  simNombre: 'Simulacro', simPreguntas: 100, simMinutos: 90, simCorte: 5, simBloque: '',
   examDate: '', dailyGoal: 50, srsSize: 20,
   pomoOn: false, pomoWork: 25, pomoBreak: 5, water: true, waterMin: 20, waterMsg: '',
   autoGaps: true, extraGaps: 0
 };
-const SHARED = ['penaltyOn', 'penalty', 'simNombre', 'simPreguntas', 'simMinutos', 'simCorte', 'examDate', 'dailyGoal'];
+const SHARED = ['penaltyOn', 'penalty', 'simNombre', 'simPreguntas', 'simMinutos', 'simCorte', 'simBloque', 'examDate', 'dailyGoal'];
+// Opciones que remiten a otras ("Las respuestas a) y c)…", "Todas las anteriores…"): no se barajan
+const fixedOrder = q => q.ordenFijo || q.opciones.some(o => /(^|[\s(])[a-h]\)|anteriores|ninguna (es|de)|todas (las|son)/i.test(o));
 const pick = (o, keys) => o ? Object.fromEntries(keys.filter(k => k in o).map(k => [k, o[k]])) : {};
 const getSettings = () => ({ ...SETTINGS_DEFAULT, ...pick(set?.ajustes, SHARED), ...load(K.settings, {}) });
 function saveSettings(patch) { save(K.settings, { ...load(K.settings, {}), ...patch }); }
@@ -523,6 +525,7 @@ function showHome(error) {
   const failedCount = qs.filter(q => (stats[keyOf(q)]?.ko || 0) > 0).length;
   const markedCount = qs.filter(q => marks[keyOf(q)]).length;
   const plan = srsPlan(qs);
+  const simPool = qs.filter(q => !s.simBloque || q.bloque === s.simBloque);
   const arts = articulosOf(), cards = [...qs, ...fichasOf()].map(asCard);
   const flashPlan = srsPlan(cards, c => c.key);
   const hasContent = qs.length || cards.length || arts.length;
@@ -545,7 +548,7 @@ function showHome(error) {
         <button class="quick-btn" id="srsBtn"><span class="qi">🧠</span><b>Repaso inteligente</b>
           <span class="muted">${plan.due.length || plan.fresh.length ? `${plan.due.length} para repasar · ${plan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>
         <button class="quick-btn" id="simBtn"><span class="qi">🎯</span><b>${esc(s.simNombre)}</b>
-          <span class="muted">${Math.min(s.simPreguntas, qs.length)} preguntas · ${s.simMinutos ? s.simMinutos + ' min' : 'sin tiempo'} · ${penTxt}</span></button>
+          <span class="muted">${Math.min(s.simPreguntas, simPool.length)} preguntas${s.simBloque ? ` de «${esc(s.simBloque)}»` : ''} · ${s.simMinutos ? s.simMinutos + ' min' : 'sin tiempo'} · ${penTxt}</span></button>
         <button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
           <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>
         <button class="quick-btn" id="artBtn"><span class="qi">📜</span><b>Artículos</b>
@@ -632,7 +635,8 @@ function showHome(error) {
   };
   $('simBtn').onclick = () => {
     if (!confirmDiscard()) return;
-    startRun(shuffle(qs).slice(0, s.simPreguntas), {
+    if (!simPool.length) return alert(`No hay preguntas del bloque «${s.simBloque}». Cámbialo en ⚙️ Ajustes → Simulacro.`);
+    startRun(shuffle(simPool).slice(0, s.simPreguntas), {
       mode: 'examen', minutes: s.simMinutos, label: s.simNombre === MODOS.simulacro ? '' : s.simNombre,
       sim: { nombre: s.simNombre, corte: s.simCorte }
     });
@@ -674,7 +678,7 @@ function startRun(list, { shuffleOpts = true, mode = 'practica', minutes = 0, la
   run = {
     list: list.map(q => {
       const order = q.opciones.map((_, i) => i);
-      return { q, order: shuffleOpts ? shuffle(order) : order };
+      return { q, order: shuffleOpts && !fixedOrder(q) ? shuffle(order) : order };
     }),
     i: 0, answers: list.map(() => null), doubt: list.map(() => false),
     mode, kind, label, sim, titulo: set.titulo,
@@ -1150,7 +1154,11 @@ function showSettings() {
       <div class="set-row"><span>Nº de preguntas</span><input type="number" id="simPreguntas" min="1" value="${s.simPreguntas}"></div>
       <div class="set-row"><span>Tiempo (min, 0 = sin límite)</span><input type="number" id="simMinutos" min="0" value="${s.simMinutos}"></div>
       <div class="set-row"><span>Nota de corte (sobre 10)</span><input type="number" id="simCorte" min="0" max="10" step="0.01" value="${s.simCorte}"></div>
-      <p class="help">Usa la penalización de arriba. Las preguntas se eligen al azar entre todas.</p>
+      <div class="set-row"><span>Preguntas de</span><select id="simBloque">
+        <option value="">Todo el temario</option>
+        ${uniq((set?.preguntas || []).map(q => q.bloque)).sort(natCmp).map(b => `<option ${b === s.simBloque ? 'selected' : ''}>${esc(b)}</option>`).join('')}
+      </select></div>
+      <p class="help">Usa la penalización de arriba. Las preguntas se eligen al azar del bloque elegido.</p>
     </div>
     <div class="card">
       <h2>📅 Objetivos</h2>
@@ -1222,6 +1230,7 @@ function showSettings() {
   on('simPreguntas', () => saveS({ simPreguntas: num('simPreguntas', 1) }));
   on('simMinutos', () => saveS({ simMinutos: num('simMinutos') }));
   on('simCorte', () => saveS({ simCorte: Math.min(10, num('simCorte')) }));
+  on('simBloque', e => saveS({ simBloque: e.target.value }));
   on('examDate', e => saveS({ examDate: e.target.value }));
   on('dailyGoal', () => saveS({ dailyGoal: num('dailyGoal') }));
   on('srsSize', () => saveS({ srsSize: num('srsSize', 1) }));
@@ -1797,7 +1806,12 @@ function showStudySetup(kind) {
     saveSettings({ ['study_' + kind]: opts });
     if (kind === 'flash') startFlash(cards);
     if (kind === 'audio') startAudio(cards, opts);
-    if (kind === 'vf') startVF(cards.map(c => c.item));
+    if (kind === 'vf') {
+      // Las preguntas con opciones que remiten a otras ("Las respuestas a) y c)…") no sirven sueltas
+      const items = cards.map(c => c.item).filter(q => !fixedOrder(q));
+      if (!items.length) return $('err').textContent = 'Esas preguntas tienen opciones del tipo «Las respuestas a) y b)…», que no sirven para verdadero/falso.';
+      startVF(items);
+    }
   };
 }
 
