@@ -1,63 +1,82 @@
 {
-  "titulo": "Test de ejemplo",
-  "ajustes": {
-    "penaltyOn": false,
-    "penalty": 0.25,
-    "simNombre": "Examen",
-    "simPreguntas": 100,
-    "simMinutos": 90,
-    "simCorte": 5,
-    "examDate": "",
-    "dailyGoal": 50
-  },
+  "titulo": "Ejemplo oposición (DESARROLLO)",
   "preguntas": [
     {
-      "pregunta": "¿Cuál es la capital de Australia?",
-      "opciones": [
-        "Sídney",
-        "Melbourne",
-        "Canberra",
-        "Perth"
-      ],
-      "correcta": 2,
-      "explicacion": "Canberra fue elegida capital en 1908 como solución de compromiso entre Sídney y Melbourne, las dos ciudades más grandes, que rivalizaban por el puesto.",
-      "tema": "Geografía"
+      "pregunta": "Según el artículo 14 de la Constitución, los españoles son iguales ante:",
+      "opciones": ["La ley", "Los tribunales", "La Administración", "El Rey"],
+      "correcta": 0,
+      "explicacion": "El art. 14 CE establece la igualdad ante la ley y prohíbe la discriminación por nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social.",
+      "referencia": "Art. 14 CE",
+      "bloque": "Bloque I",
+      "tema": "Tema 1. La Constitución",
+      "truco": "El art. 14 abre el Capítulo II (Derechos y libertades): lo primero, la igualdad ante la ley"
     },
     {
-      "pregunta": "¿Qué etiqueta HTML se usa para crear un enlace?",
-      "opciones": [
-        "<link>",
-        "<a>",
-        "<href>",
-        "<url>"
-      ],
+      "pregunta": "¿Cuál es el plazo para interponer el recurso de alzada si el acto es expreso?",
+      "opciones": ["15 días", "Un mes", "Tres meses", "Dos meses"],
       "correcta": 1,
-      "explicacion": "<a> (anchor) crea hipervínculos mediante el atributo href. <link> sirve para enlazar recursos externos como hojas de estilo, no para enlaces navegables.",
-      "tema": "Informática"
+      "explicacion": "Art. 122.1 Ley 39/2015: el plazo para la interposición del recurso de alzada será de un mes si el acto fuera expreso.",
+      "referencia": "Art. 122.1 Ley 39/2015",
+      "bloque": "Bloque II",
+      "tema": "Tema 5. Recursos administrativos",
+      "truco": "Alzada = 1 mes · Reposición = 1 mes · Extraordinario de revisión = 4 años"
     },
     {
-      "pregunta": "¿Cuántos lados tiene un hexágono?",
-      "opciones": [
-        "5",
-        "6",
-        "7",
-        "8"
-      ],
-      "correcta": 1,
-      "explicacion": "El prefijo griego 'hexa' significa seis. Pentágono tiene 5, heptágono 7 y octógono 8.",
-      "tema": "Matemáticas"
-    },
-    {
-      "pregunta": "¿Qué gas absorben principalmente las plantas en la fotosíntesis?",
-      "opciones": [
-        "Oxígeno",
-        "Nitrógeno",
-        "Dióxido de carbono",
-        "Hidrógeno"
-      ],
+      "pregunta": "Si las normas reguladoras de un procedimiento no fijan el plazo máximo para resolver, este será de:",
+      "opciones": ["Un mes", "Seis meses", "Tres meses", "Un año"],
       "correcta": 2,
-      "explicacion": "Las plantas captan CO₂ y, usando la energía de la luz y agua, producen glucosa y liberan oxígeno como subproducto.",
-      "tema": "Ciencias"
+      "explicacion": "Art. 21.3 Ley 39/2015: cuando las normas reguladoras no fijen el plazo máximo, este será de tres meses.",
+      "referencia": "Art. 21.3 Ley 39/2015",
+      "bloque": "Bloque II",
+      "tema": "Tema 4. El procedimiento administrativo"
+    },
+    {
+      "pregunta": "¿Qué mayoría exige la Constitución para aprobar las leyes orgánicas en el Congreso?",
+      "opciones": ["Mayoría simple", "Mayoría absoluta en una votación final sobre el conjunto del proyecto", "Mayoría de dos tercios", "Mayoría de tres quintos"],
+      "correcta": 1,
+      "explicacion": "Art. 81.2 CE: la aprobación, modificación o derogación de las leyes orgánicas exigirá mayoría absoluta del Congreso, en una votación final sobre el conjunto del proyecto.",
+      "referencia": "Art. 81.2 CE",
+      "bloque": "Bloque I",
+      "tema": "Tema 2. Las Cortes Generales"
+    }
+  ],
+  "fichas": [
+    {
+      "anverso": "Plazo del recurso de reposición (acto expreso)",
+      "reverso": "Un mes",
+      "referencia": "Art. 124.1 Ley 39/2015",
+      "bloque": "Bloque II",
+      "tema": "Tema 5. Recursos administrativos"
+    },
+    {
+      "anverso": "Plazo para resolver el recurso de alzada",
+      "reverso": "Tres meses. Transcurrido sin resolución, se podrá entender desestimado.",
+      "referencia": "Art. 122.2 Ley 39/2015",
+      "bloque": "Bloque II",
+      "tema": "Tema 5. Recursos administrativos"
+    },
+    {
+      "anverso": "¿Cuántos artículos tiene la Constitución Española?",
+      "reverso": "169 artículos (más disposiciones adicionales, transitorias, derogatoria y final)",
+      "bloque": "Bloque I",
+      "tema": "Tema 1. La Constitución",
+      "truco": "1-6-9: «uno, seis, nueve»"
+    }
+  ],
+  "articulos": [
+    {
+      "titulo": "Art. 14 CE – Igualdad",
+      "texto": "Los españoles son {{iguales}} ante la {{ley}}, sin que pueda prevalecer discriminación alguna por razón de {{nacimiento}}, {{raza}}, {{sexo}}, {{religión}}, {{opinión}} o cualquier otra condición o circunstancia {{personal}} o {{social}}.",
+      "referencia": "Constitución Española",
+      "bloque": "Bloque I",
+      "tema": "Tema 1. La Constitución"
+    },
+    {
+      "titulo": "Art. 122 Ley 39/2015 – Plazos del recurso de alzada",
+      "texto": "1. El plazo para la interposición del recurso de alzada será de un mes, si el acto fuera expreso. Transcurrido dicho plazo sin haberse interpuesto el recurso, la resolución será firme a todos los efectos.\n2. El plazo máximo para dictar y notificar la resolución será de tres meses. Transcurrido este plazo sin que recaiga resolución, se podrá entender desestimado el recurso.",
+      "referencia": "Ley 39/2015",
+      "bloque": "Bloque II",
+      "tema": "Tema 5. Recursos administrativos"
     }
   ]
 }

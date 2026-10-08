@@ -206,6 +206,59 @@
   .set-row input[type=number] { width: 90px; }
   .set-row input[type=date] { font: inherit; padding: 6px 8px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
   .help { font-size: .85rem; color: var(--muted); margin: 4px 0 8px; }
+  /* Editor: pestañas */
+  .tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
+  .tab { padding: 8px 4px; font-size: .9rem; font-weight: 600; }
+  .tab.on { border-color: var(--accent); background: var(--accent-bg); }
+
+  /* Trucos, notas y confusiones */
+  .notes { margin-top: 10px; }
+  .truco { margin: 6px 0; padding: 8px 12px; border-radius: 10px; background: color-mix(in srgb, var(--star) 15%, var(--card)); font-size: .95rem; }
+  .truco.mine { background: var(--accent-bg); }
+  .note-btn { margin-top: 4px; }
+  .confusion { margin-top: 10px; padding: 10px 12px; border-radius: 10px; border-left: 4px solid var(--star); background: color-mix(in srgb, var(--star) 12%, var(--card)); }
+  .recall-box { text-align: center; padding: 18px; border: 2px dashed var(--border); border-radius: 14px; }
+  .recall-box p { margin-top: 0; }
+
+  /* Flashcards */
+  .flash-card { cursor: pointer; min-height: 220px; display: flex; flex-direction: column; justify-content: center; animation: flipin .3s ease; }
+  .flash-card.flipped { cursor: default; }
+  .flash-hint { text-align: center; margin-bottom: 0; }
+  .flash-answer { font-size: 1.15rem; font-weight: 700; color: var(--ok); white-space: pre-wrap; }
+  .grades { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .grade { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 4px; border-width: 2px; }
+  .grade span { font-size: .75rem; color: var(--muted); }
+  .grade.again { border-color: var(--ko); } .grade.hard { border-color: var(--star); }
+  .grade.good { border-color: var(--ok); } .grade.easy { border-color: var(--accent); }
+  @keyframes flipin { from { transform: rotateY(25deg); opacity: .4; } }
+
+  /* Audio */
+  .audio-opts { display: grid; gap: 4px; }
+  .audio-opts .audio-ok { color: var(--ok); font-weight: 700; }
+  .audio-ctrl { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 8px; }
+  .audio-ctrl button { font-size: 1.1rem; }
+
+  /* Verdadero / Falso */
+  .vf-card { min-height: 200px; transition: transform .15s, background .2s; touch-action: pan-y; }
+  .vf-card.ok { background: var(--ok-bg); border-color: var(--ok); }
+  .vf-card.ko { background: var(--ko-bg); border-color: var(--ko); animation: shake .35s ease; }
+  .vf-answer { font-size: 1.15rem; font-weight: 700; padding: 12px 14px; border-radius: 12px; background: var(--accent-bg); }
+  .vf-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .vf-btns button { min-height: 64px; font-size: 1.1rem; font-weight: 800; border-width: 2px; }
+  .vf-yes { border-color: var(--ok); color: var(--ok); } .vf-no { border-color: var(--ko); color: var(--ko); }
+
+  /* Artículos con huecos */
+  .art-text { line-height: 2.1; white-space: pre-wrap; font-size: 1.02rem; }
+  .gap { font: inherit; padding: 1px 6px; border: none; border-bottom: 2px solid var(--accent); border-radius: 4px; background: var(--accent-bg); color: var(--text); max-width: 100%; }
+  .gap.ok { border-color: var(--ok); background: var(--ok-bg); }
+  .gap.ko { border-color: var(--ko); background: var(--ko-bg); }
+  .gap.shown { border-color: var(--star); }
+  .gap-sol { margin: 0 4px; color: var(--ok); font-weight: 700; font-size: .9rem; }
+  .gap-mark { background: color-mix(in srgb, var(--star) 35%, transparent); border-radius: 4px; padding: 0 3px; }
+  .art-preview { max-height: 240px; overflow: auto; padding: 10px; border: 1px solid var(--border); border-radius: 10px; margin-top: 8px; line-height: 1.7; }
+  @media (max-width: 480px) { .grades { grid-template-columns: 1fr 1fr; } }
+
+  body.env-dev main { padding-top: calc(36px + env(safe-area-inset-top)); }
   .env-badge {
     position: fixed; top: calc(6px + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); z-index: 20; pointer-events: none;
     background: #f59f00; color: #1a1f2e; font-size: .72rem; font-weight: 800; letter-spacing: .05em; padding: 2px 10px; border-radius: 99px;
@@ -274,11 +327,12 @@ const P = ENV === 'dev' ? 'quizdev.' : 'quiz.';
 const K = Object.fromEntries(Object.entries({
   set: 'set', stats: 'stats', marks: 'marks', hist: 'history', run: 'run',
   srs: 'srs', daily: 'daily', settings: 'settings', pomo: 'pomo', water: 'waterSecs',
-  theme: 'theme', photo: 'photo', gh: 'github'
+  theme: 'theme', photo: 'photo', gh: 'github', notes: 'notes', arts: 'articulos', vf: 'vf'
 }).map(([k, v]) => [k, P + v]));
 if (ENV === 'dev') {
   document.title = 'Tests (DEV)';
   document.querySelector('meta[name=apple-mobile-web-app-title]').content = 'Tests DEV';
+  document.body.classList.add('env-dev');
   document.body.insertAdjacentHTML('beforeend', '<div class="env-badge" title="Entorno de desarrollo: datos separados de la app normal">🧪 DESARROLLO</div>');
 }
 const app = document.getElementById('app');
@@ -316,7 +370,8 @@ const SETTINGS_DEFAULT = {
   penaltyOn: false, penalty: 1 / 3,
   simNombre: 'Simulacro', simPreguntas: 100, simMinutos: 90, simCorte: 5,
   examDate: '', dailyGoal: 50, srsSize: 20,
-  pomoOn: false, pomoWork: 25, pomoBreak: 5, water: true, waterMin: 20, waterMsg: ''
+  pomoOn: false, pomoWork: 25, pomoBreak: 5, water: true, waterMin: 20, waterMsg: '',
+  autoGaps: true, extraGaps: 0
 };
 const SHARED = ['penaltyOn', 'penalty', 'simNombre', 'simPreguntas', 'simMinutos', 'simCorte', 'examDate', 'dailyGoal'];
 const pick = (o, keys) => o ? Object.fromEntries(keys.filter(k => k in o).map(k => [k, o[k]])) : {};
@@ -344,18 +399,33 @@ function bindStar(btn, q) {
 // ---------- Repetición espaciada (cajas de Leitner) ----------
 // Acierto: sube de caja y vuelve a salir en 1, 3, 7, 16 o 35 días. Fallo: vuelve a la caja 0 (sale ya).
 const SRS_DAYS = [0, 1, 3, 7, 16, 35];
-function srsUpdate(q, ok) {
-  const s = load(K.srs, {}), k = keyOf(q), box = ok ? Math.min((s[k]?.box || 0) + 1, SRS_DAYS.length - 1) : 0;
-  s[k] = { box, due: startOfToday() + SRS_DAYS[box] * DAY };
+// Nota de autoevaluación (flashcards): 0 = otra vez, 1 = difícil, 2 = bien, 3 = fácil. En el test: acierto = 2, fallo = 0.
+function srsGradeBox(cur, grade) {
+  return grade === 0 ? 0 : grade === 1 ? Math.max(1, cur) : Math.min(cur + grade - 1, SRS_DAYS.length - 1);
+}
+function srsGradeDays(cur, grade) { return grade === 1 ? 1 : SRS_DAYS[srsGradeBox(cur, grade)]; }
+function srsGrade(key, grade) {
+  const s = load(K.srs, {}), cur = s[key]?.box || 0;
+  s[key] = { box: srsGradeBox(cur, grade), due: startOfToday() + srsGradeDays(cur, grade) * DAY };
   save(K.srs, s);
 }
-function srsPlan(qs) {
+const srsUpdate = (q, ok) => srsGrade(keyOf(q), ok ? 2 : 0);
+function srsPlan(items, key = keyOf) {
   const s = load(K.srs, {}), now = Date.now();
-  const due = qs.filter(q => s[keyOf(q)] && s[keyOf(q)].due <= now).sort((a, b) => s[keyOf(a)].due - s[keyOf(b)].due);
-  const fresh = qs.filter(q => !s[keyOf(q)]);
-  const next = Math.min(...qs.map(q => s[keyOf(q)]?.due).filter(d => d > now));
+  const due = items.filter(x => s[key(x)] && s[key(x)].due <= now).sort((a, b) => s[key(a)].due - s[key(b)].due);
+  const fresh = items.filter(x => !s[key(x)]);
+  const next = Math.min(...items.map(x => s[key(x)]?.due).filter(d => d > now));
   return { due, fresh, next };
 }
+
+// ---------- Tarjetas: preguntas y fichas con la misma forma (flashcards, audio) ----------
+const fichasOf = () => set?.fichas || [];
+const articulosOf = () => set?.articulos || [];
+const fichaKey = f => 'ficha:' + f.anverso;
+const artKey = a => 'art:' + a.titulo;
+const asCard = x => x.anverso !== undefined
+  ? { type: 'f', key: fichaKey(x), front: x.anverso, back: x.reverso, item: x }
+  : { type: 'q', key: keyOf(x), front: x.pregunta, back: x.opciones[x.correcta], item: x };
 
 // ---------- Actividad diaria, racha y cuenta atrás ----------
 function addDaily(n) {
@@ -379,7 +449,7 @@ function daysLeft(date) {
 // Migra estadísticas, marca y repaso si cambia el texto de una pregunta
 function migrateKey(oldKey, newKey) {
   if (oldKey === newKey) return;
-  for (const k of [K.stats, K.marks, K.srs]) {
+  for (const k of [K.stats, K.marks, K.srs, K.notes]) {
     const m = load(k, {});
     if (oldKey in m) { m[newKey] = m[oldKey]; delete m[oldKey]; save(k, m); }
   }
@@ -387,8 +457,11 @@ function migrateKey(oldKey, newKey) {
 
 // ---------- Carga y validación ----------
 function parseSet(data) {
-  const preguntas = Array.isArray(data) ? data : data.preguntas;
-  if (!Array.isArray(preguntas)) throw new Error('El JSON debe ser una lista de preguntas o un objeto con "preguntas".');
+  const obj = Array.isArray(data) ? {} : data;
+  const preguntas = Array.isArray(data) ? data : (data.preguntas ?? []);
+  const fichas = obj.fichas ?? [], articulos = obj.articulos ?? [];
+  if (!Array.isArray(preguntas) || !Array.isArray(fichas) || !Array.isArray(articulos))
+    throw new Error('El JSON debe tener una lista de "preguntas" (y opcionalmente "fichas" y "articulos").');
   const errs = [];
   preguntas.forEach((q, n) => {
     const p = `Pregunta ${n + 1}: `;
@@ -396,12 +469,17 @@ function parseSet(data) {
     if (!Array.isArray(q.opciones) || q.opciones.length < 2) errs.push(p + '"opciones" debe ser una lista');
     else if (!Number.isInteger(q.correcta) || q.correcta < 0 || q.correcta >= q.opciones.length) errs.push(p + '"correcta" debe ser el índice (0 a ' + (q.opciones.length - 1) + ')');
   });
+  fichas.forEach((f, n) => { if (!f.anverso || !f.reverso) errs.push(`Ficha ${n + 1}: necesita "anverso" y "reverso"`); });
+  articulos.forEach((a, n) => { if (!a.titulo || !a.texto) errs.push(`Artículo ${n + 1}: necesita "titulo" y "texto"`); });
   if (errs.length) throw new Error(errs.join('\n'));
-  const out = { titulo: (!Array.isArray(data) && data.titulo) || 'Test', preguntas };
-  if (!Array.isArray(data) && data.ajustes && typeof data.ajustes === 'object') out.ajustes = pick(data.ajustes, SHARED);
+  const out = { titulo: obj.titulo || 'Test', preguntas, fichas, articulos };
+  if (obj.ajustes && typeof obj.ajustes === 'object') out.ajustes = pick(obj.ajustes, SHARED);
   return out;
 }
-const setToJSON = () => ({ titulo: set.titulo, ...(set.ajustes ? { ajustes: set.ajustes } : {}), preguntas: set.preguntas });
+const setToJSON = () => ({
+  titulo: set.titulo, ...(set.ajustes ? { ajustes: set.ajustes } : {}), preguntas: set.preguntas,
+  ...(fichasOf().length ? { fichas: set.fichas } : {}), ...(articulosOf().length ? { articulos: set.articulos } : {})
+});
 
 function useData(data, origen) {
   set = { ...parseSet(data), origen };
@@ -445,6 +523,9 @@ function showHome(error) {
   const failedCount = qs.filter(q => (stats[keyOf(q)]?.ko || 0) > 0).length;
   const markedCount = qs.filter(q => marks[keyOf(q)]).length;
   const plan = srsPlan(qs);
+  const arts = articulosOf(), cards = [...qs, ...fichasOf()].map(asCard);
+  const flashPlan = srsPlan(cards, c => c.key);
+  const hasContent = qs.length || cards.length || arts.length;
   const origenTxt = { servidor: 'preguntas.json del servidor', archivo: 'archivo cargado', editado: 'editado en la app' }[set?.origen] || '';
   const penTxt = s.penaltyOn ? `−${fmtPen(s.penalty)} por fallo` : 'sin penalización';
 
@@ -458,15 +539,24 @@ function showHome(error) {
       <p class="muted">${MODOS[saved.sim ? 'simulacro' : saved.mode] || ''} · pregunta ${saved.i + 1} de ${saved.list.length} · ${fmtTime(saved.elapsed)} transcurridos</p>
       <div class="row"><button class="primary" id="resume">Reanudar</button><button id="discard">Descartar</button></div>
     </div>` : ''}
-    ${qs.length ? dailyCardHTML() + `
+    ${hasContent ? dailyCardHTML() + `
     <div class="card">
       <div class="quick">
         <button class="quick-btn" id="srsBtn"><span class="qi">🧠</span><b>Repaso inteligente</b>
           <span class="muted">${plan.due.length || plan.fresh.length ? `${plan.due.length} para repasar · ${plan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>
         <button class="quick-btn" id="simBtn"><span class="qi">🎯</span><b>${esc(s.simNombre)}</b>
           <span class="muted">${Math.min(s.simPreguntas, qs.length)} preguntas · ${s.simMinutos ? s.simMinutos + ' min' : 'sin tiempo'} · ${penTxt}</span></button>
+        <button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
+          <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>
+        <button class="quick-btn" id="artBtn"><span class="qi">📜</span><b>Artículos</b>
+          <span class="muted">${arts.length ? `${arts.length} para rellenar huecos` : 'Memoriza artículos de ley'}</span></button>
+        <button class="quick-btn" id="audioBtn"><span class="qi">🎧</span><b>Modo audio</b>
+          <span class="muted">Escucha preguntas y respuestas</span></button>
+        <button class="quick-btn" id="vfBtn"><span class="qi">⚡</span><b>Verdadero / Falso</b>
+          <span class="muted">Repaso rápido${load(K.vf, {}).best ? ` · récord racha ${load(K.vf, {}).best}` : ''}</span></button>
       </div>
-    </div>
+    </div>` : ''}
+    ${qs.length ? `
     <div class="card">
       <h2>Test personalizado</h2>
       <div class="modes">
@@ -483,6 +573,7 @@ function showHome(error) {
       <label class="opt"><input id="sho" type="checkbox" checked> Barajar opciones</label>
       <label class="opt"><input id="onlyKo" type="checkbox"> Solo las que he fallado alguna vez (${failedCount})</label>
       <label class="opt"><input id="onlyMarked" type="checkbox"> Solo las marcadas ★ (${markedCount})</label>
+      <label class="opt"><input id="recall" type="checkbox" ${load(K.settings, {}).recall ? 'checked' : ''}> 🧠 Recuerdo activo: piensa la respuesta antes de ver las opciones</label>
       <p class="muted">Penalización: ${penTxt} · <a href="#" id="penLink">cambiar</a></p>
       <button class="primary" id="start">Empezar</button>
     </div>` : ''}
@@ -519,9 +610,18 @@ function showHome(error) {
     $('resume').onclick = () => { run = normalizeRun(saved); showQuestion(); };
     $('discard').onclick = () => { if (confirm('¿Descartar el test a medias?')) { localStorage.removeItem(K.run); showHome(); } };
   }
-  if (!qs.length) return;
+  if (!hasContent) return;
 
   const confirmDiscard = () => !saved || confirm('Se descartará el test a medias. ¿Empezar uno nuevo?');
+  const needQs = fn => () => qs.length ? fn() : alert('Primero añade preguntas tipo test en ✏️ Editor.');
+  $('flashBtn').onclick = () => showStudySetup('flash');
+  $('audioBtn').onclick = () => showStudySetup('audio');
+  $('vfBtn').onclick = needQs(() => showStudySetup('vf'));
+  $('artBtn').onclick = () => showArticles();
+  if (!qs.length) {
+    $('srsBtn').onclick = $('simBtn').onclick = needQs(() => {});
+    return;
+  }
   $('penLink').onclick = e => { e.preventDefault(); showSettings(); };
 
   $('srsBtn').onclick = () => {
@@ -559,7 +659,9 @@ function showHome(error) {
     if ($('shq').checked) list = shuffle(list);
     list = list.slice(0, Math.max(1, +$('num').value || list.length));
     const mode = document.querySelector('input[name=mode]:checked').value;
+    saveSettings({ recall: $('recall').checked });
     startRun(list, {
+      recall: $('recall').checked,
       shuffleOpts: $('sho').checked, mode, minutes: mode === 'examen' ? +$('minutes').value || 0 : 0,
       label: [bloque, tema, refRaw && `ref. «${refRaw}»`].filter(Boolean).join(' · ')
     });
@@ -567,7 +669,7 @@ function showHome(error) {
 }
 
 // ---------- Test ----------
-function startRun(list, { shuffleOpts = true, mode = 'practica', minutes = 0, label = '', sim = null, kind = null }) {
+function startRun(list, { shuffleOpts = true, mode = 'practica', minutes = 0, label = '', sim = null, kind = null, recall = false }) {
   const s = getSettings();
   run = {
     list: list.map(q => {
@@ -576,6 +678,7 @@ function startRun(list, { shuffleOpts = true, mode = 'practica', minutes = 0, la
     }),
     i: 0, answers: list.map(() => null), doubt: list.map(() => false),
     mode, kind, label, sim, titulo: set.titulo,
+    recall, shown: list.map(() => false),
     penalty: s.penaltyOn ? s.penalty : 0,
     limit: minutes ? minutes * 60 : null, elapsed: 0
   };
@@ -588,6 +691,7 @@ function normalizeRun(r) {
   r.doubt ||= r.list.map(() => false);
   r.penalty ??= 0;
   r.label ??= r.tema || '';
+  r.shown ||= r.list.map(() => false);
   return r;
 }
 
@@ -620,6 +724,8 @@ function showQuestion() {
   const { q, order } = run.list[run.i];
   const n = run.list.length, exam = run.mode === 'examen', ans = run.answers[run.i];
   const answered = run.answers.filter(a => a !== null).length;
+  // Recuerdo activo: las opciones se ocultan hasta que la persona intenta recordar la respuesta
+  const hideOpts = run.recall && !run.shown[run.i] && ans === null;
 
   app.innerHTML = `
     <div class="topbar">
@@ -630,9 +736,14 @@ function showQuestion() {
     <div class="card">
       ${run.sim ? `<div class="muted" style="margin-bottom:6px">🎯 ${esc(run.sim.nombre)}</div>` : ''}
       <div class="q">${esc(q.pregunta)}</div>
+      ${hideOpts ? `
+      <div class="recall-box">
+        <p>🧠 Intenta recordar la respuesta antes de ver las opciones.</p>
+        <button class="primary" id="showOpts">👀 Ver opciones</button>
+      </div>` : `
       <div class="options">${order.map((orig, k) =>
         `<button data-orig="${orig}" class="${exam && ans === orig ? 'sel' : ''}"><span class="letter">${'ABCDEFGH'[k]}</span><span>${esc(q.opciones[orig])}</span></button>`).join('')}
-      </div>
+      </div>`}
       <div class="row" style="margin-top:12px"><button class="chip ${run.doubt[run.i] ? 'on' : ''}" id="doubt">${doubtLabel(run.doubt[run.i])}</button></div>
       <div id="after"></div>
     </div>
@@ -659,6 +770,7 @@ function showQuestion() {
   };
   updateTimer();
   startTimer();
+  if ($('showOpts')) $('showOpts').onclick = () => { run.shown[run.i] = true; saveRun(); showQuestion(); };
 
   const opts = app.querySelectorAll('.options button');
   if (exam) {
@@ -679,7 +791,7 @@ function showQuestion() {
     opts.forEach(b => b.onclick = () => {
       const chosen = +b.dataset.orig, ok = chosen === q.correcta;
       run.answers[run.i] = chosen;
-      updateStats(q, ok);
+      updateStats(q, ok, chosen);
       srsUpdate(q, ok);
       addDaily(1);
       saveRun();
@@ -690,6 +802,34 @@ function showQuestion() {
 }
 
 const refHTML = q => q.referencia ? `<div class="ref">📖 ${esc(q.referencia)}</div>` : '';
+
+// Truco compartido (del JSON) y nota personal (solo en este dispositivo)
+const myNote = key => load(K.notes, {})[key] || '';
+function notesHTML(item, key) {
+  const n = myNote(key);
+  return `${item.truco ? `<div class="truco">💡 <b>Truco:</b> ${esc(item.truco)}</div>` : ''}
+    ${n ? `<div class="truco mine">📝 <b>Mi nota:</b> ${esc(n)}</div>` : ''}
+    <button class="chip note-btn" data-key="${esc(key)}">📝 ${n ? 'Editar mi nota' : 'Añadir mi nota o truco'}</button>`;
+}
+// Los botones "mi nota" de la pantalla: pedir el texto y volver a pintar con `redraw`
+function bindNoteBtns(root, redraw) {
+  root.querySelectorAll('.note-btn').forEach(b => b.onclick = () => {
+    const key = b.dataset.key, cur = myNote(key);
+    const v = prompt('Tu nota o truco para recordar esta pregunta (solo se guarda en este dispositivo).\nDéjalo vacío para borrarla.', cur);
+    if (v === null) return;
+    const notes = load(K.notes, {});
+    if (v.trim()) notes[key] = v.trim(); else delete notes[key];
+    save(K.notes, notes);
+    redraw();
+  });
+}
+
+// "Sueles confundir…": cuántas veces se ha elegido esta misma opción incorrecta
+function confusionHTML(q, chosen) {
+  if (chosen === null || chosen === q.correcta) return '';
+  const n = load(K.stats, {})[keyOf(q)]?.wrong?.[q.opciones[chosen]] || 0;
+  return n >= 2 ? `<div class="confusion">⚠️ Ya has elegido <b>«${esc(q.opciones[chosen])}»</b> ${n} veces en esta pregunta. Fíjate bien: la correcta es <b>«${esc(q.opciones[q.correcta])}»</b>.</div>` : '';
+}
 
 function showFeedback() {
   const { q } = run.list[run.i], chosen = run.answers[run.i], ok = chosen === q.correcta;
@@ -702,7 +842,10 @@ function showFeedback() {
   const last = run.i === run.list.length - 1;
   $('after').innerHTML = `
     <div class="explain ${ok ? '' : 'wrong'}"><b>${ok ? '✔ ¡Correcto!' : '✘ Incorrecto'}</b>${q.explicacion ? '\n' + esc(q.explicacion) : ''}${refHTML(q)}</div>
+    ${confusionHTML(q, chosen)}
+    <div class="notes">${notesHTML(q, keyOf(q))}</div>
     <div class="row" style="margin-top:16px;justify-content:flex-end"><button class="primary" id="next">${last ? 'Ver resultado' : 'Siguiente →'}</button></div>`;
+  bindNoteBtns($('after'), showFeedback);
   const next = $('next');
   next.focus();
   next.onclick = () => {
@@ -711,10 +854,15 @@ function showFeedback() {
   };
 }
 
-function updateStats(q, ok) {
+function updateStats(q, ok, chosen = null) {
   const stats = load(K.stats, {});
   const s = stats[keyOf(q)] ||= { ok: 0, ko: 0 };
   ok ? s.ok++ : s.ko++;
+  if (!ok && chosen !== null) {
+    s.wrong ||= {};
+    const txt = q.opciones[chosen];
+    s.wrong[txt] = (s.wrong[txt] || 0) + 1;
+  }
   save(K.stats, stats);
 }
 
@@ -723,7 +871,7 @@ function finish() {
   const results = run.list.map((it, k) => ({ q: it.q, chosen: run.answers[k], ok: run.answers[k] === it.q.correcta, doubt: !!run.doubt[k] }));
   if (run.mode === 'examen') {
     const answered = results.filter(r => r.chosen !== null);
-    answered.forEach(r => { updateStats(r.q, r.ok); srsUpdate(r.q, r.ok); });
+    answered.forEach(r => { updateStats(r.q, r.ok, r.chosen); srsUpdate(r.q, r.ok); });
     addDaily(answered.length);
   }
   const aciertos = results.filter(r => r.ok).length, blancos = results.filter(r => r.chosen === null).length;
@@ -801,8 +949,10 @@ function showResult(results, entry, meta) {
         ${r.ok ? '' : `<div style="color:var(--ok)">Correcta: ${esc(r.q.opciones[r.q.correcta])}</div>`}
         ${r.q.explicacion ? `<div class="muted" style="white-space:pre-wrap">${esc(r.q.explicacion)}</div>` : ''}
         ${refHTML(r.q)}
+        <div class="notes">${notesHTML(r.q, keyOf(r.q))}</div>
       </div>`).join('') : '<p class="muted">¡Sin fallos! 🎉</p>';
     $('reviewList').querySelectorAll('.star').forEach(b => bindStar(b, list[+b.dataset.k].q));
+    bindNoteBtns($('reviewList'), renderReview);
   };
   $('reviewFilter').onchange = renderReview;
   renderReview();
@@ -829,6 +979,24 @@ function heatmapHTML(weeks = 18) {
   }
   return `<div class="heat" role="img" aria-label="Preguntas respondidas por día en las últimas ${weeks} semanas">${cells}</div>
     <div class="heat-legend">Menos <i class="l0" style="background:var(--grid)"></i><i style="background:color-mix(in srgb, var(--accent) 30%, var(--grid))"></i><i style="background:color-mix(in srgb, var(--accent) 55%, var(--grid))"></i><i style="background:color-mix(in srgb, var(--accent) 78%, var(--grid))"></i><i style="background:var(--accent)"></i> ${goal ? 'Objetivo cumplido' : 'Más'}</div>`;
+}
+
+// Opciones incorrectas que se eligen una y otra vez en la misma pregunta
+function confusionsCardHTML() {
+  const stats = load(K.stats, {});
+  const list = (set?.preguntas || []).flatMap(q => Object.entries(stats[keyOf(q)]?.wrong || {})
+    .filter(([, n]) => n >= 2).map(([opt, n]) => ({ q, opt, n })))
+    .sort((a, b) => b.n - a.n).slice(0, 10);
+  if (!list.length) return '';
+  return `<div class="card">
+    <h2>⚠️ Lo que más confundes</h2>
+    <p class="help">Respuestas incorrectas que has elegido varias veces en la misma pregunta.</p>
+    ${list.map(c => `<div class="review">
+      <div><b>${esc(c.q.pregunta)}</b></div>
+      <div style="color:var(--ko)">✘ «${esc(c.opt)}» <span class="muted">· ${c.n} veces</span></div>
+      <div style="color:var(--ok)">✔ «${esc(c.q.opciones[c.q.correcta])}»</div>
+    </div>`).join('')}
+  </div>`;
 }
 
 function dominioHTML() {
@@ -889,6 +1057,7 @@ function showStats() {
         ? `Con −${fmtPen(pen)} por fallo, responder una dudosa compensa si aciertas más del <b>${Math.round(thr * 100)}%</b> de ellas. ${dOk / dN > thr ? '👉 A ti <b>te compensa responderlas</b>.' : '👉 A ti te conviene <b>dejarlas en blanco</b>.'}`
         : 'Sin penalización activada, siempre compensa responder. Actívala en ⚙️ Ajustes si tu examen la tiene.'}</p>
     </div>` : ''}
+    ${confusionsCardHTML()}
     <div class="card">
       <h2>Dominio del temario</h2>
       <p class="help">% dominado = preguntas acertadas al menos 3 veces seguidas. ✓ = % de acierto total.</p>
@@ -1298,12 +1467,21 @@ async function openEditor(forcePull = false) {
   showEditor();
 }
 
+// Pestañas del editor: preguntas tipo test, fichas (anverso/reverso) y artículos (para rellenar huecos)
+let editorTab = 'q';
+const TABS = {
+  q: { name: 'Preguntas', one: 'pregunta', icon: '❓', list: () => set.preguntas, text: x => x.pregunta, key: keyOf, form: i => showEditForm(i) },
+  f: { name: 'Fichas', one: 'ficha', icon: '🗂', list: () => (set.fichas ||= []), text: x => x.anverso, key: fichaKey, form: i => showFichaForm(i) },
+  a: { name: 'Artículos', one: 'artículo', icon: '📜', list: () => (set.articulos ||= []), text: x => x.titulo, key: artKey, form: i => showArticleForm(i) },
+};
+
 function showEditor(filter = '') {
   stopTimer();
-  const marks = load(K.marks, {});
+  onKey = null;
+  const tab = TABS[editorTab], all = tab.list(), marks = load(K.marks, {});
   const f = filter.toLowerCase();
-  const items = set.preguntas.map((q, i) => ({ q, i }))
-    .filter(({ q }) => !f || (f === '★' ? marks[keyOf(q)] : [q.pregunta, q.tema, q.bloque, q.referencia].some(v => (v || '').toLowerCase().includes(f))));
+  const items = all.map((x, i) => ({ x, i })).filter(({ x }) => !f || (f === '★' ? marks[tab.key(x)]
+    : [tab.text(x), x.reverso, x.texto, x.tema, x.bloque, x.referencia].some(v => (v || '').toLowerCase().includes(f))));
   const busy = ghStatus?.type === 'busy' && !ghSha;
 
   app.innerHTML = `
@@ -1313,30 +1491,37 @@ function showEditor(filter = '') {
       <label class="muted">Título del test</label>
       <input type="text" id="titulo" class="full" value="${esc(set.titulo)}" ${busy ? 'disabled' : ''}>
       <div class="row" style="margin-top:12px">
-        <button class="primary" id="add" ${busy ? 'disabled' : ''}>+ Nueva pregunta</button>
         <label class="filebtn" ${busy ? 'style="pointer-events:none;opacity:.45"' : ''}>📥 Importar JSON<input type="file" id="importFile" accept=".json,application/json,text/plain" hidden></label>
         <button id="download">⬇ Descargar JSON</button>
-        <button id="newSet" class="danger" ${busy ? 'disabled' : ''}>Vaciar banco</button>
       </div>
-      <details style="margin-top:12px"><summary class="muted">…o pega aquí el JSON con muchas preguntas</summary>
-        <textarea id="importPaste" rows="8" style="margin-top:8px;font-family:monospace" placeholder='{ "titulo": "…", "preguntas": [ { "pregunta": "…", "opciones": ["A","B","C","D"], "correcta": 0 } ] }'></textarea>
+      <details style="margin-top:12px"><summary class="muted">…o pega aquí un JSON con muchas preguntas, fichas o artículos</summary>
+        <textarea id="importPaste" rows="8" style="margin-top:8px;font-family:monospace" placeholder='{ "preguntas": [ … ], "fichas": [ { "anverso": "…", "reverso": "…" } ], "articulos": [ { "titulo": "…", "texto": "…" } ] }'></textarea>
         <button id="importPasteBtn" ${busy ? 'disabled' : ''}>Revisar e importar</button>
       </details>
       <div id="importPreview"></div>
       ${set.origen === 'editado' && !ghConnected() ? '<p class="muted">Los cambios se guardan solo en este dispositivo. Conecta GitHub (abajo) para que se guarden para todos.</p>' : ''}
     </div>
+    <div class="tabs">${Object.entries(TABS).map(([id, t]) =>
+      `<button class="tab ${id === editorTab ? 'on' : ''}" data-tab="${id}">${t.icon} ${t.name} <span class="muted">${t.list().length}</span></button>`).join('')}</div>
     <div class="card">
-      <input type="search" id="search" class="full" placeholder="🔍 Buscar (★ = marcadas)" value="${esc(filter)}">
-      <p class="muted">${items.length} de ${set.preguntas.length} preguntas</p>
-      ${items.map(({ q, i }) => `
-        <button class="qitem" data-i="${i}" ${busy ? 'disabled' : ''}><span class="muted">${i + 1}</span><span class="txt">${esc(q.pregunta)}</span>
-          ${q.tema ? `<span class="tag">${esc(q.tema)}</span>` : ''}${marks[keyOf(q)] ? '<span style="color:var(--star)">★</span>' : ''}</button>`).join('')}
+      <div class="row" style="margin-bottom:12px">
+        <button class="primary" id="add" ${busy ? 'disabled' : ''}>+ ${{ q: 'Nueva pregunta', f: 'Nueva ficha', a: 'Nuevo artículo' }[editorTab]}</button>
+        ${all.length ? `<button id="newSet" class="danger small" ${busy ? 'disabled' : ''}>Vaciar ${tab.name.toLowerCase()}</button>` : ''}
+      </div>
+      ${editorTab === 'f' ? '<p class="help">Para conceptos que no son tipo test: plazos, definiciones, órganos… Salen en 🃏 Flashcards y 🎧 Audio.</p>' : ''}
+      ${editorTab === 'a' ? '<p class="help">Pega el texto del artículo y pon entre {{dobles llaves}} lo que quieras que se tape. Se practica en 📜 Artículos.</p>' : ''}
+      <input type="search" id="search" class="full" placeholder="🔍 Buscar${editorTab !== 'a' ? ' (★ = marcadas)' : ''}" value="${esc(filter)}">
+      <p class="muted">${items.length} de ${all.length}</p>
+      ${items.map(({ x, i }) => `
+        <button class="qitem" data-i="${i}" ${busy ? 'disabled' : ''}><span class="muted">${i + 1}</span><span class="txt">${esc(tab.text(x))}</span>
+          ${x.tema ? `<span class="tag">${esc(x.tema)}</span>` : ''}${marks[tab.key(x)] ? '<span style="color:var(--star)">★</span>' : ''}</button>`).join('')}
     </div>
     ${ghCardHTML()}`;
 
   $('home').onclick = () => showHome();
+  app.querySelectorAll('.tab').forEach(b => b.onclick = () => { editorTab = b.dataset.tab; showEditor(); });
   $('titulo').onchange = e => { set.titulo = e.target.value.trim() || 'Test'; persistEdit('Cambiar título: ' + set.titulo); };
-  $('add').onclick = () => showEditForm(-1);
+  $('add').onclick = () => tab.form(-1);
   $('download').onclick = downloadJSON;
   $('importFile').onchange = e => {
     const file = e.target.files[0];
@@ -1344,63 +1529,115 @@ function showEditor(filter = '') {
     e.target.value = '';
   };
   $('importPasteBtn').onclick = () => previewImport($('importPaste').value);
-  $('newSet').onclick = () => {
-    if (!confirm(`Se borrarán TODAS las preguntas${ghConnected() ? ', también en GitHub' : ''}. ¿Continuar?`)) return;
-    set.preguntas = []; persistEdit('Vaciar banco de preguntas'); showEditor();
+  if ($('newSet')) $('newSet').onclick = () => {
+    if (!confirm(`Se borrarán TODOS los elementos de «${tab.name}»${ghConnected() ? ', también en GitHub' : ''}. ¿Continuar?`)) return;
+    tab.list().length = 0;
+    persistEdit('Vaciar ' + tab.name.toLowerCase());
+    showEditor();
   };
   const search = $('search');
   search.oninput = () => { const v = search.value, pos = search.selectionStart; showEditor(v); const s = $('search'); s.focus(); s.setSelectionRange(pos, pos); };
-  app.querySelectorAll('.qitem').forEach(b => b.onclick = () => showEditForm(+b.dataset.i));
+  app.querySelectorAll('.qitem').forEach(b => b.onclick = () => tab.form(+b.dataset.i));
   bindGhStatus();
   bindGhCard();
 }
 
-// Importar un JSON entero en el editor: añadir las nuevas o sustituirlo todo (y guardarlo en GitHub si está conectado)
+// Importar un JSON entero en el editor: añadir lo nuevo o sustituir (y guardarlo en GitHub si está conectado)
 function previewImport(text, readErr) {
   const box = $('importPreview');
   let data;
   try {
     if (readErr) throw readErr;
     data = parseSet(JSON.parse(text));
-    if (!data.preguntas.length) throw new Error('no tiene ninguna pregunta.');
+    if (!data.preguntas.length && !data.fichas.length && !data.articulos.length) throw new Error('no tiene preguntas, fichas ni artículos.');
   } catch (e) {
     box.innerHTML = `<div class="ghstatus error" style="margin:12px 0 0">No se puede importar: ${esc(e instanceof SyntaxError ? 'el texto no es un JSON válido (' + e.message + ')' : e.message)}</div>`;
     return;
   }
-  const existing = new Set(set.preguntas.map(keyOf));
-  const nuevas = data.preguntas.filter(q => !existing.has(keyOf(q)));
-  const repetidas = data.preguntas.length - nuevas.length;
+  // Por cada sección: qué trae el archivo y qué es nuevo (comparando por el texto)
+  const parts = Object.entries({ q: data.preguntas, f: data.fichas, a: data.articulos }).filter(([, arr]) => arr.length).map(([id, arr]) => {
+    const t = TABS[id], have = new Set(t.list().map(t.key));
+    return { id, t, arr, nuevas: arr.filter(x => !have.has(t.key(x))) };
+  });
+  const nNew = parts.reduce((s, p) => s + p.nuevas.length, 0);
   const dest = ghConnected() ? ' y se guardará en GitHub' : '';
   box.innerHTML = `
     <div class="ghstatus" style="margin:12px 0 0">
-      <b>${data.preguntas.length} preguntas</b> en el archivo${data.titulo && data.titulo !== 'Test' ? ` («${esc(data.titulo)}»)` : ''}:
-      ${nuevas.length} nuevas${repetidas ? ` y ${repetidas} que ya tienes (mismo texto)` : ''}.
+      En el archivo${data.titulo && data.titulo !== 'Test' ? ` («${esc(data.titulo)}»)` : ''}:
+      <ul style="margin:6px 0;padding-left:20px">${parts.map(p => {
+        const rep = p.arr.length - p.nuevas.length;
+        return `<li><b>${p.arr.length} ${p.arr.length === 1 ? p.t.one : p.t.name.toLowerCase()}</b>: ${p.nuevas.length} ${p.nuevas.length === 1 ? 'nueva' : 'nuevas'}${rep ? `, ${rep} ya ${rep === 1 ? 'la tienes' : 'las tienes'}` : ''}</li>`;
+      }).join('')}</ul>
       <div class="row" style="margin-top:8px">
-        <button class="small primary" id="impAdd" ${nuevas.length ? '' : 'disabled'}>Añadir las ${nuevas.length} nuevas</button>
-        <button class="small danger" id="impReplace">Sustituir todo (${set.preguntas.length} → ${data.preguntas.length})</button>
+        <button class="small primary" id="impAdd" ${nNew ? '' : 'disabled'}>Añadir las ${nNew} nuevas</button>
+        <button class="small danger" id="impReplace">Sustituir</button>
         <button class="small" id="impCancel">Cancelar</button>
       </div>
-      <p class="help" style="margin-bottom:0">«Añadir» conserva tus preguntas actuales. «Sustituir» deja solo las del archivo${dest}.</p>
+      <p class="help" style="margin-bottom:0">«Añadir» conserva lo que ya tienes. «Sustituir» cambia ${parts.map(p => p.t.name.toLowerCase()).join(', ')} por las del archivo${dest}; lo demás no se toca.</p>
     </div>`;
   $('impCancel').onclick = () => box.innerHTML = '';
   $('impAdd').onclick = () => {
-    set.preguntas.push(...nuevas);
-    persistEdit(`Importar ${nuevas.length} preguntas`);
+    parts.forEach(p => p.t.list().push(...p.nuevas));
+    persistEdit(`Importar ${parts.map(p => `${p.nuevas.length} ${p.t.name.toLowerCase()}`).join(', ')}`);
     showEditor();
   };
   $('impReplace').onclick = () => {
-    if (!confirm(`Se sustituirán las ${set.preguntas.length} preguntas actuales por las ${data.preguntas.length} del archivo${dest}. ¿Continuar?`)) return;
-    set.preguntas = data.preguntas;
+    if (!confirm(`Se sustituirán ${parts.map(p => `las ${p.t.list().length} ${p.t.name.toLowerCase()} por ${p.arr.length}`).join(', ')}${dest}. ¿Continuar?`)) return;
+    parts.forEach(p => { const l = p.t.list(); l.length = 0; l.push(...p.arr); });
     if (data.titulo && data.titulo !== 'Test') set.titulo = data.titulo;
     if (data.ajustes) set.ajustes = data.ajustes;
-    persistEdit(`Sustituir banco por ${data.preguntas.length} preguntas importadas`);
+    persistEdit(`Sustituir ${parts.map(p => `${p.t.name.toLowerCase()} (${p.arr.length})`).join(', ')} por las importadas`);
+    showEditor();
+  };
+}
+
+// Campos comunes de los formularios: referencia, bloque y tema (con sugerencias de lo ya usado)
+function metaFieldsHTML(x) {
+  const all = [...set.preguntas, ...fichasOf(), ...articulosOf()];
+  const list = field => uniq(all.map(p => p[field])).sort(natCmp).map(t => `<option value="${esc(t)}">`).join('');
+  return `
+    <p class="muted" style="margin-bottom:0">Referencia legal (opcional, p. ej. «Art. 14 CE»)</p>
+    <input type="text" id="fReferencia" class="full" value="${esc(x.referencia)}">
+    <p class="muted" style="margin-bottom:0">Bloque (opcional, p. ej. «Bloque I»)</p>
+    <input type="text" id="fBloque" class="full" list="bloquesList" value="${esc(x.bloque)}">
+    <datalist id="bloquesList">${list('bloque')}</datalist>
+    <p class="muted" style="margin-bottom:0">Tema (opcional, p. ej. «Tema 3. La Constitución»)</p>
+    <input type="text" id="fTema" class="full" list="temasList" value="${esc(x.tema)}">
+    <datalist id="temasList">${list('tema')}</datalist>`;
+}
+function readFields(obj, fields) {
+  for (const [field, id] of fields) { const v = $(id).value.trim(); if (v) obj[field] = v; }
+  return obj;
+}
+const META_FIELDS = [['referencia', 'fReferencia'], ['bloque', 'fBloque'], ['tema', 'fTema']];
+const formButtonsHTML = idx => `
+  <p class="error" id="fError"></p>
+  <div class="row between">
+    <div class="row"><button class="primary" id="saveQ">Guardar</button><button id="cancel">Cancelar</button></div>
+    ${idx >= 0 ? '<button class="danger" id="delQ">Eliminar</button>' : ''}
+  </div>`;
+// Guardar / eliminar un elemento de la pestaña actual, conservando su progreso si cambia el texto
+function bindFormButtons(idx, build, validate) {
+  const tab = TABS[editorTab], list = tab.list();
+  $('cancel').onclick = () => showEditor();
+  if ($('delQ')) $('delQ').onclick = () => {
+    if (!confirm(`¿Eliminar est${tab.one === 'artículo' ? 'e' : 'a'} ${tab.one}?`)) return;
+    const [del] = list.splice(idx, 1);
+    persistEdit(`Eliminar ${tab.one}: ` + tab.text(del).slice(0, 60));
+    showEditor();
+  };
+  $('saveQ').onclick = () => {
+    const x = build(), err = validate(x);
+    if (err) return $('fError').textContent = err;
+    if (list.some((p, k) => k !== idx && tab.key(p) === tab.key(x))) return $('fError').textContent = `Ya existe ${tab.one === 'pregunta' || tab.one === 'ficha' ? 'una' : 'un'} ${tab.one} con ese mismo texto.`;
+    if (idx >= 0) { migrateKey(tab.key(list[idx]), tab.key(x)); list[idx] = x; } else list.push(x);
+    persistEdit(`${idx >= 0 ? 'Editar' : 'Añadir'} ${tab.one}: ` + tab.text(x).slice(0, 60));
     showEditor();
   };
 }
 
 function showEditForm(idx) {
   const q = idx >= 0 ? set.preguntas[idx] : { pregunta: '', opciones: ['', '', '', ''], correcta: 0 };
-  const list = (field) => uniq(set.preguntas.map(p => p[field])).sort(natCmp).map(t => `<option value="${esc(t)}">`).join('');
   let opciones = [...q.opciones];
 
   app.innerHTML = `
@@ -1413,19 +1650,10 @@ function showEditForm(idx) {
       <button class="small" id="addOpt">+ Opción</button>
       <p class="muted" style="margin-bottom:0">Explicación</p>
       <textarea id="fExplicacion" rows="3">${esc(q.explicacion)}</textarea>
-      <p class="muted" style="margin-bottom:0">Referencia legal (opcional, p. ej. «Art. 14 CE»)</p>
-      <input type="text" id="fReferencia" class="full" value="${esc(q.referencia)}">
-      <p class="muted" style="margin-bottom:0">Bloque (opcional, p. ej. «Bloque I»)</p>
-      <input type="text" id="fBloque" class="full" list="bloquesList" value="${esc(q.bloque)}">
-      <datalist id="bloquesList">${list('bloque')}</datalist>
-      <p class="muted" style="margin-bottom:0">Tema (opcional, p. ej. «Tema 3. La Constitución»)</p>
-      <input type="text" id="fTema" class="full" list="temasList" value="${esc(q.tema)}">
-      <datalist id="temasList">${list('tema')}</datalist>
-      <p class="error" id="fError"></p>
-      <div class="row between">
-        <div class="row"><button class="primary" id="saveQ">Guardar</button><button id="cancel">Cancelar</button></div>
-        ${idx >= 0 ? '<button class="danger" id="delQ">Eliminar</button>' : ''}
-      </div>
+      <p class="muted" style="margin-bottom:0">💡 Truco para recordarla (opcional, lo verán todos)</p>
+      <textarea id="fTruco" rows="2" placeholder="p. ej. alzada = 1 mes, reposición = 1 mes, extraordinario = 4 años">${esc(q.truco)}</textarea>
+      ${metaFieldsHTML(q)}
+      ${formButtonsHTML(idx)}
     </div>`;
 
   let correcta = q.correcta;
@@ -1447,34 +1675,523 @@ function showEditForm(idx) {
   renderOpts();
   $('addOpt').onclick = () => { opciones.push(''); renderOpts(); };
 
-  $('cancel').onclick = () => showEditor();
-  if ($('delQ')) $('delQ').onclick = () => {
-    if (!confirm('¿Eliminar esta pregunta?')) return;
-    const [del] = set.preguntas.splice(idx, 1);
-    persistEdit('Eliminar pregunta: ' + del.pregunta.slice(0, 60));
-    showEditor();
+  bindFormButtons(idx,
+    () => readFields({ pregunta: $('fPregunta').value.trim(), opciones: opciones.map(o => o.trim()), correcta },
+      [['explicacion', 'fExplicacion'], ['truco', 'fTruco'], ...META_FIELDS]),
+    x => !x.pregunta ? 'Escribe la pregunta.' : x.opciones.some(o => !o) ? 'Rellena todas las opciones (o quita las que sobren).' : '');
+}
+
+function showFichaForm(idx) {
+  const f = idx >= 0 ? set.fichas[idx] : { anverso: '', reverso: '' };
+  app.innerHTML = `
+    <div class="row between"><h1>${idx >= 0 ? 'Editar ficha ' + (idx + 1) : 'Nueva ficha'}</h1></div>
+    <div class="card">
+      <label class="muted">Anverso (lo que se pregunta)</label>
+      <textarea id="fAnverso" rows="2" placeholder="p. ej. Plazo del recurso de alzada">${esc(f.anverso)}</textarea>
+      <label class="muted">Reverso (la respuesta)</label>
+      <textarea id="fReverso" rows="3" placeholder="p. ej. 1 mes si el acto es expreso">${esc(f.reverso)}</textarea>
+      <p class="muted" style="margin-bottom:0">Explicación (opcional)</p>
+      <textarea id="fExplicacion" rows="2">${esc(f.explicacion)}</textarea>
+      <p class="muted" style="margin-bottom:0">💡 Truco (opcional)</p>
+      <textarea id="fTruco" rows="2">${esc(f.truco)}</textarea>
+      ${metaFieldsHTML(f)}
+      ${formButtonsHTML(idx)}
+    </div>`;
+  bindFormButtons(idx,
+    () => readFields({ anverso: $('fAnverso').value.trim(), reverso: $('fReverso').value.trim() }, [['explicacion', 'fExplicacion'], ['truco', 'fTruco'], ...META_FIELDS]),
+    x => !x.anverso || !x.reverso ? 'Rellena el anverso y el reverso.' : '');
+}
+
+function showArticleForm(idx) {
+  const a = idx >= 0 ? set.articulos[idx] : { titulo: '', texto: '' };
+  app.innerHTML = `
+    <div class="row between"><h1>${idx >= 0 ? 'Editar artículo' : 'Nuevo artículo'}</h1></div>
+    <div class="card">
+      <label class="muted">Título</label>
+      <input type="text" id="fTitulo" class="full" value="${esc(a.titulo)}" placeholder="p. ej. Art. 14 CE – Igualdad">
+      <label class="muted">Texto</label>
+      <textarea id="fTexto" rows="10" placeholder="Los españoles son {{iguales}} ante la ley, sin que pueda prevalecer discriminación alguna por razón de {{nacimiento}}, {{raza}}, {{sexo}}…">${esc(a.texto)}</textarea>
+      <p class="help">Pon entre {{dobles llaves}} lo que quieras que se tape. Si «Tapar números y plazos» está activado (en 📜 Artículos), también se tapan solos.</p>
+      <div id="gapPreview"></div>
+      ${metaFieldsHTML(a)}
+      ${formButtonsHTML(idx)}
+    </div>`;
+  const preview = () => {
+    const segs = makeGaps($('fTexto').value, getSettings().autoGaps, 0), n = segs.filter(s => s.gap !== undefined).length;
+    $('gapPreview').innerHTML = $('fTexto').value.trim() ? `<div class="art-text art-preview">${segs.map(s => s.gap !== undefined ? `<span class="gap-mark">${esc(s.gap)}</span>` : esc(s.text)).join('')}</div>
+      <p class="help">${n} ${n === 1 ? 'hueco' : 'huecos'} (en amarillo)</p>` : '';
   };
-  $('saveQ').onclick = () => {
-    const nq = { pregunta: $('fPregunta').value.trim(), opciones: opciones.map(o => o.trim()), correcta };
-    for (const [field, id] of [['explicacion', 'fExplicacion'], ['referencia', 'fReferencia'], ['bloque', 'fBloque'], ['tema', 'fTema']]) {
-      const v = $(id).value.trim();
-      if (v) nq[field] = v;
+  $('fTexto').oninput = preview;
+  preview();
+  bindFormButtons(idx,
+    () => readFields({ titulo: $('fTitulo').value.trim(), texto: $('fTexto').value.trim() }, META_FIELDS),
+    x => !x.titulo || !x.texto ? 'Rellena el título y el texto.' : '');
+}
+
+// ---------- Sesiones de estudio: flashcards, audio y verdadero/falso ----------
+let onKey = null; // atajos de teclado de la pantalla actual (devuelve false si no es su pantalla)
+const STUDY = {
+  flash: { icon: '🃏', name: 'Flashcards', help: 'Lee la pregunta, intenta recordar la respuesta, dale la vuelta y puntúate. Lo que te cueste volverá antes.' },
+  audio: { icon: '🎧', name: 'Modo audio', help: 'La app lee la pregunta, te deja unos segundos para pensar y te dice la respuesta. Ideal para andar o ir en transporte.' },
+  vf: { icon: '⚡', name: 'Verdadero / Falso', help: 'Sale una pregunta con una sola respuesta: ¿es la correcta? Rápido, para hacer muchas en poco rato.' },
+};
+
+function showStudySetup(kind) {
+  stopTimer();
+  const conf = STUDY[kind], last = load(K.settings, {})['study_' + kind] || {};
+  const qs = set?.preguntas || [], fs = kind === 'vf' ? [] : fichasOf();
+  const all = [...qs, ...fs];
+  const bloques = uniq(all.map(x => x.bloque)).sort(natCmp);
+  app.innerHTML = `
+    <div class="row between"><h1>${conf.icon} ${conf.name}</h1><button id="home">← Inicio</button></div>
+    <div class="card">
+      <p class="help" style="margin-top:0">${conf.help}</p>
+      ${qs.length && fs.length ? `<div class="set-row"><span>Qué repasar</span><select id="src">
+        <option value="all">Preguntas y fichas</option><option value="q" ${last.src === 'q' ? 'selected' : ''}>Solo preguntas</option><option value="f" ${last.src === 'f' ? 'selected' : ''}>Solo fichas</option></select></div>` : ''}
+      ${bloques.length ? `<div class="set-row"><span>Bloque</span><select id="bloque"><option value="">Todos</option>${bloques.map(b => `<option>${esc(b)}</option>`).join('')}</select></div>` : ''}
+      <div class="set-row" id="temaRow"><span>Tema</span><select id="tema"></select></div>
+      ${kind !== 'vf' ? `<label class="opt"><input type="checkbox" id="onlyDue" ${last.onlyDue !== false ? 'checked' : ''}> Solo las que tocan hoy y las nuevas (repaso inteligente)</label>` : ''}
+      <label class="opt"><input type="checkbox" id="onlyMarked"> Solo las marcadas ★</label>
+      <div class="set-row"><span>Cuántas</span><input type="number" id="count" min="1" value="${last.count || 20}"></div>
+      ${kind === 'audio' ? `
+      <hr class="sep">
+      <label class="opt"><input type="checkbox" id="readOpts" ${last.readOpts !== false ? 'checked' : ''}> Leer las opciones de las preguntas</label>
+      <label class="opt"><input type="checkbox" id="readExp" ${last.readExp !== false ? 'checked' : ''}> Leer la explicación y el truco</label>
+      <div class="set-row"><span>Segundos para pensar</span><input type="number" id="pause" min="0" max="60" value="${last.pause ?? 4}"></div>
+      <div class="set-row"><span>Velocidad</span><select id="rate">${[[0.8, 'Lenta'], [1, 'Normal'], [1.2, 'Rápida'], [1.4, 'Muy rápida']].map(([v, t]) => `<option value="${v}" ${(last.rate ?? 1) == v ? 'selected' : ''}>${t}</option>`).join('')}</select></div>
+      ${'speechSynthesis' in window ? '' : '<p class="error">Este navegador no puede leer en voz alta.</p>'}` : ''}
+      <button class="primary" id="go" style="width:100%;margin-top:8px">Empezar</button>
+      <p class="error" id="err"></p>
+    </div>`;
+  $('home').onclick = () => showHome();
+  const pool = () => {
+    const src = $('src')?.value || 'all';
+    return [...(src === 'f' ? [] : qs), ...(src === 'q' ? [] : fs)];
+  };
+  const fillTemas = () => {
+    const b = $('bloque')?.value || '';
+    const temas = uniq(pool().filter(x => !b || x.bloque === b).map(x => x.tema)).sort(natCmp);
+    $('tema').innerHTML = `<option value="">Todos</option>${temas.map(t => `<option>${esc(t)}</option>`).join('')}`;
+    $('temaRow').hidden = !temas.length;
+  };
+  fillTemas();
+  if ($('bloque')) $('bloque').onchange = fillTemas;
+  if ($('src')) $('src').onchange = fillTemas;
+
+  $('go').onclick = () => {
+    const b = $('bloque')?.value || '', t = $('tema').value, marks = load(K.marks, {});
+    let cards = pool().filter(x => (!b || x.bloque === b) && (!t || x.tema === t)).map(asCard);
+    if ($('onlyMarked').checked) cards = cards.filter(c => marks[c.key]);
+    const count = Math.max(1, +$('count').value || 20);
+    if ($('onlyDue')?.checked) {
+      const p = srsPlan(cards, c => c.key);
+      cards = [...p.due, ...shuffle(p.fresh)];
+      if (!cards.length) return $('err').textContent = '¡Todo al día! 🎉 Desmarca «Solo las que tocan hoy» para repasar igualmente.';
+    } else cards = shuffle(cards);
+    if (!cards.length) return $('err').textContent = 'No hay nada que repasar con esos filtros.';
+    cards = cards.slice(0, count);
+    const opts = {
+      src: $('src')?.value, onlyDue: $('onlyDue')?.checked, count,
+      readOpts: $('readOpts')?.checked, readExp: $('readExp')?.checked, pause: $('pause') ? +$('pause').value : undefined, rate: $('rate') ? +$('rate').value : undefined
+    };
+    saveSettings({ ['study_' + kind]: opts });
+    if (kind === 'flash') startFlash(cards);
+    if (kind === 'audio') startAudio(cards, opts);
+    if (kind === 'vf') startVF(cards.map(c => c.item));
+  };
+}
+
+// Reverso completo de una tarjeta (respuesta, explicación, referencia, trucos)
+function cardBackHTML(c) {
+  const it = c.item;
+  return `<div class="flash-answer">${esc(c.back)}</div>
+    ${it.explicacion ? `<div class="muted" style="white-space:pre-wrap;margin-top:8px">${esc(it.explicacion)}</div>` : ''}
+    ${refHTML(it)}
+    <div class="notes">${notesHTML(it, c.key)}</div>`;
+}
+
+// ----- Flashcards -----
+let flash = null;
+function startFlash(cards) {
+  flash = { cards: cards.map(c => ({ ...c, again: 0 })), i: 0, flipped: false, counts: [0, 0, 0, 0], done: 0 };
+  showFlash();
+}
+const GRADES = [['Otra vez', 'again'], ['Difícil', 'hard'], ['Bien', 'good'], ['Fácil', 'easy']];
+const fmtDays = d => d === 0 ? 'hoy' : d === 1 ? '1 día' : d < 30 ? `${d} días` : `${Math.round(d / 30)} mes${d >= 45 ? 'es' : ''}`;
+
+function showFlash() {
+  const c = flash.cards[flash.i];
+  if (!c) return showFlashEnd();
+  const cur = load(K.srs, {})[c.key]?.box || 0;
+  app.innerHTML = `
+    <div class="topbar">
+      <div><b>${flash.i + 1}</b><span class="muted"> / ${flash.cards.length}</span>${c.item.tema ? ` <span class="tag">${esc(c.item.tema)}</span>` : ''}</div>
+      <div class="row" style="flex-wrap:nowrap">${starBtn({ pregunta: c.key }, 'star')}<button class="small" id="quit">Salir</button></div>
+    </div>
+    <div class="progress"><div style="width:${flash.i / flash.cards.length * 100}%"></div></div>
+    <div class="card flash-card ${flash.flipped ? 'flipped' : ''}" id="flashCard">
+      <div class="muted" style="margin-bottom:6px">${c.type === 'f' ? '🗂 Ficha' : '❓ Pregunta'}</div>
+      <div class="q">${esc(c.front)}</div>
+      ${flash.flipped ? `<hr class="sep">${cardBackHTML(c)}` : '<p class="muted flash-hint">Piensa la respuesta y toca para darle la vuelta</p>'}
+    </div>
+    ${flash.flipped ? `
+    <div class="grades">${GRADES.map(([t, cls], g) => `
+      <button class="grade ${cls}" data-g="${g}"><b>${t}</b><span>${g === 0 ? 'otra vez hoy' : fmtDays(srsGradeDays(cur, g))}</span></button>`).join('')}
+    </div>` : '<button class="primary" id="flip" style="width:100%">Mostrar respuesta</button>'}`;
+  bindStar($('star'), { pregunta: c.key });
+  $('quit').onclick = () => showFlashEnd();
+  if (!flash.flipped) {
+    $('flip').onclick = $('flashCard').onclick = () => { flash.flipped = true; showFlash(); };
+  } else {
+    bindNoteBtns(app, showFlash);
+    app.querySelectorAll('.grade').forEach(b => b.onclick = () => gradeFlash(+b.dataset.g));
+  }
+  onKey = e => {
+    if (!$('flashCard')) return false;
+    if (!flash.flipped && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); flash.flipped = true; showFlash(); }
+    else if (flash.flipped && '1234'.includes(e.key)) gradeFlash(+e.key - 1);
+  };
+}
+
+function gradeFlash(g) {
+  const c = flash.cards[flash.i];
+  srsGrade(c.key, g);
+  if (!c.again) { flash.counts[g]++; flash.done++; addDaily(1); }
+  // "Otra vez": la tarjeta vuelve al final de esta misma sesión (máx. 3 veces)
+  if (g === 0 && c.again < 3) flash.cards.push({ ...c, again: c.again + 1 });
+  flash.i++;
+  flash.flipped = false;
+  showFlash();
+}
+
+function showFlashEnd() {
+  onKey = null;
+  const [a, h, g, e] = flash.counts;
+  app.innerHTML = `
+    <h1>🃏 Sesión terminada</h1>
+    <div class="card">
+      <div class="big">${flash.done} tarjetas</div>
+      <div class="kpis" style="margin-top:12px">
+        <div class="kpi"><div class="muted">Otra vez</div><div class="v" style="color:var(--ko)">${a}</div></div>
+        <div class="kpi"><div class="muted">Difícil</div><div class="v">${h}</div></div>
+        <div class="kpi"><div class="muted">Bien / Fácil</div><div class="v" style="color:var(--ok)">${g + e}</div></div>
+      </div>
+      <p class="help">Lo que marcaste como «Otra vez» o «Difícil» volverá a salir pronto en el repaso.</p>
+      <div class="row"><button class="primary" id="again">Otra sesión</button><button id="home">Inicio</button></div>
+    </div>`;
+  $('again').onclick = () => showStudySetup('flash');
+  $('home').onclick = () => showHome();
+}
+
+// ----- Modo audio -----
+let audio = null, wakeLock = null;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => v.lang === 'es-ES') || vs.find(v => v.lang?.startsWith('es')) || null;
+}
+function speak(text, tok) {
+  return new Promise(res => {
+    if (!text || tok !== audio?.tok) return res();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'es-ES';
+    const v = pickVoice();
+    if (v) u.voice = v;
+    u.rate = audio.rate;
+    u.onend = u.onerror = () => res();
+    speechSynthesis.speak(u);
+  });
+}
+
+function startAudio(cards, opts) {
+  audio = { cards, i: 0, playing: false, tok: 0, phase: '', rate: opts.rate || 1, pause: opts.pause ?? 4, readOpts: opts.readOpts !== false, readExp: opts.readExp !== false };
+  speechSynthesis.getVoices(); // en algunos navegadores las voces cargan tarde
+  showAudio();
+}
+
+function showAudio() {
+  const c = audio.cards[audio.i];
+  if (!c) return stopAudio(true);
+  const it = c.item;
+  const opts = c.type === 'q' ? it.opciones.map((o, k) => `<div class="${audio.phase === 'answer' && k === it.correcta ? 'audio-ok' : ''}">${'ABCDEFGH'[k]}) ${esc(o)}</div>`).join('') : '';
+  app.innerHTML = `
+    <div class="topbar">
+      <div><b>${audio.i + 1}</b><span class="muted"> / ${audio.cards.length}</span>${it.tema ? ` <span class="tag">${esc(it.tema)}</span>` : ''}</div>
+      <button class="small" id="quit">Salir</button>
+    </div>
+    <div class="progress"><div style="width:${audio.i / audio.cards.length * 100}%"></div></div>
+    <div class="card" id="audioCard">
+      <div class="muted" style="margin-bottom:6px">${{ q: '🔊 Leyendo la pregunta…', think: '🤔 Piensa…', answer: '✅ Respuesta', '': audio.playing ? '' : '⏸ En pausa' }[audio.phase] || ''}</div>
+      <div class="q">${esc(c.front)}</div>
+      ${opts ? `<div class="audio-opts">${opts}</div>` : ''}
+      ${audio.phase === 'answer' ? `<hr class="sep">${cardBackHTML(c)}` : ''}
+    </div>
+    <div class="audio-ctrl">
+      <button id="prevA" ${audio.i === 0 ? 'disabled' : ''} title="Anterior">⏮</button>
+      <button class="primary" id="playA">${audio.playing ? '⏸ Pausa' : '▶ Reproducir'}</button>
+      <button id="nextA" title="Siguiente">⏭</button>
+    </div>
+    <p class="help" style="text-align:center">Mantén la pantalla encendida: en el iPhone, si se bloquea, la lectura se para.</p>`;
+  bindNoteBtns(app, showAudio);
+  $('quit').onclick = () => stopAudio(false);
+  $('playA').onclick = () => audio.playing ? pauseAudio() : playAudio();
+  $('prevA').onclick = () => jumpAudio(-1);
+  $('nextA').onclick = () => jumpAudio(1);
+  onKey = e => {
+    if (!$('audioCard')) return false;
+    if (e.key === ' ') { e.preventDefault(); $('playA').click(); }
+    else if (e.key === 'ArrowRight') jumpAudio(1);
+    else if (e.key === 'ArrowLeft') jumpAudio(-1);
+  };
+}
+
+async function playAudio() {
+  audio.playing = true;
+  const tok = ++audio.tok;
+  try { wakeLock = await navigator.wakeLock?.request('screen'); } catch {}
+  while (audio && tok === audio.tok && audio.i < audio.cards.length) {
+    const c = audio.cards[audio.i], it = c.item;
+    audio.phase = 'q'; showAudio();
+    await speak(c.front, tok);
+    if (c.type === 'q' && audio.readOpts) for (const [k, o] of it.opciones.entries()) await speak(`${'ABCDEFGH'[k]}: ${o}`, tok);
+    if (tok !== audio?.tok) return;
+    audio.phase = 'think'; showAudio();
+    await sleep(audio.pause * 1000);
+    if (tok !== audio?.tok) return;
+    audio.phase = 'answer'; showAudio();
+    await speak((c.type === 'q' ? `Respuesta ${'ABCDEFGH'[it.correcta]}: ` : 'Respuesta: ') + c.back, tok);
+    if (audio.readExp) {
+      await speak(it.explicacion, tok);
+      await speak(it.truco && 'Truco: ' + it.truco, tok);
+      await speak(myNote(c.key) && 'Tu nota: ' + myNote(c.key), tok);
     }
-    if (!nq.pregunta) return $('fError').textContent = 'Escribe la pregunta.';
-    if (nq.opciones.some(o => !o)) return $('fError').textContent = 'Rellena todas las opciones (o quita las que sobren).';
-    if (set.preguntas.some((p, k) => k !== idx && p.pregunta === nq.pregunta)) return $('fError').textContent = 'Ya existe una pregunta con ese mismo texto.';
-    if (idx >= 0) {
-      migrateKey(keyOf(set.preguntas[idx]), keyOf(nq)); // conservar estadísticas, marca y repaso
-      set.preguntas[idx] = nq;
-    } else set.preguntas.push(nq);
-    persistEdit((idx >= 0 ? 'Editar pregunta: ' : 'Añadir pregunta: ') + nq.pregunta.slice(0, 60));
-    showEditor();
+    await sleep(1200);
+    if (tok !== audio?.tok) return;
+    audio.i++;
+    audio.phase = '';
+  }
+  if (audio && tok === audio.tok) stopAudio(true);
+}
+function pauseAudio() {
+  audio.tok++; audio.playing = false; audio.phase = '';
+  speechSynthesis.cancel();
+  wakeLock?.release?.(); wakeLock = null;
+  showAudio();
+}
+function jumpAudio(d) {
+  const was = audio.playing;
+  audio.tok++; speechSynthesis.cancel();
+  audio.i = Math.max(0, Math.min(audio.cards.length - 1, audio.i + d));
+  audio.phase = ''; audio.playing = false;
+  if (was) playAudio(); else showAudio();
+}
+function stopAudio(finished) {
+  if (audio) audio.tok++;
+  speechSynthesis.cancel();
+  wakeLock?.release?.(); wakeLock = null;
+  onKey = null;
+  if (!finished) { audio = null; return showHome(); }
+  const n = audio.cards.length;
+  audio = null;
+  app.innerHTML = `<h1>🎧 Fin del audio</h1>
+    <div class="card"><p>Has escuchado ${n} ${n === 1 ? 'tarjeta' : 'tarjetas'}.</p>
+    <div class="row"><button class="primary" id="again">Otra sesión</button><button id="home">Inicio</button></div></div>`;
+  $('again').onclick = () => showStudySetup('audio');
+  $('home').onclick = () => showHome();
+}
+
+// ----- Verdadero / Falso -----
+let vf = null;
+function startVF(qs) {
+  // Cada pregunta con una sola respuesta: la correcta (50 %) o una incorrecta al azar
+  vf = {
+    items: qs.map(q => {
+      const truth = Math.random() < .5;
+      const wrong = q.opciones.map((_, k) => k).filter(k => k !== q.correcta);
+      return { q, shown: truth ? q.correcta : wrong[Math.floor(Math.random() * wrong.length)], truth };
+    }),
+    i: 0, ok: 0, streak: 0, bestStreak: 0, locked: false
   };
+  showVF();
+}
+
+function showVF(flashState) {
+  const it = vf.items[vf.i];
+  if (!it) return showVFEnd();
+  app.innerHTML = `
+    <div class="topbar">
+      <div><b>${vf.i + 1}</b><span class="muted"> / ${vf.items.length}</span> · ✔ ${vf.ok} · 🔥 ${vf.streak}</div>
+      <button class="small" id="quit">Salir</button>
+    </div>
+    <div class="progress"><div style="width:${vf.i / vf.items.length * 100}%"></div></div>
+    <div class="card vf-card ${flashState || ''}" id="vfCard">
+      <div class="q">${esc(it.q.pregunta)}</div>
+      <div class="vf-answer">${esc(it.q.opciones[it.shown])}</div>
+      ${flashState === 'ko' ? `<div class="muted" style="margin-top:8px">${it.truth ? 'Sí era la correcta.' : `La correcta es: <b>${esc(it.q.opciones[it.q.correcta])}</b>`}</div>` : ''}
+    </div>
+    <div class="vf-btns">
+      <button class="vf-no" id="vfNo">✗ Falso</button>
+      <button class="vf-yes" id="vfYes">✓ Verdadero</button>
+    </div>
+    <p class="help" style="text-align:center">También puedes deslizar la tarjeta: → verdadero, ← falso</p>`;
+  $('quit').onclick = () => showVFEnd();
+  $('vfYes').onclick = () => answerVF(true);
+  $('vfNo').onclick = () => answerVF(false);
+  // Deslizar con el dedo
+  const card = $('vfCard');
+  let x0 = null;
+  card.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  card.addEventListener('touchmove', e => {
+    if (x0 !== null) card.style.transform = `translateX(${e.touches[0].clientX - x0}px) rotate(${(e.touches[0].clientX - x0) / 30}deg)`;
+  }, { passive: true });
+  card.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    x0 = null;
+    card.style.transform = '';
+    if (Math.abs(dx) > 70) answerVF(dx > 0);
+  });
+  onKey = e => {
+    if (!$('vfCard')) return false;
+    if (e.key === 'ArrowRight') answerVF(true);
+    else if (e.key === 'ArrowLeft') answerVF(false);
+  };
+}
+
+function answerVF(saysTrue) {
+  if (vf.locked) return;
+  const it = vf.items[vf.i], ok = saysTrue === it.truth;
+  vf.locked = true;
+  if (ok) { vf.ok++; vf.streak++; vf.bestStreak = Math.max(vf.bestStreak, vf.streak); } else vf.streak = 0;
+  addDaily(1);
+  showVF(ok ? 'ok' : 'ko');
+  setTimeout(() => { vf.locked = false; vf.i++; showVF(); }, ok ? 500 : 1800);
+}
+
+function showVFEnd() {
+  onKey = null;
+  const done = vf.i, rec = load(K.vf, {});
+  const newRecord = vf.bestStreak > (rec.best || 0);
+  if (newRecord) save(K.vf, { ...rec, best: vf.bestStreak });
+  app.innerHTML = `
+    <h1>⚡ Resultado</h1>
+    <div class="card">
+      <div class="big">${vf.ok} / ${done}</div>
+      <p>Mejor racha: <b>🔥 ${vf.bestStreak}</b>${newRecord ? ' · ¡nuevo récord! 🏆' : rec.best ? ` · récord ${rec.best}` : ''}</p>
+      <div class="row"><button class="primary" id="again">Otra ronda</button><button id="home">Inicio</button></div>
+    </div>`;
+  $('again').onclick = () => showStudySetup('vf');
+  $('home').onclick = () => showHome();
+}
+
+// ---------- Artículos: rellenar huecos ----------
+const NUM_WORDS = 'un|una|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciséis|diecisiete|dieciocho|diecinueve|veinte|veinticinco|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien|ciento|doscientos|trescientos|quinientos|mil';
+const UNITS = 'días?(?:\\s+(?:hábiles|naturales))?|semanas?|meses|mes|años?|horas?|minutos?|veces';
+const AUTO_RE = new RegExp(
+  `\\d+(?:[.,]\\d+)*(?:\\s?%|\\s?por\\s?ciento|\\s+(?:${UNITS})\\b)?` +
+  `|\\b(?:${NUM_WORDS})\\s+(?:${UNITS})\\b` +
+  `|\\bmayoría\\s+(?:absoluta|simple|cualificada)\\b|\\b(?:dos|tres)\\s+(?:tercios|quintos|cuartos)\\b`, 'gi');
+
+// Divide el texto en trozos de texto y huecos: {{marcados}} + (opcional) números/plazos + palabras al azar
+function makeGaps(texto, auto, extraPct) {
+  const segs = [];
+  texto.split(/(\{\{[^}]+\}\})/).forEach(part => {
+    const m = part.match(/^\{\{([^}]+)\}\}$/);
+    if (m) return segs.push({ gap: m[1].trim() });
+    if (!auto) return segs.push({ text: part });
+    let last = 0;
+    for (const mm of part.matchAll(AUTO_RE)) {
+      // No tapar la numeración de apartados ("1.", "2)", "a)") al principio de línea
+      if (/^\d+$/.test(mm[0]) && /(^|\n)\s*$/.test(part.slice(0, mm.index)) && /^[.)º]/.test(part.slice(mm.index + mm[0].length))) continue;
+      if (mm.index > last) segs.push({ text: part.slice(last, mm.index) });
+      segs.push({ gap: mm[0] });
+      last = mm.index + mm[0].length;
+    }
+    if (last < part.length) segs.push({ text: part.slice(last) });
+  });
+  if (!extraPct) return segs;
+  // Palabras al azar (de 5 letras o más) para memorizar el texto literal poco a poco
+  return segs.flatMap(s => s.gap !== undefined ? [s] : s.text.split(/(\p{L}{5,})/u).map((w, k) =>
+    k % 2 === 1 && Math.random() * 100 < extraPct ? { gap: w } : { text: w }));
+}
+const normAns = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}%]+/gu, ' ').trim();
+
+function showArticles() {
+  stopTimer();
+  onKey = null;
+  const arts = articulosOf(), st = load(K.arts, {}), s = getSettings();
+  app.innerHTML = `
+    <div class="row between"><h1>📜 Artículos</h1><button id="home">← Inicio</button></div>
+    <div class="card">
+      <p class="help" style="margin-top:0">Elige un artículo y rellena los huecos de memoria. Se tapan las palabras que marques entre {{dobles llaves}} al crearlo en el Editor${s.autoGaps ? ', y además los números y plazos' : ''}.</p>
+      <label class="opt"><input type="checkbox" id="autoGaps" ${s.autoGaps ? 'checked' : ''}> Tapar automáticamente números y plazos (30 días, 1 mes, 3/5…)</label>
+      <div class="set-row"><span>Tapar además palabras al azar</span><span class="muted" id="extraVal" style="flex:0">${s.extraGaps}%</span></div>
+      <input type="range" id="extraGaps" min="0" max="100" step="10" value="${s.extraGaps}">
+      <p class="help">Sube este porcentaje poco a poco para acabar sabiéndote el artículo entero.</p>
+    </div>
+    <div class="card">
+      ${arts.length ? arts.map((a, i) => {
+        const r = st[artKey(a)];
+        return `<button class="qitem" data-i="${i}"><span class="txt"><b>${esc(a.titulo)}</b>${a.referencia ? ` <span class="muted">· ${esc(a.referencia)}</span>` : ''}</span>
+          ${a.tema ? `<span class="tag">${esc(a.tema)}</span>` : ''}${r ? `<span class="muted">${r.last}%</span>` : ''}</button>`;
+      }).join('') : '<p class="muted">Todavía no hay artículos. Añádelos en ✏️ Editor → pestaña 📜 Artículos.</p>'}
+    </div>`;
+  $('home').onclick = () => showHome();
+  $('autoGaps').onchange = e => { saveSettings({ autoGaps: e.target.checked }); showArticles(); };
+  $('extraGaps').oninput = e => { $('extraVal').textContent = e.target.value + '%'; saveSettings({ extraGaps: +e.target.value }); };
+  app.querySelectorAll('.qitem').forEach(b => b.onclick = () => showArticle(+b.dataset.i));
+}
+
+function showArticle(idx) {
+  const a = articulosOf()[idx], s = getSettings();
+  const segs = makeGaps(a.texto, s.autoGaps, s.extraGaps);
+  const gaps = segs.filter(x => x.gap !== undefined);
+  let k = 0;
+  app.innerHTML = `
+    <button id="back" class="small" style="margin-bottom:12px">← Artículos</button>
+    <h1 style="font-size:1.3rem;margin-bottom:4px">${esc(a.titulo)}</h1>
+    ${a.referencia ? `<p class="ref" style="margin:0 0 12px">📖 ${esc(a.referencia)}</p>` : ''}
+    <div class="card art-text">${gaps.length ? segs.map(x => x.gap !== undefined
+      ? `<input class="gap" data-k="${k++}" autocomplete="off" autocapitalize="off" spellcheck="false" style="width:${Math.max(4, x.gap.length + 2)}ch">`
+      : esc(x.text)).join('') : esc(a.texto)}</div>
+    ${gaps.length ? `
+    <div class="row">
+      <button class="primary" id="check">Comprobar</button>
+      <button id="reveal">Ver solución</button>
+      <button id="redo">🔀 Otra versión</button>
+    </div>
+    <div id="artResult"></div>` : `<div class="ghstatus error">Este artículo no tiene huecos. Marca palabras con {{dobles llaves}} en el Editor, activa «Tapar números y plazos» o sube «palabras al azar».</div>`}`;
+  $('back').onclick = () => showArticles();
+  if (!gaps.length) return;
+  const inputs = [...app.querySelectorAll('.gap')];
+  inputs.forEach((inp, i) => inp.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); (inputs[i + 1] || $('check')).focus(); } });
+  inputs[0].focus();
+  $('check').onclick = () => {
+    let ok = 0;
+    inputs.forEach((inp, i) => {
+      const good = normAns(inp.value) === normAns(gaps[i].gap);
+      ok += good;
+      inp.classList.toggle('ok', good);
+      inp.classList.toggle('ko', !good);
+      inp.title = good ? '' : 'Correcto: ' + gaps[i].gap;
+      inp.nextElementSibling?.classList?.contains('gap-sol') && inp.nextElementSibling.remove();
+      if (!good) inp.insertAdjacentHTML('afterend', `<span class="gap-sol">${esc(gaps[i].gap)}</span>`);
+    });
+    const p = pct(ok, gaps.length), st = load(K.arts, {}), prev = st[artKey(a)] || {};
+    st[artKey(a)] = { last: p, best: Math.max(p, prev.best || 0), veces: (prev.veces || 0) + 1, fecha: Date.now() };
+    save(K.arts, st);
+    addDaily(gaps.length);
+    $('artResult').innerHTML = `<div class="ghstatus ${p === 100 ? 'ok' : ''}" style="margin-top:12px"><b>${ok} / ${gaps.length}</b> huecos (${p}%)${p === 100 ? ' · ¡Perfecto! 🎉 Prueba a subir «palabras al azar».' : ''}</div>`;
+  };
+  $('reveal').onclick = () => inputs.forEach((inp, i) => { inp.value = gaps[i].gap; inp.classList.remove('ko'); inp.classList.add('shown'); });
+  $('redo').onclick = () => showArticle(idx);
 }
 
 // ---------- Teclado: 1-4 / A-D responder, flechas para moverse ----------
 document.addEventListener('keydown', e => {
-  if (['TEXTAREA', 'INPUT', 'SELECT'].includes(e.target.tagName) || !run) return;
+  if (['TEXTAREA', 'INPUT', 'SELECT'].includes(e.target.tagName)) return;
+  if (onKey && onKey(e) !== false) return;
+  if (!run) return;
   const opts = [...app.querySelectorAll('.options button:not(:disabled)')];
   const k = e.key.toLowerCase();
   const idx = '1234'.includes(k) ? '1234'.indexOf(k) : 'abcd'.indexOf(k);
