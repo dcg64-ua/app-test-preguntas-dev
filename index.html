@@ -221,6 +221,14 @@
     padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
   }
   .bloque-h { display: flex; justify-content: space-between; align-items: baseline; margin: 16px 0 4px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+  .dom-b { border: 1px solid var(--border); border-radius: 12px; margin: 8px 0; background: color-mix(in srgb, var(--bg) 50%, var(--card)); }
+  .dom-b > summary { list-style: none; cursor: pointer; padding: 10px 12px; }
+  .dom-b > summary::-webkit-details-marker { display: none; }
+  .dom-b > summary .dom-t { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; margin-bottom: 6px; }
+  .dom-b > summary .dom-t b::before { content: "▸ "; color: var(--muted); }
+  .dom-b[open] > summary .dom-t b::before { content: "▾ "; }
+  .dom-b > summary .dom-t span { white-space: nowrap; font-size: .9rem; }
+  .dom-b .dom-in { padding: 0 12px 6px; border-top: 1px solid var(--border); }
 
   /* Calendario de actividad */
   .heat { display: grid; grid-template-rows: repeat(7, 1fr); grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; }
@@ -1687,12 +1695,17 @@ function dominioHTML() {
   });
   return Object.keys(groups).sort(natCmp).map(b => {
     const temas = Object.entries(groups[b]).sort((x, y) => natCmp(x[0], y[0]));
-    const tot = temas.reduce((a, [, g]) => ({ n: a.n + g.n, dom: a.dom + g.dom }), { n: 0, dom: 0 });
-    return (b ? `<div class="bloque-h"><b>${esc(b)}</b><span class="muted">${pct(tot.dom, tot.n)}% dominado</span></div>` : '') +
+    const tot = temas.reduce((a, [, g]) => ({ n: a.n + g.n, dom: a.dom + g.dom, ok: a.ok + g.ok, ko: a.ko + g.ko }), { n: 0, dom: 0, ok: 0, ko: 0 });
+    // Cada bloque se despliega para ver sus temas
+    return `<details class="dom-b"><summary>
+        <div class="dom-t"><b>${esc(b || 'Sin bloque')}</b><span class="muted">${pct(tot.dom, tot.n)}% dominado${tot.ok + tot.ko ? ` · ✓${pct(tot.ok, tot.ok + tot.ko)}%` : ''}</span></div>
+        <div class="bar"><div style="width:${pct(tot.dom, tot.n)}%"></div></div>
+      </summary><div class="dom-in">` +
       temas.map(([t, g]) => `
         <div class="bar-row"><span>${esc(t)} <span class="muted">(${g.n})</span></span>
           <div class="bar"><div style="width:${pct(g.dom, g.n)}%"></div></div>
-          <span class="muted" style="text-align:right">${pct(g.dom, g.n)}%${g.ok + g.ko ? ` · ✓${pct(g.ok, g.ok + g.ko)}%` : ''}</span></div>`).join('');
+          <span class="muted" style="text-align:right">${pct(g.dom, g.n)}%${g.ok + g.ko ? ` · ✓${pct(g.ok, g.ok + g.ko)}%` : ''}</span></div>`).join('') +
+      '</div></details>';
   }).join('');
 }
 
