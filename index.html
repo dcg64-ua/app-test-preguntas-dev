@@ -186,6 +186,14 @@
   .verdict { display: inline-block; font-weight: 800; padding: 6px 14px; border-radius: 12px; margin-bottom: 12px; }
   .verdict.ok { background: var(--ok-bg); color: var(--ok); }
   .verdict.ko { background: var(--ko-bg); color: var(--ko); }
+  /* Selector múltiple de bloques y temas */
+  .picker { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; margin: 8px 0 12px; background: color-mix(in srgb, var(--bg) 50%, var(--card)); }
+  .pick-b { border-top: 1px solid var(--border); padding: 4px 0; }
+  .pick-bh { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .pick-bh .opt { margin: 4px 0; flex: 1; }
+  .pick-ts { padding-left: 30px; }
+  .pick-sub { display: block; font-size: .8rem; color: var(--muted); line-height: 1.3; }
+  .pick-ts .opt { margin: 6px 0; font-size: .95rem; }
   .bloque-h { display: flex; justify-content: space-between; align-items: baseline; margin: 16px 0 4px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
 
   /* Calendario de actividad */
@@ -528,7 +536,6 @@ function showHome(error) {
   stopTimer();
   const s = getSettings(), stats = load(K.stats, {}), marks = load(K.marks, {}), saved = load(K.run, null);
   const qs = set?.preguntas || [];
-  const bloques = uniq(qs.map(q => q.bloque)).sort(natCmp);
   const hasRef = qs.some(q => q.referencia);
   const failedCount = qs.filter(q => (stats[keyOf(q)]?.ko || 0) > 0).length;
   const markedCount = qs.filter(q => marks[keyOf(q)]).length;
@@ -576,8 +583,7 @@ function showHome(error) {
       </div>
       <label class="opt" id="minRow" hidden>Tiempo límite (min, 0 = sin límite): <input id="minutes" type="number" min="0" value="0"></label>
       <hr class="sep">
-      ${bloques.length ? `<label class="opt">Bloque: <select id="bloque"><option value="">Todos</option>${bloques.map(b => `<option>${esc(b)}</option>`).join('')}</select></label>` : ''}
-      <label class="opt" id="temaRow">Tema: <select id="tema"></select></label>
+      <div class="picker" id="pickTest"></div>
       ${hasRef ? '<label class="opt">Referencia: <input type="text" id="refFilter" placeholder="p. ej. 39/2015 o CE" style="flex:1;min-width:0"></label>' : ''}
       <label class="opt">Nº de preguntas: <input id="num" type="number" min="1" max="${qs.length}" value="${Math.min(qs.length, 20)}"></label>
       <label class="opt"><input id="shq" type="checkbox" checked> Barajar preguntas</label>
@@ -645,21 +651,14 @@ function showHome(error) {
     });
   };
 
-  // Temas dependientes del bloque elegido
-  const fillTemas = () => {
-    const b = $('bloque')?.value || '';
-    const temas = uniq(qs.filter(q => !b || q.bloque === b).map(q => q.tema)).sort(natCmp);
-    $('tema').innerHTML = `<option value="">Todos</option>${temas.map(t => `<option>${esc(t)}</option>`).join('')}`;
-    $('temaRow').hidden = !temas.length;
-  };
-  fillTemas();
-  if ($('bloque')) $('bloque').onchange = fillTemas;
+  const pick = temaPicker($('pickTest'), qs, load(K.settings, {}).pick_test);
 
   document.querySelectorAll('input[name=mode]').forEach(r => r.onchange = () => { $('minRow').hidden = r.value !== 'examen' || !r.checked; });
   $('start').onclick = () => {
     if (!confirmDiscard()) return;
-    const bloque = $('bloque')?.value || '', tema = $('tema').value, refRaw = ($('refFilter')?.value || '').trim(), ref = refRaw.toLowerCase();
-    let list = qs.filter(q => (!bloque || q.bloque === bloque) && (!tema || q.tema === tema) && (!ref || (q.referencia || '').toLowerCase().includes(ref)));
+    const sel = pick.get(), refRaw = ($('refFilter')?.value || '').trim(), ref = refRaw.toLowerCase();
+    saveSettings({ pick_test: sel ? [...sel] : null });
+    let list = qs.filter(q => inPick(sel, q) && (!ref || (q.referencia || '').toLowerCase().includes(ref)));
     if ($('onlyKo').checked) list = list.filter(q => (stats[keyOf(q)]?.ko || 0) > 0);
     if ($('onlyMarked').checked) list = list.filter(q => marks[keyOf(q)]);
     if (!list.length) return alert('No hay preguntas con esos filtros.');
@@ -671,10 +670,83 @@ function showHome(error) {
     startRun(list, {
       recall,
       shuffleOpts: $('sho').checked, mode, minutes: mode === 'examen' ? +$('minutes').value || 0 : 0,
-      label: [bloque, tema, refRaw && `ref. «${refRaw}»`].filter(Boolean).join(' · ')
+      label: [pickLabel(sel), refRaw && `ref. «${refRaw}»`].filter(Boolean).join(' · ')
     });
   };
 }
+
+// ---------- Selector múltiple de bloques y temas ----------
+// Clave de un tema dentro de su bloque (los temas pueden repetirse en bloques distintos)
+const pkKey = x => (x.bloque || '') + '\u0001' + (x.tema || '');
+
+// Pinta en `el` una lista de bloques con sus temas marcables. `saved`: claves marcadas la última vez (null = todos).
+// Devuelve { get }: get() → Set de claves elegidas, o null si están todas (= sin filtro).
+function temaPicker(el, items, saved, { unit = 'preguntas', onChange = () => {} } = {}) {
+  const groups = {};
+  items.forEach(x => { const g = (groups[x.bloque || ''] ||= {}); g[x.tema || ''] = (g[x.tema || ''] || 0) + 1; });
+  const bloques = Object.keys(groups).sort(natCmp);
+  const allKeys = bloques.flatMap(b => Object.keys(groups[b]).map(t => b + '\u0001' + t));
+  const keep = (saved || []).filter(k => allKeys.includes(k));
+  const sel = new Set(keep.length ? keep : allKeys);
+  el.innerHTML = `
+    <div class="row between" style="margin-bottom:4px"><b>Bloques y temas</b>
+      <span class="row"><button class="small" data-all>Todos</button><button class="small" data-none>Ninguno</button></span></div>
+    ${bloques.map((b, i) => {
+      const ts = Object.keys(groups[b]).sort(natCmp), n = ts.reduce((s, t) => s + groups[b][t], 0);
+      return `<div class="pick-b">
+        <div class="pick-bh">
+          <label class="opt"><input type="checkbox" data-b="${i}"><span>${pickBloqueHTML(b)} <span class="muted">(${n})</span></span></label>
+          ${ts.length > 1 ? `<button class="small" data-exp="${i}">Temas ▾</button>` : ''}
+        </div>
+        <div class="pick-ts" data-ts="${i}" ${ts.length > 1 ? 'hidden' : 'style="display:none"'}>${ts.map(t => {
+          const k = b + '\u0001' + t;
+          return `<label class="opt"><input type="checkbox" data-k="${esc(k)}" data-bi="${i}" ${sel.has(k) ? 'checked' : ''}><span>${esc(t || 'Sin tema')} <span class="muted">(${groups[b][t]})</span></span></label>`;
+        }).join('')}</div>
+      </div>`;
+    }).join('')}
+    <p class="help" data-sum style="margin-bottom:0"></p>`;
+  const tIn = [...el.querySelectorAll('input[data-k]')];
+  const refresh = () => {
+    bloques.forEach((b, i) => {
+      const own = tIn.filter(x => x.dataset.bi == i), on = own.filter(x => x.checked).length;
+      const bx = el.querySelector(`input[data-b="${i}"]`);
+      bx.checked = on === own.length; bx.indeterminate = on > 0 && on < own.length;
+      // Si hay temas sueltos elegidos, se ven desplegados
+      if (on > 0 && on < own.length) el.querySelector(`[data-ts="${i}"]`).hidden = false;
+    });
+    const on = tIn.filter(x => x.checked);
+    const n = on.reduce((s, x) => { const [b, t] = x.dataset.k.split('\u0001'); return s + groups[b][t]; }, 0);
+    el.querySelector('[data-sum]').textContent = on.length === tIn.length
+      ? `Todo el contenido: ${n} ${unit}.`
+      : on.length ? `${on.length} de ${tIn.length} temas · ${n} ${unit}.` : 'No hay ningún tema seleccionado.';
+    onChange();
+  };
+  el.querySelectorAll('input[data-b]').forEach(bx => bx.onchange = () => {
+    tIn.filter(x => x.dataset.bi == bx.dataset.b).forEach(x => x.checked = bx.checked);
+    refresh();
+  });
+  tIn.forEach(x => x.onchange = refresh);
+  el.querySelectorAll('[data-exp]').forEach(btn => btn.onclick = () => {
+    const box = el.querySelector(`[data-ts="${btn.dataset.exp}"]`);
+    box.hidden = !box.hidden;
+    btn.textContent = box.hidden ? 'Temas ▾' : 'Temas ▴';
+  });
+  el.querySelector('[data-all]').onclick = () => { tIn.forEach(x => x.checked = true); refresh(); };
+  el.querySelector('[data-none]').onclick = () => { tIn.forEach(x => x.checked = false); refresh(); };
+  refresh();
+  return {
+    get: () => { const on = tIn.filter(x => x.checked).map(x => x.dataset.k); return on.length === tIn.length ? null : new Set(on); }
+  };
+}
+const inPick = (sel, x) => !sel || sel.has(pkKey(x));
+// "Tema 8 (MAD). Tipos de bibliotecas…" → "Tema 8 (MAD)" en negrita y el título en pequeño debajo
+function pickBloqueHTML(b) {
+  if (!b) return '<b>Sin bloque</b>';
+  const i = b.indexOf('. ');
+  return i > 0 ? `<b>${esc(b.slice(0, i))}</b><span class="pick-sub">${esc(b.slice(i + 2))}</span>` : `<b>${esc(b)}</b>`;
+}
+// Texto breve de lo elegido, para el historial
+const pickLabel = sel => !sel ? '' : sel.size > 2 ? `${sel.size} temas` : [...sel].map(k => k.split('\u0001')[1] || k.split('\u0001')[0]).join(' + ');
 
 // ---------- Repaso inteligente: elegir bloque y tema ----------
 const fmtNextDay = t => new Date(t).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -683,44 +755,33 @@ function showSrsSetup() {
   stopTimer();
   onKey = null;
   const s = getSettings(), qs = set?.preguntas || [], last = load(K.settings, {}).study_srs || {};
-  const bloques = uniq(qs.map(q => q.bloque)).sort(natCmp);
   app.innerHTML = `
     <div class="row between"><h1>🧠 Repaso inteligente</h1><button id="home">← Inicio</button></div>
     <div class="card">
       <p class="help" style="margin-top:0">Primero salen las preguntas que te tocan hoy (las falladas y las que hace tiempo que no ves) y después algunas nuevas.</p>
-      ${bloques.length ? `<div class="set-row"><span>Bloque</span><select id="bloque"><option value="">Todos</option>${bloques.map(b => `<option ${b === last.bloque ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select></div>` : ''}
-      <div class="set-row" id="temaRow"><span>Tema</span><select id="tema"></select></div>
+      <div class="picker" id="pickSrs"></div>
       <div class="set-row"><span>Cuántas</span><input type="number" id="count" min="1" value="${last.count || s.srsSize}"></div>
       <div class="ghstatus" id="srsInfo" style="margin:8px 0 12px"></div>
       <button class="primary" id="go" style="width:100%">Empezar</button>
     </div>`;
   $('home').onclick = () => showHome();
-  const pool = () => {
-    const b = $('bloque')?.value || '', t = $('tema').value;
-    return qs.filter(q => (!b || q.bloque === b) && (!t || q.tema === t));
-  };
+  let pick = null;
+  const pool = () => { const sel = pick?.get(); return qs.filter(q => inPick(sel, q)); };
   const info = () => {
-    const p = srsPlan(pool());
-    $('srsInfo').innerHTML = p.due.length || p.fresh.length
+    const items = pool(), p = srsPlan(items);
+    $('srsInfo').innerHTML = !items.length ? 'Elige al menos un tema.'
+      : p.due.length || p.fresh.length
       ? `<b>${p.due.length}</b> para repasar hoy · <b>${p.fresh.length}</b> nuevas`
       : `¡Todo al día en esta selección! 🎉${isFinite(p.next) ? ` Próximo repaso: ${fmtNextDay(p.next)}.` : ''}`;
     $('go').disabled = !p.due.length && !p.fresh.length;
   };
-  const fillTemas = (keep) => {
-    const b = $('bloque')?.value || '';
-    const temas = uniq(qs.filter(q => !b || q.bloque === b).map(q => q.tema)).sort(natCmp);
-    $('tema').innerHTML = `<option value="">Todos</option>${temas.map(t => `<option ${t === keep ? 'selected' : ''}>${esc(t)}</option>`).join('')}`;
-    $('temaRow').hidden = !temas.length;
-    info();
-  };
-  fillTemas(last.tema);
-  if ($('bloque')) $('bloque').onchange = () => fillTemas();
-  $('tema').onchange = info;
+  pick = temaPicker($('pickSrs'), qs, last.pick, { onChange: () => pick && info() });
+  info();
   $('go').onclick = () => {
-    const b = $('bloque')?.value || '', t = $('tema').value, count = Math.max(1, +$('count').value || s.srsSize);
-    saveSettings({ study_srs: { bloque: b, tema: t, count } });
+    const sel = pick.get(), count = Math.max(1, +$('count').value || s.srsSize);
+    saveSettings({ study_srs: { pick: sel ? [...sel] : null, count } });
     const p = srsPlan(pool());
-    startRun([...p.due, ...shuffle(p.fresh)].slice(0, count), { mode: 'practica', kind: 'repaso', label: t || b });
+    startRun([...p.due, ...shuffle(p.fresh)].slice(0, count), { mode: 'practica', kind: 'repaso', label: pickLabel(sel) });
   };
 }
 
@@ -1809,16 +1870,13 @@ function showStudySetup(kind) {
   stopTimer();
   const conf = STUDY[kind], last = load(K.settings, {})['study_' + kind] || {};
   const qs = set?.preguntas || [], fs = kind === 'vf' ? [] : fichasOf();
-  const all = [...qs, ...fs];
-  const bloques = uniq(all.map(x => x.bloque)).sort(natCmp);
   app.innerHTML = `
     <div class="row between"><h1>${conf.icon} ${conf.name}</h1><button id="home">← Inicio</button></div>
     <div class="card">
       <p class="help" style="margin-top:0">${conf.help}</p>
       ${qs.length && fs.length ? `<div class="set-row"><span>Qué repasar</span><select id="src">
         <option value="all">Preguntas y fichas</option><option value="q" ${last.src === 'q' ? 'selected' : ''}>Solo preguntas</option><option value="f" ${last.src === 'f' ? 'selected' : ''}>Solo fichas</option></select></div>` : ''}
-      ${bloques.length ? `<div class="set-row"><span>Bloque</span><select id="bloque"><option value="">Todos</option>${bloques.map(b => `<option>${esc(b)}</option>`).join('')}</select></div>` : ''}
-      <div class="set-row" id="temaRow"><span>Tema</span><select id="tema"></select></div>
+      <div class="picker" id="pickStudy"></div>
       ${kind !== 'vf' ? `<label class="opt"><input type="checkbox" id="onlyDue" ${last.onlyDue !== false ? 'checked' : ''}> Solo las que tocan hoy y las nuevas (repaso inteligente)</label>` : ''}
       <label class="opt"><input type="checkbox" id="onlyMarked"> Solo las marcadas ★</label>
       <div class="set-row"><span>Cuántas</span><input type="number" id="count" min="1" value="${last.count || 20}"></div>
@@ -1837,19 +1895,19 @@ function showStudySetup(kind) {
     const src = $('src')?.value || 'all';
     return [...(src === 'f' ? [] : qs), ...(src === 'q' ? [] : fs)];
   };
-  const fillTemas = () => {
-    const b = $('bloque')?.value || '';
-    const temas = uniq(pool().filter(x => !b || x.bloque === b).map(x => x.tema)).sort(natCmp);
-    $('tema').innerHTML = `<option value="">Todos</option>${temas.map(t => `<option>${esc(t)}</option>`).join('')}`;
-    $('temaRow').hidden = !temas.length;
+  // El selector de temas depende de qué se repasa (preguntas, fichas o ambas); conserva la selección al cambiarlo
+  let pick = null;
+  const unit = kind === 'vf' ? 'preguntas' : 'tarjetas';
+  const buildPick = () => {
+    const prev = pick ? pick.get() : null;
+    pick = temaPicker($('pickStudy'), pool(), prev ? [...prev] : last.pick, { unit });
   };
-  fillTemas();
-  if ($('bloque')) $('bloque').onchange = fillTemas;
-  if ($('src')) $('src').onchange = fillTemas;
+  buildPick();
+  if ($('src')) $('src').onchange = buildPick;
 
   $('go').onclick = () => {
-    const b = $('bloque')?.value || '', t = $('tema').value, marks = load(K.marks, {});
-    let cards = pool().filter(x => (!b || x.bloque === b) && (!t || x.tema === t)).map(asCard);
+    const sel = pick.get(), marks = load(K.marks, {});
+    let cards = pool().filter(x => inPick(sel, x)).map(asCard);
     if ($('onlyMarked').checked) cards = cards.filter(c => marks[c.key]);
     const count = Math.max(1, +$('count').value || 20);
     if ($('onlyDue')?.checked) {
@@ -1860,7 +1918,7 @@ function showStudySetup(kind) {
     if (!cards.length) return $('err').textContent = 'No hay nada que repasar con esos filtros.';
     cards = cards.slice(0, count);
     const opts = {
-      src: $('src')?.value, onlyDue: $('onlyDue')?.checked, count,
+      src: $('src')?.value, onlyDue: $('onlyDue')?.checked, count, pick: sel ? [...sel] : null,
       readOpts: $('readOpts')?.checked, readExp: $('readExp')?.checked, pause: $('pause') ? +$('pause').value : undefined, rate: $('rate') ? +$('rate').value : undefined
     };
     saveSettings({ ['study_' + kind]: opts });
