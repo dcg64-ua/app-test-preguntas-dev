@@ -456,7 +456,7 @@ const SYNC_META = P + 'syncMeta';
 const syncMeta = () => { try { return JSON.parse(localStorage.getItem(SYNC_META)) || {}; } catch { return {}; } };
 const syncMetaSave = m => { try { localStorage.setItem(SYNC_META, JSON.stringify(m)); } catch {} };
 const syncName = k => k.startsWith(P) && SYNC_KEYS.includes(k.slice(P.length)) ? k.slice(P.length) : null;
-const syncOn = () => (!!FIREBASE_CONFIG || window.__syncTest) && feat('cuenta');
+const syncOn = () => !!FIREBASE_CONFIG && feat('cuenta');
 let fb = null, fbUser = null, syncTimer = null, syncBusy = null, syncState = { text: '' };
 
 // Se llama cada vez que la app guarda algo
