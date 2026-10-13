@@ -317,6 +317,7 @@
   .homenav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
   @media (max-width: 560px) { .homenav { grid-template-columns: 1fr 1fr; } }
   .homenav button { padding: 10px 6px; font-size: .9rem; white-space: nowrap; box-shadow: var(--shadow); }
+  .homenav #goAdmin { grid-column: 1 / -1; }
   body.has-photo .card { background: color-mix(in srgb, var(--card) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
   body.has-photo h1 { text-shadow: 0 1px 8px color-mix(in srgb, var(--bg) 80%, transparent); }
 
@@ -535,6 +536,8 @@ function syncNow(keys = null) {
       } else {
         const snap = await fb.getDocs(fb.collection(fb.db, 'users', fbUser.uid, ENV));
         const remote = Object.fromEntries(snap.docs.map(d => [d.id, d.data()]));
+        // Ficha del usuario (para el panel admin): email y último uso en cada entorno
+        await fb.setDoc(fb.doc(fb.db, 'users', fbUser.uid), { email: fbUser.email, seen: { [ENV]: Date.now() } }, { merge: true });
         for (const k of SYNC_KEYS) changed = await syncKey(k, remote[k] || null) || changed;
       }
       const m = syncMeta();
@@ -558,6 +561,7 @@ function syncStart() {
     fbUser = u;
     if (u) syncNow();
     if ($('accountCard')) showSettings();
+    else if ($('goStats')) showHome();
   })).catch(() => { syncState = { text: '⚠️ Sin conexión con el servidor de cuentas.', error: true }; });
   // Al volver a la app, traer lo que se haya hecho en otro dispositivo; al salir, subir lo pendiente
   document.addEventListener('visibilitychange', () => {
@@ -588,12 +592,13 @@ function accountCardHTML() {
       <h2>👤 Cuenta</h2>
       <p>Sesión iniciada como <b>${esc(fbUser.email)}</b>. Tu progreso se guarda en la nube y se comparte entre tus dispositivos.</p>
       <p class="help" id="syncStatus">${esc(syncState.text || (m.last ? '✓ Sincronizado ' + fmtDate(m.last) : ''))}</p>
-      <div class="row"><button class="small primary" id="syncBtn">🔄 Sincronizar ahora</button><button class="small" id="logoutBtn">Cerrar sesión</button></div>
+      <div class="row"><button class="small primary" id="syncBtn">🔄 Sincronizar ahora</button><button class="small" id="logoutBtn">Cerrar sesión</button>${isAdmin() ? '<button class="small" id="adminBtn">📊 Panel admin</button>' : ''}</div>
+      <p class="help" style="margin-bottom:0">El administrador de la app puede ver tus estadísticas de estudio (no tu contraseña).</p>
     </div>`;
   }
   return `<div class="card" id="accountCard">
     <h2>👤 Cuenta</h2>
-    <p class="help">Inicia sesión para guardar tu progreso en la nube (estadísticas, repaso inteligente, racha, marcadas, notas y ajustes) y tenerlo en todos tus dispositivos. Sin cuenta la app funciona igual, pero solo guarda en este dispositivo.</p>
+    <p class="help">Inicia sesión para guardar tu progreso en la nube (estadísticas, repaso inteligente, racha, marcadas, notas y ajustes) y tenerlo en todos tus dispositivos. Sin cuenta la app funciona igual, pero solo guarda en este dispositivo. El administrador de la app puede ver tus estadísticas de estudio.</p>
     <form id="authForm">
       <div class="set-row"><span>Email</span><input type="email" id="authEmail" autocomplete="username" style="width:60%" required></div>
       <div class="set-row"><span>Contraseña</span><input type="password" id="authPass" autocomplete="current-password" style="width:60%" required></div>
@@ -608,6 +613,7 @@ function bindAccountCard() {
   if (!$('accountCard')) return;
   if (fbUser) {
     $('syncBtn').onclick = () => syncNow();
+    if ($('adminBtn')) $('adminBtn').onclick = () => showAdmin();
     $('logoutBtn').onclick = () => {
       if (!confirm('Se cerrará la sesión. Tu progreso se queda en este dispositivo y en la nube. ¿Continuar?')) return;
       syncNow(syncMeta().dirty || []).finally(() => fb.signOut(fb.auth));
@@ -631,6 +637,109 @@ function bindAccountCard() {
     if (!e) return msg('Escribe tu email arriba y vuelve a pulsar.', true);
     go(f => f.sendPasswordResetEmail(f.auth, e).then(() => msg('Te hemos enviado un email para cambiar la contraseña (mira también en spam).')), 'Enviando…');
   };
+}
+
+// ---------- Panel de administración ----------
+// Solo para las cuentas de ADMIN_UIDS. Lo que protege los datos son las reglas de Firestore:
+// el admin puede leer los datos de todos, pero no modificarlos.
+const ADMIN_UIDS = ['cK8gyIm8zvQOrdRQeApIH5VZkaB3'];
+const isAdmin = () => !!fbUser && ADMIN_UIDS.includes(fbUser.uid);
+
+function streakOf(d, goal) {
+  const day = new Date();
+  if ((d[todayKey(day)] || 0) < goal) day.setDate(day.getDate() - 1);
+  let n = 0;
+  while ((d[todayKey(day)] || 0) >= goal) { n++; day.setDate(day.getDate() - 1); }
+  return n;
+}
+
+async function showAdmin(env = ENV) {
+  stopTimer();
+  app.innerHTML = `<div class="row between"><h1>📊 Panel admin</h1><button id="home">← Inicio</button></div><p class="muted">Cargando usuarios…</p>`;
+  $('home').onclick = () => showHome();
+  let users;
+  try {
+    const snap = await fb.getDocs(fb.collection(fb.db, 'users'));
+    users = await Promise.all(snap.docs.map(async u => {
+      const d = await fb.getDocs(fb.collection(fb.db, 'users', u.id, env));
+      const data = {};
+      d.docs.forEach(x => { try { data[x.id] = JSON.parse(x.data().v); } catch {} });
+      return { uid: u.id, ...u.data(), data };
+    }));
+  } catch (e) {
+    app.innerHTML = `<div class="row between"><h1>📊 Panel admin</h1><button id="home">← Inicio</button></div>
+      <div class="card error">No se pudieron leer los datos (${esc(e.code || e.message)}). Revisa que las reglas de Firestore den permiso de lectura a tu cuenta.</div>`;
+    $('home').onclick = () => showHome();
+    return;
+  }
+  users.sort((a, b) => (b.seen?.[env] || 0) - (a.seen?.[env] || 0));
+
+  // Para agrupar por bloque y tema se usan las preguntas cargadas en la app
+  const info = new Map((set?.preguntas || []).map(q => [keyOf(q), q]));
+  const now = Date.now(), today = todayKey();
+  const last7 = [...Array(7)].map((_, i) => todayKey(new Date(now - i * DAY)));
+
+  const userHTML = u => {
+    const d = u.data, daily = d.daily || {}, stats = d.stats || {}, hist = d.history || [], srs = d.srs || {};
+    const goal = d.settings?.dailyGoal ?? getSettings().dailyGoal ?? 1;
+    const totalDaily = Object.values(daily).reduce((a, b) => a + b, 0);
+    let ok = 0, ko = 0;
+    const byBloque = {}, byTema = {};
+    for (const [k, s] of Object.entries(stats)) {
+      ok += s.ok; ko += s.ko;
+      const q = info.get(k);
+      if (!q) continue;
+      const b = byBloque[q.bloque || '—'] ||= { ok: 0, ko: 0, n: 0 };
+      b.ok += s.ok; b.ko += s.ko; b.n++;
+      const tk = (q.bloque || '—') + ' · ' + (q.tema || '—');
+      const t = byTema[tk] ||= { ok: 0, ko: 0 };
+      t.ok += s.ok; t.ko += s.ko;
+    }
+    const bloqueTotal = b => (set?.preguntas || []).filter(q => (q.bloque || '—') === b).length;
+    const weak = Object.entries(byTema).filter(([, t]) => t.ok + t.ko >= 5)
+      .sort((a, b) => a[1].ok / (a[1].ok + a[1].ko) - b[1].ok / (b[1].ok + b[1].ko)).slice(0, 5);
+    const due = Object.values(srs).filter(s => s.due <= now).length;
+    const notas = hist.map(entryNota), avg = notas.length ? notas.reduce((a, b) => a + b, 0) / notas.length : 0;
+    const seen = u.seen?.[env];
+    return `<details class="card">
+      <summary><b>${esc(u.email || u.uid)}</b> <span class="muted">· ${seen ? 'último uso ' + fmtDate(seen) : 'sin datos de uso'} · hoy ${daily[today] || 0} · 🔥 ${streakOf(daily, goal || 1)}</span></summary>
+      <div class="kpis" style="margin-top:12px">
+        <div class="kpi"><div class="muted">Hoy</div><div class="v">${daily[today] || 0}</div></div>
+        <div class="kpi"><div class="muted">Últimos 7 días</div><div class="v">${last7.reduce((a, k) => a + (daily[k] || 0), 0)}</div></div>
+        <div class="kpi"><div class="muted">Total respondidas</div><div class="v">${totalDaily}</div></div>
+        <div class="kpi"><div class="muted">% acierto</div><div class="v">${ok + ko ? pct(ok, ok + ko) + '%' : '—'}</div></div>
+        <div class="kpi"><div class="muted">Tests · nota media</div><div class="v">${hist.length} · ${hist.length ? fmtNum(avg, 1) : '—'}</div></div>
+        <div class="kpi"><div class="muted">Pendientes de repaso</div><div class="v">${due}</div></div>
+      </div>
+      ${Object.keys(byBloque).length ? `<h3>Por bloque</h3><div class="table-wrap"><table>
+        <tr><th>Bloque</th><th class="num">Vistas</th><th class="num">% acierto</th></tr>
+        ${Object.entries(byBloque).sort((a, b) => natCmp(a[0], b[0])).map(([b, s]) => `<tr><td>${esc(b)}</td>
+          <td class="num">${s.n}/${bloqueTotal(b)}</td><td class="num">${pct(s.ok, s.ok + s.ko)}%</td></tr>`).join('')}
+      </table></div>` : ''}
+      ${weak.length ? `<h3>Temas más flojos</h3><div class="table-wrap"><table>
+        <tr><th>Tema</th><th class="num">Respuestas</th><th class="num">% acierto</th></tr>
+        ${weak.map(([t, s]) => `<tr><td>${esc(t)}</td><td class="num">${s.ok + s.ko}</td><td class="num">${pct(s.ok, s.ok + s.ko)}%</td></tr>`).join('')}
+      </table></div>` : ''}
+      ${hist.length ? `<h3>Últimos tests</h3><div class="table-wrap"><table>
+        <tr><th>Fecha</th><th>Test</th><th class="num">Nota</th><th class="num">Aciertos</th></tr>
+        ${[...hist].reverse().slice(0, 8).map(h => `<tr><td>${fmtDate(h.fecha)}</td>
+          <td>${MODOS[h.modo] || ''}${h.tema ? ` <span class="tag">${esc(h.tema)}</span>` : ''}${h.modo === 'simulacro' ? (h.apto ? ' ✅' : ' ❌') : ''}</td>
+          <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${h.aciertos}/${h.total}</td></tr>`).join('')}
+      </table></div>` : '<p class="muted">Todavía no ha hecho ningún test.</p>'}
+    </details>`;
+  };
+
+  app.innerHTML = `
+    <div class="row between"><h1>📊 Panel admin</h1><button id="home">← Inicio</button></div>
+    <div class="row between">
+      <p class="muted" style="margin:0">${users.length} ${users.length === 1 ? 'usuario' : 'usuarios'} · datos de ${env === 'prod' ? 'la app normal' : 'desarrollo'}</p>
+      <div class="row"><button class="small" id="admEnv">Ver ${env === 'prod' ? 'desarrollo' : 'app normal'}</button><button class="small" id="admReload">🔄 Actualizar</button></div>
+    </div>
+    ${users.length ? users.map(userHTML).join('') : '<div class="card"><p class="muted">Todavía no hay usuarios con cuenta.</p></div>'}
+    <p class="help">Los datos de cada usuario se actualizan cuando abre la app con su cuenta.</p>`;
+  $('home').onclick = () => showHome();
+  $('admEnv').onclick = () => showAdmin(env === 'prod' ? 'dev' : 'prod');
+  $('admReload').onclick = () => showAdmin(env);
 }
 const fmtPen = p => PENALTIES.find(([v]) => Math.abs(v - p) < 1e-6)?.[1] || fmtNum(p, 3);
 const calcNota = (ok, ko, total, pen) => total ? Math.max(0, ok - ko * pen) / total * 10 : 0;
@@ -784,7 +893,7 @@ function showHome(error) {
 
   app.innerHTML = `
     <h1>${set ? esc(set.titulo) : 'Test de preguntas'}</h1>
-    <div class="homenav"><button id="goStats">📊 Progreso</button><button id="goEditor">✏️ Editor</button><button id="goTheme">🎨 Tema</button><button id="goSettings">⚙️ Ajustes</button></div>
+    <div class="homenav"><button id="goStats">📊 Progreso</button><button id="goEditor">✏️ Editor</button><button id="goTheme">🎨 Tema</button><button id="goSettings">⚙️ Ajustes</button>${isAdmin() ? '<button id="goAdmin">📊 Admin</button>' : ''}</div>
     ${error ? `<div class="card error">${esc(error)}</div>` : ''}
     ${saved ? `
     <div class="card notice">
@@ -845,6 +954,7 @@ function showHome(error) {
   $('goStats').onclick = showStats;
   $('goTheme').onclick = showTheme;
   $('goSettings').onclick = showSettings;
+  if ($('goAdmin')) $('goAdmin').onclick = () => showAdmin();
   $('goEditor').onclick = () => openEditor();
   const drop = $('drop');
   $('file').onchange = e => e.target.files[0] && readFile(e.target.files[0]);
