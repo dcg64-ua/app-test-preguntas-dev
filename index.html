@@ -363,7 +363,7 @@ const ENV = LOCAL && new URLSearchParams(location.search).get('env') === 'prod' 
 // Funciones ya aprobadas para producción. En desarrollo están todas activas.
 // Para pasar una función a producción basta con añadirla aquí.
 const PROD_FEATURES = ['flash'];
-const ALL_FEATURES = ['flash', 'articulos', 'audio', 'vf', 'recall', 'notas', 'confusion'];
+const ALL_FEATURES = ['flash', 'articulos', 'audio', 'vf', 'recall', 'notas', 'confusion', 'cuenta'];
 const feat = name => ENV === 'dev' || PROD_FEATURES.includes(name);
 const P = ENV === 'dev' ? 'quizdev.' : 'quiz.';
 const K = Object.fromEntries(Object.entries({
@@ -386,7 +386,7 @@ let timerId = null;
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const shuffle = a => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
-const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); syncTouch(k); } catch {} };
 const keyOf = q => q.pregunta;
 const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
 const uniq = a => [...new Set(a.filter(Boolean))];
@@ -423,6 +423,207 @@ const getSettings = () => ({ ...SETTINGS_DEFAULT, ...pick(set?.ajustes, SHARED),
 function saveSettings(patch) { save(K.settings, { ...load(K.settings, {}), ...patch }); }
 
 const PENALTIES = [[1 / 2, '1/2'], [1 / 3, '1/3'], [1 / 4, '1/4'], [1 / 5, '1/5']];
+
+// ---------- Cuenta y sincronización (Firebase) ----------
+// Con sesión iniciada, el progreso se guarda también en la nube y se comparte entre dispositivos.
+// Cada dato (estadísticas, repaso, actividad…) es un documento users/{uid}/{entorno}/{clave} = { v: JSON, t: fecha, g: generación }.
+// - "g" sube al reiniciar o importar una copia: la versión con g mayor sustituye a la otra.
+// - Con la misma g, el progreso se fusiona (no se pierde nada de ningún dispositivo) y el resto gana el más reciente.
+const FIREBASE_CONFIG = null; // ← configuración de la app web de Firebase
+const FB_VER = '10.12.2';
+const SYNC_KEYS = ['stats', 'srs', 'daily', 'history', 'marks', 'notes', 'settings', 'theme', 'vf', 'articulos'];
+const SYNC_MERGE = {
+  // Por pregunta, la entrada con más respuestas
+  stats: (a, b) => mergeMap(a, b, (x, y) => (y.ok + y.ko) > (x.ok + x.ko) ? y : x),
+  // Por pregunta, el repaso más reciente
+  srs: (a, b) => mergeMap(a, b, (x, y) => ((y.t || 0) > (x.t || 0) || (!x.t && !y.t && y.due > x.due)) ? y : x),
+  daily: (a, b) => mergeMap(a, b, Math.max),
+  history: (a, b) => {
+    const seen = new Set(), out = [];
+    for (const h of [...(a || []), ...(b || [])].sort((x, y) => x.fecha - y.fecha)) {
+      const id = h.fecha + '|' + h.total + '|' + h.aciertos;
+      if (!seen.has(id)) { seen.add(id); out.push(h); }
+    }
+    return out;
+  }
+};
+function mergeMap(a, b, pickFn) {
+  const out = { ...(a || {}) };
+  for (const [k, v] of Object.entries(b || {})) out[k] = k in out ? pickFn(out[k], v) : v;
+  return out;
+}
+const SYNC_META = P + 'syncMeta';
+const syncMeta = () => { try { return JSON.parse(localStorage.getItem(SYNC_META)) || {}; } catch { return {}; } };
+const syncMetaSave = m => { try { localStorage.setItem(SYNC_META, JSON.stringify(m)); } catch {} };
+const syncName = k => k.startsWith(P) && SYNC_KEYS.includes(k.slice(P.length)) ? k.slice(P.length) : null;
+const syncOn = () => (!!FIREBASE_CONFIG || window.__syncTest) && feat('cuenta');
+let fb = null, fbUser = null, syncTimer = null, syncBusy = null, syncState = { text: '' };
+
+// Se llama cada vez que la app guarda algo
+function syncTouch(k, bump = false) {
+  const name = syncName(k);
+  if (!name || !syncOn()) return;
+  const m = syncMeta();
+  (m.t ||= {})[name] = Date.now();
+  if (bump) (m.g ||= {})[name] = (m.g[name] || 0) + 1;
+  m.dirty = uniq([...(m.dirty || []), name]);
+  syncMetaSave(m);
+  if (fbUser) { clearTimeout(syncTimer); syncTimer = setTimeout(() => syncNow(syncMeta().dirty), 2500); }
+}
+// Reiniciar o importar: esta versión sustituye a la de la nube en vez de fusionarse
+const syncReplace = keys => keys.forEach(k => syncTouch(k, true));
+
+async function fbLoad() {
+  if (fb) return fb;
+  const base = `https://www.gstatic.com/firebasejs/${FB_VER}/`;
+  const [appM, authM, dbM] = await Promise.all(['firebase-app', 'firebase-auth', 'firebase-firestore'].map(n => import(base + n + '.js')));
+  const fapp = appM.initializeApp(FIREBASE_CONFIG);
+  fb = { ...authM, ...dbM, auth: authM.getAuth(fapp), db: dbM.getFirestore(fapp) };
+  return fb;
+}
+
+// Pone de acuerdo un dato local con el de la nube. Devuelve true si ha cambiado algo en este dispositivo.
+async function syncKey(name, remote) {
+  const ref = fb.doc(fb.db, 'users', fbUser.uid, ENV, name);
+  if (remote === undefined) { const s = await fb.getDoc(ref); remote = s.exists() ? s.data() : null; }
+  const m = syncMeta(), L = localStorage.getItem(P + name), lt = m.t?.[name] || 0, lg = m.g?.[name] || 0;
+  const put = (v, t, g) => fb.setDoc(ref, { v, t, g });
+  const take = r => {
+    if (r.v == null) localStorage.removeItem(P + name); else localStorage.setItem(P + name, r.v);
+    const mm = syncMeta();
+    (mm.t ||= {})[name] = r.t || 0; (mm.g ||= {})[name] = r.g || 0;
+    syncMetaSave(mm);
+    return true;
+  };
+  if (!remote) { if (L !== null) await put(L, lt, lg); return false; }
+  const rg = remote.g || 0;
+  if (rg > lg) return take(remote);
+  if (lg > rg) { await put(L, lt, lg); return false; }   // L puede ser null: se ha reiniciado aquí
+  if (L === null) return remote.v != null && take(remote);
+  if (remote.v == null) { await put(L, lt, lg); return false; }
+  if (SYNC_MERGE[name]) {
+    let merged;
+    try { merged = JSON.stringify(SYNC_MERGE[name](JSON.parse(L), JSON.parse(remote.v))); } catch { merged = L; }
+    if (merged !== remote.v) await put(merged, Math.max(lt, remote.t || 0), lg);
+    if (merged !== L) { localStorage.setItem(P + name, merged); return true; }
+    return false;
+  }
+  if ((remote.t || 0) > lt) return take(remote);
+  if (lt > (remote.t || 0)) await put(L, lt, lg);
+  return false;
+}
+
+// Sincroniza las claves indicadas (o todas). Si llegan datos nuevos y estás en el inicio, lo actualiza.
+function syncNow(keys = null) {
+  if (!fbUser) return Promise.resolve();
+  clearTimeout(syncTimer);
+  syncBusy = (syncBusy || Promise.resolve()).then(async () => {
+    if (!fbUser) return;
+    syncState = { text: 'Sincronizando…' }; syncPaint();
+    try {
+      let changed = false;
+      if (keys) {
+        for (const k of uniq(keys)) changed = await syncKey(k) || changed;
+      } else {
+        const snap = await fb.getDocs(fb.collection(fb.db, 'users', fbUser.uid, ENV));
+        const remote = Object.fromEntries(snap.docs.map(d => [d.id, d.data()]));
+        for (const k of SYNC_KEYS) changed = await syncKey(k, remote[k] || null) || changed;
+      }
+      const m = syncMeta();
+      m.dirty = keys ? (m.dirty || []).filter(k => !keys.includes(k)) : [];
+      m.last = Date.now();
+      syncMetaSave(m);
+      syncState = { text: '✓ Sincronizado ' + fmtDate(m.last) };
+      if (changed) { applyTheme(); if ($('goStats')) showHome(); }
+    } catch (e) {
+      syncState = { text: '⚠️ No se pudo sincronizar (' + (e.code || e.message) + '). Se reintentará.', error: true };
+    }
+    syncPaint();
+  });
+  return syncBusy;
+}
+const syncPaint = () => { const el = $('syncStatus'); if (el) { el.textContent = syncState.text; el.style.color = syncState.error ? 'var(--bad, #c0392b)' : ''; } };
+
+function syncStart() {
+  if (!syncOn()) return;
+  fbLoad().then(f => f.onAuthStateChanged(f.auth, u => {
+    fbUser = u;
+    if (u) syncNow();
+    if ($('accountCard')) showSettings();
+  })).catch(() => { syncState = { text: '⚠️ Sin conexión con el servidor de cuentas.', error: true }; });
+  // Al volver a la app, traer lo que se haya hecho en otro dispositivo; al salir, subir lo pendiente
+  document.addEventListener('visibilitychange', () => {
+    if (!fbUser) return;
+    if (document.visibilityState === 'visible') syncNow();
+    else if (syncMeta().dirty?.length) syncNow(syncMeta().dirty);
+  });
+}
+
+const AUTH_ERRORS = {
+  'auth/invalid-credential': 'Email o contraseña incorrectos.',
+  'auth/wrong-password': 'Email o contraseña incorrectos.',
+  'auth/user-not-found': 'No hay ninguna cuenta con ese email.',
+  'auth/email-already-in-use': 'Ya existe una cuenta con ese email. Usa «Entrar».',
+  'auth/weak-password': 'La contraseña tiene que tener al menos 6 caracteres.',
+  'auth/invalid-email': 'El email no es válido.',
+  'auth/missing-password': 'Escribe la contraseña.',
+  'auth/too-many-requests': 'Demasiados intentos. Espera un poco y vuelve a probar.',
+  'auth/network-request-failed': 'Sin conexión a internet.'
+};
+const authMsg = e => AUTH_ERRORS[e.code] || e.message;
+
+function accountCardHTML() {
+  if (!syncOn()) return '';
+  if (fbUser) {
+    const m = syncMeta();
+    return `<div class="card" id="accountCard">
+      <h2>👤 Cuenta</h2>
+      <p>Sesión iniciada como <b>${esc(fbUser.email)}</b>. Tu progreso se guarda en la nube y se comparte entre tus dispositivos.</p>
+      <p class="help" id="syncStatus">${esc(syncState.text || (m.last ? '✓ Sincronizado ' + fmtDate(m.last) : ''))}</p>
+      <div class="row"><button class="small primary" id="syncBtn">🔄 Sincronizar ahora</button><button class="small" id="logoutBtn">Cerrar sesión</button></div>
+    </div>`;
+  }
+  return `<div class="card" id="accountCard">
+    <h2>👤 Cuenta</h2>
+    <p class="help">Inicia sesión para guardar tu progreso en la nube (estadísticas, repaso inteligente, racha, marcadas, notas y ajustes) y tenerlo en todos tus dispositivos. Sin cuenta la app funciona igual, pero solo guarda en este dispositivo.</p>
+    <form id="authForm">
+      <div class="set-row"><span>Email</span><input type="email" id="authEmail" autocomplete="username" style="width:60%" required></div>
+      <div class="set-row"><span>Contraseña</span><input type="password" id="authPass" autocomplete="current-password" style="width:60%" required></div>
+      <p class="help" id="authMsg" hidden></p>
+      <div class="row"><button class="small primary" type="submit">Entrar</button><button class="small" id="signupBtn" type="button">Crear cuenta</button>
+        <a href="#" id="forgotBtn" class="help">He olvidado la contraseña</a></div>
+    </form>
+  </div>`;
+}
+
+function bindAccountCard() {
+  if (!$('accountCard')) return;
+  if (fbUser) {
+    $('syncBtn').onclick = () => syncNow();
+    $('logoutBtn').onclick = () => {
+      if (!confirm('Se cerrará la sesión. Tu progreso se queda en este dispositivo y en la nube. ¿Continuar?')) return;
+      syncNow(syncMeta().dirty || []).finally(() => fb.signOut(fb.auth));
+    };
+    return;
+  }
+  const msg = (t, err) => { const el = $('authMsg'); el.hidden = !t; el.textContent = t; el.style.color = err ? 'var(--bad, #c0392b)' : ''; };
+  const go = async (fn, busyText) => {
+    msg(busyText);
+    try { const f = await fbLoad(); await fn(f, $('authEmail').value.trim(), $('authPass').value); }
+    catch (e) { msg(authMsg(e), true); }
+  };
+  $('authForm').onsubmit = ev => { ev.preventDefault(); go((f, e, p) => f.signInWithEmailAndPassword(f.auth, e, p), 'Entrando…'); };
+  $('signupBtn').onclick = () => {
+    if (!$('authForm').reportValidity()) return;
+    go((f, e, p) => f.createUserWithEmailAndPassword(f.auth, e, p), 'Creando la cuenta…');
+  };
+  $('forgotBtn').onclick = ev => {
+    ev.preventDefault();
+    const e = $('authEmail').value.trim();
+    if (!e) return msg('Escribe tu email arriba y vuelve a pulsar.', true);
+    go(f => f.sendPasswordResetEmail(f.auth, e).then(() => msg('Te hemos enviado un email para cambiar la contraseña (mira también en spam).')), 'Enviando…');
+  };
+}
 const fmtPen = p => PENALTIES.find(([v]) => Math.abs(v - p) < 1e-6)?.[1] || fmtNum(p, 3);
 const calcNota = (ok, ko, total, pen) => total ? Math.max(0, ok - ko * pen) / total * 10 : 0;
 const entryNota = h => h.nota ?? (h.total ? h.aciertos / h.total * 10 : 0);
@@ -450,7 +651,7 @@ function srsGradeBox(cur, grade) {
 function srsGradeDays(cur, grade) { return grade === 1 ? 1 : SRS_DAYS[srsGradeBox(cur, grade)]; }
 function srsGrade(key, grade) {
   const s = load(K.srs, {}), cur = s[key]?.box || 0;
-  s[key] = { box: srsGradeBox(cur, grade), due: startOfToday() + srsGradeDays(cur, grade) * DAY };
+  s[key] = { box: srsGradeBox(cur, grade), due: startOfToday() + srsGradeDays(cur, grade) * DAY, t: Date.now() };
   save(K.srs, s);
 }
 const srsUpdate = (q, ok) => srsGrade(keyOf(q), ok ? 2 : 0);
@@ -1342,6 +1543,7 @@ function showStats() {
   if ($('clearHist')) $('clearHist').onclick = () => {
     if (!confirm('Se borrará el historial, las estadísticas, el repaso inteligente y la actividad diaria (las marcadas ★ se mantienen). ¿Seguro?')) return;
     for (const k of [K.hist, K.stats, K.srs, K.daily]) localStorage.removeItem(k);
+    syncReplace([K.hist, K.stats, K.srs, K.daily]);
     showStats();
   };
   if ($('chart')) bindChart(hist.slice(-30));
@@ -1394,6 +1596,7 @@ function showSettings() {
   app.innerHTML = `
     <div class="row between"><h1>Ajustes</h1><button id="home">← Inicio</button></div>
     <p class="muted" style="margin-top:-8px">Los cambios se guardan solos al momento <span id="savedFlash" class="saved-flash">✓ Guardado</span></p>
+    ${accountCardHTML()}
     <div class="card">
       <h2>📝 Penalización</h2>
       <div class="set-row">
@@ -1461,6 +1664,7 @@ function showSettings() {
     </div>`;
 
   $('home').onclick = () => showHome();
+  bindAccountCard();
   const num = (id, min = 0) => Math.max(min, +$(id).value || 0);
   let flashT;
   const saveS = patch => {
@@ -1542,7 +1746,7 @@ function exportBackup() {
   const data = {};
   for (let i = 0; i < localStorage.length; i++) {
     const k = localStorage.key(i);
-    if (k.startsWith(P) && k !== K.gh) data[k.slice(P.length)] = localStorage.getItem(k);
+    if (k.startsWith(P) && k !== K.gh && k !== SYNC_META) data[k.slice(P.length)] = localStorage.getItem(k);
   }
   const blob = new Blob([JSON.stringify({ app: 'test-preguntas', version: 2, entorno: ENV, fecha: new Date().toISOString(), data })], { type: 'application/json' });
   downloadBlob(blob, `copia-tests-${todayKey()}.json`);
@@ -1553,12 +1757,13 @@ function importBackup(file) {
     const b = JSON.parse(t);
     if (b.app !== 'test-preguntas' || !b.data) throw new Error('el archivo no es una copia de seguridad de esta app.');
     if (!confirm(`Copia del ${new Date(b.fecha).toLocaleString('es-ES')}. Se sustituirá el progreso de este dispositivo. ¿Continuar?`)) return;
-    Object.keys(localStorage).filter(k => k.startsWith(P) && k !== K.gh).forEach(k => localStorage.removeItem(k));
+    Object.keys(localStorage).filter(k => k.startsWith(P) && k !== K.gh && k !== SYNC_META).forEach(k => localStorage.removeItem(k));
     // v1 guardaba las claves con "quiz."; v2 sin prefijo. Se importan al entorno actual.
     for (const [k, v] of Object.entries(b.data)) {
       const name = k.replace(/^quiz(dev)?\./, '');
-      if (P + name !== K.gh) localStorage.setItem(P + name, v);
+      if (P + name !== K.gh && P + name !== SYNC_META) localStorage.setItem(P + name, v);
     }
+    syncReplace(SYNC_KEYS.map(k => P + k));
     location.reload();
   }).catch(e => alert('No se pudo importar: ' + e.message));
 }
@@ -2668,6 +2873,7 @@ setInterval(() => {
 // ---------- Arranque ----------
 applyTheme();
 renderPomo();
+syncStart();
 // Si hay preguntas.json junto al HTML (p. ej. GitHub Pages) y no has cargado otro archivo
 // ni editado en la app, se usa siempre la última versión del servidor.
 const saved = load(K.set, null);
