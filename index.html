@@ -188,12 +188,24 @@
   .verdict.ko { background: var(--ko-bg); color: var(--ko); }
   /* Selector múltiple de bloques y temas */
   .picker { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; margin: 8px 0 12px; background: color-mix(in srgb, var(--bg) 50%, var(--card)); }
-  .pick-b { border-top: 1px solid var(--border); padding: 4px 0; }
-  .pick-bh { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .pick-bh .opt { margin: 4px 0; flex: 1; }
-  .pick-ts { padding-left: 30px; }
-  .pick-sub { display: block; font-size: .8rem; color: var(--muted); line-height: 1.3; }
-  .pick-ts .opt { margin: 6px 0; font-size: .95rem; }
+  .pick-sub { display: block; font-size: .8rem; color: var(--muted); line-height: 1.3; font-weight: 400; }
+  .pick-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .tchip {
+    display: inline-flex; align-items: center; gap: 4px; min-height: 32px; padding: 4px 12px; border-radius: 99px;
+    border: 1px solid var(--border); background: var(--card); color: var(--text); font-size: .88rem; line-height: 1.25; text-align: left;
+  }
+  .tchip.on { background: var(--accent-bg); border-color: var(--accent); color: var(--text); }
+  .tchip .tn { font-size: .78rem; color: var(--muted); }
+  .pick-sheet { position: fixed; inset: 0; z-index: 30; background: var(--bg); display: flex; flex-direction: column; animation: slideup .2s ease; }
+  .pick-sheet-in { flex: 1; overflow-y: auto; padding: calc(16px + env(safe-area-inset-top)) 16px 16px; max-width: 720px; width: 100%; margin: 0 auto; }
+  .pick-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .pick-sec { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 10px 12px; margin-bottom: 10px; }
+  .pick-sec-h { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .linkbtn { background: none; border: none; box-shadow: none; padding: 2px 4px; min-height: 0; color: var(--accent); font-size: .85rem; font-weight: 600; }
+  .pick-foot {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px; border-top: 1px solid var(--border); background: var(--card);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
   .bloque-h { display: flex; justify-content: space-between; align-items: baseline; margin: 16px 0 4px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
 
   /* Calendario de actividad */
@@ -679,64 +691,117 @@ function showHome(error) {
 // Clave de un tema dentro de su bloque (los temas pueden repetirse en bloques distintos)
 const pkKey = x => (x.bloque || '') + '\u0001' + (x.tema || '');
 
-// Pinta en `el` una lista de bloques con sus temas marcables. `saved`: claves marcadas la última vez (null = todos).
-// Devuelve { get }: get() → Set de claves elegidas, o null si están todas (= sin filtro).
+// En pantalla: resumen con los temas elegidos como chips y botón «Cambiar».
+// «Cambiar» abre una hoja a pantalla completa con buscador y los temas de cada bloque como chips.
+// `saved`: claves elegidas la última vez (null = todos). Devuelve { get }: get() → Set de claves, o null si están todas.
 function temaPicker(el, items, saved, { unit = 'preguntas', onChange = () => {} } = {}) {
   const groups = {};
   items.forEach(x => { const g = (groups[x.bloque || ''] ||= {}); g[x.tema || ''] = (g[x.tema || ''] || 0) + 1; });
   const bloques = Object.keys(groups).sort(natCmp);
-  const allKeys = bloques.flatMap(b => Object.keys(groups[b]).map(t => b + '\u0001' + t));
+  const temasOf = b => Object.keys(groups[b]).sort(natCmp);
+  const allKeys = bloques.flatMap(b => temasOf(b).map(t => b + '\u0001' + t));
   const keep = (saved || []).filter(k => allKeys.includes(k));
-  const sel = new Set(keep.length ? keep : allKeys);
-  el.innerHTML = `
-    <div class="row between" style="margin-bottom:4px"><b>Bloques y temas</b>
-      <span class="row"><button class="small" data-all>Todos</button><button class="small" data-none>Ninguno</button></span></div>
-    ${bloques.map((b, i) => {
-      const ts = Object.keys(groups[b]).sort(natCmp), n = ts.reduce((s, t) => s + groups[b][t], 0);
-      return `<div class="pick-b">
-        <div class="pick-bh">
-          <label class="opt"><input type="checkbox" data-b="${i}"><span>${pickBloqueHTML(b)} <span class="muted">(${n})</span></span></label>
-          ${ts.length > 1 ? `<button class="small" data-exp="${i}">Temas ▾</button>` : ''}
-        </div>
-        <div class="pick-ts" data-ts="${i}" ${ts.length > 1 ? 'hidden' : 'style="display:none"'}>${ts.map(t => {
-          const k = b + '\u0001' + t;
-          return `<label class="opt"><input type="checkbox" data-k="${esc(k)}" data-bi="${i}" ${sel.has(k) ? 'checked' : ''}><span>${esc(t || 'Sin tema')} <span class="muted">(${groups[b][t]})</span></span></label>`;
-        }).join('')}</div>
-      </div>`;
-    }).join('')}
-    <p class="help" data-sum style="margin-bottom:0"></p>`;
-  const tIn = [...el.querySelectorAll('input[data-k]')];
-  const refresh = () => {
-    bloques.forEach((b, i) => {
-      const own = tIn.filter(x => x.dataset.bi == i), on = own.filter(x => x.checked).length;
-      const bx = el.querySelector(`input[data-b="${i}"]`);
-      bx.checked = on === own.length; bx.indeterminate = on > 0 && on < own.length;
-      // Si hay temas sueltos elegidos, se ven desplegados
-      if (on > 0 && on < own.length) el.querySelector(`[data-ts="${i}"]`).hidden = false;
+  let sel = new Set(keep.length ? keep : allKeys);
+  const count = s => [...s].reduce((n, k) => { const [b, t] = k.split('\u0001'); return n + groups[b][t]; }, 0);
+
+  const renderSummary = () => {
+    const all = sel.size === allKeys.length;
+    // Un bloque entero se resume en un solo chip con su nombre corto
+    const chipsTxt = all ? [] : bloques.flatMap(b => {
+      const ts = temasOf(b), on = ts.filter(t => sel.has(b + '\u0001' + t));
+      if (on.length && on.length === ts.length && ts.length > 1) return [bloqueShort(b)];
+      return on.map(t => temaShort(b, t));
     });
-    const on = tIn.filter(x => x.checked);
-    const n = on.reduce((s, x) => { const [b, t] = x.dataset.k.split('\u0001'); return s + groups[b][t]; }, 0);
-    el.querySelector('[data-sum]').textContent = on.length === tIn.length
-      ? `Todo el contenido: ${n} ${unit}.`
-      : on.length ? `${on.length} de ${tIn.length} temas · ${n} ${unit}.` : 'No hay ningún tema seleccionado.';
-    onChange();
+    const shown = chipsTxt.slice(0, 6);
+    el.innerHTML = `
+      <div class="row between"><b>📚 Temas</b><span class="muted">${count(sel)} ${unit}</span></div>
+      <div class="pick-chips">${all ? '<span class="tchip on">Todo el contenido</span>'
+        : sel.size ? shown.map(x => `<span class="tchip on">${esc(x)}</span>`).join('') + (chipsTxt.length > 6 ? `<span class="tchip">+${chipsTxt.length - 6}</span>` : '')
+        : '<span class="muted">Ningún tema elegido</span>'}</div>
+      <div style="text-align:right"><button class="small" data-open>Cambiar ›</button></div>`;
+    el.querySelector('[data-open]').onclick = openSheet;
   };
-  el.querySelectorAll('input[data-b]').forEach(bx => bx.onchange = () => {
-    tIn.filter(x => x.dataset.bi == bx.dataset.b).forEach(x => x.checked = bx.checked);
-    refresh();
-  });
-  tIn.forEach(x => x.onchange = refresh);
-  el.querySelectorAll('[data-exp]').forEach(btn => btn.onclick = () => {
-    const box = el.querySelector(`[data-ts="${btn.dataset.exp}"]`);
-    box.hidden = !box.hidden;
-    btn.textContent = box.hidden ? 'Temas ▾' : 'Temas ▴';
-  });
-  el.querySelector('[data-all]').onclick = () => { tIn.forEach(x => x.checked = true); refresh(); };
-  el.querySelector('[data-none]').onclick = () => { tIn.forEach(x => x.checked = false); refresh(); };
-  refresh();
-  return {
-    get: () => { const on = tIn.filter(x => x.checked).map(x => x.dataset.k); return on.length === tIn.length ? null : new Set(on); }
+
+  const openSheet = () => {
+    let draft = new Set(sel), q = '';
+    const sheet = document.createElement('div');
+    sheet.className = 'pick-sheet';
+    sheet.setAttribute('role', 'dialog');
+    sheet.setAttribute('aria-label', 'Elegir temas');
+    document.body.appendChild(sheet);
+    document.body.style.overflow = 'hidden';
+    const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const draw = () => {
+      const f = norm(q);
+      sheet.innerHTML = `
+        <div class="pick-sheet-in">
+          <div class="pick-head">
+            <h2 style="margin:0">Elegir temas</h2>
+            <button class="primary small" data-done>Listo</button>
+          </div>
+          <input type="search" class="full" data-q placeholder="🔍 Buscar tema" value="${esc(q)}">
+          <div class="row" style="margin:8px 0"><button class="small" data-all>Todos</button><button class="small" data-none>Ninguno</button></div>
+          ${bloques.map((b, i) => {
+            const ts = temasOf(b).filter(t => !f || norm(t).includes(f) || norm(b).includes(f));
+            if (!ts.length) return '';
+            const on = temasOf(b).filter(t => draft.has(b + '\u0001' + t)).length;
+            return `<div class="pick-sec">
+              <div class="pick-sec-h"><span>${pickBloqueHTML(b)}</span><button class="linkbtn" data-bt="${i}">${on === temasOf(b).length ? 'quitar' : 'todo'}</button></div>
+              <div class="pick-chips">${ts.map(t => {
+                const k = b + '\u0001' + t, onK = draft.has(k);
+                return `<button class="tchip ${onK ? 'on' : ''}" data-k="${esc(k)}" aria-pressed="${onK}">${onK ? '✓ ' : ''}${chipLabel(t)} <span class="tn">${groups[b][t]}</span></button>`;
+              }).join('')}</div>
+            </div>`;
+          }).join('') || '<p class="muted">Ningún tema coincide con la búsqueda.</p>'}
+        </div>
+        <div class="pick-foot"><span>${draft.size ? `${draft.size} ${draft.size === 1 ? 'tema' : 'temas'} · <b>${count(draft)}</b> ${unit}` : 'Ningún tema elegido'}</span>
+          <button class="primary" data-done>Listo</button></div>`;
+      sheet.querySelectorAll('[data-k]').forEach(c => c.onclick = () => { const k = c.dataset.k; draft.has(k) ? draft.delete(k) : draft.add(k); draw(); });
+      sheet.querySelectorAll('[data-bt]').forEach(a => a.onclick = () => {
+        const b = bloques[+a.dataset.bt], ks = temasOf(b).map(t => b + '\u0001' + t), all = ks.every(k => draft.has(k));
+        ks.forEach(k => all ? draft.delete(k) : draft.add(k)); draw();
+      });
+      sheet.querySelector('[data-all]').onclick = () => { draft = new Set(allKeys); draw(); };
+      sheet.querySelector('[data-none]').onclick = () => { draft = new Set(); draw(); };
+      sheet.querySelectorAll('[data-done]').forEach(b => b.onclick = close);
+      const inp = sheet.querySelector('[data-q]');
+      inp.oninput = () => { q = inp.value; draw(); const n = sheet.querySelector('[data-q]'); n.focus(); n.setSelectionRange(q.length, q.length); };
+    };
+    const close = () => {
+      sel = draft;
+      sheet.remove();
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onEsc);
+      renderSummary();
+      onChange();
+    };
+    const onEsc = e => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', onEsc);
+    draw();
   };
+
+  renderSummary();
+  onChange();
+  return { get: () => sel.size === allKeys.length ? null : new Set(sel) };
+}
+// "Tema 8 (MAD). Tipos…" → "Tema 8 (MAD)"; "Temario específico UMH" → igual
+const bloqueShort = b => b ? b.split('. ')[0] : 'Sin bloque';
+// Nombre corto de un tema para el resumen: "E3", "G2", "Tema 8 · Test", "Examen oficial UMH 2023 (1ª parte)"…
+function temaShort(b, t) {
+  if (!t) return bloqueShort(b);
+  const code = t.match(/^([A-Z]\d+)\./);
+  if (code) return code[1];
+  const mad = t.match(/^(Tema \d+) · (\S+)/);
+  if (mad) return `${mad[1]} · ${mad[2] === 'Test' ? 'Test' : 'Preguntas'}`;
+  return t.length > 28 ? t.slice(0, 26) + '…' : t;
+}
+// Etiqueta del chip dentro de la hoja: "E3 · Cooperación: redes…" o "Preguntas del tema"
+function chipLabel(t) {
+  if (!t) return 'Sin tema';
+  const code = t.match(/^([A-Z]\d+)\.\s*(.*)$/);
+  if (code) return `<b>${code[1]}</b> ${esc(code[2].length > 34 ? code[2].slice(0, 32) + '…' : code[2])}`;
+  const mad = t.match(/^Tema \d+ · (.*)$/);
+  return esc(mad ? mad[1] : t);
 }
 const inPick = (sel, x) => !sel || sel.has(pkKey(x));
 // "Tema 8 (MAD). Tipos de bibliotecas…" → "Tema 8 (MAD)" en negrita y el título en pequeño debajo
