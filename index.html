@@ -205,6 +205,7 @@
     border-radius: 16px; border: 2px solid var(--border); background: var(--card); min-height: 0;
   }
   .ptile .ptc { font-size: 1.4rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+  .ptile .ptc.long { font-size: 1rem; text-align: center; line-height: 1.15; }
   .ptile .pts { font-size: .68rem; font-weight: 600; color: var(--muted); letter-spacing: .04em; }
   .ptile .ptn { font-size: .72rem; color: var(--muted); }
   .ptile.full { background: var(--accent-bg); border-color: var(--accent); }
@@ -794,7 +795,7 @@ function temaPicker(el, items, saved, { unit = 'preguntas', onChange = () => {} 
             const ts = temasOf(b), on = ts.filter(t => draft.has(b + '\u0001' + t)).length;
             const state = on === ts.length ? 'full' : on ? 'part' : '';
             return `<button class="ptile ${state} ${openB === i ? 'open' : ''}" data-tile="${i}" aria-expanded="${openB === i}" title="${esc(b)}">
-              <span class="ptc">${esc(tileCode(b))}</span><span class="pts">${esc(tileSub(b))}</span>
+              <span class="ptc ${tileCode(b).length > 4 ? 'long' : ''}">${esc(tileCode(b))}</span>${tileSub(b) ? `<span class="pts">${esc(tileSub(b))}</span>` : ''}
               <span class="ptn">${state === 'full' ? '✓ ' : ''}${on}/${ts.length}</span></button>`;
           }).join('')}</div>` : bloques.map((b, i) => {
             const ts = temasOf(b).filter(t => !f || norm(t).includes(f) || norm(b).includes(f));
@@ -856,11 +857,12 @@ function temaPicker(el, items, saved, { unit = 'preguntas', onChange = () => {} 
 function tileCode(b) {
   const m = b.match(/^Tema (\d+)/);
   if (m) return 'T' + m[1];
-  if (/espec/i.test(b)) return 'ESP';
-  if (/general/i.test(b)) return 'GEN';
+  if (/espec/i.test(b)) return 'UMH ESP';
+  if (/general/i.test(b)) return 'UMH GEN';
   return (b || '?').split(/\s+/).map(w => w[0]).join('').slice(0, 3).toUpperCase();
 }
-const tileSub = b => b.match(/\((\w+)\)/)?.[1] || (/UMH/.test(b) ? 'UMH' : '');
+// Procedencia bajo el código ("MAD"); los de la UMH ya la llevan en el código
+const tileSub = b => b.match(/\((\w+)\)/)?.[1] || '';
 // "Tema 8 (MAD). Tipos…" → "Tema 8 (MAD)"; "Temario específico UMH" → igual
 const bloqueShort = b => b ? b.split('. ')[0] : 'Sin bloque';
 // Nombre corto de un tema para el resumen: "E3", "G2", "Tema 8 · Test", "Examen oficial UMH 2023 (1ª parte)"…
