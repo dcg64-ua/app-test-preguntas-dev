@@ -370,7 +370,7 @@ const ENV = LOCAL && new URLSearchParams(location.search).get('env') === 'prod' 
   : /^\/[^/]+-dev\//.test(location.pathname) || LOCAL ? 'dev' : 'prod';
 // Funciones ya aprobadas para producción. En desarrollo están todas activas.
 // Para pasar una función a producción basta con añadirla aquí.
-const PROD_FEATURES = ['flash', 'cuenta'];
+const PROD_FEATURES = ['flash', 'articulos', 'vf', 'recall', 'notas', 'confusion', 'cuenta']; // todas menos 'audio'
 const ALL_FEATURES = ['flash', 'articulos', 'audio', 'vf', 'recall', 'notas', 'confusion', 'cuenta'];
 const feat = name => ENV === 'dev' || PROD_FEATURES.includes(name);
 const P = ENV === 'dev' ? 'quizdev.' : 'quiz.';
