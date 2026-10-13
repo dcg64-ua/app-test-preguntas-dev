@@ -199,6 +199,19 @@
   .pick-sheet { position: fixed; inset: 0; z-index: 30; background: var(--bg); display: flex; flex-direction: column; animation: slideup .2s ease; }
   .pick-sheet-in { flex: 1; overflow-y: auto; padding: calc(16px + env(safe-area-inset-top)) 16px 16px; max-width: 720px; width: 100%; margin: 0 auto; }
   .pick-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .ptiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 8px; }
+  .ptile {
+    aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 4px;
+    border-radius: 16px; border: 2px solid var(--border); background: var(--card); min-height: 0;
+  }
+  .ptile .ptc { font-size: 1.4rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+  .ptile .pts { font-size: .68rem; font-weight: 600; color: var(--muted); letter-spacing: .04em; }
+  .ptile .ptn { font-size: .72rem; color: var(--muted); }
+  .ptile.full { background: var(--accent-bg); border-color: var(--accent); }
+  .ptile.full .ptn { color: var(--accent); font-weight: 700; }
+  .ptile.part { border-color: var(--accent); border-style: dashed; }
+  .ptile.open { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .ptile-panel { grid-column: 1 / -1; background: var(--card); border: 1px solid var(--accent); border-radius: 14px; padding: 10px 12px; animation: slideup .15s ease; }
   .pick-sec { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 10px 12px; margin-bottom: 10px; }
   .pick-sec-h { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
   .linkbtn { background: none; border: none; box-shadow: none; padding: 2px 4px; min-height: 0; color: var(--accent); font-size: .85rem; font-weight: 600; }
@@ -761,8 +774,13 @@ function temaPicker(el, items, saved, { unit = 'preguntas', onChange = () => {} 
     document.body.appendChild(sheet);
     document.body.style.overflow = 'hidden';
     const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    let openB = -1; // bloque desplegado en la cuadrícula
+    const chipsHTML = (b, ts) => ts.map(t => {
+      const k = b + '\u0001' + t, onK = draft.has(k);
+      return `<button class="tchip ${onK ? 'on' : ''}" data-k="${esc(k)}" aria-pressed="${onK}">${onK ? '✓ ' : ''}${chipLabel(t)} <span class="tn">${groups[b][t]}</span></button>`;
+    }).join('');
     const draw = () => {
-      const f = norm(q);
+      const f = norm(q), scroll = sheet.querySelector('.pick-sheet-in')?.scrollTop || 0;
       sheet.innerHTML = `
         <div class="pick-sheet-in">
           <div class="pick-head">
@@ -771,21 +789,41 @@ function temaPicker(el, items, saved, { unit = 'preguntas', onChange = () => {} 
           </div>
           <input type="search" class="full" data-q placeholder="🔍 Buscar tema" value="${esc(q)}">
           <div class="row" style="margin:8px 0"><button class="small" data-all>Todos</button><button class="small" data-none>Ninguno</button></div>
-          ${bloques.map((b, i) => {
+          ${!f ? `
+          <div class="ptiles">${bloques.map((b, i) => {
+            const ts = temasOf(b), on = ts.filter(t => draft.has(b + '\u0001' + t)).length;
+            const state = on === ts.length ? 'full' : on ? 'part' : '';
+            return `<button class="ptile ${state} ${openB === i ? 'open' : ''}" data-tile="${i}" aria-expanded="${openB === i}" title="${esc(b)}">
+              <span class="ptc">${esc(tileCode(b))}</span><span class="pts">${esc(tileSub(b))}</span>
+              <span class="ptn">${state === 'full' ? '✓ ' : ''}${on}/${ts.length}</span></button>`;
+          }).join('')}</div>` : bloques.map((b, i) => {
             const ts = temasOf(b).filter(t => !f || norm(t).includes(f) || norm(b).includes(f));
             if (!ts.length) return '';
             const on = temasOf(b).filter(t => draft.has(b + '\u0001' + t)).length;
             return `<div class="pick-sec">
               <div class="pick-sec-h"><span>${pickBloqueHTML(b)}</span><button class="linkbtn" data-bt="${i}">${on === temasOf(b).length ? 'quitar' : 'todo'}</button></div>
-              <div class="pick-chips">${ts.map(t => {
-                const k = b + '\u0001' + t, onK = draft.has(k);
-                return `<button class="tchip ${onK ? 'on' : ''}" data-k="${esc(k)}" aria-pressed="${onK}">${onK ? '✓ ' : ''}${chipLabel(t)} <span class="tn">${groups[b][t]}</span></button>`;
-              }).join('')}</div>
+              <div class="pick-chips">${chipsHTML(b, ts)}</div>
             </div>`;
           }).join('') || '<p class="muted">Ningún tema coincide con la búsqueda.</p>'}
         </div>
         <div class="pick-foot"><span>${draft.size ? `${draft.size} ${draft.size === 1 ? 'tema' : 'temas'} · <b>${count(draft)}</b> ${unit}` : 'Ningún tema elegido'}</span>
           <button class="primary" data-done>Listo</button></div>`;
+      // El bloque desplegado se abre dentro de la cuadrícula, justo debajo de la fila de su cuadrado
+      const grid = sheet.querySelector('.ptiles');
+      if (grid && openB >= 0) {
+        const b = bloques[openB], ts = temasOf(b), all = ts.every(t => draft.has(b + '\u0001' + t));
+        // Columnas reales: cuántos cuadrados comparten la fila del primero
+        const tl = [...grid.querySelectorAll('.ptile')];
+        const cols = Math.max(1, tl.filter(t => t.offsetTop === tl[0].offsetTop).length);
+        const rowEnd = Math.min(Math.floor(openB / cols) * cols + cols - 1, bloques.length - 1);
+        tl[rowEnd].insertAdjacentHTML('afterend', `
+          <div class="ptile-panel">
+            <div class="pick-sec-h"><span>${pickBloqueHTML(b)}</span><button class="linkbtn" data-bt="${openB}">${all ? 'quitar' : 'todo'}</button></div>
+            <div class="pick-chips">${chipsHTML(b, ts)}</div>
+          </div>`);
+      }
+      sheet.querySelector('.pick-sheet-in').scrollTop = scroll;
+      sheet.querySelectorAll('[data-tile]').forEach(tl => tl.onclick = () => { const i = +tl.dataset.tile; openB = openB === i ? -1 : i; draw(); });
       sheet.querySelectorAll('[data-k]').forEach(c => c.onclick = () => { const k = c.dataset.k; draft.has(k) ? draft.delete(k) : draft.add(k); draw(); });
       sheet.querySelectorAll('[data-bt]').forEach(a => a.onclick = () => {
         const b = bloques[+a.dataset.bt], ks = temasOf(b).map(t => b + '\u0001' + t), all = ks.every(k => draft.has(k));
@@ -814,6 +852,15 @@ function temaPicker(el, items, saved, { unit = 'preguntas', onChange = () => {} 
   onChange();
   return { get: () => sel.size === allKeys.length ? null : new Set(sel) };
 }
+// Código corto del cuadrado de cada bloque: "T8", "ESP", "GEN"… y debajo la procedencia ("MAD", "UMH")
+function tileCode(b) {
+  const m = b.match(/^Tema (\d+)/);
+  if (m) return 'T' + m[1];
+  if (/espec/i.test(b)) return 'ESP';
+  if (/general/i.test(b)) return 'GEN';
+  return (b || '?').split(/\s+/).map(w => w[0]).join('').slice(0, 3).toUpperCase();
+}
+const tileSub = b => b.match(/\((\w+)\)/)?.[1] || (/UMH/.test(b) ? 'UMH' : '');
 // "Tema 8 (MAD). Tipos…" → "Tema 8 (MAD)"; "Temario específico UMH" → igual
 const bloqueShort = b => b ? b.split('. ')[0] : 'Sin bloque';
 // Nombre corto de un tema para el resumen: "E3", "G2", "Tema 8 · Test", "Examen oficial UMH 2023 (1ª parte)"…
