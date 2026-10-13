@@ -384,17 +384,23 @@ if (ENV === 'dev') {
   document.querySelector('meta[name=apple-mobile-web-app-title]').content = 'Tests DEV';
   document.body.classList.add('env-dev');
   document.body.insertAdjacentHTML('beforeend', '<div class="env-badge" title="Entorno de desarrollo: datos separados de la app normal">🧪 DESARROLLO</div>');
-  // Aviso grande al abrir: hay que aceptarlo para usar la versión de pruebas
+}
+// En desarrollo, aviso grande antes de empezar cada test: hay que aceptarlo para seguir
+function devGate(go) {
+  if (ENV !== 'dev') return go();
   const prodUrl = LOCAL ? '?env=prod' : location.pathname.replace(/-dev\//, '/');
   document.body.insertAdjacentHTML('beforeend', `<div class="dev-warn" id="devWarn" role="alertdialog" aria-modal="true" aria-labelledby="devWarnT"><div>
     <div class="big">🧪⚠️</div>
     <h2 id="devWarnT">VERSIÓN DE DESARROLLO</h2>
     <p><b>Esta no es la app normal.</b> Es la versión de pruebas: puede tener fallos y cambiar en cualquier momento.</p>
     <p class="muted">Tu progreso aquí se guarda aparte y no cuenta en la app normal.</p>
-    <button id="devWarnOk">Entendido, continuar</button>
+    <button id="devWarnOk">Entendido, empezar</button>
+    <button class="small" id="devWarnNo" style="background:none;border:none;color:var(--muted);font-weight:600;margin-top:4px">Cancelar</button>
     <a href="${prodUrl}">Ir a la app normal →</a>
   </div></div>`);
-  document.getElementById('devWarnOk').onclick = () => document.getElementById('devWarn').remove();
+  const close = () => $('devWarn').remove();
+  $('devWarnOk').onclick = () => { close(); go(); };
+  $('devWarnNo').onclick = close;
 }
 const app = document.getElementById('app');
 let set = null;              // { titulo, preguntas, ajustes?, origen: 'servidor' | 'archivo' | 'editado' }
@@ -3005,6 +3011,12 @@ setInterval(() => {
   pomoTick();
   if (document.visibilityState === 'visible') waterTick();
 }, 1000);
+
+// En desarrollo, cada test o sesión de estudio empieza tras aceptar el aviso
+for (const fn of ['startRun', 'startFlash', 'startAudio', 'startVF']) {
+  const orig = window[fn];
+  window[fn] = (...a) => devGate(() => orig(...a));
+}
 
 // ---------- Arranque ----------
 applyTheme();
