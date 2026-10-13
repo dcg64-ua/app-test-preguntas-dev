@@ -293,6 +293,13 @@
   @media (max-width: 480px) { .grades { grid-template-columns: 1fr 1fr; } }
 
   body.env-dev main { padding-top: calc(36px + env(safe-area-inset-top)); }
+  .dev-warn { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 16px; background: rgba(0, 0, 0, .6); backdrop-filter: blur(3px); }
+  .dev-warn > div { max-width: 420px; width: 100%; background: var(--card); color: var(--text); border: 4px solid #f39c12; border-radius: 20px; padding: 28px 22px; text-align: center; box-shadow: 0 20px 60px rgba(0, 0, 0, .4); }
+  .dev-warn .big { font-size: 3.2rem; line-height: 1; }
+  .dev-warn h2 { font-size: 1.9rem; margin: 12px 0 8px; color: #e67e22; letter-spacing: .02em; }
+  .dev-warn p { margin: 8px 0; }
+  .dev-warn button { width: 100%; margin-top: 14px; font-size: 1.1rem; padding: 14px; background: #f39c12; border-color: #f39c12; color: #fff; font-weight: 800; }
+  .dev-warn a { display: block; margin-top: 12px; }
   .env-badge {
     position: fixed; top: calc(6px + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); z-index: 20; pointer-events: none;
     background: #f59f00; color: #1a1f2e; font-size: .72rem; font-weight: 800; letter-spacing: .05em; padding: 2px 10px; border-radius: 99px;
@@ -377,6 +384,17 @@ if (ENV === 'dev') {
   document.querySelector('meta[name=apple-mobile-web-app-title]').content = 'Tests DEV';
   document.body.classList.add('env-dev');
   document.body.insertAdjacentHTML('beforeend', '<div class="env-badge" title="Entorno de desarrollo: datos separados de la app normal">🧪 DESARROLLO</div>');
+  // Aviso grande al abrir: hay que aceptarlo para usar la versión de pruebas
+  const prodUrl = LOCAL ? '?env=prod' : location.pathname.replace(/-dev\//, '/');
+  document.body.insertAdjacentHTML('beforeend', `<div class="dev-warn" id="devWarn" role="alertdialog" aria-modal="true" aria-labelledby="devWarnT"><div>
+    <div class="big">🧪⚠️</div>
+    <h2 id="devWarnT">VERSIÓN DE DESARROLLO</h2>
+    <p><b>Esta no es la app normal.</b> Es la versión de pruebas: puede tener fallos y cambiar en cualquier momento.</p>
+    <p class="muted">Tu progreso aquí se guarda aparte y no cuenta en la app normal.</p>
+    <button id="devWarnOk">Entendido, continuar</button>
+    <a href="${prodUrl}">Ir a la app normal →</a>
+  </div></div>`);
+  document.getElementById('devWarnOk').onclick = () => document.getElementById('devWarn').remove();
 }
 const app = document.getElementById('app');
 let set = null;              // { titulo, preguntas, ajustes?, origen: 'servidor' | 'archivo' | 'editado' }
