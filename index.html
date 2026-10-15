@@ -572,14 +572,20 @@
     .countdown .big { font-size: 2.3rem; }
   }
 
-  /* Tablero de Pinterest: marco de cristal con filo dorado */
+  /* Motivación aesthetic: un pin grande en un marco de cristal con filo dorado */
   .muse {
-    display: flex; justify-content: center; padding: 12px; margin-bottom: 16px; border-radius: var(--r-lg);
+    display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 12px 12px 10px; margin-bottom: 16px; border-radius: var(--r-lg);
     background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
   }
-  .muse > a { font-size: .9rem; } /* enlace visible solo si Pinterest no carga (sin conexión) */
-  .muse-side { position: fixed; z-index: 5; top: 50%; transform: translateY(-50%); right: max(24px, calc((100vw - 720px) / 2 - 320px)); width: 300px; max-height: calc(100dvh - 48px); overflow-y: auto; margin: 0; }
+  .muse-pin { width: 100%; display: flex; justify-content: center; min-height: 200px; border-radius: var(--r-md); overflow: hidden; }
+  .muse-pin > span { margin: 0 !important; }
+  .muse-pin.in { animation: rise .5s var(--ease); }
+  .muse-pin > a { align-self: center; font-size: .9rem; } /* solo se ve si Pinterest no carga (sin conexión) */
+  .muse-nav { display: flex; align-items: center; justify-content: center; gap: 14px; }
+  .muse-count { color: var(--gold); }
+  .muse-btn { width: 38px; min-height: 38px; padding: 0; border-radius: 50%; font-size: 1.3rem; line-height: 1; }
+  .muse-side { position: fixed; z-index: 5; top: 50%; transform: translateY(-50%); right: max(20px, calc((100vw - 720px) / 2 - 400px)); width: 372px; max-height: calc(100dvh - 40px); overflow-y: auto; margin: 0; }
   @media (max-width: 1179px) { .muse-side { display: none; } }
   @media (min-width: 1180px) { .muse-home { display: none; } }
 </style>
@@ -1180,21 +1186,46 @@ function fetchServerSet() {
 
 // ---------- Inicio ----------
 
-// ---------- Frases motivadoras de Pinterest (widget oficial de tablero) ----------
-// En pantallas anchas va en el lateral; en el móvil, como tarjeta en el inicio.
-// Para usar otro tablero basta con cambiar la dirección.
-const PIN_BOARD = 'https://www.pinterest.com/flavialopez3990/frases-aesthetic/';
-const museHTML = cls => `<aside class="muse ${cls}" aria-label="Frases motivadoras de Pinterest">
-  <a data-pin-do="embedBoard" data-pin-board-width="${cls === 'muse-side' ? 260 : 340}" data-pin-scale-height="${cls === 'muse-side' ? 520 : 380}" data-pin-scale-width="80" href="${PIN_BOARD}">Frases aesthetic en Pinterest</a>
+// ---------- Motivación aesthetic: pase de pines de Pinterest (widget oficial de pin) ----------
+// Un pin grande cada vez; cambia solo cada 20 s y con ‹ ›. En pantallas anchas va en el lateral; en el móvil, en el inicio.
+// Pines de los tableros públicos «Frases aesthetic» (flavialopez3990) y «Motivación estudio» (solagev3).
+const PINS = shuffle(`560487116148438405 560487116148438300 560487116148083138 560487116142955676 560487116142955660 560487116142955652
+560487116142955643 560487116139948344 560487116148438306 560487116148438265 560487116148438228 560487116142955674 560487116142955655
+560487116142955650 560487116142955640 560487116142955635 560487116148438304 560487116148438299 560487116148438233 560487116142955679
+560487116142955662 560487116142955654 560487116142955648 560487116142955636 289567451047047828 289567451025050471 289567451022198341
+289567451021979796 289567451021912803 289567451019863046 289567451019629174 289567451019629167 289567451019629159 289567451019629152
+289567451019628650 289567451019628642 289567451019628632 289567451019628621 289567451019628613 289567451019628610 289567451047047690
+289567451022687991 289567451022249102 289567451021979806 289567451019864084 289567451019629182 289567451019629154 289567451019628651
+289567451019628646 289567451019628636 289567451019628630 289567451019628626 289567451019628620 289567451019628611 289567451019628608
+289567451019628602 289567451047047606 289567451022687985 289567451022198313 289567451021979789 289567451021174806 289567451019832333
+289567451019767830 289567451019629171 289567451019629162 289567451019629155 289567451019628652 289567451019628648 289567451019628634
+289567451019628625 289567451019628616 289567451019628612 289567451019628607 289567451019628562`.split(/\s+/));
+let pinI = 0;
+const pinSlide = () => `<a data-pin-do="embedPin" data-pin-width="${museWide ? 'large' : 'medium'}" data-pin-terse="true" href="https://www.pinterest.com/pin/${PINS[pinI]}/">Ver en Pinterest</a>`;
+// Solo una copia del pin a la vez (Pinterest falla si el mismo pin está dos veces): lateral en pantallas anchas, inicio en el resto
+const museWide = matchMedia('(min-width: 1180px)').matches;
+const museHTML = cls => (cls === 'muse-side') !== museWide ? '' : `<aside class="muse ${cls}" aria-label="Motivación aesthetic de Pinterest">
+  <div class="muse-pin">${pinSlide()}</div>
+  <div class="muse-nav"><button class="muse-btn" data-d="-1" aria-label="Imagen anterior">‹</button><span class="muse-count">✦</span><button class="muse-btn" data-d="1" aria-label="Imagen siguiente">›</button></div>
 </aside>`;
 let pinScript = null;
-// Carga el script de Pinterest la primera vez; después, convierte en widget los tableros que se hayan pintado de nuevo
+// Carga el script de Pinterest la primera vez; después, convierte en widget los pines que se hayan pintado de nuevo
 function pinBuild() {
   if (window.PinUtils) return PinUtils.build();
   if (pinScript) return;
-  pinScript = Object.assign(document.createElement('script'), { src: 'https://assets.pinterest.com/js/pinit.js', async: true });
+  // al cargar, vuelve a mirar: el inicio puede haberse repintado mientras llegaba el script
+  pinScript = Object.assign(document.createElement('script'), { src: 'https://assets.pinterest.com/js/pinit.js', async: true, onload: () => PinUtils.build() });
   document.head.appendChild(pinScript);
 }
+function pinStep(d) {
+  pinI = (pinI + d + PINS.length) % PINS.length;
+  document.querySelectorAll('.muse-pin').forEach(el => { el.innerHTML = pinSlide(); el.classList.remove('in'); void el.offsetWidth; el.classList.add('in'); });
+  pinBuild();
+}
+document.addEventListener('click', e => { const b = e.target.closest('.muse-btn'); if (b) pinStep(+b.dataset.d); });
+setInterval(() => { if (document.visibilityState === 'visible' && document.querySelector('.muse')) pinStep(1); }, 20000);
+// Si el inicio se repintó mientras Pinterest respondía, el pin queda sin montar: se reintenta
+setInterval(() => { if (window.PinUtils && document.querySelector('.muse-pin > a')) PinUtils.build(); }, 5000);
 function dailyCardHTML() {
   const s = getSettings(), today = load(K.daily, {})[todayKey()] || 0, left = daysLeft(s.examDate), st = streak();
   if (left === null && !s.dailyGoal) return '';
