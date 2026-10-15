@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;600&family=Outfit:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
 <title>Test de preguntas</title>
 <style>
   :root {
@@ -368,185 +368,208 @@
     .ring { width: 96px; height: 96px; } .ring > div { width: 74px; height: 74px; font-size: 1.25rem; }
   }
 
-  /* ================= Rediseño (rama test) =================
-     Capa encima del estilo base: tipografía con carácter, superficies con profundidad,
-     sombras teñidas del color del tema, estados de hover/pulsado/foco y entrada escalonada.
-     Todo usa las variables del tema (--accent, --bg…), así que el personalizador sigue funcionando. */
+  /* ================= Estética «cuento de hadas» (rama test) =================
+     Cielo con estrellas que titilan, castillo en el horizonte, detalles dorados y destellos.
+     Todo es original (sin personajes ni marcas). Usa las variables del tema, así que el
+     personalizador sigue funcionando; el tema «Magia» es el que mejor lo luce. */
   :root {
-    --font-body: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    --font-display: "Outfit", var(--font-body);
-    --font-num: "Geist Mono", ui-monospace, "SF Mono", monospace;
-    --r-lg: 24px; --r-md: 16px; --r-sm: 11px;
-    --radius: var(--r-lg);
-    --ease: cubic-bezier(.22, 1, .36, 1);
-    --spring: cubic-bezier(.34, 1.56, .64, 1);
-    --line: color-mix(in srgb, var(--text) 8%, transparent);
-    --hi: rgba(255, 255, 255, .7);
-    --shadow: 0 1px 2px color-mix(in srgb, var(--accent) 8%, transparent), 0 12px 32px -14px color-mix(in srgb, var(--accent) 32%, transparent);
-    --shadow-lift: 0 2px 4px color-mix(in srgb, var(--accent) 10%, transparent), 0 22px 44px -16px color-mix(in srgb, var(--accent) 42%, transparent);
+    --font-body: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "Cinzel", Georgia, serif;
+    --gold: #d9a43a; --gold-2: #f6dc94;
+    --r-lg: 26px; --r-md: 18px; --r-sm: 14px; --radius: var(--r-lg);
+    --ease: cubic-bezier(.22, 1, .36, 1); --spring: cubic-bezier(.34, 1.56, .64, 1);
+    --card: rgba(255, 255, 255, .78); --text: #241c3d; --muted: #6d6489;
+    --line: color-mix(in srgb, var(--gold) 28%, rgba(120, 100, 180, .18));
+    --grid: rgba(110, 90, 170, .1);
+    --sky-1: color-mix(in srgb, var(--bg) 70%, #ffd9ec); --sky-2: var(--bg); --sky-3: color-mix(in srgb, var(--accent) 22%, var(--bg));
+    --castle: color-mix(in srgb, var(--accent) 40%, #b8a6e6);
+    --star: rgba(255, 255, 255, .95);
+    --shadow: 0 2px 6px rgba(80, 50, 140, .08), 0 18px 40px -18px color-mix(in srgb, var(--accent) 45%, transparent);
+    --glow: 0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent), 0 0 24px -6px color-mix(in srgb, var(--gold) 60%, transparent);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --hi: rgba(255, 255, 255, .06);
-      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 34px -14px rgba(0, 0, 0, .6);
-      --shadow-lift: 0 2px 6px rgba(0, 0, 0, .45), 0 24px 48px -16px color-mix(in srgb, var(--accent) 30%, rgba(0, 0, 0, .7));
+      --card: rgba(22, 24, 62, .72); --text: #f3efff; --muted: #b3acd6;
+      --line: color-mix(in srgb, var(--gold) 30%, rgba(160, 150, 255, .12));
+      --grid: rgba(180, 170, 255, .1);
+      --sky-1: color-mix(in srgb, var(--bg) 85%, #3b2a7a); --sky-2: var(--bg); --sky-3: color-mix(in srgb, var(--bg) 70%, #050716);
+      --castle: color-mix(in srgb, var(--bg) 55%, #05061a);
+      --shadow: 0 2px 8px rgba(0, 0, 0, .35), 0 20px 44px -18px rgba(0, 0, 0, .7);
     }
   }
 
-  body {
-    font-family: var(--font-body); font-size: 16px; letter-spacing: -.005em;
-    /* luz ambiente del color del tema (debajo de la foto, si la hay) */
-    background:
-      radial-gradient(70% 45% at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
-      radial-gradient(55% 40% at 100% 8%, color-mix(in srgb, var(--accent-2) 12%, transparent), transparent 70%),
-      var(--bg);
-    min-height: 100dvh;
+  /* El cielo vive en <html>; el body queda transparente para dejarlo ver */
+  html { background: linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 45%, var(--sky-3) 100%) fixed, var(--bg); min-height: 100%; }
+  body { background: transparent; font-family: var(--font-body); font-size: 16.5px; min-height: 100dvh; }
+  /* estrellas: varias capas de puntos que titilan a distinto ritmo */
+  html::before, html::after { content: ""; position: fixed; pointer-events: none; z-index: -1; }
+  html::before {
+    inset: 0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 18%, var(--star), transparent), radial-gradient(1px 1px at 28% 8%, var(--star), transparent),
+      radial-gradient(2px 2px at 44% 24%, var(--star), transparent), radial-gradient(1px 1px at 63% 12%, var(--star), transparent),
+      radial-gradient(1.5px 1.5px at 78% 30%, var(--star), transparent), radial-gradient(1px 1px at 90% 6%, var(--star), transparent),
+      radial-gradient(1px 1px at 6% 42%, var(--star), transparent), radial-gradient(1.5px 1.5px at 35% 46%, var(--star), transparent),
+      radial-gradient(1px 1px at 55% 38%, var(--star), transparent), radial-gradient(2px 2px at 86% 50%, var(--star), transparent),
+      radial-gradient(1px 1px at 20% 62%, var(--star), transparent), radial-gradient(1.5px 1.5px at 70% 60%, var(--star), transparent);
+    opacity: .35; animation: twinkle 4.5s ease-in-out infinite alternate;
   }
-  /* grano sutil para quitar la sensación de plano digital */
-  body::after {
-    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .05; mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  @media (prefers-color-scheme: dark) { html::before { opacity: .9; } }
+  /* castillo original dibujado en SVG, en el horizonte */
+  html::after {
+    left: 0; right: 0; bottom: 0; height: min(38vh, 300px); opacity: .55;
+    background: var(--castle);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='xMidYMax meet'%3E%3Cpath d='M0 300V250Q150 215 300 240T560 232V170h18v-22l14-38 14 38v22h18v-60h14V80l22-58 22 58v30h14v60h20v-90l28-70 28 70v90h20v-60h14V80l22-58 22 58v30h14v60h18v-22l14-38 14 38v22h18v62q120-18 260-2T1200 250v50Z'/%3E%3C/svg%3E") bottom / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='xMidYMax meet'%3E%3Cpath d='M0 300V250Q150 215 300 240T560 232V170h18v-22l14-38 14 38v22h18v-60h14V80l22-58 22 58v30h14v60h20v-90l28-70 28 70v90h20v-60h14V80l22-58 22 58v30h14v60h18v-22l14-38 14 38v22h18v62q120-18 260-2T1200 250v50Z'/%3E%3C/svg%3E") bottom / contain no-repeat;
   }
-  @media (prefers-color-scheme: dark) { body::after { mix-blend-mode: screen; opacity: .035; } }
+  @keyframes twinkle { from { opacity: .25; } to { opacity: .95; } }
+  @media (prefers-color-scheme: light) { @keyframes twinkle { from { opacity: .15; } to { opacity: .45; } } }
 
-  h1, h2, h3, .big, .kpi .v, .ring > div, .ptile .ptc { font-family: var(--font-display); }
-  h1 { font-size: clamp(1.7rem, 5.5vw, 2.3rem); font-weight: 700; letter-spacing: -.035em; line-height: 1.08; text-wrap: balance; }
-  h2 { font-size: 1.15rem; font-weight: 600; letter-spacing: -.02em; text-wrap: balance; }
-  h3 { font-weight: 600; letter-spacing: -.015em; }
+  /* Tipografía: títulos con aire de cuento, texto redondeado y legible */
+  h1, h2, .big, .kpi .v, .ring > div, .ptile .ptc, .countdown .big { font-family: var(--font-display); }
+  h1 { font-size: clamp(1.6rem, 5.2vw, 2.25rem); font-weight: 700; letter-spacing: .01em; line-height: 1.15; text-wrap: balance; }
+  h2 { font-size: 1.12rem; font-weight: 600; letter-spacing: .02em; text-wrap: balance; }
+  h3 { font-weight: 800; }
   p, .help, .muted { text-wrap: pretty; }
-  b, strong { font-weight: 600; }
-  .q { font-family: var(--font-display); font-weight: 600; font-size: 1.28rem; letter-spacing: -.015em; text-wrap: pretty; }
+  .q { font-weight: 700; font-size: 1.25rem; line-height: 1.45; text-wrap: pretty; }
   .timer, .kpi .v, td.num, .pomo-pill, .navgrid button { font-variant-numeric: tabular-nums; }
-  .timer, .pomo-pill { font-family: var(--font-num); }
 
-  /* Cabecera del inicio */
-  .hero { margin: 4px 0 18px; }
-  .hero h1 { margin: 0; }
-  .eyebrow { margin: 0 0 6px; font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
-  body.has-photo .eyebrow, body.has-photo .hero h1 { text-shadow: 0 1px 10px color-mix(in srgb, var(--bg) 85%, transparent); }
-
-  /* Superficies: sin borde duro, luz superior de 1px y sombra teñida */
-  .card {
-    border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 22px 24px;
-    box-shadow: inset 0 1px 0 var(--hi), var(--shadow);
+  /* Cabecera del inicio con destellos */
+  .hero { position: relative; margin: 6px 0 20px; text-align: center; }
+  .hero h1 {
+    margin: 0; background: linear-gradient(100deg, var(--text) 20%, var(--gold) 45%, var(--text) 70%) 0 0 / 250% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 7s ease-in-out infinite;
   }
-  body.has-photo .card { background: color-mix(in srgb, var(--card) 82%, transparent); -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4); }
-  .notice { border-left: 1px solid var(--line); background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, var(--card)), var(--card) 60%); }
+  .hero::before, .hero::after { content: "✦"; position: absolute; color: var(--gold); animation: sparkle 2.6s ease-in-out infinite; pointer-events: none; }
+  .hero::before { top: -2px; left: 6%; font-size: 1.1rem; }
+  .hero::after { bottom: -8px; right: 8%; font-size: .8rem; animation-delay: 1.3s; }
+  .eyebrow { margin: 0 0 8px; font-size: .78rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .eyebrow::before, .eyebrow::after { content: " ✧ "; }
+  @keyframes shimmer { 50% { background-position: 100% 0; } }
+  @keyframes sparkle { 0%, 100% { transform: scale(.6) rotate(0); opacity: .3; } 50% { transform: scale(1.2) rotate(20deg); opacity: 1; } }
 
-  /* Botones: elevación al pasar, hundimiento al pulsar, foco visible */
-  button { border-radius: var(--r-sm); border-color: var(--line); font-weight: 500; transition: transform .25s var(--spring), background .2s, border-color .2s, box-shadow .25s var(--ease), color .2s; }
-  button:active:not(:disabled) { transform: translateY(1px) scale(.98); transition-duration: .08s; }
+  /* Tarjetas de cristal con filo dorado */
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 22px 24px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), var(--shadow);
+    -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
+  }
+  body.has-photo .card { background: var(--card); }
+  .notice { background: linear-gradient(135deg, color-mix(in srgb, var(--gold) 18%, var(--card)), var(--card) 65%); }
+
+  /* Botones */
+  button { border-radius: var(--r-sm); border: 1px solid var(--line); background: color-mix(in srgb, var(--card) 85%, transparent); color: var(--text); font-weight: 700;
+    transition: transform .25s var(--spring), box-shadow .25s var(--ease), border-color .2s, background .2s; }
+  button:active:not(:disabled) { transform: translateY(1px) scale(.97); transition-duration: .08s; }
   button.primary {
-    background: var(--accent); color: var(--on-accent); font-weight: 600; letter-spacing: -.005em;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 10px 24px -10px color-mix(in srgb, var(--accent) 70%, transparent);
+    position: relative; overflow: hidden; color: #2b1d05; border-color: transparent; font-weight: 800; letter-spacing: .01em;
+    background: linear-gradient(135deg, var(--gold-2), var(--gold) 55%, #c4862a);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), 0 10px 24px -10px rgba(217, 164, 58, .8);
+  }
+  button.primary::after {
+    content: ""; position: absolute; inset: 0; transform: translateX(-120%);
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .55) 50%, transparent 70%); transition: transform .7s var(--ease);
   }
   @media (hover: hover) {
-    button:hover:not(:disabled) { border-color: color-mix(in srgb, var(--accent) 55%, transparent); transform: translateY(-1px); }
-    button.primary:hover:not(:disabled) { filter: none; background: color-mix(in srgb, var(--accent) 88%, var(--text)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 14px 28px -10px color-mix(in srgb, var(--accent) 75%, transparent); }
+    button:hover:not(:disabled) { transform: translateY(-2px); border-color: color-mix(in srgb, var(--gold) 70%, transparent); box-shadow: var(--glow); }
+    button.primary:hover:not(:disabled) { filter: none; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), 0 14px 30px -10px rgba(217, 164, 58, .95); }
+    button.primary:hover::after { transform: translateX(120%); }
   }
-  :focus-visible { outline: 2.5px solid var(--accent); outline-offset: 2px; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent); }
-  input[type=number], input[type=text], input[type=search], input[type=email], input[type=password], select, textarea {
-    border-radius: var(--r-sm); border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 70%, var(--card)); transition: border-color .2s, box-shadow .2s;
+  button.danger { color: var(--ko); }
+  :focus-visible { outline: 2.5px solid var(--gold); outline-offset: 2px; }
+  input[type=number], input[type=text], input[type=search], input[type=email], input[type=password], input[type=date], select, textarea {
+    font: inherit; font-size: 16px; padding: 8px 10px; color: var(--text); border-radius: var(--r-sm); border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--card) 70%, transparent); transition: border-color .2s, box-shadow .2s;
   }
-  input[type=email], input[type=password] { font: inherit; font-size: 16px; padding: 8px 10px; color: var(--text); }
-  .linkbtn:hover { transform: none !important; }
+  .set-row select { min-width: 0; max-width: 62%; text-overflow: ellipsis; } /* temas con nombre largo no desbordan */
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 25%, transparent); }
+  input[type=checkbox], input[type=radio], input[type=range] { accent-color: var(--gold); }
+  a { color: color-mix(in srgb, var(--accent) 80%, var(--text)); }
 
-  /* Navegación del inicio: barra segmentada */
+  /* Navegación: una cinta de cristal */
   .homenav {
-    gap: 4px; padding: 5px; border-radius: 18px; margin-bottom: 18px;
-    background: color-mix(in srgb, var(--card) 70%, transparent); border: 1px solid var(--line);
-    box-shadow: inset 0 1px 0 var(--hi), var(--shadow); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    gap: 4px; padding: 6px; border-radius: 999px; margin-bottom: 20px;
+    background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
   }
-  .homenav button { border: none; background: transparent; box-shadow: none; border-radius: 13px; font-weight: 500; min-height: 42px; }
-  @media (hover: hover) { .homenav button:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 12%, transparent); transform: none; } }
+  .homenav button { border: none; background: transparent; border-radius: 999px; min-height: 42px; font-weight: 700; box-shadow: none; }
+  @media (hover: hover) { .homenav button:hover:not(:disabled) { background: color-mix(in srgb, var(--gold) 18%, transparent); transform: none; box-shadow: none; } }
+  @media (max-width: 560px) { .homenav { border-radius: 24px; } .homenav button { border-radius: 18px; } }
 
-  /* Objetivo diario */
-  .countdown .big { font-size: 2.8rem; font-weight: 700; letter-spacing: -.04em; line-height: 1; color: var(--accent); }
-  .progress { height: 10px; background: color-mix(in srgb, var(--text) 7%, transparent); }
-  .progress > div, .bar > div { background: var(--accent); box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 45%, transparent); }
+  /* Objetivo diario: barra de polvo de estrellas */
+  .countdown { justify-content: center; }
+  .countdown .big { font-size: 2.8rem; font-weight: 700; color: var(--gold); text-shadow: 0 0 18px color-mix(in srgb, var(--gold) 50%, transparent); }
+  .progress, .bar { height: 10px; background: var(--grid); }
+  .progress > div, .bar > div {
+    background: linear-gradient(90deg, var(--accent), var(--gold) 70%, var(--gold-2));
+    box-shadow: 0 0 12px color-mix(in srgb, var(--gold) 60%, transparent);
+  }
 
-  /* Accesos rápidos en cuadrícula tipo bento: el repaso inteligente manda */
+  /* Accesos rápidos: el repaso inteligente es la «puerta del castillo» */
   .quick { gap: 12px; }
-  .quick-btn {
-    border: 1px solid var(--line); border-radius: 20px; padding: 16px; min-height: 118px; gap: 4px;
-    background: color-mix(in srgb, var(--bg) 45%, var(--card)); box-shadow: inset 0 1px 0 var(--hi);
-  }
-  .quick-btn b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: -.02em; line-height: 1.2; }
+  .quick-btn { border-radius: 22px; padding: 16px; min-height: 120px; gap: 4px; background: color-mix(in srgb, var(--card) 80%, transparent); }
+  .quick-btn b { font-weight: 800; font-size: 1.05rem; line-height: 1.2; }
   .quick-btn .qi {
-    font-size: 1.35rem; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; margin-bottom: 8px;
-    background: var(--card); box-shadow: 0 6px 16px -8px color-mix(in srgb, var(--accent) 55%, transparent);
+    font-size: 1.4rem; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; margin-bottom: 8px;
+    background: radial-gradient(circle at 35% 30%, #fff, color-mix(in srgb, var(--gold-2) 70%, var(--card)));
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 50%, transparent), 0 6px 16px -6px rgba(217, 164, 58, .7);
   }
   .quick-btn.hero-tile {
-    grid-column: 1 / -1; min-height: 0; flex-direction: row; align-items: center; gap: 14px; padding: 18px;
-    background: radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--accent) 26%, var(--card)), color-mix(in srgb, var(--accent-2) 10%, var(--card)) 70%);
-    border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    grid-column: 1 / -1; min-height: 0; flex-direction: row; align-items: center; gap: 14px; padding: 18px 20px;
+    background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 30%, var(--card)), color-mix(in srgb, var(--gold) 22%, var(--card)));
+    border-color: color-mix(in srgb, var(--gold) 55%, transparent);
   }
-  .quick-btn.hero-tile .qi { margin: 0; width: 56px; height: 56px; font-size: 1.8rem; flex-shrink: 0; }
-  .quick-btn.hero-tile b { font-size: 1.3rem; display: block; }
-  .quick-btn.hero-tile::after { content: "→"; margin-left: auto; font-size: 1.4rem; color: var(--accent); transition: transform .25s var(--spring); }
-  @media (hover: hover) {
-    .quick-btn:hover:not(:disabled) { box-shadow: inset 0 1px 0 var(--hi), var(--shadow-lift); transform: translateY(-3px); }
-    .quick-btn.hero-tile:hover::after { transform: translateX(4px); }
-  }
+  .quick-btn.hero-tile .qi { margin: 0; width: 58px; height: 58px; font-size: 1.8rem; flex-shrink: 0; }
+  .quick-btn.hero-tile b { font-family: var(--font-display); font-size: 1.25rem; display: block; }
+  .quick-btn.hero-tile::after { content: "✦"; margin-left: auto; font-size: 1.5rem; color: var(--gold); animation: sparkle 2.4s ease-in-out infinite; }
   .modes { gap: 12px; }
-  .mode-card { border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 16px; transition: border-color .2s, background .2s, box-shadow .2s; }
-  .mode-card:has(input:checked) { box-shadow: 0 0 0 1px var(--accent) inset; }
-  .mode-card .t { font-weight: 600; }
-  .drop { border: 1.5px dashed color-mix(in srgb, var(--text) 18%, transparent); border-radius: var(--r-md); }
+  .mode-card { border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 16px; transition: border-color .2s, box-shadow .2s; }
+  .mode-card:has(input:checked) { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 14%, var(--card)); box-shadow: var(--glow); }
+  .drop { border: 1.5px dashed var(--line); border-radius: var(--r-md); }
+  .picker, .pick-sec, .dom-b { border-color: var(--line); border-radius: var(--r-md); background: color-mix(in srgb, var(--card) 70%, transparent); }
+  .tchip, .chip { border-color: var(--line); }
+  .tchip.on, .tab.on, .navgrid button.done { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 16%, var(--card)); }
+  .tag { background: color-mix(in srgb, var(--gold) 20%, var(--card)); color: var(--text); border-radius: 8px; }
+  .pick-sheet { background: linear-gradient(180deg, var(--sky-1), var(--sky-2)); }
+  .pick-foot { background: var(--card); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+  .ptile { border-width: 1px; border-color: var(--line); border-radius: 50% 50% 18px 18px / 30% 30% 18px 18px; background: var(--card); }
+  .ptile.full { border-color: var(--gold); box-shadow: var(--glow); background: color-mix(in srgb, var(--gold) 14%, var(--card)); }
+  .ptile.open { outline-color: var(--gold); }
+  .ptile-panel { border-color: var(--gold); background: var(--card); }
 
   /* Test */
-  .progress { margin: 12px 0 18px; }
-  .options { gap: 10px; }
-  .options button { border-width: 1px; border-radius: var(--r-md); padding: 14px 16px; min-height: 60px; background: color-mix(in srgb, var(--card) 92%, var(--bg)); }
-  .options button .letter { border-radius: 10px; font-family: var(--font-display); font-weight: 600; background: color-mix(in srgb, var(--text) 7%, transparent); }
-  .options button.sel, .options button.ok, .options button.ko { box-shadow: 0 0 0 1px currentColor inset; }
-  .options button.sel { color: var(--text); box-shadow: 0 0 0 1px var(--accent) inset, 0 8px 20px -12px var(--accent); }
-  .options button.ok { box-shadow: 0 0 0 1px var(--ok) inset; } .options button.ko { box-shadow: 0 0 0 1px var(--ko) inset; }
+  .options button { border-radius: var(--r-md); padding: 14px 16px; min-height: 60px; }
+  .options button .letter { font-family: var(--font-display); border-radius: 50%; background: color-mix(in srgb, var(--gold) 18%, transparent); color: var(--text); }
+  .options button.sel { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 14%, var(--card)); box-shadow: var(--glow); }
+  .options button.sel .letter { background: var(--gold); color: #2b1d05; }
+  .options button.ok { box-shadow: 0 0 0 1px var(--ok), 0 0 22px -6px var(--ok); }
   .explain { border-radius: var(--r-md); border-left-width: 3px; line-height: 1.6; }
-  .navgrid button { border-radius: 10px; width: 42px; }
-  .topbar > div:first-child { font-weight: 500; }
-  .timer { background: color-mix(in srgb, var(--text) 7%, transparent); }
+  .star.on { color: var(--gold); text-shadow: 0 0 10px var(--gold); }
+  .timer { background: var(--grid); }
 
   /* Resultado y progreso */
-  .ring { box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--c) 60%, transparent); }
-  .ring > div { font-weight: 700; letter-spacing: -.03em; }
-  .kpis { gap: 10px; }
-  .kpi { border-radius: var(--r-md); padding: 14px; background: color-mix(in srgb, var(--bg) 55%, var(--card)); border: 1px solid var(--line); }
-  .kpi .v { font-weight: 700; letter-spacing: -.035em; }
-  .kpi .muted { font-size: .8rem; }
-  th { font-size: .74rem; letter-spacing: .06em; font-weight: 600; }
-  th, td { border-bottom-color: var(--line); padding: 10px 6px; }
-  .bar { background: color-mix(in srgb, var(--text) 7%, transparent); }
-  .dom-b { border-color: var(--line); border-radius: var(--r-md); background: color-mix(in srgb, var(--bg) 40%, var(--card)); transition: box-shadow .2s; }
-  .dom-b[open] { box-shadow: var(--shadow); }
-  .tag { border-radius: 7px; font-weight: 600; }
-  .heat { gap: 4px; } .heat i { border-radius: 4px; }
+  .ring { --c: var(--gold); box-shadow: 0 0 30px -8px color-mix(in srgb, var(--gold) 70%, transparent); }
+  .ring > div { background: var(--card); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .kpi { border-radius: var(--r-md); padding: 14px; background: color-mix(in srgb, var(--card) 60%, transparent); border: 1px solid var(--line); }
+  .kpi .v { font-weight: 700; }
+  th, td { border-bottom-color: var(--line); }
+  .heat i.l1 { background: color-mix(in srgb, var(--gold) 30%, var(--grid)); } .heat i.l2 { background: color-mix(in srgb, var(--gold) 55%, var(--grid)); }
+  .heat i.l3 { background: color-mix(in srgb, var(--gold) 78%, var(--grid)); } .heat i.l4 { background: var(--gold); box-shadow: 0 0 6px var(--gold); }
+  .toast, .pomo-panel, .pomo-pill { border-radius: 22px; box-shadow: var(--shadow); }
+  .flash-card, .vf-card { min-height: 240px; }
+  .grade, .vf-btns button { border-radius: var(--r-md); }
+  .swatch.on, .photo-tile.on { box-shadow: 0 0 0 3px var(--gold); }
 
-  /* Selector de temas, ajustes, tarjetas de estudio */
-  .picker, .pick-sec { border-color: var(--line); border-radius: var(--r-md); }
-  .tchip { border-color: var(--line); }
-  .ptile { border-width: 1px; border-color: var(--line); border-radius: 18px; box-shadow: inset 0 1px 0 var(--hi); }
-  .ptile.full { box-shadow: 0 0 0 1px var(--accent) inset, 0 10px 22px -14px var(--accent); }
-  .set-row { padding: 2px 0; }
-  .flash-card { min-height: 240px; }
-  .flash-card .q, .vf-card .q { font-size: 1.35rem; }
-  .grade, .vf-btns button { border-width: 1px; border-radius: var(--r-md); }
-  .toast, .pomo-panel { border-radius: 20px; box-shadow: var(--shadow-lift); }
-  .pomo-pill { box-shadow: var(--shadow-lift); }
-
-  /* Entrada escalonada de las tarjetas */
-  /* solo en el inicio: en el test cada pregunta se repinta y no debe "saltar" */
-  main > .hero, main > .hero ~ * { animation: rise .5s var(--ease) both; }
-  main > .hero ~ :nth-child(2) { animation-delay: .04s; } main > .hero ~ :nth-child(3) { animation-delay: .08s; }
-  main > .hero ~ :nth-child(4) { animation-delay: .12s; } main > .hero ~ :nth-child(5) { animation-delay: .16s; }
-  main > .hero ~ :nth-child(n+6) { animation-delay: .2s; }
-  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
-  @media (prefers-reduced-motion: reduce) { main > * { animation: none !important; } }
+  /* Entrada escalonada solo en el inicio (el test se repinta en cada pregunta) */
+  main > .hero, main > .hero ~ * { animation: rise .6s var(--ease) both; }
+  main > .hero ~ :nth-child(2) { animation-delay: .05s; } main > .hero ~ :nth-child(3) { animation-delay: .1s; }
+  main > .hero ~ :nth-child(4) { animation-delay: .15s; } main > .hero ~ :nth-child(n+5) { animation-delay: .2s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px) scale(.99); } }
+  @media (prefers-reduced-motion: reduce) { html::before, .hero h1, .hero::before, .hero::after, .quick-btn.hero-tile::after, main > * { animation: none !important; } }
   @media (max-width: 480px) {
     .card { padding: 18px 16px 20px; }
-    .quick-btn { min-height: 108px; padding: 14px; }
-    .countdown .big { font-size: 2.4rem; }
+    .quick-btn { min-height: 110px; padding: 14px; }
+    .countdown .big { font-size: 2.3rem; }
   }
 </style>
 </head>
@@ -3097,6 +3120,7 @@ document.addEventListener('keydown', e => {
 // ---------- Temas: color + foto de fondo ----------
 // Cada tema: [fondo, acento, acento 2, fondo de selección] en claro y en oscuro
 const THEMES = {
+  magia:     { name: 'Magia',     light: ['#f4eefc', '#6d4fc9', '#d9a43a', '#ece4ff'], dark: ['#0d1130', '#f0c56a', '#9d8dff', '#232857'] },
   rosa:      { name: 'Rosa',      light: ['#ffe3ee', '#e64980', '#be4bdb', '#ffdeeb'], dark: ['#24121b', '#f783ac', '#e599f7', '#4a1f33'] },
   lila:      { name: 'Lila',      light: ['#f1e9ff', '#7950f2', '#be4bdb', '#ece2ff'], dark: ['#1b1526', '#9775fa', '#e599f7', '#2f2347'] },
   azul:      { name: 'Azul',      light: ['#f4f6fb', '#4263eb', '#7048e8', '#eef2ff'], dark: ['#111318', '#748ffc', '#9775fa', '#222a48'] },
@@ -3104,8 +3128,13 @@ const THEMES = {
   menta:     { name: 'Menta',     light: ['#e3f9f0', '#0ca678', '#1098ad', '#d3f9e8'], dark: ['#0f1d18', '#38d9a9', '#3bc9db', '#133a2e'] },
   melocoton: { name: 'Melocotón', light: ['#ffeedd', '#f76707', '#f03e3e', '#ffe8cc'], dark: ['#22160e', '#ffa94d', '#ff8787', '#43291a'] },
 };
-const DEFAULT_THEME = { color: 'rosa', customBg: null, photo: 'gato', photoOp: 45 };
+const DEFAULT_THEME = { color: 'magia', customBg: null, photo: 'none', photoOp: 45 };
 const getTheme = () => ({ ...DEFAULT_THEME, ...load(K.theme, {}) });
+// Estreno de la estética «cuento de hadas»: quien tuviera otro tema guardado pasa una vez a «Magia» (luego puede cambiarlo)
+if (!localStorage.getItem(P + 'themeMagia')) {
+  save(K.theme, { ...load(K.theme, {}), color: 'magia', photo: 'none', customBg: null });
+  localStorage.setItem(P + 'themeMagia', '1');
+}
 const darkMQ = matchMedia('(prefers-color-scheme: dark)');
 const myPhoto = () => { try { return localStorage.getItem(K.photo); } catch { return null; } };
 
@@ -3172,7 +3201,7 @@ function showTheme() {
       <label class="muted" for="op">Intensidad de la foto: <b id="opVal">${t.photoOp}%</b></label>
       <input type="range" id="op" min="10" max="100" step="5" value="${t.photoOp}" ${t.photo === 'none' ? 'disabled' : ''}>
     </div>
-    <div class="card"><button id="resetTheme">↺ Restablecer (rosa con gatito)</button></div>`;
+    <div class="card"><button id="resetTheme">↺ Restablecer (Magia, sin foto)</button></div>`;
 
   $('home').onclick = () => showHome();
   app.querySelectorAll('.swatch').forEach(b => b.onclick = () => { saveTheme({ color: b.dataset.id, customBg: null }); showTheme(); });
