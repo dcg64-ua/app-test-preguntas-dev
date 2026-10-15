@@ -2889,7 +2889,10 @@ function showAudio() {
   const c = audio.cards[audio.i];
   if (!c) return stopAudio(true);
   const it = c.item;
-  const opts = c.type === 'q' ? it.opciones.map((o, k) => `<div class="${audio.phase === 'answer' && k === it.correcta ? 'audio-ok' : ''}">${'ABCDEFGH'[k]}) ${esc(o)}</div>`).join('') : '';
+  // Las opciones se pueden tocar hasta que se dice la respuesta; después muestran el acierto o el fallo
+  const shown = audio.phase === 'answer' || audio.chosen != null;
+  const opts = c.type === 'q' ? it.opciones.map((o, k) => `<button class="${shown && k === it.correcta ? 'ok' : shown && k === audio.chosen ? 'ko' : ''}" data-k="${k}" ${shown ? 'disabled' : ''}>
+    <span class="letter">${'ABCDEFGH'[k]}</span><span>${esc(o)}</span></button>`).join('') : '';
   app.innerHTML = `
     <div class="topbar">
       <div><b>${audio.i + 1}</b><span class="muted"> / ${audio.cards.length}</span>${it.tema ? ` <span class="tag">${esc(it.tema)}</span>` : ''}</div>
@@ -2899,7 +2902,7 @@ function showAudio() {
     <div class="card" id="audioCard">
       <div class="muted" style="margin-bottom:6px">${{ q: '🔊 Leyendo la pregunta…', think: '🤔 Piensa…', answer: '✅ Respuesta', '': audio.playing ? '' : '⏸ En pausa' }[audio.phase] || ''}</div>
       <div class="q">${esc(c.front)}</div>
-      ${opts ? `<div class="audio-opts">${opts}</div>` : ''}
+      ${opts ? `<div class="options">${opts}</div>${shown ? '' : '<p class="help" style="margin-bottom:0">Toca una opción para responder.</p>'}` : ''}
       ${audio.phase === 'answer' ? `<hr class="sep">${cardBackHTML(c)}` : ''}
     </div>
     <div class="audio-ctrl">
@@ -2913,29 +2916,37 @@ function showAudio() {
   $('playA').onclick = () => audio.playing ? pauseAudio() : playAudio();
   $('prevA').onclick = () => jumpAudio(-1);
   $('nextA').onclick = () => jumpAudio(1);
+  app.querySelectorAll('#audioCard .options button').forEach(b => b.onclick = () => answerAudio(+b.dataset.k));
   onKey = e => {
     if (!$('audioCard')) return false;
-    if (e.key === ' ') { e.preventDefault(); $('playA').click(); }
+    const k = '1234abcd'.indexOf(e.key.toLowerCase()) % 4;
+    if (e.key.length === 1 && k >= 0 && c.type === 'q' && k < it.opciones.length) answerAudio(k);
+    else if (e.key === ' ') { e.preventDefault(); $('playA').click(); }
     else if (e.key === 'ArrowRight') jumpAudio(1);
     else if (e.key === 'ArrowLeft') jumpAudio(-1);
   };
 }
 
-async function playAudio() {
+// fromAnswer: se acaba de responder, así que se salta la lectura y la pausa y se dice directamente la solución
+async function playAudio(fromAnswer = false) {
   audio.playing = true;
   const tok = ++audio.tok;
   try { wakeLock = await navigator.wakeLock?.request('screen'); } catch {}
   while (audio && tok === audio.tok && audio.i < audio.cards.length) {
     const c = audio.cards[audio.i], it = c.item;
-    audio.phase = 'q'; showAudio();
-    await speak(c.front, tok);
-    if (c.type === 'q' && audio.readOpts) for (const [k, o] of it.opciones.entries()) await speak(`${'ABCDEFGH'[k]}: ${o}`, tok);
-    if (tok !== audio?.tok) return;
-    audio.phase = 'think'; showAudio();
-    await sleep(audio.pause * 1000);
-    if (tok !== audio?.tok) return;
+    if (!fromAnswer) {
+      audio.phase = 'q'; showAudio();
+      await speak(c.front, tok);
+      if (c.type === 'q' && audio.readOpts) for (const [k, o] of it.opciones.entries()) await speak(`${'ABCDEFGH'[k]}: ${o}`, tok);
+      if (tok !== audio?.tok) return;
+      audio.phase = 'think'; showAudio();
+      await sleep(audio.pause * 1000);
+      if (tok !== audio?.tok) return;
+    }
+    fromAnswer = false;
     audio.phase = 'answer'; showAudio();
-    await speak((c.type === 'q' ? `Respuesta ${'ABCDEFGH'[it.correcta]}: ` : 'Respuesta: ') + c.back, tok);
+    const verdict = audio.chosen == null ? '' : audio.chosen === it.correcta ? 'Correcto. ' : 'Incorrecto. ';
+    await speak(verdict + (c.type === 'q' ? `Respuesta ${'ABCDEFGH'[it.correcta]}: ` : 'Respuesta: ') + c.back, tok);
     if (audio.readExp) {
       await speak(it.explicacion, tok);
       await speak(it.truco && 'Truco: ' + it.truco, tok);
@@ -2944,9 +2955,19 @@ async function playAudio() {
     await sleep(1200);
     if (tok !== audio?.tok) return;
     audio.i++;
-    audio.phase = '';
+    audio.phase = ''; audio.chosen = null;
   }
   if (audio && tok === audio.tok) stopAudio(true);
+}
+// Responder tocando una opción (o con 1-4 / A-D): cuenta como en un test y se dice si es correcta
+function answerAudio(k) {
+  const it = audio.cards[audio.i].item;
+  if (audio.chosen != null || audio.phase === 'answer') return;
+  const ok = k === it.correcta;
+  audio.chosen = k;
+  updateStats(it, ok, k); srsUpdate(it, ok); addDaily(1);
+  speechSynthesis.cancel();
+  playAudio(true);
 }
 function pauseAudio() {
   audio.tok++; audio.playing = false; audio.phase = '';
@@ -2958,7 +2979,7 @@ function jumpAudio(d) {
   const was = audio.playing;
   audio.tok++; speechSynthesis.cancel();
   audio.i = Math.max(0, Math.min(audio.cards.length - 1, audio.i + d));
-  audio.phase = ''; audio.playing = false;
+  audio.phase = ''; audio.playing = false; audio.chosen = null;
   if (was) playAudio(); else showAudio();
 }
 function stopAudio(finished) {
