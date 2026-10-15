@@ -571,6 +571,31 @@
     .quick-btn { min-height: 110px; padding: 14px; }
     .countdown .big { font-size: 2.3rem; }
   }
+
+  /* Frases motivadoras: tarjeta vertical tipo pin */
+  .muse {
+    position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; text-align: center;
+    min-height: 190px; padding: 34px 22px 16px; margin-bottom: 16px; border-radius: var(--r-lg); color: #fff;
+    background: var(--muse-bg); box-shadow: var(--shadow); transition: background .8s var(--ease);
+  }
+  .muse::before { /* brillo y grano para el aire «aesthetic» */
+    content: ""; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay; opacity: .5;
+    background: radial-gradient(80% 50% at 20% 0%, rgba(255, 255, 255, .55), transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  }
+  .muse blockquote { position: relative; margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; line-height: 1.4; text-wrap: balance; text-shadow: 0 2px 14px rgba(0, 0, 0, .35); }
+  .muse.in blockquote { animation: museIn .7s var(--ease); }
+  .muse-spark { position: absolute; top: 12px; left: 16px; color: #ffe7a3; font-size: 1.1rem; animation: sparkle 2.6s ease-in-out infinite; }
+  .muse-nav { position: relative; display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+  .muse-btn { width: 38px; min-height: 38px; padding: 0; border-radius: 50%; font-size: 1.3rem; line-height: 1; color: #fff; background: rgba(255, 255, 255, .18); border: 1px solid rgba(255, 255, 255, .4); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  @media (hover: hover) { .muse-btn:hover:not(:disabled) { background: rgba(255, 255, 255, .3); box-shadow: none; border-color: #fff; } }
+  @keyframes museIn { from { opacity: 0; transform: translateY(8px); filter: blur(4px); } }
+  /* En pantallas anchas va en el lateral, con proporción de pin; en el móvil, solo en el inicio */
+  .muse-side { position: fixed; z-index: 5; top: 50%; transform: translateY(-50%); right: max(24px, calc((100vw - 720px) / 2 - 300px)); width: 260px; aspect-ratio: 2 / 3; margin: 0; }
+  .muse-side blockquote { font-size: 1.45rem; }
+  @media (max-width: 1179px) { .muse-side { display: none; } }
+  @media (min-width: 1180px) { .muse-home { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .muse-spark, .muse.in blockquote { animation: none !important; } }
 </style>
 </head>
 <body>
@@ -1168,6 +1193,53 @@ function fetchServerSet() {
 }
 
 // ---------- Inicio ----------
+
+// ---------- Frases motivadoras (tarjetas tipo pin) ----------
+// En pantallas anchas van en el lateral; en el móvil, como tarjeta en el inicio. Rotan solas cada 15 s.
+const FRASES = [
+  'Cada pregunta que repasas hoy es un punto el día del examen.',
+  'No tiene que ser perfecto. Tiene que ser hoy.',
+  'Poco a poco se llega lejos.',
+  'Tu plaza se escribe con cada tema que estudias.',
+  'Descansar también es parte del plan.',
+  'Lo difícil de hoy será lo fácil de mañana.',
+  'La constancia gana a la prisa.',
+  'Un tema más. Solo uno. Y luego otro.',
+  'Los fallos de hoy son los aciertos del examen.',
+  'Eres más capaz de lo que crees.',
+  'La disciplina te lleva donde la motivación no llega.',
+  'Respira. Repasa. Repite.',
+  'Pequeños pasos, grandes plazas.',
+  'Que el miedo no decida por ti.',
+  'Hoy también cuenta.',
+  'Cuando quieras rendirte, recuerda por qué empezaste.',
+  'Estás construyendo algo que nadie te podrá quitar.',
+  'Un día de estos, este esfuerzo tendrá tu nombre en una lista.'
+];
+const MUSE_BG = [
+  'linear-gradient(160deg, #2a2a72 0%, #7b5cd6 55%, #e7a6c9 100%)',
+  'linear-gradient(170deg, #f3a9c7, #b48ae8 55%, #6f7ee8)',
+  'linear-gradient(160deg, #0f1a3d, #2f4a8a 55%, #d9a43a)',
+  'linear-gradient(165deg, #f6a57f, #e9779b 55%, #8f63cf)',
+  'linear-gradient(160deg, #1d3b3a, #3f8f86 55%, #d8b45e)',
+  'linear-gradient(170deg, #b9a3ff, #7e6ad8 50%, #3b2f8f)'
+];
+let museI = Math.floor(Math.random() * FRASES.length);
+const museHTML = cls => `<aside class="muse ${cls}" aria-label="Frase motivadora" style="--muse-bg:${MUSE_BG[museI % MUSE_BG.length]}">
+  <span class="muse-spark" aria-hidden="true">✦</span>
+  <blockquote aria-live="polite">${esc(FRASES[museI])}</blockquote>
+  <div class="muse-nav"><button class="muse-btn" data-d="-1" aria-label="Frase anterior">‹</button><button class="muse-btn" data-d="1" aria-label="Frase siguiente">›</button></div>
+</aside>`;
+function museStep(d) {
+  museI = (museI + d + FRASES.length) % FRASES.length;
+  document.querySelectorAll('.muse').forEach(el => {
+    el.style.setProperty('--muse-bg', MUSE_BG[museI % MUSE_BG.length]);
+    el.querySelector('blockquote').textContent = FRASES[museI];
+    el.classList.remove('in'); void el.offsetWidth; el.classList.add('in'); // reinicia la animación de entrada
+  });
+}
+document.addEventListener('click', e => { const b = e.target.closest('.muse-btn'); if (b) museStep(+b.dataset.d); });
+setInterval(() => { if (document.visibilityState === 'visible') museStep(1); }, 15000);
 function dailyCardHTML() {
   const s = getSettings(), today = load(K.daily, {})[todayKey()] || 0, left = daysLeft(s.examDate), st = streak();
   if (left === null && !s.dailyGoal) return '';
@@ -1212,7 +1284,7 @@ function showHome(error) {
       <p class="muted">${MODOS[saved.sim ? 'simulacro' : saved.mode] || ''} · pregunta ${saved.i + 1} de ${saved.list.length} · ${fmtTime(saved.elapsed)} transcurridos</p>
       <div class="row"><button class="primary" id="resume">Reanudar</button><button id="discard">Descartar</button></div>
     </div>` : ''}
-    ${hasContent ? dailyCardHTML() + `
+    ${hasContent ? dailyCardHTML() + museHTML('muse-home') + `
     <div class="card">
       <div class="quick">
         <button class="quick-btn hero-tile" id="srsBtn"><span class="qi">🧠</span><span><b>Repaso inteligente</b>
@@ -3321,6 +3393,7 @@ for (const fn of ['startRun', 'startFlash', 'startAudio', 'startVF']) {
 // ---------- Arranque ----------
 applyTheme();
 renderPomo();
+document.body.insertAdjacentHTML('beforeend', museHTML('muse-side'));
 syncStart();
 // Si hay preguntas.json junto al HTML (p. ej. GitHub Pages) y no has cargado otro archivo
 // ni editado en la app, se usa siempre la última versión del servidor.
