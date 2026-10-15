@@ -554,12 +554,12 @@
 <main id="app"></main>
 
 <script>
-// Entorno: desarrollo (repositorio *-dev, o en local) o producción.
+// Entorno: desarrollo (repositorio *-dev o *-test, o en local) o producción.
 // Ambos viven en el mismo dominio (github.io), así que cada uno guarda sus datos con un prefijo distinto.
 const LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname) || location.protocol === 'file:';
 // En local se puede probar como producción con ?env=prod
 const ENV = LOCAL && new URLSearchParams(location.search).get('env') === 'prod' ? 'prod'
-  : /^\/[^/]+-dev\//.test(location.pathname) || LOCAL ? 'dev' : 'prod';
+  : /^\/[^/]+-(dev|test)\//.test(location.pathname) || LOCAL ? 'dev' : 'prod';
 // Funciones ya aprobadas para producción. En desarrollo están todas activas.
 // Para pasar una función a producción basta con añadirla aquí.
 const PROD_FEATURES = ['flash', 'articulos', 'vf', 'recall', 'notas', 'confusion', 'cuenta']; // todas menos 'audio'
@@ -580,7 +580,7 @@ if (ENV === 'dev') {
 // En desarrollo, aviso grande antes de empezar cada test: hay que aceptarlo para seguir
 function devGate(go) {
   if (ENV !== 'dev') return go();
-  const prodUrl = LOCAL ? '?env=prod' : location.pathname.replace(/-dev\//, '/');
+  const prodUrl = LOCAL ? '?env=prod' : location.pathname.replace(/-(dev|test)\//, '/');
   document.body.insertAdjacentHTML('beforeend', `<div class="dev-warn" id="devWarn" role="alertdialog" aria-modal="true" aria-labelledby="devWarnT"><div>
     <div class="big">🧪⚠️</div>
     <h2 id="devWarnT">VERSIÓN DE DESARROLLO</h2>
