@@ -418,7 +418,9 @@ let timerId = null;
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const shuffle = a => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+// viewAs: el panel admin pinta Progreso con los datos de otro usuario (solo lectura) sustituyendo los datos sincronizados
+let viewAs = null;
+const load = (k, d) => { if (viewAs && syncName(k)) return viewAs[k] ?? d; try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); syncTouch(k); } catch {} };
 const keyOf = q => q.pregunta;
 const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
@@ -758,6 +760,7 @@ async function showAdmin(env = ENV) {
           <td>${MODOS[h.modo] || ''}${h.tema ? ` <span class="tag">${esc(h.tema)}</span>` : ''}${h.modo === 'simulacro' ? (h.apto ? ' ✅' : ' ❌') : ''}</td>
           <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${h.aciertos}/${h.total}</td></tr>`).join('')}
       </table></div>` : '<p class="muted">Todavía no ha hecho ningún test.</p>'}
+      <button class="small primary" data-prog="${esc(u.uid)}" style="margin-top:12px">📊 Ver su progreso</button>
     </details>`;
   };
 
@@ -772,6 +775,19 @@ async function showAdmin(env = ENV) {
   $('home').onclick = () => showHome();
   $('admEnv').onclick = () => showAdmin(env === 'prod' ? 'dev' : 'prod');
   $('admReload').onclick = () => showAdmin(env);
+  app.querySelectorAll('[data-prog]').forEach(b => b.onclick = () => showUserStats(users.find(u => u.uid === b.dataset.prog), env));
+}
+
+// La pantalla de Progreso de siempre, pintada con los datos de un usuario. Solo lectura: no se guarda nada.
+function showUserStats(u, env) {
+  viewAs = Object.fromEntries(Object.entries(u.data).map(([name, v]) => [P + name, v]));
+  try { showStats(); } finally { viewAs = null; }
+  $('clearHist')?.remove();
+  app.querySelector('h1').parentElement.insertAdjacentHTML('afterend',
+    `<p class="muted" style="margin:-8px 0 16px">👤 Progreso de <b>${esc(u.email || u.uid)}</b> · ${env === 'prod' ? 'app normal' : 'desarrollo'} · solo lectura</p>`);
+  $('home').textContent = '← Panel admin';
+  $('home').onclick = () => showAdmin(env);
+  scrollTo(0, 0);
 }
 
 // ---------- Traer a la app normal el progreso hecho en desarrollo ----------
