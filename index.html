@@ -127,6 +127,7 @@
   .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .kpi { background: var(--bg); border-radius: 12px; padding: 12px; }
   .kpi .v { font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; }
+  .kpi .v .pct { font-size: .9rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
   .chart { position: relative; }
   .chart svg { width: 100%; height: auto; display: block; }
   .tip { position: absolute; pointer-events: none; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: .85rem; box-shadow: var(--shadow); white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); }
@@ -755,10 +756,10 @@ async function showAdmin(env = ENV) {
         ${weak.map(([t, s]) => `<tr><td>${esc(t)}</td><td class="num">${s.ok + s.ko}</td><td class="num">${pct(s.ok, s.ok + s.ko)}%</td></tr>`).join('')}
       </table></div>` : ''}
       ${hist.length ? `<h3>Últimos tests</h3><div class="table-wrap"><table>
-        <tr><th>Fecha</th><th>Test</th><th class="num">Nota</th><th class="num">Aciertos</th></tr>
+        <tr><th>Fecha</th><th>Test</th><th class="num">Nota</th><th class="num">%</th><th class="num">Aciertos</th></tr>
         ${[...hist].reverse().slice(0, 8).map(h => `<tr><td>${fmtDate(h.fecha)}</td>
           <td>${MODOS[h.modo] || ''}${h.tema ? ` <span class="tag">${esc(h.tema)}</span>` : ''}${h.modo === 'simulacro' ? (h.apto ? ' ✅' : ' ❌') : ''}</td>
-          <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${h.aciertos}/${h.total}</td></tr>`).join('')}
+          <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${notaPct(entryNota(h))}</td><td class="num">${h.aciertos}/${h.total}</td></tr>`).join('')}
       </table></div>` : '<p class="muted">Todavía no ha hecho ningún test.</p>'}
       <button class="small primary" data-prog="${esc(u.uid)}" style="margin-top:12px">📊 Ver su progreso</button>
     </details>`;
@@ -861,6 +862,8 @@ function devImportCardHTML() {
 const fmtPen = p => PENALTIES.find(([v]) => Math.abs(v - p) < 1e-6)?.[1] || fmtNum(p, 3);
 const calcNota = (ok, ko, total, pen) => total ? Math.max(0, ok - ko * pen) / total * 10 : 0;
 const entryNota = h => h.nota ?? (h.total ? h.aciertos / h.total * 10 : 0);
+// La nota en porcentaje del examen (un 10 es el 100 %); ya incluye lo que restan los fallos
+const notaPct = n => fmtNum(n * 10, 0) + ' %';
 
 // ---------- Marcadas ----------
 const isMarked = q => !!load(K.marks, {})[keyOf(q)];
@@ -1739,8 +1742,8 @@ function showStats() {
     <div class="row between"><h1>Progreso</h1><button id="home">← Inicio</button></div>
     <div class="card kpis">
       <div class="kpi"><div class="muted">Tests hechos</div><div class="v">${hist.length}</div></div>
-      <div class="kpi"><div class="muted">Nota media</div><div class="v">${hist.length ? fmtNum(avg, 1) : '—'}</div></div>
-      <div class="kpi"><div class="muted">Mejor nota</div><div class="v">${hist.length ? fmtNum(Math.max(...notas), 1) : '—'}</div></div>
+      <div class="kpi"><div class="muted">Nota media</div><div class="v">${hist.length ? `${fmtNum(avg, 1)} <span class="pct">${notaPct(avg)}</span>` : '—'}</div></div>
+      <div class="kpi"><div class="muted">Mejor nota</div><div class="v">${hist.length ? `${fmtNum(Math.max(...notas), 1)} <span class="pct">${notaPct(Math.max(...notas))}</span>` : '—'}</div></div>
       <div class="kpi"><div class="muted">Racha</div><div class="v">🔥 ${st}</div></div>
       <div class="kpi"><div class="muted">Simulacros aptos</div><div class="v">${sims.length ? `${sims.filter(h => h.apto).length}/${sims.length}` : '—'}</div></div>
       <div class="kpi"><div class="muted">Acierto en dudosas</div><div class="v">${dN ? pct(dOk, dN) + '%' : '—'}</div></div>
@@ -1770,11 +1773,11 @@ function showStats() {
     <div class="card">
       <div class="row between"><h2>Historial</h2>${hist.length ? '<button class="small danger" id="clearHist">Borrar progreso</button>' : ''}</div>
       ${hist.length ? `<div class="table-wrap"><table>
-        <tr><th>Fecha</th><th>Test</th><th class="num">Nota</th><th class="num">Aciertos</th><th class="num">Tiempo</th></tr>
+        <tr><th>Fecha</th><th>Test</th><th class="num">Nota</th><th class="num">%</th><th class="num">Aciertos</th><th class="num">Tiempo</th></tr>
         ${[...hist].reverse().slice(0, 100).map(h => `<tr>
           <td>${fmtDate(h.fecha)}</td>
           <td>${MODOS[h.modo] || ''}${h.tema ? ` <span class="tag">${esc(h.tema)}</span>` : ''}${h.modo === 'simulacro' ? (h.apto ? ' ✅' : ' ❌') : ''}</td>
-          <td class="num"><b>${fmtNum(entryNota(h))}</b></td>
+          <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${notaPct(entryNota(h))}</td>
           <td class="num">${h.aciertos}/${h.total}</td><td class="num">${fmtTime(h.segundos)}</td></tr>`).join('')}
       </table></div>` : '<p class="muted">Todavía no has hecho ningún test.</p>'}
     </div>`;
