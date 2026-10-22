@@ -733,18 +733,20 @@ async function pushDisable() {
 function pushCardHTML() {
   if (!syncOn()) return '';
   const c = pushConf();
-  const time = `${String(c?.hour ?? 19).padStart(2, '0')}:${String(c?.minute ?? 0).padStart(2, '0')}`;
+  // El cartero pasa cada media hora: solo se puede elegir en punto o y media (un minuto suelto se redondea hacia arriba)
+  const mins = (c?.hour ?? 19) * 60 + (c?.minute ?? 0), sel = Math.min(23 * 60 + 30, Math.ceil(mins / 30) * 30);
+  const slots = Array.from({ length: 34 }, (_, i) => 7 * 60 + i * 30);
   const days = c?.days || [0, 1, 2, 3, 4, 5, 6];
   let body;
   if (!fbUser) body = '<p class="help">Inicia sesión arriba para activar los avisos.</p>';
   else if (isIOS && !isStandalone) body = '<p class="help">En el iPhone los avisos solo funcionan con la app instalada: en Safari, botón Compartir → «Añadir a pantalla de inicio», y ábrela desde el icono.</p>';
   else if (!pushSupported()) body = '<p class="help">Este navegador no admite avisos.</p>';
   else body = `
-    <div class="set-row"><span>Hora del aviso</span><input type="time" id="pushTime" value="${time}" step="300"></div>
+    <div class="set-row"><span>Hora del aviso</span><select id="pushTime">${slots.map(m => `<option value="${m}" ${m === sel ? 'selected' : ''}>${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}</option>`).join('')}</select></div>
     <p style="margin:12px 0 6px">Días</p>
     <div class="row" id="pushDays">${[1, 2, 3, 4, 5, 6, 0].map(d => `<button class="chip ${days.includes(d) ? 'on' : ''}" data-d="${d}" aria-pressed="${days.includes(d)}">${WEEKDAYS[d]}</button>`).join('')}</div>
     <label class="opt"><input type="checkbox" id="pushBehind" ${c?.onlyBehind === false ? '' : 'checked'}> Solo si ese día no he llegado al objetivo</label>
-    <p class="help">Llega en los 15 minutos siguientes a la hora elegida. También te avisa cuando te llega un mensaje del admin.</p>
+    <p class="help">Puede llegar unos minutos después de la hora elegida. También te avisa cuando te llega un mensaje del admin.</p>
     <div class="row">${c ? '<button class="small primary" id="pushSave">Guardar cambios</button><button class="small" id="pushOff">Desactivar en este móvil</button>'
       : '<button class="small primary" id="pushOn">🔔 Activar avisos en este móvil</button>'}<span class="muted" id="pushMsg"></span></div>`;
   return `<div class="card" id="pushCard"><h2>🔔 Avisos</h2>${c ? '<p class="muted" style="margin-top:-6px">✓ Activados en este dispositivo</p>' : ''}${body}</div>`;
@@ -757,7 +759,7 @@ function bindPushCard() {
     b.classList.toggle('on', on); b.setAttribute('aria-pressed', on);
   });
   const go = async () => {
-    const [h, mi] = ($('pushTime').value || '19:00').split(':').map(Number);
+    const m = +$('pushTime').value, h = Math.floor(m / 60), mi = m % 60;
     const days = [...$('pushDays').querySelectorAll('.on')].map(b => +b.dataset.d);
     msg('Guardando…');
     try { await pushEnable({ hour: h, minute: mi || 0, days, onlyBehind: $('pushBehind').checked }); showSettings(); }
