@@ -385,6 +385,8 @@
   .reward-txt { flex: 1; display: flex; flex-direction: column; }
   .canje { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
   .rw-row { display: flex; gap: 6px; align-items: center; margin: 6px 0; }
+  .lg-row { display: flex; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .lg-ico { font-size: 1.4rem; } .lg-txt { flex: 1; display: flex; flex-direction: column; min-width: 0; } .lg-txt .muted { font-size: .8rem; }
   .msg-card { border-left: 4px solid var(--ok); background: color-mix(in srgb, var(--ok) 8%, var(--card)); }
   .msg-from { font-weight: 700; }
   .msg-text { font-size: 1.1rem; white-space: pre-wrap; margin: 8px 0 12px; }
@@ -617,7 +619,7 @@ function syncStart() {
   if (!syncOn()) return;
   fbLoad().then(f => f.onAuthStateChanged(f.auth, u => {
     fbUser = u;
-    if (u) { syncNow(); loadInbox(); loadCanjes().then(() => $('goStats') && showHome()).catch(() => {}); }
+    if (u) { syncNow(); loadInbox(); Promise.all([loadLogroCfg(), loadCanjes()]).then(() => $('goStats') && showHome()).catch(() => {}); }
     if ($('accountCard')) showSettings();
     else if ($('goStats')) showHome();
   })).catch(() => { syncState = { text: '⚠️ Sin conexión con el servidor de cuentas.', error: true }; });
@@ -790,6 +792,7 @@ async function showAdmin(env = ENV) {
   $('home').onclick = () => showHome();
   let users;
   try {
+    await loadLogroCfg(); // los puntos de cada usuario se calculan con los valores actuales
     const snap = await fb.getDocs(fb.collection(fb.db, 'users'));
     users = await Promise.all(snap.docs.map(async u => {
       const d = await fb.getDocs(fb.collection(fb.db, 'users', u.id, env));
@@ -887,6 +890,15 @@ async function showAdmin(env = ENV) {
       <div class="row" style="margin-top:8px"><button class="small" id="rwAdd">+ Añadir</button><button class="small primary" id="rwSave">Guardar</button><span class="muted" id="rwMsg"></span></div>
       <div class="set-row"><span>Firma de tus mensajes</span><input type="text" id="admName" value="${esc(getSettings().adminName || '')}" placeholder="Dani" style="width:50%"></div>
     </details>
+    <details class="card" id="lgCard"><summary><b>🏆 Logros</b> <span class="muted">· puntos de cada uno y cuáles están activos</span></summary>
+      <div class="lg-list">${LOGROS_ALL.map(l => `<div class="lg-row">
+        <input type="checkbox" data-lg-on="${l.id}" ${(logroCfg.off || []).includes(l.id) ? '' : 'checked'} aria-label="Activo">
+        <span class="lg-ico">${l.ico}</span>
+        <div class="lg-txt"><b>${esc(l.name)}</b><span class="muted">${esc(l.desc)}</span></div>
+        <input type="number" min="0" data-lg-pts="${l.id}" value="${l.pts}" style="width:76px" aria-label="Puntos"></div>`).join('')}</div>
+      <div class="row" style="margin-top:8px"><button class="small primary" id="lgSave">Guardar</button><button class="small" id="lgReset">Valores por defecto</button><span class="muted" id="lgMsg"></span></div>
+      <p class="help">Si desactivas un logro, deja de contar sus puntos (también los ya ganados).</p>
+    </details>
     ${users.length ? users.map(userHTML).join('') : '<div class="card"><p class="muted">Todavía no hay usuarios con cuenta.</p></div>'}
     <p class="help">Los datos de cada usuario se actualizan cuando abre la app con su cuenta.</p>`;
   $('home').onclick = () => showHome();
@@ -894,6 +906,21 @@ async function showAdmin(env = ENV) {
   $('admReload').onclick = () => showAdmin(env);
   app.querySelectorAll('[data-prog]').forEach(b => b.onclick = () => showUserStats(users.find(u => u.uid === b.dataset.prog), env));
   $('admName').onchange = e => saveSettings({ adminName: e.target.value.trim() });
+  // Logros: puntos y activos, en config/logros
+  const saveLg = async cfg => {
+    try { await fb.setDoc(fb.doc(fb.db, 'config', 'logros'), { ...cfg, at: Date.now() }); applyLogroCfg(cfg); $('lgMsg').textContent = '✓ Guardado'; }
+    catch (e) { $('lgMsg').textContent = '⚠️ No se pudo guardar (' + (e.code || e.message) + ')'; }
+  };
+  $('lgSave').onclick = () => {
+    const pts = {}, off = [];
+    LOGROS_ALL.forEach(l => {
+      const v = Math.max(0, Math.round(+app.querySelector(`[data-lg-pts="${l.id}"]`).value || 0));
+      if (v !== l.def) pts[l.id] = v;
+      if (!app.querySelector(`[data-lg-on="${l.id}"]`).checked) off.push(l.id);
+    });
+    saveLg({ pts, off });
+  };
+  $('lgReset').onclick = async () => { if (!confirm('¿Volver a los puntos por defecto y activar todos los logros?')) return; await saveLg({ pts: {}, off: [] }); showAdmin(env); };
   // Recompensas: lista editable que se guarda en config/rewards
   let items = [];
   const paintRw = () => {
@@ -1304,7 +1331,7 @@ function showPlan() {
 // Los logros se calculan a partir del progreso (no hay que guardarlos para saber si se tienen); en los ajustes
 // solo se apunta cuándo se consiguió cada uno, para avisar una sola vez. Cada logro da puntos.
 // Las recompensas las define el admin (Firestore config/rewards) y los canjes van a users/{uid}/canjes.
-const LOGROS = [
+const LOGROS_ALL = [
   { id: 'test1', ico: '🎈', name: 'Primer test', desc: 'Termina tu primer test', pts: 10, val: d => d.tests, goal: 1 },
   { id: 'test10', ico: '📝', name: '10 tests', desc: 'Termina 10 tests', pts: 20, val: d => d.tests, goal: 10 },
   { id: 'test50', ico: '📚', name: '50 tests', desc: 'Termina 50 tests', pts: 50, val: d => d.tests, goal: 50 },
@@ -1330,6 +1357,17 @@ const LOGROS = [
   { id: 'early', ico: '🌅', name: 'Madrugadora', desc: 'Termina un test antes de las 8:00', pts: 15, val: d => d.early, goal: 1 },
   { id: 'night', ico: '🌙', name: 'Noctámbula', desc: 'Termina un test después de las 23:00', pts: 15, val: d => d.night, goal: 1 }
 ];
+// Puntos y logros activos: por defecto los de la lista; el admin puede cambiarlos (Firestore config/logros = { pts: { id: n }, off: [id] })
+LOGROS_ALL.forEach(l => l.def = l.pts);
+let LOGROS = LOGROS_ALL, logroCfg = {};
+function applyLogroCfg(cfg = {}) {
+  logroCfg = cfg;
+  LOGROS_ALL.forEach(l => l.pts = cfg.pts?.[l.id] ?? l.def);
+  LOGROS = LOGROS_ALL.filter(l => !(cfg.off || []).includes(l.id));
+}
+async function loadLogroCfg() {
+  try { const s = await fb.getDoc(fb.doc(fb.db, 'config', 'logros')); applyLogroCfg(s.exists() ? s.data() : {}); } catch {}
+}
 
 // Datos para los logros, leídos con load() (así sirven también para el panel admin con viewAs)
 function logroData() {
@@ -1406,7 +1444,7 @@ async function showLogros() {
         ${canjes?.length ? `<h3>Mis canjes</h3>${canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ${fmtDate(c.at)} · ${c.done ? '✅ cumplida' : '⏳ pendiente'}</span></div>`).join('')}` : ''}
       </div>
       <div class="card">
-        <h2>Medallas</h2>
+        <h2>Logros</h2>
         <div class="medals">${LOGROS.map(l => { const has = ok.has(l.id), v = Math.min(l.val(d), l.goal); return `
           <div class="medal ${has ? 'on' : ''}" title="${esc(l.desc)}">
             <span class="medal-ico">${l.ico}</span><b>${esc(l.name)}</b>
