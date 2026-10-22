@@ -31,7 +31,6 @@
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   [hidden] { display: none !important; }
-  .filebtn { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); cursor: pointer; font-weight: 600; }
   #start { width: 100%; }
   html { -webkit-text-size-adjust: 100%; }
   body {
@@ -64,8 +63,6 @@
   .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
   .between { justify-content: space-between; }
 
-  .drop { border: 2px dashed var(--border); border-radius: var(--radius); padding: 24px; text-align: center; transition: border-color .15s, background .15s; }
-  .drop.over { border-color: var(--accent); background: var(--accent-bg); }
   label.opt { display: flex; gap: 10px; align-items: center; margin: 8px 0; }
   input[type=checkbox], input[type=radio] { width: 20px; height: 20px; accent-color: var(--accent); flex-shrink: 0; }
   input[type=number], input[type=text], input[type=search], select, textarea {
@@ -466,12 +463,6 @@ const DAY = 864e5;
 const startOfToday = () => new Date().setHours(0, 0, 0, 0);
 const todayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const MODOS = { practica: 'Práctica', examen: 'Examen', simulacro: 'Simulacro', repaso: 'Repaso' };
-
-function downloadBlob(blob, name) {
-  const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: name });
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-}
 
 // ---------- Ajustes ----------
 // Prioridad: valores por defecto < "ajustes" del preguntas.json (compartidos) < lo que cambie cada uno en su dispositivo
@@ -1059,6 +1050,7 @@ async function importFromDev() {
 function devImportCardHTML() {
   if (ENV !== 'prod') return '';
   const done = load(K.settings, {}).devImported;
+  if (done) return ''; // ya se usó: no hace falta seguir enseñándolo
   return `<div class="card">
     <h2>🔀 Progreso de la versión de desarrollo</h2>
     ${done ? `<p class="help" style="margin-bottom:0">✓ Ya lo trajiste el ${fmtDate(done)}.</p>`
@@ -1190,11 +1182,6 @@ const setToJSON = () => ({
 function useData(data, origen) {
   set = { ...parseSet(data), origen };
   save(K.set, set);
-}
-
-function readFile(file) {
-  file.text().then(t => { useData(JSON.parse(t), 'archivo'); showHome(); })
-    .catch(e => showHome('No se pudo cargar: ' + e.message));
 }
 
 function fetchServerSet() {
@@ -1517,7 +1504,7 @@ async function showLogros() {
         ${canjes?.length ? `<h3>Mis canjes</h3>${canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ${fmtDate(c.at)} · ${c.done ? '✅ cumplida' : '⏳ pendiente'}</span></div>`).join('')}` : ''}
       </div>
       <div class="card">
-        <h2>Logros</h2>
+        <h2>Todos los logros</h2>
         <div class="medals">${LOGROS.map(l => { const has = ok.has(l.id), g = goalOf(l, d), v = Math.min(l.val(d), g); return `
           <div class="medal ${has ? 'on' : ''}" title="${esc(l.desc)}">
             <span class="medal-ico">${l.ico}</span><b>${esc(l.name)}</b>
@@ -1662,18 +1649,8 @@ function showHome(error) {
       <p class="muted">Penalización: ${penTxt} · <a href="#" id="penLink">cambiar</a></p>
       <button class="primary" id="start">Empezar</button>
     </div>` : ''}
-    <div class="card">
-      <div class="drop" id="drop">
-        <p style="margin-top:0">Arrastra aquí tu archivo <b>.json</b> o</p>
-        <label class="filebtn">📂 Elegir archivo<input type="file" id="file" accept=".json,application/json" hidden></label>
-      </div>
-      <p class="help">Esto carga las preguntas solo en este dispositivo. Para que sean las de todos, usa ✏️ Editor → 📥 Importar JSON.</p>
-      <details style="margin-top:12px"><summary class="muted">…o pega el JSON</summary>
-        <textarea id="paste" rows="8" style="margin-top:8px;font-family:monospace"></textarea>
-        <button id="pasteBtn">Cargar</button>
-      </details>
-      ${serverAvailable && set?.origen !== 'servidor' ? `<p><button id="useServer" class="small">Volver a usar preguntas.json del servidor</button></p>` : ''}
-    </div>`;
+    ${serverAvailable && set?.origen === 'editado' ? `<div class="card"><p class="help" style="margin-top:0">Estás usando preguntas editadas solo en este dispositivo.</p>
+      <button id="useServer" class="small">Volver a las preguntas de todos</button></div>` : ''}`;
 
   bindPlanCard();
   bindInbox();
@@ -1684,14 +1661,6 @@ function showHome(error) {
   $('goSettings').onclick = showSettings;
   if ($('goAdmin')) $('goAdmin').onclick = () => showAdmin();
   $('goEditor').onclick = () => openEditor();
-  const drop = $('drop');
-  $('file').onchange = e => e.target.files[0] && readFile(e.target.files[0]);
-  drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
-  drop.ondragleave = () => drop.classList.remove('over');
-  drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); e.dataTransfer.files[0] && readFile(e.dataTransfer.files[0]); };
-  $('pasteBtn').onclick = () => {
-    try { useData(JSON.parse($('paste').value), 'archivo'); showHome(); } catch (e) { showHome('JSON no válido: ' + e.message); }
-  };
   if ($('useServer')) $('useServer').onclick = () => {
     if (set?.origen === 'editado' && !confirm('Perderás los cambios hechos en el editor que no estén guardados en GitHub. ¿Continuar?')) return;
     fetchServerSet().then(d => { useData(d, 'servidor'); showHome(); }).catch(() => showHome('No se pudo leer preguntas.json'));
@@ -2499,7 +2468,7 @@ function showSettings() {
         <p class="help">Solo cuenta el tiempo con la app abierta en pantalla. <a href="#" id="waterTest">Probar aviso</a></p>
       </div>
     </div>
-    <div class="card">
+    ${isAdmin() || ghConnected() ? `<div class="card">
       <h2>☁️ Ajustes compartidos</h2>
       <p class="help">La penalización, el simulacro, la fecha del examen y el objetivo diario se pueden guardar en GitHub para que le lleguen así configurados a todo el mundo.</p>
       ${shared ? `<p class="help">Este test ya trae ajustes predeterminados.${overridden ? ' Has cambiado alguno en este dispositivo.' : ''}</p>` : ''}
@@ -2510,15 +2479,7 @@ function showSettings() {
         ${shared ? '<button class="small" id="useShared">Volver a los predeterminados</button>' : ''}
       </div>
       ${ghConnected() ? '' : '<p class="help" style="margin-bottom:0">Para guardarlos para todos, este dispositivo tiene que estar conectado a GitHub (Editor → ☁️ Guardar en GitHub).</p>'}
-    </div>
-    <div class="card">
-      <h2>💾 Copia de seguridad</h2>
-      <p class="help">Guarda en un archivo tu progreso, estadísticas, marcadas, ajustes y tema, para no perderlos o pasarlos a otro móvil. (No incluye el token de GitHub.)</p>
-      <div class="row">
-        <button id="exportBk">⬇ Exportar copia</button>
-        <label class="filebtn">⬆ Importar copia<input type="file" id="importBk" accept=".json,application/json" hidden></label>
-      </div>
-    </div>`;
+    </div>` : ''}`;
 
   $('home').onclick = () => showHome();
   $('goPlan').onclick = () => showPlan();
@@ -2598,34 +2559,6 @@ function showSettings() {
     }
     showSettings();
   };
-  $('exportBk').onclick = exportBackup;
-  $('importBk').onchange = e => e.target.files[0] && importBackup(e.target.files[0]);
-}
-
-function exportBackup() {
-  const data = {};
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (k.startsWith(P) && k !== K.gh && k !== SYNC_META) data[k.slice(P.length)] = localStorage.getItem(k);
-  }
-  const blob = new Blob([JSON.stringify({ app: 'test-preguntas', version: 2, entorno: ENV, fecha: new Date().toISOString(), data })], { type: 'application/json' });
-  downloadBlob(blob, `copia-tests-${todayKey()}.json`);
-}
-
-function importBackup(file) {
-  file.text().then(t => {
-    const b = JSON.parse(t);
-    if (b.app !== 'test-preguntas' || !b.data) throw new Error('el archivo no es una copia de seguridad de esta app.');
-    if (!confirm(`Copia del ${new Date(b.fecha).toLocaleString('es-ES')}. Se sustituirá el progreso de este dispositivo. ¿Continuar?`)) return;
-    Object.keys(localStorage).filter(k => k.startsWith(P) && k !== K.gh && k !== SYNC_META).forEach(k => localStorage.removeItem(k));
-    // v1 guardaba las claves con "quiz."; v2 sin prefijo. Se importan al entorno actual.
-    for (const [k, v] of Object.entries(b.data)) {
-      const name = k.replace(/^quiz(dev)?\./, '');
-      if (P + name !== K.gh && P + name !== SYNC_META) localStorage.setItem(P + name, v);
-    }
-    syncReplace(SYNC_KEYS.map(k => P + k));
-    location.reload();
-  }).catch(e => alert('No se pudo importar: ' + e.message));
 }
 
 // ---------- GitHub: guardar las preguntas directamente en el repositorio ----------
@@ -2778,7 +2711,6 @@ function persistEdit(message) {
   publish(message);
 }
 
-const downloadJSON = () => downloadBlob(new Blob([JSON.stringify(setToJSON(), null, 2)], { type: 'application/json' }), 'preguntas.json');
 
 // Entrar al editor: si hay GitHub conectado, parte siempre de la última versión de GitHub
 async function openEditor(forcePull = false) {
@@ -2825,15 +2757,6 @@ function showEditor(filter = '') {
     <div class="card">
       <label class="muted">Título del test</label>
       <input type="text" id="titulo" class="full" value="${esc(set.titulo)}" ${busy ? 'disabled' : ''}>
-      <div class="row" style="margin-top:12px">
-        <label class="filebtn" ${busy ? 'style="pointer-events:none;opacity:.45"' : ''}>📥 Importar JSON<input type="file" id="importFile" accept=".json,application/json,text/plain" hidden></label>
-        <button id="download">⬇ Descargar JSON</button>
-      </div>
-      <details style="margin-top:12px"><summary class="muted">…o pega aquí un JSON con muchas preguntas, fichas o artículos</summary>
-        <textarea id="importPaste" rows="8" style="margin-top:8px;font-family:monospace" placeholder='{ "preguntas": [ … ], "fichas": [ { "anverso": "…", "reverso": "…" } ], "articulos": [ { "titulo": "…", "texto": "…" } ] }'></textarea>
-        <button id="importPasteBtn" ${busy ? 'disabled' : ''}>Revisar e importar</button>
-      </details>
-      <div id="importPreview"></div>
       ${set.origen === 'editado' && !ghConnected() ? '<p class="muted">Los cambios se guardan solo en este dispositivo. Conecta GitHub (abajo) para que se guarden para todos.</p>' : ''}
     </div>
     <div class="tabs" style="grid-template-columns:repeat(${visibleTabs().length}, 1fr)">${visibleTabs().map(([id, t]) =>
@@ -2857,13 +2780,6 @@ function showEditor(filter = '') {
   app.querySelectorAll('.tab').forEach(b => b.onclick = () => { editorTab = b.dataset.tab; showEditor(); });
   $('titulo').onchange = e => { set.titulo = e.target.value.trim() || 'Test'; persistEdit('Cambiar título: ' + set.titulo); };
   $('add').onclick = () => tab.form(-1);
-  $('download').onclick = downloadJSON;
-  $('importFile').onchange = e => {
-    const file = e.target.files[0];
-    if (file) file.text().then(previewImport).catch(err => previewImport(null, err));
-    e.target.value = '';
-  };
-  $('importPasteBtn').onclick = () => previewImport($('importPaste').value);
   if ($('newSet')) $('newSet').onclick = () => {
     if (!confirm(`Se borrarán TODOS los elementos de «${tab.name}»${ghConnected() ? ', también en GitHub' : ''}. ¿Continuar?`)) return;
     tab.list().length = 0;
@@ -2875,55 +2791,6 @@ function showEditor(filter = '') {
   app.querySelectorAll('.qitem').forEach(b => b.onclick = () => tab.form(+b.dataset.i));
   bindGhStatus();
   bindGhCard();
-}
-
-// Importar un JSON entero en el editor: añadir lo nuevo o sustituir (y guardarlo en GitHub si está conectado)
-function previewImport(text, readErr) {
-  const box = $('importPreview');
-  let data;
-  try {
-    if (readErr) throw readErr;
-    data = parseSet(JSON.parse(text));
-    if (!data.preguntas.length && !data.fichas.length && !data.articulos.length) throw new Error('no tiene preguntas, fichas ni artículos.');
-  } catch (e) {
-    box.innerHTML = `<div class="ghstatus error" style="margin:12px 0 0">No se puede importar: ${esc(e instanceof SyntaxError ? 'el texto no es un JSON válido (' + e.message + ')' : e.message)}</div>`;
-    return;
-  }
-  // Por cada sección: qué trae el archivo y qué es nuevo (comparando por el texto)
-  const parts = Object.entries({ q: data.preguntas, f: data.fichas, a: data.articulos }).filter(([, arr]) => arr.length).map(([id, arr]) => {
-    const t = TABS[id], have = new Set(t.list().map(t.key));
-    return { id, t, arr, nuevas: arr.filter(x => !have.has(t.key(x))) };
-  });
-  const nNew = parts.reduce((s, p) => s + p.nuevas.length, 0);
-  const dest = ghConnected() ? ' y se guardará en GitHub' : '';
-  box.innerHTML = `
-    <div class="ghstatus" style="margin:12px 0 0">
-      En el archivo${data.titulo && data.titulo !== 'Test' ? ` («${esc(data.titulo)}»)` : ''}:
-      <ul style="margin:6px 0;padding-left:20px">${parts.map(p => {
-        const rep = p.arr.length - p.nuevas.length;
-        return `<li><b>${p.arr.length} ${p.arr.length === 1 ? p.t.one : p.t.name.toLowerCase()}</b>: ${p.nuevas.length} ${p.nuevas.length === 1 ? 'nueva' : 'nuevas'}${rep ? `, ${rep} ya ${rep === 1 ? 'la tienes' : 'las tienes'}` : ''}</li>`;
-      }).join('')}</ul>
-      <div class="row" style="margin-top:8px">
-        <button class="small primary" id="impAdd" ${nNew ? '' : 'disabled'}>Añadir las ${nNew} nuevas</button>
-        <button class="small danger" id="impReplace">Sustituir</button>
-        <button class="small" id="impCancel">Cancelar</button>
-      </div>
-      <p class="help" style="margin-bottom:0">«Añadir» conserva lo que ya tienes. «Sustituir» cambia ${parts.map(p => p.t.name.toLowerCase()).join(', ')} por las del archivo${dest}; lo demás no se toca.</p>
-    </div>`;
-  $('impCancel').onclick = () => box.innerHTML = '';
-  $('impAdd').onclick = () => {
-    parts.forEach(p => p.t.list().push(...p.nuevas));
-    persistEdit(`Importar ${parts.map(p => `${p.nuevas.length} ${p.t.name.toLowerCase()}`).join(', ')}`);
-    showEditor();
-  };
-  $('impReplace').onclick = () => {
-    if (!confirm(`Se sustituirán ${parts.map(p => `las ${p.t.list().length} ${p.t.name.toLowerCase()} por ${p.arr.length}`).join(', ')}${dest}. ¿Continuar?`)) return;
-    parts.forEach(p => { const l = p.t.list(); l.length = 0; l.push(...p.arr); });
-    if (data.titulo && data.titulo !== 'Test') set.titulo = data.titulo;
-    if (data.ajustes) set.ajustes = data.ajustes;
-    persistEdit(`Sustituir ${parts.map(p => `${p.t.name.toLowerCase()} (${p.arr.length})`).join(', ')} por las importadas`);
-    showEditor();
-  };
 }
 
 // Campos comunes de los formularios: referencia, bloque y tema (con sugerencias de lo ya usado)
@@ -3746,7 +3613,8 @@ const saved = load(K.set, null);
 fetchServerSet()
   .then(data => {
     serverAvailable = true;
-    if (!saved || saved.origen === 'servidor' || !saved.origen) useData(data, 'servidor');
+    // Ya no se cargan archivos sueltos: si un dispositivo tenía uno de antes, vuelve a las preguntas de todos
+    if (!saved || saved.origen !== 'editado') useData(data, 'servidor');
     else set = saved;
   })
   .catch(() => { set = saved; })
