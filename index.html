@@ -890,6 +890,16 @@ async function showAdmin(env = ENV) {
       <div class="row" style="margin-top:8px"><button class="small" id="rwAdd">+ Añadir</button><button class="small primary" id="rwSave">Guardar</button><span class="muted" id="rwMsg"></span></div>
       <div class="set-row"><span>Firma de tus mensajes</span><input type="text" id="admName" value="${esc(getSettings().adminName || '')}" placeholder="Dani" style="width:50%"></div>
     </details>
+    ${(() => {
+      const all = users.flatMap(u => u.canjes.map(c => ({ ...c, uid: u.uid, who: u.email || u.uid }))).sort((a, b) => (a.done - b.done) || (b.at - a.at));
+      const pend = all.filter(c => !c.done).length;
+      return `<details class="card" id="cjCard" ${pend ? 'open' : ''}><summary><b>🎁 Premios canjeados</b> <span class="muted">· ${pend ? `${pend} pendiente${pend > 1 ? 's' : ''} de cumplir` : all.length ? 'todo cumplido' : 'todavía ninguno'}</span></summary>
+        ${all.length ? all.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b>
+          <span class="muted">· ${esc(c.who)} · ${fmtDate(c.at)} · ⭐ ${c.cost}${c.done ? ` · ✅ cumplido${c.doneAt ? ' el ' + new Date(c.doneAt).toLocaleDateString('es-ES') : ''}` : ''}</span>
+          ${c.done ? '' : `<button class="small primary" data-cumplir="${esc(c.uid)}/${esc(c.id)}">Marcar como cumplido</button>`}</div>`).join('')
+        : '<p class="muted">Cuando alguien canjee una recompensa aparecerá aquí.</p>'}
+      </details>`;
+    })()}
     <details class="card" id="lgCard"><summary><b>🏆 Logros</b> <span class="muted">· puntos de cada uno y cuáles están activos</span></summary>
       <div class="lg-list">${LOGROS_ALL.map(l => `<div class="lg-row">
         <input type="checkbox" data-lg-on="${l.id}" ${(logroCfg.off || []).includes(l.id) ? '' : 'checked'} aria-label="Activo">
@@ -941,7 +951,8 @@ async function showAdmin(env = ENV) {
   };
   app.querySelectorAll('[data-cumplir]').forEach(b => b.onclick = async () => {
     const [uid, id] = b.dataset.cumplir.split('/');
-    try { await fb.updateDoc(fb.doc(fb.db, 'users', uid, 'canjes', id), { done: true, doneAt: Date.now() }); b.replaceWith(Object.assign(document.createElement('span'), { className: 'muted', textContent: '· ✅ cumplida' })); }
+    // el mismo canje sale en «Premios canjeados» y en la tarjeta del usuario: se actualizan los dos
+    try { await fb.updateDoc(fb.doc(fb.db, 'users', uid, 'canjes', id), { done: true, doneAt: Date.now() }); app.querySelectorAll(`[data-cumplir="${b.dataset.cumplir}"]`).forEach(x => x.replaceWith(Object.assign(document.createElement('span'), { className: 'muted', textContent: '· ✅ cumplido' }))); }
     catch (e) { alert('No se pudo marcar: ' + (e.code || e.message)); }
   });
   app.querySelectorAll('[data-send]').forEach(b => b.onclick = async () => {
@@ -1355,8 +1366,18 @@ const LOGROS_ALL = [
   { id: 'plan5', ico: '📅', name: 'Constancia', desc: 'Completa 5 temas del planning', pts: 30, val: d => d.planDone, goal: 5 },
   { id: 'planAll', ico: '🏰', name: 'Planning completo', desc: 'Completa todos los temas de tu planning', pts: 200, val: d => d.planAll ? 1 : 0, goal: 1 },
   { id: 'early', ico: '🌅', name: 'Madrugadora', desc: 'Termina un test antes de las 8:00', pts: 15, val: d => d.early, goal: 1 },
-  { id: 'night', ico: '🌙', name: 'Noctámbula', desc: 'Termina un test después de las 23:00', pts: 15, val: d => d.night, goal: 1 }
+  { id: 'night', ico: '🌙', name: 'Noctámbula', desc: 'Termina un test después de las 23:00', pts: 15, val: d => d.night, goal: 1 },
+  { id: 'flash100', ico: '🃏', name: 'Fichera', desc: 'Repasa 100 fichas distintas en Flashcards', pts: 40, val: d => d.fichas, goal: 100 },
+  { id: 'vf20', ico: '⚡', name: 'Rayo', desc: 'Racha de 20 seguidas en Verdadero / Falso', pts: 40, val: d => d.vfBest, goal: 20 },
+  { id: 'art10', ico: '📜', name: 'Letra de la ley', desc: 'Completa 10 artículos con todos los huecos bien', pts: 50, val: d => d.artsOk, goal: 10 },
+  { id: 'srs0', ico: '🧹', name: 'Repaso al día', desc: 'Deja el repaso inteligente sin pendientes (con 50 preguntas o más en repaso)', pts: 30, val: d => d.srsClean ? 1 : 0, goal: 1 },
+  { id: 'perfect', ico: '🎯', name: 'Sin fallos', desc: 'Termina un test de 20 preguntas o más sin ningún fallo', pts: 50, val: d => d.perfect, goal: 1 },
+  { id: 'explora', ico: '🗺️', name: 'Exploradora', desc: 'Responde preguntas de todos los bloques', pts: 30, val: d => d.bloquesVistos, goal: d => d.bloquesTotal },
+  { id: 'remonta', ico: '🔁', name: 'Remontada', desc: 'Domina 50 preguntas que antes habías fallado', pts: 60, val: d => d.remontadas, goal: 50 },
+  { id: 'finde', ico: '🛋️', name: 'Fin de semana', desc: 'Estudia un sábado y el domingo siguiente', pts: 20, val: d => d.finde ? 1 : 0, goal: 1 }
 ];
+// La meta puede depender de los datos (p. ej. «todos los bloques»)
+const goalOf = (l, d) => typeof l.goal === 'function' ? Math.max(1, l.goal(d)) : l.goal;
 // Puntos y logros activos: por defecto los de la lista; el admin puede cambiarlos (Firestore config/logros = { pts: { id: n }, off: [id] })
 LOGROS_ALL.forEach(l => l.def = l.pts);
 let LOGROS = LOGROS_ALL, logroCfg = {};
@@ -1381,7 +1402,21 @@ function logroData() {
   const byTema = {};
   (set?.preguntas || []).forEach(q => { const t = byTema[pkKey(q)] ||= { n: 0, dom: 0 }; t.n++; if ((srs[keyOf(q)]?.box || 0) >= 3) t.dom++; });
   const plan = getPlan(), planTotal = plan.on ? planTemas(plan).length : 0;
+  const stats = load(K.stats, {}), qs = set?.preguntas || [], now = Date.now();
+  const bloquesVistos = new Set(qs.filter(q => stats[keyOf(q)]).map(q => q.bloque || '')).size;
+  const srsVals = Object.values(srs);
+  // fin de semana: un sábado con actividad y el domingo siguiente también
+  const finde = Object.keys(daily).some(k => daily[k] > 0 && new Date(k + 'T12:00').getDay() === 6 && daily[todayKey(new Date(new Date(k + 'T12:00').getTime() + DAY))] > 0);
   return {
+    fichas: Object.keys(srs).filter(k => k.startsWith('ficha:')).length,
+    vfBest: load(K.vf, {}).best || 0,
+    artsOk: Object.values(load(K.arts, {})).filter(a => a.best >= 100).length,
+    srsClean: srsVals.length >= 50 && !srsVals.some(s => s.due <= now),
+    perfect: hist.filter(h => h.total >= 20 && h.aciertos === h.total).length,
+    bloquesVistos, bloquesTotal: new Set(qs.map(q => q.bloque || '')).size,
+    // falladas alguna vez que ya van por la caja 2 o más del repaso (acertadas varias veces seguidas después)
+    remontadas: Object.entries(stats).filter(([k, s]) => s.ko > 0 && (srs[k]?.box || 0) >= 2).length,
+    finde,
     tests: hist.length, answered: Object.values(daily).reduce((a, b) => a + b, 0), goalDays: days.length, bestStreak,
     simApto: sims.filter(h => h.apto).length, simBest: Math.max(0, ...sims.map(entryNota)),
     tens: hist.filter(h => h.total >= 20 && entryNota(h) >= 9.999).length,
@@ -1390,7 +1425,7 @@ function logroData() {
     early: hist.some(h => new Date(h.fecha).getHours() < 8) ? 1 : 0, night: hist.some(h => new Date(h.fecha).getHours() >= 23) ? 1 : 0
   };
 }
-const logrosOk = (d = logroData()) => LOGROS.filter(l => l.val(d) >= l.goal);
+const logrosOk = (d = logroData()) => LOGROS.filter(l => l.val(d) >= goalOf(l, d));
 const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0);
 
 // Avisa de los logros nuevos (una vez). El primer día avisa con un resumen, por si ya había muchos.
@@ -1445,11 +1480,11 @@ async function showLogros() {
       </div>
       <div class="card">
         <h2>Logros</h2>
-        <div class="medals">${LOGROS.map(l => { const has = ok.has(l.id), v = Math.min(l.val(d), l.goal); return `
+        <div class="medals">${LOGROS.map(l => { const has = ok.has(l.id), g = goalOf(l, d), v = Math.min(l.val(d), g); return `
           <div class="medal ${has ? 'on' : ''}" title="${esc(l.desc)}">
             <span class="medal-ico">${l.ico}</span><b>${esc(l.name)}</b>
             <span class="muted">${esc(l.desc)}</span>
-            <span class="medal-pts">${has ? `⭐ +${l.pts}${seen[l.id] ? ` · ${new Date(seen[l.id]).toLocaleDateString('es-ES')}` : ''}` : l.goal > 1 ? `${v} / ${l.goal} · ⭐ ${l.pts}` : `⭐ ${l.pts}`}</span>
+            <span class="medal-pts">${has ? `⭐ +${l.pts}${seen[l.id] ? ` · ${new Date(seen[l.id]).toLocaleDateString('es-ES')}` : ''}` : g > 1 ? `${v} / ${g} · ⭐ ${l.pts}` : `⭐ ${l.pts}`}</span>
           </div>`; }).join('')}</div>
       </div>`;
     $('home').onclick = () => showHome();
