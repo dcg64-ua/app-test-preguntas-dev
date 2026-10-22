@@ -367,6 +367,7 @@
   /* Planning, logros, recompensas y mensajes */
   .plan-card .tag { font-size: .85rem; }
   .plan-day { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .plan-more > summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 10px 0; }
   .plan-day b { min-width: 92px; text-transform: capitalize; }
   .final-card { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; border: 2px dashed color-mix(in srgb, var(--star) 60%, transparent); background: color-mix(in srgb, var(--star) 8%, var(--card)); }
   .final-card.on { border-style: solid; border-color: var(--star); background: color-mix(in srgb, var(--star) 20%, var(--card)); box-shadow: 0 0 24px -6px color-mix(in srgb, var(--star) 70%, transparent); }
@@ -1320,10 +1321,11 @@ function showPlan() {
     if (st.mode === 'noexam') return el.innerHTML = '<p class="muted">Pon la fecha del examen para ver el reparto.</p>';
     if (st.mode === 'past') return el.innerHTML = '<p class="muted">La fecha del examen ya pasó.</p>';
     const head = `<p>${st.temas.length} temas · ${st.doneN} hechos · ${st.days?.length || 0} días de estudio hasta el repaso final${st.perDay ? ` · <b>${st.perDay}</b> ${st.perDay === 1 ? 'tema' : 'temas'} por día` : ''}</p>`;
-    const list = (st.schedule || []).slice(0, 10).map(x => `<div class="plan-day"><b>${fmtDay(x.date)}</b> ${temaChips(x.temas)}</div>`).join('');
+    const day = x => `<div class="plan-day"><b>${fmtDay(x.date)}</b> ${temaChips(x.temas)}</div>`;
+    const list = (st.schedule || []).slice(0, 10).map(day).join('');
     el.innerHTML = head + (st.late ? '<p class="help" style="color:var(--ko)">No da tiempo a ver todos los temas antes del repaso final.</p>' : '') +
       (list || '<p class="muted">No quedan temas pendientes: tocan repaso y simulacros.</p>') +
-      ((st.schedule || []).length > 10 ? `<p class="muted">… y ${st.schedule.length - 10} días más.</p>` : '') +
+      ((st.schedule || []).length > 10 ? `<details class="plan-more"><summary>… y ${st.schedule.length - 10} días más</summary>${st.schedule.slice(10).map(day).join('')}</details>` : '') +
       (st.doneN ? '<p><button class="small" id="planReset">Volver a empezar (marcar todo como pendiente)</button></p>' : '');
     if ($('planReset')) $('planReset').onclick = () => { if (confirm('¿Marcar todos los temas como pendientes?')) { savePlan({ done: [] }); paint(); } };
   };
