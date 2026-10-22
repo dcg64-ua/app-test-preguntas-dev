@@ -370,6 +370,7 @@
   .plan-card .tag { font-size: .85rem; }
   .plan-day { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
   .plan-day b { min-width: 92px; text-transform: capitalize; }
+  .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
   .points-big { font-size: 2.6rem; font-weight: 800; letter-spacing: -.02em; color: var(--star); }
@@ -843,7 +844,7 @@ async function showAdmin(env = ENV) {
     const notas = hist.map(entryNota), avg = notas.length ? notas.reduce((a, b) => a + b, 0) / notas.length : 0;
     const seen = u.seen?.[env];
     return `<details class="card">
-      <summary><b>${esc(u.email || u.uid)}</b> <span class="muted">· ${seen ? 'último uso ' + fmtDate(seen) : 'sin datos de uso'} · hoy ${daily[today] || 0} · 🔥 ${streakOf(daily, goal || 1)}</span></summary>
+      <summary><b>${esc(u.email || u.uid)}</b> <span class="muted">· ${seen ? 'último uso ' + fmtDate(seen) : 'sin datos de uso'} · hoy ${daily[today] || 0} · 🔥 ${streakOf(daily, goal || 1)}</span> <span class="tag pts-tag" title="Puntos disponibles (ganados − canjeados)">⭐ ${u.earned - puntosGastados(u.canjes)}</span></summary>
       <div class="kpis" style="margin-top:12px">
         <div class="kpi"><div class="muted">Hoy</div><div class="v">${daily[today] || 0}</div></div>
         <div class="kpi"><div class="muted">Últimos 7 días</div><div class="v">${last7.reduce((a, k) => a + (daily[k] || 0), 0)}</div></div>
