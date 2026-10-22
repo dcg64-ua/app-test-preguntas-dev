@@ -712,14 +712,15 @@ async function pushMessaging() {
   const m = await import(`https://www.gstatic.com/firebasejs/${FB_VER}/firebase-messaging.js`);
   return { m, messaging: m.getMessaging(fb.app) };
 }
-async function pushEnable(hour, onlyBehind) {
+// conf: { hour, minute, days (0 = domingo … 6 = sábado), onlyBehind }
+async function pushEnable(conf) {
   if (await Notification.requestPermission() !== 'granted') throw new Error('No has dado permiso. Actívalo en los ajustes del móvil para esta app.');
   const reg = await navigator.serviceWorker.ready;
   const { m, messaging } = await pushMessaging();
   const token = await m.getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: reg });
   const id = token.replace(/[^\w-]/g, '').slice(-60);
-  await fb.setDoc(fb.doc(fb.db, 'users', fbUser.uid, 'push', id), { token, env: ENV, hour, onlyBehind, at: Date.now(), ua: navigator.userAgent.slice(0, 120) });
-  localStorage.setItem(K_PUSH, JSON.stringify({ id, hour, onlyBehind }));
+  await fb.setDoc(fb.doc(fb.db, 'users', fbUser.uid, 'push', id), { token, env: ENV, ...conf, at: Date.now(), ua: navigator.userAgent.slice(0, 120) });
+  localStorage.setItem(K_PUSH, JSON.stringify({ id, ...conf }));
 }
 async function pushDisable() {
   const c = pushConf();
@@ -732,23 +733,34 @@ async function pushDisable() {
 function pushCardHTML() {
   if (!syncOn()) return '';
   const c = pushConf();
+  const time = `${String(c?.hour ?? 19).padStart(2, '0')}:${String(c?.minute ?? 0).padStart(2, '0')}`;
+  const days = c?.days || [0, 1, 2, 3, 4, 5, 6];
   let body;
   if (!fbUser) body = '<p class="help">Inicia sesión arriba para activar los avisos.</p>';
   else if (isIOS && !isStandalone) body = '<p class="help">En el iPhone los avisos solo funcionan con la app instalada: en Safari, botón Compartir → «Añadir a pantalla de inicio», y ábrela desde el icono.</p>';
   else if (!pushSupported()) body = '<p class="help">Este navegador no admite avisos.</p>';
   else body = `
-    <div class="set-row"><span>Hora del aviso</span><select id="pushHour">${Array.from({ length: 16 }, (_, i) => i + 7).map(h => `<option value="${h}" ${(c?.hour ?? 19) === h ? 'selected' : ''}>${h}:00</option>`).join('')}</select></div>
+    <div class="set-row"><span>Hora del aviso</span><input type="time" id="pushTime" value="${time}" step="300"></div>
+    <p style="margin:12px 0 6px">Días</p>
+    <div class="row" id="pushDays">${[1, 2, 3, 4, 5, 6, 0].map(d => `<button class="chip ${days.includes(d) ? 'on' : ''}" data-d="${d}" aria-pressed="${days.includes(d)}">${WEEKDAYS[d]}</button>`).join('')}</div>
     <label class="opt"><input type="checkbox" id="pushBehind" ${c?.onlyBehind === false ? '' : 'checked'}> Solo si ese día no he llegado al objetivo</label>
-    <p class="help">También te avisa cuando te llega un mensaje del admin.</p>
+    <p class="help">Llega en los 15 minutos siguientes a la hora elegida. También te avisa cuando te llega un mensaje del admin.</p>
     <div class="row">${c ? '<button class="small primary" id="pushSave">Guardar cambios</button><button class="small" id="pushOff">Desactivar en este móvil</button>'
       : '<button class="small primary" id="pushOn">🔔 Activar avisos en este móvil</button>'}<span class="muted" id="pushMsg"></span></div>`;
   return `<div class="card" id="pushCard"><h2>🔔 Avisos</h2>${c ? '<p class="muted" style="margin-top:-6px">✓ Activados en este dispositivo</p>' : ''}${body}</div>`;
 }
 function bindPushCard() {
   const msg = t => { if ($('pushMsg')) $('pushMsg').textContent = t; };
+  $('pushDays')?.querySelectorAll('button').forEach(b => b.onclick = () => {
+    const on = !b.classList.contains('on');
+    if (!on && $('pushDays').querySelectorAll('.on').length === 1) return; // al menos un día
+    b.classList.toggle('on', on); b.setAttribute('aria-pressed', on);
+  });
   const go = async () => {
-    msg('Activando…');
-    try { await pushEnable(+$('pushHour').value, $('pushBehind').checked); showSettings(); }
+    const [h, mi] = ($('pushTime').value || '19:00').split(':').map(Number);
+    const days = [...$('pushDays').querySelectorAll('.on')].map(b => +b.dataset.d);
+    msg('Guardando…');
+    try { await pushEnable({ hour: h, minute: mi || 0, days, onlyBehind: $('pushBehind').checked }); showSettings(); }
     catch (e) { msg('⚠️ ' + (e.message || e.code)); }
   };
   if ($('pushOn')) $('pushOn').onclick = go;
