@@ -366,6 +366,28 @@
     .bar-row { grid-template-columns: 1fr 70px; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; }
     .ring { width: 96px; height: 96px; } .ring > div { width: 74px; height: 74px; font-size: 1.25rem; }
   }
+  /* Planning, logros, recompensas y mensajes */
+  .plan-card .tag { font-size: .85rem; }
+  .plan-day { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .plan-day b { min-width: 92px; text-transform: capitalize; }
+  .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
+  .points-card { text-align: center; }
+  .points-big { font-size: 2.6rem; font-weight: 800; letter-spacing: -.02em; color: var(--star); }
+  .medals { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .medal { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; padding: 12px 8px; border-radius: 14px; border: 1px solid var(--border); background: var(--bg); filter: grayscale(1); opacity: .55; }
+  .medal.on { filter: none; opacity: 1; border-color: color-mix(in srgb, var(--star) 60%, transparent); background: color-mix(in srgb, var(--star) 12%, var(--card)); }
+  .medal-ico { font-size: 2rem; line-height: 1.2; }
+  .medal .muted { font-size: .78rem; }
+  .medal-pts { font-size: .78rem; font-weight: 700; color: var(--star); margin-top: 4px; }
+  .rewards { display: grid; gap: 8px; }
+  .reward { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 14px; }
+  .reward-ico { font-size: 1.8rem; }
+  .reward-txt { flex: 1; display: flex; flex-direction: column; }
+  .canje { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .rw-row { display: flex; gap: 6px; align-items: center; margin: 6px 0; }
+  .msg-card { border-left: 4px solid var(--ok); background: color-mix(in srgb, var(--ok) 8%, var(--card)); }
+  .msg-from { font-weight: 700; }
+  .msg-text { font-size: 1.1rem; white-space: pre-wrap; margin: 8px 0 12px; }
 </style>
 </head>
 <body>
@@ -595,7 +617,7 @@ function syncStart() {
   if (!syncOn()) return;
   fbLoad().then(f => f.onAuthStateChanged(f.auth, u => {
     fbUser = u;
-    if (u) syncNow();
+    if (u) { syncNow(); loadInbox(); loadCanjes().then(() => $('goStats') && showHome()).catch(() => {}); }
     if ($('accountCard')) showSettings();
     else if ($('goStats')) showHome();
   })).catch(() => { syncState = { text: '⚠️ Sin conexión con el servidor de cuentas.', error: true }; });
@@ -700,7 +722,14 @@ async function showAdmin(env = ENV) {
       const d = await fb.getDocs(fb.collection(fb.db, 'users', u.id, env));
       const data = {};
       d.docs.forEach(x => { try { data[x.id] = JSON.parse(x.data().v); } catch {} });
-      return { uid: u.id, ...u.data(), data };
+      const [canjes, inbox] = await Promise.all([
+        loadCanjes(u.id).catch(() => []),
+        fb.getDocs(fb.collection(fb.db, 'users', u.id, 'inbox')).then(s => s.docs.map(x => ({ id: x.id, ...x.data() })).sort((a, b) => b.at - a.at)).catch(() => [])
+      ]);
+      // puntos ganados con sus datos (la misma cuenta que ve ella en 🏆 Logros)
+      viewAs = Object.fromEntries(Object.entries(data).map(([n, v]) => [P + n, v]));
+      let earned; try { earned = puntosGanados(); } finally { viewAs = null; }
+      return { uid: u.id, ...u.data(), data, canjes, inbox, earned };
     }));
   } catch (e) {
     app.innerHTML = `<div class="row between"><h1>📊 Panel admin</h1><button id="home">← Inicio</button></div>
@@ -762,6 +791,14 @@ async function showAdmin(env = ENV) {
           <td>${MODOS[h.modo] || ''}${h.tema ? ` <span class="tag">${esc(h.tema)}</span>` : ''}${h.modo === 'simulacro' ? (h.apto ? ' ✅' : ' ❌') : ''}</td>
           <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${notaPct(entryNota(h))}</td><td class="num">${h.aciertos}/${h.total}</td></tr>`).join('')}
       </table></div>` : '<p class="muted">Todavía no ha hecho ningún test.</p>'}
+      <h3>🏆 Puntos y recompensas</h3>
+      <p class="muted" style="margin-top:-6px">⭐ ${u.earned - puntosGastados(u.canjes)} disponibles · ${u.earned} ganados · ${puntosGastados(u.canjes)} canjeados</p>
+      ${u.canjes.length ? u.canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ${fmtDate(c.at)} · ⭐ ${c.cost}</span>
+        ${c.done ? '<span class="muted">· ✅ cumplida</span>' : `<button class="small" data-cumplir="${esc(u.uid)}/${esc(c.id)}">Marcar como cumplida</button>`}</div>`).join('') : '<p class="muted">Todavía no ha canjeado nada.</p>'}
+      <h3>💌 Mensaje</h3>
+      <textarea rows="2" data-msg="${esc(u.uid)}" placeholder="¡Ánimo con el Tema 9!" maxlength="500"></textarea>
+      <div class="row" style="margin-top:6px"><button class="small primary" data-send="${esc(u.uid)}">Enviar</button><span class="muted" data-sent="${esc(u.uid)}"></span></div>
+      ${u.inbox.slice(0, 3).map(m => `<p class="muted" style="margin:4px 0">${fmtDate(m.at)} · «${esc(m.text.length > 60 ? m.text.slice(0, 58) + '…' : m.text)}» · ${m.read ? '💚 leído' : 'sin leer'}</p>`).join('')}
       <button class="small primary" data-prog="${esc(u.uid)}" style="margin-top:12px">📊 Ver su progreso</button>
     </details>`;
   };
@@ -772,12 +809,51 @@ async function showAdmin(env = ENV) {
       <p class="muted" style="margin:0">${users.length} ${users.length === 1 ? 'usuario' : 'usuarios'} · datos de ${env === 'prod' ? 'la app normal' : 'desarrollo'}</p>
       <div class="row"><button class="small" id="admEnv">Ver ${env === 'prod' ? 'desarrollo' : 'app normal'}</button><button class="small" id="admReload">🔄 Actualizar</button></div>
     </div>
+    <details class="card" id="rwCard"><summary><b>🎁 Recompensas</b> <span class="muted">· lo que se puede canjear con los puntos</span></summary>
+      <div id="rwList"></div>
+      <div class="row" style="margin-top:8px"><button class="small" id="rwAdd">+ Añadir</button><button class="small primary" id="rwSave">Guardar</button><span class="muted" id="rwMsg"></span></div>
+      <div class="set-row"><span>Firma de tus mensajes</span><input type="text" id="admName" value="${esc(getSettings().adminName || '')}" placeholder="Dani" style="width:50%"></div>
+    </details>
     ${users.length ? users.map(userHTML).join('') : '<div class="card"><p class="muted">Todavía no hay usuarios con cuenta.</p></div>'}
     <p class="help">Los datos de cada usuario se actualizan cuando abre la app con su cuenta.</p>`;
   $('home').onclick = () => showHome();
   $('admEnv').onclick = () => showAdmin(env === 'prod' ? 'dev' : 'prod');
   $('admReload').onclick = () => showAdmin(env);
   app.querySelectorAll('[data-prog]').forEach(b => b.onclick = () => showUserStats(users.find(u => u.uid === b.dataset.prog), env));
+  $('admName').onchange = e => saveSettings({ adminName: e.target.value.trim() });
+  // Recompensas: lista editable que se guarda en config/rewards
+  let items = [];
+  const paintRw = () => {
+    $('rwList').innerHTML = items.map((r, i) => `<div class="rw-row">
+        <input type="text" value="${esc(r.emoji || '🎁')}" data-i="${i}" data-f="emoji" style="width:52px;text-align:center" aria-label="Emoji">
+        <input type="text" value="${esc(r.name)}" data-i="${i}" data-f="name" placeholder="Te invito a cenar" style="flex:1;min-width:0" aria-label="Recompensa">
+        <input type="number" value="${r.cost}" data-i="${i}" data-f="cost" min="1" style="width:84px" aria-label="Puntos">
+        <button class="small danger" data-del="${i}" aria-label="Quitar">✕</button></div>`).join('') || '<p class="muted">Sin recompensas todavía.</p>';
+    $('rwList').querySelectorAll('input').forEach(inp => inp.oninput = () => { const r = items[+inp.dataset.i]; r[inp.dataset.f] = inp.dataset.f === 'cost' ? Math.max(1, +inp.value || 1) : inp.value; });
+    $('rwList').querySelectorAll('[data-del]').forEach(b => b.onclick = () => { items.splice(+b.dataset.del, 1); paintRw(); });
+  };
+  loadRewards().then(r => { items = r.map(x => ({ ...x })); paintRw(); }).catch(e => { $('rwList').innerHTML = `<p class="error">No se pudieron leer (${esc(e.code || e.message)}).</p>`; });
+  $('rwAdd').onclick = () => { items.push({ id: Date.now().toString(36), emoji: '🎁', name: '', cost: 100 }); paintRw(); };
+  $('rwSave').onclick = async () => {
+    const clean = items.filter(r => r.name.trim()).map(r => ({ id: r.id, emoji: r.emoji.trim() || '🎁', name: r.name.trim(), cost: Math.max(1, Math.round(+r.cost) || 1) }));
+    try { await fb.setDoc(fb.doc(fb.db, 'config', 'rewards'), { items: clean, at: Date.now() }); items = clean; paintRw(); $('rwMsg').textContent = '✓ Guardado'; }
+    catch (e) { $('rwMsg').textContent = '⚠️ No se pudo guardar (' + (e.code || e.message) + ')'; }
+  };
+  app.querySelectorAll('[data-cumplir]').forEach(b => b.onclick = async () => {
+    const [uid, id] = b.dataset.cumplir.split('/');
+    try { await fb.updateDoc(fb.doc(fb.db, 'users', uid, 'canjes', id), { done: true, doneAt: Date.now() }); b.replaceWith(Object.assign(document.createElement('span'), { className: 'muted', textContent: '· ✅ cumplida' })); }
+    catch (e) { alert('No se pudo marcar: ' + (e.code || e.message)); }
+  });
+  app.querySelectorAll('[data-send]').forEach(b => b.onclick = async () => {
+    const uid = b.dataset.send, ta = app.querySelector(`[data-msg="${uid}"]`), out = app.querySelector(`[data-sent="${uid}"]`), text = ta.value.trim();
+    if (!text) { out.textContent = 'Escribe el mensaje primero.'; return; }
+    b.disabled = true;
+    try {
+      await fb.addDoc(fb.collection(fb.db, 'users', uid, 'inbox'), { text, at: Date.now(), read: false, fromName: getSettings().adminName || '' });
+      ta.value = ''; out.textContent = '✓ Enviado. Lo verá al abrir la app.';
+    } catch (e) { out.textContent = '⚠️ No se pudo enviar (' + (e.code || e.message) + ')'; }
+    b.disabled = false;
+  });
 }
 
 // La pantalla de Progreso de siempre, pintada con los datos de un usuario. Solo lectura: no se guarda nada.
@@ -997,6 +1073,322 @@ function fetchServerSet() {
 }
 
 // ---------- Inicio ----------
+
+// ---------- Planning «Hoy toca» ----------
+// Reparte los temas elegidos entre los días de estudio que quedan hasta el examen (sin los días de repaso final).
+// No guarda un calendario fijo: cada día recalcula con los temas pendientes, así que si un día no se estudia se reajusta solo.
+// Se guarda en los ajustes (y se sincroniza con la cuenta).
+const PLAN_DEFAULT = { on: false, keys: null, days: [1, 2, 3, 4, 5, 6], review: 7, num: 30, perDay: 0, done: [], dismissed: false };
+const WEEKDAYS = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
+const getPlan = () => ({ ...PLAN_DEFAULT, ...(load(K.settings, {}).plan || {}) });
+const savePlan = patch => saveSettings({ plan: { ...getPlan(), ...patch } });
+const temaName = key => { const [b, t] = key.split('\u0001'); return { short: temaShort(b, t), full: t || bloqueShort(b) }; };
+
+// Temas del plan en orden (bloque y tema), cada uno con sus preguntas
+function planTemas(p = getPlan()) {
+  const map = new Map();
+  (set?.preguntas || []).forEach(q => {
+    const k = pkKey(q);
+    if (p.keys && !p.keys.includes(k)) return;
+    if (!map.has(k)) map.set(k, []);
+    map.get(k).push(q);
+  });
+  return [...map.keys()].sort(natCmp).map(key => ({ key, qs: map.get(key) }));
+}
+
+// Estado del plan para un día: qué toca, cuántos temas por día y cómo va
+function planState(p = getPlan(), day = new Date()) {
+  const exam = getSettings().examDate;
+  const temas = planTemas(p), pending = temas.filter(t => !p.done.includes(t.key));
+  const base = { temas, pending, doneN: temas.length - pending.length };
+  if (!exam) return { ...base, mode: 'noexam' };
+  const start = new Date(day); start.setHours(0, 0, 0, 0);
+  const examDay = new Date(exam + 'T00:00');
+  const studyEnd = new Date(examDay); studyEnd.setDate(studyEnd.getDate() - p.review);
+  if (start >= examDay) return { ...base, mode: 'past' };
+  // Días de estudio desde hoy hasta el inicio del repaso final
+  const days = [];
+  for (const d = new Date(start); d < studyEnd; d.setDate(d.getDate() + 1)) if (p.days.includes(d.getDay())) days.push(new Date(d));
+  if (!pending.length) return { ...base, mode: 'finished', days };
+  if (!days.length) return { ...base, mode: 'review', days };
+  const perDay = p.perDay || Math.ceil(pending.length / days.length);
+  const schedule = days.map((d, i) => ({ date: d, temas: pending.slice(i * perDay, (i + 1) * perDay) })).filter(x => x.temas.length);
+  const isStudyDay = days[0].getTime() === start.getTime();
+  return { ...base, mode: isStudyDay ? 'study' : 'rest', days, perDay, schedule, today: isStudyDay ? schedule[0]?.temas || [] : [],
+    late: pending.length > perDay * days.length };
+}
+
+const fmtDay = d => d.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'numeric' });
+const temaChips = list => list.map(t => { const n = temaName(t.key); return `<span class="tag" title="${esc(n.full)}">${esc(n.short)}</span>`; }).join(' ');
+
+function planCardHTML() {
+  const p = getPlan();
+  if (!set?.preguntas?.length) return '';
+  if (!p.on) return p.dismissed ? '' : `<div class="card plan-card">
+      <h2>📅 Organiza tu estudio</h2>
+      <p class="muted" style="margin-top:-4px">Crea un planning y cada día la app te dirá qué temas tocan hasta el examen.</p>
+      <div class="row"><button class="primary small" id="planCreate">Crear mi planning</button><button class="small" id="planNo">Ahora no</button></div>
+    </div>`;
+  const st = planState(p);
+  const head = `<div class="row between"><h2 style="margin:0">📅 Hoy toca</h2><a href="#" id="planEdit">Personalizar</a></div>`;
+  const prog = st.temas.length ? `<div class="progress" style="margin:12px 0 6px"><div style="width:${pct(st.doneN, st.temas.length)}%"></div></div>
+    <p class="muted" style="margin:0">${st.doneN} de ${st.temas.length} temas hechos</p>` : '';
+  let body;
+  if (st.mode === 'noexam') body = '<p class="muted">Pon la fecha del examen en <a href="#" id="planEdit2">Personalizar</a> para repartir los temas.</p>';
+  else if (st.mode === 'past') body = '<p class="muted">La fecha del examen ya pasó. Cámbiala en <a href="#" id="planEdit2">Personalizar</a>.</p>';
+  else if (st.mode === 'review' || st.mode === 'finished') body = `<p>${st.mode === 'finished' ? '🎉 Has terminado todos los temas del plan.' : '⏳ Estás en los días de repaso final.'}
+      Hoy toca <b>repaso inteligente</b> y un <b>simulacro</b>.</p>
+    <div class="row"><button class="primary" id="planSrs">🧠 Repaso inteligente</button><button id="planSim">🎯 Simulacro</button></div>`;
+  else if (st.mode === 'study' && p.lastDay === todayKey()) body = `<p>✅ Lo de hoy está hecho. Lo siguiente: ${temaChips(st.today)}</p>
+    <div class="row"><button class="small" id="planAhead">Adelantar ahora</button></div>`;
+  else if (st.mode === 'rest') body = `<p>😌 Hoy es día de descanso. El próximo día de estudio es el <b>${fmtDay(st.days[0])}</b>: ${temaChips(st.schedule[0]?.temas || [])}</p>`;
+  else {
+    const n = st.today.reduce((a, t) => a + t.qs.length, 0);
+    body = `<p style="margin:10px 0">${temaChips(st.today)} <span class="muted">· ${n} preguntas</span></p>
+      ${st.late ? '<p class="help" style="color:var(--ko)">Vas con retraso: no da tiempo a ver todos los temas antes del repaso final. Sube los temas por día o quita alguno en Personalizar.</p>' : ''}
+      <div class="row"><button class="primary" id="planGo">Empezar test de hoy (${Math.min(p.num, n)})</button><button id="planDone">✓ Ya lo he estudiado</button></div>`;
+  }
+  return `<div class="card plan-card">${head}${body}${prog}</div>`;
+}
+
+function bindPlanCard() {
+  const go = () => showPlan();
+  if ($('planCreate')) $('planCreate').onclick = () => { savePlan({ on: true }); showPlan(); };
+  if ($('planNo')) $('planNo').onclick = () => { savePlan({ dismissed: true }); showHome(); };
+  [$('planEdit'), $('planEdit2')].forEach(a => a && (a.onclick = e => { e.preventDefault(); go(); }));
+  if ($('planSrs')) $('planSrs').onclick = () => $('srsBtn')?.click();
+  if ($('planSim')) $('planSim').onclick = () => $('simBtn')?.click();
+  if ($('planDone')) $('planDone').onclick = () => { planMarkToday(); showHome(); };
+  if ($('planAhead')) $('planAhead').onclick = () => { savePlan({ lastDay: null }); showHome(); };
+  if ($('planGo')) $('planGo').onclick = () => {
+    const st = planState(), qs = st.today.flatMap(t => t.qs);
+    startRun(shuffle(qs).slice(0, getPlan().num), { mode: 'practica', label: PLAN_LABEL });
+  };
+}
+const PLAN_LABEL = '📅 Hoy toca';
+function planMarkToday() {
+  const st = planState();
+  if (st.mode !== 'study') return;
+  savePlan({ done: uniq([...getPlan().done, ...st.today.map(t => t.key)]), lastDay: todayKey() });
+  checkLogros?.();
+}
+
+function showPlan() {
+  stopTimer();
+  const p = getPlan(), s = getSettings();
+  app.innerHTML = `
+    <div class="row between"><h1>📅 Planning</h1><button id="home">← Inicio</button></div>
+    <div class="card">
+      <label class="opt"><input type="checkbox" id="planOn" ${p.on ? 'checked' : ''}> Mostrar «Hoy toca» en el inicio</label>
+      <div class="set-row"><span>Fecha del examen</span><input type="date" id="planExam" value="${esc(s.examDate)}"></div>
+      <div class="set-row"><span>Días de repaso final antes del examen</span><input type="number" id="planReview" min="0" value="${p.review}"></div>
+      <div class="set-row"><span>Preguntas del test de cada día</span><input type="number" id="planNum" min="5" value="${p.num}"></div>
+      <div class="set-row"><span>Temas por día (0 = automático)</span><input type="number" id="planPerDay" min="0" value="${p.perDay}"></div>
+      <p style="margin:14px 0 6px">Días de estudio</p>
+      <div class="row" id="planDays">${[1, 2, 3, 4, 5, 6, 0].map(d => `<button class="chip ${p.days.includes(d) ? 'on' : ''}" data-d="${d}" aria-pressed="${p.days.includes(d)}">${WEEKDAYS[d]}</button>`).join('')}</div>
+    </div>
+    <div class="card">
+      <h2>Temas del plan</h2>
+      <p class="help" style="margin-top:-6px">Se estudian en orden de bloque y tema.</p>
+      <div class="picker" id="planPick"></div>
+    </div>
+    <div class="card"><h2>Así queda</h2><div id="planPreview"></div></div>`;
+  $('home').onclick = () => showHome();
+  const paint = () => {
+    const st = planState();
+    const el = $('planPreview');
+    if (st.mode === 'noexam') return el.innerHTML = '<p class="muted">Pon la fecha del examen para ver el reparto.</p>';
+    if (st.mode === 'past') return el.innerHTML = '<p class="muted">La fecha del examen ya pasó.</p>';
+    const head = `<p>${st.temas.length} temas · ${st.doneN} hechos · ${st.days?.length || 0} días de estudio hasta el repaso final${st.perDay ? ` · <b>${st.perDay}</b> ${st.perDay === 1 ? 'tema' : 'temas'} por día` : ''}</p>`;
+    const list = (st.schedule || []).slice(0, 10).map(x => `<div class="plan-day"><b>${fmtDay(x.date)}</b> ${temaChips(x.temas)}</div>`).join('');
+    el.innerHTML = head + (st.late ? '<p class="help" style="color:var(--ko)">No da tiempo a ver todos los temas antes del repaso final.</p>' : '') +
+      (list || '<p class="muted">No quedan temas pendientes: tocan repaso y simulacros.</p>') +
+      ((st.schedule || []).length > 10 ? `<p class="muted">… y ${st.schedule.length - 10} días más.</p>` : '') +
+      (st.doneN ? '<p><button class="small" id="planReset">Volver a empezar (marcar todo como pendiente)</button></p>' : '');
+    if ($('planReset')) $('planReset').onclick = () => { if (confirm('¿Marcar todos los temas como pendientes?')) { savePlan({ done: [] }); paint(); } };
+  };
+  $('planOn').onchange = e => savePlan({ on: e.target.checked, dismissed: false });
+  $('planExam').onchange = e => { saveSettings({ examDate: e.target.value }); paint(); };
+  $('planReview').onchange = e => { savePlan({ review: Math.max(0, +e.target.value || 0) }); paint(); };
+  $('planNum').onchange = e => savePlan({ num: Math.max(5, +e.target.value || 30) });
+  $('planPerDay').onchange = e => { savePlan({ perDay: Math.max(0, +e.target.value || 0) }); paint(); };
+  $('planDays').querySelectorAll('button').forEach(b => b.onclick = () => {
+    const d = +b.dataset.d, days = getPlan().days;
+    const next = days.includes(d) ? days.filter(x => x !== d) : [...days, d];
+    if (!next.length) return;
+    savePlan({ days: next });
+    b.classList.toggle('on', next.includes(d)); b.setAttribute('aria-pressed', next.includes(d));
+    paint();
+  });
+  let picker; // temaPicker llama a onChange al construirse, antes de devolver el objeto
+  picker = temaPicker($('planPick'), set?.preguntas || [], p.keys, {
+    unit: 'preguntas', onChange: () => { if (!picker) return; const sel = picker.get(); savePlan({ keys: sel ? [...sel] : null }); paint(); }
+  });
+  paint();
+}
+
+// ---------- Logros, puntos y recompensas ----------
+// Los logros se calculan a partir del progreso (no hay que guardarlos para saber si se tienen); en los ajustes
+// solo se apunta cuándo se consiguió cada uno, para avisar una sola vez. Cada logro da puntos.
+// Las recompensas las define el admin (Firestore config/rewards) y los canjes van a users/{uid}/canjes.
+const LOGROS = [
+  { id: 'test1', ico: '🎈', name: 'Primer test', desc: 'Termina tu primer test', pts: 10, val: d => d.tests, goal: 1 },
+  { id: 'test10', ico: '📝', name: '10 tests', desc: 'Termina 10 tests', pts: 20, val: d => d.tests, goal: 10 },
+  { id: 'test50', ico: '📚', name: '50 tests', desc: 'Termina 50 tests', pts: 50, val: d => d.tests, goal: 50 },
+  { id: 'test100', ico: '🏛️', name: '100 tests', desc: 'Termina 100 tests', pts: 100, val: d => d.tests, goal: 100 },
+  { id: 'q100', ico: '✏️', name: '100 preguntas', desc: 'Responde 100 preguntas', pts: 10, val: d => d.answered, goal: 100 },
+  { id: 'q500', ico: '🖋️', name: '500 preguntas', desc: 'Responde 500 preguntas', pts: 30, val: d => d.answered, goal: 500 },
+  { id: 'q1000', ico: '📖', name: '1000 preguntas', desc: 'Responde 1000 preguntas', pts: 60, val: d => d.answered, goal: 1000 },
+  { id: 'q5000', ico: '🌟', name: '5000 preguntas', desc: 'Responde 5000 preguntas', pts: 150, val: d => d.answered, goal: 5000 },
+  { id: 'goal1', ico: '🎯', name: 'Objetivo cumplido', desc: 'Llega al objetivo diario por primera vez', pts: 10, val: d => d.goalDays, goal: 1 },
+  { id: 'goal20', ico: '🗓️', name: '20 días de objetivo', desc: 'Cumple el objetivo diario 20 días', pts: 60, val: d => d.goalDays, goal: 20 },
+  { id: 'racha3', ico: '🔥', name: 'Racha de 3', desc: '3 días seguidos cumpliendo el objetivo', pts: 15, val: d => d.bestStreak, goal: 3 },
+  { id: 'racha7', ico: '🔥', name: 'Racha de 7', desc: 'Una semana seguida cumpliendo el objetivo', pts: 40, val: d => d.bestStreak, goal: 7 },
+  { id: 'racha14', ico: '☄️', name: 'Racha de 14', desc: 'Dos semanas seguidas', pts: 80, val: d => d.bestStreak, goal: 14 },
+  { id: 'racha30', ico: '🌋', name: 'Racha de 30', desc: 'Un mes seguido', pts: 150, val: d => d.bestStreak, goal: 30 },
+  { id: 'sim1', ico: '✅', name: 'Primer apto', desc: 'Aprueba tu primer simulacro', pts: 50, val: d => d.simApto, goal: 1 },
+  { id: 'sim5', ico: '🏅', name: '5 aptos', desc: 'Aprueba 5 simulacros', pts: 120, val: d => d.simApto, goal: 5 },
+  { id: 'sim8', ico: '💎', name: 'Simulacro de 8', desc: 'Saca un 8 o más en un simulacro', pts: 60, val: d => d.simBest >= 8 ? 1 : 0, goal: 1 },
+  { id: 'diez', ico: '💯', name: 'Un 10', desc: 'Saca un 10 en un test de 20 preguntas o más', pts: 40, val: d => d.tens, goal: 1 },
+  { id: 'tema1', ico: '🧠', name: 'Tema dominado', desc: 'Domina el 80 % de un tema', pts: 40, val: d => d.temasDom, goal: 1 },
+  { id: 'tema5', ico: '🎓', name: '5 temas dominados', desc: 'Domina el 80 % de 5 temas', pts: 100, val: d => d.temasDom, goal: 5 },
+  { id: 'plan5', ico: '📅', name: 'Constancia', desc: 'Completa 5 temas del planning', pts: 30, val: d => d.planDone, goal: 5 },
+  { id: 'planAll', ico: '🏰', name: 'Planning completo', desc: 'Completa todos los temas de tu planning', pts: 200, val: d => d.planAll ? 1 : 0, goal: 1 },
+  { id: 'early', ico: '🌅', name: 'Madrugadora', desc: 'Termina un test antes de las 8:00', pts: 15, val: d => d.early, goal: 1 },
+  { id: 'night', ico: '🌙', name: 'Noctámbula', desc: 'Termina un test después de las 23:00', pts: 15, val: d => d.night, goal: 1 }
+];
+
+// Datos para los logros, leídos con load() (así sirven también para el panel admin con viewAs)
+function logroData() {
+  const hist = load(K.hist, []), daily = load(K.daily, {}), srs = load(K.srs, {});
+  const goal = getSettings().dailyGoal || 1;
+  // racha más larga de la historia, no solo la actual
+  const days = Object.keys(daily).filter(k => daily[k] >= goal).sort();
+  let bestStreak = 0, run = 0, prev = null;
+  for (const k of days) { const t = new Date(k + 'T00:00').getTime(); run = prev !== null && t - prev <= DAY * 1.5 ? run + 1 : 1; bestStreak = Math.max(bestStreak, run); prev = t; }
+  const sims = hist.filter(h => h.modo === 'simulacro');
+  const byTema = {};
+  (set?.preguntas || []).forEach(q => { const t = byTema[pkKey(q)] ||= { n: 0, dom: 0 }; t.n++; if ((srs[keyOf(q)]?.box || 0) >= 3) t.dom++; });
+  const plan = getPlan(), planTotal = plan.on ? planTemas(plan).length : 0;
+  return {
+    tests: hist.length, answered: Object.values(daily).reduce((a, b) => a + b, 0), goalDays: days.length, bestStreak,
+    simApto: sims.filter(h => h.apto).length, simBest: Math.max(0, ...sims.map(entryNota)),
+    tens: hist.filter(h => h.total >= 20 && entryNota(h) >= 9.999).length,
+    temasDom: Object.values(byTema).filter(t => t.n >= 5 && t.dom / t.n >= .8).length,
+    planDone: plan.done.length, planAll: planTotal > 0 && plan.done.length >= planTotal,
+    early: hist.some(h => new Date(h.fecha).getHours() < 8) ? 1 : 0, night: hist.some(h => new Date(h.fecha).getHours() >= 23) ? 1 : 0
+  };
+}
+const logrosOk = (d = logroData()) => LOGROS.filter(l => l.val(d) >= l.goal);
+const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0);
+
+// Avisa de los logros nuevos (una vez). El primer día avisa con un resumen, por si ya había muchos.
+function checkLogros() {
+  if (viewAs) return;
+  const seen = load(K.settings, {}).logros || {}, ok = logrosOk(), nuevos = ok.filter(l => !seen[l.id]);
+  if (!nuevos.length) return;
+  saveSettings({ logros: { ...seen, ...Object.fromEntries(nuevos.map(l => [l.id, Date.now()])) } });
+  if (nuevos.length > 2) showToast('🏆', `¡${nuevos.length} logros desbloqueados!`, `+${nuevos.reduce((a, l) => a + l.pts, 0)} puntos. Míralos en 🏆 Logros.`, 'pomo');
+  else nuevos.forEach(l => showToast(l.ico, `Logro: ${l.name}`, `${l.desc} · +${l.pts} puntos`, 'pomo'));
+}
+
+// Recompensas (catálogo del admin) y canjes del usuario
+let rewardsCache = null, canjesCache = null;
+async function loadRewards() {
+  const s = await fb.getDoc(fb.doc(fb.db, 'config', 'rewards'));
+  return rewardsCache = (s.exists() ? s.data().items : null) || [];
+}
+async function loadCanjes(uid = fbUser.uid) {
+  const s = await fb.getDocs(fb.collection(fb.db, 'users', uid, 'canjes'));
+  const list = s.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => b.at - a.at);
+  if (uid === fbUser.uid) canjesCache = list;
+  return list;
+}
+const puntosGastados = list => (list || []).reduce((a, c) => a + (c.cost || 0), 0);
+
+async function showLogros() {
+  stopTimer();
+  checkLogros();
+  const d = logroData(), ok = new Set(logrosOk(d).map(l => l.id)), earned = puntosGanados(LOGROS.filter(l => ok.has(l.id)));
+  const seen = load(K.settings, {}).logros || {};
+  const render = (rewards, canjes, err) => {
+    const balance = earned - puntosGastados(canjes);
+    app.innerHTML = `
+      <div class="row between"><h1>🏆 Logros</h1><button id="home">← Inicio</button></div>
+      <div class="card points-card">
+        <div class="points-big">⭐ ${balance}</div>
+        <div class="muted">puntos disponibles · ${ok.size} de ${LOGROS.length} logros · ${earned} ganados${canjes?.length ? ` · ${puntosGastados(canjes)} canjeados` : ''}</div>
+      </div>
+      <div class="card">
+        <h2>🎁 Recompensas</h2>
+        ${!fbUser ? '<p class="muted">Inicia sesión en ⚙️ Ajustes → 👤 Cuenta para ver y canjear las recompensas.</p>'
+          : err ? `<p class="error">No se pudieron cargar (${esc(err)}).</p>`
+          : !rewards ? '<p class="muted">Cargando…</p>'
+          : !rewards.length ? '<p class="muted">Todavía no hay recompensas. ¡Pronto habrá sorpresas! 😉</p>'
+          : `<div class="rewards">${rewards.map(r => `<div class="reward">
+              <span class="reward-ico">${esc(r.emoji || '🎁')}</span>
+              <div class="reward-txt"><b>${esc(r.name)}</b><span class="muted">⭐ ${r.cost} puntos</span></div>
+              <button class="small ${balance >= r.cost ? 'primary' : ''}" data-r="${esc(r.id)}" ${balance >= r.cost ? '' : 'disabled'}>${balance >= r.cost ? 'Canjear' : `Faltan ${r.cost - balance}`}</button>
+            </div>`).join('')}</div>`}
+        ${canjes?.length ? `<h3>Mis canjes</h3>${canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ${fmtDate(c.at)} · ${c.done ? '✅ cumplida' : '⏳ pendiente'}</span></div>`).join('')}` : ''}
+      </div>
+      <div class="card">
+        <h2>Medallas</h2>
+        <div class="medals">${LOGROS.map(l => { const has = ok.has(l.id), v = Math.min(l.val(d), l.goal); return `
+          <div class="medal ${has ? 'on' : ''}" title="${esc(l.desc)}">
+            <span class="medal-ico">${l.ico}</span><b>${esc(l.name)}</b>
+            <span class="muted">${esc(l.desc)}</span>
+            <span class="medal-pts">${has ? `⭐ +${l.pts}${seen[l.id] ? ` · ${new Date(seen[l.id]).toLocaleDateString('es-ES')}` : ''}` : l.goal > 1 ? `${v} / ${l.goal} · ⭐ ${l.pts}` : `⭐ ${l.pts}`}</span>
+          </div>`; }).join('')}</div>
+      </div>`;
+    $('home').onclick = () => showHome();
+    app.querySelectorAll('[data-r]').forEach(b => b.onclick = async () => {
+      const r = rewards.find(x => x.id === b.dataset.r);
+      if (!r || !confirm(`¿Canjear «${r.name}» por ${r.cost} puntos?`)) return;
+      b.disabled = true;
+      try {
+        await fb.addDoc(fb.collection(fb.db, 'users', fbUser.uid, 'canjes'), { rewardId: r.id, name: r.name, emoji: r.emoji || '🎁', cost: r.cost, at: Date.now(), done: false });
+        showToast('🎁', '¡Canjeado!', `«${r.name}» · ya le ha llegado al admin 💌`, 'pomo');
+        showLogros();
+      } catch (e) { alert('No se pudo canjear: ' + (e.code || e.message)); b.disabled = false; }
+    });
+  };
+  render(fbUser ? null : [], canjesCache);
+  if (!fbUser) return;
+  try { const [rw, cj] = await Promise.all([loadRewards(), loadCanjes()]); if ($('home') && app.querySelector('.points-card')) render(rw, cj); }
+  catch (e) { render([], canjesCache, e.code || e.message); }
+}
+// Resumen pequeño para el inicio
+function puntosChipHTML() {
+  const ok = logrosOk(), pts = puntosGanados(ok) - puntosGastados(canjesCache);
+  return `<button class="chip pts-chip" id="goLogros" title="Logros y recompensas">🏆 ${ok.length}/${LOGROS.length} · ⭐ ${pts}</button>`;
+}
+
+// ---------- Mensajes del admin ----------
+let inboxCache = [];
+async function loadInbox() {
+  if (!fbUser) return;
+  try {
+    const s = await fb.getDocs(fb.collection(fb.db, 'users', fbUser.uid, 'inbox'));
+    inboxCache = s.docs.map(d => ({ id: d.id, ...d.data() })).filter(m => !m.read).sort((a, b) => a.at - b.at);
+    if (inboxCache.length && $('goStats')) showHome();
+  } catch {}
+}
+function inboxHTML() {
+  return inboxCache.map(m => `<div class="card msg-card">
+      <div class="msg-from">💌 Mensaje${m.fromName ? ` de ${esc(m.fromName)}` : ''} <span class="muted">· ${fmtDate(m.at)}</span></div>
+      <p class="msg-text">${esc(m.text)}</p>
+      <button class="small primary" data-read="${esc(m.id)}">💚 Leído</button>
+    </div>`).join('');
+}
+function bindInbox() {
+  app.querySelectorAll('[data-read]').forEach(b => b.onclick = async () => {
+    const id = b.dataset.read;
+    inboxCache = inboxCache.filter(m => m.id !== id);
+    b.closest('.msg-card').remove();
+    try { await fb.updateDoc(fb.doc(fb.db, 'users', fbUser.uid, 'inbox', id), { read: true, readAt: Date.now() }); } catch {}
+  });
+}
 function dailyCardHTML() {
   const s = getSettings(), today = load(K.daily, {})[todayKey()] || 0, left = daysLeft(s.examDate), st = streak();
   if (left === null && !s.dailyGoal) return '';
@@ -1030,15 +1422,17 @@ function showHome(error) {
 
   app.innerHTML = `
     <h1>${set ? esc(set.titulo) : 'Test de preguntas'}</h1>
+    ${set?.preguntas?.length ? `<div class="row" style="margin:-6px 0 12px">${puntosChipHTML()}</div>` : ''}
     <div class="homenav"><button id="goStats">📊 Progreso</button><button id="goEditor">✏️ Editor</button><button id="goTheme">🎨 Tema</button><button id="goSettings">⚙️ Ajustes</button>${isAdmin() ? '<button id="goAdmin">📊 Admin</button>' : ''}</div>
     ${error ? `<div class="card error">${esc(error)}</div>` : ''}
+    ${inboxHTML()}
     ${saved ? `
     <div class="card notice">
       <b>Tienes un test a medias</b>
       <p class="muted">${MODOS[saved.sim ? 'simulacro' : saved.mode] || ''} · pregunta ${saved.i + 1} de ${saved.list.length} · ${fmtTime(saved.elapsed)} transcurridos</p>
       <div class="row"><button class="primary" id="resume">Reanudar</button><button id="discard">Descartar</button></div>
     </div>` : ''}
-    ${hasContent ? dailyCardHTML() + `
+    ${hasContent ? dailyCardHTML() + planCardHTML() + `
     <div class="card">
       <div class="quick">
         <button class="quick-btn" id="srsBtn"><span class="qi">🧠</span><b>Repaso inteligente</b>
@@ -1088,6 +1482,10 @@ function showHome(error) {
       ${serverAvailable && set?.origen !== 'servidor' ? `<p><button id="useServer" class="small">Volver a usar preguntas.json del servidor</button></p>` : ''}
     </div>`;
 
+  bindPlanCard();
+  bindInbox();
+  if ($('goLogros')) $('goLogros').onclick = () => showLogros();
+  setTimeout(checkLogros, 600); // aviso de logros nuevos al volver al inicio
   $('goStats').onclick = showStats;
   $('goTheme').onclick = showTheme;
   $('goSettings').onclick = showSettings;
@@ -1608,6 +2006,8 @@ function finish() {
   localStorage.removeItem(K.run);
   const meta = run;
   run = null;
+  if (meta.label === PLAN_LABEL) planMarkToday(); // el test del planning marca los temas de hoy como hechos
+  setTimeout(checkLogros, 800);
   showResult(results, entry, meta);
 }
 
@@ -1889,6 +2289,7 @@ function showSettings() {
       <div class="set-row"><span>Fecha del examen</span><input type="date" id="examDate" value="${esc(s.examDate)}"></div>
       <div class="set-row"><span>Objetivo diario (preguntas, 0 = sin objetivo)</span><input type="number" id="dailyGoal" min="0" value="${s.dailyGoal}"></div>
       <div class="set-row"><span>Preguntas por repaso inteligente</span><input type="number" id="srsSize" min="1" value="${s.srsSize}"></div>
+      <p><button class="small" id="goPlan">📅 Planning «Hoy toca»</button></p>
     </div>
     <div class="card">
       <h2>🍅 Bienestar</h2>
@@ -1926,6 +2327,7 @@ function showSettings() {
     </div>`;
 
   $('home').onclick = () => showHome();
+  $('goPlan').onclick = () => showPlan();
   bindAccountCard();
   if ($('devImpBtn')) $('devImpBtn').onclick = importFromDev;
   const num = (id, min = 0) => Math.max(min, +$(id).value || 0);
