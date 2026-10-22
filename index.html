@@ -545,7 +545,7 @@ async function fbLoad() {
   const base = `https://www.gstatic.com/firebasejs/${FB_VER}/`;
   const [appM, authM, dbM] = await Promise.all(['firebase-app', 'firebase-auth', 'firebase-firestore'].map(n => import(base + n + '.js')));
   const fapp = appM.initializeApp(FIREBASE_CONFIG);
-  fb = { ...authM, ...dbM, auth: authM.getAuth(fapp), db: dbM.getFirestore(fapp) };
+  fb = { ...authM, ...dbM, app: fapp, auth: authM.getAuth(fapp), db: dbM.getFirestore(fapp) };
   return fb;
 }
 
@@ -695,6 +695,65 @@ function bindAccountCard() {
     if (!e) return msg('Escribe tu email arriba y vuelve a pulsar.', true);
     go(f => f.sendPasswordResetEmail(f.auth, e).then(() => msg('Te hemos enviado un email para cambiar la contraseña (mira también en spam).')), 'Enviando…');
   };
+}
+
+// ---------- Avisos al móvil (Firebase Cloud Messaging) ----------
+// Cada dispositivo que los activa guarda su token en users/{uid}/push/{id} con la hora elegida.
+// Un «cartero» (GitHub Actions, cada hora) lee esos datos y manda el aviso si no se ha llegado al objetivo.
+// Va por dispositivo, así que no se sincroniza: se guarda aparte en este navegador.
+const VAPID_KEY = 'BOMvH_ZJj8Rfw-0gk995AvmxmN8F1T4CIZk_fWaAri46CMf6t8oYl5iMlKYLHzLlsZzywpg3YA4B_XV79_anZZw'; // clave pública del certificado push web (no es secreta)
+const K_PUSH = P + 'push';
+const pushSupported = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window && !!VAPID_KEY;
+const pushConf = () => { try { return JSON.parse(localStorage.getItem(K_PUSH)) || null; } catch { return null; } };
+const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
+const isStandalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+
+async function pushMessaging() {
+  const m = await import(`https://www.gstatic.com/firebasejs/${FB_VER}/firebase-messaging.js`);
+  return { m, messaging: m.getMessaging(fb.app) };
+}
+async function pushEnable(hour, onlyBehind) {
+  if (await Notification.requestPermission() !== 'granted') throw new Error('No has dado permiso. Actívalo en los ajustes del móvil para esta app.');
+  const reg = await navigator.serviceWorker.ready;
+  const { m, messaging } = await pushMessaging();
+  const token = await m.getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: reg });
+  const id = token.replace(/[^\w-]/g, '').slice(-60);
+  await fb.setDoc(fb.doc(fb.db, 'users', fbUser.uid, 'push', id), { token, env: ENV, hour, onlyBehind, at: Date.now(), ua: navigator.userAgent.slice(0, 120) });
+  localStorage.setItem(K_PUSH, JSON.stringify({ id, hour, onlyBehind }));
+}
+async function pushDisable() {
+  const c = pushConf();
+  localStorage.removeItem(K_PUSH);
+  if (!c) return;
+  try { await fb.deleteDoc(fb.doc(fb.db, 'users', fbUser.uid, 'push', c.id)); } catch {}
+  try { const { m, messaging } = await pushMessaging(); await m.deleteToken(messaging); } catch {}
+}
+
+function pushCardHTML() {
+  if (!syncOn()) return '';
+  const c = pushConf();
+  let body;
+  if (!fbUser) body = '<p class="help">Inicia sesión arriba para activar los avisos.</p>';
+  else if (isIOS && !isStandalone) body = '<p class="help">En el iPhone los avisos solo funcionan con la app instalada: en Safari, botón Compartir → «Añadir a pantalla de inicio», y ábrela desde el icono.</p>';
+  else if (!pushSupported()) body = '<p class="help">Este navegador no admite avisos.</p>';
+  else body = `
+    <div class="set-row"><span>Hora del aviso</span><select id="pushHour">${Array.from({ length: 16 }, (_, i) => i + 7).map(h => `<option value="${h}" ${(c?.hour ?? 19) === h ? 'selected' : ''}>${h}:00</option>`).join('')}</select></div>
+    <label class="opt"><input type="checkbox" id="pushBehind" ${c?.onlyBehind === false ? '' : 'checked'}> Solo si ese día no he llegado al objetivo</label>
+    <p class="help">También te avisa cuando te llega un mensaje del admin.</p>
+    <div class="row">${c ? '<button class="small primary" id="pushSave">Guardar cambios</button><button class="small" id="pushOff">Desactivar en este móvil</button>'
+      : '<button class="small primary" id="pushOn">🔔 Activar avisos en este móvil</button>'}<span class="muted" id="pushMsg"></span></div>`;
+  return `<div class="card" id="pushCard"><h2>🔔 Avisos</h2>${c ? '<p class="muted" style="margin-top:-6px">✓ Activados en este dispositivo</p>' : ''}${body}</div>`;
+}
+function bindPushCard() {
+  const msg = t => { if ($('pushMsg')) $('pushMsg').textContent = t; };
+  const go = async () => {
+    msg('Activando…');
+    try { await pushEnable(+$('pushHour').value, $('pushBehind').checked); showSettings(); }
+    catch (e) { msg('⚠️ ' + (e.message || e.code)); }
+  };
+  if ($('pushOn')) $('pushOn').onclick = go;
+  if ($('pushSave')) $('pushSave').onclick = go;
+  if ($('pushOff')) $('pushOff').onclick = async () => { await pushDisable(); showSettings(); };
 }
 
 // ---------- Panel de administración ----------
@@ -2258,6 +2317,7 @@ function showSettings() {
     <div class="row between"><h1>Ajustes</h1><button id="home">← Inicio</button></div>
     <p class="muted" style="margin-top:-8px">Los cambios se guardan solos al momento <span id="savedFlash" class="saved-flash">✓ Guardado</span></p>
     ${accountCardHTML()}
+    ${pushCardHTML()}
     ${devImportCardHTML()}
     <div class="card">
       <h2>📝 Penalización</h2>
@@ -2329,6 +2389,7 @@ function showSettings() {
   $('home').onclick = () => showHome();
   $('goPlan').onclick = () => showPlan();
   bindAccountCard();
+  bindPushCard();
   if ($('devImpBtn')) $('devImpBtn').onclick = importFromDev;
   const num = (id, min = 0) => Math.max(min, +$(id).value || 0);
   let flashT;

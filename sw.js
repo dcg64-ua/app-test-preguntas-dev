@@ -34,3 +34,19 @@ self.addEventListener('fetch', e => {
       .catch(() => caches.match(e.request, { ignoreSearch: true }))
   );
 });
+
+// Avisos (Firebase Cloud Messaging): el servidor manda { notification: { title, body }, fcmOptions: { link } }
+self.addEventListener('push', e => {
+  let d = {};
+  try { d = e.data ? e.data.json() : {}; } catch { d = { notification: { body: e.data && e.data.text() } }; }
+  const n = d.notification || d.data || {};
+  const link = (d.fcmOptions && d.fcmOptions.link) || (d.data && d.data.link) || self.registration.scope;
+  e.waitUntil(self.registration.showNotification(n.title || 'Tests', { body: n.body || '', icon: 'icon-192.png', badge: 'icon-192.png', data: { link } }));
+});
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  e.waitUntil(clients.matchAll({ type: 'window', includeUncontrolled: true }).then(ws => {
+    const w = ws.find(c => c.url.startsWith(self.registration.scope));
+    return w ? w.focus() : clients.openWindow((e.notification.data && e.notification.data.link) || self.registration.scope);
+  }));
+});
