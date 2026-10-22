@@ -6,7 +6,7 @@
 // y solo borra las suyas.
 const SCOPE = new URL(self.registration.scope).pathname;
 const CACHE = 'quiz-v4:' + SCOPE;
-const FILES = ['./', 'index.html', 'preguntas.json', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'gato.jpg'];
+const FILES = ['./', 'index.html', 'preguntas.json', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'gato.jpg'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE)
