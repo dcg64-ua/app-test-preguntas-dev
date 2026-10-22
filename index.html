@@ -137,6 +137,7 @@
   th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .table-wrap { overflow-x: auto; }
+  .ed-list > summary { cursor: pointer; font-weight: 600; padding: 10px 0; color: var(--accent); }
   .qitem { display: flex; gap: 10px; align-items: center; width: 100%; text-align: left; margin-bottom: 8px; }
   .qitem .txt { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .tag { font-size: .75rem; padding: 2px 10px; border-radius: 99px; background: var(--accent-bg); color: var(--accent); white-space: nowrap; font-weight: 600; }
@@ -945,6 +946,7 @@ async function showAdmin(env = ENV) {
   // Recompensas: lista editable que se guarda en config/rewards
   let items = [];
   const paintRw = () => {
+    if (!$('rwList')) return; // ya se ha salido del panel
     $('rwList').innerHTML = items.map((r, i) => `<div class="rw-row">
         <input type="text" value="${esc(r.emoji || '🎁')}" data-i="${i}" data-f="emoji" style="width:52px;text-align:center" aria-label="Emoji">
         <input type="text" value="${esc(r.name)}" data-i="${i}" data-f="name" placeholder="Te invito a cenar" style="flex:1;min-width:0" aria-label="Recompensa">
@@ -953,7 +955,7 @@ async function showAdmin(env = ENV) {
     $('rwList').querySelectorAll('input').forEach(inp => inp.oninput = () => { const r = items[+inp.dataset.i]; r[inp.dataset.f] = inp.dataset.f === 'cost' ? Math.max(1, +inp.value || 1) : inp.value; });
     $('rwList').querySelectorAll('[data-del]').forEach(b => b.onclick = () => { items.splice(+b.dataset.del, 1); paintRw(); });
   };
-  loadRewards().then(r => { items = r.map(x => ({ ...x })); paintRw(); }).catch(e => { $('rwList').innerHTML = `<p class="error">No se pudieron leer (${esc(e.code || e.message)}).</p>`; });
+  loadRewards().then(r => { items = r.map(x => ({ ...x })); paintRw(); }).catch(e => { if ($('rwList')) $('rwList').innerHTML = `<p class="error">No se pudieron leer (${esc(e.code || e.message)}).</p>`; });
   $('rwAdd').onclick = () => { items.push({ id: Date.now().toString(36), emoji: '🎁', name: '', cost: 100 }); paintRw(); };
   $('rwSave').onclick = async () => {
     const clean = items.filter(r => r.name.trim()).map(r => ({ id: r.id, emoji: r.emoji.trim() || '🎁', name: r.name.trim(), cost: Math.max(1, Math.round(+r.cost) || 1) }));
@@ -2733,7 +2735,7 @@ async function openEditor(forcePull = false) {
 }
 
 // Pestañas del editor: preguntas tipo test, fichas (anverso/reverso) y artículos (para rellenar huecos)
-let editorTab = 'q';
+let editorTab = 'q', editorListOpen = false; // la lista va plegada: con 1300 preguntas no hay que bajar tanto
 const TABS = {
   q: { name: 'Preguntas', one: 'pregunta', icon: '❓', list: () => set.preguntas, text: x => x.pregunta, key: keyOf, form: i => showEditForm(i) },
   f: { name: 'Fichas', one: 'ficha', icon: '🗂', list: () => (set.fichas ||= []), text: x => x.anverso, key: fichaKey, form: i => showFichaForm(i) },
@@ -2754,6 +2756,7 @@ function showEditor(filter = '') {
   app.innerHTML = `
     <div class="row between"><h1>Editor</h1><button id="home">← Inicio</button></div>
     <div id="ghStatus">${ghStatusHTML()}</div>
+    ${ghCardHTML()}
     <div class="card">
       <label class="muted">Título del test</label>
       <input type="text" id="titulo" class="full" value="${esc(set.titulo)}" ${busy ? 'disabled' : ''}>
@@ -2769,15 +2772,17 @@ function showEditor(filter = '') {
       ${editorTab === 'f' ? '<p class="help">Para conceptos que no son tipo test: plazos, definiciones, órganos… Salen en 🃏 Flashcards' + (feat('audio') ? ' y 🎧 Audio' : '') + '.</p>' : ''}
       ${editorTab === 'a' ? '<p class="help">Pega el texto del artículo y pon entre {{dobles llaves}} lo que quieras que se tape. Se practica en 📜 Artículos.</p>' : ''}
       <input type="search" id="search" class="full" placeholder="🔍 Buscar${editorTab !== 'a' ? ' (★ = marcadas)' : ''}" value="${esc(filter)}">
-      <p class="muted">${items.length} de ${all.length}</p>
+      <details class="ed-list" id="edList" ${filter || editorListOpen ? 'open' : ''}>
+        <summary>📋 ${filter ? `${items.length} de ${all.length} ${tab.name.toLowerCase()}` : `Ver ${all.length === 1 ? 'la' : 'las'} ${all.length} ${all.length === 1 ? tab.one : tab.name.toLowerCase()}`}</summary>
       ${items.map(({ x, i }) => `
         <button class="qitem" data-i="${i}" ${busy ? 'disabled' : ''}><span class="muted">${i + 1}</span><span class="txt">${esc(tab.text(x))}</span>
           ${x.tema ? `<span class="tag">${esc(x.tema)}</span>` : ''}${marks[tab.key(x)] ? '<span style="color:var(--star)">★</span>' : ''}</button>`).join('')}
-    </div>
-    ${ghCardHTML()}`;
+      </details>
+    </div>`;
 
   $('home').onclick = () => showHome();
   app.querySelectorAll('.tab').forEach(b => b.onclick = () => { editorTab = b.dataset.tab; showEditor(); });
+  $('edList').ontoggle = e => { if (!filter) editorListOpen = e.target.open; }; // solo cuenta abrirla o cerrarla a mano, no al buscar
   $('titulo').onchange = e => { set.titulo = e.target.value.trim() || 'Test'; persistEdit('Cambiar título: ' + set.titulo); };
   $('add').onclick = () => tab.form(-1);
   if ($('newSet')) $('newSet').onclick = () => {
