@@ -2596,10 +2596,16 @@ async function ghApi(method, body, cfg = ghConfig()) {
   return res.json();
 }
 
-async function ghPull(cfg) {
+async function ghPull(cfg = ghConfig()) {
   const d = await ghApi('GET', null, cfg);
   ghSha = d.sha;
-  return JSON.parse(b64decode(d.content));
+  if (d.content) return JSON.parse(b64decode(d.content));
+  // Con más de 1 MB GitHub no manda el contenido aquí (encoding «none»): se pide el blob, que admite hasta 100 MB
+  const res = await fetch(`https://api.github.com/repos/${cfg.repo}/git/blobs/${d.sha}`, {
+    cache: 'no-store', headers: { Authorization: `Bearer ${cfg.token}`, Accept: 'application/vnd.github+json' }
+  });
+  if (!res.ok) throw Object.assign(new Error(`GitHub respondió con error ${res.status}.`), { status: res.status });
+  return JSON.parse(b64decode((await res.json()).content));
 }
 
 async function ghPush(message, force = false) {
