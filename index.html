@@ -370,6 +370,11 @@
   .plan-card .tag { font-size: .85rem; }
   .plan-day { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
   .plan-day b { min-width: 92px; text-transform: capitalize; }
+  .final-card { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; border: 2px dashed color-mix(in srgb, var(--star) 60%, transparent); background: color-mix(in srgb, var(--star) 8%, var(--card)); }
+  .final-card.on { border-style: solid; border-color: var(--star); background: color-mix(in srgb, var(--star) 20%, var(--card)); box-shadow: 0 0 24px -6px color-mix(in srgb, var(--star) 70%, transparent); }
+  .final-ico { font-size: 2.6rem; } .final-txt { flex: 1; display: flex; flex-direction: column; min-width: 160px; } .final-txt b { font-size: 1.2rem; }
+  .final-tag { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--star); }
+  .final-state { font-weight: 600; }
   .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
@@ -794,6 +799,7 @@ async function showAdmin(env = ENV) {
   let users;
   try {
     await loadLogroCfg(); // los puntos de cada usuario se calculan con los valores actuales
+    await loadFinal().catch(() => {});
     const snap = await fb.getDocs(fb.collection(fb.db, 'users'));
     users = await Promise.all(snap.docs.map(async u => {
       const d = await fb.getDocs(fb.collection(fb.db, 'users', u.id, env));
@@ -868,6 +874,10 @@ async function showAdmin(env = ENV) {
           <td>${MODOS[h.modo] || ''}${h.tema ? ` <span class="tag">${esc(h.tema)}</span>` : ''}${h.modo === 'simulacro' ? (h.apto ? ' ✅' : ' ❌') : ''}</td>
           <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${notaPct(entryNota(h))}</td><td class="num">${h.aciertos}/${h.total}</td></tr>`).join('')}
       </table></div>` : '<p class="muted">Todavía no ha hecho ningún test.</p>'}
+      <h3>${FINAL.emoji} Recompensa final</h3>
+      ${finalCache[u.uid] ? `<p class="muted" style="margin-top:-6px">🎓 Oposición aprobada el ${new Date(finalCache[u.uid]).toLocaleDateString('es-ES')} · viaje desbloqueado${u.canjes.some(c => c.rewardId === FINAL.id) ? ' y canjeado 🧳' : ''}
+          <button class="small" data-final-off="${esc(u.uid)}">Deshacer</button></p>`
+        : `<button class="small primary" data-final="${esc(u.uid)}">🎓 Ha aprobado la oposición</button> <span class="muted">desbloquea «${FINAL.name}»</span>`}
       <h3>🏆 Puntos y recompensas</h3>
       <p class="muted" style="margin-top:-6px">⭐ ${u.earned - puntosGastados(u.canjes)} disponibles · ${u.earned} ganados · ${puntosGastados(u.canjes)} canjeados</p>
       ${u.canjes.length ? u.canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ${fmtDate(c.at)} · ⭐ ${c.cost}</span>
@@ -917,6 +927,15 @@ async function showAdmin(env = ENV) {
   $('admReload').onclick = () => showAdmin(env);
   app.querySelectorAll('[data-prog]').forEach(b => b.onclick = () => showUserStats(users.find(u => u.uid === b.dataset.prog), env));
   $('admName').onchange = e => saveSettings({ adminName: e.target.value.trim() });
+  // Recompensa final: desbloquear (o deshacer) para un usuario
+  const setFinal = async (uid, on) => {
+    const unlocked = { ...finalCache };
+    if (on) unlocked[uid] = Date.now(); else delete unlocked[uid];
+    try { await fb.setDoc(fb.doc(fb.db, 'config', 'final'), { unlocked }); finalCache = unlocked; showAdmin(env); }
+    catch (e) { alert('No se pudo guardar: ' + (e.code || e.message)); }
+  };
+  app.querySelectorAll('[data-final]').forEach(b => b.onclick = () => confirm('¿Ha aprobado la oposición? Se le desbloquea el viaje 🎉') && setFinal(b.dataset.final, true));
+  app.querySelectorAll('[data-final-off]').forEach(b => b.onclick = () => confirm('¿Quitar el desbloqueo del viaje?') && setFinal(b.dataset.finalOff, false));
   // Logros: puntos y activos, en config/logros
   const saveLg = async cfg => {
     try { await fb.setDoc(fb.doc(fb.db, 'config', 'logros'), { ...cfg, at: Date.now() }); applyLogroCfg(cfg); $('lgMsg').textContent = '✓ Guardado'; }
@@ -1452,6 +1471,23 @@ async function loadCanjes(uid = fbUser.uid) {
   return list;
 }
 const puntosGastados = list => (list || []).reduce((a, c) => a + (c.cost || 0), 0);
+// Recompensa final: no se compra con puntos; la desbloquea el admin cuando se aprueba la oposición (config/final = { unlocked: { uid: fecha } })
+const FINAL = { id: 'final-viaje', emoji: '✈️', name: 'Nos vamos de viaje', cond: 'Vence a la oposición' };
+let finalCache = {};
+async function loadFinal() {
+  const s = await fb.getDoc(fb.doc(fb.db, 'config', 'final'));
+  return finalCache = (s.exists() ? s.data().unlocked : null) || {};
+}
+function finalCardHTML(canjes) {
+  const at = fbUser && finalCache[fbUser.uid], used = (canjes || []).some(c => c.rewardId === FINAL.id);
+  return `<div class="card final-card ${at ? 'on' : ''}">
+    <span class="final-ico">${FINAL.emoji}</span>
+    <div class="final-txt"><span class="final-tag">🏆 Recompensa final</span><b>${FINAL.name}</b><span class="muted">${FINAL.cond}</span></div>
+    ${used ? '<span class="final-state">🧳 ¡Canjeado! Preparad las maletas</span>'
+      : at ? '<button class="primary" id="finalGo">🎉 Canjear el viaje</button>'
+      : '<span class="final-state">🔒 Se desbloquea cuando apruebes la oposición</span>'}
+  </div>`;
+}
 
 async function showLogros() {
   stopTimer();
@@ -1466,6 +1502,7 @@ async function showLogros() {
         <div class="points-big">⭐ ${balance}</div>
         <div class="muted">puntos disponibles · ${ok.size} de ${LOGROS.length} logros · ${earned} ganados${canjes?.length ? ` · ${puntosGastados(canjes)} canjeados` : ''}</div>
       </div>
+      ${finalCardHTML(canjes)}
       <div class="card">
         <h2>🎁 Recompensas</h2>
         ${!fbUser ? '<p class="muted">Inicia sesión en ⚙️ Ajustes → 👤 Cuenta para ver y canjear las recompensas.</p>'
@@ -1489,6 +1526,15 @@ async function showLogros() {
           </div>`; }).join('')}</div>
       </div>`;
     $('home').onclick = () => showHome();
+    if ($('finalGo')) $('finalGo').onclick = async () => {
+      if (!confirm(`¿Canjear la recompensa final «${FINAL.name}»? 🎉`)) return;
+      $('finalGo').disabled = true;
+      try {
+        await fb.addDoc(fb.collection(fb.db, 'users', fbUser.uid, 'canjes'), { rewardId: FINAL.id, name: FINAL.name, emoji: FINAL.emoji, cost: 0, at: Date.now(), done: false });
+        showToast(FINAL.emoji, '¡Enhorabuena, opositora aprobada!', 'El viaje ya le ha llegado al admin. ¡A hacer las maletas! 🧳', 'pomo');
+        showLogros();
+      } catch (e) { alert('No se pudo canjear: ' + (e.code || e.message)); $('finalGo').disabled = false; }
+    };
     app.querySelectorAll('[data-r]').forEach(b => b.onclick = async () => {
       const r = rewards.find(x => x.id === b.dataset.r);
       if (!r || !confirm(`¿Canjear «${r.name}» por ${r.cost} puntos?`)) return;
@@ -1502,7 +1548,7 @@ async function showLogros() {
   };
   render(fbUser ? null : [], canjesCache);
   if (!fbUser) return;
-  try { const [rw, cj] = await Promise.all([loadRewards(), loadCanjes()]); if ($('home') && app.querySelector('.points-card')) render(rw, cj); }
+  try { const [rw, cj] = await Promise.all([loadRewards(), loadCanjes(), loadFinal().catch(() => ({}))]); if ($('home') && app.querySelector('.points-card')) render(rw, cj); }
   catch (e) { render([], canjesCache, e.code || e.message); }
 }
 // Resumen pequeño para el inicio
