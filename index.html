@@ -239,6 +239,8 @@
   .heat i.l4 { background: var(--accent); }
   .heat i.today { outline: 2px solid var(--text); outline-offset: -1px; }
   .heat i.future { visibility: hidden; }
+  .heat i[data-dia]:not(.future) { cursor: pointer; } .heat i.sel { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .heat-info { margin: 8px 0 0; min-height: 1.4em; }
   .heat-legend { display: flex; gap: 3px; align-items: center; justify-content: flex-end; margin-top: 8px; font-size: .8rem; color: var(--muted); }
   .heat-legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
 
@@ -2959,9 +2961,10 @@ function heatmapHTML(weeks = 18) {
     const k = todayKey(day), n = d[k] || 0, future = day > today;
     const r = goal ? n / goal : n / max;
     const lvl = !n ? 0 : r >= 1 ? 4 : r >= .66 ? 3 : r >= .33 ? 2 : 1;
-    cells += `<i class="l${lvl} ${future ? 'future' : ''} ${+day === +today ? 'today' : ''}" title="${day.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}: ${n} preguntas"></i>`;
+    cells += `<i class="l${lvl} ${future ? 'future' : ''} ${+day === +today ? 'today' : ''}" data-dia="${day.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'short' })}" data-n="${n}" title="${day.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}: ${n} preguntas"></i>`;
   }
-  return `<div class="heat" role="img" aria-label="Preguntas respondidas por día en las últimas ${weeks} semanas">${cells}</div>
+  return `<div class="heat" id="heat" role="img" aria-label="Preguntas respondidas por día en las últimas ${weeks} semanas">${cells}</div>
+    <p class="heat-info muted" id="heatInfo">Pasa el ratón o toca un día para ver cuántas preguntas hiciste.</p>
     <div class="heat-legend">Menos <i class="l0" style="background:var(--grid)"></i><i style="background:color-mix(in srgb, var(--accent) 30%, var(--grid))"></i><i style="background:color-mix(in srgb, var(--accent) 55%, var(--grid))"></i><i style="background:color-mix(in srgb, var(--accent) 78%, var(--grid))"></i><i style="background:var(--accent)"></i> ${goal ? 'Objetivo cumplido' : 'Más'}</div>`;
 }
 
@@ -3078,6 +3081,18 @@ function showStats() {
   };
   if ($('chart')) bindChart(hist.slice(-30));
   bindProgresoExtras();
+  // Actividad: al pasar el ratón o tocar un día, se ve cuál es y cuántas preguntas hubo
+  if ($('heat')) {
+    const goal = getSettings().dailyGoal, info = $('heatInfo');
+    const ver = e => {
+      const c = e.target.closest('i[data-dia]');
+      if (!c || c.classList.contains('future')) return;
+      $('heat').querySelectorAll('.sel').forEach(x => x.classList.remove('sel')); c.classList.add('sel');
+      const n = +c.dataset.n;
+      info.innerHTML = `📅 <b>${c.dataset.dia}</b>: ${n} ${n === 1 ? 'pregunta' : 'preguntas'}${goal && n >= goal ? ' ✅' : ''}`;
+    };
+    $('heat').onmouseover = ver; $('heat').onclick = ver;
+  }
   if ($('evoSel')) $('evoSel').onchange = e => { evoTema = e.target.value; showStats(); setTimeout(() => $('evoSel')?.scrollIntoView({ block: 'center' }), 0); };
 }
 
