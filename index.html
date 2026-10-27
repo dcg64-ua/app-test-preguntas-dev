@@ -392,6 +392,8 @@
   .final-ico { font-size: 2.6rem; } .final-txt { flex: 1; display: flex; flex-direction: column; min-width: 160px; } .final-txt b { font-size: 1.2rem; }
   .final-tag { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--star); }
   .final-state { font-weight: 600; }
+  .pts-chip.alert { border-color: var(--star); background: color-mix(in srgb, var(--star) 35%, var(--card)); animation: chipAlert 1.2s ease-in-out infinite; }
+  @keyframes chipAlert { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--star) 70%, transparent); transform: scale(1); } 50% { box-shadow: 0 0 0 8px transparent; transform: scale(1.05); } }
   .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
@@ -1810,7 +1812,9 @@ async function showLogros() {
 // Resumen pequeño para el inicio
 function puntosChipHTML() {
   const ok = logrosOk(), pts = puntosGanados(ok) - puntosGastados(canjesCache);
-  return `<button class="chip pts-chip" id="goLogros" title="Logros y recompensas">🏆 ${ok.length}/${LOGROS.length} · ⭐ ${pts}</button>`;
+  // con la ruleta desbloqueada y sin girar, el botón parpadea para que se vea
+  const ruleta = (load(K.daily, {})[todayKey()] || 0) >= diarioCfg().caja && !(load(K.settings, {}).cajas || {})[todayKey()];
+  return `<button class="chip pts-chip ${ruleta ? 'alert' : ''}" id="goLogros" title="${ruleta ? '¡Tienes la ruleta para girar!' : 'Logros y recompensas'}">${ruleta ? '🎡 ¡Ruleta! · ' : ''}🏆 ${ok.length}/${LOGROS.length} · ⭐ ${pts}</button>`;
 }
 
 // ---------- Mensajes del admin ----------
@@ -1925,7 +1929,7 @@ function showHome(error) {
 
   bindPlanCard();
   bindInbox();
-  if ($('goLogros')) $('goLogros').onclick = () => showLogros();
+  if ($('goLogros')) $('goLogros').onclick = () => showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' }));
   if ($('goRuleta')) $('goRuleta').onclick = e => { e.preventDefault(); showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' })); };
   setTimeout(checkLogros, 600); // aviso de logros nuevos al volver al inicio
   $('goStats').onclick = showStats;
