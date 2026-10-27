@@ -370,6 +370,13 @@
   .plan-more > summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 10px 0; }
   .plan-day b { min-width: 92px; text-transform: capitalize; }
   .extras { display: grid; gap: 6px; }
+  .extra.ready { border-color: var(--star); background: color-mix(in srgb, var(--star) 18%, var(--card)); animation: pop 1.6s ease-in-out infinite; }
+  .ruleta-bg { position: fixed; inset: 0; z-index: 900; display: grid; place-items: center; padding: 16px; background: rgba(0, 0, 0, .55); }
+  .ruleta-box { background: var(--card); color: var(--text); border-radius: 24px; padding: 22px 18px; width: min(360px, 100%); text-align: center; box-shadow: 0 20px 60px rgba(0, 0, 0, .4); }
+  .ruleta-wrap { position: relative; width: min(300px, 80vw); margin: 0 auto; }
+  .ruleta-pin { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); z-index: 1; font-size: 2rem; color: #e2557f; text-shadow: 0 2px 4px rgba(0,0,0,.3); }
+  .ruleta-svg { width: 100%; height: auto; display: block; transition: transform 4.5s cubic-bezier(.17, .67, .12, 1); }
+  .ruleta-res { font-size: 1.2rem; min-height: 1.6em; margin: 14px 0 10px; }
   .extra { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); }
   .extra > span:nth-child(2) { flex: 1; } .extra b { color: var(--star); white-space: nowrap; }
   .extra.on { background: color-mix(in srgb, var(--ok) 14%, var(--card)); border-color: var(--ok); }
@@ -1496,13 +1503,15 @@ function puntosDiarios(daily = load(K.daily, {}), dq = load(K.dailyq, {}), misio
     const k = todayKey(d), n = daily[k] || 0;
     if (n >= cfg.min) {
       racha++;
-      total += diarioPts(cfg, (racha - 1) % 28 + 1) + tramoPts(cfg, n) + (punteriaOk(dq[k]) ? cfg.punteria : 0) + (n >= cfg.caja ? cajaDe(k) : 0);
+      total += diarioPts(cfg, (racha - 1) % 28 + 1) + tramoPts(cfg, n) + (punteriaOk(dq[k]) ? cfg.punteria : 0);
       if (racha % cfg.escudoCada === 0) escudos = Math.min(cfg.escudoMax, escudos + 1);
     } else if (k !== hoy) { // hoy todavía puede llegar
       if (racha && escudos) { escudos--; usados.push(k); } else racha = 0;
     }
   }
   total += Object.keys(misiones).length * cfg.mision;
+  // ruleta: solo cuenta si se ha girado (settings.cajas = { fecha: puntos })
+  total += Object.values(load(K.settings, {}).cajas || {}).reduce((a, p) => a + p, 0);
   const n = daily[hoy] || 0;
   // dia: posición en el calendario del último día cobrado (hoy si ya llegó; si no, el de ayer o antes con escudo)
   return { total, cfg, hoyOk: n >= cfg.min, hoyN: n, dia: racha ? (racha - 1) % 28 + 1 : 0, escudos, usados, q: dq[hoy] || [0, 0] };
@@ -1612,10 +1621,9 @@ function checkLogros() {
     saveSettings({ tramoAvisado: hoy + ':' + tramo });
     showToast('🚀', `¡${tramo} preguntas hoy! +${tramoPts(cfg, pd.hoyN)} puntos`, tramo === 90 ? `A las 120 son +${cfg.t120}.` : 'Tramo máximo de hoy. ¡Bestial!', 'pomo');
   }
-  if (pd.hoyN >= cfg.caja && st.cajaAvisado !== hoy) {
+  if (pd.hoyN >= cfg.caja && st.cajaAvisado !== hoy && !(st.cajas || {})[hoy]) {
     saveSettings({ cajaAvisado: hoy });
-    const p = cajaDe(hoy);
-    showToast('🎁', `Caja sorpresa: +${p} puntos`, p >= 30 ? '¡Premio gordo! 🤩' : p >= 15 ? '¡Buena caja!' : 'Mañana, más suerte 😉', 'pomo');
+    showToast('🎡', '¡Tienes la ruleta para girar!', `Has llegado a ${cfg.caja} preguntas. Gírala en 🏆 Logros.`, 'pomo');
   }
   const seen = load(K.settings, {}).logros || {}, ok = logrosOk(), nuevos = ok.filter(l => !seen[l.id]);
   if (!nuevos.length) return;
@@ -1646,6 +1654,47 @@ function diarioCardHTML(pd) {
     <p class="help" style="margin-bottom:0">🛡️ Escudos: <b>${pd.escudos}</b> de ${cfg.escudoMax} · ganas uno cada ${cfg.escudoCada} días seguidos${pd.usados.length ? ` · usado el ${pd.usados.slice(-3).map(k => new Date(k + 'T12:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric' })).join(', ')}` : ''}.</p>
   </div>`;
 }
+// Ruleta (la «caja sorpresa»): 10 casillas con las mismas probabilidades que CAJA; para en el premio de hoy (cajaDe)
+const RULETA = [5, 10, 5, 15, 5, 10, 30, 5, 15, 10];
+const RULETA_COLOR = { 5: '#7ec8e3', 10: '#f6b26b', 15: '#c39bd3', 30: '#f1c232' };
+function spinRuleta() {
+  const hoy = todayKey(), st = load(K.settings, {});
+  if ((st.cajas || {})[hoy] || puntosDiarios().hoyN < diarioCfg().caja) return;
+  const prize = cajaDe(hoy), opts = RULETA.map((v, i) => [v, i]).filter(([v]) => v === prize);
+  const idx = opts[hashStr('ruleta' + hoy) % opts.length][1], seg = 360 / RULETA.length;
+  const pt = (a, r) => `${150 + r * Math.sin(a * Math.PI / 180)} ${150 - r * Math.cos(a * Math.PI / 180)}`;
+  const slices = RULETA.map((v, i) => {
+    const a0 = i * seg, a1 = a0 + seg, mid = a0 + seg / 2;
+    return `<path d="M150 150 L${pt(a0, 140)} A140 140 0 0 1 ${pt(a1, 140)} Z" fill="${RULETA_COLOR[v]}" stroke="#fff" stroke-width="3"/>
+      <text x="${pt(mid, 100).split(' ')[0]}" y="${pt(mid, 100).split(' ')[1]}" transform="rotate(${mid} ${pt(mid, 100)})" text-anchor="middle" dominant-baseline="middle" font-size="22" font-weight="800" fill="#2b1d05">+${v}</text>`;
+  }).join('');
+  document.body.insertAdjacentHTML('beforeend', `<div class="ruleta-bg" id="ruleta" role="dialog" aria-modal="true" aria-label="Ruleta de premios"><div class="ruleta-box">
+    <h2>🎡 Ruleta del día</h2>
+    <div class="ruleta-wrap"><div class="ruleta-pin">▼</div>
+      <svg viewBox="0 0 300 300" class="ruleta-svg" id="ruletaSvg"><circle cx="150" cy="150" r="146" fill="#fff"/>${slices}<circle cx="150" cy="150" r="22" fill="#fff" stroke="#e2557f" stroke-width="5"/></svg></div>
+    <p class="ruleta-res" id="ruletaRes" aria-live="polite">Girando…</p>
+    <button class="primary" id="ruletaOk" hidden>¡Genial!</button>
+  </div></div>`);
+  let fin = false;
+  const svg = $('ruletaSvg'), done = () => {
+    if (fin) return; fin = true;
+    saveSettings({ cajas: { ...(load(K.settings, {}).cajas || {}), [hoy]: prize } });
+    $('ruletaRes').innerHTML = `${prize >= 30 ? '🤩 ¡PREMIO GORDO!' : prize >= 15 ? '🎉 ¡Muy bien!' : '😊 ¡Toma!'} <b>+${prize} puntos</b>`;
+    $('ruletaOk').hidden = false; $('ruletaOk').focus();
+    navigator.vibrate?.(prize >= 30 ? [100, 60, 100, 60, 200] : 120);
+  };
+  $('ruletaOk').onclick = () => { $('ruleta').remove(); showLogros(); };
+  const turns = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 6;
+  // la rueda tiene que estar pintada en 0° antes de girar; si no, salta al final sin animación
+  svg.getBoundingClientRect();
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    svg.style.transform = `rotate(${turns * 360 + 360 - (idx * seg + seg / 2)}deg)`;
+    if (!turns) return done();
+    svg.addEventListener('transitionend', done, { once: true });
+    setTimeout(done, 5200); // por si el navegador no avisa del final del giro
+  }));
+}
+
 // Lo que se puede ganar hoy además del día: tramos, puntería, caja y misión
 function extrasHTML(pd) {
   const { cfg, hoyN, q } = pd, hoy = todayKey(), mis = misionHoy(), misOk = !!(load(K.settings, {}).misiones || {})[hoy];
@@ -1654,7 +1703,12 @@ function extrasHTML(pd) {
   return x(hoyN >= 90, '🚀', `90 preguntas <span class="muted">(${Math.min(hoyN, 90)}/90)</span>`, cfg.t90)
     + x(hoyN >= 120, '🚀', `120 preguntas <span class="muted">(${Math.min(hoyN, 120)}/120)</span>`, cfg.t120)
     + x(punteriaOk(q), '🎯', `Puntería: 80 % de aciertos <span class="muted">(${q[0] ? `${pctQ} % de ${q[0]}` : 'aún no has respondido'}${q[0] && q[0] < 20 ? ', mínimo 20' : ''})</span>`, cfg.punteria)
-    + x(hoyN >= cfg.caja, '🎁', `Caja sorpresa al llegar a ${cfg.caja}${hoyN >= cfg.caja ? ` <span class="muted">(¡te tocó +${cajaDe(hoy)}!)</span>` : ''}`, hoyN >= cfg.caja ? cajaDe(hoy) : '?')
+    + (() => { // ruleta: se desbloquea al llegar a cfg.caja y hay que girarla
+      const got = (load(K.settings, {}).cajas || {})[hoy];
+      if (got) return x(true, '🎡', 'Ruleta de hoy', got);
+      if (hoyN >= cfg.caja) return `<div class="extra ready"><span>🎡</span><span>¡Ruleta desbloqueada!</span><button class="small primary" id="ruletaBtn">Girar la ruleta</button></div>`;
+      return x(false, '🎡', `Ruleta al llegar a ${cfg.caja} <span class="muted">(${hoyN}/${cfg.caja})</span>`, '?');
+    })()
     + x(misOk, '🗺️', `Misión: ${mis.txt}`, cfg.mision);
 }
 
@@ -1727,6 +1781,7 @@ async function showLogros() {
           </div>`; }).join('')}</div>
       </div>`;
     $('home').onclick = () => showHome();
+    if ($('ruletaBtn')) $('ruletaBtn').onclick = spinRuleta;
     if ($('finalGo')) $('finalGo').onclick = async () => {
       if (!confirm(`¿Canjear la recompensa final «${FINAL.name}»? 🎉`)) return;
       $('finalGo').disabled = true;
@@ -1796,6 +1851,7 @@ function dailyCardHTML() {
       ${s.dailyGoal ? `
       <div class="row between"><span>Hoy: <b>${today}</b> / ${s.dailyGoal} preguntas ${today >= s.dailyGoal ? '✅' : ''}</span><span title="Días seguidos cumpliendo el objetivo">🔥 ${st} ${st === 1 ? 'día' : 'días'}</span></div>
       <div class="progress" style="margin-bottom:0"><div style="width:${Math.min(100, today / s.dailyGoal * 100)}%"></div></div>` : ''}
+      ${set?.preguntas?.length && today >= diarioCfg().caja && !(load(K.settings, {}).cajas || {})[todayKey()] ? `<p style="margin:10px 0 0"><a href="#" id="goRuleta">🎡 ¡Tienes la ruleta para girar! →</a></p>` : ''}
       ${set?.preguntas?.length ? `<p class="muted" style="margin:10px 0 0">🗺️ Misión de hoy: ${misionHoy().txt} · ${(load(K.settings, {}).misiones || {})[todayKey()] ? '✅ cumplida' : `+${diarioCfg().mision}`}</p>` : ''}
     </div>`;
 }
@@ -1870,6 +1926,7 @@ function showHome(error) {
   bindPlanCard();
   bindInbox();
   if ($('goLogros')) $('goLogros').onclick = () => showLogros();
+  if ($('goRuleta')) $('goRuleta').onclick = e => { e.preventDefault(); showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' })); };
   setTimeout(checkLogros, 600); // aviso de logros nuevos al volver al inicio
   $('goStats').onclick = showStats;
   $('goTheme').onclick = showTheme;
