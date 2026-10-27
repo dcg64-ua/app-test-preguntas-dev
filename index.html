@@ -3044,10 +3044,10 @@ function showStats() {
       ${hist.length >= 2 ? `<div class="chart" id="chart">${lineChart(hist.slice(-30), sims.length ? s.simCorte : null)}<div class="tip" id="tip" hidden></div></div>`
         : '<p class="muted">Haz al menos dos tests para ver la evolución.</p>'}
     </div>
+    ${evolucionHTML()}
     ${previsionHTML()}
     ${pctCardHTML(hist)}
     ${lentasHTML()}
-    ${evolucionHTML()}
     ${dN ? `<div class="card">
       <h2>🤔 ¿Te compensa arriesgar?</h2>
       <p style="margin-top:0">De <b>${dN}</b> preguntas dudosas que respondiste, acertaste el <b>${pct(dOk, dN)}%</b>.</p>
