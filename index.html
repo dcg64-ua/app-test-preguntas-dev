@@ -399,6 +399,10 @@
   .prev-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); } .prev-row > span:first-child { flex: 1; min-width: 0; }
   .lenta-txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .fallos-card { display: flex; align-items: center; gap: 12px; justify-content: space-between; border-left: 4px solid var(--ko); }
+  .animo-card { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .animo-btns { display: flex; gap: 6px; } .animo { font-size: 1.6rem; min-height: 48px; width: 52px; padding: 0; border-radius: 14px; }
+  .reto { padding: 10px 0; border-bottom: 1px solid var(--border); } .reto .bar { margin: 6px 0 4px; } .reto.ok .bar > div { background: var(--ok); }
+  .reto-new > summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 8px 0; }
   .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
@@ -647,7 +651,7 @@ function syncStart() {
   if (!syncOn()) return;
   fbLoad().then(f => f.onAuthStateChanged(f.auth, u => {
     fbUser = u;
-    if (u) { syncNow(); loadInbox(); Promise.all([loadLogroCfg(), loadCanjes()]).then(() => $('goStats') && showHome()).catch(() => {}); }
+    if (u) { syncNow(); loadInbox(); Promise.all([loadLogroCfg(), loadCanjes(), loadRetos()]).then(() => $('goStats') && showHome()).catch(() => {}); }
     if ($('accountCard')) showSettings();
     else if ($('goStats')) showHome();
   })).catch(() => { syncState = { text: '⚠️ Sin conexión con el servidor de cuentas.', error: true }; });
@@ -821,7 +825,7 @@ async function showAdmin(env = ENV) {
   let users;
   try {
     await loadLogroCfg(); // los puntos de cada usuario se calculan con los valores actuales
-    await loadFinal().catch(() => {});
+    await Promise.all([loadFinal().catch(() => {}), loadRetos()]);
     const snap = await fb.getDocs(fb.collection(fb.db, 'users'));
     users = await Promise.all(snap.docs.map(async u => {
       const d = await fb.getDocs(fb.collection(fb.db, 'users', u.id, env));
@@ -833,7 +837,8 @@ async function showAdmin(env = ENV) {
       ]);
       // puntos ganados con sus datos (la misma cuenta que ve ella en 🏆 Logros)
       viewAs = Object.fromEntries(Object.entries(data).map(([n, v]) => [P + n, v]));
-      let earned; try { earned = puntosGanados(); } finally { viewAs = null; }
+      viewUid = u.id;
+      let earned; try { earned = puntosGanados(); } finally { viewAs = null; viewUid = null; }
       return { uid: u.id, ...u.data(), data, canjes, inbox, earned };
     }));
   } catch (e) {
@@ -896,6 +901,21 @@ async function showAdmin(env = ENV) {
           <td>${MODOS[h.modo] || ''}${h.tema ? ` <span class="tag">${esc(h.tema)}</span>` : ''}${h.modo === 'simulacro' ? (h.apto ? ' ✅' : ' ❌') : ''}</td>
           <td class="num"><b>${fmtNum(entryNota(h))}</b></td><td class="num">${notaPct(entryNota(h))}</td><td class="num">${h.aciertos}/${h.total}</td></tr>`).join('')}
       </table></div>` : '<p class="muted">Todavía no ha hecho ningún test.</p>'}
+      <h3>💭 Ánimo</h3>
+      <p class="muted" style="margin-top:-6px">${(() => { const a = u.data.settings?.animo || {}; const d = [6, 5, 4, 3, 2, 1, 0].map(i => todayKey(daysAgo(i)));
+        return d.some(k => a[k]) ? d.map(k => `<span title="${new Date(k + 'T12:00').toLocaleDateString('es-ES')}">${a[k] || '·'}</span>`).join(' ') + ' <span>(últimos 7 días, hoy a la derecha)</span>' : 'Todavía no ha dicho cómo se siente.'; })()}</p>
+      <h3>🏁 Retos</h3>
+      ${(() => { viewAs = Object.fromEntries(Object.entries(u.data).map(([n, v]) => [P + n, v])); viewUid = u.uid;
+        try { const l = misRetos(); return l.length ? l.slice().reverse().map(r => retoRowHTML(r, true)).join('') : '<p class="muted" style="margin-top:-6px">Sin retos todavía.</p>'; } finally { viewAs = null; viewUid = null; } })()}
+      <details class="reto-new"><summary>+ Nuevo reto</summary>
+        <div class="set-row"><span>Título</span><input type="text" data-rt="titulo" data-u="${esc(u.uid)}" placeholder="Semana a tope" style="width:60%"></div>
+        <div class="set-row"><span>Conseguir</span><input type="number" min="1" data-rt="meta" data-u="${esc(u.uid)}" value="400" style="width:80px">
+          <select data-rt="tipo" data-u="${esc(u.uid)}">${Object.entries(RETO_TIPOS).map(([k, t]) => `<option value="${k}">${t}</option>`).join('')}</select></div>
+        <div class="set-row"><span>Desde hoy hasta</span><input type="date" data-rt="hasta" data-u="${esc(u.uid)}" value="${todayKey(daysAgo(-6))}"></div>
+        <div class="set-row"><span>Puntos al cumplirlo</span><input type="number" min="0" data-rt="puntos" data-u="${esc(u.uid)}" value="50" style="width:80px"></div>
+        <div class="set-row"><span>Premio (opcional)</span><input type="text" data-rt="premio" data-u="${esc(u.uid)}" placeholder="Cena fuera" style="width:60%"></div>
+        <button class="small primary" data-reto-add="${esc(u.uid)}">Crear reto</button>
+      </details>
       <h3>${FINAL.emoji} Recompensa final</h3>
       ${finalCache[u.uid] ? `<p class="muted" style="margin-top:-6px">🎓 Oposición aprobada el ${new Date(finalCache[u.uid]).toLocaleDateString('es-ES')} · viaje desbloqueado${u.canjes.some(c => c.rewardId === FINAL.id) ? ' y canjeado 🧳' : ''}
           <button class="small" data-final-off="${esc(u.uid)}">Deshacer</button></p>`
@@ -985,6 +1005,19 @@ async function showAdmin(env = ENV) {
     localStorage.setItem(K.daily, bk); syncReplace([K.daily]); localStorage.removeItem(P + 'dailyBackup');
     $('tsMsg').textContent = '✓ Actividad real restaurada'; $('tsRestore').disabled = true;
   };
+  // Retos: crear y quitar (se guardan todos juntos en config/retos)
+  const saveRetos = async items => {
+    try { await fb.setDoc(fb.doc(fb.db, 'config', 'retos'), { items, at: Date.now() }); retosCache = items; showAdmin(env); }
+    catch (e) { alert('No se pudo guardar el reto: ' + (e.code || e.message)); }
+  };
+  app.querySelectorAll('[data-reto-add]').forEach(b => b.onclick = () => {
+    const uid = b.dataset.retoAdd, v = f => app.querySelector(`[data-rt="${f}"][data-u="${uid}"]`).value.trim();
+    const r = { id: Date.now().toString(36), uid, titulo: v('titulo') || 'Reto', tipo: v('tipo'), meta: Math.max(1, +v('meta') || 1),
+      desde: todayKey(), hasta: v('hasta') || todayKey(daysAgo(-6)), puntos: Math.max(0, +v('puntos') || 0), premio: v('premio') };
+    if (r.hasta < r.desde) return alert('La fecha de fin tiene que ser hoy o más tarde.');
+    saveRetos([...retosCache, r]);
+  });
+  app.querySelectorAll('[data-reto-del]').forEach(b => b.onclick = () => confirm('¿Quitar este reto?') && saveRetos(retosCache.filter(r => r.id !== b.dataset.retoDel)));
   // Recompensa final: desbloquear (o deshacer) para un usuario
   const setFinal = async (uid, on) => {
     const unlocked = { ...finalCache };
@@ -1669,7 +1702,7 @@ function logroData() {
 }
 const logrosOk = (d = logroData()) => LOGROS.filter(l => l.val(d) >= goalOf(l, d));
 // Puntos ganados = logros conseguidos + recompensa diaria
-const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0) + puntosDiarios().total;
+const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0) + puntosDiarios().total + puntosRetos();
 
 // Avisa de los logros nuevos (una vez). El primer día avisa con un resumen, por si ya había muchos.
 // También avisa una vez al día al llegar al mínimo de la recompensa diaria.
@@ -1697,6 +1730,7 @@ function checkLogros() {
     saveSettings({ cajaAvisado: hoy });
     showToast('🎡', '¡Tienes la ruleta para girar!', `Has llegado a ${cfg.caja} preguntas. Gírala en 🏆 Logros.`, 'pomo');
   }
+  checkRetos();
   const seen = load(K.settings, {}).logros || {}, ok = logrosOk(), nuevos = ok.filter(l => !seen[l.id]);
   if (!nuevos.length) return;
   saveSettings({ logros: { ...seen, ...Object.fromEntries(nuevos.map(l => [l.id, Date.now()])) } });
@@ -1829,6 +1863,7 @@ async function showLogros() {
         <div class="muted">puntos disponibles · ${earned} ganados (${pd.total} por días de estudio y ${earned - pd.total} por ${ok.size} de ${LOGROS.length} logros)${canjes?.length ? ` · ${puntosGastados(canjes)} canjeados` : ''}</div>
       </div>
       ${diarioCardHTML(pd)}
+      ${retosHTML()}
       ${finalCardHTML(canjes)}
       <div class="card">
         <h2>🎁 Recompensas</h2>
@@ -1876,7 +1911,7 @@ async function showLogros() {
   };
   render(fbUser ? null : [], canjesCache);
   if (!fbUser) return;
-  try { const [rw, cj] = await Promise.all([loadRewards(), loadCanjes(), loadFinal().catch(() => ({}))]); if ($('home') && app.querySelector('.points-card')) render(rw, cj); }
+  try { const [rw, cj] = await Promise.all([loadRewards(), loadCanjes(), loadFinal().catch(() => ({})), loadRetos()]); if ($('home') && app.querySelector('.points-card')) render(rw, cj); }
   catch (e) { render([], canjesCache, e.code || e.message); }
 }
 // Resumen pequeño para el inicio
@@ -1896,6 +1931,108 @@ async function loadInbox() {
     inboxCache = s.docs.map(d => ({ id: d.id, ...d.data() })).filter(m => !m.read).sort((a, b) => a.at - b.at);
     if (inboxCache.length && $('goStats')) showHome();
   } catch {}
+}
+
+// ---------- ¿Cómo te sientes hoy? ----------
+// Una vez al día, en el inicio. Se guarda en los ajustes (sincronizados) y el admin lo ve en el panel.
+const ANIMOS = [['😄', 'Genial'], ['🙂', 'Bien'], ['😐', 'Regular'], ['😩', 'Agotada']];
+function animoHTML() {
+  if (!set?.preguntas?.length || (load(K.settings, {}).animo || {})[todayKey()]) return '';
+  return `<div class="card animo-card"><b>¿Cómo te sientes hoy?</b>
+    <div class="animo-btns">${ANIMOS.map(([e, t]) => `<button class="animo" data-animo="${e}" title="${t}" aria-label="${t}">${e}</button>`).join('')}</div></div>`;
+}
+function bindAnimo() {
+  app.querySelectorAll('[data-animo]').forEach(b => b.onclick = () => {
+    saveSettings({ animo: { ...(load(K.settings, {}).animo || {}), [todayKey()]: b.dataset.animo } });
+    if (b.dataset.animo === '😩') showToast('🤗', 'Ánimo', 'Hoy con lo justo vale. Un poco cada día es lo que cuenta. 💚', 'pomo');
+    showHome();
+  });
+}
+
+// ---------- Retos del admin ----------
+// El admin crea retos para cada usuario (Firestore config/retos = { items: [...] }). El progreso se calcula con sus datos
+// entre `desde` y `hasta`; al cumplirlo suma `puntos` y, si hay `premio`, se crea un canje sin coste para que lo vea el admin.
+const RETO_TIPOS = { preguntas: 'preguntas respondidas', dias: 'días llegando al mínimo diario', tests: 'tests terminados', aptos: 'simulacros aprobados' };
+let retosCache = [], viewUid = null;
+async function loadRetos() {
+  try { const s = await fb.getDoc(fb.doc(fb.db, 'config', 'retos')); retosCache = (s.exists() ? s.data().items : null) || []; } catch {}
+  return retosCache;
+}
+const misRetos = () => retosCache.filter(r => r.uid === (viewUid || fbUser?.uid));
+function retoProgreso(r) {
+  const daily = load(K.daily, {}), inRange = k => k >= r.desde && k <= r.hasta;
+  const t0 = new Date(r.desde + 'T00:00').getTime(), t1 = new Date(r.hasta + 'T23:59:59').getTime();
+  const hist = load(K.hist, []).filter(h => h.fecha >= t0 && h.fecha <= t1);
+  const v = r.tipo === 'preguntas' ? Object.keys(daily).filter(inRange).reduce((a, k) => a + daily[k], 0)
+    : r.tipo === 'dias' ? Object.keys(daily).filter(k => inRange(k) && daily[k] >= diarioCfg().min).length
+    : r.tipo === 'tests' ? hist.length : hist.filter(h => h.modo === 'simulacro' && h.apto).length;
+  return { v, done: v >= r.meta, vencido: todayKey() > r.hasta };
+}
+const puntosRetos = () => misRetos().reduce((a, r) => a + (retoProgreso(r).done ? +r.puntos || 0 : 0), 0);
+const fmtCorta = k => new Date(k + 'T12:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+function retoRowHTML(r, admin) {
+  const p = retoProgreso(r), estado = p.done ? '✅ cumplido' : p.vencido ? '⌛ terminado' : `hasta el ${fmtCorta(r.hasta)}`;
+  return `<div class="reto ${p.done ? 'ok' : ''}">
+    <div class="row between"><b>🏁 ${esc(r.titulo)}</b><span class="muted">${estado}</span></div>
+    <div class="muted">${Math.min(p.v, r.meta)} / ${r.meta} ${RETO_TIPOS[r.tipo]} · ${r.puntos ? `⭐ ${r.puntos}` : ''}${r.premio ? `${r.puntos ? ' + ' : ''}🎁 ${esc(r.premio)}` : ''}</div>
+    <div class="bar"><div style="width:${Math.min(100, p.v / r.meta * 100)}%"></div></div>
+    ${admin ? `<button class="small danger" data-reto-del="${esc(r.id)}">Quitar</button>` : ''}
+  </div>`;
+}
+function retosHTML() {
+  const l = misRetos();
+  return l.length ? `<div class="card"><h2>🏁 Retos</h2>${l.slice().reverse().map(r => retoRowHTML(r)).join('')}</div>` : '';
+}
+// Línea del inicio con el reto en curso
+function retoHoyHTML() {
+  const r = misRetos().find(r => !retoProgreso(r).done && todayKey() >= r.desde && todayKey() <= r.hasta);
+  if (!r) return '';
+  const p = retoProgreso(r);
+  return `<p class="muted" style="margin:6px 0 0">🏁 Reto: ${esc(r.titulo)} · <b>${p.v}</b> / ${r.meta}${r.premio ? ` · 🎁 ${esc(r.premio)}` : ''}</p>`;
+}
+// Al cumplir un reto: aviso, y canje sin coste si tiene premio (una vez)
+async function checkRetos() {
+  if (viewAs || !fbUser) return;
+  const okIds = load(K.settings, {}).retosOk || {};
+  for (const r of misRetos()) {
+    if (okIds[r.id] || !retoProgreso(r).done) continue;
+    saveSettings({ retosOk: { ...(load(K.settings, {}).retosOk || {}), [r.id]: Date.now() } });
+    showToast('🏁', `¡Reto cumplido! ${r.titulo}`, `${r.puntos ? `+${r.puntos} puntos` : ''}${r.premio ? `${r.puntos ? ' y ' : ''}🎁 ${r.premio}` : ''}`, 'pomo');
+    if (r.premio) try { await fb.addDoc(fb.collection(fb.db, 'users', fbUser.uid, 'canjes'), { rewardId: 'reto-' + r.id, name: r.premio, emoji: '🏁', cost: 0, at: Date.now(), done: false }); } catch {}
+  }
+}
+
+// ---------- Resumen semanal ----------
+// Domingo y lunes, en el inicio: lo de la semana (lunes a domingo) que acaba. Se puede cerrar.
+function semanaStats(desde, hasta) {
+  const daily = load(K.daily, {}), dq = load(K.dailyq, {}), min = diarioCfg().min, dias = [];
+  for (const d = new Date(desde + 'T12:00'); todayKey(d) <= hasta; d.setDate(d.getDate() + 1)) dias.push(todayKey(d));
+  const t0 = new Date(desde + 'T00:00').getTime(), t1 = new Date(hasta + 'T23:59:59').getTime();
+  const hist = load(K.hist, []).filter(h => h.fecha >= t0 && h.fecha <= t1);
+  const q = dias.reduce((a, k) => [a[0] + (dq[k]?.[0] || 0), a[1] + (dq[k]?.[1] || 0)], [0, 0]);
+  return { preguntas: dias.reduce((a, k) => a + (daily[k] || 0), 0), diasOk: dias.filter(k => (daily[k] || 0) >= min).length,
+    acierto: q[0] ? Math.round(q[1] / q[0] * 100) : null, tests: hist.length, mejor: hist.length ? Math.max(...hist.map(entryNota)) : null };
+}
+function semanaHTML() {
+  const hoy = new Date(), dow = hoy.getDay(); // 0 domingo, 1 lunes
+  if (!set?.preguntas?.length || (dow !== 0 && dow !== 1)) return '';
+  const fin = daysAgo(dow === 0 ? 0 : 1), ini = new Date(fin); ini.setDate(ini.getDate() - 6);
+  const id = todayKey(fin);
+  if (load(K.settings, {}).semanaVista === id) return '';
+  const s = semanaStats(todayKey(ini), id);
+  if (!s.preguntas) return '';
+  return `<div class="card semana-card">
+    <div class="row between"><h2 style="margin:0">📊 Tu semana</h2><button class="small" id="semanaOk" aria-label="Cerrar resumen">✕</button></div>
+    <p class="muted" style="margin:4px 0 10px">${fmtCorta(todayKey(ini))} – ${fmtCorta(id)}</p>
+    <div class="kpis">
+      <div class="kpi"><div class="muted">Preguntas</div><div class="v">${s.preguntas}</div></div>
+      <div class="kpi"><div class="muted">Días con objetivo</div><div class="v">${s.diasOk}/7</div></div>
+      <div class="kpi"><div class="muted">Acierto</div><div class="v">${s.acierto === null ? '—' : s.acierto + ' %'}</div></div>
+      <div class="kpi"><div class="muted">Tests</div><div class="v">${s.tests}</div></div>
+      <div class="kpi"><div class="muted">Mejor nota</div><div class="v">${s.mejor === null ? '—' : fmtNum(s.mejor, 1)}</div></div>
+    </div>
+    <p style="margin:12px 0 0">${s.diasOk >= 6 ? '🏆 ¡Semana de campeona! Así se gana una plaza.' : s.diasOk >= 4 ? '💪 Buena semana. A por la siguiente.' : '🌱 Cada semana cuenta. La que viene, un poquito más.'}</p>
+  </div>`;
 }
 function inboxHTML() {
   return inboxCache.map(m => `<div class="card msg-card">
@@ -1927,6 +2064,7 @@ function dailyCardHTML() {
       <div class="progress" style="margin-bottom:0"><div style="width:${Math.min(100, today / s.dailyGoal * 100)}%"></div></div>` : ''}
       ${set?.preguntas?.length && today >= diarioCfg().caja && !(load(K.settings, {}).cajas || {})[todayKey()] ? `<p style="margin:10px 0 0"><a href="#" id="goRuleta">🎡 ¡Tienes la ruleta para girar! →</a></p>` : ''}
       ${set?.preguntas?.length ? `<p class="muted" style="margin:10px 0 0">🗺️ Misión de hoy: ${misionHoy().txt} · ${(load(K.settings, {}).misiones || {})[todayKey()] ? '✅ cumplida' : `+${diarioCfg().mision}`}</p>` : ''}
+      ${retoHoyHTML()}
     </div>`;
 }
 
@@ -1951,6 +2089,8 @@ function showHome(error) {
     <div class="homenav"><button id="goStats">📊 Progreso</button><button id="goEditor">✏️ Editor</button><button id="goTheme">🎨 Tema</button><button id="goSettings">⚙️ Ajustes</button>${isAdmin() ? '<button id="goAdmin">📊 Admin</button>' : ''}</div>
     ${error ? `<div class="card error">${esc(error)}</div>` : ''}
     ${inboxHTML()}
+    ${animoHTML()}
+    ${semanaHTML()}
     ${saved ? `
     <div class="card notice">
       <b>Tienes un test a medias</b>
@@ -1999,6 +2139,8 @@ function showHome(error) {
 
   bindPlanCard();
   bindInbox();
+  bindAnimo();
+  if ($('semanaOk')) $('semanaOk').onclick = () => { saveSettings({ semanaVista: todayKey(daysAgo(new Date().getDay() === 0 ? 0 : 1)) }); showHome(); };
   if ($('fallosGo')) $('fallosGo').onclick = () => startRun(shuffle(fallosHoy()), { mode: 'practica', label: 'Fallos de hoy' });
   if ($('goLogros')) $('goLogros').onclick = () => showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' }));
   if ($('goRuleta')) $('goRuleta').onclick = e => { e.preventDefault(); showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' })); };
