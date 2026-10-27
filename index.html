@@ -471,6 +471,8 @@ const $ = id => document.getElementById(id);
 const DAY = 864e5;
 const startOfToday = () => new Date().setHours(0, 0, 0, 0);
 const todayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+// Hace n días, por calendario (restar n × 24 h falla el día del cambio de hora)
+const daysAgo = n => { const d = new Date(); d.setDate(d.getDate() - n); return d; };
 const MODOS = { practica: 'Práctica', examen: 'Examen', simulacro: 'Simulacro', repaso: 'Repaso' };
 
 // ---------- Ajustes ----------
@@ -825,7 +827,7 @@ async function showAdmin(env = ENV) {
   // Para agrupar por bloque y tema se usan las preguntas cargadas en la app
   const info = new Map((set?.preguntas || []).map(q => [keyOf(q), q]));
   const now = Date.now(), today = todayKey();
-  const last7 = [...Array(7)].map((_, i) => todayKey(new Date(now - i * DAY)));
+  const last7 = [...Array(7)].map((_, i) => todayKey(daysAgo(i)));
 
   const userHTML = u => {
     const d = u.data, daily = d.daily || {}, stats = d.stats || {}, hist = d.history || [], srs = d.srs || {};
@@ -911,6 +913,13 @@ async function showAdmin(env = ENV) {
         : '<p class="muted">Cuando alguien canjee una recompensa aparecerá aquí.</p>'}
       </details>`;
     })()}
+    <details class="card" id="tsCard"><summary><b>🧪 Pruebas</b> <span class="muted">· cambia tu propia actividad para probar racha, recompensa diaria y logros</span></summary>
+      <p class="help">Solo afecta a tus datos de ${ENV === 'prod' ? 'la app normal' : 'desarrollo'}. Antes del primer cambio se guarda una copia de tu actividad real.</p>
+      <div class="set-row"><span>Preguntas hechas hoy</span><input type="number" min="0" id="tsHoy" value="${load(K.daily, {})[todayKey()] || 0}"><button class="small primary" id="tsHoyBtn">Aplicar</button></div>
+      <div class="set-row"><span>Racha: días seguidos (hasta ayer)</span><input type="number" min="0" max="120" id="tsDias" value="6"></div>
+      <div class="set-row"><span>… con estas preguntas cada día</span><input type="number" min="0" id="tsN" value="${diarioCfg().min}"><button class="small primary" id="tsRachaBtn">Aplicar</button></div>
+      <div class="row"><button class="small" id="tsRestore" ${localStorage.getItem(P + 'dailyBackup') ? '' : 'disabled'}>↺ Restaurar mi actividad real</button><span class="muted" id="tsMsg"></span></div>
+    </details>
     <details class="card" id="lgCard"><summary><b>🏆 Logros</b> <span class="muted">· puntos de cada uno y cuáles están activos</span></summary>
       <div class="lg-list">${LOGROS_ALL.map(l => `<div class="lg-row">
         <input type="checkbox" data-lg-on="${l.id}" ${(logroCfg.off || []).includes(l.id) ? '' : 'checked'} aria-label="Activo">
@@ -931,6 +940,30 @@ async function showAdmin(env = ENV) {
   $('admReload').onclick = () => showAdmin(env);
   app.querySelectorAll('[data-prog]').forEach(b => b.onclick = () => showUserStats(users.find(u => u.uid === b.dataset.prog), env));
   $('admName').onchange = e => saveSettings({ adminName: e.target.value.trim() });
+  // Pruebas: cambia la actividad diaria del admin. Se guarda como «sustituir» (no se fusiona con la nube) para poder bajar números.
+  const tsApply = (daily, txt) => {
+    if (!localStorage.getItem(P + 'dailyBackup')) localStorage.setItem(P + 'dailyBackup', localStorage.getItem(K.daily) || '{}');
+    save(K.daily, daily); syncReplace([K.daily]);
+    saveSettings({ diarioAvisado: null }); // para volver a ver el aviso de la recompensa diaria
+    $('tsMsg').textContent = txt; $('tsRestore').disabled = false;
+    checkLogros();
+  };
+  $('tsHoyBtn').onclick = () => {
+    const n = Math.max(0, +$('tsHoy').value || 0);
+    tsApply({ ...load(K.daily, {}), [todayKey()]: n }, `✓ Hoy: ${n} preguntas`);
+  };
+  $('tsRachaBtn').onclick = () => {
+    const dias = Math.max(0, Math.min(120, +$('tsDias').value || 0)), n = Math.max(0, +$('tsN').value || 0), d = { ...load(K.daily, {}) };
+    for (let i = 1; i <= dias; i++) d[todayKey(daysAgo(i))] = n;
+    delete d[todayKey(daysAgo(dias + 1))]; // el día anterior, vacío: la racha empieza justo ahí
+    tsApply(d, `✓ ${dias} días seguidos con ${n} preguntas hasta ayer`);
+  };
+  $('tsRestore').onclick = () => {
+    const bk = localStorage.getItem(P + 'dailyBackup');
+    if (!bk || !confirm('¿Volver a tu actividad real (la de antes de las pruebas)?')) return;
+    localStorage.setItem(K.daily, bk); syncReplace([K.daily]); localStorage.removeItem(P + 'dailyBackup');
+    $('tsMsg').textContent = '✓ Actividad real restaurada'; $('tsRestore').disabled = true;
+  };
   // Recompensa final: desbloquear (o deshacer) para un usuario
   const setFinal = async (uid, on) => {
     const unlocked = { ...finalCache };
@@ -1426,7 +1459,7 @@ function puntosDiarios(daily = load(K.daily, {})) {
     prev = t;
   }
   // racha viva: el último día cumplido es hoy (ya cuenta) o ayer (hoy toca el siguiente)
-  const hoy = todayKey(), ayer = todayKey(new Date(Date.now() - DAY)), ultimo = ok[ok.length - 1];
+  const hoy = todayKey(), ayer = todayKey(daysAgo(1)), ultimo = ok[ok.length - 1];
   const viva = ultimo === hoy || ultimo === ayer ? racha : 0;
   return { total, cfg, hoyOk: ultimo === hoy, hoyN: daily[hoy] || 0, dia: viva ? (viva - 1) % 28 + 1 : 0 };
 }
