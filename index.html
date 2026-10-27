@@ -414,6 +414,10 @@
   .more-opts { margin: 4px 0 12px; } .more-opts > summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 8px 0; }
   .help-box p { line-height: 1.6; margin: 10px 0 16px; text-align: left; }
   .help-item { border-bottom: 1px solid var(--border); padding: 4px 0; } .help-item > summary { cursor: pointer; font-weight: 600; padding: 8px 0; } .help-item p { margin: 0 0 10px; line-height: 1.55; }
+  .gap-slot { min-height: 0; padding: 1px 6px; vertical-align: baseline; line-height: 1.4; font-weight: 600; cursor: pointer; }
+  .gap-slot.active { outline: 2.5px solid var(--accent); outline-offset: 1px; }
+  .gap-slot.filled { background: var(--card); }
+  .bank { display: flex; flex-wrap: wrap; gap: 8px; } .bank-w { font-weight: 600; }
   .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
@@ -2076,7 +2080,7 @@ const AYUDA = [
     ['test', '📝 Test por temas', 'Eliges los temas y cuántas preguntas, y empiezas. En «Más opciones»: modo examen (nota al final y con tiempo), solo las que has fallado, solo las marcadas ★, recuerdo activo (piensas la respuesta antes de ver las opciones) o filtrar por ley o referencia.'],
     ['flash', '🃏 Flashcards', 'Tarjetas: ves la pregunta o el concepto, piensas la respuesta y le das la vuelta. Luego dices si te ha costado («Otra vez», «Difícil», «Bien», «Fácil») y la app decide cuándo volver a enseñártela. Ideal para plazos, órganos, definiciones…'],
     ['vf', '⚡ Verdadero / Falso', 'Repaso rápido: sale una afirmación y dices si es verdadera o falsa. Muy útil para ratos cortos. Intenta superar tu récord de racha.'],
-    ['art', '📜 Artículos', 'Textos de la normativa con huecos que tienes que rellenar. Sirve para memorizar artículos literales, plazos y cifras.'],
+    ['art', '📜 Artículos', 'Textos de la normativa con huecos. En 🧩 Fácil colocas las palabras que faltan tocándolas; en ✍️ Difícil las escribes tú de memoria. Empieza en fácil y, cuando lo hagas perfecto, pasa a difícil. Sirve para memorizar artículos literales, plazos y cifras.'],
     ['audio', '🎧 Modo audio', 'La app te lee las preguntas y las opciones en voz alta; puedes responder tocando o dejar que te diga la solución. Para repasar caminando o en el coche.']
   ]],
   ['🎯 Examen', [
@@ -3960,6 +3964,12 @@ function showArticles() {
   app.innerHTML = `
     <div class="row between"><h1>📜 Artículos</h1><button id="home">← Inicio</button></div>
     <div class="card">
+      <div class="modes">
+        <label class="mode-card"><input type="radio" name="artNivel" value="facil" ${artNivel() === 'facil' ? 'checked' : ''}><span class="t">🧩 Fácil</span><span class="d">Colocas las palabras que faltan</span></label>
+        <label class="mode-card"><input type="radio" name="artNivel" value="dificil" ${artNivel() === 'dificil' ? 'checked' : ''}><span class="t">✍️ Difícil</span><span class="d">Las escribes tú de memoria</span></label>
+      </div>
+    </div>
+    <div class="card">
       <p class="help" style="margin-top:0">Elige un artículo y rellena los huecos de memoria. Se tapan las palabras que marques entre {{dobles llaves}} al crearlo en el Editor${s.autoGaps ? ', y además los números y plazos' : ''}.</p>
       <label class="opt"><input type="checkbox" id="autoGaps" ${s.autoGaps ? 'checked' : ''}> Tapar automáticamente números y plazos (30 días, 1 mes, 3/5…)</label>
       <div class="set-row"><span>Tapar además palabras al azar</span><span class="muted" id="extraVal" style="flex:0">${s.extraGaps}%</span></div>
@@ -3969,18 +3979,22 @@ function showArticles() {
     <div class="card">
       ${arts.length ? arts.map((a, i) => {
         const r = st[artKey(a)];
+        const res = artNivel() === 'facil' ? r?.facilLast : r?.last;
         return `<button class="qitem" data-i="${i}"><span class="txt"><b>${esc(a.titulo)}</b>${a.referencia ? ` <span class="muted">· ${esc(a.referencia)}</span>` : ''}</span>
-          ${a.tema ? `<span class="tag">${esc(a.tema)}</span>` : ''}${r ? `<span class="muted">${r.last}%</span>` : ''}</button>`;
+          ${a.tema ? `<span class="tag">${esc(a.tema)}</span>` : ''}${res !== undefined ? `<span class="muted">${res}%</span>` : ''}</button>`;
       }).join('') : '<p class="muted">Todavía no hay artículos. Añádelos en ✏️ Editor → pestaña 📜 Artículos.</p>'}
     </div>`;
   $('home').onclick = () => showHome();
+  document.querySelectorAll('input[name=artNivel]').forEach(r => r.onchange = () => { saveSettings({ artNivel: r.value }); showArticles(); });
   $('autoGaps').onchange = e => { saveSettings({ autoGaps: e.target.checked }); showArticles(); };
   $('extraGaps').oninput = e => { $('extraVal').textContent = e.target.value + '%'; saveSettings({ extraGaps: +e.target.value }); };
   app.querySelectorAll('.qitem').forEach(b => b.onclick = () => showArticle(+b.dataset.i));
 }
 
+// Nivel de los artículos: fácil (colocar las palabras que faltan) o difícil (escribirlas)
+const artNivel = () => load(K.settings, {}).artNivel || 'facil';
 function showArticle(idx) {
-  const a = articulosOf()[idx], s = getSettings();
+  const a = articulosOf()[idx], s = getSettings(), facil = artNivel() === 'facil';
   const segs = makeGaps(a.texto, s.autoGaps, s.extraGaps);
   const gaps = segs.filter(x => x.gap !== undefined);
   let k = 0;
@@ -3988,9 +4002,11 @@ function showArticle(idx) {
     <button id="back" class="small" style="margin-bottom:12px">← Artículos</button>
     <h1 style="font-size:1.3rem;margin-bottom:4px">${esc(a.titulo)}</h1>
     ${a.referencia ? `<p class="ref" style="margin:0 0 12px">📖 ${esc(a.referencia)}</p>` : ''}
-    <div class="card art-text">${gaps.length ? segs.map(x => x.gap !== undefined
-      ? `<input class="gap" data-k="${k++}" autocomplete="off" autocapitalize="off" spellcheck="false" style="width:${Math.max(4, x.gap.length + 2)}ch">`
-      : esc(x.text)).join('') : esc(a.texto)}</div>
+    ${gaps.length && facil ? '<p class="help" style="margin:0 0 8px">🧩 Toca una palabra de abajo para colocarla en el hueco marcado. Toca un hueco relleno para quitar la palabra.</p>' : ''}
+    <div class="card art-text">${gaps.length ? segs.map(x => x.gap === undefined ? esc(x.text) : facil
+      ? `<button class="gap gap-slot" data-k="${k++}" style="min-width:${Math.max(4, x.gap.length + 1)}ch">&nbsp;</button>`
+      : `<input class="gap" data-k="${k++}" autocomplete="off" autocapitalize="off" spellcheck="false" style="width:${Math.max(4, x.gap.length + 2)}ch">`).join('') : esc(a.texto)}</div>
+    ${gaps.length && facil ? `<div class="card bank" id="bank">${shuffle(gaps.map((g, i) => i)).map(i => `<button class="chip bank-w" data-w="${i}">${esc(gaps[i].gap)}</button>`).join('')}</div>` : ''}
     ${gaps.length ? `
     <div class="row">
       <button class="primary" id="check">Comprobar</button>
@@ -4000,13 +4016,37 @@ function showArticle(idx) {
     <div id="artResult"></div>` : `<div class="ghstatus error">Este artículo no tiene huecos. Marca palabras con {{dobles llaves}} en el Editor, activa «Tapar números y plazos» o sube «palabras al azar».</div>`}`;
   $('back').onclick = () => showArticles();
   if (!gaps.length) return;
-  const inputs = [...app.querySelectorAll('.gap')];
-  inputs.forEach((inp, i) => inp.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); (inputs[i + 1] || $('check')).focus(); } });
-  inputs[0].focus();
+  const slots = [...app.querySelectorAll('.gap')];
+  // valor de cada hueco: en fácil, la palabra colocada (índice en `puesto`); en difícil, lo escrito
+  const puesto = slots.map(() => null);
+  const valor = i => facil ? (puesto[i] === null ? '' : gaps[puesto[i]].gap) : slots[i].value;
+  if (facil) {
+    let activo = 0;
+    const pinta = () => {
+      slots.forEach((b, i) => { b.innerHTML = puesto[i] === null ? '&nbsp;' : esc(gaps[puesto[i]].gap); b.classList.toggle('active', i === activo); b.classList.toggle('filled', puesto[i] !== null); });
+      app.querySelectorAll('.bank-w').forEach(c => { c.hidden = puesto.includes(+c.dataset.w); });
+    };
+    const siguienteVacio = desde => { const n = slots.length; for (let j = 0; j < n; j++) { const i = (desde + j) % n; if (puesto[i] === null) return i; } return -1; };
+    slots.forEach((b, i) => b.onclick = () => {
+      b.classList.remove('ok', 'ko'); b.nextElementSibling?.classList?.contains('gap-sol') && b.nextElementSibling.remove();
+      if (puesto[i] !== null) puesto[i] = null; // devolver la palabra al banco
+      activo = i; pinta();
+    });
+    app.querySelectorAll('.bank-w').forEach(c => c.onclick = () => {
+      if (activo < 0 || puesto[activo] !== null) activo = siguienteVacio(0);
+      if (activo < 0) return;
+      puesto[activo] = +c.dataset.w;
+      activo = siguienteVacio(activo + 1); pinta();
+    });
+    pinta();
+  } else {
+    slots.forEach((inp, i) => inp.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); (slots[i + 1] || $('check')).focus(); } });
+    slots[0].focus();
+  }
   $('check').onclick = () => {
     let ok = 0;
-    inputs.forEach((inp, i) => {
-      const good = normAns(inp.value) === normAns(gaps[i].gap);
+    slots.forEach((inp, i) => {
+      const good = normAns(valor(i)) === normAns(gaps[i].gap);
       ok += good;
       inp.classList.toggle('ok', good);
       inp.classList.toggle('ko', !good);
@@ -4015,12 +4055,18 @@ function showArticle(idx) {
       if (!good) inp.insertAdjacentHTML('afterend', `<span class="gap-sol">${esc(gaps[i].gap)}</span>`);
     });
     const p = pct(ok, gaps.length), st = load(K.arts, {}), prev = st[artKey(a)] || {};
-    st[artKey(a)] = { last: p, best: Math.max(p, prev.best || 0), veces: (prev.veces || 0) + 1, fecha: Date.now() };
+    // el nivel fácil se apunta aparte: «Letra de la ley» solo cuenta los perfectos en difícil
+    st[artKey(a)] = facil ? { ...prev, facilLast: p, facilBest: Math.max(p, prev.facilBest || 0), veces: (prev.veces || 0) + 1, fecha: Date.now() }
+      : { ...prev, last: p, best: Math.max(p, prev.best || 0), veces: (prev.veces || 0) + 1, fecha: Date.now() };
     save(K.arts, st);
     addDaily(gaps.length);
-    $('artResult').innerHTML = `<div class="ghstatus ${p === 100 ? 'ok' : ''}" style="margin-top:12px"><b>${ok} / ${gaps.length}</b> huecos (${p}%)${p === 100 ? ' · ¡Perfecto! 🎉 Prueba a subir «palabras al azar».' : ''}</div>`;
+    $('artResult').innerHTML = `<div class="ghstatus ${p === 100 ? 'ok' : ''}" style="margin-top:12px"><b>${ok} / ${gaps.length}</b> huecos (${p}%)${p === 100 ? (facil ? ' · ¡Perfecto! 🎉 Prueba ahora en ✍️ Difícil.' : ' · ¡Perfecto! 🎉 Prueba a subir «palabras al azar».') : ''}</div>`;
   };
-  $('reveal').onclick = () => inputs.forEach((inp, i) => { inp.value = gaps[i].gap; inp.classList.remove('ko'); inp.classList.add('shown'); });
+  $('reveal').onclick = () => slots.forEach((inp, i) => {
+    if (facil) { puesto[i] = i; inp.textContent = gaps[i].gap; app.querySelectorAll('.bank-w').forEach(c => c.hidden = true); }
+    else inp.value = gaps[i].gap;
+    inp.classList.remove('ko'); inp.classList.add('shown');
+  });
   $('redo').onclick = () => showArticle(idx);
 }
 
