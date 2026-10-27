@@ -369,6 +369,13 @@
   .plan-day { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
   .plan-more > summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 10px 0; }
   .plan-day b { min-width: 92px; text-transform: capitalize; }
+  .dcal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .dc { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; aspect-ratio: 1; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); font-size: .72rem; color: var(--muted); }
+  .dc b { font-size: .8rem; color: var(--text); }
+  .dc.big { border-color: color-mix(in srgb, var(--star) 60%, transparent); background: color-mix(in srgb, var(--star) 12%, var(--bg)); }
+  .dc.done { background: color-mix(in srgb, var(--ok) 22%, var(--card)); border-color: var(--ok); }
+  .dc.done b { color: var(--ok); }
+  .dc.today { outline: 2.5px solid var(--accent); outline-offset: 1px; }
   .final-card { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; border: 2px dashed color-mix(in srgb, var(--star) 60%, transparent); background: color-mix(in srgb, var(--star) 8%, var(--card)); }
   .final-card.on { border-style: solid; border-color: var(--star); background: color-mix(in srgb, var(--star) 20%, var(--card)); box-shadow: 0 0 24px -6px color-mix(in srgb, var(--star) 70%, transparent); }
   .final-ico { font-size: 2.6rem; } .final-txt { flex: 1; display: flex; flex-direction: column; min-width: 160px; } .final-txt b { font-size: 1.2rem; }
@@ -910,6 +917,10 @@ async function showAdmin(env = ENV) {
         <span class="lg-ico">${l.ico}</span>
         <div class="lg-txt"><b>${esc(l.name)}</b><span class="muted">${esc(l.desc)}</span></div>
         <input type="number" min="0" data-lg-pts="${l.id}" value="${l.pts}" style="width:76px" aria-label="Puntos"></div>`).join('')}</div>
+      <h3>📅 Recompensa diaria</h3>
+      <div class="set-row"><span>Preguntas al día para cobrarla</span><input type="number" min="1" id="dMin" value="${diarioCfg().min}"></div>
+      <div class="set-row"><span>Puntos de un día normal</span><input type="number" min="0" id="dBase" value="${diarioCfg().base}"></div>
+      ${[7, 14, 21, 28].map(n => `<div class="set-row"><span>Puntos del día ${n} seguido</span><input type="number" min="0" data-dh="${n}" value="${diarioCfg().hitos[n]}"></div>`).join('')}
       <div class="row" style="margin-top:8px"><button class="small primary" id="lgSave">Guardar</button><button class="small" id="lgReset">Valores por defecto</button><span class="muted" id="lgMsg"></span></div>
       <p class="help">Si desactivas un logro, deja de contar sus puntos (también los ya ganados).</p>
     </details>
@@ -941,9 +952,12 @@ async function showAdmin(env = ENV) {
       if (v !== l.def) pts[l.id] = v;
       if (!app.querySelector(`[data-lg-on="${l.id}"]`).checked) off.push(l.id);
     });
-    saveLg({ pts, off });
+    const num = (el, def) => el.value === '' ? def : Math.max(0, Math.round(+el.value || 0));
+    const diario = { min: Math.max(1, num($('dMin'), DIARIO_DEF.min)), base: num($('dBase'), DIARIO_DEF.base),
+      hitos: Object.fromEntries([...app.querySelectorAll('[data-dh]')].map(i => [i.dataset.dh, num(i, DIARIO_DEF.hitos[i.dataset.dh])])) };
+    saveLg({ pts, off, diario });
   };
-  $('lgReset').onclick = async () => { if (!confirm('¿Volver a los puntos por defecto y activar todos los logros?')) return; await saveLg({ pts: {}, off: [] }); showAdmin(env); };
+  $('lgReset').onclick = async () => { if (!confirm('¿Volver a los puntos por defecto, activar todos los logros y la recompensa diaria por defecto?')) return; await saveLg({ pts: {}, off: [], diario: DIARIO_DEF }); showAdmin(env); };
   // Recompensas: lista editable que se guarda en config/rewards
   let items = [];
   const paintRw = () => {
@@ -1397,6 +1411,25 @@ function applyLogroCfg(cfg = {}) {
   LOGROS_ALL.forEach(l => l.pts = cfg.pts?.[l.id] ?? l.def);
   LOGROS = LOGROS_ALL.filter(l => !(cfg.off || []).includes(l.id));
 }
+// Recompensa diaria: un calendario de 28 días. Cada día con al menos `min` preguntas da `base` puntos; los días 7, 14, 21 y 28
+// seguidos dan más. Tras el 28 (o si se corta la racha) vuelve al día 1. El admin puede cambiar los valores (config/logros.diario).
+const DIARIO_DEF = { min: 60, base: 10, hitos: { 7: 20, 14: 30, 21: 40, 28: 100 } };
+const diarioCfg = () => ({ ...DIARIO_DEF, ...(logroCfg.diario || {}), hitos: { ...DIARIO_DEF.hitos, ...(logroCfg.diario?.hitos || {}) } });
+const diarioPts = (cfg, dia) => cfg.hitos[dia] ?? cfg.base;
+function puntosDiarios(daily = load(K.daily, {})) {
+  const cfg = diarioCfg(), ok = Object.keys(daily).filter(k => daily[k] >= cfg.min).sort();
+  let total = 0, racha = 0, prev = null;
+  for (const k of ok) {
+    const t = new Date(k + 'T12:00').getTime();
+    racha = prev !== null && Math.round((t - prev) / DAY) === 1 ? racha + 1 : 1;
+    total += diarioPts(cfg, (racha - 1) % 28 + 1);
+    prev = t;
+  }
+  // racha viva: el último día cumplido es hoy (ya cuenta) o ayer (hoy toca el siguiente)
+  const hoy = todayKey(), ayer = todayKey(new Date(Date.now() - DAY)), ultimo = ok[ok.length - 1];
+  const viva = ultimo === hoy || ultimo === ayer ? racha : 0;
+  return { total, cfg, hoyOk: ultimo === hoy, hoyN: daily[hoy] || 0, dia: viva ? (viva - 1) % 28 + 1 : 0 };
+}
 async function loadLogroCfg() {
   try { const s = await fb.getDoc(fb.doc(fb.db, 'config', 'logros')); applyLogroCfg(s.exists() ? s.data() : {}); } catch {}
 }
@@ -1437,16 +1470,44 @@ function logroData() {
   };
 }
 const logrosOk = (d = logroData()) => LOGROS.filter(l => l.val(d) >= goalOf(l, d));
-const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0);
+// Puntos ganados = logros conseguidos + recompensa diaria
+const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0) + puntosDiarios().total;
 
 // Avisa de los logros nuevos (una vez). El primer día avisa con un resumen, por si ya había muchos.
+// También avisa una vez al día al llegar al mínimo de la recompensa diaria.
 function checkLogros() {
   if (viewAs) return;
+  const pd = puntosDiarios();
+  if (pd.hoyOk && load(K.settings, {}).diarioAvisado !== todayKey()) {
+    saveSettings({ diarioAvisado: todayKey() });
+    const p = diarioPts(pd.cfg, pd.dia);
+    showToast('📅', `Recompensa diaria: +${p} puntos`, `Día ${pd.dia} de 28${p > pd.cfg.base ? ' · ¡día especial! 🎉' : ''}. Vuelve mañana para el día ${pd.dia % 28 + 1}.`, 'pomo');
+  }
   const seen = load(K.settings, {}).logros || {}, ok = logrosOk(), nuevos = ok.filter(l => !seen[l.id]);
   if (!nuevos.length) return;
   saveSettings({ logros: { ...seen, ...Object.fromEntries(nuevos.map(l => [l.id, Date.now()])) } });
   if (nuevos.length > 2) showToast('🏆', `¡${nuevos.length} logros desbloqueados!`, `+${nuevos.reduce((a, l) => a + l.pts, 0)} puntos. Míralos en 🏆 Logros.`, 'pomo');
   else nuevos.forEach(l => showToast(l.ico, `Logro: ${l.name}`, `${l.desc} · +${l.pts} puntos`, 'pomo'));
+}
+
+// Calendario de la recompensa diaria: los 28 días, con los ya hechos marcados y el de hoy destacado
+function diarioCardHTML(pd) {
+  const { cfg, dia, hoyOk, hoyN } = pd;
+  // con la racha viva, los días 1…dia ya están cobrados; si ayer fue el 28, hoy empieza un calendario nuevo
+  const hechos = !hoyOk && dia === 28 ? 0 : dia;
+  const hoyDia = hoyOk ? dia : dia % 28 + 1; // el día que se cobra hoy
+  const cells = Array.from({ length: 28 }, (_, i) => {
+    const n = i + 1, p = diarioPts(cfg, n);
+    return `<div class="dc ${n <= hechos ? 'done' : ''} ${n === hoyDia ? 'today' : ''} ${p > cfg.base ? 'big' : ''}"><span>${n}</span><b>${n <= hechos ? '✓' : '+' + p}</b></div>`;
+  }).join('');
+  const falta = Math.max(0, cfg.min - hoyN);
+  return `<div class="card diario-card">
+    <div class="row between"><h2 style="margin:0">📅 Recompensa diaria</h2><span class="muted">${dia ? `día ${hoyOk ? dia : dia + ' · hoy toca el ' + hoyDia}` : 'empieza hoy'}</span></div>
+    <p class="muted" style="margin:6px 0 10px">${hoyOk ? `✅ Hoy ya está: +${diarioPts(cfg, dia)} puntos. Vuelve mañana.`
+      : `Hoy llevas <b>${hoyN}</b> de ${cfg.min} preguntas${falta ? ` · te faltan ${falta} para ganar <b>+${diarioPts(cfg, hoyDia)}</b>` : ''}.`}
+      Si un día no llegas a ${cfg.min}, vuelve al día 1.</p>
+    <div class="dcal">${cells}</div>
+  </div>`;
 }
 
 // Recompensas (catálogo del admin) y canjes del usuario
@@ -1483,7 +1544,7 @@ function finalCardHTML(canjes) {
 async function showLogros() {
   stopTimer();
   checkLogros();
-  const d = logroData(), ok = new Set(logrosOk(d).map(l => l.id)), earned = puntosGanados(LOGROS.filter(l => ok.has(l.id)));
+  const d = logroData(), ok = new Set(logrosOk(d).map(l => l.id)), earned = puntosGanados(LOGROS.filter(l => ok.has(l.id))), pd = puntosDiarios();
   const seen = load(K.settings, {}).logros || {};
   const render = (rewards, canjes, err) => {
     const balance = earned - puntosGastados(canjes);
@@ -1491,8 +1552,9 @@ async function showLogros() {
       <div class="row between"><h1>🏆 Logros</h1><button id="home">← Inicio</button></div>
       <div class="card points-card">
         <div class="points-big">⭐ ${balance}</div>
-        <div class="muted">puntos disponibles · ${ok.size} de ${LOGROS.length} logros · ${earned} ganados${canjes?.length ? ` · ${puntosGastados(canjes)} canjeados` : ''}</div>
+        <div class="muted">puntos disponibles · ${earned} ganados (${pd.total} por días de estudio y ${earned - pd.total} por ${ok.size} de ${LOGROS.length} logros)${canjes?.length ? ` · ${puntosGastados(canjes)} canjeados` : ''}</div>
       </div>
+      ${diarioCardHTML(pd)}
       ${finalCardHTML(canjes)}
       <div class="card">
         <h2>🎁 Recompensas</h2>
