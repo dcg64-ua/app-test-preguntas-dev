@@ -1240,6 +1240,7 @@ function previsionHTML() {
       <span class="muted">en el simulacro${p.bloque ? ` de «${esc(p.bloque)}»` : ''} si fuera hoy · nota de corte ${fmtNum(p.corte)}${simMedia !== null ? `<br>Tus últimos simulacros: ${fmtNum(simMedia, 1)} de media` : ''}<br>Has visto ${p.vistas} de ${p.n} preguntas de ese bloque</span></div>
     <p style="margin:12px 0 6px"><b>Lo que más te baja la nota:</b></p>
     ${p.peores.map((t, i) => `<div class="prev-row"><span>${esc(temaName(t.k).short)}</span><span class="muted">−${fmtNum(t.menos, 2)}</span><button class="small" data-prev="${i}">Practicar</button></div>`).join('')}
+    ${p.vistas < p.n * .2 ? `<p class="help" style="color:var(--ko)">⚠️ Aún has visto pocas preguntas de este bloque (${p.vistas} de ${p.n}): la previsión es muy orientativa. Haz algún test de este bloque para afinarla.</p>` : ''}
     <p class="help" style="margin-bottom:0">Es una estimación con tus aciertos y fallos de cada pregunta; cuanto más practiques, más fina.</p>
   </div>`;
 }
