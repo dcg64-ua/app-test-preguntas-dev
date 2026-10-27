@@ -900,7 +900,7 @@ async function showAdmin(env = ENV) {
     </div>
     <details class="card" id="rwCard"><summary><b>🎁 Recompensas</b> <span class="muted">· lo que se puede canjear con los puntos</span></summary>
       <div id="rwList"></div>
-      <div class="row" style="margin-top:8px"><button class="small" id="rwAdd">+ Añadir</button><button class="small primary" id="rwSave">Guardar</button><span class="muted" id="rwMsg"></span></div>
+      <div class="row" style="margin-top:8px"><button class="small" id="rwAdd">+ Añadir</button><button class="small" id="rwSug">✨ Añadir las sugeridas</button><button class="small primary" id="rwSave">Guardar</button><span class="muted" id="rwMsg"></span></div>
       <div class="set-row"><span>Firma de tus mensajes</span><input type="text" id="admName" value="${esc(getSettings().adminName || '')}" placeholder="Dani" style="width:50%"></div>
     </details>
     ${(() => {
@@ -1005,6 +1005,22 @@ async function showAdmin(env = ENV) {
   };
   loadRewards().then(r => { items = r.map(x => ({ ...x })); paintRw(); }).catch(e => { if ($('rwList')) $('rwList').innerHTML = `<p class="error">No se pudieron leer (${esc(e.code || e.message)}).</p>`; });
   $('rwAdd').onclick = () => { items.push({ id: Date.now().toString(36), emoji: '🎁', name: '', cost: 100 }); paintRw(); };
+  // Recompensas sugeridas por escalones (unos 15 puntos al día estudiando a diario): se añaden las que falten y luego se revisan y guardan
+  const SUGERIDAS = [
+    ['☕', 'Merienda o café del sitio que elija', 30], ['🍫', 'Su capricho dulce favorito', 30], ['🎬', 'Elige la peli o la serie de la noche', 40],
+    ['🛁', 'Baño relajante preparado', 40], ['💆', 'Masaje de 15 minutos', 50], ['🧺', 'Un día libre de tareas de casa', 60],
+    ['🎲', 'Sorpresa misteriosa', 80], ['🍳', 'Desayuno en la cama', 100], ['🍝', 'Cena en casa preparada por mí', 100],
+    ['💆‍♀️', 'Masaje largo de 45 minutos', 150], ['🛍️', 'Tarde de compras (te acompaño sin quejarme)', 150], ['🍿', 'Plan de cine con palomitas', 150],
+    ['🌳', 'Excursión o paseo al sitio que elijas', 200], ['🍣', 'Cena fuera en el restaurante que quieras', 400],
+    ['🎟️', 'Entradas para un concierto, teatro o espectáculo', 500], ['💅', 'Spa, manicura o peluquería', 500],
+    ['🎁', 'Un capricho que tengas pendiente', 600], ['🏨', 'Escapada de fin de semana', 1200], ['💎', 'El capricho gordo que llevas tiempo queriendo', 1500]
+  ];
+  $('rwSug').onclick = () => {
+    const have = new Set(items.map(r => r.name.trim().toLowerCase()));
+    const nuevas = SUGERIDAS.filter(([, name]) => !have.has(name.toLowerCase())).map(([emoji, name, cost], i) => ({ id: Date.now().toString(36) + i, emoji, name, cost }));
+    items.push(...nuevas); items.sort((a, b) => a.cost - b.cost); paintRw();
+    $('rwMsg').textContent = nuevas.length ? `${nuevas.length} añadidas: revísalas y pulsa Guardar` : 'Ya estaban todas';
+  };
   $('rwSave').onclick = async () => {
     const clean = items.filter(r => r.name.trim()).map(r => ({ id: r.id, emoji: r.emoji.trim() || '🎁', name: r.name.trim(), cost: Math.max(1, Math.round(+r.cost) || 1) }));
     try { await fb.setDoc(fb.doc(fb.db, 'config', 'rewards'), { items: clean, at: Date.now() }); items = clean; paintRw(); $('rwMsg').textContent = '✓ Guardado'; }
