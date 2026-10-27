@@ -1333,7 +1333,8 @@ function showCuaderno() {
 let evoTema = '';
 function evolucionHTML() {
   const dt = load(K.dailyt, {}), dias = Object.keys(dt).sort();
-  if (!dias.length) return '';
+  if (!dias.length) return `<div class="card"><h2>📈 Evolución por tema</h2>
+    <p class="muted" style="margin:0">Aquí verás tu porcentaje de acierto de cada semana, en todos los temas o en uno concreto. Se cuenta desde el 28 de octubre de 2026: en cuanto respondas preguntas (en tests, simulacros o el repaso) empezará a llenarse.</p></div>`;
   const temas = uniq(dias.flatMap(d => Object.keys(dt[d]))).sort(natCmp);
   // las 8 últimas semanas, cada una desde su lunes
   const lunes = d => { const x = new Date(d); x.setDate(x.getDate() - (x.getDay() + 6) % 7); return x; };
