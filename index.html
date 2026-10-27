@@ -175,7 +175,7 @@
   /* Inicio: objetivo diario y accesos rápidos */
   .countdown { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
   .countdown .big { font-size: 2.2rem; }
-  .quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
   .quick-btn { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 2px; padding: 14px; min-height: 100px; border-width: 2px; }
   .quick-btn .qi { font-size: 1.6rem; line-height: 1.2; }
   .chip { min-height: 36px; padding: 6px 14px; border-radius: 99px; font-size: .9rem; }
@@ -403,6 +403,17 @@
   .animo-btns { display: flex; gap: 6px; } .animo { font-size: 1.6rem; min-height: 48px; width: 52px; padding: 0; border-radius: 14px; }
   .reto { padding: 10px 0; border-bottom: 1px solid var(--border); } .reto .bar { margin: 6px 0 4px; } .reto.ok .bar > div { background: var(--ok); }
   .reto-new > summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 8px 0; }
+  h2.sec { font-size: 1rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 26px 4px 10px; }
+  .qwrap { position: relative; } .qwrap > .quick-btn { width: 100%; height: 100%; }
+  .qwrap-wide { margin-bottom: 16px; }
+  .qwrap-wide .quick-btn { flex-direction: row; align-items: center; gap: 14px; min-height: 0; padding: 16px 52px 16px 16px; }
+  .qwrap-wide .quick-btn > span:last-child { display: flex; flex-direction: column; gap: 2px; }
+  .set-row select { min-width: 0; max-width: 62%; text-overflow: ellipsis; } /* temas con nombre largo no desbordan */
+  .info-btn { position: absolute; top: 6px; right: 6px; width: 32px; min-height: 32px; padding: 0; border-radius: 50%; font-size: 1rem; color: var(--muted); background: color-mix(in srgb, var(--card) 80%, transparent); z-index: 1; }
+  .row > .info-btn, h2 .info-btn { position: static; }
+  .more-opts { margin: 4px 0 12px; } .more-opts > summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 8px 0; }
+  .help-box p { line-height: 1.6; margin: 10px 0 16px; text-align: left; }
+  .help-item { border-bottom: 1px solid var(--border); padding: 4px 0; } .help-item > summary { cursor: pointer; font-weight: 600; padding: 8px 0; } .help-item p { margin: 0 0 10px; line-height: 1.55; }
   .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
@@ -502,11 +513,13 @@ const MODOS = { practica: 'Práctica', examen: 'Examen', simulacro: 'Simulacro',
 const SETTINGS_DEFAULT = {
   penaltyOn: false, penalty: 1 / 3,
   simNombre: 'Simulacro', simPreguntas: 100, simMinutos: 90, simCorte: 5, simBloque: '',
+  // 2ª parte del examen oficial: 40 preguntas de todo el temario en 90 min
+  sim2Nombre: '2ª parte (todo el temario)', sim2Preguntas: 40, sim2Minutos: 90, sim2Bloque: '',
   examDate: '', dailyGoal: 60, srsSize: 20,
   pomoOn: false, pomoWork: 25, pomoBreak: 5, water: true, waterMin: 20, waterMsg: '',
   autoGaps: true, extraGaps: 0
 };
-const SHARED = ['penaltyOn', 'penalty', 'simNombre', 'simPreguntas', 'simMinutos', 'simCorte', 'simBloque', 'examDate', 'dailyGoal'];
+const SHARED = ['penaltyOn', 'penalty', 'simNombre', 'simPreguntas', 'simMinutos', 'simCorte', 'simBloque', 'sim2Nombre', 'sim2Preguntas', 'sim2Minutos', 'sim2Bloque', 'examDate', 'dailyGoal'];
 // Opciones que remiten a otras ("Las respuestas a) y c)…", "Todas las anteriores…"): no se barajan
 const fixedOrder = q => q.ordenFijo || q.opciones.some(o => /(^|[\s(])[a-h]\)|anteriores|ninguna (es|de)|todas (las|son)/i.test(o));
 const pick = (o, keys) => o ? Object.fromEntries(keys.filter(k => k in o).map(k => [k, o[k]])) : {};
@@ -2049,6 +2062,73 @@ function bindInbox() {
     try { await fb.updateDoc(fb.doc(fb.db, 'users', fbUser.uid, 'inbox', id), { read: true, readAt: Date.now() }); } catch {}
   });
 }
+
+// ---------- Ayuda ----------
+// Cada opción tiene un ⓘ que abre su explicación; ❓ Ayuda las reúne todas en una pantalla.
+const AYUDA = [
+  ['📅 Hoy', [
+    ['plan', '📅 Planning «Hoy toca»', 'Reparte los temas que elijas entre los días que quedan hasta el examen (sin contar los días de repaso final). Cada día te dice qué toca y te propone un test de esos temas. Si un día no estudias, se reajusta solo. Se personaliza en «Personalizar»: fecha del examen, días de estudio, temas…'],
+    ['srs', '🧠 Repaso inteligente', 'Te pregunta lo que toca repasar hoy según cómo lo llevas: lo que fallas vuelve pronto y lo que aciertas tarda cada vez más (1, 3, 7, 16, 35 días). Es la mejor forma de no olvidar lo estudiado. Hazlo cada día aunque sea un rato.'],
+    ['fallos', '🔁 Fallos de hoy', 'Las preguntas que has fallado hoy. Repasarlas antes de acabar el día ayuda mucho a que no se repita el error.'],
+    ['objetivo', '🎯 Objetivo diario y racha 🔥', 'El objetivo es el número de preguntas al día (60). La racha 🔥 cuenta los días seguidos que lo cumples. La misión del día 🗺️ es un reto extra que cambia cada día.']
+  ]],
+  ['📚 Practicar', [
+    ['test', '📝 Test por temas', 'Eliges los temas y cuántas preguntas, y empiezas. En «Más opciones»: modo examen (nota al final y con tiempo), solo las que has fallado, solo las marcadas ★, recuerdo activo (piensas la respuesta antes de ver las opciones) o filtrar por ley o referencia.'],
+    ['flash', '🃏 Flashcards', 'Tarjetas: ves la pregunta o el concepto, piensas la respuesta y le das la vuelta. Luego dices si te ha costado («Otra vez», «Difícil», «Bien», «Fácil») y la app decide cuándo volver a enseñártela. Ideal para plazos, órganos, definiciones…'],
+    ['vf', '⚡ Verdadero / Falso', 'Repaso rápido: sale una afirmación y dices si es verdadera o falsa. Muy útil para ratos cortos. Intenta superar tu récord de racha.'],
+    ['art', '📜 Artículos', 'Textos de la normativa con huecos que tienes que rellenar. Sirve para memorizar artículos literales, plazos y cifras.'],
+    ['audio', '🎧 Modo audio', 'La app te lee las preguntas y las opciones en voz alta; puedes responder tocando o dejar que te diga la solución. Para repasar caminando o en el coche.']
+  ]],
+  ['🎯 Examen', [
+    ['sim1', '🎯 Simulacro de la 1ª parte', 'Un examen como el oficial: 80 preguntas del temario específico en 120 minutos, con −1/3 por fallo. Al final ves la nota, si serías APTA y la revisión de cada pregunta. Hazlo de vez en cuando para medirte.'],
+    ['sim2', '🎯 Simulacro de la 2ª parte', 'Como la 2ª parte oficial: 40 preguntas de todo el temario en 90 minutos, con −1/3 por fallo.'],
+    ['prevision', '🔮 Previsión de nota', 'En Progreso: la nota que sacarías hoy en el simulacro, calculada con tus aciertos y fallos de cada pregunta. Te dice qué temas te bajan más la nota para que los practiques.']
+  ]],
+  ['🏆 Puntos y premios', [
+    ['logros', '🏆 Logros', 'Medallas por estudiar: primeros tests, rachas, simulacros aprobados, temas dominados… Cada una da puntos una vez. Están en el botón 🏆 de arriba.'],
+    ['diario', '📅 Recompensa diaria', 'Cada día que llegas a 60 preguntas ganas puntos. Si son días seguidos, los días 7, 14, 21 y 28 dan más. Tras el 28 vuelve a empezar.'],
+    ['extras', '🚀 Extras del día', 'Más puntos si llegas a 90 o 120 preguntas, si aciertas el 80 % o más, y la misión del día 🗺️.'],
+    ['ruleta', '🎡 Ruleta', 'Al llegar a 100 preguntas se desbloquea la ruleta: entra en 🏆 Logros y gírala para ganar +5, +10, +15 o +30 puntos. Solo una vez al día.'],
+    ['escudo', '🛡️ Escudo', 'Cada 7 días seguidos ganas un escudo (máximo 2). Si un día no llegas a 60, se gasta el escudo y tu racha de puntos no se corta.'],
+    ['retos', '🏁 Retos', 'Retos especiales que te pone tu admin, con fecha límite, puntos y a veces premio. Los ves en el inicio y en 🏆 Logros.'],
+    ['premios', '🎁 Recompensas', 'Con los puntos canjeas premios en 🏆 Logros. Al canjear, le llega el aviso a tu admin. Y la recompensa final ✈️ se gana aprobando la oposición.']
+  ]],
+  ['⚙️ Más', [
+    ['animo', '💭 ¿Cómo te sientes hoy?', 'Una vez al día puedes decir cómo estás. Solo lo ve tu admin, para saber cuándo necesitas un empujón o un mimo.'],
+    ['avisos', '🔔 Avisos', 'En ⚙️ Ajustes → Avisos eliges la hora y los días del recordatorio. En el iPhone solo funcionan con la app añadida a la pantalla de inicio.'],
+    ['cuenta', '👤 Cuenta', 'Con tu cuenta (⚙️ Ajustes) tu progreso se guarda en la nube y lo tienes en todos tus dispositivos.']
+  ]]
+];
+const ayudaDe = id => AYUDA.flatMap(([, l]) => l).find(([k]) => k === id);
+const infoBtn = (id, label) => `<button class="info-btn" data-help="${id}" aria-label="Qué es ${esc(label)}" title="¿Qué es esto?">ⓘ</button>`;
+function showHelp(id) {
+  const a = ayudaDe(id);
+  if (!a) return;
+  $('helpBox')?.remove();
+  document.body.insertAdjacentHTML('beforeend', `<div class="ruleta-bg" id="helpBox" role="dialog" aria-modal="true" aria-label="${esc(a[1])}"><div class="ruleta-box help-box">
+    <h2>${a[1]}</h2><p>${a[2]}</p><button class="primary" id="helpOk">Entendido</button></div></div>`);
+  const close = () => $('helpBox')?.remove();
+  $('helpOk').onclick = close; $('helpOk').focus();
+  $('helpBox').onclick = e => { if (e.target.id === 'helpBox') close(); };
+}
+// los ⓘ funcionan en cualquier pantalla
+document.addEventListener('click', e => { const b = e.target.closest('[data-help]'); if (b) { e.preventDefault(); e.stopPropagation(); showHelp(b.dataset.help); } });
+function showAyuda() {
+  stopTimer();
+  saveSettings({ ayudaVista: AYUDA_VERSION });
+  app.innerHTML = `<div class="row between"><h1>❓ Ayuda</h1><button id="home">← Inicio</button></div>
+    <p class="muted" style="margin-top:-8px">Qué es cada cosa y para qué sirve. En cada opción tienes también un ⓘ con su explicación.</p>
+    ${AYUDA.map(([sec, l]) => `<div class="card"><h2>${sec}</h2>${l.filter(([k]) => k !== 'audio' || feat('audio')).map(([, t, txt]) => `<details class="help-item"><summary>${t}</summary><p>${txt}</p></details>`).join('')}</div>`).join('')}`;
+  $('home').onclick = () => showHome();
+}
+// Aviso de novedades la primera vez tras la reorganización
+const AYUDA_VERSION = 1;
+function novedadesHTML() {
+  if (!set?.preguntas?.length || (load(K.settings, {}).ayudaVista || 0) >= AYUDA_VERSION) return '';
+  return `<div class="card notice"><b>✨ La app se ha reorganizado</b>
+    <p class="muted" style="margin:6px 0 10px">Ahora está en tres bloques: 📅 Hoy, 📚 Practicar y 🎯 Examen. Toca ⓘ en cualquier opción para saber qué es, o mira la ayuda completa.</p>
+    <div class="row"><button class="small primary" id="novAyuda">Ver la ayuda</button><button class="small" id="novOk">Entendido</button></div></div>`;
+}
 function dailyCardHTML() {
   const s = getSettings(), today = load(K.daily, {})[todayKey()] || 0, left = daysLeft(s.examDate), st = streak();
   if (left === null && !s.dailyGoal) return '';
@@ -2077,6 +2157,7 @@ function showHome(error) {
   const markedCount = qs.filter(q => marks[keyOf(q)]).length;
   const plan = srsPlan(qs);
   const simPool = qs.filter(q => !s.simBloque || q.bloque === s.simBloque);
+  const sim2Pool = qs.filter(q => !s.sim2Bloque || q.bloque === s.sim2Bloque);
   const arts = articulosOf(), cards = [...qs, ...fichasOf()].map(asCard);
   const flashPlan = srsPlan(cards, c => c.key);
   const hasContent = qs.length || cards.length || arts.length;
@@ -2085,9 +2166,10 @@ function showHome(error) {
 
   app.innerHTML = `
     <h1>${set ? esc(set.titulo) : 'Test de preguntas'}</h1>
-    ${set?.preguntas?.length ? `<div class="row" style="margin:-6px 0 12px">${puntosChipHTML()}</div>` : ''}
+    ${set?.preguntas?.length ? `<div class="row" style="margin:-6px 0 12px">${puntosChipHTML()}<button class="chip" id="goAyuda" title="Qué es cada cosa">❓ Ayuda</button></div>` : ''}
     <div class="homenav"><button id="goStats">📊 Progreso</button><button id="goEditor">✏️ Editor</button><button id="goTheme">🎨 Tema</button><button id="goSettings">⚙️ Ajustes</button>${isAdmin() ? '<button id="goAdmin">📊 Admin</button>' : ''}</div>
     ${error ? `<div class="card error">${esc(error)}</div>` : ''}
+    ${novedadesHTML()}
     ${inboxHTML()}
     ${animoHTML()}
     ${semanaHTML()}
@@ -2097,49 +2179,62 @@ function showHome(error) {
       <p class="muted">${MODOS[saved.sim ? 'simulacro' : saved.mode] || ''} · pregunta ${saved.i + 1} de ${saved.list.length} · ${fmtTime(saved.elapsed)} transcurridos</p>
       <div class="row"><button class="primary" id="resume">Reanudar</button><button id="discard">Descartar</button></div>
     </div>` : ''}
-    ${hasContent ? dailyCardHTML() + fallosHoyHTML() + planCardHTML() + `
-    <div class="card">
-      <div class="quick">
-        <button class="quick-btn" id="srsBtn"><span class="qi">🧠</span><b>Repaso inteligente</b>
-          <span class="muted">${plan.due.length || plan.fresh.length ? `${plan.due.length} para repasar · ${plan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>
-        <button class="quick-btn" id="simBtn"><span class="qi">🎯</span><b>${esc(s.simNombre)}</b>
-          <span class="muted">${Math.min(s.simPreguntas, simPool.length)} preguntas${s.simBloque ? ` de «${esc(s.simBloque)}»` : ''} · ${s.simMinutos ? s.simMinutos + ' min' : 'sin tiempo'} · ${penTxt}</span></button>
-        ${feat('flash') ? `<button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
-          <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>` : ''}
-        ${feat('articulos') ? `<button class="quick-btn" id="artBtn"><span class="qi">📜</span><b>Artículos</b>
-          <span class="muted">${arts.length ? `${arts.length} para rellenar huecos` : 'Memoriza artículos de ley'}</span></button>` : ''}
-        ${feat('audio') ? `<button class="quick-btn" id="audioBtn"><span class="qi">🎧</span><b>Modo audio</b>
-          <span class="muted">Escucha preguntas y respuestas</span></button>` : ''}
-        ${feat('vf') ? `<button class="quick-btn" id="vfBtn"><span class="qi">⚡</span><b>Verdadero / Falso</b>
-          <span class="muted">Repaso rápido${load(K.vf, {}).best ? ` · récord racha ${load(K.vf, {}).best}` : ''}</span></button>` : ''}
-      </div>
-    </div>` : ''}
+    ${hasContent ? `
+    <h2 class="sec">📅 Hoy</h2>
+    ${dailyCardHTML()}${fallosHoyHTML()}${planCardHTML()}
+    ${qs.length ? `<div class="qwrap qwrap-wide"><button class="quick-btn hero-tile" id="srsBtn"><span class="qi">🧠</span><span><b>Repaso inteligente</b>
+      <span class="muted">${plan.due.length || plan.fresh.length ? `Lo que te toca repasar hoy · ${plan.due.length} pendientes · ${plan.fresh.length} nuevas` : 'Todo al día ✅'}</span></span></button>${infoBtn('srs', 'Repaso inteligente')}</div>` : ''}
+
+    <h2 class="sec">📚 Practicar</h2>
     ${qs.length ? `
     <div class="card">
-      <h2>Test personalizado</h2>
-      <div class="modes">
-        <label class="mode-card"><input type="radio" name="mode" value="practica" checked><span class="t">📝 Práctica</span><span class="d">Ves la solución tras cada pregunta</span></label>
-        <label class="mode-card"><input type="radio" name="mode" value="examen"><span class="t">🎓 Examen</span><span class="d">Nota y soluciones al final</span></label>
-      </div>
-      <label class="opt" id="minRow" hidden>Tiempo límite (min, 0 = sin límite): <input id="minutes" type="number" min="0" value="0"></label>
-      <hr class="sep">
+      <div class="row between"><h2 style="margin:0">📝 Test por temas</h2>${infoBtn('test', 'Test por temas')}</div>
+      <p class="muted" style="margin:4px 0 8px">Elige temas y cuántas preguntas. Verás la solución después de cada una.</p>
       <div class="picker" id="pickTest"></div>
-      ${hasRef ? '<label class="opt">Referencia: <input type="text" id="refFilter" placeholder="p. ej. 39/2015 o CE" style="flex:1;min-width:0"></label>' : ''}
       <label class="opt">Nº de preguntas: <input id="num" type="number" min="1" max="${qs.length}" value="${Math.min(qs.length, 20)}"></label>
-      <label class="opt"><input id="shq" type="checkbox" checked> Barajar preguntas</label>
-      <label class="opt"><input id="sho" type="checkbox" checked> Barajar opciones</label>
-      <label class="opt"><input id="onlyKo" type="checkbox"> Solo las que he fallado alguna vez (${failedCount})</label>
-      <label class="opt"><input id="onlyMarked" type="checkbox"> Solo las marcadas ★ (${markedCount})</label>
-      ${feat('recall') ? `<label class="opt"><input id="recall" type="checkbox" ${load(K.settings, {}).recall ? 'checked' : ''}> 🧠 Recuerdo activo: piensa la respuesta antes de ver las opciones</label>` : ''}
-      <p class="muted">Penalización: ${penTxt} · <a href="#" id="penLink">cambiar</a></p>
+      <details class="more-opts"><summary>Más opciones</summary>
+        <div class="modes">
+          <label class="mode-card"><input type="radio" name="mode" value="practica" checked><span class="t">📝 Práctica</span><span class="d">Ves la solución tras cada pregunta</span></label>
+          <label class="mode-card"><input type="radio" name="mode" value="examen"><span class="t">🎓 Modo examen</span><span class="d">Nota y soluciones al final</span></label>
+        </div>
+        <label class="opt" id="minRow" hidden>Tiempo límite (min, 0 = sin límite): <input id="minutes" type="number" min="0" value="0"></label>
+        ${hasRef ? '<label class="opt">Referencia: <input type="text" id="refFilter" placeholder="p. ej. 39/2015 o CE" style="flex:1;min-width:0"></label>' : ''}
+        <label class="opt"><input id="onlyKo" type="checkbox"> Solo las que he fallado alguna vez (${failedCount})</label>
+        <label class="opt"><input id="onlyMarked" type="checkbox"> Solo las marcadas ★ (${markedCount})</label>
+        ${feat('recall') ? `<label class="opt"><input id="recall" type="checkbox" ${load(K.settings, {}).recall ? 'checked' : ''}> 🧠 Recuerdo activo: piensa la respuesta antes de ver las opciones</label>` : ''}
+        <label class="opt"><input id="shq" type="checkbox" checked> Barajar preguntas</label>
+        <label class="opt"><input id="sho" type="checkbox" checked> Barajar opciones</label>
+        <p class="muted">Penalización: ${penTxt} · <a href="#" id="penLink">cambiar</a></p>
+      </details>
       <button class="primary" id="start">Empezar</button>
     </div>` : ''}
+    <div class="quick">
+      ${feat('flash') ? `<div class="qwrap"><button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
+        <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>${infoBtn('flash', 'Flashcards')}</div>` : ''}
+      ${feat('vf') ? `<div class="qwrap"><button class="quick-btn" id="vfBtn"><span class="qi">⚡</span><b>Verdadero / Falso</b>
+        <span class="muted">Repaso rápido${load(K.vf, {}).best ? ` · récord ${load(K.vf, {}).best}` : ''}</span></button>${infoBtn('vf', 'Verdadero / Falso')}</div>` : ''}
+      ${feat('articulos') ? `<div class="qwrap"><button class="quick-btn" id="artBtn"><span class="qi">📜</span><b>Artículos</b>
+        <span class="muted">${arts.length ? `${arts.length} con huecos` : 'Memoriza artículos de ley'}</span></button>${infoBtn('art', 'Artículos')}</div>` : ''}
+      ${feat('audio') ? `<div class="qwrap"><button class="quick-btn" id="audioBtn"><span class="qi">🎧</span><b>Modo audio</b>
+        <span class="muted">Escucha preguntas y respuestas</span></button>${infoBtn('audio', 'Modo audio')}</div>` : ''}
+    </div>
+
+    ${qs.length ? `<h2 class="sec">🎯 Examen</h2>
+    <div class="quick">
+      <div class="qwrap"><button class="quick-btn" id="simBtn"><span class="qi">🎯</span><b>Simulacro · ${esc(s.simNombre)}</b>
+        <span class="muted">Como el examen oficial: ${Math.min(s.simPreguntas, simPool.length)} preguntas${s.simBloque ? ` de «${esc(s.simBloque)}»` : ' de todo el temario'} · ${s.simMinutos ? s.simMinutos + ' min' : 'sin tiempo'} · ${penTxt}</span></button>${infoBtn('sim1', 'Simulacro de la 1ª parte')}</div>
+      <div class="qwrap"><button class="quick-btn" id="sim2Btn"><span class="qi">🎯</span><b>Simulacro · ${esc(s.sim2Nombre)}</b>
+        <span class="muted">${Math.min(s.sim2Preguntas, sim2Pool.length)} preguntas${s.sim2Bloque ? ` de «${esc(s.sim2Bloque)}»` : ' de todo el temario'} · ${s.sim2Minutos ? s.sim2Minutos + ' min' : 'sin tiempo'} · ${penTxt}</span></button>${infoBtn('sim2', 'Simulacro de la 2ª parte')}</div>
+    </div>` : ''}` : ''}
     ${serverAvailable && set?.origen === 'editado' ? `<div class="card"><p class="help" style="margin-top:0">Estás usando preguntas editadas solo en este dispositivo.</p>
       <button id="useServer" class="small">Volver a las preguntas de todos</button></div>` : ''}`;
 
   bindPlanCard();
   bindInbox();
   bindAnimo();
+  if ($('goAyuda')) $('goAyuda').onclick = () => showAyuda();
+  if ($('novAyuda')) $('novAyuda').onclick = () => showAyuda();
+  if ($('novOk')) $('novOk').onclick = () => { saveSettings({ ayudaVista: AYUDA_VERSION }); showHome(); };
   if ($('semanaOk')) $('semanaOk').onclick = () => { saveSettings({ semanaVista: todayKey(daysAgo(new Date().getDay() === 0 ? 0 : 1)) }); showHome(); };
   if ($('fallosGo')) $('fallosGo').onclick = () => startRun(shuffle(fallosHoy()), { mode: 'practica', label: 'Fallos de hoy' });
   if ($('goLogros')) $('goLogros').onclick = () => showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' }));
@@ -2167,20 +2262,22 @@ function showHome(error) {
   if ($('vfBtn')) $('vfBtn').onclick = needQs(() => showStudySetup('vf'));
   if ($('artBtn')) $('artBtn').onclick = () => showArticles();
   if (!qs.length) {
-    $('srsBtn').onclick = $('simBtn').onclick = needQs(() => {});
+    // sin preguntas tipo test no se pintan el repaso ni los simulacros
     return;
   }
   $('penLink').onclick = e => { e.preventDefault(); showSettings(); };
 
   $('srsBtn').onclick = () => { if (confirmDiscard()) showSrsSetup(); };
-  $('simBtn').onclick = () => {
+  const simular = (pool, n, minutos, nombre, bloque) => () => {
     if (!confirmDiscard()) return;
-    if (!simPool.length) return alert(`No hay preguntas del bloque «${s.simBloque}». Cámbialo en ⚙️ Ajustes → Simulacro.`);
-    startRun(shuffle(simPool).slice(0, s.simPreguntas), {
-      mode: 'examen', minutes: s.simMinutos, label: s.simNombre === MODOS.simulacro ? '' : s.simNombre,
-      sim: { nombre: s.simNombre, corte: s.simCorte }
+    if (!pool.length) return alert(`No hay preguntas del bloque «${bloque}». Cámbialo en ⚙️ Ajustes → Simulacro.`);
+    startRun(shuffle(pool).slice(0, n), {
+      mode: 'examen', minutes: minutos, label: nombre === MODOS.simulacro ? '' : nombre,
+      sim: { nombre, corte: s.simCorte }
     });
   };
+  $('simBtn').onclick = simular(simPool, s.simPreguntas, s.simMinutos, s.simNombre, s.simBloque);
+  $('sim2Btn').onclick = simular(sim2Pool, s.sim2Preguntas, s.sim2Minutos, s.sim2Nombre, s.sim2Bloque);
 
   const pick = temaPicker($('pickTest'), qs, load(K.settings, {}).pick_test);
 
@@ -2956,6 +3053,17 @@ function showSettings() {
       <p class="help">Usa la penalización de arriba. Las preguntas se eligen al azar del bloque elegido.</p>
     </div>
     <div class="card">
+      <h2>🎯 Simulacro de la 2ª parte</h2>
+      <div class="set-row"><span>Nombre</span><input type="text" id="sim2Nombre" value="${esc(s.sim2Nombre)}" style="width:55%"></div>
+      <div class="set-row"><span>Nº de preguntas</span><input type="number" id="sim2Preguntas" min="1" value="${s.sim2Preguntas}"></div>
+      <div class="set-row"><span>Tiempo (min, 0 = sin límite)</span><input type="number" id="sim2Minutos" min="0" value="${s.sim2Minutos}"></div>
+      <div class="set-row"><span>Preguntas de</span><select id="sim2Bloque">
+        <option value="">Todo el temario</option>
+        ${uniq((set?.preguntas || []).map(q => q.bloque)).sort(natCmp).map(b => `<option ${b === s.sim2Bloque ? 'selected' : ''}>${esc(b)}</option>`).join('')}
+      </select></div>
+      <p class="help">Misma penalización y nota de corte que la 1ª parte.</p>
+    </div>
+    <div class="card">
       <h2>📅 Objetivos</h2>
       <div class="set-row"><span>Fecha del examen</span><input type="date" id="examDate" value="${esc(s.examDate)}"></div>
       <div class="set-row"><span>Objetivo diario (preguntas, 0 = sin objetivo)</span><input type="number" id="dailyGoal" min="0" value="${s.dailyGoal}"></div>
@@ -3023,6 +3131,10 @@ function showSettings() {
   on('simMinutos', () => saveS({ simMinutos: num('simMinutos') }));
   on('simCorte', () => saveS({ simCorte: Math.min(10, num('simCorte')) }));
   on('simBloque', e => saveS({ simBloque: e.target.value }));
+  on('sim2Nombre', e => saveS({ sim2Nombre: e.target.value.trim() || '2ª parte' }));
+  on('sim2Preguntas', () => saveS({ sim2Preguntas: num('sim2Preguntas', 1) }));
+  on('sim2Minutos', () => saveS({ sim2Minutos: num('sim2Minutos') }));
+  on('sim2Bloque', e => saveS({ sim2Bloque: e.target.value }));
   on('examDate', e => saveS({ examDate: e.target.value }));
   on('dailyGoal', () => saveS({ dailyGoal: num('dailyGoal') }));
   on('srsSize', () => saveS({ srsSize: num('srsSize', 1) }));
