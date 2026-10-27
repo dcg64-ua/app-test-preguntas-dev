@@ -418,6 +418,8 @@
   .gap-slot.active { outline: 2.5px solid var(--accent); outline-offset: 1px; }
   .gap-slot.filled { background: var(--card); }
   .bank { display: flex; flex-wrap: wrap; gap: 8px; } .bank-w { font-weight: 600; }
+  .cq-item { border-bottom: 1px solid var(--border); padding: 4px 0; } .cq-item > summary { cursor: pointer; display: flex; gap: 10px; align-items: baseline; padding: 8px 0; }
+  .cq-item .cq-q { flex: 1; font-weight: 600; } .cq-ok { color: var(--ok); font-weight: 700; margin: 6px 0; } .cq-ko { color: var(--ko); margin: 6px 0; } .cq-exp { margin: 6px 0; line-height: 1.55; white-space: pre-wrap; }
   .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
@@ -460,7 +462,7 @@ const P = ENV === 'dev' ? 'quizdev.' : 'quiz.';
 const K = Object.fromEntries(Object.entries({
   set: 'set', stats: 'stats', marks: 'marks', hist: 'history', run: 'run',
   srs: 'srs', daily: 'daily', settings: 'settings', pomo: 'pomo', water: 'waterSecs',
-  theme: 'theme', photo: 'photo', gh: 'github', notes: 'notes', arts: 'articulos', vf: 'vf', dailyq: 'dailyq'
+  theme: 'theme', photo: 'photo', gh: 'github', notes: 'notes', arts: 'articulos', vf: 'vf', dailyq: 'dailyq', dailyt: 'dailyt'
 }).map(([k, v]) => [k, P + v]));
 if (ENV === 'dev') {
   document.title = 'Tests (DEV)';
@@ -547,7 +549,7 @@ const FIREBASE_CONFIG = {
   appId: "1:875566017572:web:ede73173dccc69d1827cb1"
 };
 const FB_VER = '10.12.2';
-const SYNC_KEYS = ['stats', 'srs', 'daily', 'history', 'marks', 'notes', 'settings', 'theme', 'vf', 'articulos', 'dailyq'];
+const SYNC_KEYS = ['stats', 'srs', 'daily', 'history', 'marks', 'notes', 'settings', 'theme', 'vf', 'articulos', 'dailyq', 'dailyt'];
 const SYNC_MERGE = {
   // Por pregunta, la entrada con más respuestas
   stats: (a, b) => mergeMap(a, b, (x, y) => (y.ok + y.ko) > (x.ok + x.ko) ? y : x),
@@ -556,6 +558,8 @@ const SYNC_MERGE = {
   daily: (a, b) => mergeMap(a, b, Math.max),
   // respuestas tipo test por día: [respondidas, acertadas]; gana el dispositivo que más ha respondido ese día
   dailyq: (a, b) => mergeMap(a, b, (x, y) => y[0] > x[0] ? y : x),
+  // por día y tema: { tema: [respondidas, acertadas] }; gana el dispositivo que más ha respondido ese día
+  dailyt: (a, b) => mergeMap(a, b, (x, y) => Object.values(y).reduce((s, v) => s + v[0], 0) > Object.values(x).reduce((s, v) => s + v[0], 0) ? y : x),
   history: (a, b) => {
     const seen = new Set(), out = [];
     for (const h of [...(a || []), ...(b || [])].sort((x, y) => x.fecha - y.fecha)) {
@@ -1267,6 +1271,91 @@ function fallosHoyHTML() {
   const f = fallosHoy();
   return f.length ? `<div class="card fallos-card"><span>🔁 Hoy has fallado <b>${f.length}</b> ${f.length === 1 ? 'pregunta' : 'preguntas'}. Repásalas antes de acabar el día.</span>
     <button class="small primary" id="fallosGo">Repasarlas</button></div>` : '';
+}
+
+// ---------- Cuaderno de errores ----------
+// Todas las preguntas falladas alguna vez, con la respuesta buena, el error que más repite y la explicación.
+// «Ya me la sé» la saca de la lista (settings.cuaderno); por defecto se ocultan también las que ya domina en el repaso.
+let cuadernoFiltro = { bloque: '', texto: '', dominadas: false, sabidas: false };
+function cuadernoLista() {
+  const stats = load(K.stats, {}), srs = load(K.srs, {}), sabidas = load(K.settings, {}).cuaderno || {}, f = cuadernoFiltro, t = f.texto.toLowerCase();
+  return (set?.preguntas || []).filter(q => {
+    const s = stats[keyOf(q)];
+    if (!s?.ko) return false;
+    if (!f.sabidas && sabidas[keyOf(q)]) return false;
+    if (!f.dominadas && (srs[keyOf(q)]?.box || 0) >= 3) return false;
+    if (f.bloque && q.bloque !== f.bloque) return false;
+    return !t || [q.pregunta, q.explicacion, q.tema, ...q.opciones].some(v => (v || '').toLowerCase().includes(t));
+  }).sort((a, b) => stats[keyOf(b)].ko - stats[keyOf(a)].ko);
+}
+function showCuaderno() {
+  stopTimer();
+  const stats = load(K.stats, {}), sabidas = load(K.settings, {}).cuaderno || {}, l = cuadernoLista(), f = cuadernoFiltro;
+  const bloques = uniq((set?.preguntas || []).filter(q => stats[keyOf(q)]?.ko).map(q => q.bloque)).sort(natCmp);
+  const peorError = q => { const w = stats[keyOf(q)]?.wrong || {}; const e = Object.entries(w).sort((a, b) => b[1] - a[1])[0]; return e ? e[0] : null; };
+  const vacio = Object.keys(stats).length ? '¡Nada por aquí! 🎉 No hay errores pendientes con estos filtros.' : 'Todavía no has fallado ninguna pregunta. Cuando falles alguna aparecerá aquí.';
+  app.innerHTML = `
+    <div class="row between"><h1>📓 Cuaderno de errores</h1><button id="home">← Inicio</button></div>
+    <div class="card">
+      <p class="muted" style="margin-top:0">Las preguntas que has fallado alguna vez, con la respuesta correcta y la explicación. Repásalas como apuntes y marca «Ya me la sé» cuando la tengas clara.</p>
+      <div class="set-row"><span>Bloque</span><select id="cqBloque"><option value="">Todos</option>${bloques.map(b => `<option value="${esc(b)}" ${b === f.bloque ? 'selected' : ''}>${esc(bloqueShort(b))}</option>`).join('')}</select></div>
+      <input type="search" id="cqTexto" class="full" placeholder="🔍 Buscar en las preguntas" value="${esc(f.texto)}">
+      <label class="opt"><input type="checkbox" id="cqDom" ${f.dominadas ? 'checked' : ''}> Mostrar también las que ya dominas en el repaso</label>
+      <label class="opt"><input type="checkbox" id="cqSab" ${f.sabidas ? 'checked' : ''}> Mostrar también las que marcaste como sabidas (${Object.keys(sabidas).length})</label>
+      ${l.length ? `<button class="primary" id="cqGo">Practicar ${l.length > 50 ? `50 de estas ${l.length}` : `estas ${l.length}`}</button>` : ''}
+    </div>
+    ${l.length ? `<div class="card">${l.slice(0, 150).map(q => {
+      const s = stats[keyOf(q)], e = peorError(q), k = keyOf(q);
+      return `<details class="cq-item"><summary><span class="cq-q">${esc(q.pregunta)}</span><span class="muted">✗ ${s.ko}${s.ok ? ` · ✓ ${s.ok}` : ''}</span></summary>
+        <p class="cq-ok">✅ ${esc(q.opciones[q.correcta])}</p>
+        ${e && e !== q.opciones[q.correcta] ? `<p class="cq-ko">❌ Sueles contestar: ${esc(e)}</p>` : ''}
+        ${q.explicacion ? `<p class="cq-exp">${esc(q.explicacion)}</p>` : ''}
+        <p class="muted" style="margin:4px 0">${esc(q.tema || q.bloque || '')}</p>
+        ${sabidas[k] ? `<button class="small" data-cq-unk="${esc(k)}">↺ Volver a la lista</button>` : `<button class="small primary" data-cq-ok="${esc(k)}">✓ Ya me la sé</button>`}
+      </details>`;
+    }).join('')}${l.length > 150 ? `<p class="muted">… y ${l.length - 150} más. Usa el buscador o el bloque para verlas.</p>` : ''}</div>`
+      : `<div class="card"><p class="muted">${vacio}</p></div>`}`;
+  $('home').onclick = () => showHome();
+  $('cqBloque').onchange = e => { f.bloque = e.target.value; showCuaderno(); };
+  $('cqTexto').oninput = e => { f.texto = e.target.value; const pos = e.target.selectionStart; showCuaderno(); const s = $('cqTexto'); s.focus(); s.setSelectionRange(pos, pos); };
+  $('cqDom').onchange = e => { f.dominadas = e.target.checked; showCuaderno(); };
+  $('cqSab').onchange = e => { f.sabidas = e.target.checked; showCuaderno(); };
+  if ($('cqGo')) $('cqGo').onclick = () => startRun(shuffle(l).slice(0, 50), { mode: 'practica', label: 'Cuaderno de errores' });
+  const marcar = (k, on) => { const c = { ...(load(K.settings, {}).cuaderno || {}) }; if (on) c[k] = Date.now(); else delete c[k]; saveSettings({ cuaderno: c }); };
+  app.querySelectorAll('[data-cq-ok]').forEach(b => b.onclick = () => { marcar(b.dataset.cqOk, true); b.closest('.cq-item').remove(); });
+  app.querySelectorAll('[data-cq-unk]').forEach(b => b.onclick = () => { marcar(b.dataset.cqUnk, false); showCuaderno(); });
+}
+
+// ---------- Evolución por tema (Progreso) ----------
+// % de acierto de cada semana (lunes a domingo) en el tema elegido, con lo que se guarda desde que existe (dailyt).
+let evoTema = '';
+function evolucionHTML() {
+  const dt = load(K.dailyt, {}), dias = Object.keys(dt).sort();
+  if (!dias.length) return '';
+  const temas = uniq(dias.flatMap(d => Object.keys(dt[d]))).sort(natCmp);
+  // las 8 últimas semanas, cada una desde su lunes
+  const lunes = d => { const x = new Date(d); x.setDate(x.getDate() - (x.getDay() + 6) % 7); return x; };
+  const semanas = [...Array(8)].map((_, i) => { const l = lunes(new Date()); l.setDate(l.getDate() - 7 * (7 - i)); return l; });
+  const datos = semanas.map(l => {
+    let n = 0, ok = 0;
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(l); d.setDate(d.getDate() + i);
+      for (const [t, v] of Object.entries(dt[todayKey(d)] || {})) if (!evoTema || t === evoTema) { n += v[0]; ok += v[1]; }
+    }
+    return { l, n, p: n ? Math.round(ok / n * 100) : null };
+  });
+  const con = datos.filter(x => x.p !== null), ult = con[con.length - 1], ant = con[con.length - 2];
+  const W = 320, H = 130, bw = W / 8;
+  const bars = datos.map((x, i) => x.p === null ? '' : `<rect x="${i * bw + 6}" y="${H - 20 - x.p}" width="${bw - 12}" height="${x.p}" rx="4" fill="var(--accent)" opacity="${i === 7 ? 1 : .55}"/>
+    <text x="${i * bw + bw / 2}" y="${H - 24 - x.p}" text-anchor="middle" font-size="10" fill="var(--text)">${x.p}%</text>`).join('');
+  const labels = datos.map((x, i) => `<text x="${i * bw + bw / 2}" y="${H - 6}" text-anchor="middle" font-size="9" fill="var(--muted)">${x.l.getDate()}/${x.l.getMonth() + 1}</text>`).join('');
+  const resumen = ult ? `Esta semana: <b>${ult.p} %</b> de acierto en ${ult.n} preguntas${ant ? ` · ${ult.p >= ant.p ? '📈 +' : '📉 '}${ult.p - ant.p} puntos respecto a la semana anterior` : ''}.` : 'Sin datos todavía.';
+  return `<div class="card">
+    <h2>📈 Evolución por tema</h2>
+    <div class="set-row"><span>Tema</span><select id="evoSel"><option value="">Todos los temas</option>${temas.map(t => `<option value="${esc(t)}" ${t === evoTema ? 'selected' : ''}>${esc(temaName(t).short)}</option>`).join('')}</select></div>
+    <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto" role="img" aria-label="Porcentaje de acierto por semana">${bars}${labels}</svg>
+    <p class="muted" style="margin:6px 0 0">${resumen} Cuenta desde el 28 de octubre de 2026.</p>
+  </div>`;
 }
 // Progreso: tarjeta con el porcentaje de los últimos exámenes (verde si llega al 50 %)
 function pctCardHTML(hist) {
@@ -2078,6 +2167,8 @@ const AYUDA = [
   ]],
   ['📚 Practicar', [
     ['test', '📝 Test por temas', 'Eliges los temas y cuántas preguntas, y empiezas. En «Más opciones»: modo examen (nota al final y con tiempo), solo las que has fallado, solo las marcadas ★, recuerdo activo (piensas la respuesta antes de ver las opciones) o filtrar por ley o referencia.'],
+    ['cuaderno', '📓 Cuaderno de errores', 'Todas las preguntas que has fallado alguna vez, con la respuesta correcta, el error que más repites y la explicación. Repásalo como unos apuntes y practica sus preguntas. Cuando una la tengas clara, márcala con «Ya me la sé» y sale de la lista. Las que ya dominas en el repaso inteligente se ocultan solas.'],
+    ['evolucion', '📈 Evolución por tema', 'En Progreso: tu porcentaje de acierto semana a semana, en todos los temas o en uno concreto. Sirve para ver si un tema que te costaba va mejorando.'],
     ['flash', '🃏 Flashcards', 'Tarjetas: ves la pregunta o el concepto, piensas la respuesta y le das la vuelta. Luego dices si te ha costado («Otra vez», «Difícil», «Bien», «Fácil») y la app decide cuándo volver a enseñártela. Ideal para plazos, órganos, definiciones…'],
     ['vf', '⚡ Verdadero / Falso', 'Repaso rápido: sale una afirmación y dices si es verdadera o falsa. Muy útil para ratos cortos. Intenta superar tu récord de racha.'],
     ['art', '📜 Artículos', 'Textos de la normativa con huecos. En 🧩 Fácil colocas las palabras que faltan tocándolas; en ✍️ Difícil las escribes tú de memoria. Empieza en fácil y, cuando lo hagas perfecto, pasa a difícil. Sirve para memorizar artículos literales, plazos y cifras.'],
@@ -2213,6 +2304,8 @@ function showHome(error) {
       <button class="primary" id="start">Empezar</button>
     </div>` : ''}
     <div class="quick">
+      ${qs.length ? `<div class="qwrap"><button class="quick-btn" id="cuadernoBtn"><span class="qi">📓</span><b>Cuaderno de errores</b>
+        <span class="muted">${(() => { const keep = cuadernoFiltro; cuadernoFiltro = { bloque: '', texto: '', dominadas: false, sabidas: false }; const n = cuadernoLista().length; cuadernoFiltro = keep; return n ? `${n} por repasar` : 'Sin errores pendientes ✅'; })()}</span></button>${infoBtn('cuaderno', 'Cuaderno de errores')}</div>` : ''}
       ${feat('flash') ? `<div class="qwrap"><button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
         <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>${infoBtn('flash', 'Flashcards')}</div>` : ''}
       ${feat('vf') ? `<div class="qwrap"><button class="quick-btn" id="vfBtn"><span class="qi">⚡</span><b>Verdadero / Falso</b>
@@ -2261,6 +2354,7 @@ function showHome(error) {
 
   const confirmDiscard = () => !saved || confirm('Se descartará el test a medias. ¿Empezar uno nuevo?');
   const needQs = fn => () => qs.length ? fn() : alert('Primero añade preguntas tipo test en ✏️ Editor.');
+  if ($('cuadernoBtn')) $('cuadernoBtn').onclick = () => showCuaderno();
   if ($('flashBtn')) $('flashBtn').onclick = () => showStudySetup('flash');
   if ($('audioBtn')) $('audioBtn').onclick = () => showStudySetup('audio');
   if ($('vfBtn')) $('vfBtn').onclick = needQs(() => showStudySetup('vf'));
@@ -2739,6 +2833,10 @@ function updateStats(q, ok, chosen = null) {
   const dq = load(K.dailyq, {}), t = dq[todayKey()] || [0, 0, []];
   dq[todayKey()] = [t[0] + 1, t[1] + (ok ? 1 : 0), ok ? (t[2] || []) : uniq([...(t[2] || []), keyOf(q)])];
   save(K.dailyq, dq);
+  // por tema, para la evolución semana a semana
+  const dt = load(K.dailyt, {}), dia = dt[todayKey()] ||= {}, v = dia[pkKey(q)] || [0, 0];
+  dia[pkKey(q)] = [v[0] + 1, v[1] + (ok ? 1 : 0)];
+  save(K.dailyt, dt);
 }
 // Tiempo de cada pregunta (desde que se ve hasta que se responde), para «las que más te cuestan»
 let qShown = { i: -1, t: 0, run: null };
@@ -2945,6 +3043,7 @@ function showStats() {
     ${previsionHTML()}
     ${pctCardHTML(hist)}
     ${lentasHTML()}
+    ${evolucionHTML()}
     ${dN ? `<div class="card">
       <h2>🤔 ¿Te compensa arriesgar?</h2>
       <p style="margin-top:0">De <b>${dN}</b> preguntas dudosas que respondiste, acertaste el <b>${pct(dOk, dN)}%</b>.</p>
@@ -2979,6 +3078,7 @@ function showStats() {
   };
   if ($('chart')) bindChart(hist.slice(-30));
   bindProgresoExtras();
+  if ($('evoSel')) $('evoSel').onchange = e => { evoTema = e.target.value; showStats(); setTimeout(() => $('evoSel')?.scrollIntoView({ block: 'center' }), 0); };
 }
 
 function lineChart(h, corte) {
