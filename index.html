@@ -1599,7 +1599,7 @@ function checkLogros() {
   const mis = misionHoy();
   if (!(st.misiones || {})[hoy] && mis.ok(misionData())) {
     saveSettings({ misiones: { ...(st.misiones || {}), [hoy]: mis.id } });
-    showToast('🎯', `¡Misión cumplida! +${cfg.mision} puntos`, mis.txt.replace(/^\S+ /, ''), 'pomo');
+    showToast('🎯', `¡Misión cumplida! +${cfg.mision} puntos`, mis.txt, 'pomo');
   }
   if (pd.hoyOk && st.diarioAvisado !== hoy) {
     saveSettings({ diarioAvisado: hoy });
