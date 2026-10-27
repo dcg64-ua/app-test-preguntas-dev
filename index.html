@@ -394,6 +394,11 @@
   .final-state { font-weight: 600; }
   .pts-chip.alert { border-color: var(--star); background: color-mix(in srgb, var(--star) 35%, var(--card)); animation: chipAlert 1.2s ease-in-out infinite; }
   @keyframes chipAlert { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--star) 70%, transparent); transform: scale(1); } 50% { box-shadow: 0 0 0 8px transparent; transform: scale(1.05); } }
+  .prev-top { display: flex; align-items: center; gap: 14px; } .prev-nota { font-size: 2.6rem; font-weight: 800; letter-spacing: -.03em; }
+  .prev-nota.ok { color: var(--ok); } .prev-nota.ko { color: var(--ko); }
+  .prev-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); } .prev-row > span:first-child { flex: 1; min-width: 0; }
+  .lenta-txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .fallos-card { display: flex; align-items: center; gap: 12px; justify-content: space-between; border-left: 4px solid var(--ko); }
   .pts-tag { background: color-mix(in srgb, var(--star) 22%, var(--card)); color: var(--text); font-weight: 700; }
   .pts-chip { background: color-mix(in srgb, var(--star) 18%, var(--card)); border-color: color-mix(in srgb, var(--star) 50%, transparent); font-weight: 700; }
   .points-card { text-align: center; }
@@ -1148,6 +1153,71 @@ const calcNota = (ok, ko, total, pen) => total ? Math.max(0, ok - ko * pen) / to
 const entryNota = h => h.nota ?? (h.total ? h.aciertos / h.total * 10 : 0);
 // La nota en porcentaje del examen (un 10 es el 100 %); ya incluye lo que restan los fallos
 const notaPct = n => fmtNum(n * 10, 0) + ' %';
+// Previsión de nota del simulacro: cada pregunta del bloque del simulacro cuenta con su probabilidad de acierto
+// (sus aciertos y fallos; las no vistas, un poco por debajo de su media) y la penalización de los fallos.
+function prevision() {
+  const s = getSettings(), qs = (set?.preguntas || []).filter(q => !s.simBloque || q.bloque === s.simBloque), stats = load(K.stats, {});
+  let ok = 0, tot = 0;
+  Object.values(stats).forEach(x => { ok += x.ok; tot += x.ok + x.ko; });
+  if (!qs.length || tot < 30) return null; // con muy pocos datos no tiene sentido
+  const base = ok / tot * .9, pen = s.penaltyOn ? s.penalty : 0, byTema = {};
+  let sum = 0;
+  qs.forEach(q => {
+    const x = stats[keyOf(q)], n = x ? x.ok + x.ko : 0;
+    const p = n ? (x.ok + 1) / (n + 2) : base, e = p - (1 - p) * pen;
+    sum += e;
+    const t = byTema[pkKey(q)] ||= { loss: 0, qs: [] };
+    t.loss += 1 - e; t.qs.push(q);
+  });
+  const peores = Object.entries(byTema).sort((a, b) => b[1].loss - a[1].loss).slice(0, 3)
+    .map(([k, t]) => ({ k, menos: t.loss / qs.length * 10, qs: t.qs }));
+  const sims = load(K.hist, []).filter(h => h.modo === 'simulacro').slice(-3).map(entryNota);
+  return { nota: Math.max(0, sum / qs.length * 10), peores, sims, corte: s.simCorte, bloque: s.simBloque, vistas: qs.filter(q => stats[keyOf(q)]).length, n: qs.length };
+}
+function previsionHTML() {
+  const p = prevision();
+  if (!p) return '';
+  const simMedia = p.sims.length ? p.sims.reduce((a, b) => a + b, 0) / p.sims.length : null;
+  return `<div class="card prev-card">
+    <h2>🔮 Previsión de nota</h2>
+    <div class="prev-top"><span class="prev-nota ${p.nota >= p.corte ? 'ok' : 'ko'}">${fmtNum(p.nota, 1)}</span>
+      <span class="muted">en el simulacro${p.bloque ? ` de «${esc(p.bloque)}»` : ''} si fuera hoy · nota de corte ${fmtNum(p.corte)}${simMedia !== null ? `<br>Tus últimos simulacros: ${fmtNum(simMedia, 1)} de media` : ''}<br>Has visto ${p.vistas} de ${p.n} preguntas de ese bloque</span></div>
+    <p style="margin:12px 0 6px"><b>Lo que más te baja la nota:</b></p>
+    ${p.peores.map((t, i) => `<div class="prev-row"><span>${esc(temaName(t.k).short)}</span><span class="muted">−${fmtNum(t.menos, 2)}</span><button class="small" data-prev="${i}">Practicar</button></div>`).join('')}
+    <p class="help" style="margin-bottom:0">Es una estimación con tus aciertos y fallos de cada pregunta; cuanto más practiques, más fina.</p>
+  </div>`;
+}
+// Las preguntas en las que más tarda (media de al menos 2 veces)
+function lentas() {
+  const stats = load(K.stats, {}), byKey = new Map((set?.preguntas || []).map(q => [keyOf(q), q]));
+  return Object.entries(stats).filter(([k, s]) => s.tn >= 2 && byKey.has(k)).map(([k, s]) => ({ q: byKey.get(k), ms: s.ms / s.tn }))
+    .sort((a, b) => b.ms - a.ms).slice(0, 10);
+}
+function lentasHTML() {
+  const l = lentas();
+  if (l.length < 5) return '';
+  return `<div class="card">
+    <h2>🐢 Las que más te cuestan</h2>
+    <p class="muted" style="margin-top:-6px">Las preguntas en las que más tardas en responder, aunque las aciertes. En el examen el tiempo cuenta.</p>
+    ${l.map(x => `<div class="prev-row"><span class="lenta-txt">${esc(x.q.pregunta)}</span><span class="muted">${Math.round(x.ms / 1000)} s</span></div>`).join('')}
+    <button class="primary small" id="lentasGo" style="margin-top:10px">Practicar estas ${l.length}</button>
+  </div>`;
+}
+function bindProgresoExtras() {
+  const p = prevision();
+  app.querySelectorAll('[data-prev]').forEach(b => b.onclick = () => startRun(shuffle(p.peores[+b.dataset.prev].qs).slice(0, 20), { mode: 'practica', label: 'Lo que más te baja' }));
+  if ($('lentasGo')) $('lentasGo').onclick = () => startRun(lentas().map(x => x.q), { mode: 'practica', label: 'Las que más te cuestan' });
+}
+// Fallos de hoy, para repasarlos antes de acabar el día
+function fallosHoy() {
+  const keys = (load(K.dailyq, {})[todayKey()] || [])[2] || [], byKey = new Map((set?.preguntas || []).map(q => [keyOf(q), q]));
+  return keys.map(k => byKey.get(k)).filter(Boolean);
+}
+function fallosHoyHTML() {
+  const f = fallosHoy();
+  return f.length ? `<div class="card fallos-card"><span>🔁 Hoy has fallado <b>${f.length}</b> ${f.length === 1 ? 'pregunta' : 'preguntas'}. Repásalas antes de acabar el día.</span>
+    <button class="small primary" id="fallosGo">Repasarlas</button></div>` : '';
+}
 // Progreso: tarjeta con el porcentaje de los últimos exámenes (verde si llega al 50 %)
 function pctCardHTML(hist) {
   if (!hist.length) return '';
@@ -1887,7 +1957,7 @@ function showHome(error) {
       <p class="muted">${MODOS[saved.sim ? 'simulacro' : saved.mode] || ''} · pregunta ${saved.i + 1} de ${saved.list.length} · ${fmtTime(saved.elapsed)} transcurridos</p>
       <div class="row"><button class="primary" id="resume">Reanudar</button><button id="discard">Descartar</button></div>
     </div>` : ''}
-    ${hasContent ? dailyCardHTML() + planCardHTML() + `
+    ${hasContent ? dailyCardHTML() + fallosHoyHTML() + planCardHTML() + `
     <div class="card">
       <div class="quick">
         <button class="quick-btn" id="srsBtn"><span class="qi">🧠</span><b>Repaso inteligente</b>
@@ -1929,6 +1999,7 @@ function showHome(error) {
 
   bindPlanCard();
   bindInbox();
+  if ($('fallosGo')) $('fallosGo').onclick = () => startRun(shuffle(fallosHoy()), { mode: 'practica', label: 'Fallos de hoy' });
   if ($('goLogros')) $('goLogros').onclick = () => showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' }));
   if ($('goRuleta')) $('goRuleta').onclick = e => { e.preventDefault(); showLogros().then(() => $('ruletaBtn')?.scrollIntoView({ block: 'center' })); };
   setTimeout(checkLogros, 600); // aviso de logros nuevos al volver al inicio
@@ -2277,6 +2348,7 @@ function showQuestion() {
   const { q, order } = run.list[run.i];
   const n = run.list.length, exam = run.mode === 'examen', ans = run.answers[run.i];
   const answered = run.answers.filter(a => a !== null).length;
+  if (qShown.i !== run.i || qShown.run !== run) qShown = { i: run.i, t: Date.now(), run };
   // Recuerdo activo: las opciones se ocultan hasta que la persona intenta recordar la respuesta
   const hideOpts = run.recall && !run.shown[run.i] && ans === null;
 
@@ -2329,6 +2401,7 @@ function showQuestion() {
   if (exam) {
     opts.forEach(b => b.onclick = () => {
       const o = +b.dataset.orig;
+      if (run.answers[run.i] === null) addTime(q, Date.now() - qShown.t); // la primera vez que la responde
       run.answers[run.i] = run.answers[run.i] === o ? null : o; // pulsar de nuevo la deja en blanco
       saveRun(); showQuestion();
     });
@@ -2344,6 +2417,7 @@ function showQuestion() {
     opts.forEach(b => b.onclick = () => {
       const chosen = +b.dataset.orig, ok = chosen === q.correcta;
       run.answers[run.i] = chosen;
+      addTime(q, Date.now() - qShown.t);
       updateStats(q, ok, chosen);
       srsUpdate(q, ok);
       addDaily(1);
@@ -2418,10 +2492,19 @@ function updateStats(q, ok, chosen = null) {
     s.wrong[txt] = (s.wrong[txt] || 0) + 1;
   }
   save(K.stats, stats);
-  // aciertos del día, para el bonus de puntería
-  const dq = load(K.dailyq, {}), t = dq[todayKey()] || [0, 0];
-  dq[todayKey()] = [t[0] + 1, t[1] + (ok ? 1 : 0)];
+  // del día: [respondidas, acertadas, preguntas falladas] → puntería y «repasa los fallos de hoy»
+  const dq = load(K.dailyq, {}), t = dq[todayKey()] || [0, 0, []];
+  dq[todayKey()] = [t[0] + 1, t[1] + (ok ? 1 : 0), ok ? (t[2] || []) : uniq([...(t[2] || []), keyOf(q)])];
   save(K.dailyq, dq);
+}
+// Tiempo de cada pregunta (desde que se ve hasta que se responde), para «las que más te cuestan»
+let qShown = { i: -1, t: 0, run: null };
+function addTime(q, ms) {
+  if (ms < 800) return; // toques sin leer
+  const stats = load(K.stats, {}), s = stats[keyOf(q)] ||= { ok: 0, ko: 0 };
+  s.ms = (s.ms || 0) + Math.min(ms, 180000); // como mucho 3 min: si se deja el móvil, no cuenta más
+  s.tn = (s.tn || 0) + 1;
+  save(K.stats, stats);
 }
 
 function finish() {
@@ -2616,7 +2699,9 @@ function showStats() {
       ${hist.length >= 2 ? `<div class="chart" id="chart">${lineChart(hist.slice(-30), sims.length ? s.simCorte : null)}<div class="tip" id="tip" hidden></div></div>`
         : '<p class="muted">Haz al menos dos tests para ver la evolución.</p>'}
     </div>
+    ${previsionHTML()}
     ${pctCardHTML(hist)}
+    ${lentasHTML()}
     ${dN ? `<div class="card">
       <h2>🤔 ¿Te compensa arriesgar?</h2>
       <p style="margin-top:0">De <b>${dN}</b> preguntas dudosas que respondiste, acertaste el <b>${pct(dOk, dN)}%</b>.</p>
@@ -2650,6 +2735,7 @@ function showStats() {
     showStats();
   };
   if ($('chart')) bindChart(hist.slice(-30));
+  bindProgresoExtras();
 }
 
 function lineChart(h, corte) {
