@@ -27652,6 +27652,986 @@
             "referencia": "Test MAD nº 17, pregunta 35",
             "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
             "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué iniciativa puede considerarse el origen del libro electrónico?",
+            "opciones": [
+                "La creación de Amazon.com",
+                "El proyecto Google Books",
+                "El Proyecto Gutenberg",
+                "La creación del PDF"
+            ],
+            "correcta": 2,
+            "explicacion": "El Proyecto Gutenberg (Michael Hart, 1971) se considera el origen del libro electrónico. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 1",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué recoge el Diccionario de la RAE como «libro electrónico»?",
+            "opciones": [
+                "Solo la versión digital de un libro",
+                "El dispositivo que permite almacenar, reproducir o leer libros y el libro en formato adecuado para leerse en él o en la pantalla de un ordenador",
+                "Solo el dispositivo que permite almacenar, reproducir o leer libros",
+                "Solo el libro en formato adecuado para leerse en la pantalla de un ordenador"
+            ],
+            "correcta": 1,
+            "explicacion": "Respuesta oficial «b) y c)»: la RAE recoge las dos acepciones, el dispositivo y el libro en formato digital.",
+            "referencia": "Test MAD nº 18, pregunta 2",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál fue uno de los primeros lectores de libros digitales del mercado?",
+            "opciones": [
+                "Sony Reader",
+                "Kindle",
+                "Nook",
+                "Rocket e-book"
+            ],
+            "correcta": 3,
+            "explicacion": "Rocket e-book (1998) fue de los primeros. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 3",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es el formato estándar para libros digitales creado por el International Digital Publishing Forum (IDPF)?",
+            "opciones": [
+                "PDF",
+                "EPUB",
+                "E-book",
+                "DRM"
+            ],
+            "correcta": 1,
+            "explicacion": "EPUB es el estándar abierto del IDPF. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 4",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué formato comercial usado en libros digitales se ha convertido en un estándar ISO?",
+            "opciones": [
+                "PDF",
+                "DRM",
+                "TXT",
+                "EPUB"
+            ],
+            "correcta": 0,
+            "explicacion": "El PDF de Adobe es la norma ISO 32000. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 5",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Con qué otro nombre se puede llamar al formato Kindle?",
+            "opciones": [
+                "Mobi",
+                "AZW",
+                "LIT",
+                "EPUB"
+            ],
+            "correcta": 1,
+            "explicacion": "AZW es el formato propio de Amazon Kindle. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 6",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es el lector de libros digitales de Barnes & Noble?",
+            "opciones": [
+                "Sony Reader",
+                "Kindle",
+                "Papyre",
+                "Nook"
+            ],
+            "correcta": 3,
+            "explicacion": "Nook. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 7",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama la plataforma comercial de Google para libros digitales?",
+            "opciones": [
+                "iBooks Store",
+                "Google Play Books",
+                "GBooks Store",
+                "DBooks Store"
+            ],
+            "correcta": 1,
+            "explicacion": "Google Play Books (Google Play Libros). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 8",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál fue la empresa española pionera en Europa en el mercado del libro digital?",
+            "opciones": [
+                "PRISA",
+                "Publidisa",
+                "Libranda",
+                "Grupo Santillana"
+            ],
+            "correcta": 1,
+            "explicacion": "Publidisa. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 9",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuáles son las siglas internacionales de la gestión de derechos digitales?",
+            "opciones": [
+                "DMR",
+                "DRG",
+                "DRM",
+                "MRD"
+            ],
+            "correcta": 2,
+            "explicacion": "DRM: Digital Rights Management. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 10",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué restricciones permite gestionar el sistema de gestión de derechos digitales (DRM)?",
+            "opciones": [
+                "La copia, la impresión y la caducidad de la lectura",
+                "Solo la copia del contenido",
+                "Solo la impresión del contenido",
+                "Solo la caducidad de la lectura"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «todas»: el DRM controla copia, impresión y caducidad.",
+            "referencia": "Test MAD nº 18, pregunta 11",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el recolector de recursos digitales del Ministerio de Cultura español?",
+            "opciones": [
+                "GABRIEL",
+                "Memoria Hispánica",
+                "Biblioteca Hispánica",
+                "Hispana"
+            ],
+            "correcta": 3,
+            "explicacion": "Hispana recolecta los recursos digitales de las colecciones españolas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 12",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿En qué proyecto europeo participan las bibliotecas digitales españolas?",
+            "opciones": [
+                "The European Library",
+                "Europeana",
+                "Google Books",
+                "GABRIEL"
+            ],
+            "correcta": 1,
+            "explicacion": "Europeana, a través de Hispana. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 13",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿En qué materia está especializada la colección de libros digitales Safari?",
+            "opciones": [
+                "Zoología y botánica",
+                "Informática",
+                "Periodismo",
+                "Geografía"
+            ],
+            "correcta": 1,
+            "explicacion": "Safari (O'Reilly): informática y tecnología. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 14",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué tecnología permite que un lector de libros digitales no necesite retroiluminación?",
+            "opciones": [
+                "La tinta electrónica (e-ink)",
+                "La pantalla táctil",
+                "La pantalla LCD",
+                "La pantalla OLED"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «a) y c)»: tinta electrónica y e-ink son lo mismo.",
+            "referencia": "Test MAD nº 18, pregunta 15",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué es el Kindle Oasis?",
+            "opciones": [
+                "Un lector de Barnes & Noble",
+                "El lector de Amazon de mayor formato",
+                "El lector de Apple",
+                "La versión de Kindle para móviles"
+            ],
+            "correcta": 1,
+            "explicacion": "Según el manual, el Kindle de Amazon de mayor formato. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 16",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál fue la primera tableta en aparecer en el mercado?",
+            "opciones": [
+                "Nook",
+                "iPhone",
+                "Kindle",
+                "iPad"
+            ],
+            "correcta": 3,
+            "explicacion": "El iPad (2010). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 17",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el sistema operativo de Google para smartphones?",
+            "opciones": [
+                "iOS",
+                "Android",
+                "Google Phone",
+                "iLiad"
+            ],
+            "correcta": 1,
+            "explicacion": "Android. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 18",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estas es una empresa especializada en la gestión del préstamo digital en bibliotecas?",
+            "opciones": [
+                "Nook",
+                "Mobi",
+                "OverDrive",
+                "Kobo"
+            ],
+            "correcta": 2,
+            "explicacion": "OverDrive. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 19",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿En cuál de estos dispositivos no se podía leer un libro digital en formato EPUB?",
+            "opciones": [
+                "iPad",
+                "Kindle",
+                "Nook",
+                "Sony Reader"
+            ],
+            "correcta": 1,
+            "explicacion": "El Kindle usaba sus formatos propios (AZW/Mobi) y no leía EPUB de forma nativa. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 20",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llamaba el formato que dio paso al EPUB?",
+            "opciones": [
+                "DRM",
+                "PDF",
+                "IDPF",
+                "Open eBook"
+            ],
+            "correcta": 3,
+            "explicacion": "Open eBook (OEB). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 21",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama la plataforma española de distribución de libros digitales creada en 2010?",
+            "opciones": [
+                "Hispana",
+                "Publidisa",
+                "Libranda",
+                "Agrega"
+            ],
+            "correcta": 2,
+            "explicacion": "Libranda. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 22",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué puede hacer una biblioteca con libros digitales comerciales?",
+            "opciones": [
+                "Comprarlos a perpetuidad o suscribirse a ellos",
+                "Solo comprarlos a perpetuidad",
+                "Solo suscribirse a ellos",
+                "Copiarlos para conservarlos"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «a) y b)»: compra a perpetuidad y suscripción.",
+            "referencia": "Test MAD nº 18, pregunta 23",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el programa de la Fundación Germán Sánchez Ruipérez dedicado a investigar sobre el libro digital?",
+            "opciones": [
+                "Planeta digital",
+                "Territorio e-book",
+                "Territorio e-biblioteca",
+                "Libros en pantalla"
+            ],
+            "correcta": 1,
+            "explicacion": "Territorio Ebook. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 24",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿en qué año empieza el programa del Ministerio de Cultura de préstamo de e-books en las Bibliotecas Públicas del Estado?",
+            "opciones": [
+                "2008",
+                "2009",
+                "2010",
+                "2011"
+            ],
+            "correcta": 3,
+            "explicacion": "Respuesta oficial: 2011.",
+            "referencia": "Test MAD nº 18, pregunta 25",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuáles de estas empresas de préstamo digital de libros electrónicos son españolas?",
+            "opciones": [
+                "OverDrive y Xercode",
+                "Hispana y Odilo",
+                "Odilo y Xercode",
+                "3M Cloud y OverDrive"
+            ],
+            "correcta": 2,
+            "explicacion": "Odilo y Xercode (el manual escribe «Xerbook») son españolas; OverDrive y 3M, estadounidenses. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 26",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿en qué año empieza Amazon a vender e-books para Kindle?",
+            "opciones": [
+                "2003",
+                "2005",
+                "2007",
+                "2008"
+            ],
+            "correcta": 3,
+            "explicacion": "Respuesta oficial: 2008. (El primer Kindle salió a la venta a finales de 2007.)",
+            "referencia": "Test MAD nº 18, pregunta 27",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál fue la primera biblioteca española en ofrecer préstamo de lectores de e-books?",
+            "opciones": [
+                "Biblioteca Gabriel Ferraté de la Universitat Politècnica de Catalunya",
+                "Biblioteca de la Universitat de Barcelona",
+                "Biblioteca de la Universidad Complutense de Madrid",
+                "Biblioteca de la Universidad de Sevilla"
+            ],
+            "correcta": 0,
+            "explicacion": "La Biblioteca Gabriel Ferraté (UPC). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 28",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué colección de libros digitales está especializada en Derecho?",
+            "opciones": [
+                "LiOn",
+                "Biblioteca online Bosch",
+                "Emerald Books",
+                "Safari"
+            ],
+            "correcta": 1,
+            "explicacion": "Biblioteca online Bosch. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 29",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿cuál de estas librerías NO participó en la creación de la plataforma Libranda?",
+            "opciones": [
+                "FNAC",
+                "El Corte Inglés",
+                "Casa del Libro",
+                "Amazon"
+            ],
+            "correcta": 3,
+            "explicacion": "Amazon no participó. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 30",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estos modelos de Kindle se considera de gama media?",
+            "opciones": [
+                "Kindle",
+                "Kindle Oasis",
+                "Kindle Voyage",
+                "Kindle Paperwhite"
+            ],
+            "correcta": 3,
+            "explicacion": "Paperwhite: gama media; Kindle básico, gama baja; Voyage y Oasis, gama alta. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 31",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es el porcentaje aproximado de la edición electrónica en España en 2018 según el Observatorio de la Lectura y el Libro?",
+            "opciones": [
+                "10 %",
+                "20 %",
+                "30 %",
+                "40 %"
+            ],
+            "correcta": 2,
+            "explicacion": "Respuesta oficial: alrededor del 30 %.",
+            "referencia": "Test MAD nº 18, pregunta 32",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿en qué comunidad autónoma no se ofrece el servicio eBiblio del Ministerio de Cultura y Deporte?",
+            "opciones": [
+                "País Vasco",
+                "Cataluña",
+                "Galicia",
+                "Andalucía"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial: País Vasco (tenía su propia plataforma).",
+            "referencia": "Test MAD nº 18, pregunta 33",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es actualmente uno de los formatos de audiolibros?",
+            "opciones": [
+                "AVI",
+                "SWF",
+                "WMV",
+                "MP3"
+            ],
+            "correcta": 3,
+            "explicacion": "MP3; AVI y WMV son vídeo y SWF es Flash. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 34",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el servicio de audiolibros de Amazon?",
+            "opciones": [
+                "Storytel",
+                "Audible",
+                "Auditeka",
+                "Audiomol"
+            ],
+            "correcta": 1,
+            "explicacion": "Audible. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 18, pregunta 35",
+            "bloque": "Tema 18 (MAD). El libro electrónico y el audiolibro",
+            "tema": "Tema 18 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué grupo permanente del W3C trabaja en el desarrollo de estándares web de accesibilidad?",
+            "opciones": [
+                "FECYT",
+                "Iniciativa de Accesibilidad a la Web (WAI)",
+                "Grupo de Estándares Web",
+                "RedIRIS"
+            ],
+            "correcta": 1,
+            "explicacion": "La WAI (Web Accessibility Initiative) del W3C. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 1",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es el objetivo de la accesibilidad?",
+            "opciones": [
+                "Aumentar los costes de diseño, rediseño y mantenimiento de los sitios web",
+                "Llegar solo a un segmento de la población de usuarios",
+                "Hacer el sitio web abierto a una mayor población de usuarios",
+                "Reducir el tráfico de las páginas web"
+            ],
+            "correcta": 2,
+            "explicacion": "Que el sitio sea usable por el mayor número posible de personas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 2",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es el objetivo de la usabilidad?",
+            "opciones": [
+                "Hacer el sitio web más eficiente y satisfactorio para los usuarios",
+                "Crear páginas web complejas",
+                "Certificar la calidad de los sitios web",
+                "Hacer estudios de usuarios"
+            ],
+            "correcta": 0,
+            "explicacion": "Eficiencia y satisfacción del usuario. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 3",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Quién es conocido como el gurú de la usabilidad?",
+            "opciones": [
+                "Steve Jobs",
+                "Vinton Cerf",
+                "Jakob Nielsen",
+                "Tim Berners-Lee"
+            ],
+            "correcta": 2,
+            "explicacion": "Jakob Nielsen. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 4",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estas herramientas del W3C sirve para validar las páginas web?",
+            "opciones": [
+                "MarcEdit",
+                "CONTENTdm",
+                "Drupal",
+                "Markup Validation Service"
+            ],
+            "correcta": 3,
+            "explicacion": "El Markup Validation Service del W3C (el manual lo cita para evaluar la accesibilidad). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 5",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los portales de revistas creados con Open Journal Systems (OJS) son:",
+            "opciones": [
+                "CMS para publicaciones",
+                "CMS para plataformas educativas",
+                "CMS para portales web",
+                "CMS para blogs"
+            ],
+            "correcta": 0,
+            "explicacion": "OJS es un CMS para publicaciones (revistas). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 6",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuáles son los cuatro principios de accesibilidad del contenido de las WCAG 2.1?",
+            "opciones": [
+                "Perceptible, económico, operable y comprensible",
+                "Perceptible, operable, comprensible y eficaz",
+                "Perceptible, operable, comprensible y robusto",
+                "Perceptible, operable, económico y eficaz"
+            ],
+            "correcta": 2,
+            "explicacion": "POUR: perceptible, operable, comprensible y robusto. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 7",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los sistemas de gestión de contenidos (CMS) de código propietario se caracterizan porque:",
+            "opciones": [
+                "Solo se desarrollan sobre contenido abierto",
+                "Solo su propietario puede desarrollar la aplicación",
+                "Son totalmente gratuitos",
+                "Cualquiera puede modificar su código"
+            ],
+            "correcta": 1,
+            "explicacion": "En el software propietario solo el dueño desarrolla y modifica la aplicación. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 8",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Una API es:",
+            "opciones": [
+                "Una interfaz de programación de aplicaciones",
+                "Un editor de páginas web",
+                "Una herramienta colaborativa",
+                "Una red social"
+            ],
+            "correcta": 0,
+            "explicacion": "Application Programming Interface. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 9",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estos programas es un CMS para plataformas educativas?",
+            "opciones": [
+                "Drupal",
+                "WordPress",
+                "Omeka",
+                "Moodle"
+            ],
+            "correcta": 3,
+            "explicacion": "Moodle. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 10",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es el objetivo de un portal web de biblioteca?",
+            "opciones": [
+                "Ofrecer a sus usuarios distintos tipos de contenidos, recursos y servicios",
+                "Ser una herramienta colaborativa de trabajo",
+                "Analizar el uso estadístico de las colecciones",
+                "Ofrecer solo bases de datos y plataformas de revistas"
+            ],
+            "correcta": 0,
+            "explicacion": "Ofrecer contenidos, recursos y servicios. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 11",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué CMS es el más extendido como portal web de bibliotecas?",
+            "opciones": [
+                "Moodle",
+                "OpenCms",
+                "Drupal",
+                "MediaWiki"
+            ],
+            "correcta": 2,
+            "explicacion": "Drupal. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 12",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Un gestor de contenidos para publicar noticias o artículos en orden cronológico que admite comentarios es un:",
+            "opciones": [
+                "CMS para wikis",
+                "CMS para foros",
+                "CMS para gestión de documentos",
+                "CMS para blogs"
+            ],
+            "correcta": 3,
+            "explicacion": "Un blog. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 13",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "DSpace es un:",
+            "opciones": [
+                "CMS para gestión de documentos",
+                "CMS para wikis",
+                "CMS para galerías fotográficas",
+                "CMS para plataformas educativas"
+            ],
+            "correcta": 0,
+            "explicacion": "DSpace (repositorios) se clasifica como CMS de gestión documental. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 14",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llaman las herramientas para organizar y planificar el trabajo en equipo?",
+            "opciones": [
+                "Sistemas de gestión de contenidos",
+                "Herramientas de trabajo colaborativo",
+                "Herramientas de referencia virtual",
+                "Sistemas integrados de gestión de bibliotecas"
+            ],
+            "correcta": 1,
+            "explicacion": "Herramientas de trabajo colaborativo. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 15",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "SharePoint, Google Drive y Dropbox son:",
+            "opciones": [
+                "Herramientas de colaboración muy usadas en las bibliotecas",
+                "Herramientas para crear portales web",
+                "Herramientas que no admiten distintos tipos de archivo",
+                "Herramientas que solo funcionan con arquitectura cliente/servidor"
+            ],
+            "correcta": 0,
+            "explicacion": "Herramientas colaborativas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 16",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los servicios de referencia virtual síncronos:",
+            "opciones": [
+                "Permiten enviar una pregunta en cualquier momento para que se responda más tarde",
+                "Solo admiten preguntas por correo electrónico",
+                "Permiten al usuario y al bibliotecario comunicarse en tiempo real",
+                "No permiten comunicarse por chat"
+            ],
+            "correcta": 2,
+            "explicacion": "Síncrono = en tiempo real (chat). El correo es asíncrono. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 17",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Quién elaboró las «Recomendaciones para el servicio de referencia digital»?",
+            "opciones": [
+                "IFLA",
+                "ALA",
+                "REBIUN",
+                "CSIC"
+            ],
+            "correcta": 0,
+            "explicacion": "La IFLA. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 18",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué protocolo facilita el intercambio entre los sistemas colaborativos de referencia digital?",
+            "opciones": [
+                "Question/Answer Transaction Protocol (QATP)",
+                "Z39.50",
+                "Networking",
+                "SIP"
+            ],
+            "correcta": 0,
+            "explicacion": "QATP. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 19",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿qué sistema de referencia virtual usa OCLC?",
+            "opciones": [
+                "LibraryH3lp",
+                "LibAnswers",
+                "Mosio",
+                "LiveChat"
+            ],
+            "correcta": 1,
+            "explicacion": "Respuesta oficial: LibAnswers. (El servicio propio de OCLC era QuestionPoint; LibAnswers es de Springshare.)",
+            "referencia": "Test MAD nº 19, pregunta 20",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el servicio de referencia virtual de las bibliotecas públicas españolas?",
+            "opciones": [
+                "Pregunte al bibliotecario",
+                "Pregunte: las bibliotecas responden",
+                "Resuelve tus dudas",
+                "Servicio de atención en línea"
+            ],
+            "correcta": 1,
+            "explicacion": "«Pregunte: las bibliotecas responden». (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 21",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué es la sindicación de contenidos?",
+            "opciones": [
+                "Una forma de crear páginas web",
+                "Un foro de opinión",
+                "Un canal público de publicación de vídeos",
+                "La distribución automática de información desde canales RSS a los que se suscribe el usuario"
+            ],
+            "correcta": 3,
+            "explicacion": "Distribución automática vía RSS/Atom. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 22",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué protocolos utiliza la sindicación de contenidos?",
+            "opciones": [
+                "Ninguno",
+                "RSS y Atom",
+                "Z39.50",
+                "SIP"
+            ],
+            "correcta": 1,
+            "explicacion": "RSS y Atom. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 23",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "SlideShare es una aplicación que permite:",
+            "opciones": [
+                "Descubrir presentaciones en línea",
+                "Compartir fotografías",
+                "Descubrir una red de vídeos",
+                "Compartir imágenes"
+            ],
+            "correcta": 0,
+            "explicacion": "Presentaciones. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 24",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué entidad publicó en 2018 el «Manual de buenas prácticas en redes sociales»?",
+            "opciones": [
+                "REBIUN",
+                "FECYT",
+                "Ministerio de Educación, Cultura y Deporte",
+                "Red de Bibliotecas Públicas de Andalucía"
+            ],
+            "correcta": 0,
+            "explicacion": "REBIUN. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 25",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El bibliotecario que se encarga de la estrategia digital de la biblioteca, incluidas las redes sociales, se denomina:",
+            "opciones": [
+                "Referencista",
+                "Temático",
+                "Community manager",
+                "Curador de contenidos"
+            ],
+            "correcta": 2,
+            "explicacion": "Community manager. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 26",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El diseño web adaptable (responsive web design) permite que:",
+            "opciones": [
+                "La web sea accesible solo desde móviles",
+                "La web se presente de forma distinta según el tamaño de pantalla del dispositivo",
+                "La web cambie de contenido según el tamaño del dispositivo",
+                "La web solo dé acceso a los espacios más demandados"
+            ],
+            "correcta": 1,
+            "explicacion": "El mismo contenido se adapta a cada pantalla. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 27",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Quién es el autor del informe APEI «Bibliotecas ante el siglo XXI: nuevos medios y caminos»?",
+            "opciones": [
+                "Julián Marquina",
+                "Tomàs Baiget",
+                "Isidro Aguillo",
+                "Luisa Orera"
+            ],
+            "correcta": 0,
+            "explicacion": "Julián Marquina. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 28",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El concepto SoLoMo hace referencia a las bibliotecas:",
+            "opciones": [
+                "Públicas en redes sociales",
+                "Sociales, locales y móviles",
+                "En red, locales y promotoras del acceso abierto",
+                "Solidarias, locales y modernas"
+            ],
+            "correcta": 1,
+            "explicacion": "Social, Local, Mobile. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 29",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Quién popularizó el término web 2.0?",
+            "opciones": [
+                "Tim O'Reilly",
+                "Darcy DiNucci",
+                "Antonio Fumero",
+                "Steve Jobs"
+            ],
+            "correcta": 0,
+            "explicacion": "Tim O'Reilly (DiNucci lo usó antes, pero O'Reilly lo popularizó). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 30",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál ha sido el cambio más significativo de la norma europea UNE-EN 301549:2019 (requisitos de accesibilidad de productos y servicios TIC)?",
+            "opciones": [
+                "Ofrecer 12 directrices nuevas distintas de las WCAG 2.1",
+                "Incluir un quinto principio de accesibilidad web",
+                "Establecer nuevos niveles de cumplimiento",
+                "Adoptar las WCAG 2.1"
+            ],
+            "correcta": 3,
+            "explicacion": "Incorporó las WCAG 2.1. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 31",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama la norma europea de 2019 que regula, entre otras cosas, la accesibilidad web para personas con discapacidad?",
+            "opciones": [
+                "Directiva de igualdad de trato en materia de accesibilidad",
+                "Ley europea de igualdad de trato en materia de accesibilidad",
+                "Directiva de accesibilidad de productos y servicios",
+                "Ley de accesibilidad de productos y servicios para personas con discapacidad"
+            ],
+            "correcta": 2,
+            "explicacion": "Directiva (UE) 2019/882 sobre accesibilidad de productos y servicios (Acta Europea de Accesibilidad). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 32",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estos es un método para hacer revisiones automáticas de accesibilidad web?",
+            "opciones": [
+                "TAW",
+                "Test-AW",
+                "UX",
+                "TUX"
+            ],
+            "correcta": 0,
+            "explicacion": "TAW (Test de Accesibilidad Web). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 33",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué CMS permite crear galerías con las imágenes que incluye?",
+            "opciones": [
+                "Moodle",
+                "Omeka",
+                "WordPress",
+                "DSpace"
+            ],
+            "correcta": 1,
+            "explicacion": "Omeka: colecciones y exposiciones digitales. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 34",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿cuál es la red social con más usuarios activos?",
+            "opciones": [
+                "YouTube",
+                "Instagram",
+                "Twitter",
+                "Facebook"
+            ],
+            "correcta": 3,
+            "explicacion": "Facebook. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 19, pregunta 35",
+            "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
+            "tema": "Tema 19 · Test del manual (con soluciones)"
         }
     ],
     "fichas": [
