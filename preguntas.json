@@ -29122,6 +29122,496 @@
             "referencia": "Test MAD nº 27, pregunta 35",
             "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
             "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Una de las principales características que debe tener un edificio de biblioteca es:",
+            "opciones": [
+                "Que sea agradable a la vista",
+                "Que el usuario esté cómodo en él",
+                "Que esté física y orgánicamente integrado en su localidad",
+                "Que tenga mucha luz"
+            ],
+            "correcta": 2,
+            "explicacion": "El edificio debe estar integrado física y orgánicamente en su localidad. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 1",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La orientación más idónea para los depósitos de una biblioteca es:",
+            "opciones": [
+                "El sur",
+                "El norte y el este",
+                "El norte y el oeste",
+                "Cualquier orientación es adecuada"
+            ],
+            "correcta": 2,
+            "explicacion": "Norte y oeste, para proteger los fondos de la luz solar directa. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 2",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Faulkner-Brown, en sus célebres «10 mandamientos», NO menciona el principio de:",
+            "opciones": [
+                "Flexibilidad",
+                "Correlación",
+                "Confortabilidad",
+                "Accesibilidad"
+            ],
+            "correcta": 1,
+            "explicacion": "Sus principios: flexible, compacto, accesible, extensible, variado, organizado, confortable, seguro, constante y económico. La correlación no está. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 3",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué operación bibliotecaria es esencial para conservar los fondos?",
+            "opciones": [
+                "El control de su movimiento",
+                "El recuento",
+                "La selección",
+                "La colocación en mobiliario adecuado"
+            ],
+            "correcta": 3,
+            "explicacion": "Colocarlos en el mobiliario adecuado. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 4",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se conservan los mapas?",
+            "opciones": [
+                "Enrollados",
+                "En armarios con cajones (planeros)",
+                "En estanterías inclinadas",
+                "En álbumes especiales"
+            ],
+            "correcta": 1,
+            "explicacion": "En armarios de cajones horizontales (planeros). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 5",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué es un compactus?",
+            "opciones": [
+                "Un sistema de estanterías móviles",
+                "Un armario de seguridad",
+                "Una estantería especial para vídeos",
+                "Un sistema de estanterías metálicas fijas"
+            ],
+            "correcta": 0,
+            "explicacion": "Estanterías móviles sobre raíles que ahorran pasillos. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 6",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Una de las soluciones a la falta de espacio en muchas bibliotecas es:",
+            "opciones": [
+                "Las estanterías de más de 2 m de altura",
+                "Los compactos",
+                "Hacer expurgos sistemáticos",
+                "El canje bibliotecario"
+            ],
+            "correcta": 1,
+            "explicacion": "Los compactos (estanterías móviles). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 7",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Además del préstamo personal, las funciones más importantes de los mostradores de biblioteca suelen ser:",
+            "opciones": [
+                "El control y la información",
+                "Solo el control",
+                "Solo la información",
+                "Ser lugar de encuentro del personal"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «a) y b)»: control e información.",
+            "referencia": "Test MAD nº 10, pregunta 8",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué parte de la biblioteca es la llamada «zona caliente»?",
+            "opciones": [
+                "La de mayor tráfico de usuarios",
+                "La situada cerca de los calefactores",
+                "La zona de la cafetería",
+                "La de menor tráfico de usuarios"
+            ],
+            "correcta": 0,
+            "explicacion": "Zona caliente = más tráfico y ruido; zona fría = silencio. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 9",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las vitrinas son el mobiliario más idóneo para guardar:",
+            "opciones": [
+                "Los manuales",
+                "Los mapas",
+                "Los libros más antiguos",
+                "Los libros más sensibles al polvo"
+            ],
+            "correcta": 2,
+            "explicacion": "Los libros antiguos, para exponerlos protegidos. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 10",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿A qué criterio hay que dar preferencia al planificar la distribución de los espacios de la biblioteca?",
+            "opciones": [
+                "Al de los usuarios",
+                "Al de las funciones",
+                "Al de los servicios",
+                "Hay que conjugarlos según las necesidades existentes"
+            ],
+            "correcta": 3,
+            "explicacion": "Se conjugan usuarios, funciones y servicios según las necesidades. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 11",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El área de acceso a la biblioteca debe ser, sobre todo, una zona:",
+            "opciones": [
+                "Diáfana",
+                "De información",
+                "De control",
+                "De comida y bebida"
+            ],
+            "correcta": 1,
+            "explicacion": "De información. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 12",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La ubicación de cada servicio debe estudiarse atendiendo a:",
+            "opciones": [
+                "Sus características propias",
+                "Criterios de iluminación",
+                "Los deseos de la dirección del centro",
+                "La distinta finalidad de cada uno"
+            ],
+            "correcta": 0,
+            "explicacion": "Sus características propias. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 13",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La sala de lectura debe ubicarse:",
+            "opciones": [
+                "En la zona caliente",
+                "En la zona fría",
+                "Junto a la zona de depósitos",
+                "Según el tipo de biblioteca"
+            ],
+            "correcta": 1,
+            "explicacion": "En la zona fría, la más silenciosa. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 14",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "En la sala de lectura es recomendable:",
+            "opciones": [
+                "Separar los tipos de documentos, reservar un lugar para los catálogos y colocar máquinas de reprografía",
+                "Solo separar físicamente los distintos tipos de documentos",
+                "Solo reservar un lugar para consultar los catálogos",
+                "Solo colocar máquinas de reprografía"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «todas».",
+            "referencia": "Test MAD nº 10, pregunta 15",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Sobre el área de depósito:",
+            "opciones": [
+                "No existe en las bibliotecas de libre acceso",
+                "Siempre debe existir",
+                "Debe acoger todas las colecciones que se deterioran con el uso",
+                "Solo es necesaria en las bibliotecas nacionales"
+            ],
+            "correcta": 1,
+            "explicacion": "Siempre debe existir algún depósito. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 16",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La normativa general sobre construcción de edificios bibliotecarios la ha dictado:",
+            "opciones": [
+                "La IFLA",
+                "La UNESCO",
+                "REBIUN",
+                "Nadie: no existe normativa general sobre esta materia"
+            ],
+            "correcta": 3,
+            "explicacion": "No existe una normativa general (sí pautas y recomendaciones). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 17",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las distintas zonas de la biblioteca deben comunicarse:",
+            "opciones": [
+                "Con el sistema que se considere más idóneo",
+                "Con montacargas",
+                "Con cintas transportadoras",
+                "No deben estar comunicadas"
+            ],
+            "correcta": 0,
+            "explicacion": "Con el sistema más idóneo en cada caso. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 18",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los pictogramas que se colocan en la biblioteca deben:",
+            "opciones": [
+                "Indicar la dirección de la salida",
+                "Orientar al usuario dentro de la biblioteca",
+                "Señalar cada servicio",
+                "Indicar la zona de información"
+            ],
+            "correcta": 1,
+            "explicacion": "Orientar al usuario. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 19",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La iluminación de la biblioteca debe:",
+            "opciones": [
+                "Ser la máxima posible para facilitar la lectura",
+                "Ser uniforme",
+                "Ser adecuada a cada zona y servicio",
+                "Ser artificial"
+            ],
+            "correcta": 2,
+            "explicacion": "Adecuada a cada zona y servicio. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 20",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La ventilación en la biblioteca es:",
+            "opciones": [
+                "Beneficiosa solo para los documentos",
+                "Necesaria para las personas y para los documentos",
+                "Perjudicial porque entra polvo del exterior",
+                "Algo que debe regularse siempre por sistema natural"
+            ],
+            "correcta": 1,
+            "explicacion": "Necesaria para personas y documentos. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 21",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La temperatura de la biblioteca:",
+            "opciones": [
+                "Debe estar entre 18 y 21 ºC y ser constante",
+                "Solo tiene que estar entre 18 y 21 ºC",
+                "Solo debe ser constante",
+                "Debe ser la que necesite la mayoría del personal"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «a) y b)»: entre 18 y 21 ºC y constante.",
+            "referencia": "Test MAD nº 10, pregunta 22",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El mobiliario de la biblioteca debe ser:",
+            "opciones": [
+                "Bonito",
+                "Alegre",
+                "Cómodo y de calidad",
+                "Escaso, para dar sensación de claridad"
+            ],
+            "correcta": 2,
+            "explicacion": "Cómodo y de calidad. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 23",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las estanterías que se usen tienen que:",
+            "opciones": [
+                "Ser de madera",
+                "Ser adecuadas a la distinta tipología documental",
+                "Ser muy anchas para colocar los libros sin problema",
+                "Colocarse junto a las ventanas"
+            ],
+            "correcta": 1,
+            "explicacion": "Adecuadas a cada tipo de documento. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 24",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La altura y anchura de los mostradores de una biblioteca dependen de:",
+            "opciones": [
+                "Su función",
+                "La altura del personal",
+                "El número de personas que trabajen en él",
+                "La altura del techo"
+            ],
+            "correcta": 0,
+            "explicacion": "De su función. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 25",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La forma ideal de las mesas de la biblioteca:",
+            "opciones": [
+                "Es redonda",
+                "Es ovalada",
+                "Es alargada",
+                "Depende de su ubicación y de la función que deban cumplir"
+            ],
+            "correcta": 3,
+            "explicacion": "Depende de ubicación y función. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 26",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "En la biblioteca, el cableado informático debe:",
+            "opciones": [
+                "Ser siempre de fibra óptica",
+                "Ser fácilmente ampliable",
+                "No ser visible",
+                "Ir unido al eléctrico"
+            ],
+            "correcta": 1,
+            "explicacion": "Fácilmente ampliable. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 27",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los sistemas antihurto tienen que:",
+            "opciones": [
+                "Existir en todas las bibliotecas",
+                "Instalarse en las bibliotecas con colecciones en libre acceso",
+                "Emitir un sonido muy bajo para no molestar",
+                "Ser poco visibles para el usuario"
+            ],
+            "correcta": 1,
+            "explicacion": "Donde hay libre acceso. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 28",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, los sillones en la biblioteca son útiles:",
+            "opciones": [
+                "En las zonas de acceso",
+                "En las zonas de tránsito",
+                "Para los descansos del personal",
+                "Para las reuniones en los carrels"
+            ],
+            "correcta": 0,
+            "explicacion": "En las zonas de acceso. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 29",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La altura más adecuada de las estanterías de la biblioteca:",
+            "opciones": [
+                "Debe ser muy alta, para colocar más baldas",
+                "Debe estar entre 1,50 y 2,20 m, según dónde se ubiquen",
+                "Debe ser menor de 1,75 m para que todos alcancen la última balda",
+                "Debe depender de la iluminación"
+            ],
+            "correcta": 1,
+            "explicacion": "Entre 1,50 y 2,20 m según la ubicación. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 30",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El informe técnico ISO/TR 11219 (condiciones cualitativas y estadísticas básicas para edificios de bibliotecas) ayuda a:",
+            "opciones": [
+                "Planificar desde cero un edificio, adaptar el espacio de trabajo interno y adaptar el cableado",
+                "Solo planificar desde cero un edificio bibliotecario",
+                "Solo adaptar el espacio destinado al trabajo interno",
+                "Solo modificar el cableado para las nuevas tecnologías"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «todas».",
+            "referencia": "Test MAD nº 10, pregunta 31",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las condiciones ambientales de un edificio de biblioteca deben:",
+            "opciones": [
+                "Dar preferencia a las necesidades de los usuarios",
+                "Dar preferencia a las necesidades de la colección",
+                "Conjugar las necesidades de usuarios y colección",
+                "Dar preferencia a las colecciones especiales"
+            ],
+            "correcta": 2,
+            "explicacion": "Conjugar usuarios y colección. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 32",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Entre los principios de Faulkner-Brown encontramos:",
+            "opciones": [
+                "Flexibilidad, compacidad, accesibilidad y extensibilidad",
+                "Variedad, organización, confortabilidad y creatividad",
+                "Compacidad, flexibilidad, accesibilidad y conectividad",
+                "Coherencia, compacidad, accesibilidad y seguridad"
+            ],
+            "correcta": 0,
+            "explicacion": "Flexible, compacto, accesible, extensible… (creatividad, conectividad y coherencia no están). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 33",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "En las bebetecas, los niños pequeños:",
+            "opciones": [
+                "Aprenden a leer",
+                "Se entretienen mientras sus padres usan la biblioteca",
+                "Se familiarizan con el libro como elemento cotidiano",
+                "Se relacionan con otros niños de su edad"
+            ],
+            "correcta": 2,
+            "explicacion": "Se familiarizan con el libro. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 10, pregunta 34",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "En los nuevos servicios bibliotecarios:",
+            "opciones": [
+                "Se priman los espacios flexibles y se incluyen salas de autoaprendizaje y espacios para actividades comunitarias",
+                "Solo se priman los espacios flexibles",
+                "Solo se incluyen salas de autoaprendizaje",
+                "Solo se incluyen espacios para actividades comunitarias"
+            ],
+            "correcta": 0,
+            "explicacion": "Respuesta oficial «todas».",
+            "referencia": "Test MAD nº 10, pregunta 35",
+            "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
+            "tema": "Tema 10 · Test del manual (con soluciones)"
         }
     ],
     "fichas": [
