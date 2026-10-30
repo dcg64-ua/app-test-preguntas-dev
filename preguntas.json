@@ -27162,6 +27162,496 @@
             "referencia": "Test MAD nº 16, pregunta 35",
             "bloque": "Tema 16 (MAD). Extensión bibliotecaria. Extensión cultural. Animación a la lectura",
             "tema": "Tema 16 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué plataforma se puede integrar en Alma y tiene como finalidad la selección y adquisición de recursos?",
+            "opciones": [
+                "Alma",
+                "WorldShare Management Services",
+                "Rialto",
+                "Intota"
+            ],
+            "correcta": 2,
+            "explicacion": "Rialto (Ex Libris) es la plataforma de selección y adquisición integrada con Alma. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 1",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué módulos de un SIGB incluyen la captura de registros bibliográficos de bases de datos remotas mediante el cliente Z39.50?",
+            "opciones": [
+                "Préstamo interbibliotecario y catalogación",
+                "Catalogación y adquisiciones",
+                "Circulación y catalogación",
+                "Publicaciones periódicas y catalogación"
+            ],
+            "correcta": 1,
+            "explicacion": "Catalogación y adquisiciones capturan registros remotos vía Z39.50. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 2",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estas es una funcionalidad del módulo de catalogación?",
+            "opciones": [
+                "La comprobación periódica de la vigencia de las URL de los registros bibliográficos",
+                "La gestión de las desideratas de los usuarios",
+                "La gestión de la facturación",
+                "Las valoraciones y comentarios de los usuarios"
+            ],
+            "correcta": 0,
+            "explicacion": "Desideratas y facturación son de adquisiciones; valoraciones, del OPAC. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 3",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Indica tres plataformas de servicios bibliotecarios:",
+            "opciones": [
+                "Millennium, Sierra y Alma",
+                "INNOPAC, Sierra y Alma",
+                "INNOPAC, Millennium y Alma",
+                "Alma, WorldShare Management Services y FOLIO"
+            ],
+            "correcta": 3,
+            "explicacion": "INNOPAC y Millennium son SIGB clásicos; Alma, WMS y FOLIO son plataformas de servicios. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 4",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué característica funcional NO es propia de una plataforma de servicios?",
+            "opciones": [
+                "Una gestión de metadatos amplia",
+                "Gestionar solamente formatos impresos",
+                "Múltiples flujos de trabajo",
+                "Contar con una base de conocimiento"
+            ],
+            "correcta": 1,
+            "explicacion": "Las plataformas gestionan recursos impresos, electrónicos y digitales. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 5",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Señala una diferencia entre un SIGB y una plataforma de servicios bibliotecarios:",
+            "opciones": [
+                "La plataforma de servicios no sigue el modelo organizado en módulos propio del SIGB",
+                "La plataforma de servicios no permite catalogar en MARC y el SIGB sí",
+                "La plataforma de servicios no tiene base de conocimiento y el SIGB sí",
+                "La plataforma integra un OPAC y el SIGB solo puede integrarse con un discovery"
+            ],
+            "correcta": 0,
+            "explicacion": "La plataforma no se organiza en módulos separados, sino en flujos de trabajo integrados. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 6",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La búsqueda simple en una herramienta de descubrimiento se realiza en:",
+            "opciones": [
+                "Una caja única que hace una búsqueda integrada y recupera resultados de un índice único",
+                "Unas pestañas de búsqueda para autor, título y materia",
+                "Pestañas para autor, título, materia, palabra clave, ISBN y signatura",
+                "Una caja única que hace una búsqueda federada"
+            ],
+            "correcta": 0,
+            "explicacion": "Caja única tipo Google sobre un índice central (no búsqueda federada). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 7",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El ranking de relevancia en las herramientas de descubrimiento:",
+            "opciones": [
+                "Ofrece búsqueda inteligente, como autocompletar los términos",
+                "Ordena los resultados con un algoritmo de relevancia personalizable (frecuencia y lugar de los términos, formato…)",
+                "Envía alertas personalizadas de las novedades de la biblioteca",
+                "Muestra las recomendaciones de los usuarios"
+            ],
+            "correcta": 1,
+            "explicacion": "Ordena los resultados con un algoritmo de relevancia configurable. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 8",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿qué es ODA?",
+            "opciones": [
+                "Un resolvedor de enlaces",
+                "Un sistema de métricas",
+                "Una plataforma de servicios",
+                "Una herramienta de descubrimiento"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual lo presenta como herramienta de descubrimiento. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 9",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La computación en la nube y el software como servicio (SaaS) son característicos de:",
+            "opciones": [
+                "Los sistemas cerrados",
+                "Los SIGB desarrollados a finales de los noventa",
+                "Las herramientas de descubrimiento y las plataformas de servicios bibliotecarios",
+                "Los catálogos en CD-ROM"
+            ],
+            "correcta": 2,
+            "explicacion": "Nube y SaaS caracterizan a discovery y plataformas de servicios. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 10",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los principales proveedores de contenido de las herramientas de descubrimiento son:",
+            "opciones": [
+                "ProQuest (parte de Clarivate) y EBSCO",
+                "Innovative Interfaces y Greendata",
+                "Greendata y Baratz",
+                "Baratz y Doc6"
+            ],
+            "correcta": 0,
+            "explicacion": "ProQuest/Clarivate (Summon, Primo) y EBSCO (EDS). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 11",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Señala la opción verdadera:",
+            "opciones": [
+                "Las plataformas de servicios ofrecen un OPAC sin búsqueda avanzada",
+                "Las plataformas de servicios ofrecen un OPAC con búsqueda simple por autor, título y materia",
+                "Las plataformas de servicios se integran con un servicio de descubrimiento en lugar de proporcionar un OPAC",
+                "Las plataformas de servicios ofrecen tres cajas: simple, avanzada y muy avanzada"
+            ],
+            "correcta": 2,
+            "explicacion": "En lugar de OPAC propio usan un discovery (p. ej., Alma + Primo). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 12",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál NO es una característica avanzada de una herramienta de descubrimiento?",
+            "opciones": [
+                "El ranking de relevancia",
+                "La navegación facetada",
+                "Las URL persistentes",
+                "Exportar registros al correo electrónico"
+            ],
+            "correcta": 3,
+            "explicacion": "Enviar registros por correo es una función básica, no avanzada. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 13",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Koha es:",
+            "opciones": [
+                "Un SIGB de software libre",
+                "Un catálogo de nueva generación",
+                "Una plataforma de servicios bibliotecarios de EBSCO",
+                "Una herramienta de descubrimiento de OCLC"
+            ],
+            "correcta": 0,
+            "explicacion": "Koha es un SIGB de código abierto. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 14",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿cuál fue la primera plataforma de servicios bibliotecarios instalada en las bibliotecas universitarias españolas?",
+            "opciones": [
+                "Alma",
+                "Sierra",
+                "Millennium",
+                "Intota"
+            ],
+            "correcta": 1,
+            "explicacion": "Respuesta oficial del manual: Sierra (de Innovative).",
+            "referencia": "Test MAD nº 17, pregunta 15",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál fue la primera universidad española en implantar FOLIO?",
+            "opciones": [
+                "Universidad Complutense de Madrid",
+                "Universidad de las Islas Baleares",
+                "Universidad de Zaragoza",
+                "Universidad de Sevilla"
+            ],
+            "correcta": 2,
+            "explicacion": "La Universidad de Zaragoza fue pionera con FOLIO. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 16",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Primo ofrece una visualización de registros adaptada a:",
+            "opciones": [
+                "PDF y TXT",
+                "PREMIS",
+                "FRBR y RDA",
+                "RIGHTS"
+            ],
+            "correcta": 2,
+            "explicacion": "Primo agrupa y muestra registros según FRBR y RDA. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 17",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Quién acuñó el término «plataforma de servicios bibliotecarios»?",
+            "opciones": [
+                "Marshall Breeding",
+                "Sharon Yang",
+                "Don MacMillan",
+                "Li Lili"
+            ],
+            "correcta": 0,
+            "explicacion": "Marshall Breeding. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 18",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Señala una ventaja de un sistema basado en la nube:",
+            "opciones": [
+                "No hay actualizaciones de software",
+                "La arquitectura predominante es cliente/servidor",
+                "Aumenta la carga de trabajo del personal",
+                "Se reduce el mantenimiento local"
+            ],
+            "correcta": 3,
+            "explicacion": "El proveedor mantiene el sistema; se reduce el mantenimiento local. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 19",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Con qué finalidad nace el formato MARC?",
+            "opciones": [
+                "Para intercambiar datos bibliográficos entre bibliotecas",
+                "Para catalogar los libros de la forma más adecuada",
+                "Para que se respete mejor la marca de la biblioteca",
+                "Para ampliar la memoria de los ordenadores"
+            ],
+            "correcta": 0,
+            "explicacion": "MARC nace para intercambiar registros legibles por máquina. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 20",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "WorldCat Discovery Services es una herramienta de:",
+            "opciones": [
+                "RedIRIS",
+                "La red de bibliotecas de Toronto",
+                "Internet",
+                "OCLC"
+            ],
+            "correcta": 3,
+            "explicacion": "Es el discovery de OCLC. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 21",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué es el OPAC?",
+            "opciones": [
+                "El acceso público y en línea directo al catálogo de la biblioteca",
+                "La consulta directa de los fondos de una biblioteca",
+                "La eliminación de la opacidad en las consultas del catálogo",
+                "Un tutorial sobre el uso y diseño del catálogo"
+            ],
+            "correcta": 0,
+            "explicacion": "Online Public Access Catalog. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 22",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La gestión de las desideratas que los usuarios hacen a través del OPAC se realiza en el módulo de:",
+            "opciones": [
+                "Catalogación",
+                "Circulación",
+                "Publicaciones periódicas",
+                "Adquisiciones"
+            ],
+            "correcta": 3,
+            "explicacion": "Una desiderata es una propuesta de compra → adquisiciones. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 23",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El objetivo del módulo de control de autoridades es:",
+            "opciones": [
+                "Listar los autores y entidades del catálogo",
+                "Llevar al día el libro de registro de entrada",
+                "Normalizar los puntos de acceso de las descripciones bibliográficas",
+                "Establecer relaciones de «véase» entre las fichas bibliográficas"
+            ],
+            "correcta": 2,
+            "explicacion": "Normalizar los puntos de acceso. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 24",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La gestión del kardex es una característica del módulo de:",
+            "opciones": [
+                "Adquisiciones",
+                "Catálogo público en línea",
+                "Publicaciones periódicas",
+                "Gestión de informes"
+            ],
+            "correcta": 2,
+            "explicacion": "El kardex controla la recepción de números de las publicaciones periódicas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 25",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué herramienta de descubrimiento usan las bibliotecas del CSIC?",
+            "opciones": [
+                "SABINA",
+                "Summon",
+                "Primo",
+                "EDS"
+            ],
+            "correcta": 2,
+            "explicacion": "Las bibliotecas del CSIC usan Alma y Primo. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 26",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, ¿cómo se llama el programa de automatización de la Biblioteca Nacional?",
+            "opciones": [
+                "Unicorn",
+                "SYMPHONY",
+                "SABINA",
+                "SABINI"
+            ],
+            "correcta": 1,
+            "explicacion": "Respuesta oficial: SYMPHONY (SirsiDynix).",
+            "referencia": "Test MAD nº 17, pregunta 27",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el OPAC para móviles de AbsysNet?",
+            "opciones": [
+                "AirPac",
+                "MOPAC",
+                "COPAC",
+                "BIBLIO"
+            ],
+            "correcta": 1,
+            "explicacion": "MOPAC. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 28",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál es el SIGB de las bibliotecas públicas de Andalucía?",
+            "opciones": [
+                "UNIMARC",
+                "IBERMARC",
+                "SABINI",
+                "AbsysNet"
+            ],
+            "correcta": 3,
+            "explicacion": "AbsysNet. UNIMARC e IBERMARC son formatos, no SIGB. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 29",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué norma de NISO recomienda prácticas para promover la transparencia de los servicios de descubrimiento?",
+            "opciones": [
+                "OPAC Discovery",
+                "The OpenURL Framework for Context Sensitive Services",
+                "Access License and Indicators",
+                "Open Discovery Initiative: Promoting Transparency in Discovery"
+            ],
+            "correcta": 3,
+            "explicacion": "ODI (Open Discovery Initiative). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 30",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué es FOLIO?",
+            "opciones": [
+                "Un descubridor",
+                "Una plataforma de servicios de biblioteca de código cerrado",
+                "Una plataforma de servicios de biblioteca de código abierto",
+                "Un catálogo de biblioteca"
+            ],
+            "correcta": 2,
+            "explicacion": "FOLIO es una plataforma de servicios de código abierto. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 31",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el módulo de informes estadísticos de Alma?",
+            "opciones": [
+                "Analytics",
+                "Primo",
+                "3Reports",
+                "Active Directory"
+            ],
+            "correcta": 0,
+            "explicacion": "Alma Analytics. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 32",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué plataforma de servicios y herramienta de descubrimiento ha contratado el Consorcio de Bibliotecas Universitarias de Andalucía (CBUA)?",
+            "opciones": [
+                "Sierra y Encore",
+                "Alma y Primo",
+                "Summon y Primo",
+                "Sierra y Odilo"
+            ],
+            "correcta": 1,
+            "explicacion": "Alma y Primo. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 33",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Expania es:",
+            "opciones": [
+                "La asociación de usuarios de Ex Libris en España",
+                "El grupo de usuarios de Alma en Europa",
+                "La asociación de usuarios de Ex Libris en Europa y EE. UU.",
+                "Una asociación de desarrolladores de API en España"
+            ],
+            "correcta": 0,
+            "explicacion": "Asociación de usuarios de Ex Libris en España. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 17, pregunta 34",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, AbsysNet 2.3 presenta esta mejora:",
+            "opciones": [
+                "Añade una licencia y la archiva en PDF desde adquisiciones",
+                "Permite catalogar una base de datos",
+                "Crea informes de uso de recursos electrónicos con el protocolo SUSHI",
+                "Añade la política de datos adaptada al RGPD en Mi Biblioteca y en el alta de nuevos usuarios"
+            ],
+            "correcta": 3,
+            "explicacion": "Respuesta oficial: la adaptación al RGPD.",
+            "referencia": "Test MAD nº 17, pregunta 35",
+            "bloque": "Tema 17 (MAD). Automatización de bibliotecas: situación actual y tendencias de futuro",
+            "tema": "Tema 17 · Test del manual (con soluciones)"
         }
     ],
     "fichas": [
