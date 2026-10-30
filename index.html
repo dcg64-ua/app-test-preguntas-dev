@@ -1942,6 +1942,9 @@ async function loadCanjes(uid = fbUser.uid) {
   return list;
 }
 const puntosGastados = list => (list || []).reduce((a, c) => a + (c.cost || 0), 0);
+// Cada vez que se canjea una recompensa, la siguiente vez cuesta un 50 % más (sobre el precio anterior)
+const vecesCanjeada = (r, canjes) => (canjes || []).filter(c => c.rewardId === r.id).length;
+const precioActual = (r, canjes) => Math.round(r.cost * 1.5 ** vecesCanjeada(r, canjes));
 // Recompensa final: no se compra con puntos; la desbloquea el admin cuando se aprueba la oposición (config/final = { unlocked: { uid: fecha } })
 const FINAL = { id: 'final-viaje', emoji: '✈️', name: 'Nos vamos de viaje', cond: 'Vence a la oposición' };
 let finalCache = {};
@@ -1982,10 +1985,10 @@ async function showLogros() {
           : err ? `<p class="error">No se pudieron cargar (${esc(err)}).</p>`
           : !rewards ? '<p class="muted">Cargando…</p>'
           : !rewards.length ? '<p class="muted">Todavía no hay recompensas. ¡Pronto habrá sorpresas! 😉</p>'
-          : `<div class="rewards">${rewards.map(r => { const gastada = r.once && (canjes || []).some(c => c.rewardId === r.id), can = !gastada && balance >= r.cost; return `<div class="reward">
+          : `<div class="rewards">${rewards.map(r => { const n = vecesCanjeada(r, canjes), cost = precioActual(r, canjes), gastada = r.once && n > 0, can = !gastada && balance >= cost; return `<div class="reward">
               <span class="reward-ico">${esc(r.emoji || '🎁')}</span>
-              <div class="reward-txt"><b>${esc(r.name)}</b><span class="muted">⭐ ${r.cost} puntos${r.once ? ' · solo una vez' : ''}</span></div>
-              ${gastada ? '<span class="muted">✅ Ya canjeada</span>' : `<button class="small ${can ? 'primary' : ''}" data-r="${esc(r.id)}" ${can ? '' : 'disabled'}>${can ? 'Canjear' : `Faltan ${r.cost - balance}`}</button>`}
+              <div class="reward-txt"><b>${esc(r.name)}</b><span class="muted">⭐ ${gastada ? r.cost : cost} puntos${r.once ? ' · solo una vez' : n ? ` · canjeada ${n} ${n === 1 ? 'vez' : 'veces'} (al principio ${r.cost})` : ''}</span></div>
+              ${gastada ? '<span class="muted">✅ Ya canjeada</span>' : `<button class="small ${can ? 'primary' : ''}" data-r="${esc(r.id)}" ${can ? '' : 'disabled'}>${can ? 'Canjear' : `Faltan ${cost - balance}`}</button>`}
             </div>`; }).join('')}</div>`}
         ${canjes?.length ? `<h3>Mis canjes</h3>${canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ${fmtDate(c.at)} · ${c.done ? '✅ cumplida' : '⏳ pendiente'}</span></div>`).join('')}` : ''}
       </div>
@@ -2010,11 +2013,11 @@ async function showLogros() {
       } catch (e) { alert('No se pudo canjear: ' + (e.code || e.message)); $('finalGo').disabled = false; }
     };
     app.querySelectorAll('[data-r]').forEach(b => b.onclick = async () => {
-      const r = rewards.find(x => x.id === b.dataset.r);
-      if (!r || !confirm(`¿Canjear «${r.name}» por ${r.cost} puntos?${r.once ? '\n\nOjo: esta recompensa solo se puede canjear una vez.' : ''}`)) return;
+      const r = rewards.find(x => x.id === b.dataset.r), cost = r && precioActual(r, canjes);
+      if (!r || !confirm(`¿Canjear «${r.name}» por ${cost} puntos?${r.once ? '\n\nOjo: esta recompensa solo se puede canjear una vez.' : `\n\nLa próxima vez costará ${Math.round(cost * 1.5)} puntos.`}`)) return;
       b.disabled = true;
       try {
-        await fb.addDoc(fb.collection(fb.db, 'users', fbUser.uid, 'canjes'), { rewardId: r.id, name: r.name, emoji: r.emoji || '🎁', cost: r.cost, at: Date.now(), done: false });
+        await fb.addDoc(fb.collection(fb.db, 'users', fbUser.uid, 'canjes'), { rewardId: r.id, name: r.name, emoji: r.emoji || '🎁', cost, at: Date.now(), done: false });
         showToast('🎁', '¡Canjeado!', `«${r.name}» · ya le ha llegado al admin 💌`, 'pomo');
         showLogros();
       } catch (e) { alert('No se pudo canjear: ' + (e.code || e.message)); b.disabled = false; }
@@ -2191,7 +2194,7 @@ const AYUDA = [
     ['ruleta', '🎡 Ruleta', 'Al llegar a 100 preguntas se desbloquea la ruleta: entra en 🏆 Logros y gírala para ganar +5, +10, +15 o +30 puntos. Solo una vez al día.'],
     ['escudo', '🛡️ Escudo', 'Cada 7 días seguidos ganas un escudo (máximo 2). Si un día no llegas a 60, se gasta el escudo y tu racha de puntos no se corta.'],
     ['retos', '🏁 Retos', 'Retos especiales que te pone tu admin, con fecha límite, puntos y a veces premio. Los ves en el inicio y en 🏆 Logros.'],
-    ['premios', '🎁 Recompensas', 'Con los puntos canjeas premios en 🏆 Logros. Al canjear, le llega el aviso a tu admin. Y la recompensa final ✈️ se gana aprobando la oposición.']
+    ['premios', '🎁 Recompensas', 'Con los puntos canjeas premios en 🏆 Logros. Al canjear, le llega el aviso a tu admin. Cada vez que repites un premio, la siguiente vez cuesta un 50 % más, y algunos solo se pueden canjear una vez. Y la recompensa final ✈️ se gana aprobando la oposición.']
   ]],
   ['⚙️ Más', [
     ['animo', '💭 ¿Cómo te sientes hoy?', 'Una vez al día puedes decir cómo estás. Solo lo ve tu admin, para saber cuándo necesitas un empujón o un mimo.'],
