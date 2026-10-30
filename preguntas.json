@@ -25352,7 +25352,7 @@
                 "17 capítulos, 9 índices analíticos y 1 apéndice"
             ],
             "correcta": 3,
-            "explicacion": "Respuesta oficial del test: 17 capítulos, 9 índices analíticos y 1 apéndice. Nota: las Reglas de 1999 suelen describirse como 17 capítulos, 9 apéndices y un índice analítico; si cae en el examen, ojo a cómo lo formulen.",
+            "explicacion": "Respuesta oficial del test: 17 capítulos, 9 índices analíticos y 1 apéndice. Ojo: el propio texto del Tema 12 (y su recuadro «Recuerda que…») dice 17 capítulos, 9 apéndices y 1 índice analítico, que es lo correcto; el test tiene una errata. En el examen, elige «9 apéndices y 1 índice analítico» si aparece.",
             "referencia": "Test MAD nº 12, pregunta 11",
             "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
             "tema": "Tema 12 · Test del manual (con soluciones)"
@@ -33055,6 +33055,3065 @@
             "referencia": "Manual MAD, Tema 11",
             "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
             "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según la definición de la UNESCO recogida en el manual, la biblioteca cuenta con servicios de personal para:",
+            "opciones": [
+                "Proveer y facilitar el uso de los materiales",
+                "Conservar y restaurar los materiales",
+                "Seleccionar y expurgar los materiales",
+                "Adquirir y registrar los materiales"
+            ],
+            "correcta": 0,
+            "explicacion": "La UNESCO define la biblioteca como colección organizada con los servicios de personal «para proveer y facilitar el uso» de los materiales.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el catálogo es el producto de:",
+            "opciones": [
+                "La clasificación",
+                "La indización",
+                "El expurgo",
+                "La catalogación"
+            ],
+            "correcta": 3,
+            "explicacion": "El catálogo es el producto de la catalogación y está compuesto por registros bibliográficos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La palabra «catálogo» procede del griego katalego, que significa:",
+            "opciones": [
+                "Ordenar, organizar",
+                "Describir, representar",
+                "Leer, interpretar",
+                "Guardar, custodiar"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual indica que catálogo viene del griego katalego (ordenar, organizar).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Como herramienta de gestión de la colección, el catálogo sirve al control de la colección mediante:",
+            "opciones": [
+                "La selección",
+                "El expurgo",
+                "Las estadísticas",
+                "Los recuentos"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual cita adquisiciones (selección, expurgo), control (recuentos) y análisis (estadísticas).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Fuera de la biblioteca, el catálogo es importante para:",
+            "opciones": [
+                "El préstamo interbibliotecario y la catalogación cooperativa",
+                "El expurgo y los recuentos de la colección",
+                "La selección y la adquisición individual",
+                "La signatura y la ordenación en estantería"
+            ],
+            "correcta": 0,
+            "explicacion": "Fuera de la biblioteca sirve a la cooperación: préstamo interbibliotecario, adquisición compartida, catalogación cooperativa y CBU.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué significan las siglas CBU que aparecen en el tema?",
+            "opciones": [
+                "Control Bibliográfico Universal",
+                "Catálogo Bibliográfico Unificado",
+                "Código Bibliográfico Universal",
+                "Catalogación Básica Unificada"
+            ],
+            "correcta": 0,
+            "explicacion": "CBU es el Control Bibliográfico Universal, vinculado a la disponibilidad universal de las publicaciones.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la principal función del catálogo como inventario de los fondos es:",
+            "opciones": [
+                "Valorar económicamente los fondos",
+                "Clasificar los documentos por materias",
+                "Localizar y hacer localizables los documentos",
+                "Controlar la circulación de los préstamos"
+            ],
+            "correcta": 2,
+            "explicacion": "El catálogo es el inventario de los fondos cuya principal función es localizar y hacer localizables los documentos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los registros bibliográficos la información se almacena en forma de:",
+            "opciones": [
+                "Descriptores",
+                "Tesauros",
+                "Signaturas",
+                "Metadatos"
+            ],
+            "correcta": 3,
+            "explicacion": "En los registros se almacena la información en forma de metadatos que indexan los motores de búsqueda.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El bibliotecario catalogador es responsable de los procesos de:",
+            "opciones": [
+                "Selección, adquisición y expurgo",
+                "Préstamo, reserva y renovación",
+                "Sellado, tejuelado y colocación",
+                "Descripción, análisis y clasificación"
+            ],
+            "correcta": 3,
+            "explicacion": "El catalogador responde de la descripción, análisis y clasificación del documento para que sea accesible.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el recuadro «Recuerda que…», un recurso mal catalogado:",
+            "opciones": [
+                "Puede no ser localizado",
+                "Debe ser expurgado",
+                "Pierde su signatura topográfica",
+                "Queda excluido del préstamo"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual recuerda que un recurso mal catalogado es un recurso que puede no ser localizado.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El análisis documental engloba:",
+            "opciones": [
+                "La adquisición y el registro",
+                "El préstamo y la difusión",
+                "El análisis formal y el análisis del contenido",
+                "La conservación y la restauración"
+            ],
+            "correcta": 2,
+            "explicacion": "El análisis documental comprende el análisis formal (catalogación) y el del contenido (clasificación e indexación).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El análisis del contenido de un documento comprende:",
+            "opciones": [
+                "La catalogación y la descripción",
+                "La signatura y el tejuelo",
+                "El examen físico del documento",
+                "La clasificación y la indexación"
+            ],
+            "correcta": 3,
+            "explicacion": "El análisis del contenido (clasificación e indexación) se trata en el tema 13; la catalogación es el análisis formal.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál es la primera etapa de la descripción bibliográfica según el manual?",
+            "opciones": [
+                "Decidir el nivel de catalogación",
+                "Describir conforme a la normativa",
+                "Asignar la signatura topográfica",
+                "El examen del documento"
+            ],
+            "correcta": 3,
+            "explicacion": "Etapas: 1) examen del documento; 2) exploración del recurso; 3) decidir el nivel; 4) describir conforme a la normativa.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La tercera etapa de la descripción bibliográfica consiste en:",
+            "opciones": [
+                "Explorar el recurso para cubrir todas las áreas",
+                "Examinar el soporte y las unidades",
+                "Decidir qué nivel de catalogación se aplica",
+                "Describir según ISBD, RDA o RCE"
+            ],
+            "correcta": 2,
+            "explicacion": "La tercera etapa es decidir el nivel de catalogación; la cuarta, describir conforme a la normativa vigente.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La catalogación se realiza sobre:",
+            "opciones": [
+                "Solo documentos textuales en papel",
+                "Todo tipo de recursos, sea cual sea su soporte",
+                "Solo recursos que tengan portada",
+                "Solo documentos publicados en España"
+            ],
+            "correcta": 1,
+            "explicacion": "Se cataloga cualquier recurso independientemente del soporte: libro, libro electrónico, película en DVD, foto en papel o de internet.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué ejemplo utiliza el manual para ilustrar la homonimia que resuelve el control de autoridades?",
+            "opciones": [
+                "Los títulos del Quijote",
+                "El Hamlet de Shakespeare",
+                "Víctor Hugo, padre o hijo",
+                "Cien años de soledad"
+            ],
+            "correcta": 2,
+            "explicacion": "El control de autoridades permite diferenciar autores con nombres idénticos, como Víctor Hugo padre o hijo.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El ejemplo del Quijote editado con títulos distintos ilustra que el control de autoridades sirve para:",
+            "opciones": [
+                "Diferenciar autores con nombres idénticos",
+                "Agrupar una misma entrada que aparece de forma diferente",
+                "Distinguir la expresión de la manifestación",
+                "Asignar la signatura topográfica correcta"
+            ],
+            "correcta": 1,
+            "explicacion": "Además de resolver homonimias, el control de autoridades agrupa una misma entrada presentada de forma diferente.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el catálogo de fichas fue la herramienta de descripción y localización:",
+            "opciones": [
+                "Desde el siglo XVIII hasta finales del XX",
+                "Desde el siglo XV hasta mediados del XIX",
+                "Desde el siglo XIX hasta mediados del XX",
+                "Desde el siglo XVI hasta finales del XVIII"
+            ],
+            "correcta": 0,
+            "explicacion": "El catálogo de fichas se usó desde el siglo XVIII hasta que a finales del XX fue sustituido por el OPAC.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Entre las limitaciones del catálogo manual que cita el manual figura:",
+            "opciones": [
+                "El exceso de interconexión entre asientos",
+                "El número limitado de puntos de acceso",
+                "La información sobre disponibilidad",
+                "La geolocalización del ejemplar"
+            ],
+            "correcta": 1,
+            "explicacion": "Limitaciones del catálogo manual: carácter inventarial, pocos puntos de acceso, falta de interconexión y difusión limitada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El OPAC puede ofrecer mapas que guían hasta el libro en la estantería porque:",
+            "opciones": [
+                "Funciona separado del resto de módulos",
+                "Interacciona con todos los módulos del SIGB",
+                "Utiliza la CDU como signatura",
+                "Reproduce el catálogo de fichas"
+            ],
+            "correcta": 1,
+            "explicacion": "El OPAC es un módulo o interfaz que interacciona directamente con todos los módulos del SIGB.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Actualmente la descripción bibliográfica se realiza en:",
+            "opciones": [
+                "El módulo de circulación de un SIGB",
+                "El módulo de adquisiciones de un SIGB",
+                "El módulo de catalogación de un SIGB",
+                "Un procesador de textos independiente"
+            ],
+            "correcta": 2,
+            "explicacion": "Se hace en el módulo de catalogación de un SIGB o plataforma de servicios, donde está la base de datos bibliográfica.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los ficheros de autoridades de los SIGB recogen:",
+            "opciones": [
+                "Formas admitidas, reenvíos y referencias cruzadas",
+                "Solo las formas no admitidas de los autores",
+                "Las signaturas y los códigos de barras",
+                "Los datos de préstamo de los usuarios"
+            ],
+            "correcta": 0,
+            "explicacion": "Los ficheros de autoridades (autor, entidad, título, materia, series) recogen formas admitidas, reenvíos de las no admitidas y referencias cruzadas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ventaja de la catalogación automatizada llamada «interoperabilidad» consiste en que:",
+            "opciones": [
+                "La interconexión entre registros agiliza la búsqueda",
+                "Los cambios se reflejan de inmediato",
+                "El catálogo está disponible las 24 horas",
+                "Se pueden incorporar imágenes de cubiertas"
+            ],
+            "correcta": 0,
+            "explicacion": "Interoperabilidad: la interconexión entre registros da a los usuarios más accesibilidad y rapidez en la búsqueda y recuperación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Incorporar imágenes de cubiertas o exportar registros a gestores de referencias es la ventaja denominada:",
+            "opciones": [
+                "Posicionamiento",
+                "Interoperabilidad",
+                "Mayor impacto",
+                "Información más estructurada"
+            ],
+            "correcta": 2,
+            "explicacion": "Mayor impacto: cubiertas, acceso al texto, exportación a gestores de referencias o al correo, valoración o etiquetado.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ventaja que produce mayor presencia de marca y prestigio para la biblioteca es:",
+            "opciones": [
+                "El mayor impacto",
+                "El posicionamiento",
+                "El acceso permanente",
+                "La rápida actualización"
+            ],
+            "correcta": 1,
+            "explicacion": "Posicionamiento: un catálogo en Internet produce mayor presencia de marca y prestigio.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ventaja del «acceso permanente» supone que los catálogos virtuales:",
+            "opciones": [
+                "Conservan los registros de forma indefinida",
+                "Permiten renovar préstamos sin límite",
+                "Se actualizan una vez al día de forma automática",
+                "Están abiertos 24 horas también a usuarios potenciales"
+            ],
+            "correcta": 3,
+            "explicacion": "Acceso permanente: disponibles 24 horas y abiertos a usuarios potenciales, no solo a los reales.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ventaja «disponibilidad de los fondos» se basa en que el catálogo está relacionado con:",
+            "opciones": [
+                "El módulo de adquisiciones",
+                "El módulo de publicaciones seriadas",
+                "El módulo de estadísticas",
+                "El módulo de circulación"
+            ],
+            "correcta": 3,
+            "explicacion": "El catálogo se relaciona con el módulo de circulación (base de datos de préstamo): el usuario sabe si está prestado o puede reservar.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La IFLA presentó el informe «Functional Requirements for Bibliographic Records: Final Report» en:",
+            "opciones": [
+                "1961",
+                "2007",
+                "1998",
+                "2010"
+            ],
+            "correcta": 2,
+            "explicacion": "En 1998 la IFLA presentó el informe FRBR con recomendaciones de funcionalidad independientes del soporte y formato.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el informe FRBR, los consumidores de registros bibliográficos son:",
+            "opciones": [
+                "Únicamente los usuarios de las bibliotecas",
+                "Usuarios, bibliotecarios, editores, distribuidores y proveedores",
+                "Únicamente los bibliotecarios catalogadores",
+                "Únicamente los editores y los distribuidores"
+            ],
+            "correcta": 1,
+            "explicacion": "El informe tiene en cuenta que los consumidores no son solo los usuarios: también bibliotecarios, editores, distribuidores y proveedores.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Quiénes fueron pioneros en normalización bibliográfica a finales del siglo XIX y concibieron el Repertorio Bibliográfico Universal?",
+            "opciones": [
+                "Paul Olet y Henri La Fontaine",
+                "Melvil Dewey y Charles A. Cutter",
+                "Antonio Panizzi y Charles Jewett",
+                "S. R. Ranganathan y Eric Coates"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual atribuye el RBU a «Paul Olet» y Henri La Fontaine. Nota: el manual dice «Olet»; el nombre correcto es Paul Otlet.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El RBU que concibieron los pioneros de la normalización es el:",
+            "opciones": [
+                "Registro Bibliográfico Unificado",
+                "Reglamento Bibliográfico Universal",
+                "Repertorio Bibliográfico Universal",
+                "Repositorio Bibliotecario Unificado"
+            ],
+            "correcta": 2,
+            "explicacion": "El Repertorio Bibliográfico Universal pretendía registrar y clasificar exhaustivamente la producción intelectual mundial.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué organismo elabora las normas nacionales de Alemania citadas en el manual?",
+            "opciones": [
+                "NF",
+                "DIN",
+                "BS",
+                "UNE"
+            ],
+            "correcta": 1,
+            "explicacion": "Normas nacionales: UNE (España), NF (Francia), DIN (Alemania), BS (Reino Unido) y NISO/ANSI (EE. UU.).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las normas NISO/ANSI, internacionalmente aceptadas, corresponden a:",
+            "opciones": [
+                "Estados Unidos",
+                "Reino Unido",
+                "Francia",
+                "Canadá"
+            ],
+            "correcta": 0,
+            "explicacion": "NISO/ANSI son las normas de Estados Unidos; el manual destaca que están internacionalmente aceptadas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las dos constantes en todos los códigos de catalogación son:",
+            "opciones": [
+                "La rapidez y la economía",
+                "La exhaustividad y la brevedad",
+                "La coherencia y la normalización",
+                "La flexibilidad y el localismo"
+            ],
+            "correcta": 2,
+            "explicacion": "Coherencia y normalización fomentan la internacionalización y la capacidad de compartir datos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según su aplicación, normas como GARR, SGARE, FRAD o VIAF se agrupan en:",
+            "opciones": [
+                "Descripción de recursos de información",
+                "Identificación de recursos publicados",
+                "Identificación de autoridades y puntos de acceso",
+                "Clasificación de materias"
+            ],
+            "correcta": 2,
+            "explicacion": "Grupos: descripción (ISBD, RDA, MARC); autoridades y puntos de acceso (GARR, SGARE, FRAD, FRSAD, VIAF); identificación (ISBN, ISSN).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según su aplicación, el ISBN y el ISSN son normas de:",
+            "opciones": [
+                "Identificación de recursos",
+                "Descripción de recursos",
+                "Gestión de puntos de acceso",
+                "Control de autoridades"
+            ],
+            "correcta": 0,
+            "explicacion": "ISBN e ISSN pertenecen al grupo de identificación de recursos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, ¿quién es nuestro referente normativo a nivel de catalogación?",
+            "opciones": [
+                "El Ministerio de Cultura",
+                "La Biblioteca del Congreso",
+                "La Red de Bibliotecas Universitarias",
+                "La Biblioteca Nacional de España"
+            ],
+            "correcta": 3,
+            "explicacion": "Recuadro «Sabías que…»: la BNE es nuestro referente normativo en catalogación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué significan las siglas ISBD?",
+            "opciones": [
+                "International Standard Bibliographic Description",
+                "International System of Bibliographic Data",
+                "Integrated Standard for Bibliographic Databases",
+                "International Service of Book Description"
+            ],
+            "correcta": 0,
+            "explicacion": "ISBD: International Standard Bibliographic Description (Descripción Bibliográfica Internacional Normalizada).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El objetivo principal de la ISBD es:",
+            "opciones": [
+                "Facilitar la comunicación internacional de la información bibliográfica",
+                "Establecer los puntos de acceso de los registros",
+                "Fijar la forma de los encabezamientos de autor",
+                "Clasificar los documentos por materias"
+            ],
+            "correcta": 0,
+            "explicacion": "Su objetivo principal es la comunicación internacional de la información bibliográfica; además, intercambio, interpretación y conversión a formato legible por ordenador.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos NO es un objetivo de la ISBD según el manual?",
+            "opciones": [
+                "Facilitar el intercambio de descripciones",
+                "Permitir interpretar registros de otros países",
+                "Establecer la forma de los encabezamientos",
+                "Posibilitar la conversión a formato legible por ordenador"
+            ],
+            "correcta": 2,
+            "explicacion": "La ISBD no incluye normas para los encabezamientos; de eso se ocupan las reglas nacionales como las RCE.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La reunión de la Federación Internacional de Asociaciones de Bibliotecarios (FIAB) antecedente de la ISBD se celebró en:",
+            "opciones": [
+                "Zagreb, en 1954",
+                "París, en 1961",
+                "Copenhague, en 1969",
+                "Bruselas, en 1895"
+            ],
+            "correcta": 0,
+            "explicacion": "Antecedentes: reunión de la FIAB en Zagreb (1954) y Conferencia de Principios de Catalogación de 1961 (Principios de París).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los llamados «Principios de París» proceden de la Conferencia Internacional sobre Principios de Catalogación de:",
+            "opciones": [
+                "1954",
+                "1961",
+                "1969",
+                "1971"
+            ],
+            "correcta": 1,
+            "explicacion": "La conferencia de 1961 sentó las bases para normalizar la catalogación y fue el punto de partida de la colaboración internacional.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La Reunión Internacional de Expertos en Catalogación que estableció las bases de la ISBD se celebró en Copenhague en:",
+            "opciones": [
+                "1969",
+                "1961",
+                "1954",
+                "1977"
+            ],
+            "correcta": 0,
+            "explicacion": "A instancias de la IFLA, en 1969 se celebra en Copenhague la reunión que establece las bases de la ISBD.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema",
+            "truco": "Zagreb 54, París 61, Copenhague 69: cada reunión, más cerca de la ISBD."
+        },
+        {
+            "pregunta": "Según el manual, la ISBD nació como recomendación y pronto adquirió estatus de normativa como:",
+            "opciones": [
+                "Norma ISO 2709:1973 sobre intercambio de datos",
+                "Norma ISO 690:1975 sobre referencias bibliográficas",
+                "Norma ANSI Z39.2 de 1971",
+                "Norma ISO 3297 sobre el ISSN"
+            ],
+            "correcta": 1,
+            "explicacion": "Es lo que afirma el manual. Nota: el manual dice que la ISBD adquirió estatus de ISO 690:1975; hoy la ISO 690 regula referencias y citas bibliográficas y la ISBD sigue siendo una norma de la IFLA.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La primera versión de la ISBD que se publicó fue:",
+            "opciones": [
+                "La ISBD(M), para monografías, en 1971",
+                "La ISBD(G), marco general, en 1971",
+                "La ISBD(S), para seriadas, en 1969",
+                "La ISBD(A), para antiguas, en 1977"
+            ],
+            "correcta": 0,
+            "explicacion": "La primera ISBD fue la de monografías, ISBD(M), en 1971; en 1977 llegó la ISBD(G).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En 1977 se publica la ISBD(G), que es:",
+            "opciones": [
+                "La ISBD para material gráfico",
+                "El marco general que armoniza todas las ISBD",
+                "La ISBD para grabaciones sonoras",
+                "La primera ISBD consolidada"
+            ],
+            "correcta": 1,
+            "explicacion": "La ISBD(G) se publicó en 1977 como marco general para conformar todas las ISBD y asegurar su armonía.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ISBD(NBM) se aplica a:",
+            "opciones": [
+                "Música impresa",
+                "Material no impreso",
+                "Material cartográfico impreso",
+                "Monografías antiguas"
+            ],
+            "correcta": 1,
+            "explicacion": "NBM = Non Book Materials: material no impreso.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ISBD(CR), de 2004, se aplica a:",
+            "opciones": [
+                "Recursos continuos",
+                "Archivos de ordenador",
+                "Material cartográfico",
+                "Recursos electrónicos remotos"
+            ],
+            "correcta": 0,
+            "explicacion": "La ISBD(CR) es para recursos continuos y se publicó en 2004.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ISBD(PM) se aplica a:",
+            "opciones": [
+                "Música impresa",
+                "Publicaciones monográficas",
+                "Material no impreso",
+                "Publicaciones seriadas"
+            ],
+            "correcta": 0,
+            "explicacion": "ISBD(PM): Printed Music, música impresa.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ISBD(CF) se aplica a:",
+            "opciones": [
+                "Material cartográfico impreso",
+                "Recursos continuos",
+                "Archivos de datos legibles por ordenador",
+                "Formatos de catálogo en fichas"
+            ],
+            "correcta": 2,
+            "explicacion": "ISBD(CF): Computer Files, archivos de datos legibles por ordenador; la cartográfica es la ISBD(CM).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La primera versión de la ISBD consolidada se publicó en:",
+            "opciones": [
+                "2004",
+                "2011",
+                "1998",
+                "2007"
+            ],
+            "correcta": 3,
+            "explicacion": "En 2007 la IFLA publica la primera ISBD consolidada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ISBD consolidada unificó en un solo texto:",
+            "opciones": [
+                "Las siete ISBD especializadas y la ISBD general",
+                "Las cinco ISBD especializadas y las RCE",
+                "Las nueve áreas y el formato MARC",
+                "Las AACR2 y las ISBD especializadas"
+            ],
+            "correcta": 0,
+            "explicacion": "Se unifican en un solo texto las siete ISBD especializadas existentes con la ISBD general.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El documento «ISBD Área 0: Content Form and Media Type Area» fue publicado por la IFLA en:",
+            "opciones": [
+                "2007",
+                "2011",
+                "2004",
+                "2016"
+            ],
+            "correcta": 1,
+            "explicacion": "En 2011 la IFLA publica el área 0, que sustituye a la Designación General de Material (DGM).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Entre las razones de la creación del área 0 de la ISBD, el manual cita:",
+            "opciones": [
+                "La desaparición del formato MARC",
+                "La aparición del ISBN de 13 dígitos",
+                "La supresión del área de notas",
+                "La ambigüedad de las DGM"
+            ],
+            "correcta": 3,
+            "explicacion": "Razones: aumento de publicaciones electrónicas, documentos en varios soportes y ambigüedad de las DGM.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿En cuántas áreas divide la ISBD el asiento bibliográfico?",
+            "opciones": [
+                "Nueve, numeradas del 0 al 8",
+                "Ocho, numeradas del 1 al 8",
+                "Diez, numeradas del 0 al 9",
+                "Siete, numeradas del 1 al 7"
+            ],
+            "correcta": 0,
+            "explicacion": "La ISBD divide el asiento en nueve áreas, de la 0 (forma del contenido y tipo de medio) a la 8 (identificador del recurso).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Si se transcriben en formato ficha, las áreas de la ISBD se separan entre sí por:",
+            "opciones": [
+                "Punto y coma (;)",
+                "Punto y raya (. —)",
+                "Barra inclinada (/)",
+                "Dos puntos (:)"
+            ],
+            "correcta": 1,
+            "explicacion": "En formato ficha las áreas van separadas por punto y raya.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los datos obtenidos de una fuente no prescrita se reseñan:",
+            "opciones": [
+                "Entre paréntesis o en el área de serie",
+                "Entre corchetes o en el área de notas",
+                "Entre comillas en el área de título",
+                "Precedidos de barra en cualquier área"
+            ],
+            "correcta": 1,
+            "explicacion": "Lo que no procede de la fuente prescrita se pone entre corchetes o en el área de notas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Para las monografías, en general la fuente principal de información es:",
+            "opciones": [
+                "La cubierta",
+                "El lomo",
+                "El colofón",
+                "La portada"
+            ],
+            "correcta": 3,
+            "explicacion": "La fuente principal de las monografías es la portada, interior (pág. 3 o 5), distinta de la cubierta exterior.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según la ilustración del manual, cubierta y portada se diferencian en que:",
+            "opciones": [
+                "La portada es exterior y la cubierta interior",
+                "Ambas son la misma parte del libro",
+                "La cubierta solo existe en libros electrónicos",
+                "La cubierta es exterior y la portada interior"
+            ],
+            "correcta": 3,
+            "explicacion": "Cubierta: exterior. Portada: interior, en la página 3 o 5.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según la regla general de puntuación ISBD, el punto y la coma:",
+            "opciones": [
+                "Van precedidos y seguidos de espacio",
+                "No llevan espacio antes ni después",
+                "Solo van seguidos de espacio",
+                "Solo van precedidos de espacio"
+            ],
+            "correcta": 2,
+            "explicacion": "Los signos van precedidos y seguidos de espacio, salvo el punto y la coma (solo seguidos) y el guion (sin espacios).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según la regla general de puntuación ISBD, el guion:",
+            "opciones": [
+                "No lleva espacio ni antes ni después",
+                "Va precedido y seguido de espacio",
+                "Solo va seguido de espacio",
+                "Solo va precedido de espacio"
+            ],
+            "correcta": 0,
+            "explicacion": "Al guion no le precede ni sigue ningún espacio.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la puntuación prescrita para cada área hace que los registros:",
+            "opciones": [
+                "Ocupen menos espacio en la ficha",
+                "Sean inteligibles en cualquier lengua",
+                "No necesiten puntos de acceso",
+                "Se ordenen alfabéticamente solos"
+            ],
+            "correcta": 1,
+            "explicacion": "La puntuación permite reconocer los datos con independencia de la lengua de la descripción.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál es la fuente principal de información del área 0 de la ISBD?",
+            "opciones": [
+                "La portada",
+                "La cubierta",
+                "El documento en su totalidad",
+                "El colofón"
+            ],
+            "correcta": 2,
+            "explicacion": "Área 0: la fuente principal es el documento en su totalidad y se redacta en la lengua del centro catalogador.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área 0, la «forma del contenido» responde a la pregunta «¿qué es?», por ejemplo:",
+            "opciones": [
+                "Ordenador o lector de microformas",
+                "Sin mediación o electrónico",
+                "Volumen, disco o carrete",
+                "Texto, imagen, mapa o música"
+            ],
+            "correcta": 3,
+            "explicacion": "La forma del contenido es la forma principal de comunicación: texto, imagen, mapa, música, partitura, película…",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área 0, el «tipo de medio» es:",
+            "opciones": [
+                "La forma principal de comunicación del documento",
+                "El número de unidades físicas del documento",
+                "El sentido con el que se percibe el contenido",
+                "La intermediación necesaria para ver o reproducir el contenido"
+            ],
+            "correcta": 3,
+            "explicacion": "Tipo de medio: nada (sin mediación), ordenador, lector de microformas, vídeo reproductor…",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área 0, la calificación del contenido se consigna:",
+            "opciones": [
+                "Precedida de dos puntos",
+                "Entre paréntesis",
+                "Precedida de barra",
+                "Entre corchetes"
+            ],
+            "correcta": 1,
+            "explicacion": "Elementos: forma del contenido, calificación del contenido entre paréntesis y tipo de medio precedido de dos puntos. Ej.: Texto (visual) : sin mediación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, ¿cómo se describe en el área 0 un libro en braille?",
+            "opciones": [
+                "Texto (visual) : sin mediación",
+                "Texto (táctil) : sin mediación",
+                "Texto (táctil) : electrónico",
+                "Texto (visual) : electrónico"
+            ],
+            "correcta": 1,
+            "explicacion": "Ejemplos: libro, Texto (visual) : sin mediación; libro electrónico, Texto (visual) : electrónico; braille, Texto (táctil) : sin mediación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de título, el subtítulo o información complementaria va precedido de:",
+            "opciones": [
+                "Signo igual (=)",
+                "Punto y coma (;)",
+                "Dos puntos (:)",
+                "Barra (/)"
+            ],
+            "correcta": 2,
+            "explicacion": "Ej.: Los buenos días perdidos : comedia en tres actos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de título, el título paralelo en otro idioma va precedido de:",
+            "opciones": [
+                "Dos puntos (:)",
+                "Signo igual (=)",
+                "Punto (.)",
+                "Barra (/)"
+            ],
+            "correcta": 1,
+            "explicacion": "Ej.: La alegría = L'allegria.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema",
+            "truco": "Igual (=): el mismo título, en otra lengua."
+        },
+        {
+            "pregunta": "En el área 1, la mención de responsabilidad:",
+            "opciones": [
+                "Va al principio, entre corchetes",
+                "Va al final del área, precedida de barra",
+                "Va tras el título, precedida de dos puntos",
+                "Va en el área de notas, entre paréntesis"
+            ],
+            "correcta": 1,
+            "explicacion": "La mención de responsabilidad (autores, traductores, colaboradores…) va al final del área precedida de «/».",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la Designación General de Material (DGM) es un elemento:",
+            "opciones": [
+                "Opcional, entre corchetes, que precede al subtítulo",
+                "Obligatorio, entre paréntesis, tras la serie",
+                "Opcional, tras barra, al final del área 1",
+                "Obligatorio, precedido de igual, tras el título"
+            ],
+            "correcta": 0,
+            "explicacion": "La DGM ([Manuscrito], [Grabación sonora]…) es opcional y va entre corchetes. Nota: el manual la explica en el área 1; hoy, con la ISBD consolidada de 2011, la DGM se suprime y la sustituye el área 0.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos es un ejemplo de Designación General de Material citado por el manual?",
+            "opciones": [
+                "Texto (visual)",
+                "sin mediación",
+                "[Grabación sonora]",
+                "1 disco compacto"
+            ],
+            "correcta": 2,
+            "explicacion": "Ejemplos de DGM: [Manuscrito], [Recurso electrónico], [Archivo de ordenador], [Microforma], [Grabación sonora], [Vídeo].",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En «Vengo sin cita / Fernando Fabiani ; con ilustraciones de Laura Santolaya», Laura Santolaya es:",
+            "opciones": [
+                "La responsabilidad principal",
+                "Un título paralelo",
+                "Una mención de edición",
+                "Una responsabilidad parcial"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual señala a Fabiani como responsabilidad principal y a la ilustradora como responsabilidad parcial.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, ¿en qué área se redacta en la lengua fuente o lengua del documento?",
+            "opciones": [
+                "Área de edición",
+                "Área de descripción física",
+                "Área de notas",
+                "Área de forma del contenido"
+            ],
+            "correcta": 0,
+            "explicacion": "Edición, publicación y serie se redactan en la lengua del documento; áreas 0, 5, 7 y 8, en la lengua del centro catalogador.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La fuente principal de información del área de edición es:",
+            "opciones": [
+                "Cualquier fuente",
+                "El documento en su totalidad",
+                "La portada, los preliminares y el colofón",
+                "Únicamente la cubierta"
+            ],
+            "correcta": 2,
+            "explicacion": "Áreas 2 y 4: portada, preliminares y colofón.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de edición, la mención de edición adicional se separa con:",
+            "opciones": [
+                "Una barra (/)",
+                "Una coma (,)",
+                "Un punto y coma (;)",
+                "Dos puntos (:)"
+            ],
+            "correcta": 1,
+            "explicacion": "Elementos: mención de edición; mención de responsabilidad de la edición (/); mención de edición adicional (,).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de edición, la mención de responsabilidad relativa a la edición se separa con:",
+            "opciones": [
+                "Una coma (,)",
+                "Un signo igual (=)",
+                "Una barra (/)",
+                "Un signo más (+)"
+            ],
+            "correcta": 2,
+            "explicacion": "Ej.: 2ª ed. / revisada por un grupo de alumnos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La mención de edición se señala con:",
+            "opciones": [
+                "Un número romano y palabras completas",
+                "La fecha de impresión entre corchetes",
+                "Un número arábigo ordinal y abreviaturas",
+                "El número de reimpresión entre paréntesis"
+            ],
+            "correcta": 2,
+            "explicacion": "Ej.: 2ª ed. corr. y aum.; 3rd ed.; 5. Aufl.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El área 3 (datos específicos), en las publicaciones seriadas corresponde al área de:",
+            "opciones": [
+                "Datos matemáticos",
+                "Escala",
+                "Edición",
+                "Numeración"
+            ],
+            "correcta": 3,
+            "explicacion": "En monografías no se usa; en seriadas es el área de numeración y en cartográficos, la de datos matemáticos o de escala.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los documentos cartográficos, el área 3 de la ISBD corresponde a:",
+            "opciones": [
+                "La numeración",
+                "Los datos matemáticos o de escala",
+                "La descripción física",
+                "La forma del contenido"
+            ],
+            "correcta": 1,
+            "explicacion": "Área 3 en cartografía: datos matemáticos o de escala.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de publicación, cuando hay varios lugares de publicación se separan por:",
+            "opciones": [
+                "Punto y coma (;)",
+                "Dos puntos (:)",
+                "Coma (,)",
+                "Barra (/)"
+            ],
+            "correcta": 0,
+            "explicacion": "Ej.: Oxford : Oxford University Press ; New York : Clarendon Press, 2005.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de publicación, el nombre del editor va precedido de:",
+            "opciones": [
+                "Punto y coma (;)",
+                "Coma (,)",
+                "Dos puntos (:)",
+                "Barra (/)"
+            ],
+            "correcta": 2,
+            "explicacion": "Lugar ; lugar : editor, fecha.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema",
+            "truco": "Lugar : Editor, fecha (como «Madrid : Ariel, 1987»)."
+        },
+        {
+            "pregunta": "En el área de publicación, la fecha de publicación va precedida de:",
+            "opciones": [
+                "Dos puntos (:)",
+                "Punto y coma (;)",
+                "Barra (/)",
+                "Coma (,)"
+            ],
+            "correcta": 3,
+            "explicacion": "La fecha, en cifras arábigas, va precedida de coma: Madrid : Escuela Española, [197?].",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de publicación, el lugar, nombre y fecha de fabricación:",
+            "opciones": [
+                "Van siempre antes del lugar de publicación",
+                "Se consignan solo en el área de notas",
+                "Van entre paréntesis cuando faltan los de publicación",
+                "Van entre corchetes tras el editor"
+            ],
+            "correcta": 2,
+            "explicacion": "Ej.: [S.l. : s.n.], 1974 (Madrid : Rivadeneyra).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, si aparecen varias fechas en el área de publicación se establece este orden:",
+            "opciones": [
+                "Copyright, depósito legal e impresión",
+                "Depósito legal, impresión y copyright",
+                "Impresión, depósito legal y copyright",
+                "Copyright, impresión y depósito legal"
+            ],
+            "correcta": 2,
+            "explicacion": "Es el orden que fija el manual: impresión, depósito legal (D.L.) y copyright.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Si en el área de publicación no aparece ninguna fecha:",
+            "opciones": [
+                "Se deja el elemento vacío",
+                "Se pone la fecha de catalogación",
+                "Se pone entre corchetes la más aproximada",
+                "Se consigna solo en el área de notas"
+            ],
+            "correcta": 2,
+            "explicacion": "Ej.: [s.a.], [ca. 1782], [1895?], [196-?].",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según las particularidades del área de publicación, las entidades dependientes:",
+            "opciones": [
+                "Se consignan siempre precedidas de la principal",
+                "Se omiten y se pone [s.n.]",
+                "Se trasladan al área de serie",
+                "Se consignan sin la principal si son suficientemente identificativas"
+            ],
+            "correcta": 3,
+            "explicacion": "Además, el editor se expresará de forma breve y concisa.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La fuente principal de información del área de descripción física es:",
+            "opciones": [
+                "La portada",
+                "La publicación en sí misma",
+                "Los preliminares y el colofón",
+                "Cualquier fuente"
+            ],
+            "correcta": 1,
+            "explicacion": "Área 5: la publicación en sí misma, todo el documento; se redacta en la lengua del centro catalogador.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de descripción física, la mención de otras características físicas (il., mapas…) va precedida de:",
+            "opciones": [
+                "Punto y coma (;)",
+                "Signo más (+)",
+                "Coma (,)",
+                "Dos puntos (:)"
+            ],
+            "correcta": 3,
+            "explicacion": "Ej.: 80 p. : il. ; 19 cm + 1 atlas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de descripción física, las dimensiones van precedidas de:",
+            "opciones": [
+                "Dos puntos (:)",
+                "Punto y coma (;)",
+                "Signo más (+)",
+                "Barra (/)"
+            ],
+            "correcta": 1,
+            "explicacion": "Ej.: 1 disco compacto (CD-ROM) ; 12 cm.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de descripción física, el material anejo va precedido de:",
+            "opciones": [
+                "Punto y coma (;)",
+                "Dos puntos (:)",
+                "Signo igual (=)",
+                "Signo más (+)"
+            ],
+            "correcta": 3,
+            "explicacion": "Ej.: + 1 cd-audio.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema",
+            "truco": "Material anejo = algo que se suma (+)."
+        },
+        {
+            "pregunta": "En «325 p.», dentro del área de descripción física, se consigna:",
+            "opciones": [
+                "Las dimensiones y el formato",
+                "Otras características físicas",
+                "El material anejo",
+                "La extensión y designación específica de material"
+            ],
+            "correcta": 3,
+            "explicacion": "Primer elemento del área 5: extensión y designación específica de material (325 p., 2 h., 1 cd-rom…).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la serie se define como:",
+            "opciones": [
+                "La numeración de los fascículos de una revista",
+                "El título común de obras vinculadas a una editorial",
+                "El conjunto de ejemplares de una manifestación",
+                "El título original de una obra traducida"
+            ],
+            "correcta": 1,
+            "explicacion": "Ej.: Letras hispánicas de la editorial Cátedra.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Si la catalogación se hace de forma manual en fichas, el área de serie va:",
+            "opciones": [
+                "Entre corchetes",
+                "Entre comillas",
+                "Entre paréntesis",
+                "Precedida de barra"
+            ],
+            "correcta": 2,
+            "explicacion": "Ej.: (Odres nuevos ; 115).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de serie, el número dentro de la serie va precedido de:",
+            "opciones": [
+                "Coma (,)",
+                "Punto (.)",
+                "Barra (/)",
+                "Punto y coma (;)"
+            ],
+            "correcta": 3,
+            "explicacion": "El número va en cifras arábigas precedido de punto y coma: (Odres nuevos ; 115).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de serie, el título de la subserie va precedido de:",
+            "opciones": [
+                "Punto (.)",
+                "Punto y coma (;)",
+                "Coma (,)",
+                "Dos puntos (:)"
+            ],
+            "correcta": 0,
+            "explicacion": "Ej.: (Tesis doctorales. Nueva serie ; 4 / Universidad de Las Palmas de Gran Canaria).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el área de serie, el ISSN de la serie o subserie va precedido de:",
+            "opciones": [
+                "Punto y coma (;)",
+                "Barra (/)",
+                "Punto (.)",
+                "Coma (,)"
+            ],
+            "correcta": 3,
+            "explicacion": "Título ; número / responsabilidad, ISSN.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La fuente principal de información del área de notas es:",
+            "opciones": [
+                "La portada",
+                "El documento en su totalidad",
+                "Cualquier fuente",
+                "Los preliminares"
+            ],
+            "correcta": 2,
+            "explicacion": "Áreas 7 y 8: cualquier fuente; se redactan en la lengua del centro catalogador.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las notas sobre facsímiles, separatas, números monográficos o ediciones limitadas son notas de:",
+            "opciones": [
+                "Autoría",
+                "Edición o publicación",
+                "Contenido de la obra",
+                "Descripción física"
+            ],
+            "correcta": 1,
+            "explicacion": "Notas usuales: título, autoría, edición/publicación, descripción física, contenido y específicas (nota de tesis).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Una nota sobre bibliografías, índices o resumen se refiere a:",
+            "opciones": [
+                "El contenido de la obra",
+                "La autoría",
+                "La descripción física",
+                "El título"
+            ],
+            "correcta": 0,
+            "explicacion": "Ej.: «Incluye referencias bibliográficas e índice».",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La nota de tesis es, según el manual, una nota:",
+            "opciones": [
+                "De autoría",
+                "De edición o publicación",
+                "Específica para ciertos materiales",
+                "De descripción física"
+            ],
+            "correcta": 2,
+            "explicacion": "Notas específicas para ciertos materiales: nota de tesis.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El área 8 (número normalizado o identificador del recurso) recoge:",
+            "opciones": [
+                "ISBN, ISSN, Depósito Legal o NIPO",
+                "El título de la serie y su numeración",
+                "El lugar, editor y fecha de publicación",
+                "La extensión y las dimensiones"
+            ],
+            "correcta": 0,
+            "explicacion": "Área 8: códigos de identificación de las publicaciones (ISBN, ISSN, D.L., NIPO).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la ISBD es el primer instrumento puesto por el CBU en manos del catalogador, pero:",
+            "opciones": [
+                "No permite describir monografías",
+                "No incluye normas para los encabezamientos",
+                "No prescribe ninguna puntuación",
+                "No es aplicable fuera de Europa"
+            ],
+            "correcta": 1,
+            "explicacion": "Por eso las reglas nacionales (RCE) la completan con los puntos de acceso.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las reglas de catalogación nacionales son por lo general:",
+            "opciones": [
+                "Normas propias sin relación con las ISBD",
+                "Adaptaciones del formato MARC a cada país",
+                "Traducciones literales de las AACR2",
+                "La traducción de las ISBD y de directrices IFLA con variantes nacionales"
+            ],
+            "correcta": 3,
+            "explicacion": "Traducen las ISBD y las directrices IFLA para asientos de autoridad y referencia, con variantes nacionales (abreviaturas, listas, ejemplos).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las Reglas de Catalogación Españolas empezaron a publicarse en:",
+            "opciones": [
+                "1995, en un volumen",
+                "1999, en dos volúmenes",
+                "1985, en dos volúmenes",
+                "1969, en tres volúmenes"
+            ],
+            "correcta": 2,
+            "explicacion": "En 1985 en dos volúmenes (monografías y materiales especiales); en 1995 se unifican; en 1999 última edición revisada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué ocurrió con las RCE en 1995?",
+            "opciones": [
+                "Se publicaron por primera vez en dos volúmenes",
+                "Se unificaron en un volumen, edición refundida y revisada",
+                "Se sustituyeron por la RDA en la BNE",
+                "Se adaptaron al área 0 de la ISBD"
+            ],
+            "correcta": 1,
+            "explicacion": "En 1995 se unificaron en un solo volumen; la de 1999 es la última edición revisada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Además de la descripción conforme a la ISBD, las RCE incluyen:",
+            "opciones": [
+                "La codificación de etiquetas y subcampos MARC",
+                "Las tablas de la Clasificación Decimal Universal",
+                "Los puntos de acceso e instrucciones para fichas secundarias",
+                "Los modelos conceptuales FRBR y FRAD"
+            ],
+            "correcta": 2,
+            "explicacion": "Completan la ISBD con la definición de puntos de acceso y la confección de fichas secundarias.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El capítulo 1 de las RCE trata de:",
+            "opciones": [
+                "Los puntos de acceso",
+                "Las referencias",
+                "Los títulos uniformes",
+                "Las reglas generales de descripción bibliográfica"
+            ],
+            "correcta": 3,
+            "explicacion": "Cap. 1: reglas generales (organización de la descripción, fuentes, puntuación).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los capítulos 2 al 12 de las RCE recogen:",
+            "opciones": [
+                "La forma de los encabezamientos",
+                "Los títulos uniformes y las referencias",
+                "La descripción de las distintas clases de materiales",
+                "Los apéndices y el índice analítico"
+            ],
+            "correcta": 2,
+            "explicacion": "Monografías, manuscritos, cartográficos, gráficos, música impresa, grabaciones sonoras, microformas, películas, archivos de ordenador y seriadas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué capítulo de las RCE define la forma en que se redactan los encabezamientos?",
+            "opciones": [
+                "El capítulo 14",
+                "El capítulo 16",
+                "El capítulo 15",
+                "El capítulo 17"
+            ],
+            "correcta": 2,
+            "explicacion": "Cap. 14: puntos de acceso (cómo encabezar); cap. 15: forma del encabezamiento; cap. 16: títulos uniformes; cap. 17: referencias.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema",
+            "truco": "14 elige, 15 redacta, 16 uniforma, 17 remite."
+        },
+        {
+            "pregunta": "El capítulo 16 de las RCE trata de:",
+            "opciones": [
+                "Las referencias",
+                "Los títulos uniformes",
+                "La forma del encabezamiento",
+                "Las publicaciones seriadas"
+            ],
+            "correcta": 1,
+            "explicacion": "Cap. 16: títulos uniformes; cap. 17: referencias.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El capítulo 17 de las RCE trata de:",
+            "opciones": [
+                "Los títulos uniformes",
+                "Los puntos de acceso",
+                "La catalogación analítica",
+                "Las referencias"
+            ],
+            "correcta": 3,
+            "explicacion": "El último capítulo de las RCE es el de las referencias.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el texto del tema, además de 17 capítulos las RCE tienen:",
+            "opciones": [
+                "9 apéndices y 1 índice analítico",
+                "9 índices analíticos y 1 apéndice",
+                "12 apéndices y 1 glosario",
+                "10 apéndices y 2 índices"
+            ],
+            "correcta": 0,
+            "explicacion": "Así lo dice el texto y el recuadro «Recuerda que…». Nota: el test del propio manual invierte los términos (9 índices y 1 apéndice); el texto del tema y las RCE dicen 9 apéndices y 1 índice analítico.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En las RCE, describir un capítulo de una monografía o un artículo de una revista se denomina:",
+            "opciones": [
+                "Catalogación analítica",
+                "Catalogación cooperativa",
+                "Catalogación compartida",
+                "Catalogación por copia"
+            ],
+            "correcta": 0,
+            "explicacion": "La descripción de una parte de una obra se llama catalogación analítica.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según las RCE, la catalogación de un documento se plasma en una unidad bibliográfica, es decir:",
+            "opciones": [
+                "Un ejemplar o ítem concreto",
+                "Un capítulo de las reglas",
+                "Un fichero de autoridades",
+                "Una ficha o un asiento bibliográfico"
+            ],
+            "correcta": 3,
+            "explicacion": "Cada unidad bibliográfica (una ficha o un asiento) puede describir una obra completa o parte de ella.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según las RCE, los puntos de acceso principales pueden ser de:",
+            "opciones": [
+                "Materia, serie o título",
+                "Autor-título, serie o materia",
+                "Editor, lugar o fecha",
+                "Autor personal, entidad o título"
+            ],
+            "correcta": 3,
+            "explicacion": "Principal: autor personal, entidad o autor corporativo, o título.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los puntos de acceso secundarios son los que:",
+            "opciones": [
+                "Sustituyen al encabezamiento principal",
+                "Solo se usan en la catalogación analítica",
+                "Recogen la signatura topográfica",
+                "Ofrecen búsquedas alternativas a la del encabezamiento principal"
+            ],
+            "correcta": 3,
+            "explicacion": "Pueden ser de nombres de personas, entidades, autor-título, título y serie.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las formas aceptadas de redacción de un autor o título que especifican cómo redactar los puntos de acceso se llaman:",
+            "opciones": [
+                "Registros bibliográficos",
+                "Registros de existencias",
+                "Registros de autoridad",
+                "Registros analíticos"
+            ],
+            "correcta": 2,
+            "explicacion": "Recuadro «Sabías que…»: los registros de autoridad facilitan la normalización de las entradas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué significan las siglas RDA?",
+            "opciones": [
+                "Rules for Descriptive Analysis",
+                "Resource Description and Access",
+                "Records, Data and Authorities",
+                "Resource Data Architecture"
+            ],
+            "correcta": 1,
+            "explicacion": "RDA: Resource Description and Access, nuevo código centrado en el entorno digital.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las AACR2 son las:",
+            "opciones": [
+                "American Authority Control Rules, 2nd Edition",
+                "Anglo-American Cataloguing Rules, Second Edition",
+                "Automated Access Cataloguing Rules 2",
+                "Anglo-American Classification Rules, 2nd Edition"
+            ],
+            "correcta": 1,
+            "explicacion": "La RDA sustituye a las Reglas de Catalogación Angloamericanas, segunda edición (AACR2).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La RDA es un estándar desarrollado y mantenido por:",
+            "opciones": [
+                "La Sección de Catalogación de la IFLA",
+                "La Biblioteca Nacional de España",
+                "La Organización Internacional de Normalización",
+                "El Joint Steering Committee for the Development of RDA"
+            ],
+            "correcta": 3,
+            "explicacion": "El JSC reúne a representantes de instituciones fundamentalmente del mundo anglosajón.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estas instituciones NO figura entre las que componen el comité de la RDA según el manual?",
+            "opciones": [
+                "La Biblioteca Nacional de España",
+                "La Biblioteca Nacional de Alemania",
+                "La British Library",
+                "La Library of Congress"
+            ],
+            "correcta": 0,
+            "explicacion": "Componen el JSC: LC, ALA, Australian Committee on Cataloguing, British Library, Canadian Committee on Cataloguing, CILIP y la Biblioteca Nacional de Alemania.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La RDA nació de una revisión en profundidad de las AACR2 que iba a dar como fruto:",
+            "opciones": [
+                "Las RCE de 1999",
+                "La ISBD consolidada",
+                "Las AACR3",
+                "El formato MARC 21"
+            ],
+            "correcta": 2,
+            "explicacion": "Iba a ser AACR3, pero surgió la necesidad de un nuevo modelo flexible y cambió totalmente de enfoque.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La RDA se publicó en:",
+            "opciones": [
+                "2007, junto a la ISBD consolidada",
+                "1998, con el informe FRBR",
+                "2016, a propuesta de la BNE",
+                "2010, tras diez años de discusiones"
+            ],
+            "correcta": 3,
+            "explicacion": "En 2010 se publica la RDA (texto oficial en junio de 2010).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Que la RDA esté diseñada para el entorno digital implica, entre otras cosas:",
+            "opciones": [
+                "Que solo cataloga recursos electrónicos",
+                "Que sustituye al formato MARC",
+                "Que está disponible en la Web",
+                "Que no admite recursos impresos"
+            ],
+            "correcta": 2,
+            "explicacion": "Implica: disponible en la Web; catalogar recursos digitales y de otro tipo; registros usables en Internet y Webopacs.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La RDA se basa en el modelo conceptual:",
+            "opciones": [
+                "Jerárquico-enumerativo",
+                "Facetado-analítico",
+                "Lineal-secuencial",
+                "Entidad-relación"
+            ],
+            "correcta": 3,
+            "explicacion": "El modelo entidad-relación representa entidades, interrelaciones y propiedades; es flexible, adaptable y abstracto.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el punto 0.0 «Objetivo y alcance» de la RDA, el usuario espera que el catálogo le permita:",
+            "opciones": [
+                "Seleccionar, adquirir, catalogar y prestar",
+                "Encontrar, identificar, aclarar y comprender",
+                "Ordenar, clasificar, indizar y resumir",
+                "Reservar, renovar, valorar y etiquetar"
+            ],
+            "correcta": 1,
+            "explicacion": "El objetivo de la RDA no es mejorar la catalogación en sí, sino ayudar al usuario en la búsqueda.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El modelo FRAD distingue dos grupos de usuarios:",
+            "opciones": [
+                "Creadores de datos de autoridad y usuarios finales",
+                "Lectores e investigadores",
+                "Editores y libreros",
+                "Bibliotecarios y archiveros"
+            ],
+            "correcta": 0,
+            "explicacion": "FRBR habla del usuario en sentido amplio; FRAD distingue creadores de datos de autoridad y usuarios finales.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las entidades del grupo 2 de FRBR (responsabilidad) son:",
+            "opciones": [
+                "Obra, expresión, manifestación e ítem",
+                "Persona, familia y entidad corporativa",
+                "Concepto, objeto, acontecimiento y lugar",
+                "Título, autor, editor y fecha"
+            ],
+            "correcta": 1,
+            "explicacion": "Grupo 1: recursos; grupo 2: creadores (persona, familia, entidad corporativa); grupo 3: materias.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las entidades del grupo 3 de FRBR (materias) incluyen:",
+            "opciones": [
+                "Persona, familia y entidad corporativa",
+                "Obra, expresión, manifestación e ítem",
+                "Autor, título, serie y materia",
+                "Concepto, objeto, acontecimiento y lugar"
+            ],
+            "correcta": 3,
+            "explicacion": "El grupo 3 incluye además, como materia, las entidades de los grupos 1 y 2.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el modelo FRBR, los atributos son:",
+            "opciones": [
+                "Asociaciones entre dos o más entidades",
+                "Elementos que caracterizan una entidad o una relación",
+                "Aquello que se identifica de forma distintiva",
+                "Los usuarios a los que se dirige el registro"
+            ],
+            "correcta": 1,
+            "explicacion": "Entidades: «aquello» identificable; relaciones: asociación entre entidades; atributos: lo que las caracteriza.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos es un ejemplo de relación en el modelo FRBR según el manual?",
+            "opciones": [
+                "Autor-obra",
+                "Persona",
+                "Familia",
+                "Lugar"
+            ],
+            "correcta": 0,
+            "explicacion": "Relaciones: autor-obra, obra-versión… expresadas en locuciones como «traducción», «continuada por», «producido por».",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En FRBR, la obra es:",
+            "opciones": [
+                "Una creación intelectual o artística diferenciada y abstracta",
+                "La materialización física de una expresión",
+                "Un ejemplar concreto de una manifestación",
+                "La realización textual o sonora de un contenido"
+            ],
+            "correcta": 0,
+            "explicacion": "La obra es abstracta: no hay un objeto material que pueda denominarse obra (ej.: el Hamlet de Shakespeare).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En FRBR, la expresión es:",
+            "opciones": [
+                "La materialización física de la obra",
+                "La realización artística o intelectual de una obra",
+                "Un ejemplar de una manifestación",
+                "La creación abstracta sin forma"
+            ],
+            "correcta": 1,
+            "explicacion": "La expresión puede ser textual, musical, sonora, en imagen, objeto, movimiento o combinación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, un contenido idéntico ofrecido en braille respecto a la versión impresa es:",
+            "opciones": [
+                "La misma expresión y la misma manifestación",
+                "Una obra diferente",
+                "Un ítem de la misma manifestación",
+                "Una expresión diferente de la misma obra"
+            ],
+            "correcta": 3,
+            "explicacion": "El braille exige otro sentido (notación anaglíptica), por lo que es una expresión diferente.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En FRBR, la manifestación es:",
+            "opciones": [
+                "La realización intelectual de una obra",
+                "La materialización física de la expresión de una obra",
+                "Un ejemplar concreto que posee la biblioteca",
+                "La creación intelectual en sí misma"
+            ],
+            "correcta": 1,
+            "explicacion": "Representa todos los objetos físicos o virtuales con las mismas características de contenido y forma física.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Un mismo texto publicado con letra de tamaño normal y con letra grande constituye:",
+            "opciones": [
+                "Dos manifestaciones distintas",
+                "Dos obras distintas",
+                "Dos expresiones distintas",
+                "Dos ítems de la misma manifestación"
+            ],
+            "correcta": 0,
+            "explicacion": "Cambios en tipografía, tamaño de letra o soporte definen nuevas manifestaciones de la misma expresión.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En FRBR, el ítem es:",
+            "opciones": [
+                "Un ejemplar de una manifestación",
+                "Una versión de una expresión",
+                "Una traducción de la obra",
+                "Un conjunto de manifestaciones"
+            ],
+            "correcta": 0,
+            "explicacion": "Una manifestación está formada por ítems idénticos; con los datos del ejemplar y su localización se describe el ítem.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el esquema del manual sobre Hamlet, la «traducción al español» se sitúa en el nivel de:",
+            "opciones": [
+                "Obra",
+                "Manifestación",
+                "Expresión",
+                "Ítem"
+            ],
+            "correcta": 2,
+            "explicacion": "Obra: Hamlet; expresiones: texto original, traducción, película, audiolibro; manifestaciones: papel, PDF, HTML; ítems: ejemplares.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el esquema del manual sobre Hamlet, la versión en PDF se sitúa en el nivel de:",
+            "opciones": [
+                "Expresión",
+                "Manifestación",
+                "Obra",
+                "Ítem"
+            ],
+            "correcta": 1,
+            "explicacion": "Papel, PDF y HTML son manifestaciones de la traducción al español.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La RDA consta, según el manual, de:",
+            "opciones": [
+                "9 áreas, 17 capítulos y 9 apéndices",
+                "10 secciones, 17 capítulos y un índice",
+                "10 secciones, 37 capítulos, 12 apéndices y un glosario",
+                "12 secciones, 37 capítulos y 10 apéndices"
+            ],
+            "correcta": 2,
+            "explicacion": "Así lo recoge el manual. Nota: el manual describe la RDA original de 2010; desde la reestructuración del RDA Toolkit (2020) ya no se organiza en esas 10 secciones.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las secciones 1 a 4 de la RDA se dedican a:",
+            "opciones": [
+                "El registro de relaciones",
+                "Los apéndices y el glosario",
+                "Las tareas del usuario",
+                "El registro de atributos"
+            ],
+            "correcta": 3,
+            "explicacion": "Secciones 1-4: atributos; secciones 5-10: relaciones.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La sección 1 de la RDA trata del registro de los atributos de:",
+            "opciones": [
+                "La obra y la expresión",
+                "Persona, familia y entidad",
+                "Las manifestaciones y los ítems",
+                "Concepto, objeto, acontecimiento y lugar"
+            ],
+            "correcta": 2,
+            "explicacion": "S1: manifestaciones e ítems; S2: obra y expresión; S3: persona, familia y entidad; S4: concepto, objeto, acontecimiento y lugar.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La sección 5 de la RDA trata del registro de:",
+            "opciones": [
+                "Las relaciones primarias",
+                "Las relaciones de materia",
+                "Los atributos de obra y expresión",
+                "Las relaciones entre personas"
+            ],
+            "correcta": 0,
+            "explicacion": "S5: relaciones primarias; S6: a personas, familias y entidades; S7: de materia.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la diferencia más importante entre RDA e ISBD está en:",
+            "opciones": [
+                "El número de áreas de descripción",
+                "La filosofía y el modo de consulta de la norma",
+                "La lengua en que están redactadas",
+                "El organismo que las financia"
+            ],
+            "correcta": 1,
+            "explicacion": "La RDA es hipertextual, no lineal y organizada por elementos nucleares; la ISBD se organiza por recursos de información.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la terminología RDA, el «encabezamiento» de las ISBD/RCE pasa a llamarse:",
+            "opciones": [
+                "Punto de acceso variante",
+                "Título preferido",
+                "Punto de acceso autorizado",
+                "Fuente preferida"
+            ],
+            "correcta": 2,
+            "explicacion": "Tabla del manual: encabezamiento → punto de acceso autorizado.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la terminología RDA, el «título uniforme» de las ISBD/RCE pasa a llamarse:",
+            "opciones": [
+                "Título preferido",
+                "Título colectivo convencional",
+                "Punto de acceso variante",
+                "Título propiamente dicho"
+            ],
+            "correcta": 0,
+            "explicacion": "Título uniforme → título preferido (con o sin adiciones); título uniforme colectivo (facticio) → título colectivo convencional.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la terminología RDA, la «referencia de véase» pasa a llamarse:",
+            "opciones": [
+                "Punto de acceso autorizado",
+                "Punto de acceso de la entidad relacionada",
+                "Fuente preferida",
+                "Punto de acceso variante"
+            ],
+            "correcta": 3,
+            "explicacion": "Véase → punto de acceso variante; véase además → punto de acceso autorizado de la entidad relacionada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la terminología RDA, la «designación específica de material» pasa a llamarse:",
+            "opciones": [
+                "Soporte",
+                "Compilación",
+                "Creador",
+                "Medio"
+            ],
+            "correcta": 0,
+            "explicacion": "Tabla: designación específica de material → soporte; colección → compilación; autor → creador.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según la tabla del manual, el término «autor» de las ISBD/RCE equivale en RDA a:",
+            "opciones": [
+                "Agente",
+                "Creador",
+                "Responsable",
+                "Contribuidor"
+            ],
+            "correcta": 1,
+            "explicacion": "Autor → creador (incluye al autor como creador de texto).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El principio de la RDA «tome lo que ve, acepte lo que recibe» implica:",
+            "opciones": [
+                "Corregir las erratas entre corchetes",
+                "Transcribir los datos tal como aparecen en el recurso",
+                "Abreviar los elementos para ahorrar espacio",
+                "Traducir los datos a la lengua del centro"
+            ],
+            "correcta": 1,
+            "explicacion": "Choca con la política de la ISBD de dejar constancia de las erratas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, respecto a las abreviaturas:",
+            "opciones": [
+                "Se abrevian todos los elementos posibles",
+                "Se usan las abreviaturas de la ISBD",
+                "Se prohíbe cualquier abreviatura",
+                "Solo se conservan las que aparecen en el recurso"
+            ],
+            "correcta": 3,
+            "explicacion": "La ISBD prescribía abreviar por la escasez de espacio en las fichas manuales.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Al eliminar la RDA las fuentes prescritas dentro del propio recurso:",
+            "opciones": [
+                "Todos los datos van entre corchetes",
+                "Ningún dato existente en el recurso va entre corchetes",
+                "Solo la portada puede usarse como fuente",
+                "Los datos se trasladan al área de notas"
+            ],
+            "correcta": 1,
+            "explicacion": "El concepto de fuente principal se sustituye por el de fuentes preferidas, que lo amplía.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, la mención de responsabilidad:",
+            "opciones": [
+                "Se omite siempre salvo el primer autor",
+                "Se transcribe completa como venga en el recurso",
+                "Se traduce a la lengua del centro",
+                "Se abrevia según la ISBD"
+            ],
+            "correcta": 1,
+            "explicacion": "Se puede omitir opcionalmente información sin perder lo esencial; la ISBD omite estatus y distinciones innecesarias.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, la DGM se sustituye por los atributos:",
+            "opciones": [
+                "Tipo de contenido, tipo de medio y tipo de soporte",
+                "Forma, calificación y escala",
+                "Extensión, dimensiones y material anejo",
+                "Obra, expresión y manifestación"
+            ],
+            "correcta": 0,
+            "explicacion": "Esos tres atributos resuelven la ambigüedad de las DGM.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, producción, publicación, distribución y fabricación:",
+            "opciones": [
+                "Forman una sola área de publicación",
+                "Se separan en elementos propios",
+                "Se recogen en el área de notas",
+                "Se codifican solo en el directorio"
+            ],
+            "correcta": 1,
+            "explicacion": "Esto permite registrar un mayor nivel de especificidad en la toma de datos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, la fecha de copyright:",
+            "opciones": [
+                "Es un elemento aparte, no ligado al área de publicación",
+                "Va siempre tras el nombre del editor",
+                "Sustituye a la fecha de publicación",
+                "Se omite si existe depósito legal"
+            ],
+            "correcta": 0,
+            "explicacion": "Es la fecha asociada al derecho de protección del recurso (parte patrimonial de los derechos de autor).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Con la desaparición de la «regla de tres» en RDA, una obra con más de tres autores tiene su punto de acceso principal en:",
+            "opciones": [
+                "El título de la obra",
+                "El editor literario",
+                "El autor que aparece en primer lugar",
+                "El último autor citado"
+            ],
+            "correcta": 2,
+            "explicacion": "Las RCE la encabezaban por el título.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Respecto a las familias como puntos de acceso:",
+            "opciones": [
+                "Las RCE las admiten y la RDA no",
+                "La RDA las admite y las RCE no las contemplan",
+                "Ni las RCE ni la RDA las admiten",
+                "Solo se admiten como materia"
+            ],
+            "correcta": 1,
+            "explicacion": "En RDA las familias tienen las mismas posibilidades de autoría que personas y entidades.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Con la ampliación del concepto de persona en RDA se consideran personas:",
+            "opciones": [
+                "Personajes de ficción, animales o dioses",
+                "Solo las personas físicas vivas",
+                "Solo autores con obra publicada",
+                "Las entidades corporativas"
+            ],
+            "correcta": 0,
+            "explicacion": "También seres legendarios, muñecos, espíritus, etc.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, los seudónimos de un autor:",
+            "opciones": [
+                "Se rechazan en favor del nombre real",
+                "Solo se acepta el más conocido",
+                "Se recogen únicamente en notas",
+                "Se aceptan todos, conectados por referencias de véase además"
+            ],
+            "correcta": 3,
+            "explicacion": "Todos los seudónimos se aceptan y se enlazan con «véase además».",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, el punto de acceso de un tratado internacional con varios firmantes es:",
+            "opciones": [
+                "El nombre del primer signatario",
+                "El título facticio «Tratados, etc.»",
+                "El país que lo deposita",
+                "El título del tratado"
+            ],
+            "correcta": 3,
+            "explicacion": "No por los signatarios más el título facticio «Tratados, etc.», como antes.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, el obispado de la diócesis de Palencia se redactaría:",
+            "opciones": [
+                "Palencia (Diócesis). Obispado",
+                "Obispado de Palencia (Iglesia Católica)",
+                "Diócesis de Palencia. Obispado",
+                "Iglesia Católica. Diócesis de Palencia. Obispado"
+            ],
+            "correcta": 3,
+            "explicacion": "En RDA las entidades católicas se subordinan a la Iglesia Católica; «Palencia (Diócesis). Obispado» es la forma RCE.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según las RCE, el nombre de los santos se redacta:",
+            "opciones": [
+                "En forma inversa y en latín",
+                "En forma directa y en la lengua del centro catalogador",
+                "En la lengua original del santo",
+                "Subordinado a la Iglesia Católica"
+            ],
+            "correcta": 1,
+            "explicacion": "En RDA no se construyen necesariamente en forma directa ni en la lengua del centro.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En RDA, los libros concretos de la Biblia:",
+            "opciones": [
+                "Se subordinan siempre al Antiguo o Nuevo Testamento",
+                "Se redactan en latín",
+                "No se subordinan a ningún testamento",
+                "Se encabezan por el traductor"
+            ],
+            "correcta": 2,
+            "explicacion": "Se desarrollan las siglas de Antiguo y Nuevo Testamento y los libros no se subordinan.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La Biblioteca Nacional de España decidió adoptar la RDA en:",
+            "opciones": [
+                "Noviembre de 2016",
+                "Junio de 2010",
+                "Enero de 2007",
+                "Diciembre de 1999"
+            ],
+            "correcta": 0,
+            "explicacion": "La BNE considera obsoletas las RCE (última edición de 1999). Nota: el manual dice que la decisión es de 2016; la BNE empezó a aplicar RDA en 2019.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el esquema del manual sobre la evolución de la catalogación, FRBR-FRAD y RDA corresponden a:",
+            "opciones": [
+                "Los catálogos físicos",
+                "Los OPAC",
+                "El entorno virtual",
+                "Los catálogos de fichas"
+            ],
+            "correcta": 2,
+            "explicacion": "Catálogos físicos: fichas, Principios de París, Reglas 1ª ed.; OPAC: MARC, Reglas 2ª ed.; entorno virtual: metadatos, FRBR-FRAD, RDA.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "MARC es el acrónimo de:",
+            "opciones": [
+                "Metadata Automated Record Code",
+                "Machine Archive Retrieval Catalog",
+                "Machine Readable Cataloging",
+                "Multiple Access Record Cataloging"
+            ],
+            "correcta": 2,
+            "explicacion": "MARC: catalogación legible por máquina; es un método de catalogación automatizada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Un registro «está en formato MARC» si se ajusta a la estructura básica de la norma americana:",
+            "opciones": [
+                "ANSI Z39.2 (1971)",
+                "ANSI Z39.50 (1988)",
+                "NISO Z39.85 (2001)",
+                "ISO 690 (1975)"
+            ],
+            "correcta": 0,
+            "explicacion": "O a su equivalente internacional ISO 2709 (1973).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema",
+            "truco": "Z39.2 estructura el registro; Z39.50 es el protocolo de búsqueda."
+        },
+        {
+            "pregunta": "La estructura del registro MARC está basada en la norma internacional:",
+            "opciones": [
+                "ISO 690",
+                "ISO 3297",
+                "ISO 2709",
+                "ISO 9001"
+            ],
+            "correcta": 2,
+            "explicacion": "ISO 2709 (1973), revisada en 1981, 1996 y 2008.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las dos bibliotecas nacionales pioneras en el formato MARC son:",
+            "opciones": [
+                "La BNE y la Bibliothèque nationale de France",
+                "La Deutsche Nationalbibliothek y la British Library",
+                "La Library of Congress y la Biblioteca de Canadá",
+                "La Library of Congress y la British Library"
+            ],
+            "correcta": 3,
+            "explicacion": "LC y BL; sus intereses iniciales condicionaron la estructura del formato.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El interés inicial de la British Library por el formato MARC era:",
+            "opciones": [
+                "Distribuir fichas a las bibliotecas de EE. UU.",
+                "Automatizar el préstamo interbibliotecario",
+                "Facilitar la edición de su bibliografía nacional",
+                "Crear un catálogo colectivo europeo"
+            ],
+            "correcta": 2,
+            "explicacion": "La LC buscaba el control bibliográfico y la distribución de registros en cintas magnéticas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El Card Distribution Service que la Library of Congress quería agilizar se había iniciado en:",
+            "opciones": [
+                "1876",
+                "1954",
+                "1966",
+                "1901"
+            ],
+            "correcta": 3,
+            "explicacion": "Servicio de edición y distribución de fichas; el objetivo inicial no era automatizar el catálogo sino producir fichas más rápido y barato.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El proyecto MARC I, de transmisión de datos en cintas magnéticas, se inició en:",
+            "opciones": [
+                "1967",
+                "1968",
+                "1971",
+                "1966"
+            ],
+            "correcta": 3,
+            "explicacion": "Se enviaron registros a 16 bibliotecas en prueba piloto; MARC II llegó en 1967.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿A cuántas bibliotecas se transmitieron registros en la prueba piloto del proyecto MARC I?",
+            "opciones": [
+                "10",
+                "16",
+                "24",
+                "50"
+            ],
+            "correcta": 1,
+            "explicacion": "La LC se convirtió así en la primera biblioteca de EE. UU. en automatizar la catalogación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El formato MARC II, pensado como formato de intercambio flexible, se formuló en:",
+            "opciones": [
+                "1966",
+                "1971",
+                "1973",
+                "1967"
+            ],
+            "correcta": 3,
+            "explicacion": "Las diferencias entre LC y BL dieron lugar a LC MARC II (enero 1968) y BNB MARC II (junio 1968).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La estructura física del MARC II está formada por:",
+            "opciones": [
+                "Etiquetas, indicadores y subcampos",
+                "Cabecera, directorio y zona de campos",
+                "Obra, expresión y manifestación",
+                "Áreas, elementos y puntuación"
+            ],
+            "correcta": 1,
+            "explicacion": "Esa estructura adquirió rango de norma nacional (ANSI Z39.2, 1971) e internacional (ISO 2709, 1973).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La armonización de USMARC con el formato canadiense CANMARC dio como resultado:",
+            "opciones": [
+                "UNIMARC",
+                "UKMARC",
+                "IBERMARC",
+                "MARC 21"
+            ],
+            "correcta": 3,
+            "explicacion": "El trabajo colaborativo entre EE. UU. y Canadá unificó un formato común llamado MARC 21.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "UNIMARC nació a impulso de la IFLA con la intención de:",
+            "opciones": [
+                "Sustituir a la ISBD en Europa",
+                "Codificar los datos de existencias",
+                "Servir de puente entre los principales formatos nacionales",
+                "Reemplazar a la norma ISO 2709"
+            ],
+            "correcta": 2,
+            "explicacion": "Acabó siendo un nuevo modelo del que surgieron variantes nacionales en los años 80.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "A finales del siglo XX existían tres grandes familias de formatos MARC:",
+            "opciones": [
+                "MARC 21, IBERMARC y CANMARC",
+                "LC MARC, BNB MARC y UNIMARC",
+                "USMARC, CANMARC y IBERMARC",
+                "USMARC, UKMARC y UNIMARC"
+            ],
+            "correcta": 3,
+            "explicacion": "Cada familia adaptada a versiones nacionales con sus propias variantes.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el formato USMARC se transformó en MARC 21 en:",
+            "opciones": [
+                "1967",
+                "1987",
+                "1973",
+                "2008"
+            ],
+            "correcta": 1,
+            "explicacion": "Es la fecha que da el manual. Nota: el manual dice 1987; hoy se data la aparición de MARC 21 en 1997-1999.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El formato bibliográfico MARC 21 es mantenido y gestionado por:",
+            "opciones": [
+                "La IFLA",
+                "La British Library",
+                "La Biblioteca del Congreso de EE. UU.",
+                "La Biblioteca Nacional de España"
+            ],
+            "correcta": 2,
+            "explicacion": "Se publica bajo el título MARC 21 Format for Bibliographic Data.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, en España se utiliza principalmente el formato:",
+            "opciones": [
+                "UNIMARC",
+                "IBERMARC",
+                "MARC 21",
+                "UKMARC"
+            ],
+            "correcta": 2,
+            "explicacion": "Recuadro «Recuerda que…»: en España se usa principalmente MARC 21.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Que MARC 21 naciera independientemente de cualquier software permite a las bibliotecas:",
+            "opciones": [
+                "Prescindir de un SIGB",
+                "Catalogar sin normas de descripción",
+                "Usar solo programas comerciales",
+                "Cambiar de sistema manteniendo sus datos compatibles"
+            ],
+            "correcta": 3,
+            "explicacion": "Pueden usar sistemas comerciales o de código abierto y reemplazarlos según sus necesidades.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el recuadro «Recuerda que…», al catalogar:",
+            "opciones": [
+                "Se describe con una norma y se transcribe con un estándar",
+                "Se describe con un estándar y se transcribe con una norma",
+                "Se describe y transcribe solo con MARC 21",
+                "Se describe con Dublin Core y se transcribe con ISBD"
+            ],
+            "correcta": 0,
+            "explicacion": "Norma: ISBD, RDA…; estándar: MARC 21, Dublin Core, XML…",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La cabecera o leader del registro MARC contiene:",
+            "opciones": [
+                "Las etiquetas presentes y su localización",
+                "Los datos bibliográficos propiamente dichos",
+                "24 elementos codificados de longitud fija",
+                "Los indicadores de cada campo"
+            ],
+            "correcta": 2,
+            "explicacion": "Proporciona información de control para el procesamiento del registro según la posición del carácter.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El directorio del registro MARC es:",
+            "opciones": [
+                "Un índice automático de las etiquetas y su localización",
+                "La parte con 24 posiciones fijas",
+                "El conjunto de campos de control 00X",
+                "La lista de autoridades del catálogo"
+            ],
+            "correcta": 0,
+            "explicacion": "Lo genera el sistema automáticamente a partir del registro bibliográfico.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los campos de control del registro MARC:",
+            "opciones": [
+                "Se etiquetan 01X-8XX y tienen subcampo $a",
+                "Contienen los datos bibliográficos propiamente dichos",
+                "Se etiquetan 00X y no tienen indicadores ni subcampos",
+                "Son repetibles y llevan siempre indicadores"
+            ],
+            "correcta": 2,
+            "explicacion": "Son de longitud fija con información codificada y predefinida de control.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los campos de longitud variable del registro MARC:",
+            "opciones": [
+                "Se etiquetan 01X-8XX y tienen al menos el subcampo $a",
+                "Se etiquetan 00X y carecen de subcampos",
+                "Tienen siempre 24 posiciones fijas",
+                "Solo contienen información local"
+            ],
+            "correcta": 0,
+            "explicacion": "Contienen los datos bibliográficos propiamente dichos y pueden tener o no indicadores definidos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los campos de longitud variable, los designadores de contenido son:",
+            "opciones": [
+                "Cabecera, directorio y campos",
+                "Etiquetas, indicadores y subcampos",
+                "Áreas, elementos y puntuación",
+                "Atributos, entidades y relaciones"
+            ],
+            "correcta": 1,
+            "explicacion": "Los tres tipos de designadores de contenido de los campos variables.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El número de campos de un registro bibliográfico MARC:",
+            "opciones": [
+                "Es siempre de 24 campos",
+                "Es siempre de nueve campos",
+                "No está establecido y depende del nivel de descripción",
+                "Está fijado por la cabecera en 99"
+            ],
+            "correcta": 2,
+            "explicacion": "Depende del nivel de descripción y del tipo de documento.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las etiquetas MARC se expresan en centenas, es decir, con un número de tres dígitos entre:",
+            "opciones": [
+                "El 000 y el 099",
+                "El 001 y el 999",
+                "El 100 y el 900",
+                "El 01 y el 99"
+            ],
+            "correcta": 1,
+            "explicacion": "Cada dígito tiene una función identificadora.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En MARC 21, el grupo de etiquetas 0XX corresponde a:",
+            "opciones": [
+                "Encabezamiento de autor principal",
+                "Información de control y clasificación",
+                "Información de ámbito local",
+                "Encabezamientos de materia"
+            ],
+            "correcta": 1,
+            "explicacion": "0XX control y clasificación; 1XX autor principal; 2XX títulos, edición y publicación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En MARC 21, el grupo 1XX corresponde a:",
+            "opciones": [
+                "Encabezamiento de autor principal o preferido",
+                "Encabezamientos secundarios de autor",
+                "Títulos, edición y publicación",
+                "Descripción física"
+            ],
+            "correcta": 0,
+            "explicacion": "1XX: punto de acceso principal; los secundarios de autor y título están en 7XX.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En MARC 21, la descripción física, formato y contenido se recogen en el grupo:",
+            "opciones": [
+                "2XX",
+                "5XX",
+                "3XX",
+                "6XX"
+            ],
+            "correcta": 2,
+            "explicacion": "3XX: descripción física, formato y contenido.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En MARC 21, las notas se recogen en el grupo:",
+            "opciones": [
+                "4XX",
+                "7XX",
+                "9XX",
+                "5XX"
+            ],
+            "correcta": 3,
+            "explicacion": "4XX serie; 5XX notas; 6XX materia.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema",
+            "truco": "Área 7 de la ISBD (notas) → 5XX: «5 de notas»."
+        },
+        {
+            "pregunta": "En MARC 21, los encabezamientos de materia se recogen en el grupo:",
+            "opciones": [
+                "6XX",
+                "5XX",
+                "7XX",
+                "8XX"
+            ],
+            "correcta": 0,
+            "explicacion": "6XX: encabezamientos de materia.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En MARC 21, los encabezamientos secundarios de autor y título se recogen en el grupo:",
+            "opciones": [
+                "7XX",
+                "1XX",
+                "6XX",
+                "8XX"
+            ],
+            "correcta": 0,
+            "explicacion": "7XX: secundarios de autor y título; 8XX: secundarios de serie.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En MARC 21, el grupo 9XX se reserva para:",
+            "opciones": [
+                "Encabezamientos de serie",
+                "Notas generales",
+                "Información de ámbito local",
+                "Control y clasificación"
+            ],
+            "correcta": 2,
+            "explicacion": "9XX: información de ámbito local.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Dentro del grupo 2XX, el área de edición se identifica con:",
+            "opciones": [
+                "24X",
+                "26X",
+                "30X",
+                "25X"
+            ],
+            "correcta": 3,
+            "explicacion": "El segundo dígito precisa el área: 24X título, 25X edición, 26X publicación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La etiqueta MARC 245 corresponde a:",
+            "opciones": [
+                "Título uniforme",
+                "Título propiamente dicho",
+                "Variante de título",
+                "Mención de edición"
+            ],
+            "correcta": 1,
+            "explicacion": "El tercer dígito define el contenido: 240 título uniforme, 245 título propiamente dicho, 246 variante de título.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La etiqueta MARC 240 corresponde a:",
+            "opciones": [
+                "Título propiamente dicho",
+                "Título uniforme",
+                "Variante de título",
+                "Área de edición"
+            ],
+            "correcta": 1,
+            "explicacion": "240: título uniforme (en RDA, título preferido).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La etiqueta 700 (punto de acceso adicional – nombre de persona) es:",
+            "opciones": [
+                "Repetible (R)",
+                "No repetible (NR)",
+                "Un campo de control",
+                "Exclusiva del formato de autoridades"
+            ],
+            "correcta": 0,
+            "explicacion": "Normalmente son repetibles las etiquetas de asientos secundarios; la 100 es NR.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la etiqueta 245, el segundo indicador expresa:",
+            "opciones": [
+                "El número de caracteres que no alfabetizan",
+                "Si hay punto de acceso adicional al título",
+                "El número de autores de la obra",
+                "La lengua del título"
+            ],
+            "correcta": 0,
+            "explicacion": "0: no hay caracteres que no alfabeticen; 1-9: número de caracteres que no alfabetizan.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la etiqueta 245, el primer indicador se refiere a:",
+            "opciones": [
+                "El punto de acceso adicional al título",
+                "Los caracteres que no alfabetizan",
+                "La lengua de catalogación",
+                "La existencia de subtítulo"
+            ],
+            "correcta": 0,
+            "explicacion": "0: no hay punto de acceso adicional; 1: hay punto de acceso adicional.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En «245 13», el segundo indicador 3 indica al sistema que:",
+            "opciones": [
+                "Hay tres puntos de acceso adicionales",
+                "El título tiene tres subcampos",
+                "Ignore los tres primeros caracteres al ordenar",
+                "La obra tiene tres autores"
+            ],
+            "correcta": 2,
+            "explicacion": "El título empieza presumiblemente por un artículo (el, la, lo, un) sin carga semántica.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los valores de los indicadores MARC:",
+            "opciones": [
+                "Se interpretan juntos como un número de dos cifras",
+                "Son siempre letras minúsculas",
+                "Solo existen en los campos 00X",
+                "Se interpretan por separado y pueden ser números o blancos"
+            ],
+            "correcta": 3,
+            "explicacion": "Se interpretan según la posición primera o segunda.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Un código de subcampo MARC está formado por:",
+            "opciones": [
+                "Un delimitador ($ o |) y un carácter alfanumérico en minúscula",
+                "Tres dígitos numéricos",
+                "Dos indicadores numéricos",
+                "Un signo de puntuación ISBD"
+            ],
+            "correcta": 0,
+            "explicacion": "Identifica qué elemento de cada área viene a continuación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En «260 ##$aMadrid :$bAriel,$c1987», el subcampo $b contiene:",
+            "opciones": [
+                "La editorial",
+                "El lugar de publicación",
+                "La fecha de publicación",
+                "El número de edición"
+            ],
+            "correcta": 0,
+            "explicacion": "$a lugar; $b editorial; $c fecha.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En «260 ##$aMadrid :$bAriel,$c1987», el símbolo # indica que:",
+            "opciones": [
+                "El campo es repetible",
+                "El campo es de control",
+                "Falta el lugar de publicación",
+                "No hay indicadores con información complementaria"
+            ],
+            "correcta": 3,
+            "explicacion": "La etiqueta 260 representa el área de publicación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, MARC constituye una familia de:",
+            "opciones": [
+                "Tres formatos coordinados",
+                "Cinco formatos coordinados",
+                "Nueve formatos coordinados",
+                "Diez formatos coordinados"
+            ],
+            "correcta": 1,
+            "explicacion": "Bibliográficos, autoridad, existencias, clasificación y comunidad.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué formato MARC 21 codifica la signatura topográfica o los datos de un ejemplar concreto?",
+            "opciones": [
+                "Formato para Datos Bibliográficos",
+                "Formato para Datos de Existencias",
+                "Formato para Datos de Autoridad",
+                "Formato para Datos de la Comunidad"
+            ],
+            "correcta": 1,
+            "explicacion": "Existencias: ubicación física, años y volúmenes de una revista, encuadernación, procedencia, circulación y conservación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué formato MARC 21 codifica información de sistemas como la CDU o la Dewey?",
+            "opciones": [
+                "Formato para Datos de Autoridad",
+                "Formato para Datos de Existencias",
+                "Formato para Datos de Clasificación",
+                "Formato para Datos Bibliográficos"
+            ],
+            "correcta": 2,
+            "explicacion": "Se usa para desarrollar y mantener sistemas de clasificación y sus relaciones con los formatos bibliográfico y de autoridad.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El formato MARC 21 para Datos de la Comunidad codifica:",
+            "opciones": [
+                "Recursos no bibliográficos como organizaciones o eventos",
+                "Registros de autoridad de nombres y materias",
+                "La ubicación física de los ejemplares",
+                "Las tablas de la CDU y la Dewey"
+            ],
+            "correcta": 0,
+            "explicacion": "Recursos que satisfacen las necesidades de información de una comunidad: organizaciones, programas, servicios, eventos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El formato MARC 21 para Datos de Autoridad codifica registros de autoridad de:",
+            "opciones": [
+                "Ejemplares, signaturas y volúmenes",
+                "Organizaciones, programas y eventos",
+                "Nombres, materias y series",
+                "Manuscritos, mapas y música"
+            ],
+            "correcta": 2,
+            "explicacion": "Proporciona formas autorizadas, sus referencias y las relaciones entre ellas.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, los criterios catalográficos deben adecuarse al entorno de:",
+            "opciones": [
+                "La biblioteca de fichas",
+                "La biblioteca patrimonial",
+                "La biblioteca escolar",
+                "La biblioteca semántica"
+            ],
+            "correcta": 3,
+            "explicacion": "Avances tecnológicos, nuevos formatos e interoperabilidad justifican revisar los criterios.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Entre las buenas prácticas catalogadoras que recomienda el manual figura:",
+            "opciones": [
+                "Mantener las RCE frente a las directrices de la BNE",
+                "Evitar los foros y canales bibliotecarios",
+                "Catalogar solo con criterios locales propios",
+                "Consultar la web de The Cataloguing Section de la IFLA"
+            ],
+            "correcta": 3,
+            "explicacion": "También: consultar noticias de la BNE, adoptar sus directrices, formarse y suscribirse a foros.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, para que los OPAC respondan mejor a los usuarios hace falta, entre otras cosas:",
+            "opciones": [
+                "Menos puntos de acceso por registro",
+                "Indización en vez de encabezamientos de materias",
+                "Registros más extensos y complejos",
+                "Volver al catálogo de fichas"
+            ],
+            "correcta": 1,
+            "explicacion": "También análisis de contenido, más puntos de acceso y registros más simples e inteligibles.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
         }
     ],
     "fichas": [
@@ -36449,6 +39508,335 @@
             "referencia": "Manual MAD, Tema 11",
             "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
             "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo (definición)",
+            "reverso": "Producto de la catalogación: conjunto de asientos bibliográficos con encabezamientos y clasificación; inventario de los fondos cuya función es localizar y hacer localizables los documentos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Funciones del catálogo en la biblioteca",
+            "reverso": "Recuperar (describe y localiza por la signatura) y gestionar la colección: adquisiciones (selección, expurgo), control (recuentos) y análisis (estadísticas).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catalogación (definición)",
+            "reverso": "Proceso técnico que identifica y selecciona los elementos esenciales de un recurso para describirlo de forma única, sin ambigüedad, y permitir su localización.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Análisis documental",
+            "reverso": "Análisis formal (catalogación o descripción bibliográfica) + análisis del contenido (clasificación e indexación).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Etapas de la descripción bibliográfica",
+            "reverso": "1) Examen del documento; 2) exploración del recurso; 3) decidir el nivel de catalogación; 4) describir según la normativa (ISBD, RDA, RCE, criterios locales).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Control de autoridades: para qué sirve",
+            "reverso": "Resolver homonimias (Víctor Hugo padre o hijo) y agrupar una misma entrada que aparece de forma diferente (títulos del Quijote).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo de fichas → OPAC",
+            "reverso": "Fichas desde el s. XVIII hasta finales del XX. Limitaciones: carácter inventarial, pocos puntos de acceso, falta de interconexión y difusión limitada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "8 ventajas de la catalogación automatizada",
+            "reverso": "Información más estructurada, interoperabilidad, búsquedas simples o avanzadas, disponibilidad de fondos, rápida actualización, mayor impacto, posicionamiento y acceso permanente.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Normas nacionales de normalización",
+            "reverso": "UNE (España), NF (Francia), DIN (Alemania), BS (Reino Unido), NISO/ANSI (EE. UU.). Internacional: ISO.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Normas según su aplicación",
+            "reverso": "Descripción: ISBD, RDA, MARC. Autoridades y puntos de acceso: GARR, SGARE, FRAD, FRSAD, VIAF. Identificación de recursos: ISBN, ISSN.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Paul Olet y Henri La Fontaine",
+            "reverso": "Pioneros de la normalización a finales del s. XIX; concibieron el Repertorio Bibliográfico Universal (RBU). Nota: el manual dice «Olet»; el nombre correcto es Paul Otlet.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Hitos previos a la ISBD",
+            "reverso": "FIAB en Zagreb (1954); Principios de París (1961); Reunión de Expertos en Catalogación en Copenhague (1969), a instancias de la IFLA.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Cronología de la ISBD",
+            "reverso": "ISBD(M) 1971; ISBD(G) 1977; ISBD(CR) 2004; ISBD consolidada 2007; Área 0, 2011.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "ISBD especializadas",
+            "reverso": "(S) seriadas; (CM) cartográfico impreso; (NBM) material no impreso; (PM) música impresa; (A) monografías antiguas; (CF) archivos de ordenador; (CR) recursos continuos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Objetivos de la ISBD",
+            "reverso": "Principal: comunicación internacional de la información bibliográfica. Además: intercambio de descripciones, interpretación entre países y conversión a formato legible por ordenador.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Las 9 áreas de la ISBD",
+            "reverso": "0 forma del contenido y tipo de medio; 1 título y mención de responsabilidad; 2 edición; 3 datos específicos; 4 publicación; 5 descripción física; 6 serie; 7 notas; 8 identificador del recurso.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Regla general de puntuación ISBD",
+            "reverso": "Signos precedidos y seguidos de espacio, salvo punto y coma (solo seguidos) y guion (sin espacios). Áreas separadas en ficha por punto y raya (. —).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Área 0: elementos y puntuación",
+            "reverso": "Forma del contenido; calificación del contenido ( ); tipo de medio precedido de «:». Ej.: Texto (visual) : sin mediación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Área 1: puntuación",
+            "reverso": "Subtítulo «:»; título paralelo «=»; título dependiente «.» o «,»; DGM entre [ ] (opcional, según el manual); mención de responsabilidad «/» al final.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Área 2 (edición): puntuación",
+            "reverso": "Mención de responsabilidad de la edición «/»; mención de edición adicional «,». Número arábigo ordinal y abreviaturas (2ª ed.).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Área 3 (datos específicos)",
+            "reverso": "No se usa en monografías; en seriadas = numeración; en cartografía = datos matemáticos o de escala.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Área 4 (publicación): puntuación",
+            "reverso": "Varios lugares «;»; editor «:»; fecha «,»; fabricación entre ( ) si faltan los datos de publicación. Sin fecha: [ca. 1782], [1895?], [196-?].",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Área 5 (descripción física): puntuación",
+            "reverso": "Extensión (325 p.); otras características «:» (il.); dimensiones «;» (27 cm); material anejo «+» (+ 1 cd-audio).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Área 6 (serie): puntuación",
+            "reverso": "Entre ( ) en fichas; número «;»; subserie «.»; responsabilidad «/»; ISSN «,». Ej.: (Odres nuevos ; 115).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Fuentes principales de información por área",
+            "reverso": "0 y 5-6: el documento/publicación en sí; 1: portada; 2 y 4: portada, preliminares y colofón; 7 y 8: cualquier fuente.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "RCE: cronología",
+            "reverso": "1985 dos volúmenes (monografías / materiales especiales); 1995 un volumen refundido; 1999 última edición revisada.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "RCE: estructura",
+            "reverso": "17 capítulos, 9 apéndices y 1 índice analítico. Cap. 1 reglas generales; 2-12 clases de materiales; 14 puntos de acceso; 15 forma del encabezamiento; 16 títulos uniformes; 17 referencias.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catalogación analítica",
+            "reverso": "Descripción de una parte de una obra: capítulo de una monografía, artículo de una publicación seriada o número monográfico.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Puntos de acceso según las RCE",
+            "reverso": "Principal: autor personal, entidad o título. Secundarios: personas, entidades, autor-título, título y serie.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "RDA (qué es)",
+            "reverso": "Resource Description and Access: código publicado en 2010 que sustituye a las AACR2; centrado en el entorno digital y basado en FRBR, FRAD y FRSAD.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "JSC (Joint Steering Committee for the Development of RDA)",
+            "reverso": "Mantiene la RDA: LC, ALA, Australian Committee on Cataloguing, British Library, Canadian Committee on Cataloguing, CILIP y Biblioteca Nacional de Alemania.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Grupos de entidades FRBR",
+            "reverso": "G1 recursos: obra, expresión, manifestación, ítem. G2 creadores: persona, familia, entidad corporativa. G3 materias: concepto, objeto, acontecimiento, lugar (y entidades G1 y G2).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Obra / expresión / manifestación / ítem",
+            "reverso": "Obra: creación abstracta. Expresión: su realización (texto, sonido, braille…). Manifestación: materialización física. Ítem: un ejemplar.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Tareas del usuario (RDA 0.0)",
+            "reverso": "Encontrar, identificar, aclarar y comprender las entidades que corresponden a su criterio de búsqueda.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Estructura de la RDA (según el manual)",
+            "reverso": "10 secciones (1-4 atributos, 5-10 relaciones), 37 capítulos, 12 apéndices y 1 glosario. Nota: el RDA Toolkit se reestructuró en 2020.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Terminología ISBD/RCE → RDA",
+            "reverso": "Encabezamiento → punto de acceso autorizado; título uniforme → título preferido; fuente principal → fuente preferida; autor → creador; designación específica → soporte; véase → punto de acceso variante; colección → compilación.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Diferencias de descripción RDA vs ISBD",
+            "reverso": "«Tome lo que ve, acepte lo que recibe»; sin corchetes para datos del recurso; solo abreviaturas del recurso; responsabilidad completa; DGM → tipo de contenido, medio y soporte.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Diferencias de puntos de acceso en RDA",
+            "reverso": "Desaparece la regla de tres (primer autor); familias como autoras; persona ampliada (personajes, animales, dioses); todos los seudónimos; tratados por su título; entidades católicas bajo «Iglesia Católica».",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "MARC: origen",
+            "reverso": "LC y British Library. MARC I 1966 (16 bibliotecas); MARC II 1967; LC MARC II enero 1968 y BNB MARC II junio 1968.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Normas de la estructura MARC",
+            "reverso": "ANSI Z39.2 (1971) e ISO 2709 (1973; revisada 1981, 1996 y 2008): cabecera, directorio y zona de campos.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Familias MARC a finales del s. XX",
+            "reverso": "USMARC, UKMARC y UNIMARC. USMARC + CANMARC → MARC 21 (1987 según el manual; hoy se data en 1997-1999).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Partes del registro MARC",
+            "reverso": "Cabecera o leader (24 posiciones fijas); directorio (índice automático de etiquetas); campos de datos: de control 00X y variables 01X-8XX.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Grupos de etiquetas MARC 21",
+            "reverso": "0XX control; 1XX autor principal; 2XX títulos, edición, publicación; 3XX descripción física; 4XX serie; 5XX notas; 6XX materia; 7XX secundarios autor/título; 8XX secundarios de serie; 9XX local.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Etiqueta 245 e indicadores",
+            "reverso": "245 título propiamente dicho. Ind. 1: punto de acceso adicional al título (0 no, 1 sí). Ind. 2: caracteres que no alfabetizan (0-9).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "260 ##$aMadrid :$bAriel,$c1987",
+            "reverso": "260 área de publicación; # sin indicadores; $a lugar; $b editorial; $c fecha.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Los cinco formatos MARC 21",
+            "reverso": "Datos bibliográficos, de autoridad, de existencias, de clasificación y de la comunidad.",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "anverso": "Norma frente a estándar",
+            "reverso": "Se describe con una norma (ISBD, RDA) y se transcribe con un estándar (MARC 21, Dublin Core, XML).",
+            "referencia": "Manual MAD, Tema 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Preguntas del tema"
         }
     ],
     "articulos": [
