@@ -28632,6 +28632,496 @@
             "referencia": "Test MAD nº 19, pregunta 35",
             "bloque": "Tema 19 (MAD). Tecnologías e innovación en las bibliotecas del siglo XXI",
             "tema": "Tema 19 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La gestión del Registro de Bienes de Interés Cultural corresponde a:",
+            "opciones": [
+                "La Subdirección General del Instituto del Patrimonio Cultural de España",
+                "La Dirección General de Patrimonio Cultural y Bellas Artes",
+                "La Subdirección General de los Museos Estatales",
+                "La Subdirección General de Protección de Bienes de Interés Cultural"
+            ],
+            "correcta": 1,
+            "explicacion": "La DG de Patrimonio Cultural y Bellas Artes. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 1",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los órganos consultivos de la Biblioteca Nacional son:",
+            "opciones": [
+                "El Consejo de Dirección y el Comité Científico",
+                "El Real Patronato y la Comisión Permanente",
+                "La Comisión Permanente y el Consejo de Dirección",
+                "El Consejo Asesor y la Comisión Permanente"
+            ],
+            "correcta": 0,
+            "explicacion": "Consultivos: Consejo de Dirección y Comité Científico (Ley 1/2015). Rectores: Presidencia, Real Patronato y Dirección. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 2",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El Reglamento de Bibliotecas Públicas del Estado y del Sistema Español de Bibliotecas se aprobó por:",
+            "opciones": [
+                "Real Decreto 587/1988",
+                "Real Decreto 584/1990",
+                "Real Decreto 582/1989",
+                "Real Decreto 581/1988"
+            ],
+            "correcta": 2,
+            "explicacion": "RD 582/1989, de 19 de mayo. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 3",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, la Subdirección General de Coordinación Bibliotecaria depende de:",
+            "opciones": [
+                "La Dirección General del Libro y Fomento de la Lectura",
+                "La Secretaría de Estado de Educación y Cultura",
+                "La Subsecretaría de Educación, Cultura y Deporte",
+                "La Secretaría de Estado de Cultura y Universidades"
+            ],
+            "correcta": 0,
+            "explicacion": "DG del Libro y Fomento de la Lectura (estructura del Ministerio de Cultura en la edición del manual). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 4",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El Patrimonio Histórico Español está regulado por:",
+            "opciones": [
+                "Ley 13/1985 y Real Decreto 111/1986",
+                "Ley 16/1985 y Real Decreto 111/1985",
+                "Ley 13/1985 y Real Decreto 111/1985",
+                "Ley 16/1985 y Real Decreto 111/1986"
+            ],
+            "correcta": 3,
+            "explicacion": "Ley 16/1985, de 25 de junio, y su desarrollo parcial, RD 111/1986. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 5",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Por qué normas se rige la Biblioteca Nacional de España?",
+            "opciones": [
+                "Ley 1/2015 y Real Decreto 640/2016",
+                "Orden 1581/1991 y Ley 16/2007",
+                "Real Decreto 1584/1990 y Ley 3/2007",
+                "Orden 1583/1990 y Real Decreto 1581/1991"
+            ],
+            "correcta": 0,
+            "explicacion": "Ley 1/2015, reguladora de la BNE, y su Estatuto (RD 640/2016). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 6",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, la Subdirección General de Cooperación Cultural con las Comunidades Autónomas depende de:",
+            "opciones": [
+                "La Dirección General de Industrias Culturales, Propiedad Intelectual y Cooperación",
+                "La Secretaría de Estado de Cultura",
+                "La Dirección General de Cooperación y Comunicación Cultural",
+                "La Dirección General de Acción y Promoción Cultural"
+            ],
+            "correcta": 0,
+            "explicacion": "DG de Industrias Culturales, Propiedad Intelectual y Cooperación. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 7",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las comunidades autónomas asumieron sus competencias en materia de bibliotecas en:",
+            "opciones": [
+                "Dos etapas: promulgación de los estatutos y autonomía",
+                "Tres etapas: preautonómica, promulgación de los estatutos y autonomía",
+                "Dos etapas: preautonómica y autonomía",
+                "Tres etapas: preautonómica, elaboración de los estatutos y autonomía"
+            ],
+            "correcta": 1,
+            "explicacion": "Preautonómica, promulgación de los estatutos y autonomía. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 8",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La recogida de datos para el Catálogo Colectivo del Patrimonio Bibliográfico corresponde a:",
+            "opciones": [
+                "La Subdirección General del Instituto del Patrimonio Cultural de España",
+                "Solo las consejerías de cultura de las comunidades autónomas",
+                "La Subdirección General de Protección del Patrimonio Histórico",
+                "Las comunidades autónomas y el Ministerio de Cultura"
+            ],
+            "correcta": 3,
+            "explicacion": "Es una tarea cooperativa entre el Ministerio y las comunidades autónomas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 9",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El Patrimonio Histórico de Andalucía está regulado por:",
+            "opciones": [
+                "Ley 14/2007",
+                "Ley 3/2007",
+                "Ley 5/2007",
+                "Ley 2/2007"
+            ],
+            "correcta": 0,
+            "explicacion": "Ley 14/2007, de Patrimonio Histórico de Andalucía. (Pregunta propia de la edición andaluza del manual.) (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 10",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los órganos rectores de la Biblioteca Nacional son:",
+            "opciones": [
+                "El Presidente, el Comité Científico y el Real Patronato",
+                "El Director General y el Consejo de Dirección",
+                "La Presidencia, el Real Patronato y la Dirección",
+                "El Real Patronato, el Consejo de Dirección y el Director General"
+            ],
+            "correcta": 2,
+            "explicacion": "Rectores: Presidencia, Real Patronato y Dirección. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 11",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, la elaboración de programas y planes para el fomento y mejora de las bibliotecas es competencia de:",
+            "opciones": [
+                "La Subdirección General de Acción y Promoción Cultural",
+                "La Dirección General del Libro y Fomento de la Lectura",
+                "La Secretaría de Estado de Cultura",
+                "La Dirección General del Libro, Archivos y Bibliotecas"
+            ],
+            "correcta": 1,
+            "explicacion": "DG del Libro y Fomento de la Lectura. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 12",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los sistemas bibliotecarios autonómicos se caracterizan por:",
+            "opciones": [
+                "Reproducir el sistema nacional a escala autonómica",
+                "No tener ninguna característica común que los distinga",
+                "Seguir el modelo de Cataluña, pionera en este aspecto",
+                "Haberse creado todos por normas con rango de ley"
+            ],
+            "correcta": 0,
+            "explicacion": "Reproducen el esquema del sistema nacional a escala autonómica. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 13",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según la Ley del Patrimonio Histórico Español, se presume que existen más de tres ejemplares de las obras editadas a partir de:",
+            "opciones": [
+                "1951",
+                "1954",
+                "1956",
+                "1958"
+            ],
+            "correcta": 3,
+            "explicacion": "Art. 50 LPHE: se presume para las obras editadas desde 1958. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 14",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las bibliotecas de Cataluña están reguladas por:",
+            "opciones": [
+                "Ley 3/1981",
+                "Ley 4/1993",
+                "Ley 5/1989",
+                "Ley 6/1994"
+            ],
+            "correcta": 1,
+            "explicacion": "Ley 4/1993, del sistema bibliotecario de Cataluña. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 15",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué bibliotecas NO forman parte del Sistema Español de Bibliotecas?",
+            "opciones": [
+                "Las de las Reales Academias",
+                "Las de los ministerios",
+                "Las de las universidades públicas",
+                "Las escolares"
+            ],
+            "correcta": 3,
+            "explicacion": "Respuesta oficial: las escolares.",
+            "referencia": "Test MAD nº 27, pregunta 16",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, la estructura orgánica básica del Ministerio de Cultura y Deporte se desarrolló por:",
+            "opciones": [
+                "Real Decreto 509/2020",
+                "Real Decreto 691/2020",
+                "Real Decreto 1331/2021",
+                "Real Decreto 691/2023"
+            ],
+            "correcta": 0,
+            "explicacion": "RD 509/2020 (estructura vigente en la edición del manual; se modifica a menudo). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 17",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La representación institucional de la Biblioteca Nacional la ostenta:",
+            "opciones": [
+                "El presidente",
+                "Los presidentes de honor del Real Patronato, SS. MM. los Reyes",
+                "El presidente del Real Patronato",
+                "El director del Real Patronato"
+            ],
+            "correcta": 2,
+            "explicacion": "El presidente del Real Patronato. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 18",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los poseedores de bienes del Patrimonio Bibliográfico están obligados a:",
+            "opciones": [
+                "Permitir su uso a investigadores acreditados",
+                "Facilitar una reproducción a los organismos públicos que la pidan",
+                "Cederlos para exposiciones de bibliotecas y museos",
+                "Conservarlos, protegerlos y destinarlos a un uso que no impida su conservación"
+            ],
+            "correcta": 3,
+            "explicacion": "Art. 52 LPHE: conservarlos, protegerlos y usarlos sin perjudicar su conservación. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 19",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La Ley del Patrimonio Histórico Español fue desarrollada por:",
+            "opciones": [
+                "Real Decreto 111/1986",
+                "Real Decreto 111/1985",
+                "Real Decreto 111/1984",
+                "Real Decreto 111/1987"
+            ],
+            "correcta": 0,
+            "explicacion": "RD 111/1986, de desarrollo parcial de la Ley 16/1985. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 20",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las funciones relativas al Patrimonio Histórico Español, los museos estatales y la promoción de la creación artística corresponden a:",
+            "opciones": [
+                "La Dirección General de Cooperación y Comunicación Cultural",
+                "La Dirección General de Patrimonio Cultural y Bellas Artes",
+                "La Dirección General de Bellas Artes y Museos",
+                "La Dirección General de Protección del Patrimonio Histórico"
+            ],
+            "correcta": 1,
+            "explicacion": "DG de Patrimonio Cultural y Bellas Artes. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 21",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, la promoción de la lectura y del libro corresponde a:",
+            "opciones": [
+                "La Dirección General de Promoción del Libro y la Lectura",
+                "La Subdirección General de Promoción del Libro y las Letras Españolas",
+                "La Dirección General del Libro y Fomento de la Lectura",
+                "La Dirección General de Promoción del Libro, la Lectura y las Letras Españolas"
+            ],
+            "correcta": 2,
+            "explicacion": "DG del Libro y Fomento de la Lectura. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 22",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El Reglamento de Museos de Titularidad Estatal y del Sistema Español de Museos se aprobó por:",
+            "opciones": [
+                "Real Decreto 620/1987",
+                "Ley 16/1985",
+                "Real Decreto 1680/1991",
+                "Ley 36/1994"
+            ],
+            "correcta": 0,
+            "explicacion": "RD 620/1987. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 23",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El Patrimonio Bibliográfico se regula en el título VII de la Ley del Patrimonio Histórico Español. En lo que ese título no contempla se aplica:",
+            "opciones": [
+                "El Real Decreto 111/1986, de desarrollo parcial de la ley",
+                "El Real Decreto 1680/1991",
+                "Las disposiciones del título III de la ley",
+                "Las disposiciones generales de la ley"
+            ],
+            "correcta": 3,
+            "explicacion": "Las disposiciones generales de la propia ley. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 24",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué impuesto NO puede pagarse entregando bienes del Patrimonio Histórico?",
+            "opciones": [
+                "El impuesto de sucesiones",
+                "El IVA",
+                "El impuesto sobre el patrimonio",
+                "El IRPF"
+            ],
+            "correcta": 1,
+            "explicacion": "El pago en especie con bienes del PHE se admite en sucesiones, patrimonio e IRPF, no en el IVA. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 25",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Forman parte del Patrimonio Bibliográfico Español los ejemplares de películas cinematográficas de los que no conste la existencia de al menos:",
+            "opciones": [
+                "Dos ejemplares",
+                "Tres ejemplares",
+                "Un ejemplar",
+                "Cuatro ejemplares"
+            ],
+            "correcta": 2,
+            "explicacion": "Art. 50 LPHE: un ejemplar para películas, discos, fotografías…; tres para obras impresas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 26",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La función de impulso y supervisión de la estrategia y líneas de actuación de la Biblioteca Nacional corresponde:",
+            "opciones": [
+                "Al Consejo de Dirección",
+                "A la Comisión Permanente",
+                "Al Real Patronato",
+                "A la Comisión Asesora"
+            ],
+            "correcta": 1,
+            "explicacion": "A la Comisión Permanente del Real Patronato. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 27",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La Junta de Calificación, Valoración y Exportación de Bienes del Patrimonio Histórico Español está adscrita a:",
+            "opciones": [
+                "La Subdirección General de Protección del Patrimonio Histórico",
+                "La Secretaría General Técnica",
+                "La Subdirección General del Instituto del Patrimonio Cultural",
+                "La Dirección General de Patrimonio Cultural y Bellas Artes"
+            ],
+            "correcta": 3,
+            "explicacion": "Adscrita a la DG de Patrimonio Cultural y Bellas Artes. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 28",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El Reglamento del Sistema Bibliotecario de Andalucía se aprobó por:",
+            "opciones": [
+                "Real Decreto 197/2000",
+                "Decreto 230/1999",
+                "Decreto 179/2000",
+                "Real Decreto 230/1999"
+            ],
+            "correcta": 1,
+            "explicacion": "Decreto 230/1999 de la Junta de Andalucía. (Pregunta propia de la edición andaluza.) (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 29",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La gestión de los museos de titularidad estatal corresponde a la:",
+            "opciones": [
+                "Subdirección General de Protección del Patrimonio Histórico",
+                "Dirección General de Museos Estatales",
+                "Dirección General de Patrimonio Cultural y Bellas Artes",
+                "Secretaría de Estado de Cultura"
+            ],
+            "correcta": 2,
+            "explicacion": "DG de Patrimonio Cultural y Bellas Artes (el manual la abrevia «DG de Bellas Artes»). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 30",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La organización bibliotecaria en España se define por:",
+            "opciones": [
+                "El Estado de las autonomías, con dos niveles paralelos: el nacional y el autonómico",
+                "Tres niveles administrativos: nacional, autonómico y provincial",
+                "Dos niveles, el nacional y el autonómico, este último dependiente jerárquicamente del primero",
+                "Un sistema nacional del que dependen las estructuras autonómicas y provinciales"
+            ],
+            "correcta": 0,
+            "explicacion": "Dos niveles paralelos, sin dependencia jerárquica. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 31",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, la dotación de las bibliotecas de titularidad estatal corresponde a:",
+            "opciones": [
+                "La Subdirección General de Coordinación Bibliotecaria",
+                "La Subdirección General del Instituto del Patrimonio Cultural",
+                "La Dirección General de Industrias Culturales y del Libro",
+                "La Dirección General del Libro y Fomento de la Lectura"
+            ],
+            "correcta": 3,
+            "explicacion": "DG del Libro y Fomento de la Lectura. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 32",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La Biblioteca Nacional de España es:",
+            "opciones": [
+                "Un organismo autónomo adscrito al Ministerio de Cultura y cabecera del sistema bibliotecario español",
+                "Un organismo dependiente de la Subdirección General de Coordinación Bibliotecaria",
+                "Un organismo dependiente de la Secretaría de Estado de Cultura",
+                "Un organismo dependiente de la DG de Patrimonio Cultural y Bellas Artes"
+            ],
+            "correcta": 0,
+            "explicacion": "Organismo autónomo, cabecera del sistema bibliotecario español (el manual dice «dependiente del MECD»). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 33",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "En Andalucía, el depósito legal está regulado por:",
+            "opciones": [
+                "Ley 16/2003",
+                "Decreto 97/2000",
+                "Ley 7/2011",
+                "Decreto 161/2014"
+            ],
+            "correcta": 3,
+            "explicacion": "Decreto 161/2014. (Pregunta propia de la edición andaluza.) (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 27, pregunta 34",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El Sistema Español de Bibliotecas está regulado por:",
+            "opciones": [
+                "Real Decreto 582/1982",
+                "Ley 16/1985 y Real Decreto 582/1989",
+                "Ley 1/2015",
+                "Ley 1/2015 y Real Decreto 640/2016"
+            ],
+            "correcta": 1,
+            "explicacion": "Respuesta oficial: LPHE y RD 582/1989. (Hoy también la Ley 10/2007 de la lectura, del libro y de las bibliotecas.)",
+            "referencia": "Test MAD nº 27, pregunta 35",
+            "bloque": "Tema 27 (MAD). Legislación bibliotecaria y del patrimonio bibliográfico español",
+            "tema": "Tema 27 · Test del manual (con soluciones)"
         }
     ],
     "fichas": [
