@@ -29612,6 +29612,1623 @@
             "referencia": "Test MAD nº 10, pregunta 35",
             "bloque": "Tema 10 (MAD). El edificio bibliotecario: planificación, organización y mobiliario",
             "tema": "Tema 10 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La palabra «catálogo» procede, según el manual:",
+            "opciones": [
+                "Del latín «catalogus» y, a su vez, del griego «katálogos» (libro, registro)",
+                "Del latín «catalogare» (enumerar), sin antecedente griego conocido",
+                "Del árabe «qatalug» (inventario), a través del latín medieval",
+                "Del griego «kalós logos» (buena lista), a través del francés"
+            ],
+            "correcta": 0,
+            "explicacion": "El término viene del latín catalogus, que procede del griego katálogos, «libro, registro».",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Quién define el catálogo como el «conjunto de descripciones, de acuerdo con unas normas, de los asientos bibliográficos de los libros y documentos de una biblioteca, con la indicación del lugar que ocupa en ella»?",
+            "opciones": [
+                "Buonocore",
+                "Martínez de Sousa",
+                "La American Library Association",
+                "Carmen Ramos Fajardo"
+            ],
+            "correcta": 1,
+            "explicacion": "Es la definición de Martínez de Sousa, una de las tres que recoge el manual (junto a Buonocore y la ALA).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según Buonocore, la misión del catálogo es doble:",
+            "opciones": [
+                "Describir el contenido de los libros y clasificarlos por materias",
+                "Registrar las adquisiciones y controlar el préstamo de los ejemplares",
+                "Identificar los libros por los datos del asiento y localizar su ubicación en el espacio",
+                "Conservar la memoria de la colección y difundirla fuera de la biblioteca"
+            ],
+            "correcta": 2,
+            "explicacion": "Para Buonocore el catálogo identifica los libros por los datos del asiento y localiza su ubicación mediante números clasificadores (signatura).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué entidad define el catálogo como «fichero de registros bibliográficos, creado conforme a principios específicos y uniformes de realización y siguiendo las directrices de una lista oficial de encabezamientos»?",
+            "opciones": [
+                "La IFLA",
+                "La Library of Congress",
+                "El OCLC",
+                "La ALA (American Library Association)"
+            ],
+            "correcta": 3,
+            "explicacion": "Es la definición de la ALA, la American Library Association.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el catálogo, los puntos de acceso son el elemento que:",
+            "opciones": [
+                "Permite localizar los asientos bibliográficos",
+                "Describe física y temáticamente el documento",
+                "Indica la ubicación física del documento",
+                "Registra la fecha de ingreso del documento"
+            ],
+            "correcta": 0,
+            "explicacion": "El asiento describe el documento, los puntos de acceso permiten localizar los asientos y la signatura indica la ubicación.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el asiento bibliográfico es el elemento del catálogo que:",
+            "opciones": [
+                "Permite localizar los demás asientos",
+                "Describe el documento",
+                "Indica el estante donde está el documento",
+                "Relaciona el documento con su materia"
+            ],
+            "correcta": 1,
+            "explicacion": "El asiento bibliográfico describe el documento; los puntos de acceso localizan asientos y la signatura indica la ubicación.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "A diferencia del catálogo, las bibliografías:",
+            "opciones": [
+                "Carecen de puntos de acceso y solo ofrecen la descripción física de los documentos",
+                "Indican siempre la biblioteca y la signatura donde se encuentra cada documento",
+                "Dan descripciones con puntos de acceso, pero sin relacionarlas con ejemplares concretos en lugares determinados",
+                "Recogen solo documentos de una biblioteca, ordenados por su signatura topográfica"
+            ],
+            "correcta": 2,
+            "explicacion": "Las bibliografías describen documentos con sus puntos de acceso, pero no los ligan a ejemplares concretos depositados en un lugar.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La función del catálogo de «ayudar en la elección de un documento» se refiere a elegirlo:",
+            "opciones": [
+                "Por su precio de adquisición o por su estado de conservación",
+                "Por su formato físico o por el idioma en que está escrito",
+                "Por el número de veces que ha sido prestado anteriormente",
+                "Por su edición o por sus características literarias o de actualidad"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual dice que el catálogo ayuda a elegir un documento por su edición o por sus características literarias o de actualidad.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, por sus funciones los catálogos son:",
+            "opciones": [
+                "Los intermediarios entre la colección de la biblioteca y sus usuarios",
+                "Los instrumentos de control económico de las adquisiciones",
+                "Los registros administrativos del préstamo de documentos",
+                "Las herramientas de conservación del patrimonio bibliográfico"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual concluye que los catálogos son los intermediarios entre la colección de la biblioteca y sus usuarios.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el recuadro «Recuerda que…» del manual, el catálogo más antiguo conocido es el de:",
+            "opciones": [
+                "La biblioteca de Alejandría",
+                "La biblioteca de Asurbanipal",
+                "La biblioteca de Pérgamo",
+                "La biblioteca de Constantino el Grande"
+            ],
+            "correcta": 1,
+            "explicacion": "Nota: el manual dice en el texto que el más antiguo es una tablilla sumeria de hacia el 2000 a. C. y en el recuadro «Recuerda que…» que es el de Asurbanipal; si preguntan por el recuadro, Asurbanipal.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Además de la tablilla sumeria, el manual cita como otro ejemplo mesopotámico de catálogo:",
+            "opciones": [
+                "Los rollos de papiro de la biblioteca de Alejandría",
+                "Los pergaminos de la biblioteca de Pérgamo",
+                "Los registros de las tablillas de la biblioteca de Asurbanipal",
+                "Los códices de la biblioteca de Constantino"
+            ],
+            "correcta": 2,
+            "explicacion": "El otro ejemplo mesopotámico son las tablillas de la biblioteca de Asurbanipal.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Gracias a los catálogos de la biblioteca de Alejandría:",
+            "opciones": [
+                "Sabemos cómo eran los catálogos del antiguo Egipto faraónico",
+                "Conocemos el primer catálogo diccionario de la historia",
+                "Sabemos que se usaron por primera vez fichas de arcilla",
+                "Conocemos la existencia de obras hoy perdidas"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual dice que a través de los catálogos de Alejandría nos ha llegado el conocimiento de obras hoy perdidas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿De qué gran biblioteca griega dice el manual que no sabemos demasiado sobre sus catálogos?",
+            "opciones": [
+                "La de Pérgamo",
+                "La de Alejandría",
+                "La de Asurbanipal",
+                "La de Constantino el Grande"
+            ],
+            "correcta": 0,
+            "explicacion": "De Pérgamo sabemos poco; de Alejandría, en cambio, sí tenemos noticias de sus catálogos.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Sobre los catálogos de las bibliotecas romanas y bizantinas, el manual indica que:",
+            "opciones": [
+                "Se conservan íntegros y fueron el modelo de los catálogos medievales",
+                "Apenas sabemos nada, aunque conocemos grandes bibliotecas como la de Constantino el Grande",
+                "Fueron los primeros en ordenar las obras por autores y por materias",
+                "Se redactaron en tablillas de arcilla, como los mesopotámicos"
+            ],
+            "correcta": 1,
+            "explicacion": "De sus catálogos apenas sabemos nada, aunque sí conocemos grandes bibliotecas, como la de Constantino el Grande.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la Edad Media, los volúmenes de las bibliotecas se recogían en:",
+            "opciones": [
+                "Catálogos impresos distribuidos entre los monasterios",
+                "Tablillas enceradas ordenadas por materias",
+                "Índices o inventarios que adoptaban la forma del códice",
+                "Fichas sueltas guardadas en cajas de madera"
+            ],
+            "correcta": 2,
+            "explicacion": "Los fondos, escasos, se recogían en índices o inventarios con forma de códice.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la invención de la imprenta:",
+            "opciones": [
+                "Supuso la aparición inmediata del catálogo en fichas",
+                "Hizo desaparecer los catálogos manuscritos en pocos años",
+                "Introdujo la ordenación sistemática por materias",
+                "No cambió esencialmente la estructura de los catálogos"
+            ],
+            "correcta": 3,
+            "explicacion": "Los catálogos impresos se asemejaban a los manuscritos; lo que cambió fue la evolución de bibliotecas y bibliotecarios por el aumento de libros.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En 1627, Gabriel Naudé recomendaba en «Advis pour dresser une bibliothèque»:",
+            "opciones": [
+                "Un catálogo dividido en dos secciones: una de autores y otra de materias",
+                "Un catálogo único ordenado por la signatura topográfica",
+                "Un catálogo en fichas de cartulina normalizadas",
+                "Un catálogo colectivo de las bibliotecas de París"
+            ],
+            "correcta": 0,
+            "explicacion": "Naudé proponía dos secciones (autores y materias) frente a la tradicional, que solo tenía autores.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema",
+            "truco": "Naudé: «N» de dos secciones = autores + materias"
+        },
+        {
+            "pregunta": "¿En qué año publicó Gabriel Naudé su «Advis pour dresser une bibliothèque»?",
+            "opciones": [
+                "1775",
+                "1627",
+                "1602",
+                "1684"
+            ],
+            "correcta": 1,
+            "explicacion": "El manual sitúa la obra de Naudé en 1627.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La biblioteca Bodleiana de Oxford recibe su nombre en honor de:",
+            "opciones": [
+                "El primer bibliotecario que catalogó sus fondos",
+                "El fundador de la Universidad de Oxford",
+                "Thomas Bodley, el mecenas que permitió su creación",
+                "El rey que la inauguró a principios del siglo XVII"
+            ],
+            "correcta": 2,
+            "explicacion": "Se llama Bodleiana por Thomas Bodley, el mecenas que hizo posible su creación.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el catálogo de la biblioteca Bodleiana apareció:",
+            "opciones": [
+                "A principios del siglo XVI",
+                "A mediados del siglo XVIII",
+                "A comienzos del siglo XIX",
+                "A finales del siglo XVII"
+            ],
+            "correcta": 3,
+            "explicacion": "La biblioteca se inauguró a principios del XVII y su catálogo apareció a finales de ese mismo siglo.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El catálogo en fichas nace en:",
+            "opciones": [
+                "El siglo XVIII",
+                "El siglo XVI",
+                "El siglo XVII",
+                "El siglo XIX"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual sitúa su nacimiento en el siglo XVIII, con el índice de la Academia de Ciencias de París (1775).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El índice general de las publicaciones de la Academia de Ciencias de París, considerado el primer catálogo en fichas, se editó en:",
+            "opciones": [
+                "1627",
+                "1775",
+                "1700",
+                "1801"
+            ],
+            "correcta": 1,
+            "explicacion": "Fue editado en 1775 por François Rozier.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "François Rozier utilizó naipes para su índice porque:",
+            "opciones": [
+                "Eran el único papel resistente disponible en la Francia de la época",
+                "Permitían perforarlos para introducir una varilla de seguridad",
+                "Eran asequibles, de tamaño adecuado y normalizado y, sobre todo, intercambiables",
+                "Podían imprimirse en serie en la imprenta de la Academia"
+            ],
+            "correcta": 2,
+            "explicacion": "Los naipes eran baratos, de tamaño relativamente normalizado y, sobre todo, intercambiables.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El catálogo en fichas llegó a Estados Unidos de la mano de:",
+            "opciones": [
+                "Dewey",
+                "Naudé",
+                "Hildreth",
+                "Cutter"
+            ],
+            "correcta": 3,
+            "explicacion": "Se extendió por Francia en las primeras décadas del siglo XIX y llegó a EE. UU. gracias a Cutter.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "A mediados del siglo XX se recuperó el catálogo en forma de libro impreso debido a:",
+            "opciones": [
+                "Los problemas de espacio de los ficheros y la imposibilidad de difundirlos",
+                "La desaparición de los fabricantes de fichas normalizadas",
+                "La llegada de los primeros catálogos automatizados en línea",
+                "La obligación legal de publicar los fondos de las bibliotecas"
+            ],
+            "correcta": 0,
+            "explicacion": "Los ficheros de las grandes bibliotecas ocupaban mucho y eran ejemplares únicos; luego se usaron también las microfichas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los primeros intentos de conexión en línea a bases de datos catalográficas se realizaron:",
+            "opciones": [
+                "En Europa durante la década de los ochenta",
+                "En Estados Unidos durante la década de los sesenta",
+                "En Estados Unidos durante la década de los noventa",
+                "En Francia a finales de la década de los cincuenta"
+            ],
+            "correcta": 1,
+            "explicacion": "El manual sitúa los primeros intentos de conexión en línea en EE. UU. en los años sesenta.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los llamados «OPAC rígidos» eran los que:",
+            "opciones": [
+                "Solo podían consultarse desde un ordenador central",
+                "Impedían al usuario reservar o renovar préstamos",
+                "Reproducían la estructura conceptual del catálogo en fichas",
+                "Estaban diseñados exclusivamente para el entorno web"
+            ],
+            "correcta": 2,
+            "explicacion": "Los OPAC rígidos reproducían la estructura del catálogo en fichas, frente a las herramientas web actuales.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La división clásica de los catálogos por extensión, uso y función se debe a:",
+            "opciones": [
+                "Carmen Ramos Fajardo",
+                "Martínez de Sousa",
+                "Charles R. Hildreth",
+                "Carrión"
+            ],
+            "correcta": 3,
+            "explicacion": "Carrión agrupa los catálogos por su extensión, su uso y su función.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema",
+            "truco": "Carrión: E-U-F (Extensión, Uso, Función)"
+        },
+        {
+            "pregunta": "Según Carrión, por su extensión los catálogos se dividen en:",
+            "opciones": [
+                "Colectivos, generales y especiales",
+                "Públicos e internos",
+                "Alfabéticos, sistemáticos y topográficos",
+                "Convencionales y según necesidades"
+            ],
+            "correcta": 0,
+            "explicacion": "Por su extensión: colectivos, generales y especiales.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El catálogo que recoge todos los asientos bibliográficos de los documentos del fondo de una biblioteca es el catálogo:",
+            "opciones": [
+                "Colectivo",
+                "General",
+                "Especial",
+                "Diccionario"
+            ],
+            "correcta": 1,
+            "explicacion": "El general abarca todo el fondo de una biblioteca; el colectivo, el de varias.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Un catálogo de los incunables de una biblioteca es, según su extensión, un catálogo:",
+            "opciones": [
+                "General",
+                "Colectivo",
+                "Especial",
+                "Interno"
+            ],
+            "correcta": 2,
+            "explicacion": "Los especiales recogen una sola clase de material o fondos de determinadas características, como los incunables.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La elaboración de los catálogos colectivos suele plantearse:",
+            "opciones": [
+                "Para solucionar problemas catalográficos de cada biblioteca",
+                "Para sustituir los catálogos generales de cada biblioteca",
+                "Como instrumento interno de control del inventario",
+                "Como parte de un sistema de cooperación y planificación bibliotecaria"
+            ],
+            "correcta": 3,
+            "explicacion": "No suelen hacerse para resolver problemas catalográficos, sino dentro de la cooperación (préstamo interbibliotecario, adquisición cooperativa).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según Carrión, los catálogos públicos son los destinados a:",
+            "opciones": [
+                "Satisfacer las necesidades de información de los usuarios de la biblioteca",
+                "Recoger los fondos de las bibliotecas públicas de una región",
+                "Administrar la biblioteca y organizar el trabajo del bibliotecario",
+                "Difundir los fondos fuera de la biblioteca mediante publicaciones"
+            ],
+            "correcta": 0,
+            "explicacion": "Los públicos sirven a los usuarios; los internos, al trabajo del bibliotecario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El catálogo que permite saber cuántas obras hay de un autor o qué ediciones posee una biblioteca de una obra es el:",
+            "opciones": [
+                "Alfabético de materias",
+                "Alfabético de autores y obras anónimas",
+                "Sistemático de materias",
+                "Topográfico"
+            ],
+            "correcta": 1,
+            "explicacion": "Es la función del catálogo alfabético de autores y obras anónimas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el catálogo alfabético de materias, los puntos de acceso:",
+            "opciones": [
+                "Reflejan la ubicación del libro en el estante",
+                "Reflejan el autor y el título del libro",
+                "Reflejan el contenido del libro",
+                "Reflejan la fecha de edición del libro"
+            ],
+            "correcta": 2,
+            "explicacion": "Sus puntos de acceso reflejan el contenido, para localizar las obras sobre una materia.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La diferencia entre el catálogo alfabético y el sistemático de materias es que:",
+            "opciones": [
+                "El alfabético agrupa las materias relacionadas y el sistemático las dispersa por números",
+                "El alfabético es de uso interno y el sistemático es de uso público",
+                "El alfabético recoge autores y el sistemático recoge solo títulos",
+                "El alfabético dispersa las materias relacionadas y el sistemático las agrupa con un sistema lógico"
+            ],
+            "correcta": 3,
+            "explicacion": "Ambos cumplen la misma función, pero el sistemático agrupa las materias según un sistema lógico que representa el conocimiento.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el catálogo sistemático, los símbolos que representan las materias se llaman:",
+            "opciones": [
+                "Notaciones",
+                "Signaturas",
+                "Descriptores",
+                "Encabezamientos"
+            ],
+            "correcta": 0,
+            "explicacion": "Son notaciones, que pueden ser alfabéticas, numéricas o mixtas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las notaciones de un catálogo sistemático pueden ser:",
+            "opciones": [
+                "Simples, compuestas o derivadas",
+                "Alfabéticas, numéricas o mixtas",
+                "Principales, secundarias o auxiliares",
+                "Topográficas, geográficas o cronológicas"
+            ],
+            "correcta": 1,
+            "explicacion": "Según estén formadas por letras, números o ambos, las notaciones son alfabéticas, numéricas o mixtas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el catálogo topográfico, el orden de los documentos en los estantes puede ser:",
+            "opciones": [
+                "Solo por orden alfabético de autores",
+                "Solo por la fecha de ingreso en la biblioteca",
+                "Por materias o por «numerus currens», entre otros",
+                "Por el nivel de uso de cada documento"
+            ],
+            "correcta": 2,
+            "explicacion": "El manual cita como ejemplos el orden por materias y el numerus currens.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Carmen Ramos Fajardo divide los catálogos en:",
+            "opciones": [
+                "Colectivos, generales y especiales",
+                "Públicos e internos",
+                "Manuales y automatizados",
+                "Convencionales y según las necesidades de los centros"
+            ],
+            "correcta": 3,
+            "explicacion": "Ramos Fajardo distingue los convencionales y los creados según las necesidades de los centros.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Para Carmen Ramos Fajardo, el catálogo diccionario es un catálogo:",
+            "opciones": [
+                "Convencional",
+                "Según las necesidades del centro",
+                "Especial",
+                "Interno"
+            ],
+            "correcta": 0,
+            "explicacion": "Está entre los convencionales, junto a los alfabéticos, el sistemático y el topográfico.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos es, para Carmen Ramos Fajardo, un catálogo «según las necesidades de los centros»?",
+            "opciones": [
+                "El catálogo alfabético de títulos",
+                "El catálogo geográfico",
+                "El catálogo sistemático de materias",
+                "El catálogo topográfico"
+            ],
+            "correcta": 1,
+            "explicacion": "Los catálogos según necesidades son: publicaciones periódicas, series, fondos especiales, geográfico y cronológico.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el catálogo de series, los asientos bibliográficos se ordenan:",
+            "opciones": [
+                "Por el autor principal de cada obra",
+                "Por el número de registro del ejemplar",
+                "Por el título de la serie",
+                "Por la fecha de publicación de la serie"
+            ],
+            "correcta": 2,
+            "explicacion": "El catálogo de series ordena los asientos por el título de la serie.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El catálogo que ordena los fondos divididos por continentes, países, etc., es el:",
+            "opciones": [
+                "Topográfico",
+                "Cronológico",
+                "Sistemático",
+                "Geográfico"
+            ],
+            "correcta": 3,
+            "explicacion": "No confundir: geográfico (continentes, países) y topográfico (orden en los estantes).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema",
+            "truco": "GEOgráfico = la Tierra; TOPOgráfico = el estante"
+        },
+        {
+            "pregunta": "El catálogo cronológico organiza los fondos según:",
+            "opciones": [
+                "La fecha de los documentos",
+                "La fecha de ingreso en la biblioteca",
+                "El orden de los estantes",
+                "El número de préstamos"
+            ],
+            "correcta": 0,
+            "explicacion": "Organiza los fondos según la fecha de los documentos.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El catálogo de publicaciones periódicas recoge, según Ramos Fajardo:",
+            "opciones": [
+                "Los artículos vaciados de las revistas de la biblioteca",
+                "Los títulos de las publicaciones periódicas recibidas en el centro",
+                "Las series monográficas ordenadas por su número",
+                "Las publicaciones oficiales del Estado y las comunidades"
+            ],
+            "correcta": 1,
+            "explicacion": "Recoge los títulos de las publicaciones periódicas recibidas en el centro.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las bibliotecas que no pueden destinar tantos recursos a la automatización son:",
+            "opciones": [
+                "Las grandes, como las universitarias o las nacionales",
+                "Las especializadas de los centros de investigación",
+                "Las pequeñas, como las municipales o las de instituciones culturales",
+                "Las de los grandes consorcios y redes cooperativas"
+            ],
+            "correcta": 2,
+            "explicacion": "Las grandes, como las universitarias, pueden destinar recursos de los que carecen las pequeñas, como las municipales.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La perforación de la parte inferior de las fichas sirve para:",
+            "opciones": [
+                "Ordenar las fichas por su signatura topográfica",
+                "Distinguir la ficha principal de las secundarias",
+                "Archivar las fichas retiradas del catálogo",
+                "Introducir una varilla transversal que impida su descolocación"
+            ],
+            "correcta": 3,
+            "explicacion": "La varilla transversal impide que las fichas se descoloquen.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos elementos forma parte de la estructura básica de la ficha según el manual?",
+            "opciones": [
+                "El registro de asientos secundarios",
+                "El precio de adquisición del libro",
+                "El resumen analítico del contenido",
+                "El historial de préstamos del ejemplar"
+            ],
+            "correcta": 0,
+            "explicacion": "La estructura básica es: encabezamiento, descripción bibliográfica, registro de asientos secundarios y signatura topográfica.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Además de la estructura básica, en la ficha es habitual consignar:",
+            "opciones": [
+                "El nombre del catalogador",
+                "El número de registro del libro",
+                "El precio del documento",
+                "La fecha del último préstamo"
+            ],
+            "correcta": 1,
+            "explicacion": "También aparecen las notaciones de la clasificación, los términos de indización y el número de registro.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Para un mismo documento, el catálogo en fichas cuenta con un juego de fichas compuesto por:",
+            "opciones": [
+                "La ficha de autor y la de inventario",
+                "La ficha topográfica y la de préstamo",
+                "La ficha principal y las secundarias",
+                "La ficha original y sus fotocopias"
+            ],
+            "correcta": 2,
+            "explicacion": "El juego lo forman la principal y las secundarias; cambiar la principal obliga a cambiar las secundarias.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La principal ventaja del catálogo en fichas frente a otros catálogos tradicionales es:",
+            "opciones": [
+                "El poco espacio que ocupa",
+                "La posibilidad de hacer copias",
+                "Su bajo coste en personal",
+                "La facilidad para actualizarlo"
+            ],
+            "correcta": 3,
+            "explicacion": "Basta retirar la varilla, intercalar la ficha y volver a colocar la varilla.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Entre los inconvenientes del catálogo en fichas, el manual señala que:",
+            "opciones": [
+                "Un cajetín solo puede ser usado por una persona a la vez",
+                "Queda desfasado en cuanto sale de la imprenta",
+                "Necesita aparatos lectores para ampliar la imagen",
+                "Requiere condiciones especiales de conservación"
+            ],
+            "correcta": 0,
+            "explicacion": "Al haber un solo ejemplar, pocos usuarios pueden consultarlo a la vez: cada cajetín, una persona. Las otras opciones son de los catálogos impreso y en microfichas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Respecto a la cooperación y al personal, el catálogo en fichas:",
+            "opciones": [
+                "Facilita la cooperación interbibliotecaria y apenas exige personal",
+                "No facilita la cooperación interbibliotecaria y exige un elevado coste en personal",
+                "Facilita la cooperación, pero exige un elevado coste en personal",
+                "No facilita la cooperación, aunque apenas exige personal"
+            ],
+            "correcta": 1,
+            "explicacion": "El manual dice que no facilita la cooperación y que su mantenimiento requiere mucho personal.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "A pesar de sus desventajas, el catálogo en fichas ha sido:",
+            "opciones": [
+                "La forma de catálogo más moderna antes del OPAC",
+                "Un catálogo usado solo en bibliotecas pequeñas",
+                "La forma tradicional más difundida del catálogo",
+                "Un catálogo limitado a los fondos especiales"
+            ],
+            "correcta": 2,
+            "explicacion": "Ha estado presente en la práctica totalidad de las bibliotecas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La principal ventaja del catálogo impreso es que:",
+            "opciones": [
+                "Se actualiza con facilidad intercalando nuevas páginas",
+                "Ocupa muy poco espacio y se transporta con facilidad",
+                "Puede generarse automáticamente por ordenador",
+                "Permite hacer múltiples copias y que varios usuarios lo consulten a la vez"
+            ],
+            "correcta": 3,
+            "explicacion": "Al presentarse como libro, permite múltiples copias y consulta simultánea.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el catálogo impreso solo es utilizado por:",
+            "opciones": [
+                "Bibliotecas con colecciones cerradas o de escaso crecimiento, o para fondos especiales",
+                "Grandes bibliotecas universitarias con mucho crecimiento anual",
+                "Bibliotecas públicas que necesitan actualizarlo cada día",
+                "Bibliotecas sin presupuesto para fichas ni ordenadores"
+            ],
+            "correcta": 0,
+            "explicacion": "Como queda desfasado enseguida, solo se usa para colecciones cerradas o de escaso crecimiento, o fondos especiales (manuscritos, donaciones).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El catálogo en microfichas utiliza como soporte:",
+            "opciones": [
+                "Fichas de cartulina reducidas a la mitad del tamaño normalizado",
+                "Láminas de películas normalizadas con imágenes tomadas por cámaras microfilmadoras",
+                "Discos ópticos grabados con los registros en formato MARC",
+                "Rollos de papel continuo impresos por el ordenador central"
+            ],
+            "correcta": 1,
+            "explicacion": "Reproduce los registros en láminas de película mediante cámaras microfilmadoras.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las siglas COM, referidas a las microfichas generadas por ordenador, significan:",
+            "opciones": [
+                "Catalog Online Management",
+                "Computer Optical Media",
+                "Computer Output Microfilm",
+                "Central Online Microform"
+            ],
+            "correcta": 2,
+            "explicacion": "COM = Computer Output Microfilm: microfichas generadas por sistemas informáticos.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál es un inconveniente propio del catálogo en microfichas?",
+            "opciones": [
+                "Ocupa mucho espacio y obliga a habilitar salas especiales",
+                "Solo puede consultarlo una persona por cajetín",
+                "No permite obtener copias en papel de los registros",
+                "Requiere aparatos lectores y tiene necesidades específicas de conservación"
+            ],
+            "correcta": 3,
+            "explicacion": "Su consulta depende del número de lectores disponibles y necesita una conservación específica.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En un mismo catálogo manual pueden coexistir dos formas de ordenación, por ejemplo:",
+            "opciones": [
+                "Una secuencia principal sistemática y, bajo cada notación, una alfabética",
+                "Una secuencia principal topográfica y, bajo cada estante, una cronológica",
+                "Una secuencia principal alfabética y, bajo cada letra, una geográfica",
+                "Una secuencia principal cronológica y, bajo cada año, una topográfica"
+            ],
+            "correcta": 0,
+            "explicacion": "El ejemplo del manual es una secuencia sistemática con una alfabética dentro de cada notación.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la ordenación alfabética, la alfabetización suele hacerse:",
+            "opciones": [
+                "Letra por letra, sin tener en cuenta los espacios entre palabras",
+                "Palabra por palabra y, dentro de cada palabra, letra por letra",
+                "Por la primera palabra significativa y luego por la fecha",
+                "Por la raíz de cada palabra y luego por sus terminaciones"
+            ],
+            "correcta": 1,
+            "explicacion": "Se alfabetiza palabra por palabra y, dentro de ellas, letra por letra.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Si en la ordenación alfabética aparecen signos no alfabéticos, el orden que debe seguirse es:",
+            "opciones": [
+                "Letras del alfabeto latino, cifras y letras de otros alfabetos",
+                "Letras de otros alfabetos, cifras y letras del alfabeto latino",
+                "Cifras, letras del alfabeto latino y letras de otros alfabetos",
+                "Cifras, letras de otros alfabetos y letras del alfabeto latino"
+            ],
+            "correcta": 2,
+            "explicacion": "Primero cifras, luego alfabeto latino y luego otros alfabetos; el resto de signos se ignora.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema",
+            "truco": "1-2-3 → A-B-C → α-β-γ"
+        },
+        {
+            "pregunta": "En la ordenación alfabética, los signos que no son ni alfabéticos ni numéricos:",
+            "opciones": [
+                "Se colocan antes que las cifras",
+                "Se colocan después de las letras latinas",
+                "Se sustituyen por la palabra que representan",
+                "Se ignoran a la hora de alfabetizar"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual dice que el resto de signos no alfabéticos ni numéricos se ignoran.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la ordenación topográfica, los registros quedan ordenados por la signatura:",
+            "opciones": [
+                "Con independencia del sistema usado para asignarla (CDU, marca de Cutter, etc.)",
+                "Solo si se ha asignado con la Clasificación Decimal Universal",
+                "Solo si se ha asignado mediante la marca de Cutter",
+                "Siempre que coincida con la materia principal del libro"
+            ],
+            "correcta": 0,
+            "explicacion": "Se ordenan por la signatura de colocación, sea cual sea el sistema usado para asignarla.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Sobre la ordenación sistemática, el manual advierte que:",
+            "opciones": [
+                "Existe una norma internacional única que todas las bibliotecas deben aplicar",
+                "Es difícil dar normas generales y hay que seguir las indicaciones del propio sistema de clasificación",
+                "Solo puede hacerse con la CDU, pues los demás sistemas no tienen notación",
+                "Es la más sencilla, porque los sistemas nunca se adaptan ni modifican"
+            ],
+            "correcta": 1,
+            "explicacion": "Hay muchos sistemas, adaptados y modificados, así que se siguen las indicaciones del propio sistema.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La reconversión de catálogos, según el manual:",
+            "opciones": [
+                "Es un proceso rápido y barato gracias a los programas actuales",
+                "Solo afecta a los catálogos impresos y no a los de fichas",
+                "Consume muchos recursos humanos y económicos y suele durar un tiempo considerable",
+                "La realiza siempre el proveedor del sistema informático"
+            ],
+            "correcta": 2,
+            "explicacion": "Es uno de los mayores problemas de la automatización: cara y larga.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuántos métodos de reconversión de catálogos describe el manual?",
+            "opciones": [
+                "Dos",
+                "Tres",
+                "Cinco",
+                "Cuatro"
+            ],
+            "correcta": 3,
+            "explicacion": "Conversión propia, empresas de servicios, descarga masiva de registros y OCR.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema",
+            "truco": "Propia, Empresa, Descarga, OCR"
+        },
+        {
+            "pregunta": "La conversión propia consiste en:",
+            "opciones": [
+                "Que el personal de catalogación de la biblioteca teclee los registros o los capture de otros catálogos",
+                "Que una empresa externa transforme las fichas en registros automatizados",
+                "Que un escáner con OCR convierta las fichas en campos MARC",
+                "Que la biblioteca compre los registros a OCLC por descarga masiva"
+            ],
+            "correcta": 0,
+            "explicacion": "La hace la propia biblioteca, tecleando o capturando registros en línea o en CD-ROM.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La conversión propia es un método adecuado para:",
+            "opciones": [
+                "Grandes bibliotecas universitarias con ficheros muy extensos",
+                "Bibliotecas con plantilla suficiente y ficheros de poco tamaño",
+                "Bibliotecas sin personal de catalogación propio",
+                "Bibliotecas con fondos mayoritariamente anglosajones"
+            ],
+            "correcta": 1,
+            "explicacion": "En las grandes bibliotecas resulta poco operativa: coste elevado, personal desviado de sus funciones y proceso muy largo.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Para contratar una empresa de servicios que convierta los ficheros es necesario que:",
+            "opciones": [
+                "La biblioteca tenga ya todos sus registros en formato MARC",
+                "Los fondos sean mayoritariamente de origen anglosajón",
+                "Los catálogos manuales estén adecuadamente formados (control de autoridades, ISBD, etc.)",
+                "El catálogo contenga solo descripciones homogéneas en microficha"
+            ],
+            "correcta": 2,
+            "explicacion": "Si las fichas siguen normas no vigentes o ninguna, hay que revisarlas y puede acabarse en una recatalogación.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué empresa cita el manual como ejemplo de servicios de descarga masiva de registros?",
+            "opciones": [
+                "SIGB",
+                "CBUA",
+                "OKAPI",
+                "OCLC"
+            ],
+            "correcta": 3,
+            "explicacion": "OCLC, de origen anglosajón, por lo que parte de los fondos españoles pueden quedar fuera de su ámbito.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las desventajas de la descarga masiva de registros pueden paliarse gracias a:",
+            "opciones": [
+                "El rápido desarrollo de los catálogos colectivos en España y la facilidad para importar sus registros",
+                "La traducción automática de los campos de notas por parte de OCLC",
+                "El uso de sistemas OCR que corrigen los registros importados",
+                "La contratación de empresas que recatalogan todos los fondos"
+            ],
+            "correcta": 0,
+            "explicacion": "Los catálogos colectivos españoles permiten importar registros con facilidad.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Para que el uso de OCR en la reconversión sea efectivo y rentable, se necesita:",
+            "opciones": [
+                "Un catálogo con fichas de distintos tamaños",
+                "Un catálogo que contenga descripciones homogéneas",
+                "Un fondo formado sobre todo por obras anglosajonas",
+                "Una plantilla grande que teclee los registros"
+            ],
+            "correcta": 1,
+            "explicacion": "El OCR transforma las fichas en campos MARC, pero solo es rentable con descripciones homogéneas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el OPAC representa:",
+            "opciones": [
+                "El módulo interno de adquisiciones del sistema de gestión",
+                "La base de datos donde se guardan los registros de préstamo",
+                "El aspecto más visible para el usuario de la automatización de la biblioteca",
+                "El ordenador central donde se realizan todas las operaciones"
+            ],
+            "correcta": 2,
+            "explicacion": "Es la parte de la automatización que el usuario ve.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las siglas SIGB significan:",
+            "opciones": [
+                "Servicio Interbibliotecario de Gestión Bibliográfica",
+                "Sistema Informático General de Bibliotecas",
+                "Sistema Integrado de Gestión Bibliográfica",
+                "Sistema Integrado de Gestión Bibliotecaria"
+            ],
+            "correcta": 3,
+            "explicacion": "El OPAC es uno de los módulos del Sistema Integrado de Gestión Bibliotecaria.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el catálogo automatizado:",
+            "opciones": [
+                "No existe como entidad física: su información está en una base de datos relacionada con los demás módulos",
+                "Es el terminal u ordenador desde el que el usuario realiza la consulta",
+                "Es una copia digital de las fichas que se guarda en cada ordenador",
+                "Es un fichero independiente sin relación con circulación ni adquisiciones"
+            ],
+            "correcta": 0,
+            "explicacion": "Los usuarios lo identifican con el terminal, pero es una base de datos relacionada con el resto del SIGB.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El OPAC aglutina en una sola herramienta los distintos catálogos tradicionales porque:",
+            "opciones": [
+                "Imprime automáticamente todos los catálogos de la biblioteca",
+                "Su interfaz de búsqueda permite consultar por distintos índices",
+                "Reproduce cada catálogo en una pantalla distinta",
+                "Solo permite buscar por autor, título y materia"
+            ],
+            "correcta": 1,
+            "explicacion": "Autores, títulos, materias, publicaciones periódicas… se consultan desde la misma interfaz por distintos índices.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estas operaciones puede hacer el usuario por sí mismo en el OPAC, según el manual?",
+            "opciones": [
+                "Modificar los registros bibliográficos",
+                "Dar de baja ejemplares deteriorados",
+                "Hacer recomendaciones de compra",
+                "Asignar signaturas topográficas"
+            ],
+            "correcta": 2,
+            "explicacion": "Puede reservar, renovar, recomendar compras, exportar referencias y crear alertas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Como ejemplo de cómo el OPAC favorece la cooperación, el manual cita el catálogo de la Universidad de Sevilla, que permite buscar y pedir en préstamo en el catálogo del:",
+            "opciones": [
+                "Catálogo Colectivo del Patrimonio Bibliográfico Español",
+                "Red de Bibliotecas Universitarias Españolas (REBIUN)",
+                "Catálogo de la Biblioteca Nacional de España",
+                "Consorcio de Bibliotecas Universitarias de Andalucía (CBUA)"
+            ],
+            "correcta": 3,
+            "explicacion": "Fama (Universidad de Sevilla) permite buscar en el catálogo del CBUA y tramitar el préstamo.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los OPAC comenzaron a desarrollarse:",
+            "opciones": [
+                "En EE. UU. en los años setenta y en Europa en los ochenta",
+                "En Europa en los años sesenta y en EE. UU. en los setenta",
+                "En EE. UU. en los años ochenta y en Europa en los noventa",
+                "A la vez en EE. UU. y Europa en los años sesenta"
+            ],
+            "correcta": 0,
+            "explicacion": "EE. UU., años setenta; Europa, un poco más tarde, en los ochenta.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En un principio, la automatización de la catalogación tenía como propósito:",
+            "opciones": [
+                "Ofrecer una mejor herramienta de consulta al usuario",
+                "Mejorar el trabajo de los bibliotecarios",
+                "Permitir la consulta del catálogo desde casa",
+                "Facilitar la cooperación entre bibliotecas"
+            ],
+            "correcta": 1,
+            "explicacion": "No se pensó para el usuario, sino para el profesional; esa orientación y su evolución marcan las generaciones de OPAC.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las condiciones para automatizar la catalogación eran idóneas porque:",
+            "opciones": [
+                "Los usuarios exigían consultar el catálogo desde sus casas",
+                "Los ordenadores eran baratos y fáciles de manejar en los años setenta",
+                "Se maneja información muy estructurada y normalizada, el proceso es rutinario y los catálogos manuales consumen muchos recursos",
+                "Las fichas ya estaban grabadas en formato MARC desde su origen"
+            ],
+            "correcta": 2,
+            "explicacion": "Información estructurada (ISBD, AACR), proceso rutinario y alto coste de los catálogos manuales.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Charles R. Hildreth estableció su división de las generaciones de OPAC en:",
+            "opciones": [
+                "1975",
+                "1990",
+                "1968",
+                "1984"
+            ],
+            "correcta": 3,
+            "explicacion": "Hildreth propuso en 1984 tres generaciones de OPAC.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la primera generación de OPAC, la estructura de los registros:",
+            "opciones": [
+                "No estaba normalizada, porque aún no se había desarrollado el formato MARC",
+                "Estaba normalizada gracias a la extensión del formato MARC",
+                "Se basaba en metadatos Dublin Core para el entorno web",
+                "Se organizaba con interfaces gráficas de fácil navegación"
+            ],
+            "correcta": 0,
+            "explicacion": "En la primera generación aún no existía el formato MARC; su extensión es propia de la segunda.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué generación de OPAC se caracteriza por mejorar el interfaz, extender el formato MARC y usar herramientas de la industria de las bases de datos?",
+            "opciones": [
+                "La primera",
+                "La segunda",
+                "La tercera",
+                "La cuarta"
+            ],
+            "correcta": 1,
+            "explicacion": "La segunda generación incorpora booleanos, proximidad, truncados y limitaciones por fecha, idioma o tipo.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las interfaces gráficas de usuario y la corrección automática de errores de escritura caracterizan a la:",
+            "opciones": [
+                "Primera generación de OPAC",
+                "Segunda generación de OPAC",
+                "Tercera generación de OPAC",
+                "Generación de los OPAC rígidos"
+            ],
+            "correcta": 2,
+            "explicacion": "La tercera generación, que Hildreth vaticinaba, busca interfaces más amigables, no basadas en menús y comandos.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "OKAPI, uno de los proyectos más importantes de la tercera generación de OPAC, significa:",
+            "opciones": [
+                "Open Knowledge Access to Public Indexes",
+                "Online Key Archive for Public Institutions",
+                "Open Keyword Application for Public Information",
+                "Online Keyword Access to Public Information"
+            ],
+            "correcta": 3,
+            "explicacion": "OKAPI se desarrolló desde 1984 en la Polytechnic of Central London University.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El proyecto OKAPI se desarrolló desde 1984 en:",
+            "opciones": [
+                "La Polytechnic of Central London University",
+                "La Universidad de Oxford",
+                "La Library of Congress",
+                "La Universidad de Sevilla"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual sitúa OKAPI en la Polytechnic of Central London University.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El manual cita Mendeley como herramienta que permite al usuario:",
+            "opciones": [
+                "Buscar a la vez en todos los recursos de la biblioteca",
+                "Crear bases de datos y bibliografías personales",
+                "Renovar préstamos sin ir al mostrador",
+                "Convertir fichas en registros MARC"
+            ],
+            "correcta": 1,
+            "explicacion": "Los OPAC de tercera generación dan acceso a herramientas como Mendeley para crear bases de datos y bibliografías personales.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los OPAC actuales, el software social permite al usuario:",
+            "opciones": [
+                "Buscar a la vez en bases de datos y otros catálogos",
+                "Recibir los contenidos del catálogo por sindicación",
+                "Aportar valor al catálogo mediante puntuaciones y descriptores",
+                "Filtrar los resultados por fechas, idiomas y formatos"
+            ],
+            "correcta": 2,
+            "explicacion": "El software social permite puntuar y añadir descriptores; buscar en otras fuentes es propio de las búsquedas federadas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las herramientas de descubrimiento («discovery tools») se caracterizan por:",
+            "opciones": [
+                "Limitar la búsqueda a los fondos impresos de la propia biblioteca",
+                "Reproducir la estructura del catálogo en fichas en pantalla",
+                "Usar solo comandos para combinar los términos de búsqueda",
+                "Integrar desde un solo punto la consulta de los distintos recursos de la biblioteca"
+            ],
+            "correcta": 3,
+            "explicacion": "Integran catálogo, repositorio y bases de datos suscritas en un punto de entrada único.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos es, según el manual, un ejemplo de herramienta de descubrimiento?",
+            "opciones": [
+                "Summon",
+                "Mendeley",
+                "OKAPI",
+                "MARC"
+            ],
+            "correcta": 0,
+            "explicacion": "Nota: el manual cita como ejemplos Summon y «WordCat Lab»; hoy la herramienta de OCLC se conoce como WorldCat Discovery (antes WorldCat Local).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La navegación por facetas de las herramientas de descubrimiento permite:",
+            "opciones": [
+                "Ver imágenes de cubiertas y enlaces a sumarios",
+                "Acotar las búsquedas por fechas, idiomas, materias, formatos, etc.",
+                "Buscar documentos con los términos a cierta distancia",
+                "Recuperar todas las palabras que comparten una raíz"
+            ],
+            "correcta": 1,
+            "explicacion": "Las facetas acotan los resultados; las cubiertas y sumarios son contenido enriquecido.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las imágenes de cubiertas, los enlaces a sumarios y la nube de etiquetas forman parte de:",
+            "opciones": [
+                "La navegación por facetas",
+                "La búsqueda federada",
+                "El contenido enriquecido",
+                "El lenguaje de consulta"
+            ],
+            "correcta": 2,
+            "explicacion": "El manual las agrupa como contenido enriquecido de las herramientas de descubrimiento.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el ruido documental consiste en:",
+            "opciones": [
+                "No recuperar documentos pertinentes que sí existen",
+                "Recuperar los resultados ordenados por relevancia",
+                "Recuperar documentos repetidos de distintas fuentes",
+                "Recuperar documentos o referencias no pertinentes a la búsqueda"
+            ],
+            "correcta": 3,
+            "explicacion": "Es uno de los problemas de las herramientas de descubrimiento.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, los problemas de las herramientas de descubrimiento solo pueden paliarse con:",
+            "opciones": [
+                "Una eficaz política de formación de usuarios",
+                "La vuelta a los catálogos en fichas tradicionales",
+                "La eliminación de la ordenación por relevancia",
+                "La limitación de la búsqueda al catálogo propio"
+            ],
+            "correcta": 0,
+            "explicacion": "La formación de usuarios les da las habilidades para sacar el máximo partido a estas herramientas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La estructura física de los OPAC está compuesta por:",
+            "opciones": [
+                "Un único ordenador sin conexión con otros equipos",
+                "Varios ordenadores y periféricos conectados a través de una red local",
+                "Terminales conectados por teléfono a una biblioteca central",
+                "Ficheros de microfichas leídos por aparatos lectores"
+            ],
+            "correcta": 1,
+            "explicacion": "Varios ordenadores y periféricos en red local, organizados en mainframe-terminal, cliente-servidor o compartida.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la arquitectura mainframe-terminal:",
+            "opciones": [
+                "Varios ordenadores sirven la información sin que ninguno centralice los procesos",
+                "Cada terminal guarda una copia completa de la base de datos",
+                "Un ordenador central realiza todas las operaciones y los terminales solo las visualizan",
+                "Los clientes procesan los datos y el servidor solo los muestra"
+            ],
+            "correcta": 2,
+            "explicacion": "Todo se procesa en el ordenador central; las pantallas y terminales solo muestran.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La arquitectura en la que varios ordenadores sirven la información sin que exista uno que centralice todos los procesos es la:",
+            "opciones": [
+                "Mainframe-terminal",
+                "Cliente-servidor",
+                "Centralizada",
+                "Compartida"
+            ],
+            "correcta": 3,
+            "explicacion": "Es la arquitectura compartida.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los SIGB modernos, que la estructura de almacenamiento sea independiente del soporte físico permite:",
+            "opciones": [
+                "Actualizar el hardware sin dañar la información almacenada",
+                "Guardar la información tal y como se presenta al usuario",
+                "Mantener la misma información duplicada en varios ficheros",
+                "Prescindir del formato MARC en todos los casos"
+            ],
+            "correcta": 0,
+            "explicacion": "Además, la información no se guarda tal como se presenta y se evitan redundancias.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Respecto al formato MARC en el almacenamiento de la información, el manual indica que:",
+            "opciones": [
+                "Es obligatorio por ley en todos los SIGB",
+                "No es estrictamente necesario, pero lo habitual es usarlo",
+                "Solo se usa en los OPAC de primera generación",
+                "Se ha sustituido completamente por la ISBD"
+            ],
+            "correcta": 1,
+            "explicacion": "Lo habitual es guardar los registros MARC en formato texto y generar automáticamente los índices.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El lenguaje de consulta de un OPAC es:",
+            "opciones": [
+                "El idioma en que están redactados los registros bibliográficos",
+                "El formato en que se almacenan los registros en la base de datos",
+                "El conjunto de órdenes y operadores con los que el usuario consulta el catálogo",
+                "El sistema de clasificación usado para asignar las notaciones"
+            ],
+            "correcta": 2,
+            "explicacion": "Es el conjunto de órdenes y operadores que permiten al usuario consultar el catálogo automatizado.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el ejemplo del manual, la búsqueda «minas Y mineros» corresponde a:",
+            "opciones": [
+                "La suma",
+                "La exclusión",
+                "La proximidad",
+                "La intersección"
+            ],
+            "correcta": 3,
+            "explicacion": "O = suma, Y = intersección, NO = exclusión.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema",
+            "truco": "Y = las dos a la vez (intersección)"
+        },
+        {
+            "pregunta": "La búsqueda «minas NO mineros» es un ejemplo de:",
+            "opciones": [
+                "Exclusión",
+                "Suma",
+                "Intersección",
+                "Truncado"
+            ],
+            "correcta": 0,
+            "explicacion": "El operador NO excluye el segundo término.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los operadores de comparación (MAYOR QUE, MENOR QUE, IGUAL QUE):",
+            "opciones": [
+                "Establecen la cercanía entre los términos de la consulta",
+                "Especifican rangos numéricos y son útiles para limitar por fechas",
+                "Limitan la búsqueda a un campo concreto como el título",
+                "Relacionan los términos mediante el álgebra de conjuntos"
+            ],
+            "correcta": 1,
+            "explicacion": "Sirven sobre todo para limitar por fechas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los operadores que indican al sistema que los términos deben aparecer en el mismo campo, en un orden o a cierta distancia son los de:",
+            "opciones": [
+                "Comparación",
+                "Especificación de campos",
+                "Proximidad",
+                "Truncado"
+            ],
+            "correcta": 2,
+            "explicacion": "Los de proximidad establecen la cercanía entre términos sueltos.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la máscara es un símbolo (generalmente «?») que:",
+            "opciones": [
+                "Marca la raíz de la palabra que se quiere recuperar",
+                "Excluye de la búsqueda la palabra a la que acompaña",
+                "Limita la búsqueda al campo del título",
+                "Tiene valor de comodín dentro de la palabra"
+            ],
+            "correcta": 3,
+            "explicacion": "«palabra?clave» recupera palabra clave y palabras clave.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema",
+            "truco": "Máscara = ? en medio; truncado = * al final"
+        },
+        {
+            "pregunta": "Con el truncado, «jardín*» recuperaría:",
+            "opciones": [
+                "Jardín, jardines, jardinería, jardineros, etc.",
+                "Solo los documentos con la palabra exacta «jardín»",
+                "Los documentos que no contienen la palabra «jardín»",
+                "Los documentos con «jardín» en el campo del título"
+            ],
+            "correcta": 0,
+            "explicacion": "El truncado (generalmente «*») marca la raíz que se quiere recuperar.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estas es una característica de los interfaces amigables según el manual?",
+            "opciones": [
+                "La opacidad: el sistema oculta los pasos para no confundir al usuario",
+                "La transparencia: el sistema informa de los pasos realizados en la búsqueda",
+                "La rigidez: el sistema obliga a usar siempre los mismos comandos",
+                "La uniformidad: el sistema trata igual a todos los usuarios"
+            ],
+            "correcta": 1,
+            "explicacion": "Son: interactividad, transparencia, entorno natural y adaptación al usuario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el diseño de interfaces amigables, el «entorno natural» significa que:",
+            "opciones": [
+                "El sistema dialoga con el usuario durante la búsqueda",
+                "El sistema se adapta al nivel de conocimiento del usuario",
+                "La consulta del catálogo se parece a otras experiencias del usuario con programas informáticos",
+                "El catálogo puede consultarse desde cualquier dispositivo"
+            ],
+            "correcta": 2,
+            "explicacion": "Dialogar es la interactividad y adaptarse al nivel es la adaptación al usuario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la interactividad de un interfaz significa que:",
+            "opciones": [
+                "Informe de los pasos de la búsqueda",
+                "Se parezca a otros programas",
+                "Se adapte al nivel del usuario",
+                "Dialogue con el usuario"
+            ],
+            "correcta": 3,
+            "explicacion": "Interactividad = diálogo con el usuario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Una consulta del tipo «BUSCAR TI = Don Quijote» corresponde al grupo de interfaces:",
+            "opciones": [
+                "Que funcionan en modo línea mediante comandos",
+                "Que funcionan con menús de opciones",
+                "Gráficos, que se manejan con el ratón",
+                "De búsqueda federada en varias fuentes"
+            ],
+            "correcta": 0,
+            "explicacion": "Hay tres grupos: por comandos (modo línea), por menús y gráficos.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los interfaces gráficos, según el manual:",
+            "opciones": [
+                "Funcionan en modo línea y combinan términos mediante comandos",
+                "Se manejan con el ratón y a menudo enlazan con documentos electrónicos o webs relacionadas",
+                "Presentan menús de los que se seleccionan las distintas opciones",
+                "Son los propios de la primera generación de OPAC"
+            ],
+            "correcta": 1,
+            "explicacion": "Por ejemplo, pueden enlazar el título de una revista con una base de datos de sumarios.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Entre las ventajas del catálogo Fama de la Universidad de Sevilla, el manual cita:",
+            "opciones": [
+                "Consultar el catálogo solo desde los terminales de la biblioteca",
+                "Recatalogar automáticamente los registros antiguos",
+                "Definir favoritos, guardar búsquedas y establecer alertas",
+                "Imprimir el catálogo completo en forma de libro"
+            ],
+            "correcta": 2,
+            "explicacion": "También permite filtrar por facetas, llegar al texto completo y gestionar préstamos y reservas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
         }
     ],
     "fichas": [
@@ -32460,6 +34077,216 @@
             "referencia": "Manifiesto de la UNESCO sobre la Biblioteca Pública (1994)",
             "bloque": "Tema 9 (MAD). Bibliotecas públicas: concepto, funciones, servicios y clases",
             "tema": "Tema 9 · Preguntas del tema"
+        },
+        {
+            "anverso": "Elementos esenciales del catálogo",
+            "reverso": "Asiento bibliográfico (describe), puntos de acceso (localizan asientos) y signatura topográfica (ubicación física).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Qué distingue al catálogo",
+            "reverso": "La signatura topográfica: siempre facilita la ubicación física de los fondos; las bibliografías no la dan.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Definiciones de catálogo",
+            "reverso": "Martínez de Sousa (descripciones normalizadas + lugar), Buonocore (misión doble: identificar y localizar) y ALA (fichero según lista oficial de encabezamientos).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Funciones del catálogo",
+            "reverso": "Localizar un documento (autor, título o materia), indicar qué posee la biblioteca y ayudar a elegir uno. Intermediario colección-usuarios.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo más antiguo",
+            "reverso": "Texto: tablilla sumeria (2000 a. C.). Recuadro «Recuerda»: biblioteca de Asurbanipal.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Alejandría / Pérgamo / Constantino",
+            "reverso": "Alejandría: sus catálogos nos dan noticia de obras perdidas. Pérgamo: poco sabemos. Constantino el Grande: gran biblioteca romano-bizantina.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Gabriel Naudé (1627)",
+            "reverso": "«Advis pour dresser une bibliothèque»: catálogo en dos secciones, autores y materias.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Bodleiana (Oxford)",
+            "reverso": "En honor de Thomas Bodley (mecenas). Biblioteca de principios del XVII; catálogo de finales del XVII: primer catálogo diccionario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Origen del catálogo en fichas",
+            "reverso": "Siglo XVIII: índice de la Academia de Ciencias de París (1775), de François Rozier, en naipes. Francia, inicios del XIX; a EE. UU. con Cutter.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo impreso a mediados del s. XX",
+            "reverso": "Se recupera por los problemas de espacio de los ficheros y porque no podían difundirse; después, microfichas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Clasificación de Carrión",
+            "reverso": "Extensión: colectivos, generales, especiales. Uso: públicos, internos. Función: alfabéticos (autores y anónimas; materias), sistemático de materias, topográfico.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Clasificación de Carmen Ramos Fajardo",
+            "reverso": "Convencionales: alfabéticos de autores, títulos y materias, diccionario, sistemático, topográfico. Según necesidades: periódicas, series, fondos especiales, geográfico, cronológico.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo diccionario",
+            "reverso": "Unión de los alfabéticos de autores (y obras anónimas), títulos y materias.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo colectivo",
+            "reverso": "Registros de varias bibliotecas con intereses comunes; parte de sistemas de cooperación (préstamo interbibliotecario, adquisición cooperativa).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Notaciones",
+            "reverso": "Símbolos que representan las materias en el catálogo sistemático: alfabéticas, numéricas o mixtas.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Ficha normalizada",
+            "reverso": "75 × 125 mm, cartulina blanca, perforación inferior para la varilla transversal.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Estructura básica de la ficha",
+            "reverso": "Encabezamiento, descripción bibliográfica, registro de asientos secundarios y signatura topográfica. Además: notaciones, términos de indización y nº de registro.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo en fichas: pros y contras",
+            "reverso": "Pro: fácil de actualizar. Contras: espacio, ejemplar único, un cajetín por persona, no facilita la cooperación, mucho coste de personal.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo impreso",
+            "reverso": "Pro: copias múltiples y consulta simultánea. Contra: se queda desfasado (suplementos o reimpresión). Para colecciones cerradas o fondos especiales.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Catálogo en microfichas",
+            "reverso": "Láminas de película; mucha capacidad, poco espacio. COM = Computer Output Microfilm. Contras: desfase, lectores, conservación.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Orden alfabético con signos",
+            "reverso": "Palabra por palabra y letra por letra. Cifras → alfabeto latino → otros alfabetos; el resto de signos se ignora.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Métodos de reconversión",
+            "reverso": "Conversión propia, empresas de servicios, descarga masiva de registros (p. ej., OCLC) y OCR (fichas → campos MARC, exige descripciones homogéneas).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "OPAC y SIGB",
+            "reverso": "Online Public Access Catalog: módulo del Sistema Integrado de Gestión Bibliotecaria que gestiona la interacción del usuario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Inicio de los OPAC",
+            "reverso": "EE. UU., años setenta; Europa, años ochenta. Al principio, para mejorar el trabajo del bibliotecario, no del usuario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Generaciones de Hildreth (1984)",
+            "reverso": "1.ª: copia de las fichas, sin MARC, lenguaje técnico. 2.ª: interfaz mejor, MARC, booleanos y truncados. 3.ª: interfaces gráficas, corrección de errores, entorno web (OKAPI).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "OKAPI",
+            "reverso": "Online Keyword Access to Public Information; desde 1984 en la Polytechnic of Central London University.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Herramientas de descubrimiento",
+            "reverso": "Punto único de búsqueda en todos los recursos; facetas, contenido enriquecido, caja simple, relevancia. Ej.: Summon. Problemas: relevancia, ruido y desconocimiento del usuario.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Arquitecturas de los OPAC",
+            "reverso": "Mainframe-terminal (ordenador central), cliente-servidor (uno centraliza y sirve a los clientes), compartida (ninguno centraliza).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Operadores del lenguaje de consulta",
+            "reverso": "Booleanos (O, Y, NO), comparación (rangos, fechas), proximidad, especificación de campos (ti), máscara (?) y truncado (*).",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Interfaces amigables",
+            "reverso": "Interactividad, transparencia, entorno natural y adaptación al usuario. Tres grupos: comandos, menús y gráficos.",
+            "referencia": "Manual MAD, Tema 13",
+            "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
+            "tema": "Tema 13 · Preguntas del tema"
         }
     ],
     "articulos": [
