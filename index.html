@@ -1078,8 +1078,9 @@ async function showAdmin(env = ENV) {
         <input type="text" value="${esc(r.emoji || '🎁')}" data-i="${i}" data-f="emoji" style="width:52px;text-align:center" aria-label="Emoji">
         <input type="text" value="${esc(r.name)}" data-i="${i}" data-f="name" placeholder="Te invito a cenar" style="flex:1;min-width:0" aria-label="Recompensa">
         <input type="number" value="${r.cost}" data-i="${i}" data-f="cost" min="1" style="width:84px" aria-label="Puntos">
+        <label class="muted" title="Solo se puede canjear una vez" style="white-space:nowrap"><input type="checkbox" data-i="${i}" data-f="once" ${r.once ? 'checked' : ''}> 1 vez</label>
         <button class="small danger" data-del="${i}" aria-label="Quitar">✕</button></div>`).join('') || '<p class="muted">Sin recompensas todavía.</p>';
-    $('rwList').querySelectorAll('input').forEach(inp => inp.oninput = () => { const r = items[+inp.dataset.i]; r[inp.dataset.f] = inp.dataset.f === 'cost' ? Math.max(1, +inp.value || 1) : inp.value; });
+    $('rwList').querySelectorAll('input').forEach(inp => inp.oninput = () => { const r = items[+inp.dataset.i]; r[inp.dataset.f] = inp.type === 'checkbox' ? inp.checked : inp.dataset.f === 'cost' ? Math.max(1, +inp.value || 1) : inp.value; });
     $('rwList').querySelectorAll('[data-del]').forEach(b => b.onclick = () => { items.splice(+b.dataset.del, 1); paintRw(); });
   };
   loadRewards().then(r => { items = r.map(x => ({ ...x })); paintRw(); }).catch(e => { if ($('rwList')) $('rwList').innerHTML = `<p class="error">No se pudieron leer (${esc(e.code || e.message)}).</p>`; });
@@ -1096,12 +1097,12 @@ async function showAdmin(env = ENV) {
   ];
   $('rwSug').onclick = () => {
     const have = new Set(items.map(r => r.name.trim().toLowerCase()));
-    const nuevas = SUGERIDAS.filter(([, name]) => !have.has(name.toLowerCase())).map(([emoji, name, cost], i) => ({ id: Date.now().toString(36) + i, emoji, name, cost }));
+    const nuevas = SUGERIDAS.filter(([, name]) => !have.has(name.toLowerCase())).map(([emoji, name, cost], i) => ({ id: Date.now().toString(36) + i, emoji, name, cost, once: cost >= 500 }));
     items.push(...nuevas); items.sort((a, b) => a.cost - b.cost); paintRw();
     $('rwMsg').textContent = nuevas.length ? `${nuevas.length} añadidas: revísalas y pulsa Guardar` : 'Ya estaban todas';
   };
   $('rwSave').onclick = async () => {
-    const clean = items.filter(r => r.name.trim()).map(r => ({ id: r.id, emoji: r.emoji.trim() || '🎁', name: r.name.trim(), cost: Math.max(1, Math.round(+r.cost) || 1) }));
+    const clean = items.filter(r => r.name.trim()).map(r => ({ id: r.id, emoji: r.emoji.trim() || '🎁', name: r.name.trim(), cost: Math.max(1, Math.round(+r.cost) || 1), ...(r.once ? { once: true } : {}) }));
     try { await fb.setDoc(fb.doc(fb.db, 'config', 'rewards'), { items: clean, at: Date.now() }); items = clean; paintRw(); $('rwMsg').textContent = '✓ Guardado'; }
     catch (e) { $('rwMsg').textContent = '⚠️ No se pudo guardar (' + (e.code || e.message) + ')'; }
   };
@@ -1981,11 +1982,11 @@ async function showLogros() {
           : err ? `<p class="error">No se pudieron cargar (${esc(err)}).</p>`
           : !rewards ? '<p class="muted">Cargando…</p>'
           : !rewards.length ? '<p class="muted">Todavía no hay recompensas. ¡Pronto habrá sorpresas! 😉</p>'
-          : `<div class="rewards">${rewards.map(r => `<div class="reward">
+          : `<div class="rewards">${rewards.map(r => { const gastada = r.once && (canjes || []).some(c => c.rewardId === r.id), can = !gastada && balance >= r.cost; return `<div class="reward">
               <span class="reward-ico">${esc(r.emoji || '🎁')}</span>
-              <div class="reward-txt"><b>${esc(r.name)}</b><span class="muted">⭐ ${r.cost} puntos</span></div>
-              <button class="small ${balance >= r.cost ? 'primary' : ''}" data-r="${esc(r.id)}" ${balance >= r.cost ? '' : 'disabled'}>${balance >= r.cost ? 'Canjear' : `Faltan ${r.cost - balance}`}</button>
-            </div>`).join('')}</div>`}
+              <div class="reward-txt"><b>${esc(r.name)}</b><span class="muted">⭐ ${r.cost} puntos${r.once ? ' · solo una vez' : ''}</span></div>
+              ${gastada ? '<span class="muted">✅ Ya canjeada</span>' : `<button class="small ${can ? 'primary' : ''}" data-r="${esc(r.id)}" ${can ? '' : 'disabled'}>${can ? 'Canjear' : `Faltan ${r.cost - balance}`}</button>`}
+            </div>`; }).join('')}</div>`}
         ${canjes?.length ? `<h3>Mis canjes</h3>${canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ${fmtDate(c.at)} · ${c.done ? '✅ cumplida' : '⏳ pendiente'}</span></div>`).join('')}` : ''}
       </div>
       <div class="card">
@@ -2010,7 +2011,7 @@ async function showLogros() {
     };
     app.querySelectorAll('[data-r]').forEach(b => b.onclick = async () => {
       const r = rewards.find(x => x.id === b.dataset.r);
-      if (!r || !confirm(`¿Canjear «${r.name}» por ${r.cost} puntos?`)) return;
+      if (!r || !confirm(`¿Canjear «${r.name}» por ${r.cost} puntos?${r.once ? '\n\nOjo: esta recompensa solo se puede canjear una vez.' : ''}`)) return;
       b.disabled = true;
       try {
         await fb.addDoc(fb.collection(fb.db, 'users', fbUser.uid, 'canjes'), { rewardId: r.id, name: r.name, emoji: r.emoji || '🎁', cost: r.cost, at: Date.now(), done: false });
