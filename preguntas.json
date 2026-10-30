@@ -31229,6 +31229,1832 @@
             "referencia": "Manual MAD, Tema 13",
             "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
             "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, los términos «desarrollo de la colección» o «gestión de la colección» comienzan a gestarse:",
+            "opciones": [
+                "En Estados Unidos a fines del siglo XIX",
+                "En Francia a mediados del siglo XX",
+                "En Reino Unido a principios del siglo XIX",
+                "En Alemania tras la Segunda Guerra Mundial"
+            ],
+            "correcta": 0,
+            "explicacion": "Surgen en EE. UU. a fines del siglo XIX a raíz de una crisis económica global, para controlar mejor la colección.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿En qué año publicó la ALA su «Guide for written collection policy statements»?",
+            "opciones": [
+                "2001",
+                "1984",
+                "1996",
+                "1979"
+            ],
+            "correcta": 2,
+            "explicacion": "En 1996 la ALA estableció en esa guía los elementos que debe abarcar la política de gestión de la colección.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las «Directrices para una política de desarrollo de las colecciones sobre la base del modelo Conspectus» fueron redactadas por:",
+            "opciones": [
+                "La ALA en 1996",
+                "La IFLA en 2001",
+                "La UNESCO en 1994",
+                "REBIUN en 1999"
+            ],
+            "correcta": 1,
+            "explicacion": "La IFLA redactó en 2001 estas directrices basadas en Conspectus.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué autor define la gestión o desarrollo de la colección como un proceso que permite identificar fortalezas y debilidades con el fin de corregir las necesidades detectadas?",
+            "opciones": [
+                "Paul Mosher",
+                "Shiyali R. Ranganathan",
+                "Pérez Sousa",
+                "Edward Evans"
+            ],
+            "correcta": 3,
+            "explicacion": "Es la definición de Edward Evans; Mosher define la evaluación y Pérez Sousa la restauración.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema",
+            "truco": "Evans = gEStión (identificar y corregir); Mosher = evaluación."
+        },
+        {
+            "pregunta": "Según la definición del manual, la colección reúne materiales puestos a disposición de los usuarios:",
+            "opciones": [
+                "Solo si han sido adquiridos mediante compra",
+                "Solo si están en soporte papel",
+                "Independientemente de su procedencia y forma de adquisición",
+                "Solo si proceden del depósito legal"
+            ],
+            "correcta": 2,
+            "explicacion": "La colección incluye materiales bibliográficos, documentales, audiovisuales y electrónicos sea cual sea su procedencia o forma de adquisición.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los objetivos básicos del desarrollo de las colecciones se definen en torno a tres ejes:",
+            "opciones": [
+                "La colección, los usuarios y la institución",
+                "El presupuesto, el personal y el edificio",
+                "La selección, la adquisición y el expurgo",
+                "Los autores, los editores y los distribuidores"
+            ],
+            "correcta": 0,
+            "explicacion": "Los tres ejes son la colección en sí misma, la comunidad de usuarios y la institución a la que pertenece la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el análisis estratégico de la colección, las fortalezas y debilidades corresponden al:",
+            "opciones": [
+                "Entorno externo",
+                "Entorno legal",
+                "Entorno tecnológico",
+                "Entorno interno"
+            ],
+            "correcta": 3,
+            "explicacion": "Fortalezas y debilidades son del entorno interno; oportunidades y amenazas, del externo (análisis DAFO).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema",
+            "truco": "DAFO: D y F dentro; A y O fuera."
+        },
+        {
+            "pregunta": "El documento formal que describe la política de desarrollo de la colección debe ser, ante todo, una herramienta de:",
+            "opciones": [
+                "Catalogación",
+                "Planificación",
+                "Difusión cultural",
+                "Control del préstamo"
+            ],
+            "correcta": 1,
+            "explicacion": "Debe ser una herramienta de planificación que fije prioridades y límites y facilite la coordinación.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos contenidos NO figura entre los mínimos del documento de política de desarrollo de la colección?",
+            "opciones": [
+                "Los objetivos y perfiles de la colección",
+                "El horario de apertura al público",
+                "La distribución del presupuesto",
+                "La conservación del fondo"
+            ],
+            "correcta": 1,
+            "explicacion": "Como mínimo: objetivos y perfiles, criterios de selección y expurgo, criterios de adquisición, presupuesto y conservación.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las cuatro tareas básicas relativas a la colección son:",
+            "opciones": [
+                "Catalogación, clasificación, préstamo y difusión",
+                "Selección, expurgo, registro y sellado",
+                "Evaluación, adquisición, préstamo y restauración",
+                "Selección, adquisición, ordenación y conservación"
+            ],
+            "correcta": 3,
+            "explicacion": "El «Recuerda que…» del manual fija estas cuatro tareas básicas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema",
+            "truco": "SAOC: Selecciono, Adquiero, Ordeno, Conservo."
+        },
+        {
+            "pregunta": "Según el manual, la selección busca mantener un equilibrio entre:",
+            "opciones": [
+                "Cantidad, calidad y actualidad",
+                "Precio, formato y lengua",
+                "Autor, editorial y año",
+                "Espacio, personal y horario"
+            ],
+            "correcta": 0,
+            "explicacion": "La selección decide qué recursos deben estar en la colección manteniendo un equilibrio entre cantidad, calidad y actualidad.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La selección es positiva cuando su finalidad es:",
+            "opciones": [
+                "La retirada de material de la colección",
+                "La restauración de documentos dañados",
+                "La adquisición o incorporación de nuevos recursos",
+                "La transferencia a un depósito cerrado"
+            ],
+            "correcta": 2,
+            "explicacion": "La selección positiva busca incorporar recursos; la negativa (expurgo) retirarlos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos enunciados NO es una de las cinco leyes de Ranganathan?",
+            "opciones": [
+                "Los libros son para usarse",
+                "A cada libro su lector",
+                "Los libros deben conservarse a perpetuidad",
+                "Hay que ahorrar tiempo al lector"
+            ],
+            "correcta": 2,
+            "explicacion": "Las leyes son: libros para usarse, a cada lector su libro, a cada libro su lector, ahorrar tiempo al lector y la biblioteca es un organismo en crecimiento.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La quinta ley de Ranganathan establece que:",
+            "opciones": [
+                "Hay que ahorrar tiempo al lector",
+                "La biblioteca es un organismo en crecimiento",
+                "A cada libro su lector",
+                "Los libros son para usarse"
+            ],
+            "correcta": 1,
+            "explicacion": "La quinta ley es «la biblioteca es un organismo en crecimiento».",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema",
+            "truco": "Orden: Usar, Lector, Libro, Tiempo, Crecer."
+        },
+        {
+            "pregunta": "Los criterios cuantitativos de selección obedecen a:",
+            "opciones": [
+                "El contenido intelectual de cada obra",
+                "La neutralidad ideológica del seleccionador",
+                "Las preferencias personales del bibliotecario",
+                "Parámetros prefijados y recomendaciones de organismos nacionales e internacionales"
+            ],
+            "correcta": 3,
+            "explicacion": "Se basan en estándares, normas y recomendaciones (IFLA, UNESCO, AENOR, ISO, REBIUN…).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Es un criterio cuantitativo de selección:",
+            "opciones": [
+                "El prestigio del autor del recurso",
+                "La lengua del recurso",
+                "El número de volúmenes por usuario o habitante",
+                "La calidad del contenido intelectual"
+            ],
+            "correcta": 2,
+            "explicacion": "Los cuantitativos se refieren a tamaño de la colección, volúmenes por usuario/habitante, mínimo de ejemplares o incremento anual.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los criterios cualitativos de selección, el criterio de «duplicados» se refiere a:",
+            "opciones": [
+                "El número de copias según el nivel de uso",
+                "La compra de dos ediciones distintas",
+                "El canje de ejemplares repetidos",
+                "La sustitución de ejemplares perdidos"
+            ],
+            "correcta": 0,
+            "explicacion": "Duplicados = número de copias según el nivel de uso.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el criterio de imparcialidad, todo documento es susceptible de incorporarse a la colección siempre que tenga un valor:",
+            "opciones": [
+                "Económico, comercial y estético",
+                "Histórico, artístico y bibliográfico",
+                "Científico, técnico y profesional",
+                "Formativo, cultural e informativo"
+            ],
+            "correcta": 3,
+            "explicacion": "Se parte de que todo documento puede incorporarse si tiene valor formativo, cultural e informativo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, los criterios de selección son:",
+            "opciones": [
+                "Económicos, técnicos y políticos",
+                "Cuantitativos, cualitativos y de imparcialidad",
+                "Directos, indirectos y mixtos",
+                "Generales, especiales y excepcionales"
+            ],
+            "correcta": 1,
+            "explicacion": "El «Recuerda que…» los resume en cuantitativos, cualitativos y de imparcialidad.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la selección de publicaciones periódicas, según el manual prima el concepto de:",
+            "opciones": [
+                "Exhaustividad retrospectiva",
+                "Disponibilidad y accesibilidad inmediata al documento",
+                "Conservación en papel",
+                "Propiedad perpetua de los fascículos"
+            ],
+            "correcta": 1,
+            "explicacion": "En las publicaciones periódicas prima la disponibilidad y accesibilidad inmediata.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué fuentes de selección suelen presentar un gran rigor descriptivo?",
+            "opciones": [
+                "Los catálogos comerciales de librerías",
+                "Las reseñas aparecidas en prensa",
+                "Las desideratas de los usuarios",
+                "Las bibliografías de bibliotecas nacionales y organismos oficiales"
+            ],
+            "correcta": 3,
+            "explicacion": "Las bibliografías elaboradas por bibliotecas nacionales y organismos oficiales tienen gran rigor descriptivo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Books In Print es, según el manual, un repertorio:",
+            "opciones": [
+                "Internacional de libros en venta",
+                "Nacional de publicaciones seriadas",
+                "De tesis doctorales españolas",
+                "De recursos en acceso abierto"
+            ],
+            "correcta": 0,
+            "explicacion": "Books In Print es el repertorio internacional de libros en venta.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Para publicaciones seriadas, el manual cita como repertorios de documentos en venta:",
+            "opciones": [
+                "Books In Print y la base de datos del ISBN",
+                "Dialnet y Google Académico",
+                "Ulrich's Periodicals Directory y el ISSN Portal",
+                "WorldCat y REBIUN"
+            ],
+            "correcta": 2,
+            "explicacion": "Para seriadas cita Ulrich's Periodicals Directory y el ISSN Portal.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El ISSN Portal es una base de datos en línea creada por:",
+            "opciones": [
+                "El ISDS (International Serials Data System)",
+                "La Agencia Española del ISBN",
+                "La American Library Association",
+                "La Biblioteca del Congreso"
+            ],
+            "correcta": 0,
+            "explicacion": "Lo creó el ISDS, con el registro mundial de ISSN.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Como fuente de selección, los «libros a examen» son:",
+            "opciones": [
+                "Libros prestados por otra biblioteca mediante PI",
+                "Obras retiradas para su evaluación por expurgo",
+                "Ejemplares ofrecidos temporal y gratuitamente por las editoriales como muestra",
+                "Libros reservados para exámenes de los usuarios"
+            ],
+            "correcta": 2,
+            "explicacion": "Permiten hojearlos y decidir sobre la pertinencia de adquirirlos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los comités de lectura como fuente de selección se dan sobre todo en bibliotecas:",
+            "opciones": [
+                "Nacionales y regionales",
+                "Públicas, municipales y escolares",
+                "Universitarias y de investigación",
+                "Especializadas y de empresa"
+            ],
+            "correcta": 1,
+            "explicacion": "Se integran en la selección para reforzar el gusto por la lectura y las habilidades lectoras.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El expurgo es una tarea técnica basada en:",
+            "opciones": [
+                "La antigüedad de cada ejemplar",
+                "El valor económico de los fondos",
+                "Las preferencias del director",
+                "La vigencia-eficiencia de la colección"
+            ],
+            "correcta": 3,
+            "explicacion": "La selección negativa o expurgo se basa en la vigencia-eficiencia y persigue pertinencia y operatividad.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el responsable último del expurgo es:",
+            "opciones": [
+                "El técnico de proceso técnico",
+                "Una comisión de usuarios",
+                "El director de la biblioteca",
+                "El auxiliar de sala"
+            ],
+            "correcta": 2,
+            "explicacion": "El manual lo atribuye expresamente al director de la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el material que debe relegarse en el expurgo es:",
+            "opciones": [
+                "El deteriorado, el obsoleto y el carente de uso",
+                "El más antiguo y el donado",
+                "El de mayor precio y formato especial",
+                "El adquirido por canje"
+            ],
+            "correcta": 0,
+            "explicacion": "Hay que seleccionar y relegar el material deteriorado, obsoleto y sin uso.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos destinos NO cita el manual para los documentos expurgados?",
+            "opciones": [
+                "Su traslado a un depósito cooperativo",
+                "Su donación a instituciones o particulares",
+                "Su digitalización",
+                "Su venta en subasta pública"
+            ],
+            "correcta": 3,
+            "explicacion": "Pueden ir a depósito cerrado o cooperativo, a otras bibliotecas, digitalizarse o donarse; expurgo no es sinónimo de destrucción.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos NO es uno de los objetivos del expurgo citados por el manual?",
+            "opciones": [
+                "Incrementar el espacio",
+                "Aumentar el número total de volúmenes",
+                "Mejorar la imagen de la biblioteca",
+                "Mejorar la calidad y accesibilidad de la colección"
+            ],
+            "correcta": 1,
+            "explicacion": "Objetivos: espacio, calidad y accesibilidad, relevancia, incremento del uso e imagen.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los documentos especialmente protegidos frente al expurgo se recogen en el artículo 50 de la:",
+            "opciones": [
+                "Ley 23/2011, de depósito legal",
+                "Ley 16/1985, de Patrimonio Histórico Español",
+                "Ley 10/2007, de la lectura, del libro y de las bibliotecas",
+                "Ley de Contratos del Sector Público"
+            ],
+            "correcta": 1,
+            "explicacion": "Es el art. 50 de la Ley 16/1985, de 25 de junio, de Patrimonio Histórico Español.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el art. 50 de la Ley 16/1985, son protegidas las obras de las que no existan al menos tres ejemplares en servicios públicos, presumiblemente editadas antes de:",
+            "opciones": [
+                "1931",
+                "1985",
+                "1900",
+                "1958"
+            ],
+            "correcta": 3,
+            "explicacion": "1958 es el año en que se establece legalmente la obligatoriedad del depósito legal.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el caso de películas cinematográficas, la Ley 16/1985 protege aquellas de las que no existan en los servicios públicos al menos:",
+            "opciones": [
+                "Un ejemplar",
+                "Dos ejemplares",
+                "Tres ejemplares",
+                "Cinco ejemplares"
+            ],
+            "correcta": 0,
+            "explicacion": "Para el resto de audiovisuales son tres ejemplares; para películas cinematográficas, uno.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, por regla general en una biblioteca:",
+            "opciones": [
+                "Se adquiere todo lo que se selecciona",
+                "Se selecciona menos de lo que se adquiere",
+                "Se adquiere menos de lo que se selecciona",
+                "Se adquiere solo lo que piden los usuarios"
+            ],
+            "correcta": 2,
+            "explicacion": "Políticas, espacio y presupuesto hacen que no todo lo seleccionado se adquiera.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la Ley de Contratos del Sector Público obliga a convocar concurso público de suministro para compras que superen:",
+            "opciones": [
+                "18.000 €",
+                "15.000 €",
+                "50.000 €",
+                "6.000 €"
+            ],
+            "correcta": 0,
+            "explicacion": "Nota: el manual dice 18.000 €; hoy la Ley 9/2017 fija el contrato menor de suministros por debajo de 15.000 €.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el proceso de compra, tras extraer la información de identificación del recurso, el siguiente paso es:",
+            "opciones": [
+                "Emitir la factura con el visto bueno",
+                "Sellar y tejuelar el documento",
+                "Comprobar si ya existe en la biblioteca o si ya se ha tramitado",
+                "Examinar su estado físico"
+            ],
+            "correcta": 2,
+            "explicacion": "Si ya existe o está tramitado, se puede desestimar o posponer la adquisición.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "FACE es:",
+            "opciones": [
+                "Un formato de catalogación de facturas",
+                "El Punto General de Entrada de Facturas Electrónicas",
+                "Un consorcio de bibliotecas andaluzas",
+                "Una plataforma de préstamo de libros electrónicos"
+            ],
+            "correcta": 1,
+            "explicacion": "Permite presentar facturas electrónicas ante las Administraciones Públicas desde un punto único.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La petición permanente es una forma de adquisición propia de:",
+            "opciones": [
+                "Monografías sueltas de compra única",
+                "Bases de datos con acceso anual",
+                "Donaciones periódicas de autores",
+                "Series o colecciones que tienen continuidad en el tiempo"
+            ],
+            "correcta": 3,
+            "explicacion": "Exige asegurar el pago con previsión de gasto; los documentos llegan según se publican.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La adquisición «a examen» consiste en:",
+            "opciones": [
+                "Comprar solo lo solicitado por el profesorado",
+                "Adquirir documentos tras un examen de oposición",
+                "Acuerdos con proveedores para que proporcionen novedades para su evaluación y selección",
+                "Recibir obras por depósito legal"
+            ],
+            "correcta": 2,
+            "explicacion": "Los proveedores proporcionan las novedades editoriales para evaluarlas y seleccionarlas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la suscripción a paquetes de libros electrónicos, el principal inconveniente es que:",
+            "opciones": [
+                "No garantiza el acceso perpetuo en caso de cancelación",
+                "La colección nunca se actualiza",
+                "Exige comprar cada título por separado",
+                "Impide el acceso remoto"
+            ],
+            "correcta": 0,
+            "explicacion": "Mantiene la colección actualizada pero, si se cancela, se pierde el acceso.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el gran inconveniente de la compra a perpetuidad de libros electrónicos es:",
+            "opciones": [
+                "Que no da derecho de acceso indefinido",
+                "Que solo permite un usuario al año",
+                "Que no admite colecciones completas",
+                "Que el precio se incrementa entre un 200 y un 300 %"
+            ],
+            "correcta": 3,
+            "explicacion": "Por eso no es viable para la mayoría de bibliotecas, salvo colecciones completas y ciertas áreas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la compra de licencias de acceso a documentos electrónicos, para gestionar los accesos es necesario:",
+            "opciones": [
+                "Un sistema RFID",
+                "Un gestor de derechos digitales (DRM)",
+                "Una ficha kardex",
+                "Un sello de propiedad"
+            ],
+            "correcta": 1,
+            "explicacion": "El DRM limita el uso o préstamo; si se quieren más «ejemplares», hay que contratar más licencias.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La fórmula de contratación de licencias a grandes paquetes a precio muy ventajoso, aunque no siempre pertinentes, se denomina:",
+            "opciones": [
+                "Pick&Choose",
+                "Big Deal",
+                "Evidence Based Selection",
+                "Patron-Driven Acquisition"
+            ],
+            "correcta": 1,
+            "explicacion": "El manual la compara con las «superofertas» comerciales.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El modelo Pick&Choose consiste en:",
+            "opciones": [
+                "La suscripción a grandes paquetes de títulos",
+                "El alquiler temporal de libros electrónicos",
+                "La compra automática según el uso de los lectores",
+                "La compra a perpetuidad de títulos sueltos seleccionados por la biblioteca"
+            ],
+            "correcta": 3,
+            "explicacion": "Pocos editores lo ofrecen directamente, por lo que suele requerir un agregador.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué plataformas agregadoras cita el manual como las más utilizadas para el modelo Pick&Choose?",
+            "opciones": [
+                "Ebrary, Dawsonera y Ebscohost",
+                "Odilo, Xercode y eBiblio",
+                "Dialnet, Recolecta y Hispana",
+                "WorldCat, OCLC y Rebiun"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual cita Ebrary, Dawsonera y Ebscohost.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el modelo EBS (Evidence Based Selection):",
+            "opciones": [
+                "Se compran títulos sueltos a través de un agregador",
+                "Se paga una suscripción sin derecho de compra",
+                "Se accede a la colección completa durante un periodo y luego se eligen títulos a perpetuidad según el uso",
+                "Se adquiere cada título al primer préstamo"
+            ],
+            "correcta": 2,
+            "explicacion": "Al acabar el periodo, la biblioteca decide qué títulos adquiere basándose sobre todo en las estadísticas de uso.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La plataforma OASIS, que permite buscar, seleccionar y solicitar libros impresos y electrónicos, fue desarrollada por:",
+            "opciones": [
+                "ProQuest",
+                "EBSCO",
+                "OCLC",
+                "Elsevier"
+            ],
+            "correcta": 0,
+            "explicacion": "OASIS (Online Acquisitions and Selection Information System) es un sistema gratuito en línea de ProQuest.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el inconveniente de las donaciones es:",
+            "opciones": [
+                "Que siempre exigen contraprestación económica",
+                "Que no pueden incorporarse al catálogo",
+                "Los costes en proceso técnico, almacenamiento, espacios y conservación",
+                "Que solo pueden aceptarse de instituciones"
+            ],
+            "correcta": 2,
+            "explicacion": "Por ello conviene fijar a priori condiciones de aceptación y reservarse el derecho de admisión.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El canje de publicaciones o intercambio científico se basa en una relación de:",
+            "opciones": [
+                "Compraventa",
+                "Reciprocidad",
+                "Depósito obligatorio",
+                "Préstamo temporal"
+            ],
+            "correcta": 1,
+            "explicacion": "Sirve para dar salida y recibir publicaciones institucionales y duplicados difíciles de conseguir.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estas NO es una finalidad del canje citada en el manual?",
+            "opciones": [
+                "Generar lazos y alianzas entre instituciones",
+                "Aumentar la difusión de los documentos intercambiados",
+                "Facilitar el acceso a la información científica y académica",
+                "Obtener ingresos económicos para la biblioteca"
+            ],
+            "correcta": 3,
+            "explicacion": "Las finalidades son lazos y alianzas, difusión y visibilidad, incrementar la colección y facilitar el acceso a la información.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El objetivo del depósito legal es:",
+            "opciones": [
+                "La venta de ejemplares sobrantes a bibliotecas",
+                "El control de la censura editorial",
+                "La compilación de todas las obras de un país para garantizar su conservación",
+                "La distribución gratuita de libros a escuelas"
+            ],
+            "correcta": 2,
+            "explicacion": "Es una adquisición por imperativo legal con ese objetivo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Como innovación, la Ley 23/2011 de depósito legal establece como responsable del depósito al:",
+            "opciones": [
+                "Impresor",
+                "Autor",
+                "Distribuidor",
+                "Editor"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual destaca al editor como responsable del depósito legal.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el acceso abierto es una fuente de incalculable valor sobre todo para las bibliotecas:",
+            "opciones": [
+                "Escolares",
+                "Especializadas",
+                "Infantiles",
+                "Municipales"
+            ],
+            "correcta": 1,
+            "explicacion": "El «Recuerda que…» lo vincula a las bibliotecas especializadas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Una de las funciones del módulo de adquisiciones es el control presupuestario por partidas, con desglose de:",
+            "opciones": [
+                "Préstamos y devoluciones",
+                "Cantidades gastadas y comprometidas",
+                "Altas y bajas de usuarios",
+                "Temperatura y humedad"
+            ],
+            "correcta": 1,
+            "explicacion": "El control presupuestario se hace por partidas con desglose de lo gastado y comprometido.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos NO es un requisito que el manual exige a los sistemas automatizados de adquisiciones?",
+            "opciones": [
+                "Ser multiconsulta y multipuesto",
+                "Ofrecer estadísticas",
+                "Ser flexible y configurable a la carta",
+                "Ser obligatoriamente software libre"
+            ],
+            "correcta": 3,
+            "explicacion": "Requisitos: actualizable, multipuesto, tramitación inmediata, control de gasto, estadísticas, exportación, EDI y flexibilidad.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la compra consorciada se utiliza normalmente para:",
+            "opciones": [
+                "Paquetes de revistas, libros electrónicos y bases de datos",
+                "Monografías impresas de compra en firme",
+                "Material de oficina y mobiliario",
+                "Fondo antiguo y manuscritos"
+            ],
+            "correcta": 0,
+            "explicacion": "El epígrafe del manual lo indica expresamente.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El Plan Farmington, gran referente internacional de cooperación, se desarrolló en:",
+            "opciones": [
+                "Los países nórdicos",
+                "Reino Unido",
+                "Estados Unidos",
+                "Francia"
+            ],
+            "correcta": 2,
+            "explicacion": "Farmington en EE. UU. y Scandia en los países nórdicos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el modelo de consorcio universitario no puede extrapolarse a bibliotecas públicas, municipales o escolares porque:",
+            "opciones": [
+                "No adquieren recursos electrónicos",
+                "Están adscritas a diferentes organismos",
+                "No tienen presupuesto propio",
+                "No pueden hacer préstamo interbibliotecario"
+            ],
+            "correcta": 1,
+            "explicacion": "A diferencia de las universidades, con autonomía propia, dependen de Consejerías, Fundaciones, etc.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Paul Mosher define la evaluación de la colección como:",
+            "opciones": [
+                "El proceso de identificar y corregir necesidades de la colección",
+                "La retirada del material obsoleto",
+                "El inventario de los fondos de la biblioteca",
+                "La valoración de la utilidad y pertinencia de la colección con relación a sus usuarios o programas"
+            ],
+            "correcta": 3,
+            "explicacion": "Es la definición de Mosher (1984) recogida en el manual.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según la ALA, el fin de la evaluación de la colección es determinar:",
+            "opciones": [
+                "El valor económico total de los fondos",
+                "Cuántos documentos deben expurgarse cada año",
+                "En qué medida responde a los objetivos y necesidades de sus principales grupos de usuarios",
+                "El número de préstamos por usuario"
+            ],
+            "correcta": 2,
+            "explicacion": "El procedimiento debe planificarse en concordancia con misión, visión y objetivos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los criterios de evaluación de la colección deben expresarse por escrito en un documento normativo que constituye la:",
+            "opciones": [
+                "Política de Gestión de Colecciones",
+                "Carta de Servicios",
+                "Memoria anual",
+                "Normativa de préstamo"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual lo denomina Política de Gestión de Colecciones de la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los métodos cuantitativos de evaluación de la colección se basan en:",
+            "opciones": [
+                "El juicio de expertos",
+                "La comparación con bibliografías",
+                "La opinión subjetiva del bibliotecario",
+                "El uso que se hace de la colección"
+            ],
+            "correcta": 3,
+            "explicacion": "Los cuantitativos evalúan por el uso a partir de datos y cifras; los cualitativos, la colección en sí misma.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los estudios de disponibilidad informan de:",
+            "opciones": [
+                "El número de veces que un documento es citado",
+                "Los problemas de los usuarios reales al buscar o acceder a los documentos",
+                "Las obras imprescindibles ausentes del catálogo",
+                "El estado de conservación del papel"
+            ],
+            "correcta": 1,
+            "explicacion": "Se basan en el rendimiento de la colección.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El estudio que determina el número de veces que un documento es citado por otros se clasifica en el manual como método:",
+            "opciones": [
+                "Cualitativo",
+                "Cuantitativo",
+                "De expurgo",
+                "De selección negativa"
+            ],
+            "correcta": 1,
+            "explicacion": "Los estudios de citas figuran entre los cuantitativos y se apoyan en bases de datos de citas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El examen directo de la colección se caracteriza por:",
+            "opciones": [
+                "Ser rápido y totalmente objetivo",
+                "Basarse solo en el préstamo interbibliotecario",
+                "Aplicarse únicamente a bibliotecas nacionales",
+                "Dar resultados subjetivos y requerir bibliotecarios altamente especializados"
+            ],
+            "correcta": 3,
+            "explicacion": "Puede aplicarse a cualquier biblioteca, pero es lento y sus resultados no son comparables.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los estudios de opinión de usuarios, es un método indirecto:",
+            "opciones": [
+                "La observación",
+                "La encuesta",
+                "La entrevista",
+                "El análisis de incidentes"
+            ],
+            "correcta": 0,
+            "explicacion": "Directos: encuestas, entrevistas, incidentes; indirectos: observación, análisis de referencias y de peticiones.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué estándar internacional para bibliotecas universitarias cita el manual en la comparación con estándares?",
+            "opciones": [
+                "ISO 14416:2003",
+                "Normas IFLA para bibliotecas públicas",
+                "ACRL (2000) Standards for College Libraries",
+                "Ley 23/2011"
+            ],
+            "correcta": 2,
+            "explicacion": "A nivel nacional cita el documento de REBIUN (1999).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El documento de REBIUN de 1999 citado como estándar nacional se titula:",
+            "opciones": [
+                "Normas y directrices para bibliotecas universitarias y científicas",
+                "Pautas para servicios de bibliotecas públicas",
+                "Directrices para una política de desarrollo de colecciones",
+                "Guide for written collection policy statements"
+            ],
+            "correcta": 0,
+            "explicacion": "Es el ejemplo nacional de estándar para bibliotecas universitarias.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los datos estadísticos sobre las bibliotecas públicas españolas se elaboran de acuerdo con la norma:",
+            "opciones": [
+                "ISO 14416",
+                "ISO 690",
+                "ISO 2789",
+                "ISO 2709"
+            ],
+            "correcta": 2,
+            "explicacion": "ISO 2789: Information and documentation – International library statistics.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la preparación de los fondos actúa como puente entre:",
+            "opciones": [
+                "La selección y el expurgo",
+                "El proceso técnico y la disponibilidad real del documento",
+                "El proveedor y la biblioteca",
+                "El catálogo y el depósito legal"
+            ],
+            "correcta": 1,
+            "explicacion": "Es la última operación antes de su uso.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El registro se define en el manual como:",
+            "opciones": [
+                "La etiqueta que se adhiere al lomo",
+                "La marca de propiedad estampada en la portada",
+                "La colocación del documento en la estantería",
+                "El acto administrativo de anotación exhaustiva de los datos del documento, un inventario"
+            ],
+            "correcta": 3,
+            "explicacion": "Permite demostrar la pertenencia del documento a la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los números de registro:",
+            "opciones": [
+                "Pueden reutilizarse tras un expurgo",
+                "Se asignan por orden alfabético de autor",
+                "Son consecutivos y nunca deben repetirse ni reutilizarse",
+                "Coinciden con la CDU del documento"
+            ],
+            "correcta": 2,
+            "explicacion": "Es un número de entrada secuencial y cronológico.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el material no librario puede registrarse:",
+            "opciones": [
+                "En el registro general especificando su soporte o en un registro especial paralelo",
+                "Solo en un registro separado obligatorio",
+                "Únicamente en el catálogo, sin registro",
+                "En la ficha kardex"
+            ],
+            "correcta": 0,
+            "explicacion": "Películas, música, láminas o fotos pueden ir al registro general o a uno paralelo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En los países anglosajones, el número de registro suele ir precedido de la letra:",
+            "opciones": [
+                "R",
+                "N",
+                "A",
+                "O"
+            ],
+            "correcta": 3,
+            "explicacion": "En los países hispanos se usa la R y en los anglosajones la O.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las obras multivolumen:",
+            "opciones": [
+                "Llevan un número distinto por volumen",
+                "Llevan todas el mismo número de registro",
+                "No se registran",
+                "Se registran solo en el primer volumen"
+            ],
+            "correcta": 1,
+            "explicacion": "Nota: el manual dice que llevan el mismo número; en la práctica muchas bibliotecas dan un número a cada volumen físico. Los duplicados sí se registran independientemente.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En CD y DVD, el número de registro se anota:",
+            "opciones": [
+                "En la portada interior del folleto",
+                "En etiquetas adhesivas en la parte posterior de la funda o caja",
+                "Grabado en la cara de datos del disco",
+                "En el tejuelo del estuche"
+            ],
+            "correcta": 1,
+            "explicacion": "También es habitual anotarlo con rotulador permanente sobre el disco.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el libro de registro tiende a desaparecer en entornos automatizados por:",
+            "opciones": [
+                "Prohibición legal",
+                "Su incompatibilidad con la CDU",
+                "Exigencia de los consorcios",
+                "Su escaso valor práctico y la carga de trabajo que supone"
+            ],
+            "correcta": 3,
+            "explicacion": "Los SIGB asignan a cada ejemplar un número consecutivo y no repetible.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Con el sellado se declara formalmente:",
+            "opciones": [
+                "La propiedad del documento",
+                "La ubicación del documento",
+                "El régimen de préstamo",
+                "El valor económico del documento"
+            ],
+            "correcta": 0,
+            "explicacion": "Se estampa un sello con el nombre de la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Por motivos de conservación, el sello debe ser:",
+            "opciones": [
+                "De tinta grasa indeleble",
+                "De lacre",
+                "De tinta no grasa o seco",
+                "Adhesivo de gran tamaño"
+            ],
+            "correcta": 2,
+            "explicacion": "Además debe ser pequeño para no invadir el documento.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Si un documento sellado se expurga, el sello de propiedad se anula con:",
+            "opciones": [
+                "Un contrasello de expurgo",
+                "Un tejuelo rojo",
+                "Una banda magnética",
+                "Una nueva signatura"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual habla de «contrasello» de expurgo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Un libro de gran valor por su antigüedad, rareza o por ser incunable se sella en:",
+            "opciones": [
+                "La portada",
+                "Los cantos",
+                "El reverso de la portada",
+                "Todas las páginas"
+            ],
+            "correcta": 2,
+            "explicacion": "Así se evita dañar la portada de obras valiosas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los mapas y grabados se sellan en:",
+            "opciones": [
+                "El margen superior del anverso",
+                "El reverso",
+                "La carpetilla",
+                "La caja"
+            ],
+            "correcta": 1,
+            "explicacion": "Planos, láminas y fotos van en los márgenes y, si no hay espacio, en el reverso en blanco.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El sello «Donado por…» se coloca en:",
+            "opciones": [
+                "El colofón",
+                "La cubierta",
+                "El tejuelo",
+                "La hoja de respeto y cortesía"
+            ],
+            "correcta": 3,
+            "explicacion": "Es un sello adicional al de propiedad.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el sellado tiene su antecedente en:",
+            "opciones": [
+                "Los colofones",
+                "Las marcas de impresor",
+                "Los ex-libris",
+                "Los tejuelos"
+            ],
+            "correcta": 2,
+            "explicacion": "Los ex-libris indicaban la propiedad del libro.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La tecnología que tiende a sustituir a las bandas magnéticas antihurto, con etiquetas con pequeñas antenas, es:",
+            "opciones": [
+                "RFID",
+                "EDI",
+                "DRM",
+                "OPAC"
+            ],
+            "correcta": 0,
+            "explicacion": "La identificación por radiofrecuencia permite transferir información y desactivar la alarma a distancia.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La signatura topográfica es:",
+            "opciones": [
+                "El número de entrada del documento",
+                "El sello de propiedad",
+                "El código de barras del ejemplar",
+                "El signo o conjunto de signos que indica la ubicación del documento en la colección"
+            ],
+            "correcta": 3,
+            "explicacion": "Se consigna en el documento y en el registro para facilitar su localización.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En una signatura de tres niveles, la segunda línea contiene:",
+            "opciones": [
+                "El número de la CDU abreviado",
+                "Las tres primeras letras del encabezamiento principal en mayúscula",
+                "Las tres primeras letras del título en minúscula",
+                "El número de registro"
+            ],
+            "correcta": 1,
+            "explicacion": "1.ª CDU; 2.ª encabezamiento en mayúsculas; 3.ª título en minúsculas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema",
+            "truco": "Número – AUTOR – título (de mayor a menor)."
+        },
+        {
+            "pregunta": "En algunas bibliotecas municipales, en lugar de la CDU la signatura se diversifica por:",
+            "opciones": [
+                "El color de la cubierta",
+                "Las iniciales de los géneros literarios (N, T, P)",
+                "El año de edición",
+                "El número de páginas"
+            ],
+            "correcta": 1,
+            "explicacion": "N para novela, T para teatro y P para poesía.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, en el tejuelo el color rojo suele indicar que el documento:",
+            "opciones": [
+                "Es una novedad",
+                "Pertenece a la sección infantil",
+                "Está en reparación",
+                "Está excluido del préstamo"
+            ],
+            "correcta": 3,
+            "explicacion": "El color de la etiqueta puede identificar el régimen de préstamo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En las bibliotecas infantiles, el color del tejuelo se utiliza para:",
+            "opciones": [
+                "Ordenar por edades",
+                "Indicar el idioma",
+                "Distinguir donaciones",
+                "Señalar obras deterioradas"
+            ],
+            "correcta": 0,
+            "explicacion": "Es más fácil y llamativo para el usuario infantil.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La sección local de una biblioteca pública recoge:",
+            "opciones": [
+                "Las novedades compradas en librerías locales",
+                "Los libros donados por vecinos",
+                "Las obras relativas a una región o comunidad y las producidas en ella",
+                "Los fondos expurgados pendientes de destino"
+            ],
+            "correcta": 2,
+            "explicacion": "Debe identificarse y separarse bibliográfica y físicamente.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la colocación numérica «325/5/45», el documento:",
+            "opciones": [
+                "Ocupa la posición 45 de la balda 5 de la estantería 325",
+                "Ocupa la posición 325 de la balda 45",
+                "Tiene el registro 325 y la CDU 5",
+                "Está en la sala 325, estantería 5"
+            ],
+            "correcta": 0,
+            "explicacion": "Estantería / balda / posición; con baldas móviles supone un gran ahorro de espacio.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ordenación por números currens se emplea normalmente en:",
+            "opciones": [
+                "Salas de libre acceso infantiles",
+                "Hemerotecas de consulta abierta",
+                "Depósitos cerrados, para aprovechar el espacio",
+                "Secciones de centros de interés"
+            ],
+            "correcta": 2,
+            "explicacion": "Hace indispensable el catálogo, pues no hay conexión temática entre obras contiguas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la ordenación alfabética:",
+            "opciones": [
+                "Es la más generalizada en libre acceso",
+                "Es poco práctica y propia de bibliotecas pequeñas",
+                "Usa las marcas de Cutter y la CDU",
+                "Es obligatoria en depósitos cerrados"
+            ],
+            "correcta": 1,
+            "explicacion": "Las publicaciones seriadas sí suelen ordenarse alfabéticamente por título.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La principal ventaja de la ordenación sistemática es que:",
+            "opciones": [
+                "Ahorra el máximo espacio en depósito",
+                "No necesita signatura",
+                "Ordena por fecha de llegada",
+                "Permite prescindir del catálogo para localizar y agrupa los documentos por tema"
+            ],
+            "correcta": 3,
+            "explicacion": "Es la más generalizada y se usa en libre acceso.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la CDU, el número 51 estará seguido de:",
+            "opciones": [
+                "El número 52 directamente",
+                "Los números 5100 a 5199 tras el 52",
+                "Los números 510 a 519 antes del 52",
+                "El número 6"
+            ],
+            "correcta": 2,
+            "explicacion": "Cada dígito se considera una fracción decimal: se ordena de lo general a lo particular.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según las tablas de ordenación de la CDU recogidas en el manual, lo primero que se ordena es:",
+            "opciones": [
+                "El número principal o simple",
+                "El número compuesto por dos principales",
+                "El número seguido de auxiliares como prefijos",
+                "El número con signo de relación"
+            ],
+            "correcta": 0,
+            "explicacion": "Orden: simple; con auxiliar independiente; compuesto; con auxiliares como prefijos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En la tabla de ordenación de la CDU, el auxiliar de lugar se representa con:",
+            "opciones": [
+                "(0…)",
+                "\"…\"",
+                "(=…)",
+                "(1/9)"
+            ],
+            "correcta": 3,
+            "explicacion": "(0…) es forma, \"…\" tiempo y (=…) raza.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La ordenación por centros de interés:",
+            "opciones": [
+                "Es de origen francés y propia de bibliotecas nacionales",
+                "Es de origen anglosajón y resulta más adecuada para bibliotecas públicas",
+                "Usa obligatoriamente la CDU completa",
+                "Solo se aplica en depósitos cerrados"
+            ],
+            "correcta": 1,
+            "explicacion": "Coloca los fondos donde el usuario espera encontrarlos, como en las grandes librerías.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Las plataformas de préstamo de libro electrónico como Odilo o Xercode presentan sus estantes virtuales siguiendo el modelo de:",
+            "opciones": [
+                "Números currens",
+                "Centros de interés",
+                "Ordenación alfabética de autores",
+                "Signatura CDU de tres niveles"
+            ],
+            "correcta": 1,
+            "explicacion": "El manual lo cita como ejemplo de ordenación por grupos de interés.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, al colocar los documentos en los estantes se empieza a rellenar por:",
+            "opciones": [
+                "La balda superior, por visibilidad",
+                "La balda central, por comodidad",
+                "La balda más cercana a la ventana",
+                "La balda inferior, por seguridad y estabilidad"
+            ],
+            "correcta": 3,
+            "explicacion": "Nota: el manual indica de izquierda a derecha y de abajo arriba; muchos manuales hablan de colocar de arriba abajo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué bibliotecas tienen, según el manual, la función de preservación a perpetuidad?",
+            "opciones": [
+                "Las nacionales",
+                "Las universitarias",
+                "Las escolares",
+                "Las municipales"
+            ],
+            "correcta": 0,
+            "explicacion": "Las nacionales sí; las universitarias y escolares no.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Desde los años 80, el organismo encargado de fomentar los principios de preservación y conservación (PAC) es:",
+            "opciones": [
+                "La UNESCO",
+                "La ALA",
+                "La IFLA",
+                "La ISO"
+            ],
+            "correcta": 2,
+            "explicacion": "La IFLA se erige desde los 80 como impulsora del programa PAC.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los «Principios para la Preservación y Conservación de Materiales Bibliográficos» (1986) son obra de:",
+            "opciones": [
+                "J. M. Dureau y D. W. G. Clements",
+                "Edward Evans y Paul Mosher",
+                "Ranganathan y Cutter",
+                "Pérez Sousa y Dewey"
+            ],
+            "correcta": 0,
+            "explicacion": "Ampliaron en 1986 el primer intento de normalización terminológica de 1979.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El primer intento de normalizar internacionalmente la terminología de preservación y conservación se presentó en:",
+            "opciones": [
+                "1986",
+                "1958",
+                "1979",
+                "1996"
+            ],
+            "correcta": 2,
+            "explicacion": "Se amplió en 1986 con los Principios de Dureau y Clements.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La preservación, según el manual, se refiere a:",
+            "opciones": [
+                "Las técnicas para reparar documentos dañados",
+                "Las actividades económicas y administrativas al servicio de la prevención del deterioro",
+                "La encuadernación de publicaciones periódicas",
+                "La colocación de los libros en las estanterías"
+            ],
+            "correcta": 1,
+            "explicacion": "Determina medidas preventivas de permanencia y durabilidad.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el programa de prevención y corrección de agentes degradantes, la preservación y la restauración son, respectivamente, acciones:",
+            "opciones": [
+                "A posteriori y a priori",
+                "Internas y externas",
+                "Directas e indirectas",
+                "A priori y a posteriori"
+            ],
+            "correcta": 3,
+            "explicacion": "La preservación se emprende antes del daño; la restauración, después.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Entre las políticas mínimas de preservación, el manual señala que la preservación es responsabilidad de:",
+            "opciones": [
+                "Solo el personal de restauración",
+                "Los usuarios",
+                "La gestión a alto nivel",
+                "Los proveedores"
+            ],
+            "correcta": 2,
+            "explicacion": "Además implica a todo el personal y debe reflejarse en los presupuestos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Son factores internos o intrínsecos de deterioro:",
+            "opciones": [
+                "La acidificación, la oxidación y la corrosión de las tintas",
+                "Los insectos y roedores",
+                "La humedad y la temperatura",
+                "Los incendios e inundaciones"
+            ],
+            "correcta": 0,
+            "explicacion": "Los internos los provoca la naturaleza del soporte y sus aditivos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, los factores de deterioro más frecuentes son:",
+            "opciones": [
+                "Los internos o intrínsecos",
+                "Los imprevisibles",
+                "Los químicos del papel",
+                "Los externos o extrínsecos"
+            ],
+            "correcta": 3,
+            "explicacion": "Resultan del uso y del entorno de la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Los factores de deterioro relacionados con microorganismos, insectos o roedores son:",
+            "opciones": [
+                "Ambientales",
+                "Biológicos",
+                "Humanos",
+                "Intrínsecos"
+            ],
+            "correcta": 1,
+            "explicacion": "Los ambientales tienen que ver con temperatura, humedad, luz y contaminación.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, el edificio debe construirse principalmente con materiales:",
+            "opciones": [
+                "Reflectantes y aislantes acústicos",
+                "Ignífugos y antibibliófagos",
+                "Translúcidos y ligeros",
+                "Reciclados y porosos"
+            ],
+            "correcta": 1,
+            "explicacion": "El plan de prevención debe tenerse en cuenta desde el diseño del edificio.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la temperatura ideal en los depósitos suele oscilar entre:",
+            "opciones": [
+                "10 y 14 ºC",
+                "22 y 26 ºC",
+                "5 y 10 ºC",
+                "16 y 21 ºC"
+            ],
+            "correcta": 3,
+            "explicacion": "Y la humedad relativa entre el 40 y el 60 %.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Para evitar la exposición directa a la luz solar, las estanterías deben colocarse:",
+            "opciones": [
+                "Perpendiculares a las ventanas",
+                "Paralelas a las ventanas",
+                "Pegadas a las ventanas",
+                "En diagonal respecto a las ventanas"
+            ],
+            "correcta": 0,
+            "explicacion": "Además se aconseja luz fría y filtros ultravioleta en los depósitos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, en los depósitos se recomienda no sobrepasar una intensidad lumínica de:",
+            "opciones": [
+                "200 lux",
+                "500 lux",
+                "50 lux",
+                "1.000 lux"
+            ],
+            "correcta": 2,
+            "explicacion": "Nota: el manual dice que basta para evitar microorganismos; hoy los 50 lux se justifican por el daño fotoquímico de la luz.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Si aparece un brote de insectos en la colección, el manual indica recurrir a:",
+            "opciones": [
+                "Un entomólogo",
+                "Un restaurador",
+                "Un arquitecto",
+                "Un químico textil"
+            ],
+            "correcta": 0,
+            "explicacion": "El entomólogo identifica la especie y aconseja el tratamiento.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, los sistemas de extinción por rociadores no son adecuados para el material librario porque:",
+            "opciones": [
+                "Son demasiado caros",
+                "No detectan el humo",
+                "El agua puede causar más daños que el propio fuego",
+                "Están prohibidos en edificios públicos"
+            ],
+            "correcta": 2,
+            "explicacion": "Son preferibles el polvo seco, la nieve carbónica o el agua nebulizada.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "En el fondo antiguo o especialmente valioso, la preservación del contenido se garantiza con:",
+            "opciones": [
+                "La encuadernación",
+                "La digitalización",
+                "El préstamo interbibliotecario",
+                "El expurgo"
+            ],
+            "correcta": 1,
+            "explicacion": "Evita el desgaste del uso y protege los originales.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El programa de digitalización de la Biblioteca de la Universidad Complutense de Madrid citado en el manual es:",
+            "opciones": [
+                "Fondo Antiguo Digital",
+                "Biblioteca Digital Hispánica",
+                "Hispana",
+                "Dioscórides"
+            ],
+            "correcta": 3,
+            "explicacion": "Sevilla tiene su Fondo Antiguo Digital y la BNE la Biblioteca Digital Hispánica.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La Comisión Española sobre la Digitalización y Accesibilidad en línea de Material Cultural y la Conservación Digital depende de:",
+            "opciones": [
+                "La IFLA",
+                "REBIUN",
+                "El Ministerio de Cultura y Deporte",
+                "La Biblioteca Nacional de España"
+            ],
+            "correcta": 2,
+            "explicacion": "Así lo indica el «Sabías que…» del manual.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, las estanterías metálicas se están imponiendo por:",
+            "opciones": [
+                "Su mayor resistencia al fuego y estabilidad",
+                "Su menor precio",
+                "Su menor peso",
+                "Su mejor aspecto estético"
+            ],
+            "correcta": 0,
+            "explicacion": "En depósitos cerrados son muy útiles las estanterías compactas por el ahorro de espacio.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "El concepto moderno de restauración nace en:",
+            "opciones": [
+                "El siglo XVI",
+                "El siglo XX",
+                "La Edad Media",
+                "El siglo XIX"
+            ],
+            "correcta": 3,
+            "explicacion": "Surge al hacerse notoria la necesidad de frenar la corrosión de los libros.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Qué autor define la restauración como las técnicas y conocimientos para reparar los daños causados por el uso, el tiempo y otros factores?",
+            "opciones": [
+                "Paul Mosher",
+                "Pérez Sousa",
+                "Edward Evans",
+                "J. M. Dureau"
+            ],
+            "correcta": 1,
+            "explicacion": "La definición de Pérez Sousa se refiere a materiales de archivos y bibliotecas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Junto con el respeto a la originalidad y la inocuidad, el tercer criterio básico de toda restauración es:",
+            "opciones": [
+                "La rapidez",
+                "La reversibilidad",
+                "La economía",
+                "La uniformidad"
+            ],
+            "correcta": 1,
+            "explicacion": "Reversibilidad: capacidad de volver a un estado anterior.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema",
+            "truco": "RIR: Respeto, Inocuidad, Reversibilidad."
+        },
+        {
+            "pregunta": "La técnica de restauración tradicional más utilizada es:",
+            "opciones": [
+                "La laminación",
+                "La digitalización",
+                "La desacidificación",
+                "La encuadernación"
+            ],
+            "correcta": 3,
+            "explicacion": "Engloba cosido, encolado o grapado, enlomado y montaje.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Antes de encuadernar una obra moderna hay que sopesar:",
+            "opciones": [
+                "El coste-beneficio: coste de reposición e importancia en la colección",
+                "Solo el color de la cubierta",
+                "La opinión del editor",
+                "El número de préstamos del último mes"
+            ],
+            "correcta": 0,
+            "explicacion": "El manual habla expresamente de coste-beneficio.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "La norma ISO 14416:2003 (UNE 44111) propone recomendaciones sobre:",
+            "opciones": [
+                "Las estadísticas internacionales de bibliotecas",
+                "La descripción bibliográfica",
+                "La encuadernación de libros, seriadas y otros documentos en papel",
+                "La permanencia del papel"
+            ],
+            "correcta": 2,
+            "explicacion": "Se cita como referencia para la encuadernación.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "¿Cuál de estos factores NO cita el manual para decidir si conviene un taller propio de encuadernación?",
+            "opciones": [
+                "La antigüedad del edificio",
+                "El tipo de biblioteca",
+                "El presupuesto disponible",
+                "El número de encuadernaciones anuales"
+            ],
+            "correcta": 0,
+            "explicacion": "Depende del tipo de biblioteca, del presupuesto, del número de encuadernaciones anuales y del personal.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Según el manual, la gestión de la colección ha de realizarse con juicio crítico promoviendo:",
+            "opciones": [
+                "El crecimiento ilimitado",
+                "La especialización temática exclusiva",
+                "La calidad, la cantidad y el equilibrio",
+                "La reducción del gasto por encima de todo"
+            ],
+            "correcta": 2,
+            "explicacion": "Selección y adquisición son actividades de gestión en equipo y en cooperación.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
         }
     ],
     "fichas": [
@@ -34287,6 +36113,342 @@
             "referencia": "Manual MAD, Tema 13",
             "bloque": "Tema 13 (MAD). Los catálogos: concepto, clases y fines. Reconversión de los catálogos. El OPAC",
             "tema": "Tema 13 · Preguntas del tema"
+        },
+        {
+            "anverso": "Gestión de la colección según Edward Evans",
+            "reverso": "Proceso que permite identificar fortalezas y debilidades de la colección según las necesidades de los usuarios y los recursos de la comunidad, para corregir las carencias detectadas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Origen de los términos «gestión/desarrollo de la colección»",
+            "reverso": "EE. UU., fines del siglo XIX, a raíz de una crisis económica global.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "ALA 1996 / IFLA 2001",
+            "reverso": "ALA (1996): Guide for written collection policy statements. IFLA (2001): Directrices para una política de desarrollo de las colecciones sobre la base del modelo Conspectus.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Definición de colección (MAD)",
+            "reverso": "Conjunto de materiales bibliográficos, documentales, audiovisuales y electrónicos reunidos y organizados por la biblioteca y puestos a disposición de los usuarios, sea cual sea su procedencia o forma de adquisición.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Tres ejes de los objetivos de la colección",
+            "reverso": "La colección, la comunidad de usuarios y la institución.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Análisis DAFO de la colección",
+            "reverso": "Fortalezas y debilidades: entorno interno. Oportunidades y amenazas: entorno externo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Contenido mínimo del documento de política de colección",
+            "reverso": "Objetivos y perfiles; criterios de selección y expurgo; criterios de adquisición; distribución del presupuesto; conservación del fondo.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Cuatro tareas básicas sobre la colección",
+            "reverso": "Selección, adquisición, ordenación y conservación.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Las 5 leyes de Ranganathan (1931)",
+            "reverso": "1) Los libros son para usarse. 2) A cada lector su libro. 3) A cada libro su lector. 4) Hay que ahorrar tiempo al lector. 5) La biblioteca es un organismo en crecimiento.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Selección positiva / negativa",
+            "reverso": "Positiva: incorporar nuevos recursos (adquisición). Negativa: retirar material (expurgo).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Tipos de criterios de selección",
+            "reverso": "Cuantitativos (estándares: IFLA, UNESCO, AENOR, ISO, REBIUN), cualitativos (contenido intelectual) y de imparcialidad o neutralidad ideológica.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Criterio de imparcialidad",
+            "reverso": "Selección objetiva, sin discriminación política, religiosa, social o cultural; todo documento con valor formativo, cultural e informativo puede incorporarse.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Fuentes de selección",
+            "reverso": "Bibliografías, catálogos comerciales, repertorios en venta (Books In Print, Ulrich's, ISSN Portal), libros a examen, desideratas, comités de lectura y otras (reseñas, catálogos de otras bibliotecas, citas…).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "ISSN Portal",
+            "reverso": "Base de datos en línea creada por el ISDS (International Serials Data System) con el registro mundial de ISSN.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Expurgo: definición y responsable",
+            "reverso": "Selección negativa basada en la vigencia-eficiencia de la colección; retira material deteriorado, obsoleto o sin uso. Responsable último: el director de la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Destinos del material expurgado",
+            "reverso": "Depósito cerrado, depósito cooperativo, otras bibliotecas, digitalización o donación (con sello de expurgo). No equivale a destrucción.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Objetivos del expurgo",
+            "reverso": "Ganar espacio, mejorar la calidad y la accesibilidad, relevancia de la colección, aumentar el uso y mejorar la imagen de la biblioteca.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Art. 50 Ley 16/1985 (Patrimonio Histórico)",
+            "reverso": "Protege las obras con menos de 3 ejemplares en servicios públicos editadas antes de 1958, y los audiovisuales con menos de 3 ejemplares (1 en películas cinematográficas).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Umbral de concurso público (según el manual)",
+            "reverso": "Compras de suministro de más de 18.000 € (Ley de Contratos del Sector Público). Nota: hoy el contrato menor de suministros está por debajo de 15.000 € (Ley 9/2017).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Formas de adquisición con cargo presupuestario",
+            "reverso": "Compra en firme, a examen, petición permanente y suscripción.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Petición permanente",
+            "reverso": "Adquisición de series o colecciones con continuidad; exige previsión de gasto y los documentos se reciben según se publican.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Big Deal",
+            "reverso": "Licencias de acceso a grandes paquetes a precio muy ventajoso, aunque no siempre pertinentes («superofertas»).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Pick&Choose",
+            "reverso": "Compra a perpetuidad de títulos sueltos elegidos por la biblioteca, normalmente a través de un agregador (Ebrary, Dawsonera, Ebscohost).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "EBS (Evidence Based Selection)",
+            "reverso": "Acceso a la colección completa durante un periodo; al final la biblioteca compra a perpetuidad los títulos elegidos según las estadísticas de uso. Pago único muy elevado.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Compra a perpetuidad de libros-e",
+            "reverso": "Propiedad y acceso perpetuo; inconveniente: precio entre un 200 y un 300 % más alto.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "OASIS",
+            "reverso": "Online Acquisitions and Selection Information System: sistema gratuito de ProQuest para buscar, seleccionar y solicitar libros impresos y electrónicos.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Formas de adquisición gratuita",
+            "reverso": "Donación, canje o intercambio científico, depósito legal, producción propia y acceso abierto/repositorios.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Ley de depósito legal",
+            "reverso": "Ley 23/2011, de 29 de julio; incluye la edición electrónica y hace responsable al editor.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Consorcios universitarios citados",
+            "reverso": "Estatal: REBIUN, DOCUMAT. Autonómicos: CBUA (Andalucía), BUCLE (Castilla y León), CBUC (Cataluña). Internacional: Plan Farmington (EE. UU.), Plan Scandia (países nórdicos).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Razones para crear consorcios",
+            "reverso": "Necesidades informativas en un entorno globalizado, eficiencia en el gasto, ventajas en los costes y calidad del servicio con mayor posicionamiento estratégico.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Evaluación de la colección según Paul Mosher",
+            "reverso": "Valoración de la utilidad y pertinencia de la colección de una biblioteca con relación a sus usuarios o programas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Métodos cuantitativos de evaluación",
+            "reverso": "Por el uso: estudios de circulación, de uso, de disponibilidad y de citas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Métodos cualitativos de evaluación",
+            "reverso": "La colección en sí misma: comparación entre listas (variante Conspectus), examen directo, opinión de usuarios y comparación con estándares (ACRL 2000, REBIUN 1999).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "ISO 2789",
+            "reverso": "Information and documentation – International library statistics; base de las estadísticas de bibliotecas públicas españolas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Registro",
+            "reverso": "Acto administrativo de anotación exhaustiva de los datos del documento (inventario): número secuencial y cronológico, nunca repetido ni reutilizado. Finalidad administrativa y contable.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Letra del número de registro",
+            "reverso": "R en los países hispanos; O en los anglosajones. Multivolumen: mismo número (según el manual); duplicados: número independiente.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Lugares del sello en material impreso",
+            "reverso": "Portada (con el n.º de registro), páginas intermedias, última página o colofón y cantos; obras valiosas o incunables: reverso de la portada.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Sellado de materiales especiales",
+            "reverso": "Mapas y grabados: reverso. Diapositivas y microformas: carpetilla. Audiovisuales: carátula y etiqueta. CD/DVD: etiqueta en la caja. «Donado por…»: hoja de respeto y cortesía.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Signatura de tres niveles",
+            "reverso": "1.ª línea: CDU abreviada. 2.ª: tres primeras letras del encabezamiento en MAYÚSCULAS. 3.ª: tres primeras letras del título en minúsculas (ej.: 860 CER ing).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Métodos de ordenación",
+            "reverso": "Números currens (depósito), alfabética (bibliotecas pequeñas y seriadas por título), sistemática (CDU + Cutter, libre acceso), centros de interés (públicas) y otras.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Preservación / conservación / restauración",
+            "reverso": "Preservación: actividades económicas y administrativas para prevenir el deterioro (a priori). Conservación: proteger los fondos y prolongar su uso. Restauración: técnicas a posteriori.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Dureau y Clements",
+            "reverso": "Principios para la Preservación y Conservación de Materiales Bibliográficos (1986, ampliando un intento de 1979): considerado el código deontológico de la conservación.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Factores de deterioro",
+            "reverso": "Internos (soporte y aditivos: acidificación, oxidación, corrosión de tintas). Externos, los más frecuentes: ambientales, biológicos, humanos e imprevisibles (siniestros).",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Condiciones ambientales en depósito (MAD)",
+            "reverso": "Temperatura 16-21 ºC; HR 40-60 %; luz no superior a 50 lux, luz fría, filtros UV y estanterías perpendiculares a las ventanas.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Extinción de incendios en bibliotecas",
+            "reverso": "Rociadores no adecuados; preferibles polvo seco, nieve carbónica o agua nebulizada.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Criterios de la restauración",
+            "reverso": "Respeto a la originalidad e integridad, inocuidad y reversibilidad.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "Digitalización de fondo valioso (ejemplos)",
+            "reverso": "BNE: Biblioteca Digital Hispánica. UCM: Dioscórides. Universidad de Sevilla: Fondo Antiguo Digital.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
+        },
+        {
+            "anverso": "ISO 14416:2003 (UNE 44111)",
+            "reverso": "Recomendaciones sobre la encuadernación de libros, publicaciones seriadas y otros documentos en papel.",
+            "referencia": "Manual MAD, Tema 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Preguntas del tema"
         }
     ],
     "articulos": [
