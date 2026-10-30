@@ -24712,6 +24712,986 @@
             "referencia": "Test MAD nº 14, pregunta 35",
             "bloque": "Tema 14 (MAD). Principales sistemas de clasificación bibliográfica. La CDU",
             "tema": "Tema 14 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La gestión de la colección es un proceso que permite:",
+            "opciones": [
+                "Identificar fortalezas y debilidades y analizar oportunidades y amenazas",
+                "Evitar debilidades y peligros",
+                "Solo identificar fortalezas y debilidades",
+                "Solo analizar oportunidades y amenazas"
+            ],
+            "correcta": 0,
+            "explicacion": "La gestión de la colección funciona como un análisis DAFO: identifica fortalezas y debilidades y analiza oportunidades y amenazas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 1",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los principios de «adecuación, coherencia y equilibrio» se refieren a:",
+            "opciones": [
+                "La atención al usuario",
+                "El desarrollo de la colección y su programa de gestión",
+                "La conservación preventiva",
+                "La catalogación descriptiva"
+            ],
+            "correcta": 1,
+            "explicacion": "Adecuación, coherencia y equilibrio son los principios que guían el desarrollo de la colección y el programa de gestión de la colección. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 2",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estos requisitos NO forma parte de un programa de desarrollo de la colección?",
+            "opciones": [
+                "Ser elaborado a partir de necesidades reales",
+                "Ser revisado regularmente",
+                "Ser elaborado por la Dirección de la Biblioteca",
+                "Partir de una evaluación previa de la colección existente"
+            ],
+            "correcta": 2,
+            "explicacion": "El programa debe partir de necesidades reales y de la evaluación de la colección y revisarse regularmente; no se exige que lo elabore la Dirección. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 3",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estos criterios NO es apropiado para guiar la selección?",
+            "opciones": [
+                "Imparcialidad",
+                "Ideológico",
+                "Cuantitativo",
+                "Cualitativo"
+            ],
+            "correcta": 1,
+            "explicacion": "La selección se guía por criterios cualitativos, cuantitativos y de imparcialidad; el criterio ideológico no es apropiado. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 4",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "NO es un criterio cualitativo (relativo al contenido intelectual) aplicable a la selección:",
+            "opciones": [
+                "La previsión de gasto",
+                "La actualidad del contenido",
+                "El prestigio del autor",
+                "La calidad de la editorial"
+            ],
+            "correcta": 0,
+            "explicacion": "La previsión de gasto es un criterio económico, no relativo al contenido intelectual. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 5",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué instrumento de selección está intrínsecamente relacionado con las preferencias y necesidades de los usuarios?",
+            "opciones": [
+                "Libros a examen",
+                "Desideratas",
+                "Comités de lectura",
+                "Catálogos comerciales"
+            ],
+            "correcta": 1,
+            "explicacion": "Las desideratas son las peticiones de compra que hacen los propios usuarios. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 6",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El expurgo consiste en:",
+            "opciones": [
+                "Fumigar y desinfectar los fondos de la colección",
+                "Sustituir documentos obsoletos por nuevas ediciones",
+                "Una selección positiva basada en la vigencia de la colección",
+                "Sacar de la colección documentos no válidos para las demandas de los usuarios"
+            ],
+            "correcta": 3,
+            "explicacion": "Expurgar es retirar de la colección los documentos que ya no responden a las demandas de los usuarios (selección negativa). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 7",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El método CREW se utiliza:",
+            "opciones": [
+                "En el expurgo",
+                "En la adquisición mediante pago",
+                "Como criterio de selección positiva",
+                "En la evaluación de servicios"
+            ],
+            "correcta": 0,
+            "explicacion": "CREW (Continuous Review, Evaluation and Weeding) es un método de expurgo. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 8",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Es una forma de adquisición de material bibliográfico con cargo presupuestario:",
+            "opciones": [
+                "Compra en firme",
+                "A prueba",
+                "Petición atemporal",
+                "Compra a plazos"
+            ],
+            "correcta": 0,
+            "explicacion": "La compra en firme es la adquisición con cargo al presupuesto de la biblioteca. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 9",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál NO es una forma habitual de adquisición de libros electrónicos?",
+            "opciones": [
+                "EBS",
+                "Pick & Choose",
+                "Take away",
+                "PDA"
+            ],
+            "correcta": 2,
+            "explicacion": "EBS (Evidence Based Selection), Pick & Choose y PDA (Patron Driven Acquisition) son modelos de adquisición de libros-e; «Take away» no lo es. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 10",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La adquisición gratuita que permite consultar, descargar, copiar e imprimir textos completos sin limitación legal es:",
+            "opciones": [
+                "Donación",
+                "Depósito legal",
+                "Repositorios",
+                "Intercambio científico"
+            ],
+            "correcta": 2,
+            "explicacion": "Los repositorios de acceso abierto permiten consultar, descargar, copiar e imprimir textos completos sin limitación legal. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 11",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "En un SIGB, el fichero de proveedores se encuentra en el módulo de:",
+            "opciones": [
+                "Circulación",
+                "Autoridades",
+                "Adquisición",
+                "Catalogación"
+            ],
+            "correcta": 2,
+            "explicacion": "Los proveedores se gestionan en el módulo de adquisiciones. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 12",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Son beneficios de la compra consorciada:",
+            "opciones": [
+                "Ventajas en los costes, eficiencia en el gasto y mayor posicionamiento estratégico",
+                "Ventajas en los costes, pero menor posicionamiento estratégico",
+                "Eficiencia en el gasto, pero sin ventajas en los costes",
+                "Solo un mayor posicionamiento estratégico"
+            ],
+            "correcta": 0,
+            "explicacion": "La compra consorciada aporta ventajas en costes, eficiencia en el gasto por la optimización de recursos y mayor posicionamiento estratégico. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 13",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La evaluación de la colección en una biblioteca es tarea de:",
+            "opciones": [
+                "Gestión",
+                "Mantenimiento",
+                "Proceso técnico",
+                "Preservación"
+            ],
+            "correcta": 0,
+            "explicacion": "Evaluar la colección forma parte de la gestión de la colección. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 14",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Es un método cuantitativo para la evaluación de la colección:",
+            "opciones": [
+                "El examen directo de la colección",
+                "Los estudios de circulación",
+                "La opinión de los usuarios",
+                "El juicio de expertos"
+            ],
+            "correcta": 1,
+            "explicacion": "Los estudios de circulación miden el uso (cuantitativo); el examen directo, la opinión de usuarios y el juicio de expertos son cualitativos. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 15",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El plan de adquisición cooperativa de revistas de matemáticas que se desarrolla en España se llama:",
+            "opciones": [
+                "DOCUMATECA",
+                "DOCUMARC",
+                "DOCUMAT",
+                "DOCUMATE"
+            ],
+            "correcta": 2,
+            "explicacion": "DOCUMAT es el plan cooperativo de adquisición de revistas de matemáticas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 16",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El sistema CONSPECTUS es un método destinado a la evaluación de:",
+            "opciones": [
+                "Servicios",
+                "Colecciones",
+                "Catalogaciones",
+                "Instalaciones"
+            ],
+            "correcta": 1,
+            "explicacion": "Conspectus es un método de evaluación de colecciones por materias y niveles. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 17",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El acto formal por el que un documento se incorpora a la colección se denomina:",
+            "opciones": [
+                "Sellado",
+                "Laminado",
+                "Registro",
+                "Magnetizado"
+            ],
+            "correcta": 2,
+            "explicacion": "El registro es el acto formal de incorporación del documento a la colección. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 18",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El número de registro para varios ejemplares de la misma obra es:",
+            "opciones": [
+                "El mismo número con indicación del número de ejemplares",
+                "El mismo número para todos",
+                "El mismo número si se reciben a la vez",
+                "Un número distinto para cada ejemplar"
+            ],
+            "correcta": 3,
+            "explicacion": "Cada ejemplar recibe su propio número de registro. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 19",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Sobre el sellado:",
+            "opciones": [
+                "No se hace en libros antiguos y valiosos",
+                "Solo se sellan los libros en la portada",
+                "Es un sistema antihurto",
+                "Se sellan todos los documentos que llegan a la biblioteca"
+            ],
+            "correcta": 3,
+            "explicacion": "Todos los documentos que ingresan en la biblioteca se sellan. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 20",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las fichas empleadas para anotar los datos de recepción de los números de las publicaciones seriadas se llaman:",
+            "opciones": [
+                "Conspectus",
+                "Ficha catalográfica",
+                "Kardex",
+                "Registro de fondo"
+            ],
+            "correcta": 2,
+            "explicacion": "El kardex es el fichero de control de recepción de los números de las publicaciones seriadas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 21",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué es un tejuelo?",
+            "opciones": [
+                "La signatura topográfica",
+                "La etiqueta que se adhiere al lomo del libro",
+                "Las marcas de Cutter",
+                "El número de registro"
+            ],
+            "correcta": 1,
+            "explicacion": "El tejuelo es la etiqueta pegada en el lomo donde figura la signatura. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 22",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Se llama número currens:",
+            "opciones": [
+                "Al sistema de ordenación por la secuencia de entrada",
+                "Al número total de fondos",
+                "Al registro de publicaciones seriadas",
+                "Al número de ejemplares de una misma obra"
+            ],
+            "correcta": 0,
+            "explicacion": "La ordenación por número currens coloca los documentos según su orden de entrada. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 23",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las marcas de Cutter se utilizan en el método de ordenación:",
+            "opciones": [
+                "Por número currens",
+                "Sistemático",
+                "Alfabético",
+                "Por centros de interés"
+            ],
+            "correcta": 1,
+            "explicacion": "En la ordenación sistemática se usan las marcas de Cutter para ordenar dentro de cada materia. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 24",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Cuando se habla de conservación de los fondos de la biblioteca se entiende:",
+            "opciones": [
+                "Establecer medidas de protección para prolongar su utilización en condición óptima",
+                "Mantener y restaurar las propiedades físicas de los documentos",
+                "La conservación y el expurgo del fondo",
+                "La corrección de agentes degradantes"
+            ],
+            "correcta": 0,
+            "explicacion": "Conservar es establecer medidas de protección para prolongar la utilización de los fondos en condiciones óptimas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 25",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuáles son las mejores condiciones de temperatura y humedad para preservar el material bibliográfico en depósito?",
+            "opciones": [
+                "22 º y 75 % de humedad",
+                "22 º y 35 % de humedad",
+                "26 º y 60 % de humedad",
+                "20 º y 55 % de humedad"
+            ],
+            "correcta": 3,
+            "explicacion": "El manual da como idóneos unos 20 º y un 55 % de humedad relativa. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 26",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Para mantener estable la humedad relativa, ¿qué hay que hacer si la humedad aumenta?",
+            "opciones": [
+                "Ventilar",
+                "Deshumidificar",
+                "Humidificar",
+                "Filtrar el aire"
+            ],
+            "correcta": 1,
+            "explicacion": "Si la humedad sube hay que deshumidificar. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 27",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Entre los criterios para valorar si una obra tiene un valor especial NO está:",
+            "opciones": [
+                "La antigüedad",
+                "El precio",
+                "El valor estético",
+                "El valor histórico"
+            ],
+            "correcta": 1,
+            "explicacion": "El valor de una obra se mide por su antigüedad, valor estético o histórico, no por su precio. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 28",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El sistema de iluminación idóneo para una biblioteca es:",
+            "opciones": [
+                "Luz solar indirecta e iluminación individual con lámparas en cada puesto",
+                "Solo luz solar indirecta",
+                "Luz solar indirecta e iluminación colectiva con luz fría",
+                "Iluminación colectiva e iluminación individual en cada puesto"
+            ],
+            "correcta": 2,
+            "explicacion": "El manual recomienda luz solar indirecta e iluminación colectiva con luz fría. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 29",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La restauración ha de guiarse por estos criterios:",
+            "opciones": [
+                "Respeto al original e inocuidad",
+                "Respeto al original e irreversibilidad",
+                "Irreversibilidad e inocuidad",
+                "Solo la irreversibilidad"
+            ],
+            "correcta": 0,
+            "explicacion": "La restauración debe respetar el original y ser inocua (y reversible, nunca irreversible). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 30",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El modelo de adquisición de libros electrónicos en el que la biblioteca ofrece acceso a una amplia colección de títulos que aún no ha comprado formalmente se denomina:",
+            "opciones": [
+                "Sistema cooperativo de selección",
+                "Patron Driven Acquisition (PDA)",
+                "Licencias de acceso",
+                "Pick & Choose"
+            ],
+            "correcta": 1,
+            "explicacion": "En la PDA (adquisición dirigida por el usuario) la biblioteca ofrece títulos que solo compra cuando los usuarios los usan. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 31",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿En qué módulo de un SIGB se utiliza el intercambio electrónico de datos estructurados (EDI) entre bibliotecas y proveedores?",
+            "opciones": [
+                "Adquisiciones",
+                "Circulación",
+                "Catalogación",
+                "Recursos electrónicos"
+            ],
+            "correcta": 0,
+            "explicacion": "El EDI con proveedores (pedidos, facturas) se usa en el módulo de adquisiciones. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 32",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La compra consorciada es:",
+            "opciones": [
+                "La adquisición automatizada",
+                "La del servicio de préstamo interbibliotecario",
+                "La adquisición conjunta de documentos entre varias bibliotecas de forma coordinada",
+                "El intercambio coordinado de publicaciones entre bibliotecas"
+            ],
+            "correcta": 2,
+            "explicacion": "La compra consorciada es la adquisición conjunta y coordinada entre varias bibliotecas. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 33",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de los siguientes NO es un método de ordenación de fondos de las bibliotecas?",
+            "opciones": [
+                "Ordenación por número currens",
+                "Ordenación por selección",
+                "Ordenación por centros de interés",
+                "Ordenación sistemática"
+            ],
+            "correcta": 1,
+            "explicacion": "Los fondos se ordenan por número currens, sistemáticamente o por centros de interés; la «ordenación por selección» no existe. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 34",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cómo se llama el resultado del proyecto de digitalización de la Biblioteca Nacional para preservar y difundir su fondo más valioso?",
+            "opciones": [
+                "Fondo Antiguo Digital",
+                "Dioscórides",
+                "Proyecto Gutenberg",
+                "Biblioteca Digital Hispánica"
+            ],
+            "correcta": 3,
+            "explicacion": "La Biblioteca Digital Hispánica es la biblioteca digital de la BNE. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 11, pregunta 35",
+            "bloque": "Tema 11 (MAD). Gestión y desarrollo de la colección: selección, expurgo, adquisición, evaluación, preparación y conservación",
+            "tema": "Tema 11 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Señala la respuesta INCORRECTA sobre la catalogación:",
+            "opciones": [
+                "La catalogación es el análisis del contenido del recurso dentro del análisis documental",
+                "Al catalogar se describen los recursos de forma normalizada en asientos o registros bibliográficos",
+                "Es un proceso técnico que identifica los elementos esenciales del recurso para describirlo sin ambigüedad y localizarlo en los catálogos",
+                "Al catalogar también se establecen los puntos de acceso admitidos de autor, título, entidad, etc."
+            ],
+            "correcta": 0,
+            "explicacion": "La catalogación es el análisis formal (descriptivo) del recurso; el análisis del contenido corresponde a la indización y clasificación. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 1",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Para localizar el documento en el catálogo, al catalogarlo le insertamos:",
+            "opciones": [
+                "La signatura topográfica y, si existe, la URL de acceso en línea",
+                "Solo el tejuelo",
+                "Solo la URL de acceso en línea",
+                "El tejuelo y el número de registro"
+            ],
+            "correcta": 0,
+            "explicacion": "En el registro se incluye la signatura topográfica y, en recursos en línea, la URL de acceso. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 2",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estas NO es una ventaja de la catalogación automatizada?",
+            "opciones": [
+                "Interactividad",
+                "Mayor impacto",
+                "Acceso permanente",
+                "Información mal estructurada"
+            ],
+            "correcta": 3,
+            "explicacion": "La catalogación automatizada ofrece interactividad, más impacto y acceso permanente; la información mal estructurada es lo contrario de una ventaja. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 3",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Son normas internacionales para la descripción bibliográfica:",
+            "opciones": [
+                "ISBD y RDA",
+                "ISBD e ISBN",
+                "ISBN y RDA",
+                "Solo la ISBD"
+            ],
+            "correcta": 0,
+            "explicacion": "ISBD y RDA son normas de descripción; el ISBN es un número normalizado, no una norma de descripción. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 4",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La última versión de la ISBD para catalogar monografías es:",
+            "opciones": [
+                "ISBD (G)",
+                "ISBD (CM)",
+                "ISBD consolidada",
+                "ISBD (M)"
+            ],
+            "correcta": 2,
+            "explicacion": "La ISBD consolidada unificó las ISBD específicas, incluida la ISBD (M) de monografías. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 5",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La ISBD prescribe:",
+            "opciones": [
+                "Los elementos opcionales que deben aparecer en un registro",
+                "La puntuación que separa cada elemento",
+                "Que ya no existen fuentes prescritas de información",
+                "El orden alfabético de las áreas"
+            ],
+            "correcta": 1,
+            "explicacion": "La ISBD fija los elementos, su orden y la puntuación prescrita que los separa. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 6",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estas áreas NO pertenece a la descripción bibliográfica de una monografía?",
+            "opciones": [
+                "Área de edición",
+                "Área de descripción física",
+                "Área de datos específicos de la clase de documento",
+                "Área de número normalizado y condiciones de adquisición"
+            ],
+            "correcta": 2,
+            "explicacion": "El área de datos específicos (área 3) se usa en materiales como mapas, música o seriadas, no en monografías. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 7",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Señala la respuesta INCORRECTA sobre el área 0 de la ISBD:",
+            "opciones": [
+                "La calificación del contenido se transcribe entre paréntesis",
+                "Es el área de forma del contenido y soporte",
+                "Se redacta en la lengua del centro catalogador",
+                "La forma de contenido es la forma principal de comunicación del documento"
+            ],
+            "correcta": 1,
+            "explicacion": "El área 0 es el área de forma del contenido y tipo de medio, no «de soporte». (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 8",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué puntuación NO se utiliza en el área de descripción física?",
+            "opciones": [
+                "Punto y coma",
+                "Signo igual",
+                "Dos puntos",
+                "Signo más"
+            ],
+            "correcta": 1,
+            "explicacion": "En la descripción física se usan dos puntos, punto y coma y signo más (material complementario); el signo igual no. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 9",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las Reglas de catalogación españolas vigentes son de:",
+            "opciones": [
+                "1985",
+                "2015",
+                "1999",
+                "2016"
+            ],
+            "correcta": 2,
+            "explicacion": "La edición vigente de las Reglas de catalogación es la de 1999 (nueva edición revisada). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 10",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el test del manual, las Reglas de catalogación españolas se estructuran en:",
+            "opciones": [
+                "17 capítulos",
+                "17 capítulos, 9 apéndices y 1 índice analítico",
+                "15 capítulos, 9 apéndices y 1 índice analítico",
+                "17 capítulos, 9 índices analíticos y 1 apéndice"
+            ],
+            "correcta": 3,
+            "explicacion": "Respuesta oficial del test: 17 capítulos, 9 índices analíticos y 1 apéndice. Nota: las Reglas de 1999 suelen describirse como 17 capítulos, 9 apéndices y un índice analítico; si cae en el examen, ojo a cómo lo formulen.",
+            "referencia": "Test MAD nº 12, pregunta 11",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué capítulo de las Reglas de catalogación españolas trata de los puntos de acceso?",
+            "opciones": [
+                "Capítulo 15",
+                "Capítulo 14",
+                "Capítulo 17",
+                "Capítulo 1"
+            ],
+            "correcta": 1,
+            "explicacion": "El capítulo 14 abre la parte de puntos de acceso (elección). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 12",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El punto de acceso principal NO puede ser de:",
+            "opciones": [
+                "Autor personal",
+                "Serie",
+                "Título",
+                "Entidad o autor corporativo"
+            ],
+            "correcta": 1,
+            "explicacion": "El punto de acceso principal puede ser un autor personal, una entidad o el título, pero nunca la serie. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 13",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La RDA sustituye a:",
+            "opciones": [
+                "Las Reglas de catalogación españolas",
+                "Las AACR2",
+                "La ISBD",
+                "El formato MARC 21"
+            ],
+            "correcta": 1,
+            "explicacion": "RDA (Resource Description and Access) sustituye a las Reglas angloamericanas AACR2. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 14",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La RDA se basa en los modelos conceptuales:",
+            "opciones": [
+                "FRBR, FRAD y FRSAD",
+                "FRBR, IFLA y FRAD",
+                "AACR2, IFLA y FRBR",
+                "FRBR, FRAD y FRASD"
+            ],
+            "correcta": 0,
+            "explicacion": "FRBR (registros bibliográficos), FRAD (datos de autoridad) y FRSAD (datos de autoridad de materia). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 15",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las cuatro entidades básicas que son productos del esfuerzo intelectual o artístico son:",
+            "opciones": [
+                "Obra, expresión, manifestación e ítem",
+                "Obra, manifestación, expresión e ítem",
+                "Obra, ítem, expresión y manifestación",
+                "Obra, expresión, ítem, manifestación y ejemplar"
+            ],
+            "correcta": 0,
+            "explicacion": "Grupo 1 de FRBR, en este orden: obra → expresión → manifestación → ítem. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 16",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La RDA tiene una estructura:",
+            "opciones": [
+                "Hipertextual",
+                "Lineal",
+                "Organizada por tipos de recurso",
+                "Organizada por áreas ISBD"
+            ],
+            "correcta": 0,
+            "explicacion": "La RDA, consultada en el RDA Toolkit, tiene estructura hipertextual. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 17",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Entre las diferencias más notables entre RDA e ISBD está que en RDA:",
+            "opciones": [
+                "Se mantiene «la regla de tres»",
+                "Se omite la mención de responsabilidad",
+                "Se corrigen los errores de la fuente",
+                "La DGM se sustituye por los tipos de contenido, medio y soporte"
+            ],
+            "correcta": 3,
+            "explicacion": "RDA elimina la designación general de material (DGM) y la sustituye por tipo de contenido, de medio y de soporte; además suprime la regla de tres y transcribe los errores tal cual. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 18",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "MARC es un grupo de formatos que usan un conjunto de convenciones para:",
+            "opciones": [
+                "Identificar, procesar e intercambiar datos",
+                "Solo identificar datos",
+                "Solo intercambiar datos",
+                "Procesar datos, pero no intercambiarlos"
+            ],
+            "correcta": 0,
+            "explicacion": "MARC sirve para identificar, procesar e intercambiar datos bibliográficos. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 19",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "MARC nace para:",
+            "opciones": [
+                "Facilitar tareas de control bibliotecario",
+                "Impulsar la distribución de registros",
+                "Automatizar las bibliotecas",
+                "Editar bibliografías"
+            ],
+            "correcta": 1,
+            "explicacion": "MARC nació en la Library of Congress para distribuir registros catalográficos legibles por máquina. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 20",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Cuál de estos formatos MARC no existe ni ha existido?",
+            "opciones": [
+                "BIBLIOMARC",
+                "MARC II",
+                "IBERMARC",
+                "MARC 21"
+            ],
+            "correcta": 0,
+            "explicacion": "MARC II, IBERMARC (el español) y MARC 21 existen o existieron; BIBLIOMARC no. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 21",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "NO es un elemento del formato MARC:",
+            "opciones": [
+                "La estructura y los datos",
+                "Los indicadores",
+                "Las etiquetas y subcampos",
+                "Los encabezamientos y subencabezamientos"
+            ],
+            "correcta": 3,
+            "explicacion": "MARC se compone de estructura, designadores de contenido (etiquetas, indicadores, subcampos) y datos; los encabezamientos son contenido catalográfico, no elementos del formato. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 22",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Al utilizar el formato MARC, la biblioteca:",
+            "opciones": [
+                "No puede usar sistemas informáticos de código abierto",
+                "Solo puede transferir registros si el receptor tiene su mismo sistema",
+                "No puede reemplazar el SIGB fácilmente",
+                "Puede intercambiar registros de autoridad"
+            ],
+            "correcta": 3,
+            "explicacion": "MARC permite intercambiar registros bibliográficos y de autoridad entre sistemas distintos y facilita cambiar de SIGB. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 23",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El formato MARC permite intercambiar datos siguiendo los estándares:",
+            "opciones": [
+                "Dublin Core y XML",
+                "Solo Dublin Core",
+                "Solo XML",
+                "RDA"
+            ],
+            "correcta": 0,
+            "explicacion": "Los registros MARC pueden convertirse a Dublin Core y expresarse en XML (MARCXML). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 24",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El registro MARC está formado por:",
+            "opciones": [
+                "La cabecera, la leader y los campos de datos",
+                "Los campos de datos, el directorio y las etiquetas",
+                "La leader, los campos de control y los campos variables",
+                "La leader (cabecera), el directorio y los campos de datos"
+            ],
+            "correcta": 3,
+            "explicacion": "Estructura del registro MARC: cabecera (leader), directorio y campos. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 25",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las etiquetas de campo:",
+            "opciones": [
+                "Son repetibles",
+                "Están formadas por 3 caracteres alfabéticos",
+                "Identifican la información bibliográfica contenida en el campo",
+                "Son un número entre 001 y 900"
+            ],
+            "correcta": 2,
+            "explicacion": "La etiqueta (tres caracteres numéricos) identifica el contenido del campo. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 26",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "La información sobre el título aparece en el grupo de etiquetas:",
+            "opciones": [
+                "7XX",
+                "9XX",
+                "2XX",
+                "0XX"
+            ],
+            "correcta": 2,
+            "explicacion": "Los campos 20X-24X recogen títulos (p. ej., 245). (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 27",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los indicadores únicamente aparecen en:",
+            "opciones": [
+                "Los campos de longitud fija",
+                "Los campos de longitud variable",
+                "La cabecera",
+                "Todos los campos, incluidos los de control"
+            ],
+            "correcta": 1,
+            "explicacion": "Los indicadores solo existen en los campos variables de datos (010-9XX), no en los de control 00X. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 28",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "El área de publicación se identifica en el grupo de etiquetas:",
+            "opciones": [
+                "24X",
+                "25X",
+                "26X",
+                "20X"
+            ],
+            "correcta": 2,
+            "explicacion": "Publicación, distribución, etc.: 260 / 264. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 29",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Sobre la repetibilidad de la etiqueta 100 de MARC 21:",
+            "opciones": [
+                "Es repetible porque una obra puede tener varios autores",
+                "Es repetible porque es el punto de acceso principal de personas",
+                "Es repetible y se usa tantas veces como haga falta",
+                "No es repetible: solo hay un punto de acceso principal"
+            ],
+            "correcta": 3,
+            "explicacion": "La respuesta oficial es «ninguna es correcta»: el campo 100 no es repetible; los demás autores van en 700. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 30",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Señala la respuesta INCORRECTA sobre RDA Toolkit:",
+            "opciones": [
+                "Está disponible en línea",
+                "Ofrece el texto íntegro de la norma",
+                "Solo está en inglés",
+                "Da acceso a recursos relacionados mediante hiperenlaces"
+            ],
+            "correcta": 2,
+            "explicacion": "RDA Toolkit tiene traducciones (también al español); no está solo en inglés. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 31",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Los FRBR (Requisitos Funcionales de los Registros Bibliográficos) son principalmente:",
+            "opciones": [
+                "Un conjunto de datos",
+                "Un esquema de metadatos",
+                "Un modelo conceptual para representar entidades, atributos y relaciones",
+                "Un código catalográfico"
+            ],
+            "correcta": 2,
+            "explicacion": "FRBR es un modelo conceptual entidad-relación. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 32",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Las menciones de serie en MARC 21 bibliográfico se incluyen en el campo:",
+            "opciones": [
+                "4XX",
+                "5XX",
+                "2XX",
+                "8XX"
+            ],
+            "correcta": 0,
+            "explicacion": "Mención de serie: 490 (4XX); 5XX son notas y 8XX, asientos secundarios de serie. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 33",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "¿Qué características de un recurso se describen en el área 0 de la ISBD consolidada?",
+            "opciones": [
+                "La identificación del recurso y las condiciones de disponibilidad",
+                "La descripción física",
+                "La información específica del material o tipo de recurso",
+                "La forma del contenido y el tipo de medio"
+            ],
+            "correcta": 3,
+            "explicacion": "El área 0 recoge la forma del contenido y el tipo de medio. (Respuesta oficial del test del manual.)",
+            "referencia": "Test MAD nº 12, pregunta 34",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
+        },
+        {
+            "pregunta": "Según el manual, el protocolo Z39.50 facilita:",
+            "opciones": [
+                "La recuperación de la información",
+                "La configuración del ancho de banda en el desarrollo web",
+                "La búsqueda en bases de datos residentes en un servidor",
+                "El intercambio de datos bibliográficos entre bibliotecas"
+            ],
+            "correcta": 3,
+            "explicacion": "Respuesta oficial del test: el intercambio de datos bibliográficos entre bibliotecas. Nota: el manual atribuye la norma a la «National Standards Organization»; la entidad que la mantiene es la NISO (National Information Standards Organization).",
+            "referencia": "Test MAD nº 12, pregunta 35",
+            "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
+            "tema": "Tema 12 · Test del manual (con soluciones)"
         }
     ],
     "fichas": [
