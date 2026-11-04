@@ -1489,7 +1489,14 @@ const setToJSON = () => ({
 
 function useData(data, origen) {
   set = { ...parseSet(data), origen };
-  save(K.set, set);
+  guardarSet();
+}
+// Las preguntas del servidor no se guardan en el navegador: ocupan varios MB y la app normal y la de desarrollo
+// comparten el límite de ~5 MB de Safari (al llenarse, falla el guardado del progreso y la sincronización).
+// Sin conexión salen de la copia del service worker. Solo se guarda un archivo editado en este dispositivo.
+function guardarSet() {
+  if (set?.origen === 'servidor') { try { localStorage.removeItem(K.set); } catch {} }
+  else save(K.set, set);
 }
 
 function fetchServerSet() {
@@ -3360,7 +3367,7 @@ function showSettings() {
     try {
       if (set.origen !== 'editado') useData(await ghPull(), 'servidor'); // partir de lo último de GitHub
       set.ajustes = ajustes;
-      save(K.set, set);
+      guardarSet();
       const p = ghQueue.then(() => ghPush('Actualizar ajustes predeterminados'));
       ghQueue = p.catch(() => {});
       await p;
@@ -3426,7 +3433,7 @@ async function ghPush(message, force = false) {
   const d = await ghApi('PUT', { message, content, sha: ghSha });
   ghSha = d.content.sha;
   set.origen = 'servidor';
-  save(K.set, set);
+  guardarSet();
 }
 
 function setGhStatus(type, text, retry) {
@@ -3526,14 +3533,14 @@ function bindGhCard() {
 // Guarda en el dispositivo y, si está conectado, también en GitHub
 function persistEdit(message) {
   set.origen = 'editado';
-  save(K.set, set);
+  guardarSet();
   publish(message);
 }
 
 
 // Entrar al editor: si hay GitHub conectado, parte siempre de la última versión de GitHub
 async function openEditor(forcePull = false) {
-  if (!set) { set = { titulo: 'Nuevo test', preguntas: [], origen: 'editado' }; save(K.set, set); }
+  if (!set) { set = { titulo: 'Nuevo test', preguntas: [], origen: 'editado' }; guardarSet(); }
   if (!ghConnected()) { ghStatus = null; return showEditor(); }
   if (set.origen === 'editado' && !forcePull) {
     ghSha = null;
