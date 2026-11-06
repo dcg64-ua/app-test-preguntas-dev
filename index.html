@@ -959,7 +959,7 @@ async function showAdmin(env = ENV) {
       <textarea rows="2" data-msg="${esc(u.uid)}" placeholder="¡Ánimo con el Tema 9!" maxlength="500"></textarea>
       <div class="row" style="margin-top:6px"><button class="small primary" data-send="${esc(u.uid)}">Enviar</button><span class="muted" data-sent="${esc(u.uid)}"></span></div>
       ${u.inbox.slice(0, 3).map(m => `<p class="muted" style="margin:4px 0">${fmtDate(m.at)} · «${esc(m.text.length > 60 ? m.text.slice(0, 58) + '…' : m.text)}» · ${m.read ? '💚 leído' : 'sin leer'}</p>`).join('')}
-      <button class="small primary" data-prog="${esc(u.uid)}" style="margin-top:12px">📊 Ver su progreso</button>
+      <div class="row" style="margin-top:12px"><button class="small primary" data-prog="${esc(u.uid)}">📊 Ver su progreso</button><button class="small" data-logros="${esc(u.uid)}">🏆 Ver sus logros</button></div>
     </details>`;
   };
 
@@ -1011,6 +1011,7 @@ async function showAdmin(env = ENV) {
   $('admEnv').onclick = () => showAdmin(env === 'prod' ? 'dev' : 'prod');
   $('admReload').onclick = () => showAdmin(env);
   app.querySelectorAll('[data-prog]').forEach(b => b.onclick = () => showUserStats(users.find(u => u.uid === b.dataset.prog), env));
+  app.querySelectorAll('[data-logros]').forEach(b => b.onclick = () => showUserLogros(users.find(u => u.uid === b.dataset.logros), env));
   $('admName').onchange = e => saveSettings({ adminName: e.target.value.trim() });
   // Pruebas: cambia la actividad diaria del admin. Se guarda como «sustituir» (no se fusiona con la nube) para poder bajar números.
   const tsApply = (daily, txt) => {
@@ -1140,6 +1141,30 @@ function showUserStats(u, env) {
   app.querySelector('h1').parentElement.insertAdjacentHTML('afterend',
     `<p class="muted" style="margin:-8px 0 16px">👤 Progreso de <b>${esc(u.email || u.uid)}</b> · ${env === 'prod' ? 'app normal' : 'desarrollo'} · solo lectura</p>`);
   $('home').textContent = '← Panel admin';
+  $('home').onclick = () => showAdmin(env);
+  scrollTo(0, 0);
+}
+
+// Sus logros, puntos, racha diaria, retos y canjes, con sus datos. Solo lectura: no se guarda nada.
+function showUserLogros(u, env) {
+  stopTimer();
+  viewAs = Object.fromEntries(Object.entries(u.data).map(([name, v]) => [P + name, v])); viewUid = u.uid;
+  try {
+    const d = logroData(), ok = new Set(logrosOk(d).map(l => l.id)), pd = puntosDiarios(), seen = load(K.settings, {}).logros || {};
+    const gastados = puntosGastados(u.canjes);
+    app.innerHTML = `
+      <div class="row between"><h1>🏆 Logros</h1><button id="home">← Panel admin</button></div>
+      <p class="muted" style="margin:-8px 0 16px">👤 Logros de <b>${esc(u.email || u.uid)}</b> · ${env === 'prod' ? 'app normal' : 'desarrollo'} · solo lectura</p>
+      <div class="card points-card">
+        <div class="points-big">⭐ ${u.earned - gastados}</div>
+        <div class="muted">puntos disponibles · ${u.earned} ganados (${pd.total} por días de estudio, ${ok.size} de ${LOGROS.length} logros)${gastados ? ` · ${gastados} canjeados` : ''}</div>
+      </div>
+      <div id="ulDiario">${diarioCardHTML(pd)}</div>
+      ${retosHTML()}
+      ${u.canjes?.length ? `<div class="card"><h2>🎁 Sus canjes</h2>${u.canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ⭐ ${c.cost || 0} · ${fmtDate(c.at)} · ${c.done ? '✅ cumplida' : '⏳ pendiente'}</span></div>`).join('')}</div>` : ''}
+      <div class="card"><h2>Todos los logros <span class="muted">· ${ok.size} / ${LOGROS.length}</span></h2>${medalsHTML(d, ok, seen)}</div>`;
+  } finally { viewAs = null; viewUid = null; }
+  $('ulDiario').querySelectorAll('button').forEach(b => b.remove()); // la ruleta y demás son cosa suya
   $('home').onclick = () => showAdmin(env);
   scrollTo(0, 0);
 }
@@ -2036,6 +2061,16 @@ function finalCardHTML(canjes) {
   </div>`;
 }
 
+// Rejilla de todos los logros: conseguidos (con fecha) y en curso (con su avance)
+function medalsHTML(d, ok, seen) {
+  return `<div class="medals">${LOGROS.map(l => { const has = ok.has(l.id), g = goalOf(l, d), v = Math.min(l.val(d), g); return `
+    <div class="medal ${has ? 'on' : ''}" title="${esc(l.desc)}">
+      <span class="medal-ico">${l.ico}</span><b>${esc(l.name)}</b>
+      <span class="muted">${esc(l.desc)}</span>
+      <span class="medal-pts">${has ? `⭐ +${l.pts}${seen[l.id] ? ` · ${new Date(seen[l.id]).toLocaleDateString('es-ES')}` : ''}` : g > 1 ? `${v} / ${g} · ⭐ ${l.pts}` : `⭐ ${l.pts}`}</span>
+    </div>`; }).join('')}</div>`;
+}
+
 async function showLogros() {
   stopTimer();
   checkLogros();
@@ -2067,12 +2102,7 @@ async function showLogros() {
       </div>
       <div class="card">
         <h2>Todos los logros</h2>
-        <div class="medals">${LOGROS.map(l => { const has = ok.has(l.id), g = goalOf(l, d), v = Math.min(l.val(d), g); return `
-          <div class="medal ${has ? 'on' : ''}" title="${esc(l.desc)}">
-            <span class="medal-ico">${l.ico}</span><b>${esc(l.name)}</b>
-            <span class="muted">${esc(l.desc)}</span>
-            <span class="medal-pts">${has ? `⭐ +${l.pts}${seen[l.id] ? ` · ${new Date(seen[l.id]).toLocaleDateString('es-ES')}` : ''}` : g > 1 ? `${v} / ${g} · ⭐ ${l.pts}` : `⭐ ${l.pts}`}</span>
-          </div>`; }).join('')}</div>
+        ${medalsHTML(d, ok, seen)}
       </div>`;
     $('home').onclick = () => showHome();
     if ($('ruletaBtn')) $('ruletaBtn').onclick = spinRuleta;
