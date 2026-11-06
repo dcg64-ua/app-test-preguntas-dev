@@ -3591,6 +3591,7 @@ function showEditor(filter = '') {
     <div class="card">
       <div class="row" style="margin-bottom:12px">
         <button class="primary" id="add" ${busy ? 'disabled' : ''}>+ ${{ q: 'Nueva pregunta', f: 'Nueva ficha', a: 'Nuevo artículo' }[editorTab]}</button>
+        ${editorTab === 'q' ? `<button id="bateria" ${busy ? 'disabled' : ''}>📥 Añadir batería</button>` : ''}
         ${all.length ? `<button id="newSet" class="danger small" ${busy ? 'disabled' : ''}>Vaciar ${tab.name.toLowerCase()}</button>` : ''}
       </div>
       ${editorTab === 'f' ? '<p class="help">Para conceptos que no son tipo test: plazos, definiciones, órganos… Salen en 🃏 Flashcards' + (feat('audio') ? ' y 🎧 Audio' : '') + '.</p>' : ''}
@@ -3609,6 +3610,7 @@ function showEditor(filter = '') {
   $('edList').ontoggle = e => { if (!filter) editorListOpen = e.target.open; }; // solo cuenta abrirla o cerrarla a mano, no al buscar
   $('titulo').onchange = e => { set.titulo = e.target.value.trim() || 'Test'; persistEdit('Cambiar título: ' + set.titulo); };
   $('add').onclick = () => tab.form(-1);
+  if ($('bateria')) $('bateria').onclick = () => showBateria();
   if ($('newSet')) $('newSet').onclick = () => {
     if (!confirm(`Se borrarán TODOS los elementos de «${tab.name}»${ghConnected() ? ', también en GitHub' : ''}. ¿Continuar?`)) return;
     tab.list().length = 0;
@@ -3620,6 +3622,154 @@ function showEditor(filter = '') {
   app.querySelectorAll('.qitem').forEach(b => b.onclick = () => tab.form(+b.dataset.i));
   bindGhStatus();
   bindGhCard();
+}
+
+// ---------- Añadir batería ----------
+// Para meter muchas preguntas de golpe: la app prepara el prompt para otra IA (ChatGPT, Gemini, Claude…),
+// se pega lo que devuelve, se revisa (formato, repetidas) y se añade todo junto a GitHub.
+let bateriaSel = { bloque: '', tema: '', pendiente: null };
+function bateriaPrompt(bloque, tema) {
+  const b = bloque || '⟨BLOQUE⟩', t = tema || '⟨TEMA⟩';
+  return `Eres un preparador de oposiciones de Auxiliar de Bibliotecas. Te adjunto material de estudio (tema, apuntes o preguntas).
+
+Lee TODO el material y escribe unas 100 preguntas tipo test y unas 30 fichas de repaso (si el material es corto, menos) que cubran todo el contenido: definiciones, clasificaciones, cifras, fechas, autores, normas, siglas, fases y diferencias entre conceptos. Básate SOLO en lo que dice el material. Si algo te parece erróneo o desfasado, no lo corrijas: usa lo que dice el material y añade en la explicación «Nota: el material dice…; hoy…».
+Si el material ya son preguntas de test con sus soluciones, transcríbelas tal cual con su respuesta oficial en vez de inventar otras.
+
+Devuélveme SOLO un JSON válido, sin texto antes ni después, con esta forma exacta:
+
+{
+  "preguntas": [
+    {
+      "pregunta": "…",
+      "opciones": ["…", "…", "…", "…"],
+      "correcta": 0,
+      "explicacion": "1-2 frases: por qué es la buena y por qué fallan las otras",
+      "referencia": "de dónde sale (tema, artículo, página…)",
+      "bloque": "${b}",
+      "tema": "${t}"
+    }
+  ],
+  "fichas": [
+    {
+      "anverso": "concepto breve",
+      "reverso": "respuesta concisa",
+      "referencia": "de dónde sale",
+      "bloque": "${b}",
+      "tema": "${t}"
+    }
+  ]
+}
+
+Reglas:
+- "correcta" es el índice (0 a 3) de la opción buena. Repártela entre las cuatro posiciones.
+- 4 opciones plausibles y de longitud parecida; que la buena no sea siempre la más larga.
+- Prohibido «todas las anteriores», «ninguna de las anteriores» o «a) y b) son correctas»: las opciones se barajan, así que cada una debe entenderse sola.
+- No repitas preguntas ni hagas dos que pregunten lo mismo.
+- Si el JSON es muy largo y se corta, divídelo en varias respuestas (parte 1, parte 2…), cada una con un JSON completo y válido.`;
+}
+// Saca los JSON del texto pegado: admite ```json …```, varias partes seguidas o una lista suelta de preguntas
+function bateriaParse(txt) {
+  const trozos = [];
+  let depth = 0, start = -1, str = false, barra = false;
+  for (let i = 0; i < txt.length; i++) {
+    const c = txt[i];
+    if (str) { if (barra) barra = false; else if (c === '\\') barra = true; else if (c === '"') str = false; continue; }
+    if (c === '"') str = true;
+    else if (c === '{' || c === '[') { if (!depth++) start = i; }
+    else if ((c === '}' || c === ']') && depth && !--depth) trozos.push(txt.slice(start, i + 1));
+  }
+  const out = { preguntas: [], fichas: [], errores: 0 };
+  for (const t of trozos) {
+    let o; try { o = JSON.parse(t); } catch { out.errores++; continue; }
+    if (Array.isArray(o)) o = { preguntas: o };
+    out.preguntas.push(...(o.preguntas || []));
+    out.fichas.push(...(o.fichas || []));
+  }
+  return out;
+}
+function bateriaRevisar(datos, bloque, tema) {
+  const norm = x => (x || '').toLowerCase().normalize('NFD').replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter(w => w.length > 3);
+  const parecido = (a, b) => { const A = new Set(a), B = new Set(b); let i = 0; A.forEach(w => B.has(w) && i++); return i / ((A.size + B.size - i) || 1); };
+  const huella = q => norm(q.pregunta + ' ' + q.opciones[q.correcta]);
+  const ya = set.preguntas.map(huella), r = { nuevas: [], repetidas: [], malas: [], fichas: [], combinadas: 0 };
+  for (const q of datos.preguntas) {
+    const ok = q && typeof q.pregunta === 'string' && q.pregunta.trim() && Array.isArray(q.opciones) && q.opciones.length >= 2
+      && q.opciones.every(o => typeof o === 'string' && o.trim()) && Number.isInteger(q.correcta) && q.correcta >= 0 && q.correcta < q.opciones.length;
+    if (!ok) { r.malas.push(q?.pregunta || '(sin enunciado)'); continue; }
+    const h = huella(q);
+    if (ya.some(e => parecido(h, e) > .6)) { r.repetidas.push(q.pregunta); continue; }
+    ya.push(h);
+    if (fixedOrder(q)) r.combinadas++;
+    r.nuevas.push({ ...q, bloque: q.bloque || bloque, tema: q.tema || tema });
+  }
+  const fx = new Set((set.fichas || []).map(f => f.anverso.trim().toLowerCase()));
+  for (const f of datos.fichas) {
+    if (!f?.anverso?.trim() || !f?.reverso?.trim() || fx.has(f.anverso.trim().toLowerCase())) continue;
+    fx.add(f.anverso.trim().toLowerCase());
+    r.fichas.push({ ...f, bloque: f.bloque || bloque, tema: f.tema || tema });
+  }
+  return r;
+}
+function showBateria() {
+  stopTimer();
+  const sel = bateriaSel, bloques = uniq(set.preguntas.map(q => q.bloque)).sort(natCmp);
+  const temas = uniq(set.preguntas.filter(q => q.bloque === sel.bloque).map(q => q.tema)).sort(natCmp);
+  const r = sel.pendiente;
+  app.innerHTML = `
+    <div class="row between"><h1>📥 Añadir batería</h1><button id="back">← Editor</button></div>
+    ${ghConnected() ? '' : '<div class="card"><p class="error" style="margin:0">Conecta GitHub en el editor para poder añadir una batería: así se guarda para todos.</p></div>'}
+    <div class="card">
+      <h2>1. Pide las preguntas a otra IA</h2>
+      <p class="muted" style="margin-top:-4px">Elige dónde irán, copia el prompt y pégalo en ChatGPT, Gemini o Claude junto con el PDF o los apuntes.</p>
+      <div class="set-row"><span>Bloque</span><input type="text" id="btBloque" list="btBloques" style="flex:1;min-width:0;max-width:none" value="${esc(sel.bloque)}" placeholder="Ej.: Tema 20 (MAD). Historia del libro"></div>
+      <datalist id="btBloques">${bloques.map(b => `<option value="${esc(b)}">`).join('')}</datalist>
+      <div class="set-row"><span>Tema</span><input type="text" id="btTema" list="btTemas" style="flex:1;min-width:0;max-width:none" value="${esc(sel.tema)}" placeholder="Ej.: Tema 20 · Preguntas del tema"></div>
+      <datalist id="btTemas">${temas.map(t => `<option value="${esc(t)}">`).join('')}</datalist>
+      <p class="help">Puedes elegir uno que ya existe o escribir uno nuevo.</p>
+      <textarea id="btPrompt" class="full" rows="8" readonly>${esc(bateriaPrompt(sel.bloque, sel.tema))}</textarea>
+      <div class="row" style="margin-top:8px"><button class="primary" id="btCopy">📋 Copiar prompt</button><span class="muted" id="btCopyMsg"></span></div>
+    </div>
+    <div class="card">
+      <h2>2. Pega aquí lo que te devuelva</h2>
+      <p class="muted" style="margin-top:-4px">Si te lo da en varias partes, pégalas todas seguidas.</p>
+      <textarea id="btIn" class="full" rows="8" placeholder='{ "preguntas": [ … ], "fichas": [ … ] }'></textarea>
+      <div class="row" style="margin-top:8px"><button class="primary" id="btCheck">🔍 Revisar</button></div>
+      <div id="btRes">${r ? `
+        <p>✅ <b>${r.nuevas.length}</b> preguntas nuevas · 🗂 <b>${r.fichas.length}</b> fichas nuevas</p>
+        ${r.repetidas.length ? `<details><summary class="muted">♻️ ${r.repetidas.length} repetidas (ya existían, no se añaden)</summary><ul>${r.repetidas.map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>` : ''}
+        ${r.malas.length ? `<details><summary class="error">⚠️ ${r.malas.length} con formato incorrecto (no se añaden)</summary><ul>${r.malas.map(t => `<li>${esc(t)}</li>`).join('')}</ul></details>` : ''}
+        ${r.combinadas ? `<p class="help">ℹ️ ${r.combinadas} tienen opciones tipo «todas las anteriores»: se añaden, pero sus opciones no se barajan.</p>` : ''}
+        ${r.errores ? `<p class="help" style="color:var(--ko)">⚠️ ${r.errores} trozo(s) del texto no eran JSON válido y se han ignorado (quizá se cortó la respuesta).</p>` : ''}
+        ${r.nuevas.length || r.fichas.length ? `<button class="primary" id="btAdd" ${ghConnected() ? '' : 'disabled'}>➕ Añadir ${r.nuevas.length} preguntas${r.fichas.length ? ` y ${r.fichas.length} fichas` : ''}</button>` : '<p class="muted">No hay nada nuevo que añadir.</p>'}` : ''}</div>
+    </div>`;
+  const sync = () => { sel.bloque = $('btBloque').value.trim(); sel.tema = $('btTema').value.trim(); $('btPrompt').value = bateriaPrompt(sel.bloque, sel.tema); };
+  $('back').onclick = () => { bateriaSel.pendiente = null; showEditor(); };
+  $('btBloque').onchange = () => { sync(); sel.pendiente = null; showBateria(); }; // recarga la lista de temas de ese bloque
+  $('btBloque').oninput = $('btTema').oninput = sync;
+  $('btCopy').onclick = async () => {
+    try { await navigator.clipboard.writeText($('btPrompt').value); }
+    catch { $('btPrompt').select(); document.execCommand('copy'); }
+    $('btCopyMsg').textContent = '✓ Copiado';
+  };
+  $('btCheck').onclick = () => {
+    sync();
+    const datos = bateriaParse($('btIn').value);
+    if (!datos.preguntas.length && !datos.fichas.length) return $('btRes').innerHTML = '<p class="error">No encuentro preguntas en lo que has pegado. Tiene que ser el JSON que devuelve la IA.</p>';
+    sel.pendiente = { ...bateriaRevisar(datos, sel.bloque, sel.tema), errores: datos.errores };
+    const pegado = $('btIn').value;
+    showBateria();
+    $('btIn').value = pegado;
+  };
+  if ($('btAdd')) $('btAdd').onclick = () => {
+    const p = sel.pendiente;
+    if (p.nuevas.some(q => !q.bloque || !q.tema) && !confirm('Algunas no tienen bloque o tema: saldrán sin clasificar. ¿Añadir igualmente?')) return;
+    set.preguntas.push(...p.nuevas);
+    if (p.fichas.length) (set.fichas ||= []).push(...p.fichas);
+    persistEdit(`Añadir batería: ${p.nuevas.length} preguntas${p.fichas.length ? ` y ${p.fichas.length} fichas` : ''}${sel.tema ? ` (${sel.tema})` : ''}`);
+    showToast('📥', '¡Batería añadida!', `${p.nuevas.length} preguntas${p.fichas.length ? ` y ${p.fichas.length} fichas` : ''}. Se está guardando en GitHub.`);
+    sel.pendiente = null;
+    showEditor();
+  };
 }
 
 // Campos comunes de los formularios: referencia, bloque y tema (con sugerencias de lo ya usado)
