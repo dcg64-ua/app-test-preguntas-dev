@@ -36114,6 +36114,2372 @@
             "referencia": "Manual MAD, Tema 12",
             "bloque": "Tema 12 (MAD). Proceso técnico de los fondos: catalogación. El formato MARC",
             "tema": "Tema 12 · Preguntas del tema"
+        },
+        {
+            "pregunta": "Atendiendo a lo dispuesto en la Constitución Española, entre los valores superiores del ordenamiento jurídico NO está:",
+            "opciones": [
+                "La igualdad.",
+                "El pluralismo lingüístico.",
+                "La justicia.",
+                "La libertad."
+            ],
+            "correcta": 1,
+            "explicacion": "El art. 1.1 CE proclama como valores superiores la libertad, la justicia, la igualdad y el pluralismo político, no el «lingüístico».",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 1",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según lo dispuesto en El Estatuto de Autonomía de la Comunitat Valenciana, las Instituciones de la Generalitat",
+            "opciones": [
+                "Podrán establecerse y celebrar reuniones en cualquiera de los municipios de la Comunitat Valenciana, de acuerdo con lo que la Ley disponga",
+                "Tienen todas sus sedes en la ciudad de Valencia",
+                "Sólo podrán celebrar reuniones en sus sedes, sin ninguna excepción.",
+                "Sólo podrán celebrar reuniones en sus sedes, excepto los casos específicos en que el Estatuto de Autonomía autoriza su celebración en otros lugares"
+            ],
+            "correcta": 0,
+            "explicacion": "El Estatuto (art. 20) permite que las instituciones de la Generalitat se establezcan y se reúnan en cualquier municipio de la Comunitat, de acuerdo con lo que disponga la ley.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 2",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según los Estatutos de la Universidad Miguel Hernández de Elche. La reforma de los Estatutos de la Universidad Miguel Hernández de Elche corresponde a:",
+            "opciones": [
+                "Consell de la Generalitat Valenciana",
+                "Claustro Universitario",
+                "Consejo de Gobierno de la Universidad",
+                "Consejo Social de la Universidad"
+            ],
+            "correcta": 1,
+            "explicacion": "La elaboración y reforma de los Estatutos es competencia del Claustro, máximo órgano de representación de la comunidad universitaria.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 3",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según los Estatutos de la Universidad Miguel Hernández de Elche. El rector:",
+            "opciones": [
+                "Debe ser catedrático de universidad.",
+                "Puede ser reelegido sin límite alguno.",
+                "Puede ser cualquier profesor perteneciente a los cuerpos docentes universitarios.",
+                "Tendrá obligaciones docentes salvo que solicite su exención"
+            ],
+            "correcta": 0,
+            "explicacion": "El rector se elige entre funcionarios del cuerpo de catedráticos de universidad en activo que presten servicios en la UMH.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 4",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "A los efectos previstos en la Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas, tendrán capacidad de obrar ante las Administraciones Públicas:",
+            "opciones": [
+                "Las personas físicas o jurídicas que ostenten capacidad de obrar con arreglo a las normas civiles.",
+                "En ningún caso los menores de edad.",
+                "Se exceptúa el supuesto de los menores incapacitados, cuando la extensión de la incapacitación afecte al ejercicio y defensa de los derechos o intereses de tutores.",
+                "En todo caso, los grupos de afectados, las uniones y entidades sin personalidad jurídica y los patrimonios independientes o autónomos"
+            ],
+            "correcta": 0,
+            "explicacion": "El art. 3.a) de la Ley 39/2015 reconoce capacidad de obrar a las personas físicas o jurídicas que la tengan con arreglo a las normas civiles; los menores y los grupos sin personalidad solo la tienen en ciertos casos, no «nunca» ni «en todo caso».",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 5",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según la Ley 4/2021 de 16 de abril, de la Función Pública Valenciana, la aprobación de la oferta de empleo público deberá acompañarse de:",
+            "opciones": [
+                "Una memoria económica",
+                "Un informe de participación personal",
+                "Los mecanismos de participación del personal",
+                "Un informe de impacto de género"
+            ],
+            "correcta": 3,
+            "explicacion": "La Ley 4/2021 exige que la aprobación de la oferta de empleo público vaya acompañada de un informe de impacto de género.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 6",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué función de las siguientes no realiza un Sistema Integrado de Gestión Bibliotecaria?",
+            "opciones": [
+                "Gestión de Adquisiciones.",
+                "Préstamo de documentos.",
+                "Formación de usuarios.",
+                "Consulta del catálogo en línea (OPAC)"
+            ],
+            "correcta": 2,
+            "explicacion": "Un SIGB automatiza adquisiciones, catalogación, circulación y OPAC; la formación de usuarios es un servicio bibliotecario, no un módulo del sistema.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 7",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cómo se expresa la búsqueda de una frase exacta en la herramienta de descubrimiento de la Biblioteca de la Universidad Miguel Hernández de Elche?",
+            "opciones": [
+                "Para buscar una frase exacta, hay que entrecomillar la frase",
+                "Para buscar una frase exacta, hay que combinar cada uno de los términos de la frase con el operador OR",
+                "Escribiendo la consulta en lenguaje natural",
+                "Para buscar una frase exacta, hay que entrecomillar cada una de las palabras que componen la frase"
+            ],
+            "correcta": 0,
+            "explicacion": "La frase exacta se busca escribiéndola completa entre comillas; OR amplía la búsqueda en vez de fijar la frase.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 8",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuántas reservas de documentos se pueden hacer desde el buscador de la Biblioteca de la Universidad Miguel Hernández de Elche?",
+            "opciones": [
+                "un máximo de 5 documentos.",
+                "un máximo de 2 documentos, siempre y cuando no haya ejemplares disponibles en el momento de la consulta.",
+                "Un máximo igual al número total de documentos determinado por su perfil de usuario",
+                "No permite hacer reservas de documentos"
+            ],
+            "correcta": 2,
+            "explicacion": "El número máximo de reservas depende del perfil de usuario, igual que el número de préstamos.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 9",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es la sindicación de contenidos web?",
+            "opciones": [
+                "Los contenidos accesibles en la web, producidos por instituciones sindicadas.",
+                "Parte del contenido de una página web que se pone a disposición de otros sitios o suscriptores individuales, mediante un estándar de sindicación.",
+                "Estándares de lenguaje de marcado, accesibles desde programas informáticos compatibles.",
+                "Contenidos web con un diseño estandarizado."
+            ],
+            "correcta": 1,
+            "explicacion": "Sindicar es redistribuir parte del contenido de un sitio a otros sitios o suscriptores mediante formatos estándar como RSS o Atom.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 10",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Para acceder a los recursos electrónicos que la Biblioteca de la Universidad Miguel Hernández pone a disposición de la comunidad universitaria:",
+            "opciones": [
+                "Sólo se puede acceder a través del catálogo",
+                "Hay un punto de acceso único en el apartado de recursos electrónicos",
+                "Se puede acceder desde el catálogo de recursos de información y documentación o a través de las plataformas de cada recurso",
+                "Sólo se puede acceder desde las plataformas de cada uno de los recursos"
+            ],
+            "correcta": 2,
+            "explicacion": "Los recursos electrónicos se pueden consultar tanto desde el catálogo o buscador de la Biblioteca como directamente en la plataforma de cada proveedor.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 11",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuáles de los siguientes son documentos digitales?",
+            "opciones": [
+                "Documentos digitalizados",
+                "Documentos multimedia",
+                "Programas de ordenador",
+                "Las respuestas a), b) y c) son correctas"
+            ],
+            "correcta": 3,
+            "explicacion": "Es documento digital cualquier información codificada en bits: documentos digitalizados, multimedia y también programas informáticos.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 12",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es un esquema de metadatos?",
+            "opciones": [
+                "Un conjunto de metadatos, seleccionados, categorizados y con unas reglas para su uso y gestión.",
+                "Una secuencia de metadatos que sirve para interrogar en un motor de búsqueda.",
+                "La visualización del código fuente de una página web.",
+                "Una lista aleatoria de metadatos."
+            ],
+            "correcta": 0,
+            "explicacion": "Un esquema de metadatos (p. ej., Dublin Core) define un conjunto estructurado de elementos con su semántica y sus reglas de uso.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 13",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué tipo de espacio colaborativo ofrece la Biblioteca de la Universidad Miguel Hernández?",
+            "opciones": [
+                "Salas de reuniones.",
+                "Espacios de relajación.",
+                "Salas de trabajo en grupo.",
+                "Office de comida."
+            ],
+            "correcta": 2,
+            "explicacion": "El espacio colaborativo que ofrece la Biblioteca UMH son las salas de trabajo en grupo.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 14",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué nombre tiene el programa de radio/podcast especializado en lectura y Alfabetización Informacional de la Biblioteca de la Universidad Miguel Hernández?",
+            "opciones": [
+                "Información sonora.",
+                "Tinta sonora.",
+                "El Podcast de la Biblioteca",
+                "InfoAlfabetízate."
+            ],
+            "correcta": 1,
+            "explicacion": "«Tinta sonora» es el programa de radio/podcast de la Biblioteca UMH sobre lectura y alfabetización informacional.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 15",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según las directrices de septiembre de 2006 del Manifiesto de la IFLA/UNESCO sobre Internet, el concepto de Alfabetización Informacional (Alfin)",
+            "opciones": [
+                "Implica generalmente la competencia para hacer un uso eficaz de las fuentes de información, incluyendo análisis y evaluación de información, así como su organización y aplicación en un contexto individual o de grupo.",
+                "Implica generalmente la competencia para hacer un uso de las herramientas que proporciona internet para efectuar las tareas relacionadas con la administración electrónica.",
+                "Supone el aprendizaje de las habilidades y competencias suficientes como para hacer uso de los servicios digitales de las Bibliotecas.",
+                "Implica generalmente la competencia para hacer un uso eficaz de las fuentes de información, incluyendo la generación de contenidos y la interacción con el resto de usuarios de la web."
+            ],
+            "correcta": 0,
+            "explicacion": "Las directrices definen la Alfin como la competencia para usar eficazmente las fuentes de información, lo que incluye analizarla, evaluarla, organizarla y aplicarla individualmente o en grupo.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 16",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes son actividades introductorias de formación en bibliotecas universitarias?",
+            "opciones": [
+                "Jornadas de bienvenida.",
+                "Visitas guiadas.",
+                "Jornadas de puertas abiertas.",
+                "Todas las anteriores son actividades introductorias de formación en bibliotecas universitarias."
+            ],
+            "correcta": 3,
+            "explicacion": "Las jornadas de bienvenida, las visitas guiadas y las jornadas de puertas abiertas son formación de acogida o introductoria.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 17",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "En la sede web de la Biblioteca de la Universidad Miguel Hernández, ¿dónde podemos encontrar el acceso principal al calendario de formación y eventos?",
+            "opciones": [
+                "En la página \"Carta de Servicios\".",
+                "En la página \"Horarios\".",
+                "En la página \"Pregunta a la Biblioteca\".",
+                "En la página \"Busca información\"."
+            ],
+            "correcta": 2,
+            "explicacion": "Según la plantilla, el acceso principal al calendario de formación y eventos está en la página «Pregunta a la Biblioteca» de la web de la Biblioteca UMH. Nota: depende de la web de la Biblioteca en 2023 y no es verificable a partir del texto.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 18",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes NO es una competencia recomendada por las Normas sobre aptitudes para el acceso y uso de la información en la enseñanza superior (ACRL/ALA, 2000)?",
+            "opciones": [
+                "Ser capaz de determinar la naturaleza y nivel de la necesidad de información.",
+                "Acceder a la información requerida de manera eficiente y eficaz.",
+                "Interpretar las características básicas de los diferentes lenguajes de programación.",
+                "Utilizar la información eficazmente para cumplir un propósito específico, individualmente o como miembro de un grupo."
+            ],
+            "correcta": 2,
+            "explicacion": "Las normas ACRL/ALA tratan de determinar, acceder, evaluar y usar la información; conocer lenguajes de programación no es una de ellas.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 19",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes Guías de autoformación se pueden encontrar en la web de la Biblioteca de la Universidad Miguel Hernández?",
+            "opciones": [
+                "Guía de préstamos, reservas y renovaciones.",
+                "Guía para trabajar con libros electrónicos.",
+                "Guía para buscar y gestionar bases de datos.",
+                "Todas las guías anteriores se pueden encontrar en la web de la Biblioteca de la Universidad Miguel Hernández"
+            ],
+            "correcta": 3,
+            "explicacion": "La Biblioteca UMH ofrece guías de autoformación sobre préstamo, libros electrónicos y bases de datos, entre otras.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 20",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según la normativa de la Biblioteca de la Universidad Miguel Hernández, el uso de las salas de trabajo en grupo está restringido a:",
+            "opciones": [
+                "El estudiantado matriculado en la Universidad Miguel Hernández.",
+                "La sociedad en general.",
+                "A los miembros de la comunidad universitaria de la Universidad Miguel Hernández.",
+                "Al estudiantado matriculado en cualquier universidad pública española."
+            ],
+            "correcta": 2,
+            "explicacion": "Las salas de trabajo en grupo están reservadas a la comunidad universitaria de la UMH: estudiantes, PDI y PAS, no solo al estudiantado.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 21",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿En qué Bibliotecas de Campus de la Universidad Miguel Hernández de Elche se ofrece el servicio de salas de trabajo en grupo?",
+            "opciones": [
+                "Biblioteca del Campus de Elche",
+                "Biblioteca del Campus de Sant Joan d'Alacant",
+                "Biblioteca del Campus de Altea",
+                "En todas las bibliotecas anteriormente citadas"
+            ],
+            "correcta": 3,
+            "explicacion": "Todas las bibliotecas de campus de la UMH ofrecen salas de trabajo en grupo.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 22",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "La URL de la web de la Biblioteca de la Universidad Miguel Hernández de Elche es:",
+            "opciones": [
+                "https://umh.biblioteca.es/",
+                "https://biblioteca.umh.es/",
+                "https://www.umh/biblioteca.es",
+                "https://www.umh.es/biblioteca"
+            ],
+            "correcta": 1,
+            "explicacion": "La web de la Biblioteca es el subdominio biblioteca.umh.es.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 23",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes no es una característica de una comunidad virtual?",
+            "opciones": [
+                "Grupo de personas que desean interactuar para satisfacer sus necesidades o llevar a cabo roles específicos",
+                "Conjunto de aficionados a la lectura que utilizan una aplicación de mensajería instantánea para convocar reuniones",
+                "Conjunto de personas que comparten un propósito determinado que constituye la razón de ser de la propia comunidad virtual",
+                "Grupo de personas que disponen de un sistema informático que media las interacciones y facilita la cohesión entre los miembros"
+            ],
+            "correcta": 1,
+            "explicacion": "Un grupo que solo usa la mensajería para convocar reuniones presenciales no interactúa en un entorno virtual como razón de ser; las demás opciones recogen los rasgos clásicos (personas, propósito compartido y sistema que media la interacción).",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 24",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Pregunta 5: ¿Cuál de los siguientes no es un tipo de usuario en redes sociales?",
+            "opciones": [
+                "Creadores",
+                "Conversadores",
+                "Discutidores",
+                "Críticos"
+            ],
+            "correcta": 2,
+            "explicacion": "La tipología de Forrester (Social Technographics) incluye creadores, conversadores, críticos, coleccionistas, unidos, espectadores e inactivos, pero no «discutidores».",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 25",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué tipo de contenidos principales tiene la red social Instagram?",
+            "opciones": [
+                "Fotografías y animaciones.",
+                "Vídeos y audios.",
+                "Fotografías y vídeos.",
+                "Fotografías"
+            ],
+            "correcta": 2,
+            "explicacion": "Instagram se basa en publicar fotografías y vídeos (publicaciones, stories y reels).",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 26",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Para qué sirve el marketing en las bibliotecas?",
+            "opciones": [
+                "Es una herramienta que permite a la biblioteca evaluarse y comunicar el valor a sus usuarios basándose en las necesidades y problemas de éstos.",
+                "Es una manera de convencer a los no usuarios de la biblioteca para que utilicen sus servicios.",
+                "Las bibliotecas no necesitan utilizar herramientas de marketing, ya que sus servicios son públicos.",
+                "Es una herramienta que sirve para vender paquetes de productos comerciales relacionados con la biblioteca, y aumentar su presupuesto."
+            ],
+            "correcta": 0,
+            "explicacion": "El marketing bibliotecario parte de las necesidades de los usuarios para evaluar los servicios y comunicar su valor; no se reduce a captar no usuarios ni a vender.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 27",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál es el perfil en Facebook de la Biblioteca de la Universidad Miguel Hernández?",
+            "opciones": [
+                "https://www.facebook.com/BibliotecaUMH/",
+                "https://www.facebook.com/BibliotecasUMH",
+                "https://www.facebook.com/UMHBiblio",
+                "https://www.facebook.com/UMH/biblioteca"
+            ],
+            "correcta": 0,
+            "explicacion": "El perfil oficial en Facebook es facebook.com/BibliotecaUMH.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 28",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué son los repositorios institucionales?",
+            "opciones": [
+                "Catálogos de documentos de investigación de acceso gratuito.",
+                "Sistemas en línea de acceso abierto que tienen el objetivo de almacenar, preservar y difundir la producción científica de la comunidad universitaria.",
+                "Sistemas en línea de acceso gratuito que tienen por objetivo almacenar, preservar, difundir y proteger la producción científica de la comunidad universitaria.",
+                "Servidores en línea de documentos gratuitos de investigación."
+            ],
+            "correcta": 1,
+            "explicacion": "Un repositorio institucional es un sistema en línea de acceso abierto (no solo gratuito) para almacenar, preservar y difundir la producción científica de la institución.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 29",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué beneficios proporciona un repositorio a la sociedad?",
+            "opciones": [
+                "Acceso al conocimiento para toda la sociedad y reutilización en beneficio de todos.",
+                "Permite visibilizar y rendir cuentas de la inversión pública realizada en investigación.",
+                "Disminuye la brecha de acceso a la información entre las instituciones y países.",
+                "Todas las respuestas anteriores son correctas."
+            ],
+            "correcta": 3,
+            "explicacion": "Los repositorios abren el conocimiento a todos, hacen visible la inversión pública en investigación y reducen la brecha informativa.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 30",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es RediUMH?",
+            "opciones": [
+                "Es un repositorio institucional.",
+                "Es el Depósito Digital de la UMH, cuya finalidad es recopilar, organizar, difundir y preservar los documentos digitales de carácter científico, docente e institucional producidos por la UMH.",
+                "Las respuestas a) y b) son correctas.",
+                "Es el repositorio digital de documentación administrativa de la UMH."
+            ],
+            "correcta": 2,
+            "explicacion": "RediUMH es el repositorio institucional de la UMH, es decir, su depósito digital de documentos científicos, docentes e institucionales.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 31",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué versión de las publicaciones científicas hay que depositar en un repositorio institucional o temático, según se recoge en la Ley de la Ciencia, la Tecnología y la Innovación (art. 37) y en el programa Horizon 2020?",
+            "opciones": [
+                "Draft / Discussion Paper (Borrador de trabajo).",
+                "Preprint / Submitted Version (Versión enviada al editor).",
+                "Postprint / Accepted Manuscript (Versión final de los autores que incluye los cambios propuestos por los revisores). También llamada Author's final version.",
+                "Published Version (Versión final publicada por el editor)."
+            ],
+            "correcta": 2,
+            "explicacion": "El art. 37 de la Ley 14/2011 y Horizon 2020 exigen depositar, como mínimo, la versión final aceptada para publicación (postprint).",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 32",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál es la URL de acceso al repositorio institucional RediUMH?",
+            "opciones": [
+                "http://dspace.umh.es/",
+                "http://rediumh.es",
+                "http://www.umh.es/rediumh",
+                "https://biblioteca.umh.es/rediumh"
+            ],
+            "correcta": 0,
+            "explicacion": "RediUMH funciona sobre DSpace y se accede a él en dspace.umh.es.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 33",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes son comunidades del repositorio institucional RediUMH?",
+            "opciones": [
+                "Docente.",
+                "Investigación.",
+                "Literatura científica.",
+                "Las respuestas a) y b) son correctas."
+            ],
+            "correcta": 3,
+            "explicacion": "Entre las comunidades de RediUMH están «Docente» e «Investigación»; «Literatura científica» no es una de ellas.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 34",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de los siguientes son filtros de búsqueda en el repositorio institucional RediUMH?",
+            "opciones": [
+                "Comunidades",
+                "Autor",
+                "Instituto de investigación.",
+                "Todas las respuestas anteriores son correctas."
+            ],
+            "correcta": 3,
+            "explicacion": "El buscador de RediUMH permite filtrar por comunidades, autor e instituto de investigación, entre otros.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 35",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué son los Acuerdos Transformativos?",
+            "opciones": [
+                "Un documento consensuado por las bibliotecas pertenecientes a REBIUN para la transformación de los servicios bibliotecarios",
+                "Acuerdos a escala nacional firmados por la CRUE Universidades Españolas y el Consejo Superior de Investigaciones Científicas (CSIC) con las editoriales: Elsevier, Wiley, Springer Nature y ACS para tener con cada editor y bajo un mismo contrato, la suscripción de revistas y la opción de publicar en acceso abierto",
+                "Acuerdos a escala europea firmados por las universidades públicas de los miembros de la UE con las mayores editoriales de publicaciones científicas para tener con cada editor y bajo un mismo contrato, la suscripción de revistas y la opción de publicar en acceso abierto",
+                "Acuerdos internacionales firmados entre instituciones públicas de investigación y bibliotecas para la publicación de los resultados de la investigación pública en repositorios de acceso abierto"
+            ],
+            "correcta": 1,
+            "explicacion": "En España, CRUE y CSIC firmaron acuerdos transformativos con Elsevier, Wiley, Springer Nature y ACS que unen en un solo contrato la suscripción (read) y la publicación en acceso abierto (publish).",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 36",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "El principal cometido de Dialnet, es:",
+            "opciones": [
+                "El servicio de mensajería",
+                "La clasificación de los documentos",
+                "Dar visibilidad a la literatura científica hispánica",
+                "Intercambio de información biomédica y disciplinas afines"
+            ],
+            "correcta": 2,
+            "explicacion": "Dialnet, de la Universidad de La Rioja, busca dar visibilidad a la literatura científica hispana.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 37",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "En la CDU, ¿Qué tienen en común los auxiliares de forma y lugar?",
+            "opciones": [
+                "Van entre corchetes.",
+                "Van entre paréntesis.",
+                "Van entre comillas.",
+                "Ninguna de las respuestas anteriores es cierta."
+            ],
+            "correcta": 1,
+            "explicacion": "En la CDU los auxiliares comunes de forma (0...) y de lugar (1/9) se escriben entre paréntesis.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 38",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes bases de datos bibliográficas suscritas por la biblioteca de la UMH es de carácter multidisciplinar?",
+            "opciones": [
+                "PILOTS",
+                "ABI Inform",
+                "Scopus",
+                "Sabi"
+            ],
+            "correcta": 2,
+            "explicacion": "Scopus es multidisciplinar; PILOTS trata el estrés postraumático, ABI Inform la economía y empresa, y SABI recoge datos de empresas.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 39",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según las Normas y directrices para bibliotecas universitarias y científicas de Rebiun, la biblioteca universitaria debe tener como horario mínimo de apertura:",
+            "opciones": [
+                "De 75 horas semanales.",
+                "El necesario establecido por el Rector.",
+                "El horario docente completo a lo largo del curso académico.",
+                "El horario comercial habitual."
+            ],
+            "correcta": 2,
+            "explicacion": "Las normas de REBIUN fijan como mínimo que la biblioteca esté abierta durante todo el horario docente del curso académico.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 40",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuántos formatos o familias, desarrollados para fines específicos, hay en el formato MARC 21?:",
+            "opciones": [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            "correcta": 1,
+            "explicacion": "MARC 21 tiene cinco formatos: bibliográfico, de autoridades, de fondos, de clasificación y de información comunitaria.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 41 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué significa el acrónimo RDA en el ámbito de la catalogación?",
+            "opciones": [
+                "Recursos, Descripción y Acceso",
+                "Research, Description and Accesibility",
+                "Resources and Democratic, Access",
+                "Redes, Distribución y Acceso"
+            ],
+            "correcta": 0,
+            "explicacion": "RDA significa «Resource Description and Access» (Descripción y Acceso de Recursos), que es la opción más próxima. Nota: la traducción literal sería «Descripción y Acceso de Recursos», pero la a) es la única que se acerca.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 42 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según la Ley 4/2021 de 16 de abril, de la Función Pública Valenciana, en la selección de personal empleado público, ¿Qué sistema selectivo tendrá carácter ordinario y preferente?",
+            "opciones": [
+                "El Sistema de concurso",
+                "El Sistema de concurso-oposición",
+                "El Sistema de oposición",
+                "El Sistema de oposición-concurso"
+            ],
+            "correcta": 2,
+            "explicacion": "La Ley 4/2021 establece que la oposición es el sistema selectivo ordinario y preferente; el concurso-oposición es excepcional.",
+            "referencia": "Examen UMH 01/07/2023, 2ª parte, pregunta 43 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿A qué línea estratégica de REBIUN corresponde la “Agenda 2030”?",
+            "opciones": [
+                "Línea 1",
+                "Línea 2",
+                "Línea 3",
+                "Línea 4"
+            ],
+            "correcta": 3,
+            "explicacion": "En el III Plan Estratégico de REBIUN (horizonte 2020-2023), la Agenda 2030 y los ODS se enmarcan en la Línea 4.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 1",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de los siguientes no es un método de ordenación de fondos en Bibliotecas?",
+            "opciones": [
+                "Ordenación por número currens",
+                "Ordenación sistemática",
+                "Ordenación por Selección",
+                "Ordenación por agrupaciones propias"
+            ],
+            "correcta": 2,
+            "explicacion": "Los fondos se ordenan por número currens, sistemáticamente (por materias) o por agrupaciones propias; la «ordenación por selección» no es un método de ordenación.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 2",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes enumeraciones incluye solamente Consorcios de Bibliotecas, y no entidades o agrupaciones de otro tipo?",
+            "opciones": [
+                "CBUG, BUCL, CBU",
+                "CBUA, CBUG",
+                "CBUC, BUCLE, Madroño",
+                "Las respuestas a), b) y c) son falsas"
+            ],
+            "correcta": 2,
+            "explicacion": "CBUC (Cataluña), BUCLE (Castilla y León) y Madroño (Madrid) son consorcios de bibliotecas universitarias.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 3",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Es un documento secundario:",
+            "opciones": [
+                "Artículo científico",
+                "Bibliografía",
+                "Video",
+                "Disco musical"
+            ],
+            "correcta": 1,
+            "explicacion": "Una bibliografía recoge y describe documentos primarios para facilitar su localización, por lo que es un documento secundario.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 4",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Es “Acceso al documento” un grupo de trabajo de Rebiun?",
+            "opciones": [
+                "Sí, aprobado en la XXIX Asamblea celebrada en Barcelona",
+                "No, “Acceso al documento” forma parte de los servicios de Rebiun",
+                "No, “Acceso al documento” es un servicio de las bibliotecas universitarias",
+                "No, no hay ningún grupo de trabajo que se denomine “Acceso al documento”"
+            ],
+            "correcta": 0,
+            "explicacion": "REBIUN cuenta con un grupo de trabajo de Acceso al Documento, aprobado en la XXIX Asamblea de Barcelona.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 5",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "El resumen de una tesis es:",
+            "opciones": [
+                "Un documento primario",
+                "Un documento secundario",
+                "Una obra de referencia",
+                "Un documento administrativo"
+            ],
+            "correcta": 1,
+            "explicacion": "El resumen es una representación condensada del documento original (primario), por lo que se considera un documento secundario.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 6",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Un repositorio institucional:",
+            "opciones": [
+                "Es el archivo administrativo digital de la institución",
+                "Es un depósito digital que permite almacenar y conservar la producción científica y académica de una institución",
+                "Reúne, describe y difunde los fondos bibliográficos de una biblioteca institucional",
+                "Las respuestas a) y b) son ciertas"
+            ],
+            "correcta": 1,
+            "explicacion": "Un repositorio institucional almacena, conserva y difunde en acceso abierto la producción científica y académica de una institución; no es un archivo administrativo.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 7",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "El agregador nacional de repositorios científicos es:",
+            "opciones": [
+                "RECOLECTA",
+                "RECINA",
+                "DIALNET",
+                "Ninguna de las anteriores respuestas es correcta"
+            ],
+            "correcta": 0,
+            "explicacion": "RECOLECTA (FECYT-REBIUN) es la plataforma que agrega los repositorios científicos españoles.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 8",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "La base de datos EMBASE, suscrita por la Biblioteca de la Universidad Miguel Hernández, es:",
+            "opciones": [
+                "Una Base de Datos de identificación y evaluación de los artículos más relevantes sobre química y biología",
+                "Una Base de Datos multidisciplinar, con especial atención al marketing, gestión empresarial, ingenierías y biblioteconomía",
+                "Una Base de Datos especializada en biomedicina",
+                "Es una Base de Datos Internacional de Patentes"
+            ],
+            "correcta": 2,
+            "explicacion": "EMBASE (Elsevier) es una base de datos bibliográfica especializada en biomedicina y farmacología.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 9",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Cuando a la identificación de los datos de una obra se le añaden los datos para su localización nos encontramos con:",
+            "opciones": [
+                "Un registro catalográfico",
+                "Un registro bibliográfico",
+                "Una obra registrada",
+                "Ninguna de las respuestas anteriores es correcta"
+            ],
+            "correcta": 0,
+            "explicacion": "El registro bibliográfico identifica la obra; al añadirle los datos de localización (signatura, ejemplar) se convierte en registro catalográfico.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 10",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué número de documentos podrá llevarse en préstamo un usuario cuando presente la tarjeta solidaria en la Biblioteca de la Universidad Miguel Hernández?",
+            "opciones": [
+                "Dos documentos",
+                "Tres documentos",
+                "Cuatro documentos",
+                "El número de documentos que pueda llevarse dependerá de si corresponden al tipo de CORTO o LARGO."
+            ],
+            "correcta": 0,
+            "explicacion": "Según la normativa de préstamo de la Biblioteca UMH, los titulares de la tarjeta solidaria pueden llevarse dos documentos.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 11",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Según la UNESCO, La publicación periódica que aparece al menos cuatro veces por semana, se denomina:",
+            "opciones": [
+                "Revista",
+                "Boletín",
+                "Dossier",
+                "Diario"
+            ],
+            "correcta": 3,
+            "explicacion": "La UNESCO define el diario como la publicación periódica que aparece al menos cuatro veces por semana.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 12",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "La Biblioteca UMH proporciona a la comunidad universitaria acceso a todos los recursos electrónicos suscritos: bases de datos o portales, manuales, revistas y libros electrónicos a través de:",
+            "opciones": [
+                "Buscador “BUSCA” y ventanilla única",
+                "Buscador” DAMA” y desde las propias plataformas de editores",
+                "Catálogo colectivo BUVAL y Catálogo BUSCA",
+                "Ninguna de las respuestas anteriores es correcta, únicamente se accede a través del catálogo UMH"
+            ],
+            "correcta": 1,
+            "explicacion": "Los recursos electrónicos de la UMH son accesibles desde el buscador DAMA y directamente desde las plataformas de los editores.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 13",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Para hacer uso del servicio de préstamo en las bibliotecas de la UMH, se podrán utilizar las siguientes tarjetas según el grupo de usuarios:",
+            "opciones": [
+                "Tarjeta inteligente universitaria (TIU) y Tarjeta expansión.",
+                "Tarjeta inteligente universitaria (TIU) y Tarjeta expansión y tarjeta PLUS -UMH",
+                "Tarjeta inteligente universitaria (TIU), Tarjeta Extensa y Tarjeta solidaria.",
+                "Tarjeta inteligente universitaria (TIU), Tarjeta Extensa, Tarjeta solidaria, Tarjeta Plus-UMH"
+            ],
+            "correcta": 2,
+            "explicacion": "La normativa de préstamo UMH contempla la TIU, la Tarjeta Extensa y la Tarjeta Solidaria según el grupo de usuarios.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 14",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "En las Biblioteca de la UMH, quedan excluidos del préstamo interbibliotecario y únicamente se suministrarán copias de los siguientes materiales:",
+            "opciones": [
+                "Obras de Referencia",
+                "Publicaciones periódicas.",
+                "Documentos antiguos, agotados o de difícil reposición y aquellos otros materiales que la Biblioteca considere.",
+                "Las respuestas a), b) y c) son correctas"
+            ],
+            "correcta": 3,
+            "explicacion": "La normativa de PI de la UMH excluye del préstamo de originales las obras de referencia, las publicaciones periódicas y los documentos antiguos o de difícil reposición, de los que solo se envían copias.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 15",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué base de datos suscrita por la UMH ofrece información financiera muy detallada y actualizada mediante el análisis y comparativa entre empresas?",
+            "opciones": [
+                "ERIC",
+                "SABI",
+                "ECONOMIC",
+                "ACS"
+            ],
+            "correcta": 1,
+            "explicacion": "SABI (Sistema de Análisis de Balances Ibéricos) ofrece información financiera de empresas españolas y portuguesas y permite compararlas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 16",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuántas universidades forma parte de BUVAL?",
+            "opciones": [
+                "4 universidades públicas",
+                "3 universidades públicas",
+                "7 universidades públicas y 2 Privadas",
+                "5 universidades públicas"
+            ],
+            "correcta": 3,
+            "explicacion": "BUVAL (Bibliotecas Universitarias Valencianas) agrupa a las 5 universidades públicas valencianas: UV, UPV, UA, UJI y UMH.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 17",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "La altura más adecuada de las estanterías en los depósitos.",
+            "opciones": [
+                "Debe de ser muy alta para colocar el mayor número de baldas y, por tanto, de libros",
+                "Se recomienda entre 2,00m y 2,20m, y seis baldas como máximo",
+                "Debe ser menor de 1,75m para que todo el personal alcance la última balda sin problemas",
+                "Debe depender de la iluminación o ventilación del depósito"
+            ],
+            "correcta": 1,
+            "explicacion": "En depósitos se recomiendan estanterías de entre 2 y 2,20 m con un máximo de seis baldas, accesibles sin medios auxiliares.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 18",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "La sala de lectura debe ubicarse:",
+            "opciones": [
+                "En la zona caliente",
+                "En la zona fría",
+                "Junto a la zona de los depósitos",
+                "Dependiendo del tipo de biblioteca que sea"
+            ],
+            "correcta": 1,
+            "explicacion": "La sala de lectura requiere silencio, por lo que se sitúa en la zona fría (alejada de accesos y zonas de tránsito).",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 19",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿A qué criterio hay que dar preferencia a la hora de planificar la distribución de los espacios en la biblioteca?",
+            "opciones": [
+                "Al de los usuarios",
+                "Al de las funciones",
+                "Al de los servicios",
+                "Al de las necesidades existentes"
+            ],
+            "correcta": 3,
+            "explicacion": "La planificación de espacios parte del análisis de las necesidades existentes, a las que se subordinan usuarios, funciones y servicios.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 20",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Según las Normas y directrices para bibliotecas universitarias y científicas de Rebiun, la biblioteca universitaria debe tener como horario mínimo de apertura:",
+            "opciones": [
+                "De 75 horas semanales.",
+                "El necesario establecido por el Rector.",
+                "El horario docente completo a lo largo del curso académico.",
+                "El horario comercial habitual."
+            ],
+            "correcta": 2,
+            "explicacion": "Las Normas REBIUN establecen que la biblioteca debe abrir, como mínimo, durante todo el horario docente del curso académico.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 21",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "La norma ISO que establece directrices y normativa sobre edificios bibliotecarios es:",
+            "opciones": [
+                "ISO/TR 10013",
+                "ISO 9001",
+                "ISO 11626",
+                "ISO/TR 11219"
+            ],
+            "correcta": 3,
+            "explicacion": "La ISO/TR 11219 recoge datos cualitativos y bases para el cálculo de espacios en edificios de bibliotecas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 22",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿En qué documento de la IFLA podemos encontrar información útil para la planificación de la construcción de una nueva biblioteca?",
+            "opciones": [
+                "Directrices IFLA/UNESCO para el desarrollo de los servicios bibliotecarios",
+                "Pautas para la evaluación de edificios bibliotecarios",
+                "Pautas IFLA/EBLIDA sobre política bibliotecaria",
+                "Pautas IFLA para edificios bibliotecarios"
+            ],
+            "correcta": 3,
+            "explicacion": "Las Pautas IFLA para edificios bibliotecarios (Library Building Guidelines) orientan la planificación de nuevas bibliotecas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 23",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "En las bibliotecas universitarias ¿a qué nos referimos cuando hablamos de Vouchers de la IFLA?",
+            "opciones": [
+                "El equivalente de los vales descuento en las APCs",
+                "Las entidades de relación en el modelo conceptual de LRM",
+                "Los repositorios de datos abiertos homologados por entidades de certificación como la ANECA",
+                "Cupones que se compran y entregan como moneda de cambio en el préstamo interbibliotecario"
+            ],
+            "correcta": 3,
+            "explicacion": "Los vouchers IFLA son cupones reutilizables que sirven para pagar transacciones de préstamo interbibliotecario internacional.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 24",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Un elemento necesario para que exista cooperación bibliotecaria es:",
+            "opciones": [
+                "Bibliotecas que compartan información, servicios, etc.",
+                "Acuerdos que formalicen la colaboración.",
+                "Normas que se deben seguir para llevar a cabo las actividades.",
+                "Las respuestas a), b) y c) son correctas."
+            ],
+            "correcta": 3,
+            "explicacion": "La cooperación exige bibliotecas que compartan recursos, acuerdos formales y normas comunes: los tres elementos son necesarios.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 25",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Un proyecto de cooperación internacional es:",
+            "opciones": [
+                "REBIUN",
+                "CERL",
+                "BUCLE",
+                "RUEDO"
+            ],
+            "correcta": 1,
+            "explicacion": "CERL (Consortium of European Research Libraries) es un consorcio internacional; REBIUN, BUCLE y RUEDO son españoles.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 26",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "De los siguientes campos del formato MARC ¿Cuál NO es de autoridad?:",
+            "opciones": [
+                "100",
+                "245",
+                "600",
+                "700"
+            ],
+            "correcta": 1,
+            "explicacion": "El 245 (mención de título) es un campo descriptivo; 100, 600 y 700 contienen puntos de acceso controlados por autoridades.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 27",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuáles son las partes principales de un registro MARC?",
+            "opciones": [
+                "Cabecera, directorio e indicadores",
+                "Cabecera, directorio y códigos de subcampo",
+                "Cabecera, directorio y campos",
+                "Todas las respuestas anteriores son falsas"
+            ],
+            "correcta": 2,
+            "explicacion": "Un registro MARC se compone de cabecera (líder), directorio y campos variables.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 28",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál es la norma para la descripción de publicaciones periódicas y recursos continuados?",
+            "opciones": [
+                "ISBD (ER)",
+                "ISBD (G)",
+                "ISBD (M)",
+                "ISBD (CR)"
+            ],
+            "correcta": 3,
+            "explicacion": "La ISBD(CR) (Continuing Resources) regula la descripción de publicaciones seriadas y recursos continuados.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 29",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿A qué campo del formato MARC 21 corresponde el Área 1 de la ISBD?",
+            "opciones": [
+                "100",
+                "110",
+                "245",
+                "500"
+            ],
+            "correcta": 2,
+            "explicacion": "El Área 1 de la ISBD (título y mención de responsabilidad) se codifica en el campo 245 de MARC 21.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 30",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿En qué campo MARC 21 se incluye la información del Depósito Legal?",
+            "opciones": [
+                "017",
+                "020",
+                "034",
+                "086"
+            ],
+            "correcta": 0,
+            "explicacion": "El campo 017 de MARC 21 recoge el número de copyright o de depósito legal (020 es el ISBN).",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 31",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de los siguientes es un formato de libro electrónico?",
+            "opciones": [
+                "Mp3",
+                "Mov",
+                "Mobi",
+                "Mpc"
+            ],
+            "correcta": 2,
+            "explicacion": "Mobi es el formato de libro electrónico de Mobipocket/Kindle; Mp3 y Mpc son audio y Mov es vídeo.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 32",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué organismo es el encargado de elaborar los documentos para las normas UNE?",
+            "opciones": [
+                "IFLA",
+                "FESABID",
+                "AENOR",
+                "ISO"
+            ],
+            "correcta": 2,
+            "explicacion": "Las normas UNE las elaboraba AENOR, organismo nacional de normalización. Nota: desde 2017 esta función corresponde a la Asociación Española de Normalización (UNE).",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 33",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "La base de datos TESEO es:",
+            "opciones": [
+                "Un documento primario",
+                "Un documento secundario",
+                "Un documento terciario",
+                "Las respuestas a), b) y c) son falsas"
+            ],
+            "correcta": 1,
+            "explicacion": "TESEO es una base de datos referencial de tesis doctorales españolas; al describir documentos primarios es un documento secundario.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 34",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Todo libro impreso antes de año 1501 es:",
+            "opciones": [
+                "Autógrafo",
+                "Códice",
+                "Apógrafo",
+                "Incunable"
+            ],
+            "correcta": 3,
+            "explicacion": "Se llama incunable a todo libro impreso desde la invención de la imprenta hasta el 31 de diciembre de 1500.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 35",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Los OPAC comenzaron a desarrollarse en:",
+            "opciones": [
+                "Siglo XVIII",
+                "Siglo XIX",
+                "Siglo XX",
+                "Siglo XXI"
+            ],
+            "correcta": 2,
+            "explicacion": "Los catálogos en línea de acceso público (OPAC) surgieron en las décadas de 1970-1980, en el siglo XX.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 36",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Indique cuál de los siguientes, NO es un Sistema de Descubrimiento:",
+            "opciones": [
+                "Summon",
+                "Ebsco Discovery Services",
+                "WORLDCat Local",
+                "Allfind"
+            ],
+            "correcta": 3,
+            "explicacion": "Summon, EDS y WorldCat Local son herramientas de descubrimiento comerciales; Allfind no lo es.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 37",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Quién se encarga de las mejoras del funcionamiento del Catálogo Colectivo REBIUN?",
+            "opciones": [
+                "76 bibliotecas universitarias públicas y privadas, el CSIC y otras bibliotecas asociadas",
+                "El grupo de trabajo del Catálogo Colectivo de REBIUN",
+                "La Biblioteca Nacional de España en coordinación con REBIUN",
+                "Ninguna de las respuestas anteriores es correcta"
+            ],
+            "correcta": 1,
+            "explicacion": "El grupo de trabajo del Catálogo Colectivo de REBIUN se ocupa de su mantenimiento y de las mejoras de su funcionamiento.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 38",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cómo se denomina el catálogo colectivo que agrupa las colecciones de revistas especializadas en ciencias de la salud de más de 538 bibliotecas españolas?",
+            "opciones": [
+                "Bibliomed",
+                "Revimed",
+                "C17",
+                "Revisalud"
+            ],
+            "correcta": 2,
+            "explicacion": "C17 es el catálogo colectivo de publicaciones periódicas de bibliotecas de ciencias de la salud españolas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 39",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿quién realiza el mantenimiento y actualización del catálogo colectivo de publicaciones periódicas CCPP?",
+            "opciones": [
+                "La Biblioteca Nacional de España",
+                "El Ministerio de Cultura y Deporte y las Comunidades Autónomas",
+                "La Red de Bibliotecas Universitarias Españolas (REBIUN) y el Consejo Superior de Investigaciones Científicas (CSIC)",
+                "Las respuestas a), b) y c) son falsas"
+            ],
+            "correcta": 0,
+            "explicacion": "El CCPP se gestiona desde la Biblioteca Nacional de España. Nota: es discutible, pues el CCPP forma parte del Catálogo Colectivo del Patrimonio Bibliográfico, que coordina el Ministerio de Cultura con las Comunidades Autónomas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 40",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "El catálogo colectivo en línea más grande a nivel internacional que es gestionado por OCLC es:",
+            "opciones": [
+                "MondialCat",
+                "WorldCat",
+                "UniCat",
+                "GrandiorCCat"
+            ],
+            "correcta": 1,
+            "explicacion": "WorldCat, gestionado por OCLC, es el mayor catálogo colectivo en línea del mundo.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 41",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Tras realizar una búsqueda en Dama ¿es posible acceder al texto completo de un documento resultado de esa consulta?",
+            "opciones": [
+                "Sí, todos los documentos referenciados en Dama facilitan el texto completo",
+                "No, esta funcionalidad no es propia de un OPAC como DAMA",
+                "Sí, siempre que el documento sea de acceso abierto o forme parte de un recurso con suscripción institucional",
+                "No, el único resultado que podemos obtener tras una consulta a DAMA es una referencia bibliográfica"
+            ],
+            "correcta": 2,
+            "explicacion": "DAMA es una herramienta de descubrimiento que enlaza al texto completo cuando el documento es de acceso abierto o está suscrito por la UMH.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 42",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Tras realizar una búsqueda en Dama y obtener como resultado la referencia de un libro ¿se puede visualizar o copiar la referencia en formato de citación APA?",
+            "opciones": [
+                "Si, solo hay que seleccionar el formato de citación APA y copiarlo en el portapapeles",
+                "No, solo puede hacerse si previamente exportamos la referencia a un gestor bibliográfico",
+                "No, solo puede hacerse si la referencia es de un artículo científico",
+                "Todas las respuestas anteriores son falsas"
+            ],
+            "correcta": 0,
+            "explicacion": "DAMA ofrece la opción de citar en distintos estilos, entre ellos APA, y copiar la cita directamente al portapapeles.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 43",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué quiere decir APCs en el ámbito de la publicación científica?",
+            "opciones": [
+                "Aplicaciones para catalogar",
+                "Pago por procesamiento de artículos",
+                "Acciones presupuestarias comunes",
+                "Action Procesing Computer"
+            ],
+            "correcta": 1,
+            "explicacion": "APC (Article Processing Charges) son los cargos que pagan los autores por la publicación de un artículo, habituales en acceso abierto.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 44",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "El factor de impacto que medición temporal tiene en cuenta",
+            "opciones": [
+                "2 años",
+                "3 años",
+                "5 años",
+                "10 años"
+            ],
+            "correcta": 0,
+            "explicacion": "El factor de impacto clásico del JCR divide las citas de un año a los artículos de los 2 años anteriores entre los artículos citables de esos 2 años.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 45",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Con que identificas el Factor de Factor de Impacto de una revista",
+            "opciones": [
+                "Publons",
+                "Scimago",
+                "Scopus",
+                "Journal Citation Report"
+            ],
+            "correcta": 3,
+            "explicacion": "El Factor de Impacto se publica en el Journal Citation Reports (Clarivate).",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 46",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "El indicador CiteScore que periodo temporal abarca",
+            "opciones": [
+                "1 año",
+                "2 años",
+                "3 años",
+                "5 años"
+            ],
+            "correcta": 2,
+            "explicacion": "CiteScore se calculaba sobre una ventana de 3 años. Nota: desde 2020 Scopus usa una ventana de 4 años, opción que no figura.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 47",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es el DOI?",
+            "opciones": [
+                "Identificador de documentos",
+                "Identificador Internacional de autores",
+                "Identificador Internacional de metadatos",
+                "Identificador Internacional de instituciones"
+            ],
+            "correcta": 0,
+            "explicacion": "El DOI (Digital Object Identifier) es un identificador persistente de documentos y objetos digitales.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 48",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Que identificador es el que identifica unívocamente a los autores científicos internacionales",
+            "opciones": [
+                "ISNI",
+                "VIAF",
+                "ORBIS",
+                "ORCID"
+            ],
+            "correcta": 3,
+            "explicacion": "ORCID proporciona un identificador único y persistente para investigadores.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 49",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "El índice h es un indicador bibliométrico que puede aplicarse a:",
+            "opciones": [
+                "Investigadores, instituciones y revistas",
+                "Únicamente a investigadores",
+                "Únicamente a revistas",
+                "Únicamente a instituciones"
+            ],
+            "correcta": 0,
+            "explicacion": "Aunque nació para investigadores, el índice h se aplica a cualquier conjunto de publicaciones: investigadores, instituciones o revistas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 50",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Entre los indicios de calidad de un artículo de investigación ¿cual tendría más valor para la acreditación docente en el área de ciencias de la salud?",
+            "opciones": [
+                "Un artículo publicado en una revista indexada en Scielo",
+                "Un artículo publicado en una revista analizada en SJR",
+                "Un artículo publicado en una revista analizada en Latindex",
+                "Un artículo publicado en una revista analizada en JCR"
+            ],
+            "correcta": 3,
+            "explicacion": "En ciencias de la salud la ANECA otorga el máximo valor a las revistas con factor de impacto en el JCR.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 51",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de los siguientes NO es un estilo de referencia bibliográfica?",
+            "opciones": [
+                "PAC",
+                "Chicago",
+                "APA",
+                "Vancouver"
+            ],
+            "correcta": 0,
+            "explicacion": "Chicago, APA y Vancouver son estilos de citación; PAC no lo es.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 52",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Journal Citation Report actualmente consta de las ediciones:",
+            "opciones": [
+                "Ciencias, Ciencias Sociales, Arte y Humanidades",
+                "Ciencias y Humanidades",
+                "Ciencias y Ciencias Sociales",
+                "Ciencias, Tecnología, Arte y Humanidades"
+            ],
+            "correcta": 2,
+            "explicacion": "El JCR se ha publicado tradicionalmente en dos ediciones: Science y Social Sciences. Nota: desde 2021 el JCR incluye también revistas de AHCI y ESCI, por lo que la opción a) podría defenderse.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 53",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "El sello de calidad de FECYT es un indicio de calidad editorial y científica de:",
+            "opciones": [
+                "Monografías",
+                "Publicaciones periódicas",
+                "Editoriales universitarias",
+                "Todas las respuestas anteriores son ciertas"
+            ],
+            "correcta": 1,
+            "explicacion": "El sello de calidad FECYT se concede a revistas científicas españolas (publicaciones periódicas); el sello CEA-APQ es el de las monografías.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 54",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Un OPAC",
+            "opciones": [
+                "Es accesible desde cualquier dispositivo con conexión a Internet",
+                "Es accesible de lunes a viernes, salvo en época de exámenes que se prolonga a los fines de semana",
+                "Es accesible exclusivamente para usuarios autorizados",
+                "Todas las respuestas anteriores son falsas"
+            ],
+            "correcta": 0,
+            "explicacion": "El OPAC es un catálogo en línea de acceso público, consultable desde cualquier dispositivo conectado a Internet.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 55",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Si colocamos el símbolo almohadilla (#) delante de una palabra en las redes sociales Twitter o Instagram, ¿qué estamos haciendo?",
+            "opciones": [
+                "Resaltando la palabra dentro del texto",
+                "Generando o compartiendo un hashtag",
+                "Generando una comunidad de usuarios de esa palabra",
+                "Compartiendo o generando una etiqueta exclusiva de nuestro timeline"
+            ],
+            "correcta": 1,
+            "explicacion": "La almohadilla delante de una palabra crea o usa un hashtag, una etiqueta que agrupa publicaciones sobre un tema.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 56",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Además de la de Inicio, cuántas pestañas tiene el menú horizontal superior de la página web de inicio de la Biblioteca de la Universidad Miguel Hernández?",
+            "opciones": [
+                "Tu biblioteca; Busca información; Servicios al usuario; Servicios al investigador",
+                "Conócenos; Busca información; Servicios al usuario; Servicios al investigador",
+                "Tu biblioteca; Busca información; Servicios; Servicios al investigador",
+                "Busca información; Servicios; Servicios al investigador"
+            ],
+            "correcta": 2,
+            "explicacion": "En la web de la Biblioteca UMH de la fecha del examen, el menú superior mostraba: Tu biblioteca, Busca información, Servicios y Servicios al investigador. Nota: depende del diseño de la web en 2023.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 57",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué objetivos tienen los repositorios institucionales respecto de la producción científica?",
+            "opciones": [
+                "Difusión",
+                "Visibilidad",
+                "Impacto",
+                "Las respuestas anteriores, más la preservación"
+            ],
+            "correcta": 3,
+            "explicacion": "Los repositorios buscan difundir la producción científica, aumentar su visibilidad e impacto y garantizar su preservación a largo plazo.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 58",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué beneficios proporciona un repositorio a la sociedad?",
+            "opciones": [
+                "Acceso al conocimiento para toda la sociedad y reutilización en beneficio de todos.",
+                "Permite visibilizar y rendir cuentas de la inversión pública realizada en investigación.",
+                "Disminuye la brecha de acceso a la información entre las instituciones y países.",
+                "Todas las respuestas anteriores son correctas."
+            ],
+            "correcta": 3,
+            "explicacion": "Los repositorios abren el conocimiento a todos, permiten rendir cuentas de la inversión pública y reducen la brecha de acceso: todas son ciertas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 59",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es SHERPA/Romeo?",
+            "opciones": [
+                "Es un recurso en línea que agrega y presenta políticas de acceso abierto para editoriales y revistas de todo el mundo, facilitando las políticas de autoarchivo de derechos de autor y acceso abierto de las revistas académicas",
+                "Es una base de datos de revistas junto con sus políticas de acceso abierto",
+                "Es una organización creada en 2002 para ejecutar y administrar el Proyecto SHERPA",
+                "Es una base de datos de consulta en línea que permite saber las políticas concretas de autoarchivo de derechos de autor a nivel internacional"
+            ],
+            "correcta": 0,
+            "explicacion": "SHERPA/RoMEO es un recurso en línea que agrega las políticas de acceso abierto y autoarchivo de editoriales y revistas de todo el mundo.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 60",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es un Plan de Gestión de Datos (PGD) de investigación?",
+            "opciones": [
+                "Es un documento formal que debe presentarse al inicio de la investigación, en el que se describe qué vas a hacer con tus datos durante y después de finalizar tu investigación, y que no puede ser modificado tras su presentación inicial.",
+                "Es un documento vivo que describe los data-sets generados y/o reutilizados durante y tras la finalización de la investigación. Los PGDs se crean para proveer a los investigadores de la información esencial para reproducir, redistribuir y reutilizar con nuevos propósitos los resultados de la investigación, de forma que se asegure su validez y explotación.",
+                "Un Plan de Gestión de Datos (PGD) o Data Management Plan (DMP) es un documento formal que debe presentarse al inicio de la investigación, en el que se describe qué vas a hacer con tus datos durante y después de finalizar tu investigación, y que puede modificarse si se producen cambios en el proceso de la misma.",
+                "Las respuestas b) y c) son correctas."
+            ],
+            "correcta": 3,
+            "explicacion": "El PGD es un documento formal que se presenta al inicio del proyecto y es un documento vivo que puede actualizarse; por eso b) y c) son correctas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 61",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es DOI?",
+            "opciones": [
+                "Un número único asignado a una publicación científica que se encuentra en el código fuente de la publicación en la web",
+                "Es un enlace permanente en forma de código alfanumérico que identifica de forma única un objeto digital",
+                "La organización que se encarga de identificar de manera única y permanente las publicaciones científicas",
+                "Un identificador aleatorio que se adjudica a las publicaciones científicas por parte de los editores"
+            ],
+            "correcta": 1,
+            "explicacion": "El DOI es un identificador alfanumérico persistente que identifica de forma única un objeto digital y funciona como enlace permanente.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 62",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Cuál de las siguientes afirmaciones es correcta:",
+            "opciones": [
+                "Solo los estudiantes de la UMH pueden utilizar el servicio de préstamo de portátiles.",
+                "Cualquier miembro de la comunidad universitaria de la UMH puede utilizar el servicio de préstamo de portátiles",
+                "Solo el PAS y el PDI de la UMH pueden utilizar el servicio de préstamo de portátiles",
+                "La UMH no tiene servicio de préstamo de portátiles"
+            ],
+            "correcta": 0,
+            "explicacion": "Según la normativa de la Biblioteca UMH, el préstamo de portátiles está dirigido a los estudiantes de la UMH.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 63",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Señale la respuesta correcta en relación al Servicio de Préstamo Interbibliotecario de la Biblioteca de la UMH:",
+            "opciones": [
+                "Este servicio pueden solicitarlo puntualmente usuarios externos como, investigadores sin vinculación con la UMH, entidades públicas o privadas, etc. siempre que se abone el coste correspondiente.",
+                "Este servicio está restringido a miembros de la comunidad universitaria de la UMH.",
+                "Este servicio pueden solicitarlo sin coste alguno usuarios externos como, investigadores sin vinculación con la UMH y entidades privadas.",
+                "Este servicio solo lo pueden solicitar los investigadores y profesores de la UMH."
+            ],
+            "correcta": 0,
+            "explicacion": "El PI de la UMH admite de forma puntual a usuarios externos (investigadores sin vinculación, entidades públicas o privadas) previo pago del coste.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 64",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Según la normativa de uso de las bibliotecas de la UMH los retrasos en la devolución de ejemplares prestados se penalizan con:",
+            "opciones": [
+                "Un día de suspensión por cada documento y por cada día de demora a partir de la fecha de devolución",
+                "Dos días de suspensión por cada documento y por cada día de demora a partir de la fecha de devolución",
+                "Tres días de suspensión por cada documento y por cada día de demora a partir de la fecha de devolución",
+                "Dos euros de multa por cada documento y día de demora a partir de la fecha de devolución"
+            ],
+            "correcta": 0,
+            "explicacion": "La normativa de la Biblioteca UMH sanciona con un día de suspensión por documento y día de retraso.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 65",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "En un plan de márquetin el ROI permite:",
+            "opciones": [
+                "Medir la rentabilidad de cada una de las acciones realizadas",
+                "Asignar precios de mercado a los productos",
+                "Orientar la campaña a los usuarios objetivo de la misma",
+                "Colaborar varias administraciones públicas en una única campaña de márquetin"
+            ],
+            "correcta": 0,
+            "explicacion": "El ROI (retorno de la inversión) mide la rentabilidad de cada acción del plan de marketing.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 66",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es el préstamo intercampus de la UMH?",
+            "opciones": [
+                "Un servicio de préstamo de libros entre los diferentes campus de la UMH",
+                "Un servicio de copias de artículos de revistas impresas ubicadas en cualquier Biblioteca de la UMH",
+                "Las respuestas a) y b) son correctas",
+                "Ninguna de las respuestas anteriores es correcta"
+            ],
+            "correcta": 2,
+            "explicacion": "El préstamo intercampus permite pedir libros de otro campus y también copias de artículos de revistas impresas de cualquier biblioteca de la UMH.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 67",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "EndNote es:",
+            "opciones": [
+                "Una base de datos de legislación europea comparada",
+                "Un gestor de referencias bibliográficas",
+                "Un gestor de colecciones electrónicas de la biblioteca",
+                "La plataforma para gestionar los acuerdos transformativos"
+            ],
+            "correcta": 1,
+            "explicacion": "EndNote (Clarivate) es un gestor de referencias bibliográficas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 68",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Señale la opción correcta respecto a REBIUN:",
+            "opciones": [
+                "Está formada por las bibliotecas universitarias españolas públicas. Las privadas y el CSIC están excluidas",
+                "Está formada por las bibliotecas universitarias españolas públicas y el CSIC. Las universidades privadas están excluidas",
+                "Está formada por las bibliotecas de las universidades miembros de CRUE y por el CSIC",
+                "Está formada por las bibliotecas de las universidades miembros de CRUE. El CSIC está excluido"
+            ],
+            "correcta": 2,
+            "explicacion": "REBIUN, comisión sectorial de CRUE, integra las bibliotecas de las universidades miembros de CRUE (públicas y privadas) y el CSIC.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 69",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuántos documentos se puede llevar en préstamo un “alumni” de la UMH?",
+            "opciones": [
+                "Un máximo de 5",
+                "Un máximo de 4",
+                "Un máximo de 3",
+                "Un máximo de 2"
+            ],
+            "correcta": 3,
+            "explicacion": "Según la normativa de préstamo UMH, los usuarios alumni pueden llevarse un máximo de 2 documentos.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 70",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes NO es una característica de las herramientas de descubrimiento?",
+            "opciones": [
+                "Solo permite la recuperación de materias por CDU",
+                "Caja única de búsqueda",
+                "Navegación facetada",
+                "Todas las respuestas anteriores son falsas"
+            ],
+            "correcta": 0,
+            "explicacion": "Las herramientas de descubrimiento ofrecen caja única y navegación facetada; no se limitan a recuperar materias por CDU.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 71",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Según la normativa de préstamo de la Biblioteca de la UMH ¿en qué grupo de usuarios se encuentran las personas físicas con el Diploma de Colaborador Honorífico?",
+            "opciones": [
+                "Grupo 1",
+                "Grupo 2",
+                "Grupo 3",
+                "Grupo 4"
+            ],
+            "correcta": 1,
+            "explicacion": "La normativa de préstamo UMH incluye a los colaboradores honoríficos en el Grupo 2 de usuarios.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 72",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Un documento clasificado como de CONSULTA en la normativa de préstamo de la UMH:",
+            "opciones": [
+                "Son fondos como las tesis o proyectos de investigación que requieren especial protección cuya consulta solo está permitida en la Biblioteca bajo unas condiciones establecidas al efecto.",
+                "Son documentos excluidos del préstamo cuya consulta puede realizarse sin mediación del personal de Biblioteca",
+                "Son documentos adquiridos con cargo a Departamentos, Centros, Servicio y/o proyectos que solo pueden prestarse a PDI",
+                "Son documentos exclusivamente destinados al préstamo de fin de semana y vacaciones"
+            ],
+            "correcta": 1,
+            "explicacion": "En la normativa UMH, los documentos de consulta están excluidos del préstamo pero pueden consultarse en sala libremente, sin mediación del personal.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 73",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Según la normativa de préstamo de la Biblioteca de la UMH ¿el número total de documentos que simultáneamente pueden tener en préstamo los usuarios del grupo 2 es de:",
+            "opciones": [
+                "45",
+                "25",
+                "15",
+                "5"
+            ],
+            "correcta": 2,
+            "explicacion": "La normativa de préstamo UMH fija en 15 el máximo de documentos simultáneos para el grupo 2.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 74",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál es la periodicidad de una revista científica que se publica cada dos veces al trimestre?",
+            "opciones": [
+                "Bimensual",
+                "Bimestral",
+                "Bitrimestral",
+                "Biquincenal"
+            ],
+            "correcta": 2,
+            "explicacion": "La plantilla considera «bitrimestral» la publicación que aparece dos veces por trimestre. Nota: discutible, pues en el uso habitual «bitrimestral» significa cada dos trimestres y dos veces al trimestre equivale aproximadamente a cada 6 semanas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 75",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "En cuanto a La consulta y descarga de los recursos electrónicos suscritos por la UMH:",
+            "opciones": [
+                "Solo los usuarios de la UMH pueden hacer descargas integras y masivas de todos los recursos suscritos",
+                "No se pueden realizar descargas masivas de los recursos suscritos",
+                "Para acceder a los recursos electrónicos hay que tener algún tipo de carnet identificativo de la UMH",
+                "Las respuestas a) y c) son ciertas"
+            ],
+            "correcta": 1,
+            "explicacion": "Las licencias de los recursos electrónicos prohíben la descarga masiva o sistemática de contenidos, también a los usuarios de la UMH.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 76",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Un usuario de la UMH quiere hacer uso del servicio de préstamo Interbibliotecario",
+            "opciones": [
+                "El sistema de la plataforma de préstamo Interbibliotecario le requerirá previamente el reconocimiento IP de su ordenador",
+                "Será necesario darse previamente de alta antes de realizar su primera solicitud",
+                "Podrá acceder al servicio desde cualquier ordenador de la UMH estando restringido el servicio y acceso fuera de la Universidad",
+                "Todas las respuestas son correctas"
+            ],
+            "correcta": 1,
+            "explicacion": "Para usar el PI de la UMH hay que darse de alta en el servicio antes de la primera solicitud.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 77",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Cuál sería la tarifa aplicable para la obtención de documentos a través de préstamo interbibliotecario para el préstamo de originales por cada volumen físico:",
+            "opciones": [
+                "15 euros",
+                "5 euros",
+                "12 euros",
+                "8 euros"
+            ],
+            "correcta": 3,
+            "explicacion": "Según las tarifas de PI de la UMH (en línea con las de REBIUN), el préstamo de originales cuesta 8 euros por volumen.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 78",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Señale la respuesta correcta:",
+            "opciones": [
+                "El horario de las bibliotecas de Campus de la UMH estará determinado por los periodos de exámenes de junio, septiembre y diciembre.",
+                "La biblioteca permitirá la reserva de puesto de lectura o estudio en sala no más de dos horas",
+                "Si un usuario está buscando bibliografía por asignaturas podrá localizarla a través del buscador Dama",
+                "Ninguna de las respuestas anteriores es correcta"
+            ],
+            "correcta": 2,
+            "explicacion": "El buscador DAMA permite localizar la bibliografía recomendada por asignaturas.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 79",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Cuál de las siguientes es una plataforma de formación interactiva, que apoya a los estudiantes y profesores mejorando la experiencia de aprendizaje con herramientas a medida, para desarrollar y valorar los conocimientos médicos de los futuros profesionales.",
+            "opciones": [
+                "ClinicalKey Student Assessment Medicine",
+                "SportDiscus",
+                "Access Medicina Interactiva",
+                "Medical Urban MultiScience Medical"
+            ],
+            "correcta": 0,
+            "explicacion": "ClinicalKey Student Assessment (Elsevier) es una plataforma para evaluar y reforzar los conocimientos médicos de los estudiantes.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 80",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Cuál de las siguientes bases de datos suscrita por la UMH trata de Legislación, jurisprudencia Y bibliografía jurídica",
+            "opciones": [
+                "Dialnet",
+                "Aranzadi Instituciones",
+                "Scopus",
+                "Medline"
+            ],
+            "correcta": 1,
+            "explicacion": "Aranzadi Instituciones es una base de datos jurídica de legislación, jurisprudencia y bibliografía.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 81 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Siendo una institución externa a la UMH, a qué dirección de correo electrónico solicitaría por préstamo interbibliotecario algún documento que se encuentre en la biblioteca de la UMH.",
+            "opciones": [
+                "pi@umh.es",
+                "Interbibliotecario@umh.es",
+                "spi@umh.es",
+                "piUMH@universidad.es"
+            ],
+            "correcta": 2,
+            "explicacion": "El Servicio de Préstamo Interbibliotecario de la UMH atiende las solicitudes en spi@umh.es.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 82 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "¿Como se denominan las revistas fraudulentas de investigación que publican artículos de investigación sin aplicar estándares de calidad y exigen un pago a los autores?",
+            "opciones": [
+                "Revistas falsas",
+                "Revistas piratas",
+                "Revistas negras",
+                "Revistas depredadoras"
+            ],
+            "correcta": 3,
+            "explicacion": "Las revistas depredadoras cobran a los autores por publicar sin aplicar revisión ni estándares de calidad.",
+            "referencia": "Examen UMH 08/07/2023, 1ª parte, pregunta 83 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (1ª parte)"
+        },
+        {
+            "pregunta": "Atendiendo a lo dispuesto en la Constitución Española, el derecho de huelga:",
+            "opciones": [
+                "Se reconoce a cualquier colectivo, pudiéndose incluir entre los mismos a trabajadores y estudiantes.",
+                "Conlleva la regulación por ley de las garantías precisas para asegurar el funcionamiento ordinario de los servicios públicos.",
+                "Se reconoce a los trabajadores, siempre que se encuentren sindicados.",
+                "Conlleva la regulación por ley de las garantías precisas para asegurar el mantenimiento de los servicios esenciales de la comunidad."
+            ],
+            "correcta": 3,
+            "explicacion": "El art. 28.2 CE reconoce el derecho de huelga de los trabajadores y remite a una ley que establezca las garantías precisas para asegurar el mantenimiento de los servicios esenciales de la comunidad.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 1",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según lo dispuesto en el Estatuto de Autonomía de la Comunitat Valenciana, el pueblo valenciano",
+            "opciones": [
+                "Se organizaba históricamente como País Valenciano y se constituye como Comunidad Autónoma con el nombre de Comunitat Valenciana.",
+                "Se organizaba históricamente como Región Valenciana, y se constituye como comunidad con el nombre de Comunidad Regional Valenciana.",
+                "Se organizaba históricamente como Reino de Valencia, y se constituye como región con el nombre de Comunidad Histórica Valenciana.",
+                "Se organizaba históricamente como Reino de Valencia, y se constituye como Comunidad Autónoma con el nombre de Comunitat Valenciana."
+            ],
+            "correcta": 3,
+            "explicacion": "El art. 1.1 del Estatuto señala que el pueblo valenciano, históricamente organizado como Reino de Valencia, se constituye en Comunidad Autónoma con la denominación de Comunitat Valenciana.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 2",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según los Estatutos de la UMH, el cargo de Defensor Universitario estará asimilado a todos los efectos, incluido el complemento retributivo, al de:",
+            "opciones": [
+                "Decano",
+                "Rector",
+                "Vicerrector",
+                "Director de Departamento"
+            ],
+            "correcta": 2,
+            "explicacion": "Los Estatutos de la UMH asimilan el cargo de Defensor Universitario, a todos los efectos incluido el retributivo, al de Vicerrector.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 3",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "La UMH, según sus Estatutos, está integrada por:",
+            "opciones": [
+                "Facultades, escuelas y departamentos.",
+                "Facultades, escuelas, departamentos, institutos universitarios de investigación y otros centros necesarios para el desempeño de sus funciones.",
+                "Facultades, departamentos e institutos universitarios de investigación, únicamente.",
+                "Escuelas, departamentos y otros centros necesarios para el desempeño de sus funciones."
+            ],
+            "correcta": 1,
+            "explicacion": "Según sus Estatutos, la UMH está integrada por facultades, escuelas, departamentos, institutos universitarios de investigación y otros centros necesarios para el desempeño de sus funciones.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 4",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "De acuerdo con la Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas, los poderes inscritos en el registro tendrán una validez determinada:",
+            "opciones": [
+                "Máxima de tres años a contar desde la fecha de inscripción. En todo caso, en cualquier momento antes de la finalización de dicho plazo el poderdante podrá revocar o prorrogar el poder.",
+                "Máxima de cuatro años a contar desde la fecha de inscripción. En todo caso, en cualquier momento antes de la finalización de dicho plazo el poderdante podrá revocar o prorrogar el poder.",
+                "Máxima de cinco años a contar desde la fecha de inscripción. En todo caso, en cualquier momento antes de la finalización de dicho plazo el poderdante podrá revocar o prorrogar el poder.",
+                "Máxima de seis años a contar desde la fecha de inscripción. En todo caso, en cualquier momento antes de la finalización de dicho plazo el poderdante podrá revocar o prorrogar el poder."
+            ],
+            "correcta": 2,
+            "explicacion": "El art. 6.6 de la Ley 39/2015 fija una validez máxima de cinco años desde la inscripción de los poderes, revocables o prorrogables antes de su finalización.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 5",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según la ley 4/2021. ¿en qué consiste el sistema selectivo de oposición?",
+            "opciones": [
+                "En la valoración de los méritos conforme al baremo previamente aprobado",
+                "En la realización de una o más pruebas de capacidad adecuadas para determinar la aptitud de cada aspirante en relación con las funciones y tareas a desempeñar",
+                "En la sucesiva celebración de dos procedimientos dentro del proceso de selección",
+                "En el Sistema selectivo no se considera el de oposición."
+            ],
+            "correcta": 1,
+            "explicacion": "La Ley 4/2021 de la Función Pública Valenciana define la oposición como la realización de una o más pruebas de capacidad para determinar la aptitud de cada aspirante; la valoración de méritos es el concurso y la sucesión de ambos, el concurso-oposición.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 6",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Los usuarios de las bibliotecas de la UMH que están adscritos al grupo 4 tienen los mismos privilegios que el equivalente a tener:",
+            "opciones": [
+                "Tarjeta extensa",
+                "Tarjeta expansión",
+                "Tarjeta solidaria",
+                "Las respuestas a y c son correctas"
+            ],
+            "correcta": 3,
+            "explicacion": "Según la normativa de préstamo de la Biblioteca UMH, el grupo 4 de usuarios equivale en privilegios tanto a la tarjeta extensa como a la tarjeta solidaria.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 7",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "La responsabilidad sobre el préstamo de una obra a través del servicio de préstamo interbibliotecario recaerá:",
+            "opciones": [
+                "La biblioteca peticionaria",
+                "La biblioteca suministradora",
+                "La persona prestataria",
+                "Es proporcional entre la biblioteca peticionaria, la suministradora y la persona prestataria"
+            ],
+            "correcta": 2,
+            "explicacion": "Según la normativa de préstamo interbibliotecario de la UMH, la persona usuaria que recibe la obra es responsable de ella durante el préstamo. Nota: en muchas normativas generales de PI la responsabilidad ante la biblioteca suministradora recae en la biblioteca peticionaria, por lo que la plantilla es discutible.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 8",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "La distribución de las circulaciones en una biblioteca:",
+            "opciones": [
+                "No es un elemento importante para el buen funcionamiento de la biblioteca",
+                "Es el elemento clave para el buen funcionamiento de la biblioteca",
+                "Es un elemento importante, pero no imprescindible para el funcionamiento de la biblioteca",
+                "Las respuestas a), b) y c) son incorrectas"
+            ],
+            "correcta": 1,
+            "explicacion": "En el planeamiento de edificios bibliotecarios, la correcta distribución de las circulaciones (usuarios, personal, fondos) se considera el elemento clave para el buen funcionamiento de la biblioteca.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 9",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Al realizar el planeamiento de la biblioteca, el bibliotecario actuará como coordinador de:",
+            "opciones": [
+                "Nada, el bibliotecario no tiene nada que decir en ese tema",
+                "El arquitecto",
+                "La labor del equipo de planeamiento",
+                "Las respuestas b y c son correctas"
+            ],
+            "correcta": 3,
+            "explicacion": "En el planeamiento, el bibliotecario coordina la labor del equipo de planeamiento y orienta al arquitecto con el programa de necesidades, por lo que b y c son correctas.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 10",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Los factores que intervienen en el deterioro de los fondos pueden ser, entre otros:",
+            "opciones": [
+                "Ambientales",
+                "Sociales",
+                "Culturales",
+                "Psicosociales"
+            ],
+            "correcta": 0,
+            "explicacion": "Entre los factores de deterioro de los fondos destacan los ambientales (luz, temperatura, humedad, contaminación), junto con los biológicos, los intrínsecos al material y los humanos.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 11",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué criterio general, entre otros, se tiene que seguir para la dotación de mobiliario, con el fin de conseguir una mejor ordenación y conservación de los fondos de una biblioteca?:",
+            "opciones": [
+                "No existen criterios",
+                "Origen de los materiales",
+                "Resistencia al uso intensivo",
+                "Color de los materiales"
+            ],
+            "correcta": 2,
+            "explicacion": "El mobiliario bibliotecario debe ser funcional, seguro y resistente a un uso intensivo para garantizar la correcta ordenación y conservación de los fondos.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 12",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "El servicio de información y referencia tiene como objetivo fundamental:",
+            "opciones": [
+                "Satisfacer las necesidades de información de los usuarios.",
+                "Ahorrar tiempo al usuario",
+                "Integrar la biblioteca en el ámbito social que le corresponde",
+                "La clasificación de usuarios."
+            ],
+            "correcta": 0,
+            "explicacion": "El objetivo esencial del servicio de referencia es responder y satisfacer las necesidades de información de los usuarios; ahorrar tiempo es una consecuencia, no su fin principal.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 13",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "En el servicio de información bibliográfica y referencia se reciben distintos tipos de consultas ¿qué tipo de preguntas son las preguntas mutables?",
+            "opciones": [
+                "Son las que realiza el usuario cuando no sabe exactamente lo que necesita y se van delimitando con la ayuda del documentalista.",
+                "Son demandas especializadas sobre un tema concreto que requieren una búsqueda exhaustiva para poder ser resueltas.",
+                "Son consultas sobre localización de obras que ya conoce el usuario.",
+                "Son preguntas sobre los fondos del servicio y modo de consulta."
+            ],
+            "correcta": 0,
+            "explicacion": "Las preguntas mutables son aquellas que cambian durante la entrevista de referencia porque el usuario no sabe exactamente qué necesita y la consulta se va concretando con ayuda del profesional.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 14",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "La biblioteca virtual es:",
+            "opciones": [
+                "Aquella que cuenta con sistemas de automatización que le permiten una ágil y correcta administración de los materiales que resguarda, principalmente en papel.",
+                "Aquella que hace uso de la realidad virtual para mostrar una interfaz y emular un ambiente que sitúe al usuario dentro de una biblioteca.",
+                "Un repositorio de documentos digitalizados, almacenados en diferentes formatos electrónicos por lo que el original en papel, en caso de existir, pierde relevancia.",
+                "Ninguna respuesta es correcta."
+            ],
+            "correcta": 2,
+            "explicacion": "La plantilla identifica la biblioteca virtual con un repositorio de documentos digitalizados en formatos electrónicos en el que el original en papel pierde relevancia; la opción a describe una biblioteca automatizada y la b una simulación de realidad virtual.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 15",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Dentro del ámbito bibliotecario, las siglas OCLC corresponden a:",
+            "opciones": [
+                "Online Computer Library of Congress.",
+                "Online Computer Library Center.",
+                "Ohio College Library of Congress.",
+                "Ohio College Library Common."
+            ],
+            "correcta": 1,
+            "explicacion": "OCLC significa Online Computer Library Center (originalmente Ohio College Library Center), la cooperativa responsable de WorldCat y de la CDD.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 16",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿A qué servicios bibliotecarios afecta especialmente la protección de datos?",
+            "opciones": [
+                "Préstamo, cuenta de usuario, control de autoridades.",
+                "Catalogación, adquisiciones, control de autoridades.",
+                "Adquisiciones, catalogación y circulación.",
+                "Adquisiciones, circulación y búsqueda de información."
+            ],
+            "correcta": 0,
+            "explicacion": "El préstamo y la cuenta de usuario tratan datos personales de los lectores, y el control de autoridades puede contener datos de personas físicas (fechas, lugares), por lo que les afecta especialmente la normativa de protección de datos.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 17",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuántas competencias digitales identifica DIGCOMP (Marco Europeo de Competencias Digitales para la Ciudadanía)?",
+            "opciones": [
+                "10",
+                "15",
+                "21",
+                "55"
+            ],
+            "correcta": 2,
+            "explicacion": "DigComp identifica 21 competencias agrupadas en 5 áreas (información, comunicación, creación de contenidos, seguridad y resolución de problemas).",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 18",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Los MOOCs son:",
+            "opciones": [
+                "Cursos de formación abiertos masivos en línea.",
+                "Espacios de autoformación presencial.",
+                "Materiales docentes en internet creados por profesores para la formación superior, están organizados en asignaturas o cursos y no llevan asociada la disponibilidad de un profesor.",
+                "Una recopilación de materiales educativos digitales en abierto."
+            ],
+            "correcta": 0,
+            "explicacion": "MOOC son las siglas de Massive Open Online Courses: cursos en línea, abiertos y masivos. La opción c describe el OpenCourseWare y la d los recursos educativos abiertos.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 19",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Un beneficio para el usuario de la biblioteca digital es que:",
+            "opciones": [
+                "Elimina duplicidad de actividades, colecciones y costes.",
+                "Promueve y facilita la expansión de la cultura en una comunidad.",
+                "Preserva en un medio no degradable los acervos culturales y científicos generados para el beneficio social.",
+                "Siempre habrá disposición de los materiales existentes que sean solicitados."
+            ],
+            "correcta": 3,
+            "explicacion": "Para el usuario, la ventaja directa de la biblioteca digital es la disponibilidad permanente de los materiales solicitados, sin depender de ejemplares físicos prestados; las otras opciones son beneficios institucionales o sociales.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 20",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Alma/Primo es un SIGB",
+            "opciones": [
+                "Propietario",
+                "Mixto",
+                "De código abierto",
+                "Libre"
+            ],
+            "correcta": 0,
+            "explicacion": "Alma (y su descubridor Primo) es una plataforma comercial de Ex Libris (Clarivate), es decir, software propietario.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 21",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Es Alma es compatible con los estándares: NCIP, SRU, z3950, SIP2 y OAI / PMH?",
+            "opciones": [
+                "Sí, con todos",
+                "Solamente con OAI/PMH",
+                "Con OAI/PMH y z39.50",
+                "Con NCIP, SRU y z39.50"
+            ],
+            "correcta": 0,
+            "explicacion": "Alma soporta todos esos protocolos de interoperabilidad: NCIP, SRU/SRW, Z39.50, SIP2 y OAI-PMH.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 22",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es la sindicación de contenidos web?",
+            "opciones": [
+                "Los contenidos accesibles en la web, producidos por instituciones sindicadas.",
+                "Parte del contenido de una página web se pone a disposición de otros sitios o suscriptores individuales, mediante un estándar de sindicación.",
+                "Estándares de lenguaje de marcado, accesibles desde programas informáticos compatibles.",
+                "Contenidos web con un diseño estandarizado."
+            ],
+            "correcta": 1,
+            "explicacion": "La sindicación consiste en redifundir parte del contenido de una web a otros sitios o suscriptores mediante formatos estándar como RSS o Atom.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 23",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuáles de los siguientes son documentos digitales?",
+            "opciones": [
+                "Documentos digitalizados",
+                "Documentos multimedia",
+                "Programas de ordenador",
+                "Todas las respuestas anteriores son correctas."
+            ],
+            "correcta": 3,
+            "explicacion": "Es documento digital toda información codificada en formato binario legible por ordenador, lo que incluye documentos digitalizados, multimedia y programas.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 24",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál es la tipología habitual de las actividades de formación ofrecidas por las bibliotecas universitarias?",
+            "opciones": [
+                "Recorridos por las aulas de informática e instalaciones de las bibliotecas",
+                "Actividades introductorias en el uso de la Biblioteca, sus colecciones y sus recursos; actividades especializadas sobre el uso avanzado de los recursos y servicios que ofrece la biblioteca; autoformación mediante guías y tutoriales de libre acceso.",
+                "Bienvenida en las aulas a nuevos alumnos/as y cursos personalizados para investigadores/as.",
+                "Visitas guiadas por las instalaciones de las bibliotecas."
+            ],
+            "correcta": 1,
+            "explicacion": "La formación de usuarios en bibliotecas universitarias se estructura habitualmente en niveles: cursos introductorios, cursos especializados y autoformación mediante guías y tutoriales.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 25",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué función de las siguientes no realiza un Sistema Integrado de Gestión Bibliotecaria?",
+            "opciones": [
+                "Gestión de Adquisiciones",
+                "Préstamo de documentos",
+                "Formación de usuarios",
+                "Consulta del catálogo en línea (OPAC)"
+            ],
+            "correcta": 2,
+            "explicacion": "Un SIGB integra módulos de adquisiciones, catalogación, circulación/préstamo, publicaciones periódicas y OPAC; la formación de usuarios es un servicio bibliotecario, no un módulo del sistema.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 26",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué es el Consejo de Cooperación Bibliotecaria (CCB)?",
+            "opciones": [
+                "Un consorcio de bibliotecas universitarias para el intercambio de publicaciones científicas editadas por cada institución que lo integra",
+                "El órgano colegiado de composición interadministrativa que analiza la cooperación bibliotecaria entre las administraciones públicas",
+                "Asociación de instituciones europeas con responsabilidades gubernamentales en el área de bibliotecas públicas",
+                "Es la Oficina Europea de Asociaciones de Bibliotecas, Información y Documentación. Trata aspectos europeos, sociedad de la información"
+            ],
+            "correcta": 1,
+            "explicacion": "La Ley 10/2007 de la lectura, del libro y de las bibliotecas define el CCB como órgano colegiado de composición interadministrativa que canaliza la cooperación bibliotecaria entre las administraciones públicas. La c describe NAPLE y la d EBLIDA.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 27",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "La Red de Bibliotecas Universitarias Españolas se crea:",
+            "opciones": [
+                "En 1998 por la Conferencia de Rectores de las Universidades Españolas (CRUE)",
+                "En 1988 por iniciativa de un grupo de directores de bibliotecas",
+                "En 1988 por el Consejo Superior de Investigaciones Científicas (CSIC)",
+                "En 1998 por iniciativa de un grupo de directores de bibliotecas"
+            ],
+            "correcta": 1,
+            "explicacion": "REBIUN nació en 1988 por iniciativa de un grupo de directores de bibliotecas universitarias; desde 1998 forma parte de la CRUE como comisión sectorial.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 28",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Indique cuál de estas opciones se corresponde con un consorcio de bibliotecas universitarias:",
+            "opciones": [
+                "IWETEL",
+                "BUCLE",
+                "OCLC",
+                "EXPANIA"
+            ],
+            "correcta": 1,
+            "explicacion": "BUCLE es el consorcio de Bibliotecas Universitarias de Castilla y León; IWETEL es una lista de distribución y OCLC una cooperativa internacional.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 29",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "El producto obtenido tras la catalogación de un documento es:",
+            "opciones": [
+                "Un documento primario",
+                "Un documento secundario",
+                "Un registro bibliográfico",
+                "Una signatura topográfica"
+            ],
+            "correcta": 2,
+            "explicacion": "La catalogación da como resultado un registro bibliográfico que describe el documento. Nota: el registro también puede considerarse un documento secundario (opción b), por lo que la pregunta es discutible.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 30",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según la normativa de la Biblioteca de la Universidad Miguel Hernández, el uso de las salas de trabajo en grupo está restringido a:",
+            "opciones": [
+                "El estudiantado matriculado en la Universidad Miguel Hernández",
+                "La sociedad en general",
+                "A los miembros de la comunidad universitaria de la Universidad Miguel Hernández",
+                "Al estudiantado matriculado en cualquier universidad pública española"
+            ],
+            "correcta": 2,
+            "explicacion": "La normativa de la Biblioteca UMH reserva el uso de las salas de trabajo en grupo a los miembros de la comunidad universitaria de la UMH.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 31",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según la normativa de la Biblioteca de la Universidad Miguel Hernández, el uso de las salas de trabajo tiene un derecho de reserva limitado a:",
+            "opciones": [
+                "No se permite derecho de reserva en las salas de trabajo en grupo",
+                "Se establece un periodo de 15 minutos para mantener los derechos reserva de las salas",
+                "El derecho de reserva tiene un tiempo ilimitado",
+                "Se establece un periodo de 5 minutos para mantener los derechos de reserva de las salas"
+            ],
+            "correcta": 1,
+            "explicacion": "La normativa de la Biblioteca UMH mantiene la reserva de la sala durante 15 minutos; pasado ese tiempo sin ocuparla se pierde el derecho.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 32",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "La CRUE ha mantenido negociaciones a escala nacional con algunas editoriales para alcanzar acuerdos transformativos para todas las universidades españolas ¿Con qué editoriales de publicaciones científicas se han cerrado acuerdos?",
+            "opciones": [
+                "Elsevier",
+                "Wiley",
+                "Springer",
+                "Todas las respuestas anteriores son correctas"
+            ],
+            "correcta": 3,
+            "explicacion": "La CRUE ha cerrado acuerdos transformativos nacionales con Elsevier, Wiley y Springer Nature, entre otras editoriales.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 33",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Entre los objetivos de los nuevos modelos de biblioteca universitaria se encuentra:",
+            "opciones": [
+                "La disminución de personal y la sustitución por servicios automatizados",
+                "Dejar de ser el acceso y uso de los recursos bibliotecarios, para tener un multiobjetivo, promover y dar soporte al aprendizaje, la enseñanza y la investigación de la universidad",
+                "Dejar de ser el acceso y uso de los recursos bibliotecarios y convertirse únicamente en mediadora entre el usuario y estos recursos",
+                "La generación de espacios multiuso sin limitaciones"
+            ],
+            "correcta": 1,
+            "explicacion": "El modelo CRAI amplía la misión de la biblioteca más allá del acceso a los recursos para dar soporte al aprendizaje, la docencia y la investigación de la universidad.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 34",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cómo se describe a los jóvenes en el uso de la información en línea en las nuevas tendencias de Alfabetización Informacional?",
+            "opciones": [
+                "Como consumidores pasivos y acríticos de información",
+                "Como importantes contribuyentes y co-constructores del panorama de la información en línea",
+                "Como creadores de información",
+                "Las respuestas b) y c) son correctas"
+            ],
+            "correcta": 3,
+            "explicacion": "Las nuevas tendencias ALFIN (p. ej. el Marco ACRL 2016) ven a los estudiantes no solo como consumidores, sino como creadores y co-constructores del ecosistema informativo en línea.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 35",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Siguen siendo necesarios los espacios de silencio y estudio individual en el panorama actual de nuevos espacios para nuevos servicios en bibliotecas universitarias?",
+            "opciones": [
+                "No, han dejado de ser necesarios ante la virtualización de los contenidos y su consumo",
+                "Sí, a pesar de la popularidad de los espacios de trabajo colaborativo, la demanda de espacios de trabajo individual, de reflexión y trabajo creativo individual, en silencio es alta, al ser necesaria para un aprendizaje y estudio efectivo",
+                "Sí, siguen constituyendo el principal servicio al alumnado de las bibliotecas universitarias",
+                "No, las nuevas tendencias de construcción de bibliotecas universitarias se centran en el diseño de los espacios multiuso, eliminando los espacios de estudio"
+            ],
+            "correcta": 1,
+            "explicacion": "Pese al auge de los espacios colaborativos, sigue habiendo una alta demanda de espacios silenciosos de trabajo individual, necesarios para un estudio efectivo.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 36",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes no es una tarea del/la Community Manager de una Biblioteca?",
+            "opciones": [
+                "Monitorizar los comentarios sobre la Biblioteca en redes sociales",
+                "Conversar con los usuarios sobre contenidos propios o que hayan subido ellos",
+                "Intervenir en foros generalistas para visibilizar la institución",
+                "Realizar eventos o asistir a los organizados en el sector con la finalidad de compartir experiencias o transmitir luego lo que se dijo en el evento a los usuarios"
+            ],
+            "correcta": 2,
+            "explicacion": "El community manager gestiona la comunidad propia de la biblioteca (monitorizar, conversar, eventos); intervenir en foros generalistas para autopromocionarse no se considera una de sus tareas.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 37",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Cuál de las siguientes es una función de un/a Community Manager:",
+            "opciones": [
+                "Seleccionar fondos adecuados para los usuarios de la biblioteca según sus comentarios en redes sociales",
+                "Prestar servicio de asesoramiento especializado a los investigadores a través de redes como Academia.org",
+                "Desarrollar una estrategia online de la Biblioteca y su marca",
+                "Desarrollar un plan de acción para el mantenimiento de las herramientas online en caso de desconexión"
+            ],
+            "correcta": 2,
+            "explicacion": "Una función propia del community manager es diseñar y desarrollar la estrategia online de la biblioteca y gestionar su marca en redes sociales.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 38",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Se puede insertar una imagen en una publicación de Twitter, acompañando un texto de 280 caracteres?",
+            "opciones": [
+                "No, porque las imágenes consumen el 50% de los caracteres permitidos.",
+                "Sí, las imágenes no cuentan como caracteres sino como adjuntos al texto.",
+                "No, cuando se llega al límite de caracteres, no se pueden insertar imágenes.",
+                "No, no se pueden insertar imágenes en las publicaciones de Twitter."
+            ],
+            "correcta": 1,
+            "explicacion": "Desde 2016 Twitter no computa las imágenes adjuntas en el límite de caracteres, por lo que pueden acompañar a un texto de 280 caracteres.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 39",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Cuál de las siguientes son subcomunidades de la comunidad Docente del repositorio institucional RediUMH?",
+            "opciones": [
+                "Estudios de Grado y Estudios de Postgrado.",
+                "TFM y TFG",
+                "TFM y Tesis Doctorales.",
+                "Ninguna de las anteriores es correcta."
+            ],
+            "correcta": 1,
+            "explicacion": "En RediUMH, la comunidad Docente agrupa como subcomunidades los Trabajos Fin de Grado (TFG) y los Trabajos Fin de Máster (TFM); las tesis doctorales van en otra comunidad.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 40",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Según la ley 4/2021. ¿Cuál es una obligación que deberá observar el personal empleado público en el ejercicio de sus funciones, según se establece en el artículo 99 de la ley 4/2021 de 16 de abril de la función pública valenciana?",
+            "opciones": [
+                "Obedecer las instrucciones profesionales de sus superiores, aunque constituyan una infracción manifiesta del ordenamiento jurídico.",
+                "Procurar la conservación de los documentos que se tramiten, salvo que el procedimiento haya caducado, en cuyo caso se destruirán inmediatamente.",
+                "Observar las normas sobre seguridad y salud laboral",
+                "Velar por la conservación de los recursos y bienes públicos, pudiéndolo utilizar en provecho propio o de personas allegadas."
+            ],
+            "correcta": 2,
+            "explicacion": "Entre los principios de conducta del personal empleado público figura observar las normas sobre seguridad y salud laboral; las demás opciones desvirtúan el texto legal (no se obedecen órdenes manifiestamente ilegales ni se usan bienes públicos en provecho propio).",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 41 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "Cuál de las siguientes no es una competencia recomendada por las Normas sobre aptitudes para el acceso y uso de la información en la enseñanza superior (ACRL/ALA, 2000)?",
+            "opciones": [
+                "Ser capaz de determinar la naturaleza y nivel de la necesidad de información.",
+                "Acceder a la información requerida de manera eficiente y eficaz.",
+                "Interpretar las características básicas de los diferentes lenguajes de programación.",
+                "Utilizar la información eficazmente para cumplir un propósito específico, individualmente o como miembro de un grupo."
+            ],
+            "correcta": 2,
+            "explicacion": "Las Normas ACRL/ALA 2000 recogen determinar la necesidad de información, acceder a ella, evaluarla, usarla eficazmente y hacerlo de forma ética; los lenguajes de programación no forman parte de ellas.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 42 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
+        },
+        {
+            "pregunta": "¿Qué formatos de metadatos unifica la plataforma Alma?",
+            "opciones": [
+                "Dublin Core y UNIMARC",
+                "MARC, UNIMARC Y CNMARC",
+                "Dublin Core, MARC, UNIMARC y CNMARC",
+                "UNIMARC y CNMARC"
+            ],
+            "correcta": 2,
+            "explicacion": "Alma gestiona en una misma plataforma registros en Dublin Core, MARC 21, UNIMARC y CNMARC, entre otros formatos.",
+            "referencia": "Examen UMH 08/07/2023, 2ª parte, pregunta 43 (reserva)",
+            "bloque": "Temario específico UMH",
+            "tema": "Examen oficial UMH 08/07/2023 (2ª parte)"
         }
     ],
     "fichas": [
