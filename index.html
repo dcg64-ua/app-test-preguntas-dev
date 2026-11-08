@@ -2280,6 +2280,7 @@ const AYUDA = [
   ]],
   ['📚 Practicar', [
     ['test', '📝 Test por temas', 'Eliges los temas y cuántas preguntas, y empiezas. En «Más opciones»: modo examen (nota al final y con tiempo), solo las que has fallado, solo las marcadas ★, recuerdo activo (piensas la respuesta antes de ver las opciones) o filtrar por ley o referencia.'],
+    ['dudosas', '🤔 Dudosas', 'Durante cualquier test, pulsa «🤔 Marcar como dudosa» en las preguntas en las que dudes. Se guardan aquí y luego puedes hacer un test solo con ellas (hasta 50 cada vez). Una dudosa sale de la lista cuando la aciertas en este test sin volver a marcarla como dudosa.'],
     ['cuaderno', '📓 Cuaderno de errores', 'Todas las preguntas que has fallado alguna vez, con la respuesta correcta, el error que más repites y la explicación. Repásalo como unos apuntes y practica sus preguntas. Cuando una la tengas clara, márcala con «Ya me la sé» y sale de la lista. Las que ya dominas en el repaso inteligente se ocultan solas.'],
     ['evolucion', '📈 Evolución por tema', 'En Progreso: tu porcentaje de acierto semana a semana, en todos los temas o en uno concreto. Sirve para ver si un tema que te costaba va mejorando.'],
     ['flash', '🃏 Flashcards', 'Tarjetas: ves la pregunta o el concepto, piensas la respuesta y le das la vuelta. Luego dices si te ha costado («Otra vez», «Difícil», «Bien», «Fácil») y la app decide cuándo volver a enseñártela. Ideal para plazos, órganos, definiciones…'],
@@ -2419,6 +2420,8 @@ function showHome(error) {
     <div class="quick">
       ${qs.length ? `<div class="qwrap"><button class="quick-btn" id="cuadernoBtn"><span class="qi">📓</span><b>Cuaderno de errores</b>
         <span class="muted">${(() => { const keep = cuadernoFiltro; cuadernoFiltro = { bloque: '', texto: '', dominadas: false, sabidas: false }; const n = cuadernoLista().length; cuadernoFiltro = keep; return n ? `${n} por repasar` : 'Sin errores pendientes ✅'; })()}</span></button>${infoBtn('cuaderno', 'Cuaderno de errores')}</div>` : ''}
+      ${qs.length ? `<div class="qwrap"><button class="quick-btn" id="dudasBtn"><span class="qi">🤔</span><b>Dudosas</b>
+        <span class="muted">${(n => n ? `${n} por resolver` : 'Márcalas con 🤔 en los tests')(dudosasLista().length)}</span></button>${infoBtn('dudosas', 'Dudosas')}</div>` : ''}
       ${feat('flash') ? `<div class="qwrap"><button class="quick-btn" id="flashBtn"><span class="qi">🃏</span><b>Flashcards</b>
         <span class="muted">${flashPlan.due.length + flashPlan.fresh.length ? `${flashPlan.due.length} para repasar · ${flashPlan.fresh.length} nuevas` : 'Todo al día ✅'}</span></button>${infoBtn('flash', 'Flashcards')}</div>` : ''}
       ${feat('vf') ? `<div class="qwrap"><button class="quick-btn" id="vfBtn"><span class="qi">⚡</span><b>Verdadero / Falso</b>
@@ -2468,6 +2471,11 @@ function showHome(error) {
   const confirmDiscard = () => !saved || confirm('Se descartará el test a medias. ¿Empezar uno nuevo?');
   const needQs = fn => () => qs.length ? fn() : alert('Primero añade preguntas tipo test en ✏️ Editor.');
   if ($('cuadernoBtn')) $('cuadernoBtn').onclick = () => showCuaderno();
+  if ($('dudasBtn')) $('dudasBtn').onclick = () => {
+    const l = dudosasLista();
+    if (!l.length) return showHelp('dudosas');
+    startRun(shuffle(l).slice(0, 50), { mode: 'practica', label: DUDAS_LABEL });
+  };
   if ($('flashBtn')) $('flashBtn').onclick = () => showStudySetup('flash');
   if ($('audioBtn')) $('audioBtn').onclick = () => showStudySetup('audio');
   if ($('vfBtn')) $('vfBtn').onclick = needQs(() => showStudySetup('vf'));
@@ -2792,6 +2800,16 @@ function updateTimer() {
 }
 
 const doubtLabel = on => on ? '🤔 Marcada como dudosa' : '🤔 Marcar como dudosa';
+// Las dudosas se guardan (settings.dudosas = { pregunta: fecha }) para luego hacer un test solo con ellas.
+// Salen de la lista al acertarlas en ese test sin volver a marcarlas como dudosas.
+const DUDAS_LABEL = '🤔 Dudosas';
+const dudosasGuardadas = () => load(K.settings, {}).dudosas || {};
+function marcarDudosa(q, on) {
+  const d = { ...dudosasGuardadas() };
+  if (on) d[keyOf(q)] = Date.now(); else delete d[keyOf(q)];
+  saveSettings({ dudosas: d });
+}
+const dudosasLista = () => { const d = dudosasGuardadas(); return (set?.preguntas || []).filter(q => d[keyOf(q)]); };
 
 function showQuestion() {
   if (run.limit && run.elapsed >= run.limit) return finish();
@@ -2839,6 +2857,7 @@ function showQuestion() {
   $('doubt').onclick = () => {
     run.doubt[run.i] = !run.doubt[run.i];
     saveRun();
+    marcarDudosa(q, run.doubt[run.i]);
     $('doubt').classList.toggle('on', run.doubt[run.i]);
     $('doubt').textContent = doubtLabel(run.doubt[run.i]);
     app.querySelector(`.navgrid [data-k="${run.i}"]`)?.classList.toggle('doubt', run.doubt[run.i]);
@@ -2964,6 +2983,11 @@ function addTime(q, ms) {
 function finish() {
   stopTimer();
   const results = run.list.map((it, k) => ({ q: it.q, chosen: run.answers[k], ok: run.answers[k] === it.q.correcta, doubt: !!run.doubt[k] }));
+  if (run.label === DUDAS_LABEL) {
+    const d = { ...dudosasGuardadas() };
+    results.forEach(r => { if (r.ok && !r.doubt) delete d[keyOf(r.q)]; });
+    saveSettings({ dudosas: d });
+  }
   if (run.mode === 'examen') {
     const answered = results.filter(r => r.chosen !== null);
     answered.forEach(r => { updateStats(r.q, r.ok, r.chosen); srsUpdate(r.q, r.ok); });
