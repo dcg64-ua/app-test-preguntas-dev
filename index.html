@@ -375,6 +375,7 @@
   .plan-day b { min-width: 92px; text-transform: capitalize; }
   .cal-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--border); }
   .cal-row:last-of-type { border-bottom: 0; }
+  .cal-row.hecha > span:first-child { opacity: .6; }
   .cal-dia { padding: 8px 0; border-bottom: 1px solid var(--border); }
   .cal-dia.hoy { background: var(--accent-bg); border-radius: 10px; padding: 8px 10px; }
   .cal-dia.pasado { opacity: .55; }
@@ -1600,13 +1601,26 @@ function planCodigos(txt) {
 }
 const planPreguntas = cods => (set?.preguntas || []).filter(q => cods.some(c => c[0] === 'T' ? (q.bloque || '').startsWith(`Tema ${c.slice(1)} (MAD)`) : (q.tema || '').startsWith(c + '.')));
 const calFecha = k => { const t = new Date(k + 'T12:00').toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }); return t[0].toUpperCase() + t.slice(1); };
+// Partes hechas del día (settings.planningPartes = { 'AAAA-MM-DD:Principal': fecha }). Se marcan solas al terminar
+// el test de esa parte, o a mano con ✓. Con las tres hechas, el día cuenta como hecho.
+const partesHechas = () => getSettings().planningPartes || {};
+function marcarParte(lbl, on = true, k = todayKey()) {
+  const p = { ...partesHechas() };
+  if (on) p[k + ':' + lbl] = Date.now(); else delete p[k + ':' + lbl];
+  const d = planCal()?.dias.find(x => x.f === k), partes = d ? [['Principal', d.p], ['Arrastre', d.a], ['Tarde', d.t]].filter(x => x[1]) : [];
+  const todas = partes.length && partes.every(([l]) => p[k + ':' + l]);
+  const done = { ...(getSettings().planningDone || {}) };
+  if (todas) done[k] ||= Date.now(); else delete done[k];
+  saveSettings({ planningPartes: p, planningDone: done });
+}
 function calFilaHTML(ico, lbl, txt) {
   if (!txt) return '';
-  const cods = planCodigos(txt), n = planPreguntas(cods).length;
-  const btn = n ? `<button class="small" data-cal="${esc(cods.join(','))}">Test (${Math.min(getPlan().num, n)})</button>`
-    : /error/i.test(txt) ? '<button class="small" data-cal-err>📓 Errores</button>'
-    : /simulacro/i.test(txt) ? '<button class="small" data-cal-sim>🎯 Simulacro</button>' : '';
-  return `<div class="cal-row"><span>${ico} <span class="muted">${lbl}</span> ${esc(txt)}</span>${btn}</div>`;
+  const cods = planCodigos(txt), n = planPreguntas(cods).length, hecha = partesHechas()[todayKey() + ':' + lbl];
+  const btn = n ? `<button class="small" data-cal="${esc(cods.join(','))}" data-parte="${lbl}">${hecha ? 'Otro test' : `Test (${Math.min(getPlan().num, n)})`}</button>`
+    : /error/i.test(txt) ? `<button class="small" data-cal-err data-parte="${lbl}">📓 Errores</button>`
+    : /simulacro/i.test(txt) ? `<button class="small" data-cal-sim data-parte="${lbl}">🎯 Simulacro</button>` : '';
+  return `<div class="cal-row ${hecha ? 'hecha' : ''}"><span>${hecha ? '✅' : ico} <span class="muted">${lbl}</span> ${esc(txt)}</span>
+    <span class="row" style="flex-wrap:nowrap;gap:6px">${btn}<button class="small ${hecha ? 'primary' : ''}" data-parte-ok="${lbl}" title="${hecha ? 'Desmarcar' : 'Marcar como hecha'}" aria-label="${hecha ? 'Desmarcar' : 'Marcar como hecha'} ${lbl}">✓</button></span></div>`;
 }
 function planCalHTML() {
   const c = planCal(), k = todayKey(), d = c.dias.find(x => x.f === k), hecho = (getSettings().planningDone || {})[k];
@@ -1617,16 +1631,16 @@ function planCalHTML() {
   }
   return `<div class="card plan-card">${head}
     <div style="margin-top:8px">${calFilaHTML('📘', 'Principal', d.p)}${calFilaHTML('🔁', 'Arrastre', d.a)}${calFilaHTML('🌆', 'Tarde', d.t)}</div>
-    ${hecho ? '<p class="muted" style="margin:8px 0 0">✅ Día marcado como hecho</p>' : '<div class="row" style="margin-top:8px"><button class="small primary" id="calHecho">✓ Día hecho</button></div>'}
+    ${hecho ? '<p class="muted" style="margin:8px 0 0">✅ ¡Día hecho! 🎉</p>' : '<p class="help" style="margin:8px 0 0">Cada parte se marca sola al terminar su test, o con ✓.</p>'}
   </div>`;
 }
 function bindPlanCal() {
   if ($('calVer')) $('calVer').onclick = e => { e.preventDefault(); showCalendario(); };
-  if ($('calHecho')) $('calHecho').onclick = () => { saveSettings({ planningDone: { ...(getSettings().planningDone || {}), [todayKey()]: Date.now() } }); showHome(); };
+  app.querySelectorAll('[data-parte-ok]').forEach(b => b.onclick = () => { const l = b.dataset.parteOk; marcarParte(l, !partesHechas()[todayKey() + ':' + l]); showHome(); });
   app.querySelectorAll('[data-cal]').forEach(b => b.onclick = () =>
-    startRun(pickQs(planPreguntas(b.dataset.cal.split(',')), getPlan().num), { mode: 'practica', label: PLAN_LABEL }));
-  app.querySelectorAll('[data-cal-err]').forEach(b => b.onclick = () => showCuaderno());
-  app.querySelectorAll('[data-cal-sim]').forEach(b => b.onclick = () => $('simBtn') ? $('simBtn').click() : showHome());
+    startRun(pickQs(planPreguntas(b.dataset.cal.split(',')), getPlan().num), { mode: 'practica', label: `${PLAN_LABEL} · ${b.dataset.parte}` }));
+  app.querySelectorAll('[data-cal-err]').forEach(b => b.onclick = () => { marcarParte(b.dataset.parte); showCuaderno(); });
+  app.querySelectorAll('[data-cal-sim]').forEach(b => b.onclick = () => { marcarParte(b.dataset.parte); $('simBtn') ? $('simBtn').click() : showHome(); });
 }
 function showCalendario() {
   stopTimer();
@@ -3033,6 +3047,8 @@ function addTime(q, ms) {
 function finish() {
   stopTimer();
   const results = run.list.map((it, k) => ({ q: it.q, chosen: run.answers[k], ok: run.answers[k] === it.q.correcta, doubt: !!run.doubt[k] }));
+  const parte = (run.label || '').match(/^📅 Hoy toca · (Principal|Arrastre|Tarde)$/);
+  if (parte && results.some(r => r.chosen !== null)) marcarParte(parte[1]);
   if (run.label === DUDAS_LABEL) {
     const d = { ...dudosasGuardadas() };
     results.forEach(r => { if (r.ok && !r.doubt) delete d[keyOf(r.q)]; });
