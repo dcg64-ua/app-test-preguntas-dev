@@ -1006,7 +1006,7 @@ async function showAdmin(env = ENV) {
       <div class="set-row"><span>Preguntas al día para cobrarla</span><input type="number" min="1" id="dMin" value="${diarioCfg().min}"></div>
       <div class="set-row"><span>Puntos de un día normal</span><input type="number" min="0" id="dBase" value="${diarioCfg().base}"></div>
       ${[7, 14, 21, 28].map(n => `<div class="set-row"><span>Puntos del día ${n} seguido</span><input type="number" min="0" data-dh="${n}" value="${diarioCfg().hitos[n]}"></div>`).join('')}
-      ${[["t90", "Puntos extra al llegar a 90"], ["t120", "Puntos extra al llegar a 120 (en vez de los de 90)"], ["punteria", "Puntería (80 % de aciertos)"], ["caja", "Preguntas para abrir la caja sorpresa"], ["mision", "Puntos de la misión del día"], ["escudoCada", "Días seguidos para ganar un escudo"]].map(([k, t]) => `<div class="set-row"><span>${t}</span><input type="number" min="0" data-dx="${k}" value="${diarioCfg()[k]}"></div>`).join('')}
+      ${[["t250", "Puntos extra al llegar a 250 (maratón)"], ["punteria", "Puntería (80 % de aciertos)"], ["caja", "Preguntas para abrir la caja sorpresa"], ["mision", "Puntos de la misión del día"], ["escudoCada", "Días seguidos para ganar un escudo"]].map(([k, t]) => `<div class="set-row"><span>${t}</span><input type="number" min="0" data-dx="${k}" value="${diarioCfg()[k]}"></div>`).join('')}
       <div class="row" style="margin-top:8px"><button class="small primary" id="lgSave">Guardar</button><button class="small" id="lgReset">Valores por defecto</button><span class="muted" id="lgMsg"></span></div>
       <p class="help">Si desactivas un logro, deja de contar sus puntos (también los ya ganados).</p>
     </details>
@@ -1790,14 +1790,17 @@ function applyLogroCfg(cfg = {}) {
   LOGROS = LOGROS_ALL.filter(l => !(cfg.off || []).includes(l.id));
 }
 // Recompensa diaria: un calendario de 28 días. Cada día con al menos `min` preguntas da `base` puntos; los días 7, 14, 21 y 28
-// seguidos dan más. Tras el 28 (o si se corta la racha) vuelve al día 1. Además, cada día: tramos (90 y 120 preguntas),
+// seguidos dan más. Tras el 28 (o si se corta la racha) vuelve al día 1. Además, cada día: maratón (250 preguntas),
 // puntería (≥ 80 % de aciertos con ≥ 20 respondidas), caja sorpresa al llegar a 100 y la misión del día.
 // Cada 7 días seguidos se gana un escudo 🛡️ (máx. 2): si un día no se llega, se gasta y la racha sigue.
 // El admin puede cambiar los valores (config/logros.diario).
-const DIARIO_DEF = { min: 60, base: 10, hitos: { 7: 20, 14: 30, 21: 40, 28: 100 }, t90: 5, t120: 10, punteria: 5, caja: 100, mision: 10, escudoCada: 7, escudoMax: 2, firma: '' };
+const DIARIO_DEF = { min: 60, base: 10, hitos: { 7: 20, 14: 30, 21: 40, 28: 100 }, t90: 5, t120: 10, t250: 15, punteria: 5, caja: 100, mision: 10, escudoCada: 7, escudoMax: 2, firma: '' };
 const diarioCfg = () => ({ ...DIARIO_DEF, ...(logroCfg.diario || {}), hitos: { ...DIARIO_DEF.hitos, ...(logroCfg.diario?.hitos || {}) } });
 const diarioPts = (cfg, dia) => cfg.hitos[dia] ?? cfg.base;
-const tramoPts = (cfg, n) => n >= 120 ? cfg.t120 : n >= 90 ? cfg.t90 : 0;
+// Extra por volumen: hasta el 9/11/2026 eran 90 (+t90) y 120 (+t120); desde el 10/11 solo la maratón de 250 (+t250).
+// Los días anteriores conservan lo que ya ganaron.
+const MARATON = 250, TRAMO_NUEVO = '2026-11-10';
+const tramoPts = (cfg, n, k = todayKey()) => k < TRAMO_NUEVO ? (n >= 120 ? cfg.t120 : n >= 90 ? cfg.t90 : 0) : n >= MARATON ? cfg.t250 : 0;
 const punteriaOk = q => !!q && q[0] >= 20 && q[1] / q[0] >= .8;
 // número estable a partir de un texto: la caja y la misión de cada fecha salen siempre iguales
 const hashStr = s => [...s].reduce((h, c) => Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0, 2166136261);
@@ -1816,7 +1819,7 @@ function puntosDiarios(daily = load(K.daily, {}), dq = load(K.dailyq, {}), misio
     const k = todayKey(d), n = daily[k] || 0;
     if (n >= cfg.min) {
       racha++;
-      total += diarioPts(cfg, (racha - 1) % 28 + 1) + tramoPts(cfg, n) + (punteriaOk(dq[k]) ? cfg.punteria : 0);
+      total += diarioPts(cfg, (racha - 1) % 28 + 1) + tramoPts(cfg, n, k) + (punteriaOk(dq[k]) ? cfg.punteria : 0);
       if (racha % cfg.escudoCada === 0) escudos = Math.min(cfg.escudoMax, escudos + 1);
     } else if (k !== hoy) { // hoy todavía puede llegar
       if (racha && escudos) { escudos--; usados.push(k); } else racha = 0;
@@ -1929,10 +1932,9 @@ function checkLogros() {
     showToast('📅', `Recompensa diaria: +${p} puntos`, `Día ${pd.dia} de 28${p > cfg.base ? ' · ¡día especial! 🎉' : ''}. Vuelve mañana para el día ${pd.dia % 28 + 1}.`, 'pomo');
     showToast('💚', cfg.firma ? `Mensaje de ${cfg.firma}` : 'Un mensaje para ti', mensajeHoy(), 'pomo');
   }
-  const tramo = pd.hoyN >= 120 ? 120 : pd.hoyN >= 90 ? 90 : 0;
-  if (tramo && st.tramoAvisado !== hoy + ':' + tramo) {
-    saveSettings({ tramoAvisado: hoy + ':' + tramo });
-    showToast('🚀', `¡${tramo} preguntas hoy! +${tramoPts(cfg, pd.hoyN)} puntos`, tramo === 90 ? `A las 120 son +${cfg.t120}.` : 'Tramo máximo de hoy. ¡Bestial!', 'pomo');
+  if (pd.hoyN >= MARATON && st.tramoAvisado !== hoy + ':' + MARATON) {
+    saveSettings({ tramoAvisado: hoy + ':' + MARATON });
+    showToast('🏃‍♀️', `¡Maratón: ${MARATON} preguntas hoy! +${cfg.t250} puntos`, '¡Bestial! 💪', 'pomo');
   }
   if (pd.hoyN >= cfg.caja && st.cajaAvisado !== hoy && !(st.cajas || {})[hoy]) {
     saveSettings({ cajaAvisado: hoy });
@@ -2014,8 +2016,7 @@ function extrasHTML(pd) {
   const { cfg, hoyN, q } = pd, hoy = todayKey(), mis = misionHoy(), misOk = !!(load(K.settings, {}).misiones || {})[hoy];
   const pctQ = q[0] ? Math.round(q[1] / q[0] * 100) : 0;
   const x = (ok, ico, txt, pts) => `<div class="extra ${ok ? 'on' : ''}"><span>${ok ? '✅' : ico}</span><span>${txt}</span><b>+${pts}</b></div>`;
-  return x(hoyN >= 90, '🚀', `90 preguntas <span class="muted">(${Math.min(hoyN, 90)}/90)</span>`, cfg.t90)
-    + x(hoyN >= 120, '🚀', `120 preguntas <span class="muted">(${Math.min(hoyN, 120)}/120)</span>`, cfg.t120)
+  return x(hoyN >= MARATON, '🏃‍♀️', `Maratón: ${MARATON} preguntas <span class="muted">(${Math.min(hoyN, MARATON)}/${MARATON})</span>`, cfg.t250)
     + x(punteriaOk(q), '🎯', `Puntería: 80 % de aciertos <span class="muted">(${q[0] ? `${pctQ} % de ${q[0]}` : 'aún no has respondido'}${q[0] && q[0] < 20 ? ', mínimo 20' : ''})</span>`, cfg.punteria)
     + (() => { // ruleta: se desbloquea al llegar a cfg.caja y hay que girarla
       const got = (load(K.settings, {}).cajas || {})[hoy];
@@ -2295,7 +2296,7 @@ const AYUDA = [
   ['🏆 Puntos y premios', [
     ['logros', '🏆 Logros', 'Medallas por estudiar: primeros tests, rachas, simulacros aprobados, temas dominados… Cada una da puntos una vez. Están en el botón 🏆 de arriba.'],
     ['diario', '📅 Recompensa diaria', 'Cada día que llegas a 60 preguntas ganas puntos. Si son días seguidos, los días 7, 14, 21 y 28 dan más. Tras el 28 vuelve a empezar.'],
-    ['extras', '🚀 Extras del día', 'Más puntos si llegas a 90 o 120 preguntas, si aciertas el 80 % o más, y la misión del día 🗺️.'],
+    ['extras', '🚀 Extras del día', 'Más puntos si llegas a 250 preguntas (maratón), si aciertas el 80 % o más, la ruleta al llegar a 100 y la misión del día 🗺️.'],
     ['ruleta', '🎡 Ruleta', 'Al llegar a 100 preguntas se desbloquea la ruleta: entra en 🏆 Logros y gírala para ganar +5, +10, +15 o +30 puntos. Solo una vez al día.'],
     ['escudo', '🛡️ Escudo', 'Cada 7 días seguidos ganas un escudo (máximo 2). Si un día no llegas a 60, se gasta el escudo y tu racha de puntos no se corta.'],
     ['retos', '🏁 Retos', 'Retos especiales que te pone tu admin, con fecha límite, puntos y a veces premio. Los ves en el inicio y en 🏆 Logros.'],
