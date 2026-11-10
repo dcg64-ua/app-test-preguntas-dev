@@ -841,12 +841,17 @@ function bindPushCard() {
 const ADMIN_UIDS = ['cK8gyIm8zvQOrdRQeApIH5VZkaB3'];
 const isAdmin = () => !!fbUser && ADMIN_UIDS.includes(fbUser.uid);
 
+// Racha de días seguidos llegando al objetivo, con los escudos 🛡️ de la recompensa diaria (como en 🏆 Logros):
+// un día por debajo gasta un escudo y la racha sigue. Hoy todavía no la rompe.
 function streakOf(d, goal) {
-  const day = new Date();
-  if ((d[todayKey(day)] || 0) < goal) day.setDate(day.getDate() - 1);
-  let n = 0;
-  while ((d[todayKey(day)] || 0) >= goal) { n++; day.setDate(day.getDate() - 1); }
-  return n;
+  const cfg = diarioCfg(), hoy = todayKey(), keys = Object.keys(d).filter(k => d[k] >= goal).sort();
+  let racha = 0, escudos = 0;
+  if (keys.length) for (const x = new Date(keys[0] + 'T12:00'); todayKey(x) <= hoy; x.setDate(x.getDate() + 1)) {
+    const k = todayKey(x);
+    if ((d[k] || 0) >= goal) { racha++; if (racha % cfg.escudoCada === 0) escudos = Math.min(cfg.escudoMax, escudos + 1); }
+    else if (k !== hoy) { if (racha && escudos) escudos--; else racha = 0; }
+  }
+  return racha;
 }
 
 async function showAdmin(env = ENV) {
@@ -1463,13 +1468,7 @@ function addDaily(n) {
   d[k] = (d[k] || 0) + n;
   save(K.daily, d);
 }
-function streak() {
-  const d = load(K.daily, {}), goal = getSettings().dailyGoal || 1, day = new Date();
-  if ((d[todayKey(day)] || 0) < goal) day.setDate(day.getDate() - 1); // hoy todavía no rompe la racha
-  let n = 0;
-  while ((d[todayKey(day)] || 0) >= goal) { n++; day.setDate(day.getDate() - 1); }
-  return n;
-}
+const streak = () => streakOf(load(K.daily, {}), getSettings().dailyGoal || 1);
 function daysLeft(date) {
   if (!date) return null;
   return Math.round((new Date(date + 'T00:00').getTime() - startOfToday()) / DAY);
