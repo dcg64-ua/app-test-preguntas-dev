@@ -964,7 +964,7 @@ async function showAdmin(env = ENV) {
       <textarea rows="2" data-msg="${esc(u.uid)}" placeholder="¡Ánimo con el Tema 9!" maxlength="500"></textarea>
       <div class="row" style="margin-top:6px"><button class="small primary" data-send="${esc(u.uid)}">Enviar</button><span class="muted" data-sent="${esc(u.uid)}"></span></div>
       ${u.inbox.slice(0, 3).map(m => `<p class="muted" style="margin:4px 0">${fmtDate(m.at)} · «${esc(m.text.length > 60 ? m.text.slice(0, 58) + '…' : m.text)}» · ${m.read ? '💚 leído' : 'sin leer'}</p>`).join('')}
-      <div class="row" style="margin-top:12px"><button class="small primary" data-prog="${esc(u.uid)}">📊 Ver su progreso</button><button class="small" data-logros="${esc(u.uid)}">🏆 Ver sus logros</button></div>
+      <div class="row" style="margin-top:12px"><button class="small primary" data-prog="${esc(u.uid)}">📊 Ver su progreso</button><button class="small" data-logros="${esc(u.uid)}">🏆 Ver sus logros</button><button class="small" data-bonus="${esc(u.uid)}">⭐ Dar / quitar puntos</button></div>
     </details>`;
   };
 
@@ -1017,6 +1017,15 @@ async function showAdmin(env = ENV) {
   $('admReload').onclick = () => showAdmin(env);
   app.querySelectorAll('[data-prog]').forEach(b => b.onclick = () => showUserStats(users.find(u => u.uid === b.dataset.prog), env));
   app.querySelectorAll('[data-logros]').forEach(b => b.onclick = () => showUserLogros(users.find(u => u.uid === b.dataset.logros), env));
+  app.querySelectorAll('[data-bonus]').forEach(b => b.onclick = async () => {
+    const uid = b.dataset.bonus, u = users.find(x => x.uid === uid);
+    const n = Math.round(+String(prompt(`Puntos para ${u.email || uid} (en negativo para quitar):`, '10') || '').replace(',', '.'));
+    if (!n) return;
+    const motivo = (prompt('Motivo (lo verá en sus logros):', 'Puntos devueltos') || '').trim();
+    const users_ = { ...bonusCfg, [uid]: [...(bonusCfg[uid] || []), { pts: n, motivo, at: Date.now() }] };
+    try { await fb.setDoc(fb.doc(fb.db, 'config', 'bonus'), { users: users_, at: Date.now() }); bonusCfg = users_; showToast('⭐', `${n > 0 ? '+' : ''}${n} puntos`, `para ${u.email || uid}`); showAdmin(env); }
+    catch (e) { alert('No se pudo guardar (' + (e.code || e.message) + ')'); }
+  });
   $('admName').onchange = e => saveSettings({ adminName: e.target.value.trim() });
   // Pruebas: cambia la actividad diaria del admin. Se guarda como «sustituir» (no se fusiona con la nube) para poder bajar números.
   const tsApply = (daily, txt) => {
@@ -1165,6 +1174,7 @@ function showUserLogros(u, env) {
         <div class="muted">puntos disponibles · ${u.earned} ganados (${pd.total} por días de estudio, ${ok.size} de ${LOGROS.length} logros)${gastados ? ` · ${gastados} canjeados` : ''}</div>
       </div>
       <div id="ulDiario">${diarioCardHTML(pd)}</div>
+      ${bonusHTML()}
       ${retosHTML()}
       ${u.canjes?.length ? `<div class="card"><h2>🎁 Sus canjes</h2>${u.canjes.map(c => `<div class="canje">${esc(c.emoji || '🎁')} <b>${esc(c.name)}</b> <span class="muted">· ⭐ ${c.cost || 0} · ${fmtDate(c.at)} · ${c.done ? '✅ cumplida' : '⏳ pendiente'}</span></div>`).join('')}</div>` : ''}
       <div class="card"><h2>Todos los logros <span class="muted">· ${ok.size} / ${LOGROS.length}</span></h2>${medalsHTML(d, ok, seen)}</div>`;
@@ -1301,7 +1311,7 @@ function lentasHTML() {
 }
 function bindProgresoExtras() {
   const p = prevision();
-  app.querySelectorAll('[data-prev]').forEach(b => b.onclick = () => startRun(shuffle(p.peores[+b.dataset.prev].qs).slice(0, 20), { mode: 'practica', label: 'Lo que más te baja' }));
+  app.querySelectorAll('[data-prev]').forEach(b => b.onclick = () => startRun(pickQs(p.peores[+b.dataset.prev].qs, 20), { mode: 'practica', label: 'Lo que más te baja' }));
   if ($('lentasGo')) $('lentasGo').onclick = () => startRun(lentas().map(x => x.q), { mode: 'practica', label: 'Las que más te cuestan' });
 }
 // Fallos de hoy, para repasarlos antes de acabar el día
@@ -1614,7 +1624,7 @@ function bindPlanCal() {
   if ($('calVer')) $('calVer').onclick = e => { e.preventDefault(); showCalendario(); };
   if ($('calHecho')) $('calHecho').onclick = () => { saveSettings({ planningDone: { ...(getSettings().planningDone || {}), [todayKey()]: Date.now() } }); showHome(); };
   app.querySelectorAll('[data-cal]').forEach(b => b.onclick = () =>
-    startRun(shuffle(planPreguntas(b.dataset.cal.split(','))).slice(0, getPlan().num), { mode: 'practica', label: PLAN_LABEL }));
+    startRun(pickQs(planPreguntas(b.dataset.cal.split(',')), getPlan().num), { mode: 'practica', label: PLAN_LABEL }));
   app.querySelectorAll('[data-cal-err]').forEach(b => b.onclick = () => showCuaderno());
   app.querySelectorAll('[data-cal-sim]').forEach(b => b.onclick = () => $('simBtn') ? $('simBtn').click() : showHome());
 }
@@ -1675,7 +1685,7 @@ function bindPlanCard() {
   if ($('planAhead')) $('planAhead').onclick = () => { savePlan({ lastDay: null }); showHome(); };
   if ($('planGo')) $('planGo').onclick = () => {
     const st = planState(), qs = st.today.flatMap(t => t.qs);
-    startRun(shuffle(qs).slice(0, getPlan().num), { mode: 'practica', label: PLAN_LABEL });
+    startRun(pickQs(qs, getPlan().num), { mode: 'practica', label: PLAN_LABEL });
   };
 }
 const PLAN_LABEL = '📅 Hoy toca';
@@ -1874,6 +1884,7 @@ const MENSAJES_AMOR = [
 const mensajeHoy = () => MENSAJES_AMOR[hashStr('amor' + todayKey()) % MENSAJES_AMOR.length];
 async function loadLogroCfg() {
   try { const s = await fb.getDoc(fb.doc(fb.db, 'config', 'logros')); applyLogroCfg(s.exists() ? s.data() : {}); } catch {}
+  try { const b = await fb.getDoc(fb.doc(fb.db, 'config', 'bonus')); bonusCfg = b.exists() ? b.data().users || {} : {}; } catch {}
 }
 
 // Datos para los logros, leídos con load() (así sirven también para el panel admin con viewAs)
@@ -1913,7 +1924,10 @@ function logroData() {
 }
 const logrosOk = (d = logroData()) => LOGROS.filter(l => l.val(d) >= goalOf(l, d));
 // Puntos ganados = logros conseguidos + recompensa diaria
-const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0) + puntosDiarios().total + puntosRetos();
+// Ajustes de puntos que pone el admin a mano (p. ej. devolver puntos perdidos por un fallo de la app)
+let bonusCfg = {};
+const puntosBonus = () => (bonusCfg[viewUid || fbUser?.uid] || []).reduce((a, b) => a + (+b.pts || 0), 0);
+const puntosGanados = (ok = logrosOk()) => ok.reduce((a, l) => a + l.pts, 0) + puntosDiarios().total + puntosRetos() + puntosBonus();
 
 // Avisa de los logros nuevos (una vez). El primer día avisa con un resumen, por si ya había muchos.
 // También avisa una vez al día al llegar al mínimo de la recompensa diaria.
@@ -2071,6 +2085,11 @@ function medalsHTML(d, ok, seen) {
     </div>`; }).join('')}</div>`;
 }
 
+function bonusHTML() {
+  const l = bonusCfg[viewUid || fbUser?.uid] || [];
+  return l.length ? `<div class="card"><h2>⭐ Puntos de regalo</h2>${l.map(b => `<div class="canje">${+b.pts > 0 ? '🎁' : '➖'} <b>${+b.pts > 0 ? '+' : ''}${b.pts}</b> ${esc(b.motivo || '')} <span class="muted">· ${fmtDate(b.at)}</span></div>`).join('')}</div>` : '';
+}
+
 async function showLogros() {
   stopTimer();
   checkLogros();
@@ -2085,6 +2104,7 @@ async function showLogros() {
         <div class="muted">puntos disponibles · ${earned} ganados (${pd.total} por días de estudio y ${earned - pd.total} por ${ok.size} de ${LOGROS.length} logros)${canjes?.length ? ` · ${puntosGastados(canjes)} canjeados` : ''}</div>
       </div>
       ${diarioCardHTML(pd)}
+      ${bonusHTML()}
       ${retosHTML()}
       ${finalCardHTML(canjes)}
       <div class="card">
@@ -2280,6 +2300,7 @@ const AYUDA = [
   ]],
   ['📚 Practicar', [
     ['test', '📝 Test por temas', 'Eliges los temas y cuántas preguntas, y empiezas. En «Más opciones»: modo examen (nota al final y con tiempo), solo las que has fallado, solo las marcadas ★, recuerdo activo (piensas la respuesta antes de ver las opciones) o filtrar por ley o referencia.'],
+    ['facil', '😌 Fácil', 'En cualquier pregunta puedes pulsar «😌 Marcar como fácil»: a partir de ahí sale unas 10 veces menos en los tests al azar, para no perder tiempo con lo que ya dominas. Las dudosas salen el doble. Para quitar la marca, pulsa «😌 Fácil ✕».'],
     ['dudosas', '🤔 Dudosas', 'Durante cualquier test, pulsa «🤔 Marcar como dudosa» en las preguntas en las que dudes. Se guardan aquí y luego puedes hacer un test solo con ellas (hasta 50 cada vez). Una dudosa sale de la lista cuando la aciertas en este test sin volver a marcarla como dudosa.'],
     ['cuaderno', '📓 Cuaderno de errores', 'Todas las preguntas que has fallado alguna vez, con la respuesta correcta, el error que más repites y la explicación. Repásalo como unos apuntes y practica sus preguntas. Cuando una la tengas clara, márcala con «Ya me la sé» y sale de la lista. Las que ya dominas en el repaso inteligente se ocultan solas.'],
     ['evolucion', '📈 Evolución por tema', 'En Progreso: tu porcentaje de acierto semana a semana, en todos los temas o en uno concreto. Sirve para ver si un tema que te costaba va mejorando.'],
@@ -2490,7 +2511,7 @@ function showHome(error) {
   const simular = (pool, n, minutos, nombre, bloque) => () => {
     if (!confirmDiscard()) return;
     if (!pool.length) return alert(`No hay preguntas del bloque «${bloque}». Cámbialo en ⚙️ Ajustes → Simulacro.`);
-    startRun(shuffle(pool).slice(0, n), {
+    startRun(pickQs(pool, n), {
       mode: 'examen', minutes: minutos, label: nombre === MODOS.simulacro ? '' : nombre,
       sim: { nombre, corte: s.simCorte }
     });
@@ -2509,7 +2530,7 @@ function showHome(error) {
     if ($('onlyKo').checked) list = list.filter(q => (stats[keyOf(q)]?.ko || 0) > 0);
     if ($('onlyMarked').checked) list = list.filter(q => marks[keyOf(q)]);
     if (!list.length) return alert('No hay preguntas con esos filtros.');
-    if ($('shq').checked) list = shuffle(list);
+    if ($('shq').checked) list = pickQs(list);
     list = list.slice(0, Math.max(1, +$('num').value || list.length));
     const mode = document.querySelector('input[name=mode]:checked').value;
     const recall = !!$('recall')?.checked;
@@ -2810,6 +2831,26 @@ function marcarDudosa(q, on) {
   saveSettings({ dudosas: d });
 }
 const dudosasLista = () => { const d = dudosasGuardadas(); return (set?.preguntas || []).filter(q => d[keyOf(q)]); };
+// Fáciles (settings.faciles = { pregunta: fecha }): en los tests al azar salen unas 10 veces menos; las dudosas, el doble.
+const facilesGuardadas = () => load(K.settings, {}).faciles || {};
+function marcarFacil(q, on) {
+  const f = { ...facilesGuardadas() };
+  if (on) f[keyOf(q)] = Date.now(); else delete f[keyOf(q)];
+  saveSettings({ faciles: f });
+}
+// Muestra al azar con pesos (Efraimidis–Spirakis): fácil 0,1 · normal 1 · dudosa 2
+function pickQs(list, n = list.length) {
+  const f = facilesGuardadas(), d = dudosasGuardadas();
+  return list.map(q => ({ q, k: Math.random() ** (1 / (f[keyOf(q)] ? .1 : d[keyOf(q)] ? 2 : 1)) }))
+    .sort((a, b) => b.k - a.k).slice(0, n).map(x => x.q);
+}
+// Fila de marcas de la pregunta: la de dudosa (de este test) y la de fácil. Si ya está marcada, solo una etiqueta para quitarla.
+function marcasHTML(q) {
+  const facil = facilesGuardadas()[keyOf(q)], dudosa = dudosasGuardadas()[keyOf(q)];
+  return `<button class="chip ${run.doubt[run.i] ? 'on' : ''}" id="doubt">${doubtLabel(run.doubt[run.i])}</button>
+    ${facil ? '<button class="chip on" id="facil" title="Quitar la marca">😌 Fácil ✕</button>'
+      : dudosa || run.doubt[run.i] ? '' : '<button class="chip" id="facil">😌 Marcar como fácil</button>'}`;
+}
 
 function showQuestion() {
   if (run.limit && run.elapsed >= run.limit) return finish();
@@ -2837,7 +2878,7 @@ function showQuestion() {
       <div class="options">${order.map((orig, k) =>
         `<button data-orig="${orig}" class="${exam && ans === orig ? 'sel' : ''}"><span class="letter">${'ABCDEFGH'[k]}</span><span>${esc(q.opciones[orig])}</span></button>`).join('')}
       </div>`}
-      <div class="row" style="margin-top:12px"><button class="chip ${run.doubt[run.i] ? 'on' : ''}" id="doubt">${doubtLabel(run.doubt[run.i])}</button></div>
+      <div class="row" style="margin-top:12px" id="marcas">${marcasHTML(q)}</div>
       <div id="after"></div>
     </div>
     ${exam ? `
@@ -2854,14 +2895,23 @@ function showQuestion() {
 
   bindStar($('star'), q);
   $('quit').onclick = () => { saveRun(); showHome(); };
-  $('doubt').onclick = () => {
-    run.doubt[run.i] = !run.doubt[run.i];
-    saveRun();
-    marcarDudosa(q, run.doubt[run.i]);
-    $('doubt').classList.toggle('on', run.doubt[run.i]);
-    $('doubt').textContent = doubtLabel(run.doubt[run.i]);
-    app.querySelector(`.navgrid [data-k="${run.i}"]`)?.classList.toggle('doubt', run.doubt[run.i]);
+  const bindMarcas = () => {
+    $('doubt').onclick = () => {
+      run.doubt[run.i] = !run.doubt[run.i];
+      saveRun();
+      marcarDudosa(q, run.doubt[run.i]);
+      if (run.doubt[run.i]) marcarFacil(q, false); // dudosa y fácil no a la vez
+      app.querySelector(`.navgrid [data-k="${run.i}"]`)?.classList.toggle('doubt', run.doubt[run.i]);
+      $('marcas').innerHTML = marcasHTML(q); bindMarcas();
+    };
+    if ($('facil')) $('facil').onclick = () => {
+      const on = !facilesGuardadas()[keyOf(q)];
+      marcarFacil(q, on);
+      if (on) showToast('😌', 'Marcada como fácil', 'Saldrá mucho menos en los tests al azar.');
+      $('marcas').innerHTML = marcasHTML(q); bindMarcas();
+    };
   };
+  bindMarcas();
   updateTimer();
   startTimer();
   if ($('showOpts')) $('showOpts').onclick = () => { run.shown[run.i] = true; saveRun(); showQuestion(); };
