@@ -22,6 +22,8 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET' || !e.request.url.startsWith(self.location.origin)) return;
+  // Audios (pódcast): que los sirva el navegador tal cual; Safari necesita peticiones por rangos (206) para reproducirlos
+  if (e.request.headers.has('range') || /\.(mp3|m4a)$/i.test(new URL(e.request.url).pathname)) return;
   e.respondWith(
     fetch(e.request.url, { cache: 'no-cache', credentials: 'same-origin' })
       .then(res => {
