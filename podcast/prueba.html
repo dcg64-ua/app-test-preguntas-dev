@@ -11,13 +11,16 @@
   main { max-width: 560px; margin: auto; }
   .card { background: var(--card); border-radius: 16px; padding: 16px; margin: 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
   h1 { font-size: 1.4rem; } h2 { font-size: 1.1rem; margin: 0 0 8px; }
-  audio { width: 100%; } .muted { color: var(--muted); font-size: .9rem; }
+  audio { width: 100%; }
+  .voz { padding: 8px 0; border-bottom: 1px solid rgba(128,128,128,.2); } .voz audio { margin-top: 4px; height: 40px; } .muted { color: var(--muted); font-size: .9rem; }
 </style>
 </head>
 <body>
 <main>
   <h1>🎧 Prueba de pódcast · E10</h1>
   <p class="muted">8 preguntas del tema E10 (unos 6 minutos). Cada una: pregunta y opciones, 5 segundos para pensar, respuesta y explicación. Prueba a darle al ▶️, <b>bloquear el móvil</b> y guardártelo: tiene que seguir sonando y poder pausarse desde la pantalla de bloqueo o los cascos.</p>
+  <div class="card"><h2>🎙️ Todas las voces</h2><p class="muted" style="margin-top:0">Un saludo corto con cada una, para elegir.</p><div class="voz"><span><b>Elvira</b> <span class="muted">· España</span></span><audio controls preload="none" src="voces/es-ES-ElviraNeural.mp3" data-t="Elvira"></audio></div><div class="voz"><span><b>Álvaro</b> <span class="muted">· España</span></span><audio controls preload="none" src="voces/es-ES-AlvaroNeural.mp3" data-t="Álvaro"></audio></div><div class="voz"><span><b>Ximena</b> <span class="muted">· España</span></span><audio controls preload="none" src="voces/es-ES-XimenaNeural.mp3" data-t="Ximena"></audio></div><div class="voz"><span><b>Dalia</b> <span class="muted">· México</span></span><audio controls preload="none" src="voces/es-MX-DaliaNeural.mp3" data-t="Dalia"></audio></div><div class="voz"><span><b>Jorge</b> <span class="muted">· México</span></span><audio controls preload="none" src="voces/es-MX-JorgeNeural.mp3" data-t="Jorge"></audio></div><div class="voz"><span><b>Paloma</b> <span class="muted">· EE. UU., español neutro</span></span><audio controls preload="none" src="voces/es-US-PalomaNeural.mp3" data-t="Paloma"></audio></div><div class="voz"><span><b>Ava</b> <span class="muted">· multilingüe</span></span><audio controls preload="none" src="voces/en-US-AvaMultilingualNeural.mp3" data-t="Ava"></audio></div><div class="voz"><span><b>Emma</b> <span class="muted">· multilingüe</span></span><audio controls preload="none" src="voces/en-US-EmmaMultilingualNeural.mp3" data-t="Emma"></audio></div><div class="voz"><span><b>Vivienne</b> <span class="muted">· multilingüe</span></span><audio controls preload="none" src="voces/fr-FR-VivienneMultilingualNeural.mp3" data-t="Vivienne"></audio></div></div>
+  <h2 style="margin-top:24px">Pódcast de prueba (8 preguntas de E10)</h2>
   <div class="card"><h2>Voz 1 · Elvira (neural)</h2><audio controls preload="none" src="e10_elvira.mp3" data-t="Elvira"></audio></div>
   <div class="card"><h2>Voz 2 · Álvaro (neural)</h2><audio controls preload="none" src="e10_alvaro.mp3" data-t="Álvaro"></audio></div>
   <div class="card"><h2>Voz 3 · Helena (Windows)</h2><audio controls preload="none" src="e10_helena.mp3" data-t="Helena"></audio></div>
