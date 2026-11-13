@@ -281,6 +281,14 @@
   .audio-opts .audio-ok { color: var(--ok); font-weight: 700; }
   .audio-ctrl { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 8px; }
   .audio-ctrl button { font-size: 1.1rem; }
+  .audio-ans { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+  .audio-ans button { min-height: 92px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border-width: 2px; padding: 8px; }
+  .audio-ans b { font-size: 2.2rem; line-height: 1; }
+  .audio-ans span { font-size: .78rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .audio-ans button.ok { background: var(--ok-bg); border-color: var(--ok); }
+  .audio-ans button.ko { background: var(--ko-bg); border-color: var(--ko); }
+  .topbar .tag { max-width: 52vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; vertical-align: middle; }
+  .audio-rep { width: 100%; min-height: 56px; font-size: 1.1rem; margin-bottom: 10px; }
 
   /* Verdadero / Falso */
   .vf-card { min-height: 200px; transition: transform .15s, background .2s; touch-action: pan-y; }
@@ -466,7 +474,7 @@ const ENV = LOCAL && new URLSearchParams(location.search).get('env') === 'prod' 
   : /^\/[^/]+-dev\//.test(location.pathname) || LOCAL ? 'dev' : 'prod';
 // Funciones ya aprobadas para producción. En desarrollo están todas activas.
 // Para pasar una función a producción basta con añadirla aquí.
-const PROD_FEATURES = ['flash', 'articulos', 'vf', 'recall', 'notas', 'confusion', 'cuenta']; // todas menos 'audio'
+const PROD_FEATURES = ['flash', 'articulos', 'audio', 'vf', 'recall', 'notas', 'confusion', 'cuenta'];
 const ALL_FEATURES = ['flash', 'articulos', 'audio', 'vf', 'recall', 'notas', 'confusion', 'cuenta'];
 const feat = name => ENV === 'dev' || PROD_FEATURES.includes(name);
 const P = ENV === 'dev' ? 'quizdev.' : 'quiz.';
@@ -2321,7 +2329,7 @@ const AYUDA = [
     ['flash', '🃏 Flashcards', 'Tarjetas: ves la pregunta o el concepto, piensas la respuesta y le das la vuelta. Luego dices si te ha costado («Otra vez», «Difícil», «Bien», «Fácil») y la app decide cuándo volver a enseñártela. Ideal para plazos, órganos, definiciones…'],
     ['vf', '⚡ Verdadero / Falso', 'Repaso rápido: sale una afirmación y dices si es verdadera o falsa. Muy útil para ratos cortos. Intenta superar tu récord de racha.'],
     ['art', '📜 Artículos', 'Textos de la normativa con huecos. En 🧩 Fácil colocas las palabras que faltan tocándolas; en ✍️ Difícil las escribes tú de memoria. Empieza en fácil y, cuando lo hagas perfecto, pasa a difícil. Sirve para memorizar artículos literales, plazos y cifras.'],
-    ['audio', '🎧 Modo audio', 'La app te lee las preguntas y las opciones en voz alta; puedes responder tocando o dejar que te diga la solución. Para repasar caminando o en el coche.']
+    ['audio', '🎧 Modo audio (para caminar)', 'La app te lee la pregunta y las opciones en voz alta. Contesta tocando uno de los cuatro botones grandes A, B, C o D sin tener que leer: te dice si es correcta y pasa a la siguiente, y cuenta como pregunta respondida (objetivo, racha y puntos). «🔁 Volver a leer» repite la pregunta. Si no contestas, te dice la solución. Mantén la pantalla encendida.']
   ]],
   ['🎯 Examen', [
     ['sim1', '🎯 Simulacro de la 1ª parte', 'Un examen como el oficial: 80 preguntas del temario específico en 120 minutos, con −1/3 por fallo. Al final ves la nota, si serías APTA y la revisión de cada pregunta. Hazlo de vez en cuando para medirte.'],
@@ -2464,7 +2472,7 @@ function showHome(error) {
       ${feat('articulos') ? `<div class="qwrap"><button class="quick-btn" id="artBtn"><span class="qi">📜</span><b>Artículos</b>
         <span class="muted">${arts.length ? `${arts.length} con huecos` : 'Memoriza artículos de ley'}</span></button>${infoBtn('art', 'Artículos')}</div>` : ''}
       ${feat('audio') ? `<div class="qwrap"><button class="quick-btn" id="audioBtn"><span class="qi">🎧</span><b>Modo audio</b>
-        <span class="muted">Escucha preguntas y respuestas</span></button>${infoBtn('audio', 'Modo audio')}</div>` : ''}
+        <span class="muted">Para estudiar caminando</span></button>${infoBtn('audio', 'Modo audio')}</div>` : ''}
     </div>
 
     ${qs.length ? `<h2 class="sec">🎯 Examen</h2>
@@ -4233,19 +4241,28 @@ function showAudio() {
       ${opts ? `<div class="audio-opts">${opts}</div>` : ''}
       ${audio.phase === 'answer' ? `<hr class="sep">${cardBackHTML(c)}` : ''}
     </div>
+    ${c.type === 'q' && audio.playing ? `
+    <div class="audio-ans">${it.opciones.map((o, k) => {
+      const r = audio.result, cls = r ? (k === it.correcta ? 'ok' : k === r.k ? 'ko' : '') : '';
+      return `<button data-ans="${k}" class="${cls}" ${r ? 'disabled' : ''}><b>${'ABCDEFGH'[k]}</b><span>${esc(o)}</span></button>`; }).join('')}</div>
+    ${audio.result ? '' : '<button class="audio-rep" id="repA">🔁 Volver a leer</button>'}` : ''}
     <div class="audio-ctrl">
       <button id="prevA" ${audio.i === 0 ? 'disabled' : ''} title="Anterior">⏮</button>
       <button class="primary" id="playA">${audio.playing ? '⏸ Pausa' : '▶ Reproducir'}</button>
       <button id="nextA" title="Siguiente">⏭</button>
     </div>
-    <p class="help" style="text-align:center">Mantén la pantalla encendida: en el iPhone, si se bloquea, la lectura se para.</p>`;
+    <p class="help" style="text-align:center">Toca A, B, C o D para contestar (cuenta como pregunta respondida). Si no contestas, te dice la solución. Mantén la pantalla encendida: en el iPhone, si se bloquea, la lectura se para.</p>`;
   bindNoteBtns(app, showAudio);
   $('quit').onclick = () => stopAudio(false);
   $('playA').onclick = () => audio.playing ? pauseAudio() : playAudio();
   $('prevA').onclick = () => jumpAudio(-1);
   $('nextA').onclick = () => jumpAudio(1);
+  app.querySelectorAll('[data-ans]').forEach(b => b.onclick = () => answerAudio(+b.dataset.ans));
+  if ($('repA')) $('repA').onclick = () => repeatAudio();
   onKey = e => {
     if (!$('audioCard')) return false;
+    const n = 'abcd'.indexOf(e.key.toLowerCase());
+    if (n >= 0 && $('audioCard') && audio.playing) return answerAudio(n);
     if (e.key === ' ') { e.preventDefault(); $('playA').click(); }
     else if (e.key === 'ArrowRight') jumpAudio(1);
     else if (e.key === 'ArrowLeft') jumpAudio(-1);
@@ -4279,6 +4296,30 @@ async function playAudio() {
   }
   if (audio && tok === audio.tok) stopAudio(true);
 }
+// Contestar en el modo audio (para caminar): corta la lectura, dice si es correcta y sigue con la siguiente
+function answerAudio(k) {
+  const c = audio.cards[audio.i];
+  if (!c || c.type !== 'q' || audio.result || !['q', 'think'].includes(audio.phase)) return;
+  const it = c.item, ok = k === it.correcta, tok = ++audio.tok, L = 'ABCDEFGH';
+  speechSynthesis.cancel();
+  updateStats(it, ok, k); srsUpdate(it, ok); addDaily(1); checkLogros?.();
+  try { navigator.vibrate?.(ok ? 40 : [60, 60, 60]); } catch {}
+  audio.result = { k, ok }; audio.phase = 'answer'; showAudio();
+  (async () => {
+    await speak(ok ? '¡Correcta!' : `No. Era la ${L[it.correcta]}: ${it.opciones[it.correcta]}.`, tok);
+    if (audio.readExp) await speak(it.explicacion, tok);
+    await sleep(900);
+    if (tok !== audio?.tok) return;
+    audio.i++; audio.phase = ''; audio.result = null;
+    playAudio();
+  })();
+}
+// Vuelve a leer la pregunta actual desde el principio
+function repeatAudio() {
+  audio.tok++; speechSynthesis.cancel();
+  audio.phase = ''; audio.result = null;
+  playAudio();
+}
 function pauseAudio() {
   audio.tok++; audio.playing = false; audio.phase = '';
   speechSynthesis.cancel();
@@ -4289,7 +4330,7 @@ function jumpAudio(d) {
   const was = audio.playing;
   audio.tok++; speechSynthesis.cancel();
   audio.i = Math.max(0, Math.min(audio.cards.length - 1, audio.i + d));
-  audio.phase = ''; audio.playing = false;
+  audio.phase = ''; audio.playing = false; audio.result = null;
   if (was) playAudio(); else showAudio();
 }
 function stopAudio(finished) {
